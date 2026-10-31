@@ -266,7 +266,7 @@ def convert_command(cmd, generic=False):
         req["timeout"] = round(int(cmd["tmo"], 16) * 0.004, 3)   # ELM327 AT ST units of 4 ms
     if cmd.get("fcm1"):
         req["flowControl"] = True
-    if "tst" in cmd and bus.startswith("kline"):
+    if "tst" in cmd:
         req["tester"] = cmd["tst"].upper()
     if "din" in cmd or "dout" in cmd:
         req["session"] = {k: cmd[o].upper() for o, k in (("din", "enter"), ("dout", "exit")) if o in cmd}

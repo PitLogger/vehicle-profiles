@@ -122,10 +122,10 @@ listed `years`.
 | `rxMask` | hex string | no | Only these bits of the answer's ID are compared with `rx` (`can29` only). |
 | `extendedAddress` | hex string | no | ISO 15765-2 extended addressing: this byte is put in front of every request frame; answers carry their own address byte in front, which is removed before decoding. |
 | `request` | hex string | yes | Request bytes, service first: `22BC03` = ReadDataByIdentifier `BC03`. |
-| `interval` | number | yes | Seconds between two requests. A logger may ask less often if the bus is busy, never more often. |
+| `interval` | number | yes | Suggested seconds between two requests. A logger may ask less often if the bus is busy, and more often if its user asks for it (e.g. for track sessions). |
 | `timeout` | number | no | Seconds to wait for the answer. Missing: the logger's default. (OBDb states it in ELM327 `AT ST` units of 4 ms; the converter writes seconds.) |
 | `flowControl` | boolean | no | `true`: send ISO-TP flow control frames explicitly to `tx` (some modules need it for multi-frame answers; ELM327 `ATFCSM1`). |
-| `tester` | hex string | no | Tester (source) address on `can29` / K-line. Default `F1`. |
+| `tester` | hex string | no | Tester (source) address: on `can29` the low byte of `tx`, on K-line the source byte, with `extendedAddress` on CAN the address byte the answers carry. Default `F1`. |
 | `session` | object | no | `enter` / `exit`: diagnostic session to enter before and leave after this request (section 5.4). |
 | `kline` | object | no | K-line only: `baud` (bits/s) and `fastInit` `{ "low": ms, "high": ms }`. |
 | `years` | [year range](#41-year-range) | no | The request exists only for these model years. Missing: all years of the profile. |
