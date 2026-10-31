@@ -1,0 +1,880 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/kia/cadenza",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Kia",
+    "model": "Cadenza",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (VG)", "from": 2010, "to": 2016},
+      {"name": "Second Generation (YG)", "from": 2016, "to": 2020}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Kia-Cadenza",
+    "file": "signalsets/v3/default.json",
+    "revision": "7530214a5f33021b8372091cba593803c4877634",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_BELT_PASS", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_BELT_DRIV", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_GEAR_R", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "CADENZA_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "CADENZA_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CADENZA_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CADENZA_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TP_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "CADENZA_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "CADENZA_TP_FR", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "CADENZA_TT_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "CADENZA_TP_RR", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "CADENZA_TT_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "CADENZA_TP_RL", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 128, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "CADENZA_TT_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 136, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TEMP_INT", "name": "Interior temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "CADENZA_TEMP_EXT", "name": "Exterior temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "CADENZA_HVAC_EVAPORATOR_T", "name": "Evaporator temperature", "group": "Climate", "bit": 56, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "CADENZA_HVAC_DEFOG_HUMIDITY", "name": "Humidity sensor for automatic defogger", "group": "Climate", "bit": 200, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "CADENZA_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002|fc=1",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_FLI_VOL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
+        {"id": "CADENZA_CLUSTER_VOLTAGE", "name": "Cluster voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "CADENZA_ODO_KM", "name": "Odometer, metric", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "CADENZA_ODO_MI", "name": "Odometer, imperial", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.2101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_VSS_AVG", "name": "Vehicle speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "CADENZA_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "CADENZA_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "CADENZA_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "CADENZA_TC_SWITCH", "name": "Wheel traction control switch", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "CADENZA_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.220104",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "220104",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_VSS_AVG_V2", "name": "Average wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_FL_VSS_V2", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_FR_VSS_V2", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RR_VSS_V2", "name": "Rear right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RL_VSS_V2", "name": "Rear left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TC_SWITCH_V2", "name": "Traction control switch", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CADENZA_STEER_ANGLE_V2", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°", "invalidAtOrAbove": 3276.7},
+        {"id": "CADENZA_BRAKE_P_V2", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TIRE_FL_VSS_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_FR_VSS_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RL_VSS_V3", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RR_VSS_V3", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.2101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_STEER_ANGLE_V3", "name": "Steering wheel angle", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D6.7DE.2106",
+      "bus": "can11",
+      "tx": "7D6",
+      "rx": "7DE",
+      "request": "2106",
+      "interval": 15,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_FL_TP", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "CADENZA_FL_TT", "name": "Front left tire temperature", "group": "Engine", "metric": "frontLeftTireTemperature", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "CADENZA_FR_TP", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "CADENZA_FR_TT", "name": "Front right tire temperature", "group": "Engine", "metric": "frontRightTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "CADENZA_RL_TP", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 64, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "CADENZA_RL_TT", "name": "Rear left tire temperature", "group": "Engine", "metric": "rearLeftTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "CADENZA_RR_TP", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "CADENZA_RR_TT", "name": "Rear right tire temperature", "group": "Engine", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.012F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "012F",
+      "interval": 60,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_FLI", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 56, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 104, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2102",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2102",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "CADENZA_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "Engine", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "CADENZA_VSS_V2_7E0", "name": "Vehicle speed, v2", "group": "Movement", "metric": "speed", "bit": 96, "bits": 8, "multiply": 1.25, "min": 0, "max": 318.75, "unit": "km/h"},
+        {"id": "CADENZA_COMMANDED_EVAPORATIVE_PURGE", "name": "Commanded evaporative purge", "group": "Engine", "bit": 160, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "CADENZA_FUEL_INJECTION_TIMING_1", "name": "Fuel injection timing #1", "group": "Fuel", "bit": 176, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "CADENZA_FUEL_INJECTION_TIMING_2", "name": "Fuel injection timing #2", "group": "Fuel", "bit": 192, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "CADENZA_FUEL_INJECTION_TIMING_3", "name": "Fuel injection timing #3", "group": "Fuel", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "CADENZA_FUEL_INJECTION_TIMING_4", "name": "Fuel injection timing #4", "group": "Fuel", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_COOLANT_FAN_HIGH_SPEED_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CADENZA_COOLANT_FAN_LOW_SPEED_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_BAT_CURRENT_BATSENS", "name": "Battery current, battery sensor", "group": "Battery", "bit": 736, "bits": 16, "byteOrder": "little", "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "A"},
+        {"id": "CADENZA_BAT_V_BATSENS", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 752, "bits": 16, "byteOrder": "little", "multiply": 32, "divide": 65535, "min": 0, "max": 32, "unit": "V"},
+        {"id": "CADENZA_BAT_T_BATSENS", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 768, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1953, "divide": 250000, "min": -255.9836, "max": 255.9758, "unit": "°C"},
+        {"id": "CADENZA_BAT_ST_CHG_BATSENS", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 784, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 3600,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_KNOCK_RETARD_CYL_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 488, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYL_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 496, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYL_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 504, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYL_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 512, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYL_5", "name": "Knock retard cylinder 5", "group": "Engine", "bit": 520, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYL_6", "name": "Knock retard cylinder 6", "group": "Engine", "bit": 528, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_1", "name": "Knock control adaptation value, cylinder 1", "group": "Engine", "bit": 552, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_2", "name": "Knock control adaptation value, cylinder 2", "group": "Engine", "bit": 560, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_3", "name": "Knock control adaptation value, cylinder 3", "group": "Engine", "bit": 568, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_4", "name": "Knock control adaptation value, cylinder 4", "group": "Engine", "bit": 576, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_5", "name": "Knock control adaptation value, cylinder 5", "group": "Engine", "bit": 584, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_CTRL_ADPT_CYL_6", "name": "Knock control adaptation value, cylinder 6", "group": "Engine", "bit": 592, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_EXH_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 632, "bits": 8, "multiply": 5, "add": -50, "min": -50, "max": 1225, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2108",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2108",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_EMIS_MIS_1", "name": "Emission relevant misfires, cylinder 1", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_2", "name": "Emission relevant misfires, cylinder 2", "group": "Engine", "bit": 144, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_3", "name": "Emission relevant misfires, cylinder 3", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_4", "name": "Emission relevant misfires, cylinder 4", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_5", "name": "Emission relevant misfires, cylinder 5", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_6", "name": "Emission relevant misfires, cylinder 6", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_1", "name": "Catalyst damaging misfires, cylinder 1", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_2", "name": "Catalyst damaging misfires, cylinder 2", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_3", "name": "Catalyst damaging misfires, cylinder 3", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_4", "name": "Catalyst damaging misfires, cylinder 4", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_5", "name": "Catalyst damaging misfires, cylinder 5", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_6", "name": "Catalyst damaging misfires, cylinder 6", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_ALL", "name": "Emission relevant misfires all cylinders", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_ALL", "name": "Catalyst damaging misfires all cylinders", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CURRENT_1", "name": "Misfires current, cylinder 1", "group": "Engine", "bit": 536, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_2", "name": "Misfires current, cylinder 2", "group": "Engine", "bit": 544, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_3", "name": "Misfires current, cylinder 3", "group": "Engine", "bit": 552, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_4", "name": "Misfires current, cylinder 4", "group": "Engine", "bit": 560, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_5", "name": "Misfires current, cylinder 5", "group": "Engine", "bit": 568, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_6", "name": "Misfires current, cylinder 6", "group": "Engine", "bit": 576, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_MIS_CURRENT_TOT", "name": "Misfires current total", "group": "Engine", "bit": 584, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210B",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_DI_TIME_1", "name": "Direct injection time 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "CADENZA_DI_TIME_2", "name": "Direct injection time 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "CADENZA_DI_TIME_3", "name": "Direct injection time 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "CADENZA_DI_TIME_4", "name": "Direct injection time 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "CADENZA_DI_TIME_5", "name": "Direct injection time 5", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "CADENZA_DI_TIME_6", "name": "Direct injection time 6", "group": "Engine", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_EMIS_3", "name": "Emission-relevant misfires, cylinder #3", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_EMIS_4", "name": "Emission-relevant misfires, cylinder #4", "group": "Engine.Misfires", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_1", "name": "Misfires total counter, cylinder #1", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_2", "name": "Misfires total counter, cylinder #2", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_3", "name": "Misfires total counter, cylinder #3", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_4", "name": "Misfires total counter, cylinder #4", "group": "Engine.Misfires", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CNT_ALL", "name": "Misfires total counter, all cylinders", "group": "Engine.Misfires", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210E",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_ENG_RUN_TIME_TOT", "name": "Engine run time, total", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 6, "min": 0, "max": 393209.9999, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2113",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2113",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "CADENZA_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "CADENZA_THROTTLE_POSITION__1", "name": "Throttle position #1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "CADENZA_THROTTLE_POSITION__2", "name": "Throttle position #2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "CADENZA_THROTTLE_POSITION_SENSOR_VOLTAGE__2", "name": "Throttle position sensor voltage #2", "group": "Battery", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"},
+        {"id": "CADENZA_COOLANT_FAN", "name": "Coolant", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_RELATIVE_ACCELERATOR_PEDAL_POSITION_VOLTAGE", "name": "Relative accelerator pedal position voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "V"},
+        {"id": "CADENZA_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 128, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "CADENZA_REQUESTED_TORQUE", "name": "Requested torque", "group": "Engine", "bit": 176, "bits": 16, "multiply": 0.001526, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_THROTTLE_POSITION_SENSOR_VOLTAGE__1", "name": "Throttle position sensor voltage #1", "group": "Battery", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2115",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2115",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0030517578, "add": -100, "min": 0, "max": 99.99, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2116",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2116",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYLINDER_3", "name": "Knock retard cylinder #3", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_CYLINDER_4", "name": "Knock retard cylinder #4", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
+        {"id": "CADENZA_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "Engine", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_CVVT_T", "name": "Variable valve timing temperature", "description": "Continuously variable valve timing temperature.", "group": "Engine", "bit": 272, "bits": 8, "add": -48, "min": -48, "max": 207, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211D",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CAT_1", "name": "Misfires harmful for catalyst cylinder 1", "group": "Engine.Misfires", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CAT_2", "name": "Misfires harmful for catalyst cylinder 2", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CAT_3", "name": "Misfires harmful for catalyst cylinder 3", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MIS_CAT_4", "name": "Misfires harmful for catalyst cylinder 4", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2221A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2221A0",
+      "interval": 10,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "CADENZA_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "CADENZA_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
+        {"id": "CADENZA_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"},
+        {"id": "CADENZA_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_WIDE_OPEN_THROTTLE", "name": "Wide open throttle", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_KNOCK_DETECTED_7E0", "name": "Knock detected", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 2,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "CADENZA_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_KNOCK_RETARD_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_LEARN_1", "name": "Knock learn cylinder 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_LEARN_2", "name": "Knock learn cylinder 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_LEARN_3", "name": "Knock learn cylinder 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "CADENZA_KNOCK_LEARN_4", "name": "Knock learn cylinder 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "byteOrder": "little", "multiply": 1379, "divide": 100, "min": 0, "max": 3516.45, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E019",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_3_E019", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "CADENZA_KNOCK_RETARD_4_E019", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_EMIS_MIS_TOT_1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_TOT_2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_TOT_3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_TOT_4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_TOT_5", "name": "Emission relevant misfires total, cylinder 5", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_EMIS_MIS_TOT_6", "name": "Emission relevant misfires total, cylinder 6", "group": "Engine", "bit": 112, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_5", "name": "Catalyst damaging misfires total, cylinder 5", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CATDMG_MIS_TOT_6", "name": "Catalyst damaging misfires total, cylinder 6", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "CADENZA_CYL_1_INJ_TIME_1ST", "name": "Cylinder 1 injection time 1st pulse", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_2_INJ_TIME_1ST", "name": "Cylinder 2 injection time 1st pulse", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_3_INJ_TIME_1ST", "name": "Cylinder 3 injection time 1st pulse", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_4_INJ_TIME_1ST", "name": "Cylinder 4 injection time 1st pulse", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_5_INJ_TIME_2ND", "name": "Cylinder 5 injection time 2nd pulse", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_6_INJ_TIME_2ND", "name": "Cylinder 6 injection time 2nd pulse", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_5_INJ_TIME_1ST", "name": "Cylinder 5 injection time 1st pulse", "group": "Engine", "bit": 392, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "CADENZA_CYL_6_INJ_TIME_1ST", "name": "Cylinder 6 injection time 1st pulse", "group": "Engine", "bit": 408, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED02",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED02",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 251, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A0",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_VSS_V3", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CADENZA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 152, "bits": 8, "values": {"1": "NEUTRAL", "2": "REVERSE", "3": "PARK", "4": "MANUAL"}, "valueDescriptions": {"1": "Neutral", "2": "Reverse", "3": "Park", "4": "Manual"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "CADENZA_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "CADENZA_OUTPUT_SPEED", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "CADENZA_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CADENZA_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "CADENZA_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "CADENZA_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A4",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
+        {"id": "CADENZA_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "CADENZA_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "CADENZA_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2101",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_VSS_V2", "name": "Vehicle speed", "description": "Current vehicle speed", "group": "Movement", "metric": "speed", "bit": 104, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -180, "max": 180, "unit": "mph"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22E004",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E004",
+      "interval": 10,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_VPWR_V3", "name": "12v battery charge", "group": "Battery", "bit": 152, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.21C0",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "21C0",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_RPM", "name": "Engine RPM", "group": "Engine", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "CADENZA_VSS_AWD", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_APP_REL_AWD", "name": "Relative accelerator pedal position", "group": "Control", "bit": 56, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CADENZA_SUPPLY_VOLTAGE", "name": "Supply voltage", "group": "Battery", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "CADENZA_SYSTEM_VOLTAGE", "name": "System voltage", "group": "Battery", "bit": 72, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "CADENZA_COMMANDED_TORQUE", "name": "Commanded torque", "group": "Engine", "bit": 80, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "Nm"},
+        {"id": "CADENZA_CLUTCH_SOLENOID_DUTY", "name": "Clutch solenoid duty", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "CADENZA_HEAT", "name": "Heat", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "°C"},
+        {"id": "CADENZA_FRONT_RIGHT_WHEEL_SPEED", "name": "Front right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_FRONT_LEFT_WHEEL_SPEED", "name": "Front left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_REAR_RIGHT_WHEEL_SPEED", "name": "Rear right wheel speed", "group": "Movement", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_LOCK_SWITCH", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CADENZA_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
+        {"id": "CADENZA_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CADENZA_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22C101",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "CADENZA_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CADENZA_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    }
+  ]
+}

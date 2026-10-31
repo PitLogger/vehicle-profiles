@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PitLogger/vehicle-profiles/schema/profile.schema.json",
+  "title": "PitLogger vehicle profile",
+  "description": "See SPEC.md. Unknown fields are allowed so that minor versions can add fields.",
+  "type": "object",
+  "required": ["format", "id", "kind", "source", "requests"],
+  "properties": {
+    "format": { "type": "string", "pattern": "^pitlogger-profile/1\\.\\d+$" },
+    "id": { "type": "string", "pattern": "^(generic|makes|vehicles)/[a-z0-9@/-]+$" },
+    "kind": { "enum": ["generic", "make", "vehicle"] },
+    "use": { "enum": ["always", "fallback"] },
+    "vehicle": {
+      "type": "object",
+      "properties": {
+        "make": { "type": "string" },
+        "makes": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "model": { "type": "string" },
+        "years": { "$ref": "#/$defs/yearsOrNull" },
+        "generations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": { "name": { "type": "string" }, "from": { "type": "integer" }, "to": { "type": "integer" } }
+          }
+        }
+      }
+    },
+    "diagnosticSession": { "$ref": "#/$defs/hexByte" },
+    "source": {
+      "type": "object",
+      "required": ["name", "license"],
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string" },
+        "file": { "type": "string" },
+        "revision": { "type": "string" },
+        "license": { "type": "string" },
+        "attribution": { "type": "string" }
+      }
+    },
+    "ecus": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tx", "type"],
+        "properties": {
+          "tx": { "$ref": "#/$defs/hex" },
+          "rx": { "$ref": "#/$defs/hex" },
+          "extendedAddress": { "$ref": "#/$defs/hexByte" },
+          "years": { "$ref": "#/$defs/years" },
+          "type": { "type": "string" }
+        }
+      }
+    },
+    "requests": { "type": "array", "items": { "$ref": "#/$defs/request" } },
+    "groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "match"],
+        "properties": {
+          "id": { "type": "string" }, "name": { "type": "string" }, "group": { "type": "string" },
+          "match": { "type": "string" }, "metric": { "type": "string" }
+        }
+      }
+    },
+    "computed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "formula"],
+        "properties": {
+          "id": { "type": "string" }, "name": { "type": "string" }, "group": { "type": "string" },
+          "min": { "type": "number" }, "max": { "type": "number" }, "unit": { "type": "string" },
+          "metric": { "type": "string" },
+          "formula": {
+            "type": "object",
+            "required": ["op"],
+            "properties": { "op": { "enum": ["ratio", "select", "unit"] } }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    { "if": { "properties": { "kind": { "const": "make" } } }, "then": { "required": ["use", "vehicle"] } },
+    { "if": { "properties": { "kind": { "const": "vehicle" } } }, "then": { "required": ["vehicle"] } }
+  ],
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^[0-9A-F]+$" },
+    "hexByte": { "type": "string", "pattern": "^[0-9A-F]{2}$" },
+    "years": {
+      "type": "object",
+      "properties": {
+        "from": { "type": "integer" },
+        "to": { "type": "integer" },
+        "years": { "type": "array", "items": { "type": "integer" } }
+      },
+      "additionalProperties": false
+    },
+    "yearsOrNull": { "oneOf": [{ "type": "null" }, { "$ref": "#/$defs/years" }] },
+    "request": {
+      "type": "object",
+      "required": ["id", "bus", "request", "interval", "signals"],
+      "properties": {
+        "id": { "type": "string" },
+        "bus": { "enum": ["can11", "can29", "kline-9141", "kline-14230", "obd"] },
+        "tx": { "$ref": "#/$defs/hex" },
+        "rx": { "$ref": "#/$defs/hex" },
+        "rxMask": { "$ref": "#/$defs/hex" },
+        "extendedAddress": { "$ref": "#/$defs/hexByte" },
+        "request": { "type": "string", "pattern": "^([0-9A-F]{2})+$" },
+        "interval": { "type": "number", "exclusiveMinimum": 0 },
+        "timeout": { "type": "number", "exclusiveMinimum": 0 },
+        "flowControl": { "type": "boolean" },
+        "tester": { "$ref": "#/$defs/hexByte" },
+        "session": {
+          "type": "object",
+          "properties": { "enter": { "$ref": "#/$defs/hexByte" }, "exit": { "$ref": "#/$defs/hexByte" } }
+        },
+        "kline": {
+          "type": "object",
+          "properties": {
+            "baud": { "type": "integer" },
+            "fastInit": {
+              "type": "object",
+              "required": ["low", "high"],
+              "properties": { "low": { "type": "integer" }, "high": { "type": "integer" } }
+            }
+          }
+        },
+        "years": { "$ref": "#/$defs/years" },
+        "answeredIn": { "type": "array", "items": { "type": "integer" } },
+        "notAnsweredIn": { "type": "array", "items": { "type": "integer" } },
+        "signals": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/signal" } }
+      },
+      "if": { "properties": { "bus": { "const": "obd" } } },
+      "else": { "required": ["tx"] }
+    },
+    "signal": {
+      "type": "object",
+      "required": ["id", "name", "bit", "bits"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "group": { "type": "string" },
+        "hidden": { "type": "boolean" },
+        "metric": { "type": "string" },
+        "bit": { "type": "integer", "minimum": 0 },
+        "bits": { "type": "integer", "minimum": 1 },
+        "byteOrder": { "enum": ["big", "little"] },
+        "signed": { "type": "boolean" },
+        "multiply": { "type": "number" },
+        "divide": { "type": "number", "not": { "const": 0 } },
+        "add": { "type": "number" },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "unit": { "type": "string" },
+        "invalidAtOrBelow": { "type": "number" },
+        "invalidAtOrAbove": { "type": "number" },
+        "optimal": {
+          "type": "object",
+          "properties": { "min": { "type": "number" }, "max": { "type": "number" }, "value": { "type": "number" } }
+        },
+        "labels": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 },
+        "values": { "type": "object", "additionalProperties": { "type": "string" } },
+        "valueDescriptions": { "type": "object", "additionalProperties": { "type": "string" } },
+        "display": { "enum": ["hex", "text"] }
+      },
+      "if": { "not": { "required": ["values"] } },
+      "then": { "required": ["min", "max"] }
+    }
+  }
+}

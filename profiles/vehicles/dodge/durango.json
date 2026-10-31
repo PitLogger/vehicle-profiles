@@ -1,0 +1,839 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/dodge/durango",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Dodge",
+    "model": "Durango",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (DN)", "from": 1998, "to": 2003},
+      {"name": "Second Generation (HB)", "from": 2004, "to": 2009},
+      {"name": "Third Generation (WD)", "from": 2011, "to": 2013},
+      {"name": "Third Generation (WD) 2014 Refresh", "from": 2014, "to": 2020},
+      {"name": "Third Generation (WD) 2021 Refresh", "from": 2021}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Dodge-Durango",
+    "file": "signalsets/v3/default.json",
+    "revision": "ad6d6bb25780ca8aa97dc5f0886a22743aef4310",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "740.4C0.22A0A1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_FL_AC", "name": "Front left tire pressure, altitude compensated", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TP_FR_AC", "name": "Front right tire pressure, altitude compensated", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TP_RR_AC", "name": "Rear right tire pressure, altitude compensated", "group": "Tires", "metric": "rearRightTirePressure", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TP_RL_AC", "name": "Rear left tire pressure, altitude compensated", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0A5|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A5",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_RL_VALID", "name": "Rear left tire pressure, valid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "DURANGO_TP_RR_VALID", "name": "Rear right tire pressure, valid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "DURANGO_TP_FR_VALID", "name": "Front right tire pressure, valid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "DURANGO_TP_FL_VALID", "name": "Front left tire pressure, valid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TT_FL", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F2|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F2",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F3|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F3",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F4|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F4",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "DURANGO_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "763.4E3.22032D|fc=1",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "4E3",
+      "request": "22032D",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_HIGHBEAMS_ON", "name": "High beams", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "DURANGO_HIGHBEAMS_MODE", "name": "High beam mode", "group": "Control", "bit": 4, "bits": 4, "values": {"0": "OFF", "1": "ON", "2": "HELD"}, "valueDescriptions": {"0": "Off", "1": "On", "2": "Held"}},
+        {"id": "DURANGO_REAR_WIPER", "name": "Rear wiper", "group": "Control", "bit": 12, "bits": 4, "values": {"0": "OFF", "1": "SPRAY", "2": "AUTO", "4": "ON"}, "valueDescriptions": {"0": "Off", "1": "Spray", "2": "Auto", "4": "On"}}
+      ]
+    },
+    {
+      "id": "7AB.52B.222802|fc=1",
+      "bus": "can11",
+      "tx": "7AB",
+      "rx": "52B",
+      "request": "222802",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015, 2017, 2018, 2022],
+      "signals": [
+        {"id": "DURANGO_GPS_HEADING", "name": "Heading", "group": "GPS", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 360, "unit": "°"},
+        {"id": "DURANGO_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 200, "bits": 4, "min": 0, "max": 15},
+        {"id": "DURANGO_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 204, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "DURANGO_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_V_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "DURANGO_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "DURANGO_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_AC_HIGH_SIDE_P_7E0", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "DURANGO_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "DURANGO_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D2",
+      "interval": 5,
+      "answeredIn": [2018, 2022, 2023, 2024],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "DURANGO_EOT_21D2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C", "invalidAtOrBelow": -64}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 30,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221935",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221935",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_IAT_1935", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 3600,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ODO_LAST_OVERSPEED", "name": "Odometer at last excess speed event", "group": "Movement", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.210A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "210A",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_TRANS_T_VAR_2", "name": "Transmission temperature, variant 2", "group": "Transmission", "bit": 128, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2118|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2118",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_3RDGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "add": -40, "min": -40, "max": 983.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.215C|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "215C",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_3RDGEN_V2", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 32, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_ATF_T", "name": "Transmission temperature", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225034",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225034",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_MAIN_CYL_P", "name": "Transmission main cylinder pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225043",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225043",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2022, 2023, 2024],
+      "signals": [
+        {"id": "DURANGO_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DURANGO_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    }
+  ]
+}

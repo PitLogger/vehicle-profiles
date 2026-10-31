@@ -1,0 +1,641 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "makes/nissaninfiniti",
+  "kind": "make",
+  "use": "always",
+  "vehicle": {"makes": ["Nissan", "Infiniti"], "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/NissanInfiniti",
+    "file": "signalsets/v3/default.json",
+    "revision": "8e8338f6281e1cc71169bd222d8ee102e0486b5b",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E0.7E8.221101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221101",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_ECT", "name": "Engine coolant temperature", "description": "Your engine temperature must operate within a certain temperature range to operate efficiently and safely. If it runs too hot, then your engine could be permanently damaged. If it runs too cold, then your engine will use more fuel than necessary.", "group": "Engine.Generic", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221102|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221102",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_VSS", "name": "Vehicle speed", "group": "Movement.Generic", "metric": "speed", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "km/h", "invalidAtOrAbove": 510}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221103",
+      "interval": 10,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_VPWR", "name": "Control module voltage", "description": "Power input to the OBD control module. VPWR is normally battery voltage, less any voltage drop in the circuit between the battery and the control module.", "group": "Battery.Generic", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 8, "divide": 100, "min": 0, "max": 20.4, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221104|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221104",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_FUEL_T", "name": "Fuel temperature", "group": "Fuel.Generic", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221105|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221105",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EGR_T", "name": "Exhaust gas recirculation temperature", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221106|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221106",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_IAT", "name": "Intake air temperature", "group": "Engine.Generic", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221107|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221107",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SPARKADV_2", "name": "Timing advance #2", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221108|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221108",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SPARKADV_3", "name": "Timing advance #3", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221109|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221109",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SPARKADV_4", "name": "Timing advance #4", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22110A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22110A",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SPARKADV_1", "name": "Timing advance #1", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22110E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22110E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_MAP_V", "name": "Manifold absolute pressure voltage", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221110",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EVAP_PCT", "name": "EVAP valve duty cycle", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221111",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_FUEL_T2", "name": "Fuel temperature #2", "group": "Fuel.Generic", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221114|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221114",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_FLI", "name": "Fuel tank level", "group": "Fuel.Generic", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221115|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221115",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EVAP_P", "name": "EVAP pressure", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221117|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221117",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_LOAD", "name": "Calculated load", "group": "Engine.Generic", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111A",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_O2S12", "name": "O2S output voltage bank 1, sensor 2", "group": "Engine.Generic.OxygenSensors", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EOT", "name": "Engine oil temperature", "group": "Engine.Generic", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221123|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221123",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_STFT1", "name": "Short term fuel trim, bank 1", "description": "Correction being used by the closed-loop fuel algorithm.", "group": "Engine.Generic", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221125|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221125",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_LTFT1", "name": "Long term fuel trim, bank 1", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22112D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22112D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SPARKADV_CORR", "name": "Timing advance correction", "group": "Engine.Generic", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22112E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22112E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_IDLE_RPM_CORR", "name": "Idle RPM correction", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 12.5, "min": 0, "max": 3187.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221133|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221133",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_ITA3", "name": "Injection timing angle #3", "group": "Engine.Generic", "bit": 0, "bits": 8, "add": -110, "min": -110, "max": 145, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221135|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221135",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_IVTB1", "name": "Intake valve timing, bank 1", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221138|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221138",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_IVTCSB1", "name": "Intake valve timing control solenoid, bank 1", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221146|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221146",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EVAP_CLOSE", "name": "Evap system close status", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221147|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221147",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_STFT1_LOW", "name": "Short term fuel trim, bank 1, lowest", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221148|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221148",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_STFT1_HIGH", "name": "Short term fuel trim, bank 1, highest", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22114E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22114E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_AFRATB1S1", "name": "Air/fuel ratio, bank 1, sensor 1", "group": "Engine.Generic", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221164|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221164",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_EXHVTB1", "name": "Exhaust valve timing, bank 1", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 2, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221178|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221178",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_FAN_DUTY", "name": "Fan duty", "group": "Climate.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22117B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22117B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_ALT_DUTY", "name": "Alternator duty", "group": "Engine.Generic", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221201",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_RPM", "name": "Engine RPM", "group": "Engine.Generic", "bit": 0, "bits": 16, "multiply": 12.5, "min": 0, "max": 6000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221203|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221203",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_MIL_DIST", "name": "Distance traveled while MIL was activated", "group": "DTCs.Generic", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221204",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_MAFVB1", "name": "Mass airflow voltage, bank 1", "group": "Battery.Generic", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221208",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_MAFVB1", "name": "Mass airflow voltage, bank 1", "group": "Engine.Generic", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221209|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221209",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_MAF", "name": "Mass airflow", "group": "Engine.Generic", "metric": "massAirFlow", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120C",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_FP", "name": "Fuel pressure", "group": "Fuel.Generic", "bit": 0, "bits": 16, "multiply": 20, "divide": 65535, "min": 0, "max": 20, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_APP1_V", "name": "Accelerator pedal position, sensor 1", "group": "Control.Generic", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_APP2_V", "name": "Accelerator pedal position, sensor 2", "group": "Control.Generic", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120F",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_TPP1_V", "name": "Throttle pedal position, sensor 1", "group": "Control.Generic", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221210|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221210",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_TPP2_V", "name": "Throttle pedal position, sensor 2", "group": "Control.Generic", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_CRUISE_VSS", "name": "Cruise speed", "group": "Cruise control.Generic", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 500, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_CRUISE_VSS_SET", "name": "Cruise speed, set", "group": "Cruise control.Generic", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 500, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221246|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221246",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_BATT_V", "name": "Battery voltage", "group": "Battery.Generic", "bit": 0, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221302|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221302",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_ADDLOAD", "name": "Additional load?", "group": "Control.Generic", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_AC", "name": "Air conditioning?", "group": "Control.Generic", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_POWER_STEERING", "name": "Power steering?", "group": "Control.Generic", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_CVT_POSITION", "name": "CVT position", "group": "Control.Generic", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_START_SIGNAL", "name": "Start signal?", "group": "Control.Generic", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_THROTTLE_CLOSED", "name": "Throttle closed?", "group": "Control.Generic", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221304|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221304",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_IGN", "name": "Ignition?", "group": "Control.Generic", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_HEATER_FAN", "name": "Heater fan?", "group": "Control.Generic", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_AC_PRESSURE", "name": "A/C pressure?", "group": "Control.Generic", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221305|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221305",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_BRAKE", "name": "Brake?", "group": "Control.Generic", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130A",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_COLD_START", "name": "Cold start?", "group": "Control.Generic", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130C",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_SRT_EGR", "name": "EGR/VVT ready?", "group": "Monitors.Generic", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "NI_SRT_HO2S_HTR", "name": "HO2S heater ready?", "group": "Monitors.Generic", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "NI_SRT_HO2S", "name": "HO2S ready?", "group": "Monitors.Generic", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "NI_SRT_REFRIGERANT", "name": "Refrigerant ready?", "group": "Monitors.Generic", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "NI_SRT_CAT", "name": "Catalyst ready?", "group": "Monitors.Generic", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "NI_CC_SET_LAMP", "name": "Cruise control set?", "group": "Cruise control.Generic", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NI_CC_LAMP", "name": "Cruise control?", "group": "Cruise control.Generic", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    }
+  ]
+}

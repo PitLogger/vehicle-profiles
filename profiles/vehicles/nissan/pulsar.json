@@ -1,0 +1,150 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/pulsar",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Pulsar",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (N10)", "from": 1978, "to": 1982},
+      {"name": "Second Generation (N12)", "from": 1982, "to": 1986},
+      {"name": "Third Generation (N13)", "from": 1986, "to": 1990},
+      {"name": "Fourth Generation (N14)", "from": 1991, "to": 1995},
+      {"name": "Fifth Generation (N15)", "from": 1995, "to": 2000},
+      {"name": "Sixth Generation (N16)", "from": 2001, "to": 2005},
+      {"name": "C13 Generation (European Market)", "from": 2014, "to": 2018}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Pulsar",
+    "file": "signalsets/v3/default.json",
+    "revision": "b557be25f5ad8c68610bd5b85ee51bc2d0fb639f",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PULSAR_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PULSAR_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "signals": [
+        {"id": "PULSAR_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PULSAR_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PULSAR_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PULSAR_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "PULSAR_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PULSAR_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PULSAR_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "PULSAR_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 5,
+      "signals": [
+        {"id": "PULSAR_AC_STATUS", "name": "Air conditioning status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 5,
+      "signals": [
+        {"id": "PULSAR_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 5,
+      "signals": [
+        {"id": "PULSAR_ECT", "name": "Engine coolant temperature", "group": "Climate", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 214, "unit": "°C", "invalidAtOrAbove": 214}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221186",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221186",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "PULSAR_FUEL_REMAINING", "name": "Remaining fuel", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221266",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221266",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "PULSAR_VVT_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "signals": [
+        {"id": "PULSAR_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1},
+        {"id": "PULSAR_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "signals": [
+        {"id": "PULSAR_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "PULSAR_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1}
+      ]
+    }
+  ]
+}

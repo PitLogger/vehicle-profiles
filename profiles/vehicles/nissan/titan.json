@@ -1,0 +1,315 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/titan",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Titan",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (A60)", "from": 2004, "to": 2015},
+      {"name": "Second Generation (A61)", "from": 2016, "to": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Titan",
+    "file": "signalsets/v3/default.json",
+    "revision": "c444075b8f2e77d68519daae2772c36ef60746ff",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "TITAN_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "723.735.220101",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220101",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_YAW_RATE", "name": "Yaw rate", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "723.735.220107",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220107",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_RADAR_DISTANCE", "name": "Radar distance", "group": "Cruise control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "m"}
+      ]
+    },
+    {
+      "id": "723.735.220108",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220108",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_RADAR_SPEED", "name": "Relative speed", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "m/s"}
+      ]
+    },
+    {
+      "id": "723.735.220110",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220110",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_STEER_ANGLE", "name": "Steering wheel angle", "description": "Negative values are clockwise, positive values are counter-clockwise.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_BRAKE_MC_P", "name": "Brake master cylinder pressure", "group": "Control", "bit": 0, "bits": 16, "divide": 1.536, "min": 0, "max": 42666.015}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2019],
+      "signals": [
+        {"id": "TITAN_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "multiply": 10, "min": 0, "max": 167772150, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2019],
+      "signals": [
+        {"id": "TITAN_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2019],
+      "signals": [
+        {"id": "TITAN_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018],
+      "signals": [
+        {"id": "TITAN_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2019],
+      "signals": [
+        {"id": "TITAN_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 5,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2020, 2021],
+      "signals": [
+        {"id": "TITAN_AC_STATUS", "name": "Air conditioning status code", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 5,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2020, 2021],
+      "signals": [
+        {"id": "TITAN_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 5,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2005, 2009, 2010, 2012, 2018, 2020, 2021],
+      "signals": [
+        {"id": "TITAN_ECT", "name": "Engine coolant temperature", "group": "Climate", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "758.778.2110|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "2110",
+      "interval": 15,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_WHL_1_P", "name": "Wheel 1 pressure", "group": "Tires", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "TITAN_WHL_2_P", "name": "Wheel 2 pressure", "group": "Tires", "bit": 24, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "TITAN_WHL_3_P", "name": "Wheel 3 pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "TITAN_WHL_4_P", "name": "Wheel 4 pressure", "group": "Tires", "bit": 40, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_F_RAT_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Engine", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_CAM_ADV_ANG_B2", "name": "Camshaft advance angle, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_CAM_VLV_DUTY_B2", "name": "Camshaft valve duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "TITAN_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1},
+        {"id": "TITAN_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "TITAN_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "TITAN_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1}
+      ]
+    }
+  ]
+}

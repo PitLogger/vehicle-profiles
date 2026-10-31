@@ -1,0 +1,180 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/dodge/dart",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Dodge",
+    "model": "Dart",
+    "years": null,
+    "generations": [{"name": "Dart (PF)", "from": 2013, "to": 2016}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Dodge-Dart",
+    "file": "signalsets/v3/default.json",
+    "revision": "b42bd8d4e9fdcecf35ee8a5c1e38857f394cc8b8",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "DART_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "DART_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2013, 2014],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DART_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 5,
+      "answeredIn": [2013, 2014],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DART_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.25,
+      "answeredIn": [2013, 2014],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "DART_GEAR_RAW_CNT", "name": "Gear, raw count", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.221018",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "DART_TCM_TORQUE", "name": "Transmission-reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA30.30.220885",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "220885",
+      "interval": 0.1,
+      "answeredIn": [2013, 2014, 2015],
+      "signals": [
+        {"id": "DART_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "add": -720, "min": -720, "max": 720, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "DART_BATT_V_BCM", "name": "Battery voltage, body computer", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 4, "divide": 25, "min": 0, "max": 40.8, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "notAnsweredIn": [2013, 2014, 2015],
+      "signals": [
+        {"id": "DART_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "notAnsweredIn": [2013, 2014, 2015],
+      "signals": [
+        {"id": "DART_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "answeredIn": [2013, 2014, 2015],
+      "signals": [
+        {"id": "DART_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "answeredIn": [2013, 2015],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "DART_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    }
+  ]
+}

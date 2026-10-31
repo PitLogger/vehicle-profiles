@@ -1,0 +1,167 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volkswagen/id7-tourer",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volkswagen",
+    "model": "ID7 Tourer",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volkswagen-ID7-Tourer",
+    "file": "signalsets/v3/default.json",
+    "revision": "2a143ae369df0ebe3fb149473aed926adbb18b55",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "710.77A.2215D1|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "2215D1",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ID7_HV_EM_PWR_LIMITATION", "name": "Electric motor power limitation", "group": "Engine", "bit": 8, "bits": 16, "multiply": 50, "min": 0, "max": 3276750, "unit": "W"},
+        {"id": "ID7_HV_EM_NV_PWR_LIMITATION", "name": "Electric motor non-vehicle power limitation", "group": "Engine", "bit": 24, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "W"},
+        {"id": "ID7_NV_ENERGY_REQUIREMENT", "name": "Non-vehicle energy requirement", "group": "Battery", "bit": 32, "bits": 8, "multiply": 50, "divide": 1000, "min": 0, "max": 12.75, "unit": "kWh"},
+        {"id": "ID7_HV_EM_HVBAT_ENERGY_INFORMATION", "name": "Electric motor battery energy", "group": "Battery", "bit": 40, "bits": 16, "multiply": 50, "divide": 1000, "min": 0, "max": 3276.75, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0E",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0E",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_SSB_R", "name": "Start/stop battery resistance", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 10, "min": 0, "max": 51, "unit": "mΩ"}
+      ]
+    },
+    {
+      "id": "710.77A.222A53|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A53",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ID7_DCDC_V_LOW", "name": "DC-DC converter, low voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "ID7_DCDC_I", "name": "DC-DC converter, current", "group": "Battery", "bit": 8, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"},
+        {"id": "ID7_DCDC_I_RSV", "name": "DC-DC converter, reserved current", "group": "Battery", "bit": 24, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB2|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB2",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_HVBAT_CAP", "name": "HV battery, max energy", "group": "Battery", "bit": 0, "bits": 16, "multiply": 50, "divide": 1000, "min": 0, "max": 3276.75, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB4|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB4",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ID7_RANGE_RESERVE_EST", "name": "Estimated electric power reserve", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "ID7_HVBAT_CSMP_AVG_INT", "name": "Average battery consumption", "group": "Battery", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB5|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB5",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ID7_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB6|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB6",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_RANGE", "name": "Range remaining, displayed", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB7",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_AVG_CSMP_CAT0", "name": "Average consumption, category 0", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT1", "name": "Average consumption, category 1", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT2", "name": "Average consumption, category 2", "group": "Trips", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT3", "name": "Average consumption, category 3", "group": "Trips", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT4", "name": "Average consumption, category 4", "group": "Trips", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT5", "name": "Average consumption, category 5", "group": "Trips", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "ID7_AVG_CSMP_CAT6", "name": "Average consumption, category 6", "group": "Trips", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB8|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB8",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_HVBAT_KWH", "name": "HV battery energy", "description": "Energy stored in the high voltage battery", "group": "Battery", "bit": 16, "bits": 16, "multiply": 25, "divide": 1000, "min": 0, "max": 1638, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AF7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AF7",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "ID7_AUX_BAT_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 0, "max": 69, "unit": "V"},
+        {"id": "ID7_AUX_BAT_C", "name": "12V battery current", "group": "Battery", "bit": 16, "bits": 32, "signed": true, "divide": 1000, "min": -1000000, "max": 1000000, "unit": "A"},
+        {"id": "ID7_AUX_BAT_SOC", "name": "12V battery soc", "group": "Battery", "bit": 56, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "ID7_AUX_BAT_T", "name": "Temperature, 12V battery", "group": "Battery", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ID7_AUX_BAT_T_S", "name": "Temperature, 12V battery sensor", "group": "Battery", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ID7_AUX_BAT_CHRG_TOT", "name": "12V battery total charge", "group": "Battery", "bit": 96, "bits": 32, "divide": 10, "min": 0, "max": 10000000, "unit": "Ah"},
+        {"id": "ID7_AUX_BAT_DSCH_TOT", "name": "12V battery total discharge", "group": "Battery", "bit": 128, "bits": 32, "divide": 10, "min": 0, "max": 10000000, "unit": "Ah"},
+        {"id": "ID7_AUX_BAT_AGE_CAP", "name": "12V battery aging by capacity", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "ID7_AUX_BAT_AGE_POW", "name": "12V battery aging by power", "group": "Battery", "bit": 168, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "ID7_AUX_BAT_CAP", "name": "12V battery adapted capacity", "group": "Battery", "bit": 176, "bits": 8, "min": 0, "max": 100, "unit": "Ah"}
+      ]
+    }
+  ]
+}

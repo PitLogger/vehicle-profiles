@@ -1,0 +1,352 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/infiniti/qx80",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "INFINITI",
+    "model": "QX80",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (Z62)", "from": 2014, "to": 2024},
+      {"name": "Second Generation", "from": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/INFINITI-QX80",
+    "file": "signalsets/v3/default.json",
+    "revision": "ecd1f4fab53be1649bb1734dee4de8f7134c19fa",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 0.25,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QX80_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "723.735.220101",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220101",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_YAW_RATE", "name": "Yaw rate", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "723.735.220107",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220107",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_RADAR_DISTANCE", "name": "Radar distance", "group": "Cruise control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "m"}
+      ]
+    },
+    {
+      "id": "723.735.220108",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220108",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_RADAR_SPEED", "name": "Relative speed", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "m/s"}
+      ]
+    },
+    {
+      "id": "723.735.220110",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220110",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_STEER_ANGLE", "name": "Steering wheel angle", "description": "Negative values are clockwise, positive values are counter-clockwise.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_ODO_METER", "name": "Odometer, meter group 1", "group": "Trips", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "QX80_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "QX80_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "QX80_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "QX80_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "QX80_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.224007",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224007",
+      "interval": 5,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_AC_STATUS", "name": "Air conditioning status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "744.224008",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224008",
+      "interval": 5,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "request": "22F467",
+      "interval": 5,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_ECT", "name": "Engine coolant temperature", "group": "Climate", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.2110|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QX80_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QX80_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QX80_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "QX80_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QX80_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QX80_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "QX80_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "758.778.2110|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "2110",
+      "interval": 15,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_WHL_1_P", "name": "Front left tire pressure, tire pressure monitor", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 16, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "QX80_WHL_2_P", "name": "Front right tire pressure, tire pressure monitor", "group": "Tires", "metric": "frontRightTirePressure", "bit": 24, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "QX80_WHL_3_P", "name": "Rear right tire pressure, tire pressure monitor", "group": "Tires", "metric": "rearRightTirePressure", "bit": 32, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "QX80_WHL_4_P", "name": "Rear left tire pressure, tire pressure monitor", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.220201",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220201",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_FL_TIRE_P", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.220202",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220202",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_FR_TIRE_P", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.220203",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220203",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_RR_TIRE_P", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.220204",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220204",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_RL_TIRE_P", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.22020D",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020D",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_TPW_FL", "name": "Front left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.22020E",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020E",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_TPW_FR", "name": "Front right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.22020F",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020F",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_TPW_RR", "name": "Rear right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "758.778.220210",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220210",
+      "interval": 15,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "QX80_TPW_RL", "name": "Rear left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "QX80_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "QX80_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "QX80_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "QX80_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "QX80_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    }
+  ]
+}

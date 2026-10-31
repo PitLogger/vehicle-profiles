@@ -1,0 +1,3448 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "makes/subaru",
+  "kind": "make",
+  "use": "fallback",
+  "vehicle": {"makes": ["Subaru"], "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Subaru",
+    "file": "signalsets/v3/default.json",
+    "revision": "f2b19fc11ae24be62f8b6fa129701e1fa4457103",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "753", "type": "tpms"},
+    {"tx": "7A2", "type": "engine"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "7E6", "type": "motor"},
+    {"tx": "7E7", "type": "hybridControl"}
+  ],
+  "requests": [
+    {
+      "id": "745.74D.22106E|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22106E",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVAC_P_745", "name": "Climate power, charging control", "group": "Climate", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.2210D1|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2210D1",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CTRL_MODE", "name": "Control system mode", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "DRIVING", "3": "CHARGING"}, "valueDescriptions": {"0": "None", "1": "Driving", "3": "Charging"}}
+      ]
+    },
+    {
+      "id": "745.74D.2210D4|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2210D4",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_P", "name": "Battery charging power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221619|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221619",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_AC_P_TGT", "name": "AC target power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "kW"},
+        {"id": "SUBARU_AC_A_LIMIT", "name": "AC current limit", "group": "Battery", "bit": 24, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "SUBARU_CHGR_OP", "name": "Charger operation status", "group": "Battery", "bit": 16, "bits": 8, "values": {"0": "STANDBY", "1": "READY", "2": "STOP", "3": "ROB_STOP"}, "valueDescriptions": {"0": "Standby", "1": "Ready", "2": "Stopped", "3": "Stopped by request"}}
+      ]
+    },
+    {
+      "id": "745.74D.22161C|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161C",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_V_TYPE", "name": "Charger supply voltage type", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "V100", "2": "V200"}, "valueDescriptions": {"0": "None", "1": "100V series", "2": "200V series"}}
+      ]
+    },
+    {
+      "id": "745.74D.22161D|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_IN_P", "name": "Charger input power", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.22161E|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161E",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHGR_OUT_P", "name": "Charger output power", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"},
+        {"id": "SUBARU_CHGR_OUT_P_TGT", "name": "Charger output power, target", "group": "Battery", "bit": 16, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221625|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221625",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_LID", "name": "Charging lid open", "group": "Doors", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "745.74D.221665|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221665",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_AC_P_USABLE", "name": "AC usable power", "group": "Battery", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221666|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221666",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HLC", "name": "DC high level communication state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221667|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221667",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_STOP_REQ", "name": "Charge stop request code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221669|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221669",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_PISW", "name": "Plug-in switch status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.22166A|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166A",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DC_STA_P_MAX", "name": "DC charger maximum power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.22166B|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166B",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DC_STA_V", "name": "DC charger present voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "745.74D.22166C|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DC_STA_A", "name": "DC charger present current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.22166D|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_A_TGT", "name": "Target charging current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.221679|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221679",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DC_STA_A_MAX", "name": "DC charger maximum current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.221681|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221681",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DC_STA_V_MAX", "name": "DC charger maximum voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "745.74D.221684|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221684",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_AC_OP", "name": "AC charging operation status", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "STOP", "1": "STARTUP", "2": "RUNNING", "3": "FINISHING"}, "valueDescriptions": {"0": "Stopped", "1": "Starting up", "2": "Running", "3": "Finishing"}}
+      ]
+    },
+    {
+      "id": "745.74D.221688|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221688",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_OUTCOME", "name": "Last charge outcome code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221692|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221692",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_MY_ROOM", "name": "Cabin mode active while parked", "group": "Climate", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "745.74D.2216A1|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2216A1",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CHG_P_PERMIT", "name": "Minimum permission power", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221738|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221738",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_SOC_745", "name": "State of charge, charging control", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "745.74D.221739|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221739",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVBAT_SOC_DISPLAY", "name": "Displayed HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.221032",
+      "bus": "can11",
+      "tx": "746",
+      "request": "221032",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_STEER_ANGLE_746", "name": "Steering wheel angle, v2", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 5, "min": -640, "max": 635, "unit": "°"}
+      ]
+    },
+    {
+      "id": "747.74F.220103|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_ODO_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "747.74F.22182E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22182E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVBAT_CMU01_VOLT", "name": "HV battery module 01 voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"},
+        {"id": "SUBARU_HVBAT_CMU02_VOLT", "name": "HV battery module 02 voltage", "group": "Battery.Modules.02", "bit": 16, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "747.74F.221D3E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221D3E",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CAP_1", "name": "Full charge capacity 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_2", "name": "Full charge capacity 2", "group": "Battery", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_3", "name": "Full charge capacity 3", "group": "Battery", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_4", "name": "Full charge capacity 4", "group": "Battery", "bit": 48, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_5", "name": "Full charge capacity 5", "group": "Battery", "bit": 64, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_6", "name": "Full charge capacity 6", "group": "Battery", "bit": 80, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_7", "name": "Full charge capacity 7", "group": "Battery", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "SUBARU_CAP_8", "name": "Full charge capacity 8", "group": "Battery", "bit": 112, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "747.74F.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F5B",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_SOC_747", "name": "State of charge, battery ECU", "group": "Battery", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "750.2115|e=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "extendedAddress": "2A",
+      "request": "2115",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TP_2_FL", "name": "Front left tire pressure, variant 2", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_2_FR", "name": "Front right tire pressure, variant 2", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_2_RL", "name": "Rear left tire pressure, variant 2", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_2_RR", "name": "Rear right tire pressure, variant 2", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_2_SPARE", "name": "Spare tire pressure, variant 2", "group": "Tires", "bit": 32, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "750.2130|e=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "extendedAddress": "2A",
+      "request": "2130",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TP_FL_750", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_FR_750", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_RL_750", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_RR_750", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"},
+        {"id": "SUBARU_TP_SPARE", "name": "Spare tire pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.89, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "750.758.2116|t=96,e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2116",
+      "interval": 5,
+      "timeout": 0.6,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "SUBARU_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "SUBARU_TT_FL", "name": "Front left tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "SUBARU_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "SUBARU_TT_SPARE", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "750.758.221004|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TT_1", "name": "Front right tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "SUBARU_TT_2", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "SUBARU_TT_3", "name": "Rear right tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "SUBARU_TT_4", "name": "Rear left tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30}
+      ]
+    },
+    {
+      "id": "750.758.221005|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221005",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TP_1", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 8, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_3", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_4", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 56, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "750.758.222021|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "222021",
+      "interval": 86400,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TID_1", "name": "Tire 1 position", "group": "Tires", "bit": 0, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "SUBARU_TID_2", "name": "Tire 2 position", "group": "Tires", "bit": 8, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "SUBARU_TID_3", "name": "Tire 3 position", "group": "Tires", "bit": 16, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "SUBARU_TID_4", "name": "Tire 4 position", "group": "Tires", "bit": 24, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}}
+      ]
+    },
+    {
+      "id": "753.75B.221022|t=64,fc=1",
+      "bus": "can11",
+      "tx": "753",
+      "rx": "75B",
+      "request": "221022",
+      "interval": 15,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 16, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SUBARU_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "753.75B.221028|t=64,fc=1",
+      "bus": "can11",
+      "tx": "753",
+      "rx": "75B",
+      "request": "221028",
+      "interval": 86400,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_TID1", "name": "Tire 1 id", "group": "Tires", "bit": 0, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "SUBARU_TID2", "name": "Tire 2 id", "group": "Tires", "bit": 24, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "SUBARU_TID3", "name": "Tire 3 id", "group": "Tires", "bit": 48, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "SUBARU_TID4", "name": "Tire 4 id", "group": "Tires", "bit": 72, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "7A2.2210A6|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "2210A6",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_ACC_POS", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.221135|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "221135",
+      "interval": 0.5,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A2.221136|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "221136",
+      "interval": 1,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.220005",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "220005",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_ECT", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.220023",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "220023",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22003C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22003C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EGT_AT_CATALYST_INLET", "name": "Exhaust gas temperature, catalyst inlet", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22003E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22003E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EGT_DPF_INLET", "name": "Exhaust gas temperature at DPF inlet", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A1",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MAF_VOLTAGE", "name": "Mass airflow sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "SUBARU_7A2_10A1_RAW", "name": "Body module 10A1 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A4",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FUEL_INJECTOR_2_PULSE_WIDTH", "name": "Fuel injector #2 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "divide": 3.90625, "min": 0, "max": 65.28, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A5",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ODO_7A2_10A5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A7",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A7",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FUEL_T", "name": "Fuel temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AB",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AB",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_RADIATOR_FAN", "name": "Radiator fan control", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AC",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AC",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_PRIMARY_BOOST_CTRL", "name": "Primary boost control", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AE",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CPC_VALVE_DUTY_CYCLE", "name": "Canister purge control valve duty cycle", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B1",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EGR_STEPS", "name": "Exhaust gas recirculation steps", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B2",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ALTERNATOR_DUTY", "name": "Alternator duty", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B3",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FUEL_PUMP_DUTY", "name": "Fuel pump duty", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B4",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INTAKE_VVT_ADVANCE_RIGHT", "name": "Intake VVT advance angle right", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B5",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INTAKE_VVT_ADVANCE_LEFT", "name": "Intake VVT advance angle left", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B6",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B6",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OCV_DUTY_RIGHT", "name": "Oil control valve duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B7",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B7",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OCV_DUTY_LEFT", "name": "Oil control valve duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210BE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210BE",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_A_F_SENSOR_1", "name": "A/F sensor #1", "group": "ECU", "bit": 0, "bits": 8, "multiply": 1.99, "divide": 255, "min": 0, "max": 1.99}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D2",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EWG_VALVE_POSITION_SENSOR_LEARNING_CLOSED", "name": "Electric waste gate valve position sensor learning value at fully-closed position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39.8, "divide": 255, "add": -10, "min": -10, "max": 29, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D3",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EWG_VALVE_REQUEST_POSITION", "name": "Electric waste gate valve request position value", "group": "ECU", "bit": 0, "bits": 16, "multiply": 40, "divide": 65535, "add": -10, "min": -10, "max": 30, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D4",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EWG_VALVE_ACTUAL_POSITION", "name": "Electric waste gate valve actual position value", "group": "ECU", "bit": 0, "bits": 16, "multiply": 40, "divide": 65535, "add": -10, "min": -10, "max": 30, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210DE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210DE",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_THROTTLE_MOTOR_DUTY", "name": "Throttle motor duty", "group": "ECU", "bit": 0, "bits": 8, "multiply": 0.784, "add": -100, "min": -100, "max": 99.92, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E3",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CRUISE_VSS_T", "name": "Cruise speed, set", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E5",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ODO_7A2_10E5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E6",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E6",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FUEL_TANK_AIR_PRESSURE", "name": "Fuel tank air pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E8",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E8",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OSV_DUTY_RIGHT", "name": "Oil supply value, duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E9",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E9",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OSV_DUTY_LEFT", "name": "Oil supply value, duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210EE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210EE",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXHAUST_OCV_DUTY_RIGHT", "name": "Exhaust OCV duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210EF",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210EF",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXHAUST_OCV_DUTY_LEFT", "name": "Exhaust OCV duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ROUGHNESS_MONITOR_1", "name": "Roughness monitor #1", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ROUGHNESS_MONITOR_2", "name": "Roughness monitor #2", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ROUGHNESS_MONITOR_3", "name": "Roughness monitor #3", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ROUGHNESS_MONITOR_4", "name": "Roughness monitor #4", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221116",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221116",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FINAL_INJECTION_AMOUNT_MM_ST", "name": "Final injection amount", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221118",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221118",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TARGET_INTAKE_MANIFOLD_PRESSURE", "name": "Target intake manifold pressure", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 50, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EGR_TARGET_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation target valve opening angle", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EGR_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation valve opening angle", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111F",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INLET_AIR_T_AFTER_AIR_FILTER", "name": "Inlet air temperature, after air filter", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221121",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221121",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TARGET_ENGINE_SPEED", "name": "Target engine speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MILEAGE_AFTER_INJECTOR_LEARNING", "name": "Mileage after injector learning", "group": "ECU", "bit": 0, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MILEAGE_AFTER_INJECTOR_REPLACEMENT", "name": "Mileage after injector replacement", "group": "ECU", "bit": 0, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INTERIOR_HEATER", "name": "Interior heater", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_QUANTITY_CORRECTION_1", "name": "Quantity correction cylinder #1", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_QUANTITY_CORRECTION_2", "name": "Quantity correction cylinder #2", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112F",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_QUANTITY_CORRECTION_3", "name": "Quantity correction cylinder #3", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221130",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221130",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_QUANTITY_CORRECTION_4", "name": "Quantity correction cylinder #4", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221149",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221149",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CUM_ASH_RAT", "name": "Cumulative ash ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_PRESSURE_DIFFERENCE_BETWEEN_DPF_INLET_AND_OUTLET", "name": "Pressure difference between DPF inlet and outlet", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ESTIMATED_CATALYST_T", "name": "Estimated catalyst temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -40, "min": -40, "max": 1235, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ESTIMATED_DPF_T", "name": "Estimated DPF temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -40, "min": -40, "max": 1235, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SOOT_ACCUMULATION_RATIO", "name": "Soot accumulation ratio", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OIL_DILUTION_RATIO", "name": "Oil dilution ratio", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221155",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221155",
+      "interval": 30,
+      "signals": [
+        {"id": "SUBARU_ESTIMATED_DIST_OIL", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221156",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221156",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_RUNNING_DISTANCE_SINCE_LAST_DPF_REGENERATION", "name": "Running distance since last DPF regeneration", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221157",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221157",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DPF_REGENERATION_COUNT", "name": "Diesel particulate filter regeneration count", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221158",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221158",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MQI_FLV_1_1", "name": "Micro-quantity-injection final learning value #1 cylinder #1", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_2_1", "name": "Micro-quantity-injection final learning value #2 cylinder #1", "group": "ECU", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_3_1", "name": "Micro-quantity-injection final learning value #3 cylinder #1", "group": "ECU", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_4_1", "name": "Micro-quantity-injection final learning value #4 cylinder #1", "group": "ECU", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_5_1", "name": "Micro-quantity-injection final learning value #5 cylinder #1", "group": "ECU", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221159",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221159",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MQI_FLV_1_2", "name": "Micro-quantity-injection final learning value #1 cylinder #2", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_2_2", "name": "Micro-quantity-injection final learning value #2 cylinder #2", "group": "ECU", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_3_2", "name": "Micro-quantity-injection final learning value #3 cylinder #2", "group": "ECU", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_4_2", "name": "Micro-quantity-injection final learning value #4 cylinder #2", "group": "ECU", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_5_2", "name": "Micro-quantity-injection final learning value #5 cylinder #2", "group": "ECU", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22115A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22115A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MQI_FLV_1_3", "name": "Micro-quantity-injection final learning value #1 cylinder #3", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_2_3", "name": "Micro-quantity-injection final learning value #2 cylinder #3", "group": "ECU", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_3_3", "name": "Micro-quantity-injection final learning value #3 cylinder #3", "group": "ECU", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_4_3", "name": "Micro-quantity-injection final learning value #4 cylinder #3", "group": "ECU", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_5_3", "name": "Micro-quantity-injection final learning value #5 cylinder #3", "group": "ECU", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22115B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22115B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MQI_FLV_1_4", "name": "Micro-quantity-injection final learning value #1 cylinder #4", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_2_4", "name": "Micro-quantity-injection final learning value #2 cylinder #4", "group": "ECU", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_3_4", "name": "Micro-quantity-injection final learning value #3 cylinder #4", "group": "ECU", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_4_4", "name": "Micro-quantity-injection final learning value #4 cylinder #4", "group": "ECU", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "SUBARU_MQI_FLV_5_4", "name": "Micro-quantity-injection final learning value #5 cylinder #4", "group": "ECU", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221161",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221161",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INDIVIDUAL_PUMP_DIFFERENCE_LEARNING_VALUE", "name": "Individual pump difference learning value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221162",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221162",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FINAL_MAIN_INJECTION_PERIOD", "name": "Final main injection period", "group": "ECU", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22116A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22116A",
+      "interval": 30,
+      "signals": [
+        {"id": "SUBARU_DIST_SINCE_PF_WARN", "name": "Distance since particulate filter warning", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221189",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221189",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OIL_DILUTION_AMOUNT", "name": "Oil dilution amount", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "min": 0, "max": 1.275}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2211A1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2211A1",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration attempts", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2211D0",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2211D0",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_KNOCKING_SIGNAL", "name": "Knocking signal", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22122F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22122F",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CLUTCH_SWITCH", "name": "Clutch switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221230",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221230",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_STOP_LIGHT_SWITCH", "name": "Stop light switch", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221231",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221231",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CC_SET_COAST_SWITCH", "name": "Cruise control set/coast switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221232",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221232",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CC_RESUME_ACCELERATE_SWITCH", "name": "Cruise control resume/accelerate switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221233",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221233",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221234",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221234",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CC_MAIN_TOGGLE_SWITCH", "name": "Cruise control main toggle switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CC_CANCEL_SWITCH", "name": "Cruise control cancel switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_OIL_LEVEL_SWITCH", "name": "Oil level switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124F",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_GLOW_RELAY_SWITCH", "name": "Glow relay switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221251",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221251",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SUB_FUEL_PUMP_RELAY_SWITCH", "name": "Sub fuel pump relay switch", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221254",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221254",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INJECTOR_LEARNING_SWITCH", "name": "Injector learning switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22125B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22125B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DPF_ACTIVE_REGENERATION_SWITCH", "name": "Diesel particulate filter active regeneration switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22129C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22129C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ENGINE_STARTING_TIME", "name": "Engine starting time", "group": "ECU", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2212ED|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2212ED",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_MAF_AVG", "name": "Mass air flow, average", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
+        {"id": "SUBARU_MASS_AIR_FLOW_AVERAGE", "name": "Mass air flow average", "group": "ECU", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 5, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221314",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221314",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MONITOR_1", "name": "Cylinder monitor #1", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221315",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221315",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MONITOR_2", "name": "Cylinder monitor #2", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221316",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221316",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MONITOR_3", "name": "Cylinder monitor #3", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221317",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221317",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_MONITOR_4", "name": "Cylinder monitor #4", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221321",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221321",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_BAT_TERMINAL_VOLTAGE", "name": "Battery terminal voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221322",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221322",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_BAT_CHARGE_DISCHARGE_CURRENT", "name": "Battery charge/discharge current", "group": "Battery", "bit": 0, "bits": 32, "multiply": 10, "divide": 10000, "add": -2000, "min": -2000, "max": 4292967.295, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221323",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221323",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ESTIMATED_BAT_T", "name": "Estimated battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221324",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221324",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_REMAINING_BAT_CAPACITY", "name": "Remaining battery capacity", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22307A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22307A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INLET_AIR_T", "name": "Inlet air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210C8",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210C8",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_LOCK_UP_DUTY_RATIO", "name": "Lock up duty ratio", "group": "ECU", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210C9",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210C9",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TRANSFER_DUTY_RATIO", "name": "Transfer duty ratio", "group": "ECU", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210CB",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210CB",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210D2",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210D2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CVT_T", "name": "Continuously variable transmission temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "SUBARU_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221138",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221138",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SECONDARY_PULLEY_SPEED", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113A",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACTUAL_SECONDARY_PRESSURE", "name": "Actual secondary pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113B",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SECONDARY_SET_CURRENT", "name": "Secondary set current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113C",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SECONDARY_ACTUAL_CURRENT", "name": "Secondary actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113D",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TARGET_GEAR_RATIO", "name": "Target gear ratio", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 256, "divide": 65535, "min": 0, "max": 0.9961}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113E",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACTUAL_GEAR_RATIO", "name": "Actual gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 256, "divide": 65535, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221141",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221141",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACTUAL_PRIMARY_PRESSURE", "name": "Actual primary pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221146",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221146",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_PRIMARY_PULLEY_SPEED", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221147",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221147",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FRONT_WHEEL_SPEED", "name": "Front wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B1",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B1",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACTUAL_LINE_PRESSURE", "name": "Actual line pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B2",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_LIN_SOLENOID_ACTUAL_CURRENT", "name": "Lin. solenoid actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B4",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B4",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_AWD_SOLENOID_SET_CURRENT", "name": "All-wheel drive solenoid set current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B5",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B5",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_AWD_SOLENOID_ACTUAL_CURRENT", "name": "All-wheel drive solenoid actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2103",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "SUBARU_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "SUBARU_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "SUBARU_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "SUBARU_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "SUBARU_YAW_RATE", "name": "Yaw rate", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "SUBARU_STEER_ANGLE_7B0", "name": "Steering wheel angle", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221006",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221006",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_MASTER_CYL_TEMP", "name": "Master cylinder sensor temperature", "group": "Brakes", "bit": 0, "bits": 8, "add": -80, "min": -20, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221024|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221024",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_FR_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221025|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221025",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_FL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221026|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221026",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_RR_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221027|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221027",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_RL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221029|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221029",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32767, "max": 32767, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221045|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221045",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_EPB", "name": "Parking brake actuator status", "group": "Brakes", "bit": 0, "bits": 8, "values": {"0": "APPLIED"}, "valueDescriptions": {"0": "Applied"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.22104C|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "22104C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_BRAKE_STROKE", "name": "Brake pedal stroke", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2129",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2129",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221001|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221001",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221002|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221002",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_AAT_7C4", "name": "Ambient temperature, climate", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221036|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221036",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVAC_SET_RAW", "name": "Climate set point code", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221086|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221086",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HEATER_RAW", "name": "Electric heater power count", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7C4.7CC.222801|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "222801",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_BLOWER", "name": "Blower level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_ODO_7D2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221004|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221060|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221060",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_APP", "name": "Accelerator pedal position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221061|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221061",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVBAT_SOC_MAX", "name": "Maximum HV battery charge", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "SUBARU_HVBAT_SOC_MIN", "name": "Minimum HV battery charge", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106E|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106E",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVAC_P", "name": "Climate power", "group": "Climate", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "signals": [
+        {"id": "SUBARU_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "SUBARU_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "SUBARU_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "SUBARU_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221076|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221076",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_READY", "name": "Ready to drive", "group": "Drivetrain", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221087|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221087",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_AWD_MODE", "name": "All-wheel drive mode", "group": "Drivetrain", "bit": 8, "bits": 8, "values": {"0": "NORMAL", "2": "SNOW_DIRT", "3": "DEEP_SNOW_MUD", "4": "SNOW_DIRT_PAUSED", "5": "DEEP_SNOW_MUD_PAUSED"}, "valueDescriptions": {"0": "Normal", "2": "Snow/dirt", "3": "Deep snow/mud", "4": "Snow/dirt, paused", "5": "Deep snow/mud, paused"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "SUBARU_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A2",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_RM_TQ_REQ", "name": "Rear motor torque, requested", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "Nm"},
+        {"id": "SUBARU_RM_TQ", "name": "Rear motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A6",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A6",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SUBARU_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E5|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E5",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_12V_CAP", "name": "12V battery full charge capacity", "group": "Electrical", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E8|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E8",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_12V_AH_IN", "name": "12V battery charge, total", "group": "Electrical", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "SUBARU_12V_AH_OUT", "name": "12V battery discharge, total", "group": "Electrical", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "SUBARU_READY_HOURS", "name": "Ready-on time, total", "group": "Stats", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "signals": [
+        {"id": "SUBARU_12V_C_V2", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_T_V2", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221609",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221609",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_CHRG_V", "name": "HV battery charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221829",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221829",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_MAX_T", "name": "HV battery maximum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22182A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22182A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_MIN_T", "name": "HV battery minimum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F46",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F46",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "signals": [
+        {"id": "SUBARU_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "SUBARU_HVBAT_C", "name": "HV battery current", "group": "Battery", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221FA6|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221FA6",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_ODO_1FA6", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 224, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_CC_SPD", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2151",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
+        {"id": "SUBARU_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SUBARU_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220005",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22002F|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22002F",
+      "interval": 30,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22101E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22101E",
+      "interval": 3600,
+      "signals": [
+        {"id": "SUBARU_TRIP_CNT", "name": "Trip counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210A3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210A3",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_FUEL_INJ_1_WIDTH", "name": "Fuel injection 1 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 32, "divide": 125, "min": 0, "max": 65.28, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210AC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210AC",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_PRIMARY_BOOST_CTRL_7E0", "name": "Primary boost control", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210AF",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TUMBLE_GEN_VLV_POS", "name": "Tumble generator valve position sensor right", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210B0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210B0",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TUMBLE_GEN_VLV_POS_SENS", "name": "Tumble generator valve position sensor left", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210E5|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210E5",
+      "interval": 15,
+      "timeout": 0.4,
+      "flowControl": true,
+      "signals": [
+        {"id": "SUBARU_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km", "invalidAtOrAbove": 131070}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210E7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210E7",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210EC",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXH_VVT_RETARD_ANG", "name": "Exhaust VVT retard angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210ED",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210ED",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXH_VVT_RETARD_ANG_LEFT", "name": "Exhaust VVT retard angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221149",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221149",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CUM_ASH_RAT_7E0", "name": "Cumulative ash ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221155",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221155",
+      "interval": 30,
+      "signals": [
+        {"id": "SUBARU_ESTIMATED_DIST_OIL_CHANGE", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116A",
+      "interval": 30,
+      "signals": [
+        {"id": "SUBARU_DIST_SINCE_PF_WARN_7E0", "name": "Distance since particulate filter warning", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BE",
+      "interval": 3600,
+      "signals": [
+        {"id": "SUBARU_INT_VVT_CLEANING", "name": "Intake VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BF",
+      "interval": 3600,
+      "signals": [
+        {"id": "SUBARU_EXH_VVT_CLEANING", "name": "Exhaust VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CLUTCH_PRESSED", "name": "Clutch pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221233",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221233",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_BRAKE_PRESSED", "name": "Brake pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221275",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221275",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_THROTTLE_MOTOR_V", "name": "Throttle motor voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 25, "min": 0, "max": 20.4, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221276",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221276",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_SUB_THROTTLE_SENS", "name": "Sub throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221277",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221277",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_MAIN_THROTTLE_SENS", "name": "Main throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221278",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221278",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_SUB_ACCEL_SENS", "name": "Sub accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_MAIN_ACCEL_SENS", "name": "Main accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221289",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221289",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_IDLE_MAF", "name": "Idle mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_IDLE_MAF_FEEDBACK", "name": "Idle mass air flow feedback correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128B",
+      "interval": 3600,
+      "signals": [
+        {"id": "SUBARU_IDLE_SPD_CTRL", "name": "Idle speed control learning value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_IDLE_AC_LOAD_CORR", "name": "Idle A/C load correction", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ELEC_LOAD_FEEDBACK", "name": "Electric load feedback value", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128E",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_IDLE_DIRTY_THROTTLE", "name": "Idle dirty throttle correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128F",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INT_VVT_ADVANCE_TGT", "name": "Intake VVT advance, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221290",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221290",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INT_VVT_ADVANCE_TGT_ANG", "name": "Intake VVT advance, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221291",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221291",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXH_VVT_RETARD_TGT", "name": "Exhaust VVT retard, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221292",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221292",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_EXH_VVT_RETARD_TGT_ANG", "name": "Exhaust VVT retard, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221295",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221295",
+      "interval": 3600,
+      "signals": [
+        {"id": "SUBARU_PURGE_DENSITY_LEARN", "name": "Purge density learn value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 332, "divide": 425, "add": -100, "min": -100, "max": 99.1999, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221298",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221298",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_TRANS_TURBINE_SPD", "name": "Transmission turbine speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221299",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221299",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_TRANS_LOCK_UP", "name": "Transmission lock-up", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212CE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212CE",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_AMBIENT_T_SENS_SIG", "name": "Ambient temperature for sensor signal", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212D1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212D1",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_AMBIENT_T_CTRL", "name": "Ambient temperature for control", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221352",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221352",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SPLIT_RAT_FUEL_INJ_1", "name": "Split ratio of fuel injection 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221353",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SPLIT_RAT_FUEL_INJ_2", "name": "Split ratio of fuel injection 2", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221354",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221354",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SPLIT_RAT_FUEL_INJ_3", "name": "Split ratio of fuel injection 3", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221355",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221355",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_SPLIT_RAT_FUEL_INJ_4", "name": "Split ratio of fuel injection 4", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221357",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221357",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DIRECT_FUEL_INJ_TIME_1", "name": "Direct fuel injection time 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221358",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221358",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DIRECT_FUEL_INJ_TIME_2", "name": "Direct fuel injection time 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221359",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221359",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DIRECT_FUEL_INJ_TIME_3", "name": "Direct fuel injection time 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22135A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22135A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DIRECT_FUEL_INJ_TIME_4", "name": "Direct fuel injection time 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221017",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221017",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_CVT_T_V2", "name": "CVT fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221045",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221045",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_CVT_LOCKUP_DUTY", "name": "Torque converter lock-up duty", "group": "Transmission", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221065",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221065",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_AWD_TRANSFER_DUTY", "name": "All-wheel drive transfer clutch duty", "group": "Transmission", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221067",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221067",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CVT_TURBINE_RPM", "name": "Turbine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2211CB",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2211CB",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_TURBINE_REVOLUTION", "name": "Turbine revolution speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 32, "min": 0, "max": 2097120, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22300E",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22300E",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CVT_PRI_PULLEY_RPM", "name": "CVT primary pulley speed", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2230D0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2230D0",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CVT_SEC_PULLEY_RPM", "name": "CVT secondary pulley speed", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2230DA",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2230DA",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CVT_RATIO", "name": "CVT gear ratio, actual", "group": "Transmission", "bit": 0, "bits": 16, "divide": 255, "min": 0, "max": 257}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2230F8",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2230F8",
+      "interval": 0.25,
+      "signals": [
+        {"id": "SUBARU_CVT_RATIO_TGT", "name": "CVT gear ratio, target", "group": "Transmission", "bit": 0, "bits": 16, "divide": 255, "min": 0, "max": 257}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221021",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221021",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_ST_CHG", "name": "High voltage battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102A",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_T_1", "name": "High voltage battery temperature 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102B",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102B",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_T_2", "name": "High voltage battery temperature 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102C",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_T_3", "name": "High voltage battery temperature 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102D",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221143",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221143",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_CELL_T", "name": "High voltage battery cell temperature estimated", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -100, "min": -100, "max": 6453.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221052",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221052",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_TORQUE_OUTPUT_ACTUAL", "name": "Drive motor torque output actual", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221055",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221055",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_OUTPUT_POWER", "name": "Drive motor output power", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221057",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221057",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_TORQUE_TARGET", "name": "Drive motor torque target", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221058",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221058",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_SPEED", "name": "Drive motor speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221059",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221059",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_SPEED_TARGET", "name": "Drive motor speed target", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22105D",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22105D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_TORQUE_UPPER_LIMIT", "name": "Drive motor torque upper limit", "group": "ECU", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22105E",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22105E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_TORQUE_LOWER_LIMIT", "name": "Drive motor torque lower limit", "group": "ECU", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221063",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221063",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_INVERTER_INPUT_HV_SENSOR", "name": "Drive motor inverter input HV sensor", "group": "ECU", "bit": 0, "bits": 16, "multiply": 2500, "divide": 10000, "min": 0, "max": 16383.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221065",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221065",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_INVERTER_T_ESTIMATED", "name": "Inverter temperature estimated", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221066",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221066",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_INVERTER_T_A", "name": "Drive motor inverter temperature a", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221067",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221067",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_INVERTER_T_B", "name": "Drive motor inverter temperature b", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221068",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221068",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_INVERTER_T_C", "name": "Drive motor inverter temperature c", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106B",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106B",
+      "interval": 5,
+      "signals": [
+        {"id": "SUBARU_ATF_T", "name": "Transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106D",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106D",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_T_A", "name": "Drive motor temperature a", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106E",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106E",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_DRIVEMOTOR_T_B", "name": "Drive motor temperature b", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221081",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221081",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_COOLING_FAN", "name": "High voltage battery cooling fan speed", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221082",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221082",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_COOLING_FAN_TGT", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221084",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221084",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_COOLING_FAN_DUTY", "name": "High voltage battery cooling fan duty output", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221033",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221033",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_ST_CHG_7E7", "name": "High voltage battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221037",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221037",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_AUX_BAT_VOLTAGE", "name": "12V aux battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 25.5, "divide": 255, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221039",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221039",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_ENGINE_RESTART_BAT_VOLTAGE", "name": "12V engine restart battery voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 25.5, "divide": 255, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221077",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221077",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_ENGINE_RESTART_BAT_SOC", "name": "12V engine restart battery soc", "group": "Battery", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221079",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221079",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_ENGINE_RESTART_BAT_T", "name": "12V engine restart battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22107A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22107A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_COOLING_FAN_DUTY_TGT", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222006",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222006",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ENGINE_TORQUE_TARGET", "name": "Engine torque target", "group": "ECU", "bit": 0, "bits": 16, "divide": 10, "add": -1000, "min": -1000, "max": 5553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222009",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222009",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_TOT_V", "name": "High voltage battery total voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22200A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22200A",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_CURRENT", "name": "High voltage battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -200, "min": -200, "max": 6353.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22200C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22200C",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_COOLING_FAN_DUTY_TGT_7E7", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222012",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222012",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_CURRENT", "name": "12V engine restart battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -2000, "min": -2000, "max": 4553.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222014",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222014",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_SOC_CONTROL", "name": "12V engine restart battery soc control", "group": "Battery", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222021",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222021",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_ST_HEALTH", "name": "High voltage battery state of health", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222022",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222022",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_T_MAX", "name": "High voltage battery temperature max", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222023",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222023",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_T_MIN", "name": "High voltage battery temperature min", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222024",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222024",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_IAT_7E7", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222025",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222025",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_DCHG_POWER", "name": "High voltage battery discharge power", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222026",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222026",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_HVBAT_CHG_POWER", "name": "High voltage battery charge power", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222034",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222034",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ELECTRIC_OIL_PUMP_SPEED", "name": "Electric oil pump speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222035",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222035",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ELECTRIC_OIL_PUMP_CURRENT", "name": "Electric oil pump current", "group": "ECU", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.9375, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222061",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222061",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ENGINE_TORQUE_UPPER_ECM", "name": "Engine torque upper", "group": "ECU", "bit": 0, "bits": 8, "multiply": 408, "divide": 255, "min": 0, "max": 408, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222062",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222062",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_ENGINE_TORQUE_ACTUAL", "name": "Engine torque actual", "group": "ECU", "bit": 0, "bits": 16, "divide": 10, "add": -1000, "min": -1000, "max": 5553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2220E2",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2220E2",
+      "interval": 1,
+      "signals": [
+        {"id": "SUBARU_12V_AUX_BAT_T", "name": "12V aux battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    }
+  ]
+}

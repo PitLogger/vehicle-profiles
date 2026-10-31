@@ -1,0 +1,146 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/patrol",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Patrol",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (4W60)", "from": 1951, "to": 1960},
+      {"name": "Second Generation (60 Series)", "from": 1960, "to": 1980},
+      {"name": "Third Generation (160 Series)", "from": 1980, "to": 1987},
+      {"name": "Fourth Generation (Y60)", "from": 1989, "to": 1997},
+      {"name": "Fifth Generation (Y61)", "from": 1997, "to": 2024},
+      {"name": "Sixth Generation (Y62)", "from": 2010, "to": 2024},
+      {"name": "Seventh Generation (Y63)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Patrol",
+    "file": "signalsets/v3/default.json",
+    "revision": "d0add7c724053bed7d4b7de63639a4aacbe4370f",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "PATROL_ODO_METER", "name": "Odometer, meter group 1", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1,f=2003-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2003},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "PATROL_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1,f=2003-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2003},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "PATROL_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1,f=2003-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2003},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "PATROL_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1,f=2003-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2003},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "PATROL_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1,f=2003-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2003},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "PATROL_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.2110|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "2110",
+      "interval": 15,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "PATROL_WHL_1_P", "name": "Wheel 1 pressure", "group": "Tires", "bit": 16, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "PATROL_WHL_2_P", "name": "Wheel 2 pressure", "group": "Tires", "bit": 24, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "PATROL_WHL_3_P", "name": "Wheel 3 pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"},
+        {"id": "PATROL_WHL_4_P", "name": "Wheel 4 pressure", "group": "Tires", "bit": 40, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "PATROL_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "PATROL_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "PATROL_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "PATROL_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "PATROL_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    }
+  ]
+}

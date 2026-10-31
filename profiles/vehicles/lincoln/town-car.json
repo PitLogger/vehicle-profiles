@@ -1,0 +1,81 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/lincoln/town-car",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Lincoln",
+    "model": "Town Car",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (FN36/FN5)", "from": 1981, "to": 1989},
+      {"name": "Second Generation (FN36/FN5)", "from": 1990, "to": 1997},
+      {"name": "Third Generation (FN145)", "from": 1998, "to": 2011}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Lincoln-Town-Car",
+    "file": "signalsets/v3/default.json",
+    "revision": "726dff72c788ffa9c63179ef2f92616632629d92",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "720.728.226185",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226185",
+      "interval": 5,
+      "answeredIn": [2006, 2007, 2008],
+      "signals": [
+        {"id": "TOWNCAR_FLI_ALT", "name": "Fuel level, alternate", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "TOWNCAR_ETC_ANG_DES", "name": "Throttle angle, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "signals": [
+        {"id": "TOWNCAR_ETC_ANG_ACT", "name": "Throttle angle, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "signals": [
+        {"id": "TOWNCAR_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 0.25,
+      "signals": [
+        {"id": "TOWNCAR_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    }
+  ]
+}

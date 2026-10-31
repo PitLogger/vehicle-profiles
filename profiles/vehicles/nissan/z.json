@@ -1,0 +1,809 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/z",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Z",
+    "years": null,
+    "generations": [{"name": "RZ34", "from": 2023}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Z",
+    "file": "signalsets/v3/default.json",
+    "revision": "63f6aa28368de768ada3ac88f90d83534d98e4c3",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 0.1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "Z_ODO_METER", "name": "Odometer, meter group 1", "group": "Trips", "metric": "odometer", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_TP_FR_743", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_TP_FL_743", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_TP_RR_743", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "Z_TP_RL_743", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22112A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22112A",
+      "interval": 1,
+      "signals": [
+        {"id": "Z_MANIFOLD_P_SENS_V", "name": "Manifold pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221223",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221223",
+      "interval": 1,
+      "signals": [
+        {"id": "Z_REFRIGERANT_FLUID_V", "name": "Refrigerant fluid sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221225",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221225",
+      "interval": 1,
+      "signals": [
+        {"id": "Z_UP_OXYGEN_SENS_V", "name": "Upstream oxygen sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122B",
+      "interval": 30,
+      "signals": [
+        {"id": "Z_CC_S", "name": "Cruise control set speed", "group": "Cruise control", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "Z_BRAKE_SWITCH_NUMBER_2", "name": "BRAKE SWITCH, number 2", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z_BRAKE_SWITCH_NUMBER_1", "name": "BRAKE SWITCH, number 1", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222095",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222095",
+      "interval": 5,
+      "signals": [
+        {"id": "Z_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "Z_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "Z_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "Z_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "Z_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2103",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TRANS_ATF", "name": "Transmission ATF deterioration date", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TRANS_B", "name": "Transmission-B", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "Z_TRANS_WORK_HOURS", "name": "Transmission work hours", "group": "Transmission", "bit": 32, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"},
+        {"id": "Z_TRANS", "name": "Transmission-A", "group": "Transmission", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "Z_TRANS_WORK_HOURS_WARM_ENG", "name": "Transmission work hours warm engine", "group": "Transmission", "bit": 192, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "signals": [
+        {"id": "Z_ATF_T_VAR_2_7E1", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220230",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220230",
+      "interval": 5,
+      "signals": [
+        {"id": "Z_ATF_T_VAR_1_7E1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221101",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_VSS_SENS", "name": "Vehicle speed sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221102|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221102",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_VSS_EST", "name": "Estimated vehicle speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221103",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110C",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_LUBE_P", "name": "Lubrication pressure", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_P_TGT", "name": "Target primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEL_P_TGT", "name": "Target select pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221111",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_P_TGT", "name": "Target secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221112|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221112",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_REQ_TQ_D", "name": "Requested torque delta", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221113|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221113",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_REQ_TQ", "name": "Requested torque", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221114|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221114",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_REQ_RPM", "name": "Requested engine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221201",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_INPUT_RPM", "name": "Input speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221202|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221202",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_RPM", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221203|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221203",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_RPM", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221204",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221206|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221206",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221207|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221207",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ATF_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221208",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_G_V", "name": "Acceleration sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.27, "max": 3.27, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_INPUT_RPM_2", "name": "Input speed, alternate", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_RPM_2", "name": "Primary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_RPM_2", "name": "Secondary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120F",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_RPM_2", "name": "Engine speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221210|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221210",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PULLEY_RAT", "name": "Pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221212|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221212",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ENG_TQ_ACT", "name": "Engine torque, active", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221213|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221213",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ENG_TQ_TX", "name": "Engine torque, transmitted", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221214|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221214",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ENG_TQ", "name": "Engine torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221215|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221215",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_TQ", "name": "Primary pulley torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221216|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221216",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_TQ_RAT", "name": "Torque ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 577, "divide": 160000, "min": 0, "max": 236}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221218|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221218",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PULLEY_RAT_TGT", "name": "Target pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221219|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221219",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ISO_1_C", "name": "Isolation solenoid 1 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_ISO_2_C", "name": "Isolation solenoid 2 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_SOL_C", "name": "Primary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_SOL_C", "name": "Secondary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEL_SOL_C", "name": "Select solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SOL_MON_1", "name": "Solenoid 1 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SOL_MON_2", "name": "Solenoid 2 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221221|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221221",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_PRI_SOL_MON", "name": "Primary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221222|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221222",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEC_SOL_MON", "name": "Secondary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221223|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221223",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z_TCM_SEL_SOL_MON", "name": "Select solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    }
+  ]
+}

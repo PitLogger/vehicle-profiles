@@ -1,0 +1,3412 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volvo/v60",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volvo",
+    "model": "V60",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2010, "to": 2014},
+      {"name": "First Generation (Facelift)", "from": 2014, "to": 2018},
+      {"name": "Second Generation", "from": 2018}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volvo-V60",
+    "file": "signalsets/v3/default.json",
+    "revision": "a11c284ac6e999ad193e2dcede5b8fe6148776d4",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "720.728.2261CC",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261CC",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_LAST_SERVICE_720", "name": "Odometer at last service", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "V60_TOT_MONTHS_LAST", "name": "Total months at last service", "group": "Engine", "bit": 24, "bits": 16, "multiply": 6, "min": 0, "max": 393210},
+        {"id": "V60_TOT_ENG_RUNNING_TIME", "name": "Total engine running time at last service", "group": "Engine", "bit": 40, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "720.728.2261D0",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261D0",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIM_FLI_2_2_EJECTOR", "name": "Fuel level 2 of 2 ejector side saddle tank", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "L"}
+      ]
+    },
+    {
+      "id": "720.728.2261D1",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261D1",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIM_FLI_1_2", "name": "Fuel level 1 of 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "L"}
+      ]
+    },
+    {
+      "id": "720.728.22630E",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22630E",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIST_SINCE_SERVICE_720", "name": "Distance since last service", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "V60_MONTHS_SINCE_SERVICE", "name": "Months since last service", "group": "Engine", "bit": 16, "bits": 16, "divide": 120, "min": 0, "max": 546},
+        {"id": "V60_ENG_TIME_SINCE", "name": "Engine time since last service", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "720.728.22D936",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22D936",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TRIP_1", "name": "Trip 1", "group": "Engine", "bit": 24, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.22D937",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22D937",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TRIP_2", "name": "Trip 2", "group": "Engine", "bit": 24, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.22DA10",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DA10",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ACC_SETSPEED", "name": "Adaptive cruise set speed", "group": "Movement", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "720.728.22DA11",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DA11",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ACC_TIMEGAP", "name": "Adaptive cruise time gap", "group": "Engine", "bit": 8, "bits": 8, "divide": 2, "add": 0.5, "min": 0, "max": 128, "unit": "s"}
+      ]
+    },
+    {
+      "id": "720.728.22DA12",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DA12",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ACC_TARGETVEHICLE", "name": "Adaptive cruise target vehicle", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "720.728.22DA18",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DA18",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TSI_SPD", "name": "Traffic sign speed limit", "group": "Movement", "bit": 8, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "720.728.22DD01",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_DIM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.22DD04",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DD04",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_CAR_T_720", "name": "In-car temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.22EE11",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22EE11",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIM_FLI_DAMPED", "name": "Fuel level damped", "group": "Fuel", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "L"}
+      ]
+    },
+    {
+      "id": "720.728.22EE12",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22EE12",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FLI_DAMPED", "name": "Fuel level damped", "group": "Fuel", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "L"}
+      ]
+    },
+    {
+      "id": "720.728.22EEFD",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22EEFD",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIST_EMPTY_MS_CAN", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.223B71",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "223B71",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FRONT_AXLE_SENS", "name": "Front axle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 40, "min": 0, "max": 6.37, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.223B73",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "223B73",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_REAR_AXLE_SENS", "name": "Rear axle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 40, "min": 0, "max": 6.37, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.224025",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224025",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_QUIESCENT_CURRENT", "name": "Quiescent current average", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -1000, "min": -1000, "max": 31767, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "726.72E.224027",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224027",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_OPERATION_TIME", "name": "Battery operation time since battery monitoring sensor reset, days", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "726.72E.224028",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224028",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_ST_CHG_726", "name": "Battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.72E.224029",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224029",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22402A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402A",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_V_726", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 0, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.224090",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224090",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_CHG_AMPS", "name": "Battery charge, amps", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -511.7, "min": -511, "max": 3584, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.2240D1",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2240D1",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ALTERNATOR_CTRL_MODE", "name": "Alternator control mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.224117",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224117",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FLI_SENS", "name": "Fuel level sensor", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "divide": 20459, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.224118",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224118",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FLI_SENS_EJECTOR", "name": "Fuel level sensor ejector side saddle tank", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "divide": 20459, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22411D",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22411D",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ALTERNATOR_CHG_V_REQ", "name": "Alternator charge voltage request", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22412A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22412A",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TWILIGHT_SENS", "name": "Twilight sensor", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22412D",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22412D",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_REMOTE_KEY", "name": "Remote key", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22417E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22417E",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_V", "name": "Secondary battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22419C",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22419C",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_RELAY", "name": "Secondary battery relay", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.2241A5",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241A5",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_CHG_BALANCE_AH", "name": "Battery charge balance, ah", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "726.72E.2241A7",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241A7",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_MANAGEMENT_SENS", "name": "Battery management sensor reliable", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.227151",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "227151",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DIPPED_BEAM", "name": "Dipped beam", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "V60_HIGH_BEAM", "name": "High beam", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "V60_PARKING_LIGHTS", "name": "Parking lights", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22C150",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C150",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOT_LID_SENS", "name": "Boot lid sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 64, "min": 0, "max": 3.98}
+      ]
+    },
+    {
+      "id": "726.72E.22C154",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C154",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BONNET_CLOSED", "name": "Bonnet closed", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22C259",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C259",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_CENTRAL_LOCK", "name": "Central lock", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "726.72E.22DD01",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_CEM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD04",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD04",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_CAR_T", "name": "In car temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD06",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD06",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_POWER_MODE", "name": "Power mode", "group": "Engine", "bit": 0, "bits": 8, "add": -192, "min": -192, "max": 63}
+      ]
+    },
+    {
+      "id": "726.72E.22EEA2",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EEA2",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_V_POWER_SENSITIVE", "name": "Voltage/power sensitive loads connected", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22EED2",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED2",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_T_25_C", "name": "Secondary battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22EED3",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED3",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_CHG", "name": "Secondary battery charge time", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "726.72E.22EED4",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED4",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_V_LATEST", "name": "Secondary battery voltage latest stored", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22EED5",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED5",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_NEEDED", "name": "Secondary battery needed charge time", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "726.72E.22EED6",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED6",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DOWNTIME", "name": "Downtime", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "726.72E.22EED7",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22EED7",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SECONDARY_BAT_V_AVG", "name": "Secondary battery voltage average value", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "730.738.223301",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "223301",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_STEER_WHL_ANG", "name": "Steering wheel angle velocity", "group": "Tires", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020}
+      ]
+    },
+    {
+      "id": "730.738.22330C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22330C",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_STEER_SHFT_TQ", "name": "Steering shaft torque", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "add": -12.7, "min": -12.7, "max": 12.8, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "730.738.224139",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "224139",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SERVO_PMP_ENG_POWER", "name": "Servo pump engine power consumption", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "730.738.22413A",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22413A",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SERVO_PMP_SPD_DES", "name": "Servo pump speed, desired value", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "730.738.22413C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22413C",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SERVO_PMP_SPD", "name": "Servo pump speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "730.738.22413D",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22413D",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SERVO_SUP_V", "name": "Servo supply voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "730.738.22D11C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22D11C",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SERVO_CTRL_MODULE_T", "name": "Servo control module temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "730.738.22DD01",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_PSCM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "736.73E.22B112",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B112",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RL_DIST", "name": "Rear left distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B113",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B113",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RR_DIST", "name": "Rear right distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B114",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B114",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RL_INNER_DIST", "name": "Rear left inner distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B115",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B115",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RR_INNER_DIST", "name": "Rear right inner distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B116",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B116",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_DIST", "name": "Front left distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B117",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B117",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FR_DIST", "name": "Front right distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B118",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B118",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_INNER_DIST", "name": "Front left inner distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22B119",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22B119",
+      "interval": 30,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FR_INNER_DIST", "name": "Front right inner distance", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "736.73E.22DD01",
+      "bus": "can11",
+      "tx": "736",
+      "rx": "73E",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_PAM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "737.73F.225B19",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B19",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SEAT_BUCKLE_DRIVER", "name": "Seat buckle driver locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.73F.225B1A",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B1A",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SEAT_BUCKLE", "name": "Seat buckle passenger locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.73F.225B28",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B28",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PASSENGER_AIRBAG", "name": "Passenger airbag cutoff switch", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.73F.225B29",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B29",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PASSENGER_AIRBAG_ACTIVATED", "name": "Passenger airbag activated", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.73F.225B46",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B46",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SEAT_BUCKLE_RL", "name": "Seat buckle rear left locked", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.73F.225B47",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B47",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SEAT_BUCKLE_REAR", "name": "Seat buckle rear center locked", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.73F.225B48",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B48",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SEAT_BUCKLE_RR", "name": "Seat buckle rear right locked", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.73F.2261A5",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "2261A5",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_PASSENGER_AIRBAG_OFF", "name": "Passenger airbag OFF lamp", "group": "Engine", "bit": 16, "bits": 8, "divide": 32, "min": 0, "max": 7.96}
+      ]
+    },
+    {
+      "id": "737.73F.22D901",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "22D901",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_V_SUP", "name": "Voltage supply", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 25, "min": 0, "max": 20.4, "unit": "V"}
+      ]
+    },
+    {
+      "id": "737.73F.22DD01",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_SRS", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "756.75E.222B14",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "222B14",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PARK_BRAKE_SWITCH", "name": "Park brake switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "756.75E.222B1A",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "222B1A",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LEFT_PARKING_BRAKE", "name": "Left parking brake pad", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "V60_RIGHT_PARKING_BRAKE", "name": "Right parking brake pad", "group": "Control", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "756.75E.222B20",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "222B20",
+      "interval": 3600,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PARKING_BRAKE_CNT", "name": "Parking brake static use count", "group": "Control", "bit": 16, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "756.75E.222B21",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "222B21",
+      "interval": 3600,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PARKING_BRAKE_CNT_DYNAMIC", "name": "Parking brake dynamic use count", "group": "Control", "bit": 16, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "756.75E.222B24",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "222B24",
+      "interval": 3600,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_PARKING_BRAKE_NORMAL_0_32", "name": "Parking brake normal 0 /maintenance 32", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "756.75E.22DD01",
+      "bus": "can11",
+      "tx": "756",
+      "rx": "75E",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_PBM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BRAKE_LIGHT_SWITCH", "name": "Brake light switch", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B05",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B05",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DTSC_SWITCH", "name": "Traction control switch indicator", "group": "Engine", "bit": 0, "bits": 8, "divide": 64, "add": -1, "min": -1, "max": 2.98}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_WHL_SPD_760", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FR_WHL_SPD_760", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RL_WHL_SPD_760", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_RR_WHL_SPD_760", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0B",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0B",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_YAW_RATE_SIG", "name": "Yaw rate signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LATERAL_ANG", "name": "Lateral angle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "divide": 3, "min": 0, "max": 21845, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "760.768.222B35",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B35",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_PEDAL_POS_SENS", "name": "- pedal position sensor", "group": "Engine", "bit": 0, "bits": 16, "divide": 25, "min": 0, "max": 2621, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "760.768.223302",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223302",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_STEER_ANG_ACT", "name": "Steering angle, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276}
+      ]
+    },
+    {
+      "id": "760.768.22DD01",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_BCM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "760.768.22DD05",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22DD05",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_OUTDOOR_T_BCM", "name": "Outdoor temperature, BCM", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "760.768.22EE03",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE03",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SAS_STEER_WHL_ANG", "name": "Steering wheel angle sensor offset", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 22.8533, "min": -1433, "max": 1433, "unit": "°"},
+        {"id": "V60_BRAKE_P_SENS_OFFSET", "name": "Brake pressure sensor offset", "group": "Control", "bit": 32, "bits": 16, "divide": 1600, "min": 0, "max": 40.95, "unit": "bar"},
+        {"id": "V60_LATERAL", "name": "Lateral acceleration sensor offset", "group": "Movement", "bit": 48, "bits": 16, "divide": 113000, "min": 0, "max": 0.579, "unit": "m/s²"},
+        {"id": "V60_YAW_RATE_SENS_OFFSET", "name": "Yaw rate sensor offset", "group": "Engine", "bit": 64, "bits": 16, "divide": 3500, "min": 0, "max": 18.72}
+      ]
+    },
+    {
+      "id": "760.768.22EE04",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE04",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SAS_STEER_WHL_ANG_SENS", "name": "Steering wheel angle sensor stored offset", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 1461, "min": -22.42, "max": 22.42, "unit": "°"},
+        {"id": "V60_LATERAL_ACCELEROMETER", "name": "Lateral acceleration sensor stored offset", "group": "Movement", "bit": 48, "bits": 16, "divide": 1113000, "min": 0, "max": 0.0588, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "760.768.22EE07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE07",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_BRAKE_DISC_T_CALC", "name": "Front left brake disc temperature, calculated", "group": "Control", "bit": 0, "bits": 8, "multiply": 18, "divide": 5, "min": 0, "max": 918, "unit": "°C"},
+        {"id": "V60_FR_BRAKE_DISC_T_CALC", "name": "Front right brake disc temperature, calculated", "group": "Control", "bit": 8, "bits": 8, "multiply": 18, "divide": 5, "min": 0, "max": 918, "unit": "°C"},
+        {"id": "V60_RL_BRAKE_DISC_T_CALC", "name": "Rear left brake disc temperature, calculated", "group": "Control", "bit": 16, "bits": 8, "multiply": 18, "divide": 5, "min": 0, "max": 918, "unit": "°C"},
+        {"id": "V60_RR_BRAKE_DISC_T_CALC", "name": "Rear right brake disc temperature, calculated", "group": "Control", "bit": 24, "bits": 8, "multiply": 18, "divide": 5, "min": 0, "max": 918, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "760.768.22FDC6",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22FDC6",
+      "interval": 15,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ITPMS_LOW_SPD", "name": "Indirect tire pressure monitoring low speed calibration", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "V60_ITPMS_HIGH_SPD", "name": "Indirect tire pressure monitoring high speed calibration", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "793.22DD01",
+      "bus": "can11",
+      "tx": "793",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_CVM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "797.22DD01",
+      "bus": "can11",
+      "tx": "797",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_SAS", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033E",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_P_AFTER", "name": "Boost pressure after turbocharger", "group": "Battery", "bit": 0, "bits": 16, "divide": 131, "add": -0.053435, "min": -0.0534, "max": 500, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220341",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220341",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_AIR_T_7E0", "name": "Boost air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_GRILL_SHUTTER_OPEN", "name": "Grill shutter open", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D900",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D900",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D909",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D909",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_AC_RELAY", "name": "Air conditioning relay", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D916",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D916",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_AIR_FLOW_CYCLE_MG_S", "name": "Air flow/cycle, mg/s", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D91C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D91C",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_IAT_MAF", "name": "M3 IAT, MAF", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D91F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D91F",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_AIR_MASS_DES", "name": "Air mass, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D924",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D924",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ALTERNATOR_AMPS", "name": "Alternator, amps", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D941",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D941",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D943",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D943",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D94F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D94F",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SYSTEM_RELAY", "name": "System relay", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D950",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D950",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_STARTER_RELAY", "name": "Starter relay", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D953",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D953",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BAT_RELAY", "name": "Battery relay", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D95B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D95B",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLT_PMP_RELAY", "name": "Coolant pump relay", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D96C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D96C",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_EGR_DC", "name": "M3 EGR DC", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D96D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D96D",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EGR_VLV_CMD_POS_II", "name": "Exhaust gas recirculation valve, commanded position II", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D99C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D99C",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9A0",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_GLOW_PLUGS", "name": "Glow plugs", "group": "Engine", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9A1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9A1",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 0, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9AB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9AB",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TMAP_IAT", "name": "Intake air temperature, manifold sensor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9B8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9B8",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CTRL_MODULE_T", "name": "Control module temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9DC",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9E4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9E4",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_P_DES", "name": "Boost pressure, desired value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9EE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9EE",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_P_REGULATOR_VLV", "name": "Fuel pressure regulator valve current", "group": "Fuel", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9F2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9F2",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DPF_SOOT", "name": "Diesel particulate filter soot", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655},
+        {"id": "V60_M3_DPF_SOOT", "name": "M3 DPF soot", "group": "Engine", "bit": 16, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "g"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9F3",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_DIFF_PRESS", "name": "M3 diff.press.", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9F9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9F9",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DPF_T", "name": "Diesel particulate filter temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D9FF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D9FF",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_P_NOMINAL", "name": "Fuel pressure nominal value", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "min": 0, "max": 6553500}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA03",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_CATALYTIC_DAMAGE", "name": "Misfire catalytic damage total - petrol", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA04",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_EMISSION_RELATED", "name": "Misfire emission related total - petrol", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA12",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_STARTER_RELAY_1", "name": "Starter relay 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA40",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA40",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_POS", "name": "Gear, AT position", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA59",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA59",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FRONT_OXYGEN_SENS", "name": "Front oxygen sensor heating", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAAD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAAD",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EGR_VLV_POS_SENS", "name": "Exhaust gas recirculation valve position sensor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAB6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAB6",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_AVG_1", "name": "Cylinder 1 misfire average", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_2", "name": "Cylinder 2 misfire average", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_3", "name": "Cylinder 3 misfire average", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_4", "name": "Cylinder 4 misfire average", "group": "Engine", "bit": 48, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_5", "name": "Cylinder 5 misfire average", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_6", "name": "Cylinder 6 misfire average", "group": "Engine", "bit": 80, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_7", "name": "Cylinder 7 misfire average", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_AVG_8", "name": "Cylinder 8 misfire average", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAC8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAC8",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_DPF_P", "name": "Diesel particulate filter pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAD2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAD2",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EGR_COOLER_BYPASS", "name": "Exhaust gas recirculation cooler bypass actuator position", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAD5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAD5",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_VOLUME_CTRL_VLV", "name": "Fuel volume control valve", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DB35",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DB35",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_FLT_HEATER_7E0", "name": "Fuel filter heater", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DB77",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DB77",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_REAR_OXYGEN_SENS", "name": "Rear oxygen sensor heating", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC00",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC00",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TURBO_CTRL_VLV", "name": "Turbo control valve, bypass or variable nozzle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 8191, "min": 0, "max": 800, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC01",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EGR_VLV_CMD_POS", "name": "Exhaust gas recirculation valve, commanded position", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC02",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC02",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FAN", "name": "Fan", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC10",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC10",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TURBO_CTRL_VLV_WASTEGATE", "name": "Turbo control valve wastegate", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 8191, "min": 0, "max": 800, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC13",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC13",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_VOLUME_CTRL_VLV_7E0", "name": "Fuel volume control valve", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DC14",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DC14",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_FLT_HEATER", "name": "Fuel filter heater", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_MILEAGE_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EE7F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EE7F",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_EGR_BYPASS_VLV", "name": "Exhaust gas recirculation bypass valve", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EE84",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EE84",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SUPERCHARGER_CLU_REQ", "name": "Supercharger clutch, requested position", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EEEB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EEEB",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_STARTER_RELAY_2", "name": "Starter relay 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EF44",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EF44",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_START_STOP_BRAKE_P", "name": "Start/stop brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EF4E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EF4E",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EF51",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EF51",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_START_STOP_BAT_RELAY", "name": "Start/stop battery relay", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EF52",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EF52",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_START_STOP_SECONDARY", "name": "Start/stop secondary battery relay", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22EF59",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22EF59",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_PMP_LOW_P_SIDE", "name": "Fuel pump low pressure side duty cycle", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_CALC_LOAD", "name": "Calculated load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40E",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_IGN_ANG_BTDC", "name": "Ignition angle before top dead center", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_IAT_BUTTERFLY", "name": "M3 IAT, butterfly", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F411",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F411",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_THROTTLE_ABS_POS", "name": "Throttle absolute position", "group": "Engine", "metric": "throttlePosition", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TIME_SINCE_ENG_START", "name": "Time since engine start", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F423",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F423",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "min": 0, "max": 6553500}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LOAD", "name": "Load", "group": "Engine", "bit": 0, "bits": 16, "multiply": 20, "divide": 51, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F449",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F449",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_APP_ECM", "name": "Accelerator pedal position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F44A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F44A",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_M3_APP_CAN", "name": "M3 APP, CAN", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F6A2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F6A2",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_1", "name": "Cylinder 1 misfire", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F6A3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F6A3",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_2", "name": "Cylinder 2 misfire", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F6A4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F6A4",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_3", "name": "Cylinder 3 misfire", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F6A5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F6A5",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MIS_4", "name": "Cylinder 4 misfire", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.221E14",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E14",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_T_CONV", "name": "A/T converter, raw signed count", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E1.221E16",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E16",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ACT_GEAR_RAT", "name": "AT, actual gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99}
+      ]
+    },
+    {
+      "id": "7E1.221E19",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E19",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_EXPECTED_GEAR_RAT", "name": "Transmission expected gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53}
+      ]
+    },
+    {
+      "id": "7E1.221E1B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E1B",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SLAVE_T", "name": "Slave A/T", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.221E1E",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E1E",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID", "name": "Transmission line pressure solenoid current, requested", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E24",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E24",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_FIXED_LOCK_UP", "name": "Transmission fixed lock-up", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.221E2F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E2F",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LEADING_T", "name": "Leading A/T", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.221E3F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E3F",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -8192, "max": 8191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.221E40",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E40",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLT", "name": "Transmission line pressure solenoid current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E41",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E41",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LOCK_UP_SOLENOID_SLU", "name": "Torque converter lock-up solenoid current, requested", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E42",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E42",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC1_REQ", "name": "Transmission linear pressure solenoid SLC1, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E43",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E43",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC2_REQ", "name": "Transmission linear pressure solenoid SLC2, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E44",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E44",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC3_REQ", "name": "Transmission linear pressure solenoid SLC3, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E45",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E45",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLB1_REQ", "name": "Transmission linear pressure solenoid SLB1, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E47",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E47",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LOCK_UP_SOLENOID_SLU_CURRENT", "name": "Torque converter lock-up solenoid current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E48",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E48",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC1", "name": "Transmission linear pressure solenoid SLC1 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E49",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E49",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC2", "name": "Transmission linear pressure solenoid SLC2 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.221E4A",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E4A",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLC3", "name": "Transmission linear pressure solenoid SLC3 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.226310",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226310",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_SELECTOR_P_0_R_1_N_2_D_3", "name": "Transmission gear selector p, 0 r, 1 n, 2 d, 3", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.22D904",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22D904",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.22D90C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22D90C",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SLC1_CURRENT", "name": "SLC1 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22D90F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22D90F",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SLC2_CURRENT", "name": "SLC2 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22D910",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22D910",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_SLC3_CURRENT", "name": "SLC3 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA34",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA34",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_RAT_ACT_7E1", "name": "Gear ratio, actual", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99}
+      ]
+    },
+    {
+      "id": "7E1.22DA3B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA3B",
+      "interval": 5,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_VAR_2_7E1", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.22DA3C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA3C",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LOCK_UP_FUNCTION", "name": "Transmission lock-up function", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "add": -0.333333, "min": -0.333, "max": 84.66}
+      ]
+    },
+    {
+      "id": "7E1.22DA47",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA47",
+      "interval": 0.25,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_RAT_EXPECTED", "name": "Gear ratio expected", "group": "Transmission", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53}
+      ]
+    },
+    {
+      "id": "7E1.22DA49",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA49",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLT_REQ", "name": "Transmission line pressure solenoid current, requested", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4A",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4A",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SLT_CURRENT", "name": "Transmission line pressure solenoid current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4B",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LOCK_UP_SOLENOID_SLU_REQ", "name": "Torque converter lock-up solenoid, requested", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4C",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LOCK_UP_SOLENOID_SLU_7E1", "name": "Torque converter lock-up solenoid", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4D",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4D",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL1_REQ", "name": "Transmission linear pressure solenoid SL1, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4E",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4E",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL1", "name": "Transmission linear pressure solenoid SL1 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA4F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA4F",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL2_REQ", "name": "Transmission linear pressure solenoid SL2, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA50",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA50",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL2", "name": "Transmission linear pressure solenoid SL2 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA51",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA51",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL3_REQ", "name": "Transmission linear pressure solenoid SL3, requested, current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DA52",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DA52",
+      "interval": 1,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_LINEAR_P_SOLENOID_SL3", "name": "Transmission linear pressure solenoid SL3 current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E1.22DCE4",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DCE4",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_KICKDOWN", "name": "Transmission kickdown", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.22DCEA",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DCEA",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SELECTOR", "name": "Transmission selector", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "7E1.22DCF0",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DCF0",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TQ_LIMITING", "name": "Transmission torque limiting", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.22DD01",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO_TCM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.22DD02",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD02",
+      "interval": 5,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_MECU_SUP_V", "name": "Transmission control module supply voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.22DD81",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD81",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_7E1", "name": "Transmission gear", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.22DD89",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD89",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SOLENOID_S1_STAT", "name": "Transmission solenoid S1 status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.22DD8A",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD8A",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_SOLENOID_S2_STAT", "name": "Transmission solenoid S2 status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.22DD8D",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD8D",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_TQ", "name": "Transmission torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.22DD8E",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DD8E",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_ACCEL_PEDAL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.22DF08",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22DF08",
+      "interval": 1,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_START_LOCK_START", "name": "Transmission start lock - start approved", "group": "Engine", "bit": 0, "bits": 8, "divide": 255, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E1.22E504",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22E504",
+      "interval": 0.25,
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "V60_BRAKE_PEDAL_POS", "name": "Brake pedal position", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22033E|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22033E",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_AIR_P_AFTER", "name": "Boost air pressure after turbocharger", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.220341|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "220341",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_BOOST_AIR_T", "name": "Boost air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22D9EE|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22D9EE",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_TURBO_BYPASS_VLV", "name": "Turbo bypass valve opened", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22DC80|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22DC80",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_WASTEGATE_POS", "name": "Wastegate position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE34|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE34",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_AC_P_D016", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE37|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE37",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_EOP_D016", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE3E|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE3E",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CHG_AIR_P", "name": "Charge air pressure", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.007812, "min": 0, "max": 511, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE4F|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE4F",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_HIGH_P", "name": "Fuel high pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 32.76}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE57|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE57",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FUEL_LOW_P", "name": "Fuel low pressure", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE58|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE58",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_EOT_D016", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EE6F|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EE6F",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ENG_CLT_FAN", "name": "Engine coolant fan", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EF71|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EF71",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HIGH_V_MOTOR_CLT_PMP", "name": "High voltage motor coolant pump", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "rpm"},
+        {"id": "V60_MIS_3_D016", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535},
+        {"id": "V60_MIS_2_D016", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "D016.1EC60E80.22EF73|ta=30,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01630",
+      "rx": "1EC60E80",
+      "request": "22EF73",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HIGH_V_ED_ECT_2", "name": "High voltage ED coolant temperature 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC62E80.222B06|ta=31,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01631",
+      "rx": "1EC62E80",
+      "request": "222B06",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "D016.1EC62E80.222B07|ta=31,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01631",
+      "rx": "1EC62E80",
+      "request": "222B07",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "D016.1EC62E80.222B08|ta=31,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01631",
+      "rx": "1EC62E80",
+      "request": "222B08",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "D016.1EC62E80.222B09|ta=31,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01631",
+      "rx": "1EC62E80",
+      "request": "222B09",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "D016.1EC62E80.22FEE7|ta=31,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01631",
+      "rx": "1EC62E80",
+      "request": "22FEE7",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_FL_BRAKE_DISC_T", "name": "Front left brake disc temperature", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "°C"},
+        {"id": "V60_FR_BRAKE_DISC_T", "name": "Front right brake disc temperature", "group": "Control", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "°C"},
+        {"id": "V60_RL_BRAKE_DISC_T", "name": "Rear left brake disc temperature", "group": "Control", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "°C"},
+        {"id": "V60_RR_BRAKE_DISC_T", "name": "Rear right brake disc temperature", "group": "Control", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D900|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D900",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_D016", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "min": -32768000, "max": 32767000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D90D|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D90D",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T_D016_D016", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D926|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D926",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLU_1_T", "name": "Clutch 1 temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D940|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D940",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLU_2_T", "name": "Clutch 2 temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D96B|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D96B",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLU_ACTUATOR_1_T", "name": "Clutch actuator 1 temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22D974|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22D974",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLU_ACTUATOR_2_T", "name": "Clutch actuator 2 temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA34|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA34",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_RAT_ACT", "name": "Gear ratio, actual", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 61, "divide": 250000, "min": 0, "max": 15.99}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA38|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA38",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_DRIVEN_SHFT_SPD", "name": "Driven shaft speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA3B|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA3B",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA3C|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA3C",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_TQ_CONV_LOCK", "name": "Torque converter lock", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA47|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA47",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR_RAT_REQ", "name": "Gear ratio, requested", "group": "Transmission", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA85|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA85",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_GEAR", "name": "Gear", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DA89|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DA89",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ENG_TQ", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -512, "min": -512, "max": 6041, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "D016.1EC64E80.22DD01|ta=32,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01632",
+      "rx": "1EC64E80",
+      "request": "22DD01",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE15|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE15",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MAIN_CHARGER_CURRENT", "name": "Main charger current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "A"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE16|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE16",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_DC_CHARGER_CURRENT", "name": "DC charger current", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE17|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE17",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_DC_CHARGER_V", "name": "DC charger voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE19|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE19",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_OBC_T", "name": "On-board charger module temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE1C|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE1C",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MAIN_CHARGER_V", "name": "Main charger voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE1D|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE1D",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CHG_ST", "name": "Charging state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE8C|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE8C",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CHG_SOCKET_LOCKED", "name": "Charging socket lock", "group": "Battery", "bit": 0, "bits": 8, "values": {"1": "UNLOCKED", "2": "LOCKED"}, "valueDescriptions": {"1": "Unlocked", "2": "Locked"}}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EE8D|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EE8D",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CHARGER_CABLE", "name": "Charger cable current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -410, "min": -410, "max": 6143, "unit": "A"}
+      ]
+    },
+    {
+      "id": "D016.1EC68E80.22EEB6|ta=34,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01634",
+      "rx": "1EC68E80",
+      "request": "22EEB6",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_AVG_CHG_TIME_LEFT", "name": "Average charging time left", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224801|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224801",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_ST_CHG", "name": "High voltage battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 131, "unit": "%"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224802|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224802",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_CURRENT", "name": "High voltage battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224803|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224803",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_V", "name": "High voltage battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224804|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224804",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_INLET_ECT", "name": "High voltage battery, inlet coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224808|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224808",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_IEM_FUSE_V", "name": "High voltage battery, IEM fuse voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224809|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224809",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_IGM_FUSE_V", "name": "High voltage battery, IGM fuse voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.22480A|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "22480A",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_HVCH_FUSE_V", "name": "High voltage battery, high-voltage coolant heater fuse voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.22480B|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "22480B",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_OBC_FUSE_V", "name": "High voltage battery, OBC fuse voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224866|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224866",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_CLT_PMP_SPD", "name": "High voltage battery, coolant pump speed, requested", "group": "Battery", "bit": 0, "bits": 8, "multiply": 24, "min": 0, "max": 6120, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224867|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224867",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_CLT_PMP_SPD_ACT", "name": "High voltage battery, coolant pump speed, actual", "group": "Battery", "bit": 0, "bits": 8, "multiply": 24, "min": 0, "max": 6120, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.22491B|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "22491B",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_AVG_T", "name": "High voltage battery, average temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -50, "min": -50, "max": 605, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224945|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224945",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HVBAT_MAX_T", "name": "High voltage battery, max temperature", "group": "Battery", "bit": 8, "bits": 16, "divide": 100, "add": -50, "min": -50, "max": 605, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "D016.1EC6AE80.224946|ta=35,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01635",
+      "rx": "1EC6AE80",
+      "request": "224946",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_12V_BAT_ST_CHG", "name": "12V battery state of charge", "group": "Battery", "bit": 0, "bits": 16, "multiply": 1024, "divide": 15625, "min": 0, "max": 4294, "unit": "%"}
+      ]
+    },
+    {
+      "id": "D016.1EC6EE80.22EE09|ta=37,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01637",
+      "rx": "1EC6EE80",
+      "request": "22EE09",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ERAD_CALC_TQ_D016", "name": "Electric rear axle drive calculated torque", "group": "Engine", "bit": 0, "bits": 16, "multiply": 4, "add": -8188, "min": -8188, "max": 253952, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "D016.1EC6EE80.22EF12|ta=37,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01637",
+      "rx": "1EC6EE80",
+      "request": "22EF12",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_ERAD_CALC_TQ", "name": "Electric rear axle drive calculated torque", "group": "Engine", "bit": 0, "bits": 16, "multiply": 4, "add": -8188, "min": -8188, "max": 253952, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "D016.1EC6EE80.22EF13|ta=37,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01637",
+      "rx": "1EC6EE80",
+      "request": "22EF13",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_HIGH_V_SYSTEM", "name": "High voltage system current", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "add": -250, "min": -250, "max": 260, "unit": "A"}
+      ]
+    },
+    {
+      "id": "D016.1EC70E80.221946|ta=38,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01638",
+      "rx": "1EC70E80",
+      "request": "221946",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MODULE_CURRENT", "name": "Module current", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "D016.1EC70E80.22D111|ta=38,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01638",
+      "rx": "1EC70E80",
+      "request": "22D111",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_MODULE_V", "name": "Module voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "D016.1EC70E80.22D920|ta=38,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01638",
+      "rx": "1EC70E80",
+      "request": "22D920",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_CLU_PMP_DUTY", "name": "Clutch pump duty", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "D016.1EC70E80.22DD01|ta=38,fc=1,c=1D",
+      "bus": "can29",
+      "tx": "1DD01638",
+      "rx": "1EC70E80",
+      "request": "22DD01",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "V60_DEM_ODO", "name": "Total distance", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    }
+  ]
+}

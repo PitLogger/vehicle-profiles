@@ -1,0 +1,1492 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mazda/cx-60",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mazda",
+    "model": "CX-60",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2022}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mazda-CX-60",
+    "file": "signalsets/v3/default.json",
+    "revision": "53dfc579336e8675c071cde04a5bf155679774e5",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "7E3", "type": "motor"}
+  ],
+  "requests": [
+    {
+      "id": "720.728.2261B1",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261B1",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_FLV", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "723.72B.22480D",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22480D",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_HVBAT_VOLTAGE", "name": "Battery pack voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "multiply": 10, "divide": 1000, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "723.72B.22D90E",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22D90E",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_12V_VOLTAGE", "name": "12V battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "723.72B.22D914",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22D914",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_HV_EV_BATT_SOC", "name": "High voltage battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "723.72B.22DCE1",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22DCE1",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_IG_ON_TIMER", "name": "Engine runtime", "group": "Engine", "bit": 0, "bits": 16, "divide": 60, "min": 0, "max": 1092.25, "unit": "min"}
+      ]
+    },
+    {
+      "id": "723.72B.22DCE2",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22DCE2",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_12V_SOC_723", "name": "12V battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "723.72B.22DD01",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22DD01",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_ODO_723", "name": "Total distance", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "723.72B.22DD05",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22DD05",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "723.72B.22F40C",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22F40C",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_ENGINE_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "723.72B.22F40D",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22F40D",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "723.72B.22F41F",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "72B",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CX60_ENGINE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "726.72E.22D922",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D922",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP_FL_726", "name": "Front left pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D923",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D923",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP_FR_726", "name": "Front right pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D924",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D924",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP_RL_726", "name": "Rear left pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D925",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D925",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP_RR_726", "name": "Rear right pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D926",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D926",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TT_FL_726", "name": "Front left temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22D927",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D927",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TT_FR_726", "name": "Front right temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22D928",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D928",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TT_RL_726", "name": "Rear left temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22D929",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D929",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TT_RR_726", "name": "Rear right temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22DA05",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DA05",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.22DD01|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD01",
+      "interval": 30,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ODO_726", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD06",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD06",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_POWER_MODE", "name": "Power mode", "group": "Engine", "bit": 0, "bits": 8, "add": -192, "min": -192, "max": 63}
+      ]
+    },
+    {
+      "id": "730.738.223301",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "223301",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_STEER_WHL_ANG", "name": "Steering wheel angle velocity", "group": "Tires", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020}
+      ]
+    },
+    {
+      "id": "730.738.22330C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22330C",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_STEER_SHFT_TQ", "name": "Steering shaft torque", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "add": -12.7, "min": -12.7, "max": 12.8, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "733.73B.22D111",
+      "bus": "can11",
+      "tx": "733",
+      "rx": "73B",
+      "request": "22D111",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_CTRL_MODULE_POWER", "name": "Control module power supply", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "737.22D901",
+      "bus": "can11",
+      "tx": "737",
+      "request": "22D901",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_V_SUP", "name": "Voltage supply", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 25, "min": 0, "max": 20.4, "unit": "V", "invalidAtOrAbove": 20.4}
+      ]
+    },
+    {
+      "id": "737.73F.225B19",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B19",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_SEAT_BUCKLE_DRIVER", "name": "Seat buckle driver locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.73F.225B1A",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B1A",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_SEAT_BUCKLE", "name": "Seat buckle passenger locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 3,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_PARKING_BRAKE_760", "name": "Parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B05",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B05",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_DTSC_SWITCH", "name": "Traction control switch indicator", "group": "Engine", "bit": 0, "bits": 8, "divide": 64, "add": -1, "min": -1, "max": 2.98}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0B",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0B",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_YAW_RATE_SIG", "name": "Yaw rate signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_LAT_ANG", "name": "Lateral angle, raw count", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_BRK_FL_P", "name": "Brake hydraulic pressure, raw count", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535, "invalidAtOrAbove": 65535}
+      ]
+    },
+    {
+      "id": "760.768.222B11",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B11",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_LAT_G_760", "name": "Lateral acceleration, raw count", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.223302",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223302",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_STEER_ANG_ACT", "name": "Steering angle, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276}
+      ]
+    },
+    {
+      "id": "775.77D.22D111",
+      "bus": "can11",
+      "tx": "775",
+      "rx": "77D",
+      "request": "22D111",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_TAILGATE_POWER_SUP", "name": "Tailgate power supply", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220202",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220202",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_MAP", "name": "Manifold absolute pressure sensor voltage", "description": "A properly functioning sensor should read around 1 to 1.5 volts at idle.", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_FP_LD", "name": "Fuel pump load", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_VCT_INT_DUTY", "name": "Variable camshaft timing, intake camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220317",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220317",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_VCT_EXH_DUTY", "name": "Variable camshaft timing, exhaust camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_VCT_INT_ACT", "name": "Variable camshaft timing, intake camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220319",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220319",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_VCT_EXH_ACT", "name": "Variable camshaft timing, exhaust camshaft actual", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220324",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220324",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_HPFP_V", "name": "High pressure fuel rail sensor voltage", "bit": 0, "bits": 16, "divide": 204.6, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_ACC_POS", "name": "Accelerator pedal position", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_RO2_V", "name": "Rear O2 voltage", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220393",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220393",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_AC_P", "name": "A/C compressor pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 245251, "divide": 845473, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_AAT_V", "name": "Ambient air temperature sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_CL_LC", "name": "Closed loop lambda correction", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.9}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DC",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_HPFP_DES", "name": "High pressure fuel pressure desired", "bit": 0, "bits": 16, "multiply": 1.4503773969, "min": 0, "max": 6000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_OAR", "name": "Octane adjust ratio", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220415",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220415",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220416",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220416",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_LOW_OIL_P_SWITCH", "name": "Low oil pressure switch", "group": "Engine", "bit": 22, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220522|f=2021-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220522",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22053B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22053B",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_CATDMG_MIS_1", "name": "Catalyst damaging misfires, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_CATDMG_MIS_2", "name": "Catalyst damaging misfires, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_CATDMG_MIS_3", "name": "Catalyst damaging misfires, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_CATDMG_MIS_4", "name": "Catalyst damaging misfires, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_EMISSION_FAILURE_MIS_1", "name": "Emission failure misfires, cylinder 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_EMISSION_FAILURE_MIS_2", "name": "Emission failure misfires, cylinder 2", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_EMISSION_FAILURE_MIS_3", "name": "Emission failure misfires, cylinder 3", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_EMISSION_FAILURE_MIS_4", "name": "Emission failure misfires, cylinder 4", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255},
+        {"id": "CX60_CATDMG_MIS_TOT", "name": "Catalyst damaging misfires total during this trip", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_EMISSION_FAILURE_MIS", "name": "Emission failure misfires total during this trip", "group": "Engine", "bit": 176, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22057D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22057D",
+      "interval": 5,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_AAT_ALT", "name": "Ambient temperature, alternate", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_GRILL_SHUTTER_POS", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_GRILL_SHUT_DC", "name": "Grill shutter duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220914",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220914",
+      "interval": 0.5,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_APP1_V", "name": "APP sensor 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220915",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220915",
+      "interval": 0.5,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_APP2_V", "name": "APP sensor 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220917",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220917",
+      "interval": 0.5,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP1_V", "name": "Throttle position 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220918",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220918",
+      "interval": 0.5,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TP2_V", "name": "Throttle position 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ETC_DSD_DEG", "name": "Throttle control desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ETC_ACT_DEG", "name": "Throttle position actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221310",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221310",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 100, "add": -40, "min": -40, "max": 615.35, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_GEN_FC", "name": "Generator field coil control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 0.25,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 3600,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 5,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_TOT_7E0", "name": "Transmission oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1F",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA01",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_OIL_P_SOLENOID_VLV", "name": "Oil pressure solenoid valve, open", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAB6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAB6",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_MIS_AVG_1", "name": "Cylinder 1 misfire average", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_2", "name": "Cylinder 2 misfire average", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_3", "name": "Cylinder 3 misfire average", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_4", "name": "Cylinder 4 misfire average", "group": "Engine", "bit": 48, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_5", "name": "Cylinder 5 misfire average", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_6", "name": "Cylinder 6 misfire average", "group": "Engine", "bit": 80, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_7", "name": "Cylinder 7 misfire average", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CX60_MIS_AVG_8", "name": "Cylinder 8 misfire average", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F405",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F405",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_CYL_HEAD_T_7E0_2", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_STFT", "name": "Fuel trim, short term", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40E",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_IGN_ANG_BTDC", "name": "Ignition angle before top dead center", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F411",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F411",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_INT_SHUTTER_VLV_POS", "name": "Intake shutter valve position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F423",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F423",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 100, "min": 0, "max": 6553500}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F433",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F433",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_AIR_FUEL_RAT", "name": "Air/fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.000446787, "min": 0, "max": 29.2801}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_BAT_V_7E0", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F449",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F449",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_APP_ECM", "name": "Accelerator pedal position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F45E|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F45E",
+      "interval": 1,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_ENG_FUEL_RATE", "name": "Engine fuel rate", "group": "Fuel", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F462",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_PCM_ACT_ENG_PCT_TRQ", "name": "Actual engine percent torque", "group": "Engine", "bit": 0, "bits": 8, "add": -125, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F463",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F463",
+      "interval": 3600,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_PCM_ENG_REFERENCE_TRQ", "name": "Engine reference torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F4A6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F4A6",
+      "interval": 30,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2022, 2024],
+      "signals": [
+        {"id": "CX60_PCM_VEH_ODO", "name": "Vehicle odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E12",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E12",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_GEAR_7E1", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E16",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E16",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_ACT_GEAR_RAT", "name": "AT, actual gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E1B",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E1B",
+      "interval": 1,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_SLAVE_T", "name": "Slave A/T", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E1C",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "CX60_TRANS_T_V6", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221EC7",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221EC7",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_TQ_DES", "name": "Torque, desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221EE4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221EE4",
+      "interval": 0.25,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_TQ_ACT", "name": "Torque, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22D904",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22D904",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22DD01|f=2022-;-2016",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22DD01",
+      "interval": 30,
+      "years": {"from": 2022, "to": 2016},
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_TRANS_ODO", "name": "Transmission odometer", "group": "Transmission", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22F405",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22F405",
+      "interval": 5,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "CX60_7E3_ECT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/fiat/500e",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "FIAT",
+    "model": "500e",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (Type 312)", "from": 2012, "to": 2019},
+      {"name": "Second Generation (Type 332)", "from": 2020}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/FIAT-500e",
+    "file": "signalsets/v3/default.json",
+    "revision": "edb4d9f359df60bee311b886b6a793dd71df9162",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "answeredIn": [2022],
+      "signals": [
+        {"id": "500E_BCM_BAT_V", "name": "Battery voltage, BCM", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA42.42.22019E|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "22019E",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 43, "divide": 2500, "min": 0, "max": 1127, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA42.42.220301|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "220301",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_HVBAT_CURRENT_BPCM", "name": "High voltage battery current from the battery pack control module", "group": "Battery", "bit": 64, "bits": 16, "divide": 10, "add": -512.1, "min": -512, "max": 6041, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA42.42.223027|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "223027",
+      "interval": 30,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "multiply": 32187, "divide": 200000, "min": 0, "max": 2700041, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA42.42.223062|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "223062",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EMOTOR_HVBAT_V", "name": "Drive motor HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA42.42.223063|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "223063",
+      "interval": 0.25,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EMOTOR_TQ_LIM", "name": "Drive motor torque limit", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "add": -500, "min": -500, "max": 810, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA42.42.223064|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "223064",
+      "interval": 0.25,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EMOTOR_TQ_CMD", "name": "Drive motor torque, commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "add": -500, "min": -500, "max": 810, "unit": "Nm"},
+        {"id": "500E_EMOTOR_TQ_ACHIEVED", "name": "Drive motor torque achieved", "group": "Engine", "bit": 16, "bits": 16, "divide": 50, "add": -500, "min": -500, "max": 810, "unit": "Nm"},
+        {"id": "500E_EMOTOR_SPD_RPM", "name": "Drive motor speed", "group": "Movement", "bit": 32, "bits": 16, "add": -20000, "min": -20000, "max": 45535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA42.42.223065|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "223065",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EMOTOR_STATOR_T", "name": "Drive motor stator temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_INVERTER_T", "name": "Drive motor inverter temperature model", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_INVERTER_T_0", "name": "Drive motor inverter temperature 0", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_INVERTER_T_1", "name": "Drive motor inverter temperature 1", "group": "Engine", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_INVERTER_T_2", "name": "Drive motor inverter temperature 2", "group": "Engine", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_CLT_INLET_T", "name": "Drive motor coolant inlet temperature", "group": "Engine", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_CLT_OUTLET_T", "name": "Drive motor coolant outlet temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_PCB_T", "name": "Drive motor PCB temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_EMOTOR_ROTOR_T", "name": "Drive motor rotor temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA42.42.224001|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224001",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_AC_REFRIGERANT_P", "name": "Air conditioning refrigerant pressure", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA42.42.224011|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224011",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EAC_HV_CURRENT", "name": "Electric A/C compressor HV current", "group": "Engine", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA42.42.224012|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224012",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EAC_HV_V_INPUT", "name": "Electric A/C compressor HV input voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA42.42.224052|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224052",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_HEATER_DES_POWER", "name": "Battery heater, desired power consumption", "group": "Battery", "bit": 0, "bits": 16, "multiply": 20, "min": 0, "max": 1310700},
+        {"id": "500E_BAT_HEATER_ACT_POWER", "name": "Battery heater, actual power consumption", "group": "Battery", "bit": 16, "bits": 16, "multiply": 20, "min": 0, "max": 1310700},
+        {"id": "500E_HV_BUS_V", "name": "HV bus voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA42.42.224053|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224053",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_HEATER_INLET_T", "name": "Battery heater inlet temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_HEATER_OUTLET_T", "name": "Battery heater outlet temperature", "group": "Battery", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA42.42.224055|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "224055",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_AIRHEATER_CURRENT", "name": "Air heater current", "group": "Engine", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "A"},
+        {"id": "500E_AIRHEATER_V", "name": "Air heater voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "500E_AIRHEATER_POWER_CONS", "name": "Air heater power consumption", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "500E_AIRHEATER_CORE_T", "name": "Air heater core temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA42.42.22B562|f=2020-",
+      "bus": "can29",
+      "tx": "18DA42F1",
+      "rx": "18DAF142",
+      "request": "22B562",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_EMOTOR_HV_INPUT_V", "name": "Drive motor HV input voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A001|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A001",
+      "interval": 30,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_HVBAT_AH_1", "name": "HV battery lifetime amp-hours 1", "group": "Battery", "bit": 24, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "Ah"},
+        {"id": "500E_HVBAT_AH_2", "name": "HV battery lifetime amp-hours 2", "group": "Battery", "bit": 48, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "Ah"},
+        {"id": "500E_HVBAT_KWH_1", "name": "HV battery lifetime energy 1", "group": "Battery", "bit": 72, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "kWh"},
+        {"id": "500E_HVBAT_KWH_2", "name": "HV battery lifetime energy 2", "group": "Battery", "bit": 96, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A009|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A009",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_MAX_V_CELL_NUMBER", "name": "Highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "500E_MIN_V_CELL_NUMBER", "name": "Lowest voltage cell number", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "500E_MAX_CELL_V", "name": "Highest cell voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_MIN_CELL_V", "name": "Lowest cell voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_MAX_CELL_T", "name": "Highest battery temperature", "group": "Battery", "bit": 64, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "500E_MIN_CELL_T", "name": "Lowest battery temperature", "group": "Battery", "bit": 80, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A00A",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A00A",
+      "interval": 1,
+      "signals": [
+        {"id": "500E_HVBAT_CURRENT", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "divide": 20, "add": -1638.4, "min": -1638, "max": 1638, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A010|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A010",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_MIN_CELL_ST_CHG", "name": "Lowest cell state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_MAX_CELL_ST_CHG", "name": "Highest cell state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_HVBAT_ST_CHG_EST_1", "name": "HV battery state of charge, estimate 1", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_HVBAT_ST_CHG", "name": "HV battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_HVBAT_ST_CHG_EST_3", "name": "HV battery state of charge, estimate 3", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A011|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A011",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_V_CELL_SUM", "name": "Battery voltage, cell sum", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"},
+        {"id": "500E_BAT_V_MODULE_SUM", "name": "Battery voltage, module sum", "group": "Battery", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"},
+        {"id": "500E_BAT_PACK_LINK_V", "name": "Battery pack link voltage", "group": "Battery", "bit": 176, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A021|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A021",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_COOLING_INLET_T", "name": "Battery coolant inlet temperature", "group": "Battery", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "500E_BAT_COOLING_OUTLET_T", "name": "Battery coolant outlet temperature", "group": "Battery", "bit": 16, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "500E_BAT_T_3", "name": "Battery temperature 3", "group": "Battery", "bit": 32, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A029|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A029",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_HVBAT_SOH", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "divide": 655.35, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_HVBAT_CAP_NOMINAL", "name": "HV battery nominal capacity", "group": "Battery", "bit": 24, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Ah"},
+        {"id": "500E_HVBAT_CAP", "name": "HV battery current capacity", "group": "Battery", "bit": 40, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A042",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A042",
+      "interval": 1,
+      "signals": [
+        {"id": "500E_AUX_BAT_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A070|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A070",
+      "interval": 30,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_DIST_SINCE_CHG_1", "name": "Distance since last charge events 1", "group": "Battery", "bit": 24, "bits": 16, "multiply": 0.160935, "min": 0, "max": 10546, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A071|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A071",
+      "interval": 30,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_DIST_SINCE_CHG_2", "name": "Distance since last charge events 2", "group": "Battery", "bit": 24, "bits": 16, "multiply": 0.160935, "min": 0, "max": 10546, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A100|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A100",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_01_V", "name": "Battery cell 01 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_02_V", "name": "Battery cell 02 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_03_V", "name": "Battery cell 03 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_04_V", "name": "Battery cell 04 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_05_V", "name": "Battery cell 05 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_06_V", "name": "Battery cell 06 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_07_V", "name": "Battery cell 07 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_08_V", "name": "Battery cell 08 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_09_V", "name": "Battery cell 09 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_10_V", "name": "Battery cell 10 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_11_V", "name": "Battery cell 11 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_12_V", "name": "Battery cell 12 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A101|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A101",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_13_V", "name": "Battery cell 13 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_14_V", "name": "Battery cell 14 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_15_V", "name": "Battery cell 15 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_16_V", "name": "Battery cell 16 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_17_V", "name": "Battery cell 17 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_18_V", "name": "Battery cell 18 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_19_V", "name": "Battery cell 19 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_20_V", "name": "Battery cell 20 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_21_V", "name": "Battery cell 21 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_22_V", "name": "Battery cell 22 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_23_V", "name": "Battery cell 23 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_24_V", "name": "Battery cell 24 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A102|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A102",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_25_V", "name": "Battery cell 25 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_26_V", "name": "Battery cell 26 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_27_V", "name": "Battery cell 27 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_28_V", "name": "Battery cell 28 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_29_V", "name": "Battery cell 29 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_30_V", "name": "Battery cell 30 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_31_V", "name": "Battery cell 31 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_32_V", "name": "Battery cell 32 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_33_V", "name": "Battery cell 33 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_34_V", "name": "Battery cell 34 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_35_V", "name": "Battery cell 35 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_36_V", "name": "Battery cell 36 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A103|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A103",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_37_V", "name": "Battery cell 37 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_38_V", "name": "Battery cell 38 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_39_V", "name": "Battery cell 39 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_40_V", "name": "Battery cell 40 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_41_V", "name": "Battery cell 41 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_42_V", "name": "Battery cell 42 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_43_V", "name": "Battery cell 43 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_44_V", "name": "Battery cell 44 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_45_V", "name": "Battery cell 45 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_46_V", "name": "Battery cell 46 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_47_V", "name": "Battery cell 47 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_48_V", "name": "Battery cell 48 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A104|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A104",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_49_V", "name": "Battery cell 49 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_50_V", "name": "Battery cell 50 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_51_V", "name": "Battery cell 51 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_52_V", "name": "Battery cell 52 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_53_V", "name": "Battery cell 53 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_54_V", "name": "Battery cell 54 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_55_V", "name": "Battery cell 55 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_56_V", "name": "Battery cell 56 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_57_V", "name": "Battery cell 57 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_58_V", "name": "Battery cell 58 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_59_V", "name": "Battery cell 59 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_60_V", "name": "Battery cell 60 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A105|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A105",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_61_V", "name": "Battery cell 61 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_62_V", "name": "Battery cell 62 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_63_V", "name": "Battery cell 63 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_64_V", "name": "Battery cell 64 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_65_V", "name": "Battery cell 65 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_66_V", "name": "Battery cell 66 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_67_V", "name": "Battery cell 67 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_68_V", "name": "Battery cell 68 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_69_V", "name": "Battery cell 69 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_70_V", "name": "Battery cell 70 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_71_V", "name": "Battery cell 71 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_72_V", "name": "Battery cell 72 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A106|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A106",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_73_V", "name": "Battery cell 73 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_74_V", "name": "Battery cell 74 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_75_V", "name": "Battery cell 75 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_76_V", "name": "Battery cell 76 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_77_V", "name": "Battery cell 77 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_78_V", "name": "Battery cell 78 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_79_V", "name": "Battery cell 79 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_80_V", "name": "Battery cell 80 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_81_V", "name": "Battery cell 81 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_82_V", "name": "Battery cell 82 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_83_V", "name": "Battery cell 83 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_84_V", "name": "Battery cell 84 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A107|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A107",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_85_V", "name": "Battery cell 85 voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_86_V", "name": "Battery cell 86 voltage", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_87_V", "name": "Battery cell 87 voltage", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_88_V", "name": "Battery cell 88 voltage", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_89_V", "name": "Battery cell 89 voltage", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_90_V", "name": "Battery cell 90 voltage", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_91_V", "name": "Battery cell 91 voltage", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_92_V", "name": "Battery cell 92 voltage", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_93_V", "name": "Battery cell 93 voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_94_V", "name": "Battery cell 94 voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_95_V", "name": "Battery cell 95 voltage", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "500E_BAT_CELL_96_V", "name": "Battery cell 96 voltage", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA44.44.22A200|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22A200",
+      "interval": 5,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_MODULE_T_SENS_1", "name": "Battery module temperature sensor 1", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_2", "name": "Battery module temperature sensor 2", "group": "Battery", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_3", "name": "Battery module temperature sensor 3", "group": "Battery", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_4", "name": "Battery module temperature sensor 4", "group": "Battery", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_5", "name": "Battery module temperature sensor 5", "group": "Battery", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_6", "name": "Battery module temperature sensor 6", "group": "Battery", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_7", "name": "Battery module temperature sensor 7", "group": "Battery", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_8", "name": "Battery module temperature sensor 8", "group": "Battery", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_9", "name": "Battery module temperature sensor 9", "group": "Battery", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_10", "name": "Battery module temperature sensor 10", "group": "Battery", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_11", "name": "Battery module temperature sensor 11", "group": "Battery", "bit": 80, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_12", "name": "Battery module temperature sensor 12", "group": "Battery", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_13", "name": "Battery module temperature sensor 13", "group": "Battery", "bit": 96, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_14", "name": "Battery module temperature sensor 14", "group": "Battery", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_15", "name": "Battery module temperature sensor 15", "group": "Battery", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_16", "name": "Battery module temperature sensor 16", "group": "Battery", "bit": 120, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_17", "name": "Battery module temperature sensor 17", "group": "Battery", "bit": 128, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "500E_BAT_MODULE_T_SENS_18", "name": "Battery module temperature sensor 18", "group": "Battery", "bit": 136, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B004|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B004",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_01_ST_CHG", "name": "Battery cell 01 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_02_ST_CHG", "name": "Battery cell 02 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_03_ST_CHG", "name": "Battery cell 03 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_04_ST_CHG", "name": "Battery cell 04 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_05_ST_CHG", "name": "Battery cell 05 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_06_ST_CHG", "name": "Battery cell 06 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_07_ST_CHG", "name": "Battery cell 07 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_08_ST_CHG", "name": "Battery cell 08 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_09_ST_CHG", "name": "Battery cell 09 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_10_ST_CHG", "name": "Battery cell 10 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_11_ST_CHG", "name": "Battery cell 11 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_12_ST_CHG", "name": "Battery cell 12 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B005|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B005",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_13_ST_CHG", "name": "Battery cell 13 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_14_ST_CHG", "name": "Battery cell 14 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_15_ST_CHG", "name": "Battery cell 15 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_16_ST_CHG", "name": "Battery cell 16 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_17_ST_CHG", "name": "Battery cell 17 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_18_ST_CHG", "name": "Battery cell 18 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_19_ST_CHG", "name": "Battery cell 19 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_20_ST_CHG", "name": "Battery cell 20 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_21_ST_CHG", "name": "Battery cell 21 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_22_ST_CHG", "name": "Battery cell 22 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_23_ST_CHG", "name": "Battery cell 23 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_24_ST_CHG", "name": "Battery cell 24 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B006|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B006",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_25_ST_CHG", "name": "Battery cell 25 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_26_ST_CHG", "name": "Battery cell 26 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_27_ST_CHG", "name": "Battery cell 27 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_28_ST_CHG", "name": "Battery cell 28 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_29_ST_CHG", "name": "Battery cell 29 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_30_ST_CHG", "name": "Battery cell 30 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_31_ST_CHG", "name": "Battery cell 31 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_32_ST_CHG", "name": "Battery cell 32 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_33_ST_CHG", "name": "Battery cell 33 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_34_ST_CHG", "name": "Battery cell 34 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_35_ST_CHG", "name": "Battery cell 35 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_36_ST_CHG", "name": "Battery cell 36 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B007|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B007",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_37_ST_CHG", "name": "Battery cell 37 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_38_ST_CHG", "name": "Battery cell 38 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_39_ST_CHG", "name": "Battery cell 39 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_40_ST_CHG", "name": "Battery cell 40 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_41_ST_CHG", "name": "Battery cell 41 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_42_ST_CHG", "name": "Battery cell 42 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_43_ST_CHG", "name": "Battery cell 43 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_44_ST_CHG", "name": "Battery cell 44 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_45_ST_CHG", "name": "Battery cell 45 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_46_ST_CHG", "name": "Battery cell 46 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_47_ST_CHG", "name": "Battery cell 47 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_48_ST_CHG", "name": "Battery cell 48 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B008|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B008",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_49_ST_CHG", "name": "Battery cell 49 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_50_ST_CHG", "name": "Battery cell 50 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_51_ST_CHG", "name": "Battery cell 51 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_52_ST_CHG", "name": "Battery cell 52 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_53_ST_CHG", "name": "Battery cell 53 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_54_ST_CHG", "name": "Battery cell 54 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_55_ST_CHG", "name": "Battery cell 55 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_56_ST_CHG", "name": "Battery cell 56 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_57_ST_CHG", "name": "Battery cell 57 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_58_ST_CHG", "name": "Battery cell 58 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_59_ST_CHG", "name": "Battery cell 59 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_60_ST_CHG", "name": "Battery cell 60 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B009|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B009",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_61_ST_CHG", "name": "Battery cell 61 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_62_ST_CHG", "name": "Battery cell 62 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_63_ST_CHG", "name": "Battery cell 63 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_64_ST_CHG", "name": "Battery cell 64 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_65_ST_CHG", "name": "Battery cell 65 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_66_ST_CHG", "name": "Battery cell 66 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_67_ST_CHG", "name": "Battery cell 67 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_68_ST_CHG", "name": "Battery cell 68 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_69_ST_CHG", "name": "Battery cell 69 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_70_ST_CHG", "name": "Battery cell 70 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_71_ST_CHG", "name": "Battery cell 71 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_72_ST_CHG", "name": "Battery cell 72 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B00A|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B00A",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_73_ST_CHG", "name": "Battery cell 73 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_74_ST_CHG", "name": "Battery cell 74 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_75_ST_CHG", "name": "Battery cell 75 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_76_ST_CHG", "name": "Battery cell 76 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_77_ST_CHG", "name": "Battery cell 77 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_78_ST_CHG", "name": "Battery cell 78 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_79_ST_CHG", "name": "Battery cell 79 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_80_ST_CHG", "name": "Battery cell 80 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_81_ST_CHG", "name": "Battery cell 81 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_82_ST_CHG", "name": "Battery cell 82 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_83_ST_CHG", "name": "Battery cell 83 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_84_ST_CHG", "name": "Battery cell 84 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B00B|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B00B",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_85_ST_CHG", "name": "Battery cell 85 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_86_ST_CHG", "name": "Battery cell 86 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_87_ST_CHG", "name": "Battery cell 87 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_88_ST_CHG", "name": "Battery cell 88 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_89_ST_CHG", "name": "Battery cell 89 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_90_ST_CHG", "name": "Battery cell 90 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_91_ST_CHG", "name": "Battery cell 91 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_92_ST_CHG", "name": "Battery cell 92 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_93_ST_CHG", "name": "Battery cell 93 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_94_ST_CHG", "name": "Battery cell 94 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_95_ST_CHG", "name": "Battery cell 95 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_96_ST_CHG", "name": "Battery cell 96 state of charge", "group": "Battery", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA44.44.22B00C|f=2020-",
+      "bus": "can29",
+      "tx": "18DA44F1",
+      "rx": "18DAF144",
+      "request": "22B00C",
+      "interval": 1,
+      "years": {"from": 2020},
+      "signals": [
+        {"id": "500E_BAT_CELL_97_ST_CHG", "name": "Battery cell 97 state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_98_ST_CHG", "name": "Battery cell 98 state of charge", "group": "Battery", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_99_ST_CHG", "name": "Battery cell 99 state of charge", "group": "Battery", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_100_ST_CHG", "name": "Battery cell 100 state of charge", "group": "Battery", "bit": 24, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_101_ST_CHG", "name": "Battery cell 101 state of charge", "group": "Battery", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_102_ST_CHG", "name": "Battery cell 102 state of charge", "group": "Battery", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_103_ST_CHG", "name": "Battery cell 103 state of charge", "group": "Battery", "bit": 48, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_104_ST_CHG", "name": "Battery cell 104 state of charge", "group": "Battery", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_105_ST_CHG", "name": "Battery cell 105 state of charge", "group": "Battery", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_106_ST_CHG", "name": "Battery cell 106 state of charge", "group": "Battery", "bit": 72, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "500E_BAT_CELL_107_ST_CHG", "name": "Battery cell 107 state of charge", "group": "Battery", "bit": 80, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

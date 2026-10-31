@@ -1,0 +1,606 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ford/fusion-energi",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ford",
+    "model": "Fusion Energi",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2013, "to": 2020}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ford-Fusion-Energi",
+    "file": "signalsets/v3/default.json",
+    "revision": "b80cf8de5d9bb242de95f8c2fafe2a45445ad332",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "720.226185",
+      "bus": "can11",
+      "tx": "720",
+      "request": "226185",
+      "interval": 1,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_FLI_V2", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "720.2261A5",
+      "bus": "can11",
+      "tx": "720",
+      "request": "2261A5",
+      "interval": 30,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TPMS_WARN", "name": "Tire pressure warning indicator", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "720.22DD01",
+      "bus": "can11",
+      "tx": "720",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ODO_TRIP", "name": "Trip distance", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.22404C",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22404C",
+      "interval": 5,
+      "answeredIn": [2015],
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ODO_V3", "name": "Odometer (instrument panel)", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.22DD01",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22DD01",
+      "interval": 5,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ODO_V2", "name": "Odometer (instrument panel)", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.222813",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222813",
+      "interval": 5,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222814",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222814",
+      "interval": 5,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222815",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222815",
+      "interval": 5,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222816",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222816",
+      "interval": 5,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "760.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "request": "222B00",
+      "interval": 3,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_PARKING_BRAKE", "name": "Parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.223201",
+      "bus": "can11",
+      "tx": "760",
+      "request": "223201",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 6.25, "min": -790, "max": 790, "unit": "°"}
+      ]
+    },
+    {
+      "id": "764.22A224",
+      "bus": "can11",
+      "tx": "764",
+      "request": "22A224",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_CC_TGT_VSS", "name": "Target vehicle speed", "description": "The speed of the vehicle ahead of you.", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "multiply": 3.6, "divide": 10, "min": -736, "max": 736, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7DF.221E12",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "221E12",
+      "interval": 30,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_GEAR_V2", "name": "Current gear", "description": "The automatic transmission gear. Numbers aren't yet mapped to named gears.", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.221E1C",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TOT_V2", "name": "Transmission oil temperature", "group": "Transmission", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.221E23",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "221E23",
+      "interval": 30,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_GEAR_SHFT_V2", "name": "Shift gear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.22F42F",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_FLI_V3", "name": "Fuel level (alternative)", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.220317",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220317",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_EXH_DUTY", "name": "Vct exhaust camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.220319",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220319",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_EXH_ACT", "name": "Vct exhaust camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.22031B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22031B",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_EXH_ERR", "name": "Vct exhaust camshaft error", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220324",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220324",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_HPFP_V", "name": "High pressure fuel rail sensor voltage", "bit": 0, "bits": 16, "divide": 204.6, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22033C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22033C",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TIP_V", "name": "Throttle inlet pressure sensor voltage", "bit": 0, "bits": 16, "divide": 204.8, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22033E",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TIP_ABS", "name": "Throttle inlet pressure absolute", "bit": 0, "bits": 16, "divide": 903.8107848, "min": 0, "max": 60, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.22035A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22035A",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_BARO_V", "name": "Barometric pressure sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220393",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220393",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_AC_P", "name": "Air conditioning compressor pressure", "bit": 0, "bits": 16, "multiply": 0.2900754962, "min": -100, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.2203BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2203BB",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_EXH_DES", "name": "Vct exhaust cam, desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.2203CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2203CA",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_MCT", "name": "Manifold charge temperature", "bit": 0, "bits": 8, "min": 0, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.2203DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2203DC",
+      "interval": 0.25,
+      "notAnsweredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_HPFP_DES", "name": "High pressure fuel pressure desired", "bit": 0, "bits": 16, "multiply": 1.4503773969, "min": 0, "max": 3500, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_MAP_V", "name": "Manifold absolute pressure sensor voltage", "description": "Typically varies from 1 volt at idle to 5 volts during wide open throttle.", "bit": 0, "bits": 16, "multiply": 0.0009765625, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_LPFP_DUTY", "name": "Low pressure fuel pump commanded duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_INT_DUTY", "name": "Vct intake camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_INT_ACT", "name": "Vct intake camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_INT_ERR", "name": "Vct intake camshaft error", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ACC_POS", "name": "Accelerator pedal position", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ETC_TRIM_LEARNED", "name": "Electronic throttle control learned trim angle", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -63.9, "max": 64, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "divide": 27.582114, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_RO2_V", "name": "Rear o2 voltage", "bit": 0, "bits": 16, "multiply": 0.0009765625, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_EVAP_V", "name": "Evaporative vapor pressure sensor voltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ECT", "name": "Engine coolant temperature", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -40, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_AAT_V", "name": "Ambient air temperature sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_VCT_INT_DES", "name": "Vct intake cam, desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 40, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_CL_LC", "name": "Closed loop lambda correction", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.99}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_OAR", "name": "Octane adjust ratio", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 2,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2015],
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TOT", "name": "Transmission oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 2,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_GEAR_SHFT", "name": "Shift gear", "group": "Engine", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22DD04|fc=1",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22DD04",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_IAT", "name": "Interior temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22DD05|fc=1",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22DD05",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_AAT", "name": "Exterior temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E1C|fc=1",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E1C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2015, 2017, 2018],
+      "signals": [
+        {"id": "FUSIONENERGI_TT", "name": "Transmission temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -300, "max": 300, "unit": "°C"}
+      ]
+    }
+  ]
+}

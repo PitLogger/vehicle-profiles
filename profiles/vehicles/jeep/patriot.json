@@ -1,0 +1,1188 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/jeep/patriot",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Jeep",
+    "model": "Patriot",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (2007-2010)", "from": 2007, "to": 2010},
+      {"name": "First Generation (2011 Facelift)", "from": 2011, "to": 2013},
+      {"name": "First Generation (2014-2017)", "from": 2014, "to": 2017}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Jeep-Patriot",
+    "file": "signalsets/v3/default.json",
+    "revision": "99f072887730c04295a5761cc448a0f20467e213",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "PATRIOT_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_ATF_T_V_2", "name": "Transmission fluid temperature v.2", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "PATRIOT_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "PATRIOT_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2148",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2148",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_GAS_T_1_7E0", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 112, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "°F"},
+        {"id": "PATRIOT_EXH_GAS_T_2_7E0", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 288, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "°F"},
+        {"id": "PATRIOT_DPF_REGEN", "name": "Diesel particulate filter regeneration", "group": "Engine", "bit": 383, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_AC_HIGH_SIDE_P_7E0", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_FLI", "name": "Fuel level", "group": "Fuel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B2",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_BOOST_P_ESTIMATE", "name": "Boost pressure estimate", "group": "Engine", "bit": 32, "bits": 16, "divide": 441, "min": 0, "max": 148, "unit": "psi"},
+        {"id": "PATRIOT_CRANKCASE_P", "name": "Crankcase pressure", "group": "Engine", "bit": 96, "bits": 16, "divide": 1761, "min": 0, "max": 37.21, "unit": "psi"},
+        {"id": "PATRIOT_CHG_T", "name": "Charge temperature", "group": "Battery", "bit": 144, "bits": 16, "multiply": 10, "divide": 711, "add": 32, "min": 0, "max": 953, "unit": "°F"},
+        {"id": "PATRIOT_CHG_P", "name": "Charge pressure", "group": "Battery", "bit": 160, "bits": 16, "divide": 221, "min": 0, "max": 296, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B4",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_FUEL_P_SENS_1000_S", "name": "Fuel pressure sensor, 1000's psi", "group": "Fuel", "bit": 0, "bits": 16, "divide": 552, "min": 0, "max": 118, "unit": "psi"},
+        {"id": "PATRIOT_CHG_AIR_COOLER_T", "name": "Charge air cooler outlet temperature", "group": "Battery", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "PATRIOT_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "PATRIOT_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D2",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EOT_21D2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D6",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_DPF_DELTA_P", "name": "Diesel particulate filter delta pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 73, "divide": 500, "min": 0, "max": 37.2299, "unit": "psi"},
+        {"id": "PATRIOT_TIME_SINCE_REGEN", "name": "Time since regen started", "group": "Engine", "bit": 32, "bits": 16, "divide": 40, "min": 0, "max": 1638, "unit": "s"},
+        {"id": "PATRIOT_EXH_GAS_T_1", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 80, "bits": 8, "multiply": 144, "divide": 5, "add": 32, "min": 0, "max": 7376, "unit": "°F"},
+        {"id": "PATRIOT_EXH_GAS_T_2", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 176, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "PATRIOT_EXH_GAS_T_3", "name": "Exhaust gas temperature 3", "group": "Engine", "bit": 208, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "PATRIOT_EXH_GAS_T_4", "name": "Exhaust gas temperature 4", "group": "Engine", "bit": 256, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D7",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_EGR_AIRFLOW_CTRL_VLV", "name": "Exhaust gas recirculation airflow control valve position", "group": "Engine", "bit": 32, "bits": 16, "multiply": 39, "divide": 5000, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D8",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_ESTIMATED_NO", "name": "Estimated NO accumulation via fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 3624, "min": 0, "max": 18.08},
+        {"id": "PATRIOT_DPF_REGEN_ACTIVE_7E0", "name": "Diesel particulate filter regen active", "group": "Engine", "bit": 79, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PATRIOT_REGEN_ENABLE_ON_OFF", "name": "Regen enable, on/off – alternative", "group": "Engine", "bit": 95, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D9",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EGR_VLV_CMD_POSTIION", "name": "Exhaust gas recirculation valve, commanded position", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "add": 32, "min": 0, "max": 543, "unit": "%"},
+        {"id": "PATRIOT_EGR_ORIFICE_T", "name": "Exhaust gas recirculation orifice temperature", "group": "Engine", "bit": 40, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "PATRIOT_EGR_FLOW", "name": "Exhaust gas recirculation flow", "group": "Engine", "bit": 120, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kg/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DA",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_VGT_VIRTUAL_CHG_FLOW", "name": "Variable geometry turbo virtual charge flow", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.0035436904, "add": 32, "min": 0, "max": 264, "unit": "kg/h"},
+        {"id": "PATRIOT_TURBO_SPD", "name": "Turbo speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"},
+        {"id": "PATRIOT_VGT_COMP_OULET_AIR_T", "name": "Variable geometry turbo compressor outlet air temperature", "group": "Engine", "bit": 112, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "PATRIOT_VGT_COMP_INLET_AIR_T", "name": "Variable geometry turbo compressor inlet air temperature", "group": "Engine", "bit": 144, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220165",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220165",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_TEMEPRATURE", "name": "Fuel temperature", "group": "Fuel", "bit": 48, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220166",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_1", "name": "Fuel mass correction, cylinder 1, mg/hub", "group": "Fuel", "bit": 144, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327},
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_2", "name": "Fuel mass correction, cylinder 2, mg/hub", "group": "Fuel", "bit": 160, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327},
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_3", "name": "Fuel mass correction, cylinder 3, mg/hub", "group": "Fuel", "bit": 176, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327},
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_4", "name": "Fuel mass correction, cylinder 4, mg/hub", "group": "Fuel", "bit": 192, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327},
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_5", "name": "Fuel mass correction, cylinder 5, mg/hub", "group": "Fuel", "bit": 208, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327},
+        {"id": "PATRIOT_FUEL_MASS_CORR_CYL_6", "name": "Fuel mass correction, cylinder 6, mg/hub", "group": "Fuel", "bit": 224, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220168",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220168",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_OIL_TEMEPRATURE", "name": "Oil temperature", "group": "Engine", "bit": 160, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017E",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_T_EGR_COOLER_DN", "name": "Exhaust temperature, EGR cooler downstream", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "PATRIOT_EXH_T_DN_EXH", "name": "Exhaust temperature, downstream of exhaust manifold", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "PATRIOT_EXH_T_UP_EXH", "name": "Exhaust temperature, upstream of exhaust manifold", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220198",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220198",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_ENG_TEMEPRATURE", "name": "Engine temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_INJ_CYL_1", "name": "Injection pulse, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_INJ_CYL_2", "name": "Injection pulse, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_INJ_CYL_3", "name": "Injection pulse, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_INJ_CYL_4", "name": "Injection pulse, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220255",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220255",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_MASS_CYL_1", "name": "Fuel mass, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220256",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220256",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_MASS_CYL_2", "name": "Fuel mass, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220257",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220257",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_MASS_CYL_3", "name": "Fuel mass, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220258",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220258",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_MASS_CYL_4", "name": "Fuel mass, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202A1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202A1",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_RAIL_P", "name": "Fuel rail pressure", "group": "Fuel", "bit": 24, "bits": 8, "multiply": 29, "divide": 200, "min": 0, "max": 36.9749, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B2",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_REQUIRED_FUEL_CHG_1", "name": "Required fuel charge, cylinder 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B3",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_REQUIRED_FUEL_CHG_2", "name": "Required fuel charge, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B4",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_REQUIRED_FUEL_CHG_3", "name": "Required fuel charge, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B5",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_REQUIRED_FUEL_CHG_4", "name": "Required fuel charge, cylinder 4", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_ODO", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_PCM_ODO", "name": "Odometer, engine computer", "group": "Trips", "bit": 0, "bits": 16, "multiply": 1024, "divide": 125, "min": 0, "max": 536862, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206F3",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_RAIL_P_06F3", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221250",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221250",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C9",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_LOW_SIDE_ECT", "name": "Low side coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B3",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_THROTTLE_INLET_AIR_T_RAW", "name": "Throttle inlet air temperature raw", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215D4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215D4",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_LOW_T_CHG_AIR_CLT", "name": "Low temperature/charge air coolant pump speed", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22189F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22189F",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_VGT_CMD_189F", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218E7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218E7",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_NUM_STARTED", "name": "Total number of started regeneration events", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221935",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221935",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_INT_MANIFOLD_AIR_T", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221D89",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221D89",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_RAIL_P_TGT", "name": "Fuel rail pressure, target", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221F59",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221F59",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_WASTEGATE_POS_SENS", "name": "Wastegate position sensor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 61, "divide": 12500, "min": 0, "max": 319.8107, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_ODO_LAST_OVERSPEED", "name": "Odometer at last excess speed recognition", "group": "Movement", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223800",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_1", "name": "Total fuel correction, cylinder 1, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223801",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223801",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_2", "name": "Total fuel correction, cylinder 2, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223802",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223802",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_3", "name": "Total fuel correction, cylinder 3, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223803",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223803",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_4", "name": "Total fuel correction, cylinder 4, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223804",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223804",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_5", "name": "Total fuel correction, cylinder 5, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223805",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223805",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TOT_FUEL_CORR_CYL_6", "name": "Total fuel correction, cylinder 6, mg/hub", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22507B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22507B",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_VGT_CMD_507B", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2250AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2250AF",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_DPF_REGEN_ACTIVE", "name": "Regeneration active", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A001",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_TQ_CONV_SLIP_VAR_2", "name": "Torque converter slip, variant 2", "group": "Transmission", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A002",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A003",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_TIME_SINCE_ACTIVE", "name": "Time since active regen", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A043",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A043",
+      "interval": 30,
+      "signals": [
+        {"id": "PATRIOT_FLI_AVG", "name": "Fuel level average", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A054",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A054",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 435, "min": 0, "max": 150, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A067",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A067",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_FUEL_RAIL_P_7E0", "name": "Fuel rail pressure", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A09F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A09F",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_GEAR_CMD", "name": "Transmission gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A0",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_GEAR_7E0", "name": "Transmission gear, actual", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A3",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_TRANS_SUMP_T", "name": "Transmission sump temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A4",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_TRANS_TQ_CONV_T", "name": "Transmission torque converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 320, "min": 0, "max": 1843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0BD",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_GAS_T_1_DOC", "name": "Exhaust gas temperature 1 – DOC inlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C2",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_GAS_T_2_DOC", "name": "Exhaust gas temperature 2 – DOC outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C6",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_GAS_T_4_SCR_CAT", "name": "Exhaust gas temperature 4, catalyst middle", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C8",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EXH_GAS_T_5_SCR_CAT", "name": "Exhaust gas temperature 5 – SCR CAT outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DA",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_EGR_VLV_POS", "name": "Exhaust gas recirculation valve position", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DC",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_EGR_T", "name": "Exhaust gas recirculation temperature", "group": "Engine", "bit": 16, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0E4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0E4",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_TURBOCHARGER_SPD", "name": "Turbocharger speed", "group": "Battery", "bit": 16, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EC",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_TURBO_COMP_INLET_T", "name": "Turbo compressor inlet temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 36, "divide": 5, "add": 32, "min": 0, "max": 1868, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EE",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_CHARGED_AIR_COOLER_T", "name": "Charged air cooler outlet temperature", "group": "Battery", "bit": 16, "bits": 16, "multiply": 36, "divide": 125, "add": 32, "min": 0, "max": 18906, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "signals": [
+        {"id": "PATRIOT_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "signals": [
+        {"id": "PATRIOT_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "signals": [
+        {"id": "PATRIOT_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

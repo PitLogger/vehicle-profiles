@@ -1,0 +1,1826 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/rogue",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Rogue",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (S35)", "from": 2008, "to": 2013},
+      {"name": "Second Generation (T32)", "from": 2014, "to": 2020},
+      {"name": "Third Generation (T33)", "from": 2021}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Rogue",
+    "file": "signalsets/v3/default.json",
+    "revision": "d6649bf5c428012a75220fd2c702226c614a71aa",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "723.735.220101",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220101",
+      "interval": 0.25,
+      "answeredIn": [2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_YAW_RATE", "name": "Yaw rate", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "723.735.220107",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220107",
+      "interval": 0.25,
+      "answeredIn": [2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_RADAR_DISTANCE", "name": "Radar distance", "group": "Cruise control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "m"}
+      ]
+    },
+    {
+      "id": "723.735.220108",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220108",
+      "interval": 0.25,
+      "answeredIn": [2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_RADAR_SPEED", "name": "Relative speed", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "m/s"}
+      ]
+    },
+    {
+      "id": "723.735.220110",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220110",
+      "interval": 0.25,
+      "answeredIn": [2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_STEER_ANGLE", "name": "Steering wheel angle", "description": "Negative values are clockwise, positive values are counter-clockwise.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221208|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221208",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_ABS_STEER_ANG", "name": "Anti-lock brake steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ODO_METER", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2019],
+      "signals": [
+        {"id": "ROGUE_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2019],
+      "signals": [
+        {"id": "ROGUE_TP_FR_743", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2019],
+      "signals": [
+        {"id": "ROGUE_TP_FL_743", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2019],
+      "signals": [
+        {"id": "ROGUE_TP_RR_743", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2019],
+      "signals": [
+        {"id": "ROGUE_TP_RL_743", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ROGUE_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ROGUE_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ROGUE_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "ROGUE_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "ROGUE_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.2153|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2153",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_IH", "name": "Ih_feetventactrposition", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_LEFTMIXACTRPOSITION", "name": "Ih_leftmixactrposition", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_RECYACTRPOSITION", "name": "Ih_recyactrposition", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_RIGHTMIXACTRPOSITION", "name": "Ih_rightmixactrposition", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_DEFACTRPOSITION", "name": "Ih_defactrposition", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_RESERVEACTRPOSITION", "name": "Ih_reserveactrposition", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_FEETVENTACTRREQ", "name": "Oh_feetventactrreq", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_LEFTMIXACTRREQ", "name": "Oh_leftmixactrreq", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_RECYACTRREQ", "name": "Oh_recyactrreq", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_RIGHTMIXACTRREQ", "name": "Oh_rightmixactrreq", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_DEFACTRREQ", "name": "Oh_defactrreq", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_RESERVEACTRREQ", "name": "Oh_reserveactrreq", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_IH_REARMIXACTRPOSITION", "name": "Ih_rearmixactrposition", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "ROGUE_OH_REARMIXACTRREQ", "name": "Oh_rearmixactrreq", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2018, 2019, 2020],
+      "signals": [
+        {"id": "ROGUE_AC_STATUS", "name": "A/C status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2018, 2019, 2020],
+      "signals": [
+        {"id": "ROGUE_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2026],
+      "notAnsweredIn": [2010, 2014, 2015, 2016, 2018, 2019, 2020],
+      "signals": [
+        {"id": "ROGUE_ECT", "name": "Engine coolant temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 214}
+      ]
+    },
+    {
+      "id": "758.778.220201",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220201",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TP_FL_V2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220202",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220202",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TP_FR_V2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220203",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220203",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TP_RR_V2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220204",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220204",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TP_RL_V2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020D",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020D",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TPW_FL", "name": "Front left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020E",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020E",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TPW_FR", "name": "Front right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020F",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020F",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TPW_RR", "name": "Rear right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220210",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220210",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2018, 2019, 2020],
+      "notAnsweredIn": [2010, 2014, 2021, 2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "ROGUE_TPW_RL", "name": "Rear left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "797.79A.221155|fc=1",
+      "bus": "can11",
+      "tx": "797",
+      "rx": "79A",
+      "request": "221155",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_RANGE_DISP", "name": "Range shown on the display", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2169",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2169",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ALTERNATOR_SETPOINT_V", "name": "ALTERNATOR set point VOLTAGE", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21AD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21AD",
+      "interval": 3600,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_COLD_STARTING", "name": "Cold starting programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "ROGUE_FUEL_RAIL_T_SENS_V", "name": "Fuel rail temperature sensor voltage", "group": "Battery", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "ROGUE_FUEL_RAIL_T", "name": "Fuel rail temperature", "group": "Fuel", "bit": 16, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "ROGUE_VAPOR_LOCK_T", "name": "Vapor lock temperature", "group": "Engine", "bit": 24, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "ROGUE_FUEL_TANK_T_SENS_V", "name": "Fuel tank temperature sensor voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "ROGUE_FUEL_TANK_T", "name": "Fuel tank temperature", "group": "Fuel", "bit": 40, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "ROGUE_TANK_P", "name": "Tank pressure", "group": "Engine", "bit": 120, "bits": 16, "divide": 2, "min": 0, "max": 32767},
+        {"id": "ROGUE_LPLI_PMP_PWM_SIG", "name": "Low-pressure fuel pump drive duty", "group": "Engine", "bit": 160, "bits": 16, "multiply": 0.0015259, "min": 0, "max": 99.99, "unit": "%"},
+        {"id": "ROGUE_FUEL_PMP_FLOW", "name": "Fuel pump flow", "group": "Fuel", "bit": 176, "bits": 8, "divide": 8, "min": 0, "max": 31.87, "unit": "g/s"},
+        {"id": "ROGUE_EFP_LEARNING", "name": "Electric fuel pump learning value", "group": "Engine", "bit": 184, "bits": 16, "divide": 65535, "add": -0.5, "min": -0.5, "max": 0.5, "unit": "%"},
+        {"id": "ROGUE_BUTANE_PERCENTAGE", "name": "Butane percentage", "group": "Engine", "bit": 200, "bits": 8, "multiply": 7813, "divide": 20000, "min": 0, "max": 99.61, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22110A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22110A",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_IGN_TIM_ADVANCE", "name": "Ignition timing advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 110, "min": -145, "max": 110, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221110",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221110",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_EVAP_PURGE_DUTY", "name": "EVAP purge duty", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221111",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221111",
+      "interval": 5,
+      "answeredIn": [2018, 2019],
+      "signals": [
+        {"id": "ROGUE_FUEL_T_7E0", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221123",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020],
+      "signals": [
+        {"id": "ROGUE_F_RAT_ADJ", "name": "A/F ratio adj", "group": "Engine", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22112A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22112A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_MANIFOLD_P_SENS_V", "name": "Manifold pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221135",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221135",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_CAM_ADV_ANG", "name": "Camshaft adv angle", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221138",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221138",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_CAM_VLV_DUTY", "name": "Camshaft valve duty", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22113C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22113C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_IGN_ADVANCE", "name": "Ignition advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 112, "min": -143, "max": 112}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221186",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221186",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2014, 2018, 2019, 2020, 2021, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "ROGUE_REMAINING_FUEL", "name": "Remaining fuel", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221201",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221201",
+      "interval": 0.25,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_CURRENT_RPM", "name": "Current engine speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 2, "min": 0, "max": 819187, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221204",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221204",
+      "interval": 1,
+      "signals": [
+        {"id": "ROGUE_MAF_VOLTS", "name": "Mass air flow volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221208",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221208",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_FUEL_BASE_WIDTH", "name": "Fuel base pulse width", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221209",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221209",
+      "interval": 1,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_MAF", "name": "Mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221223",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221223",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_REFRIGERANT_FLUID_V", "name": "Refrigerant fluid sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221225",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221225",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_UP_OXYGEN_SENS_V", "name": "Upstream oxygen sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122B",
+      "interval": 30,
+      "answeredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_CC_S", "name": "Cruise control set speed", "group": "Cruise control", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221266",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221266",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2014, 2018, 2019, 2020, 2021, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "ROGUE_VVT_EOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130D",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_BRAKE_SWITCH_NUMBER_2", "name": "BRAKE SWITCH, number 2", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_BRAKE_SWITCH_NUMBER_1", "name": "BRAKE SWITCH, number 1", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221406",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22140E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22140E",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1000, "min": 0, "max": 255000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22140F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22140F",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_THROTTLE_OPENING", "name": "Throttle opening", "group": "Engine", "bit": 0, "bits": 8, "multiply": 7, "divide": 20, "min": 0, "max": 89.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222004",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ENG_TQ", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -400, "min": -400, "max": 32367, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22200F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22200F",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_BRAKING_DETECTED", "name": "Braking detected multiplex signal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222026",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222026",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_WIRED_BRAKE_CONTACT", "name": "Wired brake contact", "group": "Control", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22204B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22204B",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_CRUISE_CTRL_SPD", "name": "Cruise control/speed limiter buttons", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222079",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222079",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_CRUISE_CTRL", "name": "Cruise control", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_TRACTION_CTRL_ANTI", "name": "Traction control/anti-yaw control", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_ENGAGE_REVERSE_GEAR", "name": "Engage reverse gear", "group": "Transmission", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_STARTER_BUTTON", "name": "Starter button", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_DUR_RESUME_BUTTON", "name": "Duration of resume button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207B",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_DUR_BUTTON_PRESS", "name": "Duration of + button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_DUR_BUTTON_PRESS_7E0", "name": "Duration of - button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207D",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_DUR_SUSPEND_BUTTON", "name": "Duration of suspend button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207E",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_NUM_ABNORMAL_CC_SL", "name": "Number of abnormal cc/sl transitions", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222170",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222170",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_CHANGE_VSS_UNIT", "name": "Change of vehicle speed unit", "group": "Movement", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_AUTO_EMERGENCY", "name": "Auto emergency braking system request", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ROGUE_STOP_WARN_LIGHT", "name": "Stop warning light", "group": "Lights", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222225",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222225",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_VSS_MULTIPLEXED", "name": "Vehicle speed multiplexed information", "group": "Movement", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22222B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22222B",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_MANUAL_OR_ASSISTED", "name": "Manual or assisted parking brake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2222AA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2222AA",
+      "interval": 3600,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_STARTER_WEAR_CNT", "name": "Starter wear counter", "group": "Engine", "bit": 40, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222C04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222C04",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_GEARBOX_RAT", "name": "Gearbox ratio", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "ROGUE_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "ROGUE_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "ROGUE_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "ROGUE_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2103",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_TRANS_ATF", "name": "Transmission ATF deterioration date", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "ROGUE_TRANS_B", "name": "Transmission-B", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "ROGUE_TRANS_WORK_HOURS", "name": "Transmission work hours", "group": "Transmission", "bit": 32, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"},
+        {"id": "ROGUE_TRANS", "name": "Transmission-A", "group": "Transmission", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "ROGUE_TRANS_WORK_HOURS_WARM_ENG", "name": "Transmission work hours warm engine", "group": "Transmission", "bit": 192, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221101",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_VSS_SENS", "name": "Vehicle speed sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221102|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221102",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_VSS_EST", "name": "Estimated vehicle speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221103",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_P", "name": "Secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_P", "name": "Primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110C",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_LUBE_P", "name": "Lubrication pressure", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_P_TGT", "name": "Target primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEL_P_TGT", "name": "Target select pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221111",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_P_TGT", "name": "Target secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221112|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221112",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_REQ_TQ_D", "name": "Requested torque delta", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221113|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221113",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_REQ_TQ", "name": "Requested torque", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221114|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221114",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_REQ_RPM", "name": "Requested engine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221201",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_INPUT_RPM", "name": "Input speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221202|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221202",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_RPM", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221203|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221203",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_RPM", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221204",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221206|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221206",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221207|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221207",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ATF_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221208",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_G_V", "name": "Acceleration sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.27, "max": 3.27, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_INPUT_RPM_2", "name": "Input speed, alternate", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_RPM_2", "name": "Primary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_RPM_2", "name": "Secondary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120F",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_RPM_2", "name": "Engine speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221210|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221210",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PULLEY_RAT", "name": "Pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221212|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221212",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ENG_TQ_ACT", "name": "Engine torque, active", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221213|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221213",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ENG_TQ_TX", "name": "Engine torque, transmitted", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221214|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221214",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ENG_TQ", "name": "Engine torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221215|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221215",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_TQ", "name": "Primary pulley torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221216|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221216",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_TQ_RAT", "name": "Torque ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 577, "divide": 160000, "min": 0, "max": 236}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221218|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221218",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PULLEY_RAT_TGT", "name": "Target pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221219|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221219",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ISO_1_C", "name": "Isolation solenoid 1 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_ISO_2_C", "name": "Isolation solenoid 2 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_SOL_C", "name": "Primary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_SOL_C", "name": "Secondary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEL_SOL_C", "name": "Select solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SOL_MON_1", "name": "Solenoid 1 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SOL_MON_2", "name": "Solenoid 2 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221221|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221221",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_PRI_SOL_MON", "name": "Primary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221222|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221222",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEC_SOL_MON", "name": "Secondary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221223|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221223",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "ROGUE_TCM_SEL_SOL_MON", "name": "Select solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA18.18.221105",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221105",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_EGR_T_SENS_V", "name": "Exhaust gas recirculation temperature sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221111",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221111",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.221114",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221114",
+      "interval": 30,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 0, "bits": 8, "divide": 25, "min": 0, "max": 10.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221115",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221115",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_EVAP_P_SENS_V", "name": "EVAP pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22111F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22111F",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.221207",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221207",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_BASE_INJ_TIM", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120C",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_FUEL_P_SENS_V", "name": "Fuel pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 4, "divide": 13107, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120D",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120D",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ACCEL_PEDAL_POS_SENS_1", "name": "Accelerator pedal position sensor 1, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120E",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120E",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ACCEL_PEDAL_POS_SENS_2", "name": "Accelerator pedal position sensor 2, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120F",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_THROTTLE_POS_SENS_1", "name": "Throttle position sensor 1, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221210",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221210",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_THROTTLE_POS_SENS_2", "name": "Throttle position sensor 2, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22121F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22121F",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ROLL_OVER_SENS_V", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.222170",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222170",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 232, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B00",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B00",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B01",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B01",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B02",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B02",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B03",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B03",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "ROGUE_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    }
+  ]
+}

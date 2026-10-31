@@ -1,0 +1,359 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volkswagen/amarok",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volkswagen",
+    "model": "Amarok",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2010, "to": 2022},
+      {"name": "Second Generation", "from": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volkswagen-Amarok",
+    "file": "signalsets/v3/default.json",
+    "revision": "5c26d4285ccdf498040bed94d535ade241666c88",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "70B.2218A0|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "request": "2218A0",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.2218A1|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "request": "2218A1",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.2218A2|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "request": "2218A2",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.2218A3|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "request": "2218A3",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "710.222A0A",
+      "bus": "can11",
+      "tx": "710",
+      "request": "222A0A",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_ODO_2", "name": "Odometer (alternative)", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 255, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.22202F",
+      "bus": "can11",
+      "tx": "714",
+      "request": "22202F",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -58, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "714.222203",
+      "bus": "can11",
+      "tx": "714",
+      "request": "222203",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_ODO_DASH", "name": "Odometer (dash)", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 255, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.222294",
+      "bus": "can11",
+      "tx": "714",
+      "request": "222294",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_RANGE", "name": "Range remaining", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 255, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.22229A",
+      "bus": "can11",
+      "tx": "714",
+      "request": "22229A",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2020, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_FLV", "name": "Fuel remaining", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "714.2222B0",
+      "bus": "can11",
+      "tx": "714",
+      "request": "2222B0",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_FLI_VOL", "name": "Fuel level (volume)", "group": "Fuel", "bit": 336, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "714.222613",
+      "bus": "can11",
+      "tx": "714",
+      "request": "222613",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_IAT", "name": "Interior air temperature", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "715.222353",
+      "bus": "can11",
+      "tx": "715",
+      "request": "222353",
+      "interval": 3600,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_CRSH_FRONT", "name": "Crashes, front", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.222354",
+      "bus": "can11",
+      "tx": "715",
+      "request": "222354",
+      "interval": 3600,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_CRASH_CNT_DRVR", "name": "Crashes, driver side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.222355",
+      "bus": "can11",
+      "tx": "715",
+      "request": "222355",
+      "interval": 3600,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_CRASH_CNT_PSNGR", "name": "Crashes, passenger side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.222356",
+      "bus": "can11",
+      "tx": "715",
+      "request": "222356",
+      "interval": 3600,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_CRASH_CNT_REAR", "name": "Crashes, rear", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.222357",
+      "bus": "can11",
+      "tx": "715",
+      "request": "222357",
+      "interval": 3600,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_CRASH_CNT_ROLL", "name": "Crashes, rollover", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "746.2227C4|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "request": "2227C4",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_WNDSHLD_TEMP", "name": "Windshield temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 0.576, "add": -38.8, "min": -38.8, "max": 108.08, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.2211BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211BA",
+      "interval": 15,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262}
+      ]
+    },
+    {
+      "id": "7E0.2211C4",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211C4",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_OIL_MAX", "name": "Oil level (max)", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.2211C5",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211C5",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_OIL_MIN", "name": "Oil level (min)", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.22295A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22295A",
+      "interval": 30,
+      "notAnsweredIn": [2018, 2023, 2025],
+      "signals": [
+        {"id": "AMAROK_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.220302",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220302",
+      "interval": 900,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E1.220303",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220303",
+      "interval": 900,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_DRIVE_TIME_ECO", "name": "Driving time (eco)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.220304",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220304",
+      "interval": 900,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_DRIVE_TIME_SPORT", "name": "Driving time (sport)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.220305",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220305",
+      "interval": 900,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_DRIVE_TIME_MANUAL", "name": "Driving time (manual)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.222B1B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1B",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1C",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1D",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1D",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1E",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1E",
+      "interval": 30,
+      "answeredIn": [2018, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "AMAROK_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    }
+  ]
+}

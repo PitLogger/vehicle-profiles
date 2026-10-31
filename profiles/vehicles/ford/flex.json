@@ -1,0 +1,1460 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ford/flex",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ford",
+    "model": "Flex",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (Pre-Facelift)", "from": 2009, "to": 2012},
+      {"name": "First Generation (Post-Facelift)", "from": 2013, "to": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ford-Flex",
+    "file": "signalsets/v3/default.json",
+    "revision": "ad7dfb805260a194f2a0bc20d607ff3c45289993",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "720.728.22404C",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22404C",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ODO_V3", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.2261A5",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261A5",
+      "interval": 30,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TPMS_WARN", "name": "Tire pressure warning indicator", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.22280B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22280B",
+      "interval": 5,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_TYRE_T", "name": "Tire temperature", "group": "Tires", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "726.72E.222813",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222813",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222814",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222814",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222815",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222815",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222816",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222816",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222817",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222817",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_RRI", "name": "Rear right inner tire pressure", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222818",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222818",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TP_RLI", "name": "Rear left inner tire pressure", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.22401E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22401E",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_NORM_CUM_CHG_IGN_ON", "name": "Normalized cumulative charge when ignition is on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224021",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224021",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_NORM_CUM_DCHG_BAT_ON", "name": "Normalized cumulative discharge from battery with engine on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224026",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224026",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_NORM_CUM_DCHG_BAT_OFF", "name": "Normalized cumulative discharge from battery with engine off", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224027",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224027",
+      "interval": 3600,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_BATT_AGE", "name": "Battery age", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 1825}
+      ]
+    },
+    {
+      "id": "726.72E.224028",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224028",
+      "interval": 10,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_BATT_SOC", "name": "Battery charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.72E.224029",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224029",
+      "interval": 10,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_BATT_TEMP", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22402A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402A",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VEH_BAT_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 0, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22402B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402B",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VEH_BAT_CURRENT", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -127, "min": -127, "max": 128, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.2240D1",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2240D1",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AUX_12V_BAT_CTRL", "name": "Aux 12V battery control mode", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "730.738.22330C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22330C",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_STEER_SHFT_TQ", "name": "Steering shaft torque", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "add": -12.7, "min": -12.7, "max": 12.8, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "730.738.22DD01",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_ODO_PSCM", "name": "Odometer, power steering module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 3,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PARKING_BRAKE", "name": "Focus parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0B",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0B",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_YAW_RATE_SIG", "name": "Yaw rate signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_LAT_ANG", "name": "Lateral angle, raw count", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_BRK_FL_P", "name": "Brake hydraulic pressure, raw count", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "760.768.222B11",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B11",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_LAT_G", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -1, "max": 1}
+      ]
+    },
+    {
+      "id": "760.768.223302",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223302",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_BCM_STEER_ANG_ACT", "name": "Steering angle from the body module, actual value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -780, "min": -780, "max": 5773, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D0.7D8.228012",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7D8",
+      "request": "228012",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_SYNC_GPS_ALTITUDE", "name": "Navigation altitude", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "FLEX_SYNC_GPS_SPD", "name": "Navigation speed", "group": "Movement", "bit": 88, "bits": 16, "multiply": 18, "divide": 5, "min": 0, "max": 235926, "unit": "km/h", "invalidAtOrAbove": 406.7},
+        {"id": "FLEX_SYNC_GPS_HEADING", "name": "Navigation heading", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7DF.221310",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "221310",
+      "interval": 30,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "FLEX_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22030F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22030F",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_CL", "name": "Commanded lambda", "description": "The ratio of of oxygen in the combustion chamber compared to the amount that should have been present for ideal combustion.", "bit": 0, "bits": 16, "multiply": 3.05176e-05, "min": 0, "max": 1.99}
+      ]
+    },
+    {
+      "id": "7E0.220393|f=-2019",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220393",
+      "interval": 0.25,
+      "years": {"to": 2019},
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AC_P", "name": "Air conditioning compressor pressure", "bit": 0, "bits": 16, "multiply": 0.2900754962, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_MAP_V", "name": "Manifold absolute pressure sensor voltage", "description": "Typically varies from 1 volt at idle to 5 volts during wide open throttle.", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220304",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220304",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_CMD_GEN_V", "name": "Commanded generator voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000488, "min": 0, "max": 16, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_LPFP_DUTY", "name": "Low pressure fuel pump commanded duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_INT_DUTY", "name": "Variable cam timing intake camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220317",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220317",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_EXH_DUTY", "name": "Variable cam timing exhaust camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_INT_ACT", "name": "Variable cam timing intake camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220319",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220319",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_EXH_ACT", "name": "Variable cam timing exhaust camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_INT_ERR", "name": "Variable cam timing intake camshaft error", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031B",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_EXH_ERR", "name": "Variable cam timing exhaust camshaft error", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ACC_POS", "name": "Accelerator pedal position", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220334",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220334",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_CYL_HEAD_T_CORR", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ETC_TRIM_LEARNED", "name": "Electronic throttle control learned trim angle", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220345",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220345",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_EVENTS_LATEST_CYC", "name": "Misfire events, latest cycle", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "multiply": 0.0362553791, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_RO2_V", "name": "Rear O2 voltage", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220378",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220378",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_GEN_CTRL", "name": "Generator control", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220382",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220382",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL1_NORM", "name": "Misfire acceleration, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220388",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220388",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL2_NORM", "name": "Misfire acceleration, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038A",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL3_NORM", "name": "Misfire acceleration, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038B",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL4_NORM", "name": "Misfire acceleration, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038C",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL5_NORM", "name": "Misfire acceleration, cylinder 5", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_EVAP_V", "name": "Evaporative vapor pressure sensor voltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ECT", "name": "Engine coolant temperature", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -40, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220398",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220398",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_MISF_ACCEL_CYL6_NORM", "name": "Misfire acceleration, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203AF",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TRQ_CTRL_REQ", "name": "Torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AAT_V", "name": "Ambient air temperature sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BB",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_EXH_DES", "name": "Variable cam timing exhaust cam desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VCT_INT_DES", "name": "Variable cam timing intake cam desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_CL_LC", "name": "Closed loop lambda correction", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.99}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_OAR", "name": "Octane adjust ratio", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": -1, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220403",
+      "interval": 2,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_KS1_RAW", "name": "Knock sensor, 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220404",
+      "interval": 2,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_KS2_RAW", "name": "Knock sensor, 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220416",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220416",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_GLOW_PLUG_CMD_STAT", "name": "Glow plug, commanded status", "group": "Engine", "bit": 0, "bits": 8, "add": -4, "min": -4, "max": 251},
+        {"id": "FLEX_LOW_OIL_P_SWITCH", "name": "Low oil pressure switch", "group": "Engine", "bit": 22, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2204F7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2204F7",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_GEN_CURRENT", "name": "Generator current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 781, "divide": 50000, "min": -511.8361, "max": 511.8205, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054B",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_ENG_OIL_LIFE_REM", "name": "Oil life remaining", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22057D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22057D",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AAT_ALT", "name": "Ambient temperature, alternate", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_GRILL_SHUTTER_POS", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_GRILL_SHUT_DC", "name": "Grill shutter duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ETC_ANG_DES", "name": "Throttle angle, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ETC_ANG_ACT", "name": "Throttle angle, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2209CD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2209CD",
+      "interval": 1,
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "FLEX_FICM_SYNC", "name": "Injector control module cam and crank sync", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "answeredIn": [2013, 2016],
+      "signals": [
+        {"id": "FLEX_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 0.5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_CMD_GEN_DUTY", "name": "Commanded generator duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 2,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E19",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E19",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_CMD_TRANS_GEAR_RATIO", "name": "Gear ratio, commanded", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1A",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_PCM_CMD_TRANS_MAIN_LINE_P", "name": "Transmission pressure, commanded", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_TOT", "name": "Transmission oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 2,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E62",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E62",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AWD_CLU_DIAGNOSTIC", "name": "All-wheel drive clutch diagnostic signal", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E63",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E63",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AWD_CLU_CMD_CTRL_SIG", "name": "All-wheel drive clutch, commanded control signal", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 2,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D137",
+      "interval": 3600,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_DTC_CNT", "name": "DTC counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 0.5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_STFT", "name": "Fuel trim, short term", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 0.5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 60,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 1,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 60,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 60,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "metric": "distanceSinceDTCsCleared", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AIR_FUEL_RAT", "name": "Air/fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.000446787, "min": 0, "max": 29.2801}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 0.5,
+      "answeredIn": [2016],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "FLEX_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F446",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F446",
+      "interval": 5,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22FD18",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22FD18",
+      "interval": 1,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "FLEX_AC_P_7E0", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 12.156863, "min": 0, "max": 3100, "unit": "kPa"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2476 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volkswagen/e-up",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volkswagen",
+    "model": "e-Up",
+    "years": null,
+    "generations": [{"name": "e-Up (2013)", "from": 2013, "to": 2023}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volkswagen-e-Up",
+    "file": "signalsets/v3/default.json",
+    "revision": "8c4978304f5675ac085c06b68ed5007ea63de0c8",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "710.77A.222AB2|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB2",
+      "interval": 86400,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_HVBAT_CAP", "name": "HV battery capacity", "description": "Total possible energy in the high voltage battery", "group": "Battery", "bit": 0, "bits": 32, "divide": 1310770, "min": 0, "max": 3276, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB8|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB8",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_HVBAT_KWH", "name": "HV battery energy", "description": "Energy stored in the high voltage battery", "group": "Battery", "bit": 0, "bits": 32, "divide": 1310770, "min": 0, "max": 3276, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "714.77E.221014|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "221014",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_DASH_AAT", "name": "Ambient air temperature, cluster", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "714.77E.222203",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222203",
+      "interval": 10,
+      "signals": [
+        {"id": "EUP_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.2222E0",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "2222E0",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_RANGE_DSP", "name": "Range remaining, displayed", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km", "invalidAtOrAbove": 65535}
+      ]
+    },
+    {
+      "id": "715.77F.222353|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222353",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_CRASH_FRONT", "name": "Crashes, front", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222354|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222354",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_CRASH_DRVR", "name": "Crashes, driver side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222355|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222355",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_CRASH_PASS", "name": "Crashes, passenger side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222356|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222356",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_CRASH_REAR", "name": "Crashes, rear", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222357|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222357",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EUP_ROLLOVER", "name": "Rollovers", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "744.2215D3",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215D3",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_AC_I_SET", "name": "Charger AC input current setpoint", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.2215D6",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215D6",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_CHG_EFFICIENCY", "name": "Charging efficiency", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 75, "min": 0, "max": 100.499, "unit": "%"}
+      ]
+    },
+    {
+      "id": "744.2215D8",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215D8",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_CHG_T", "name": "Charger temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.2215D9",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215D9",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_CHG_PFC_COIL_T", "name": "Charger power factor coil temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.2215DA",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215DA",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_CHG_DCDC_COIL_T", "name": "Charger DC to DC coil temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.2215DB",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215DB",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_LINK_V", "name": "Charger DC link voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.2215DC",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215DC",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_PFC_GATE_V", "name": "Charger power factor gate driver voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.2215DD",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215DD",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_DCDC_GATE_V", "name": "Charger DC to DC gate driver voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.2215E1",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215E1",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_CHG_PWR_LOSS", "name": "Charger power loss", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "W"}
+      ]
+    },
+    {
+      "id": "744.2215EC",
+      "bus": "can11",
+      "tx": "744",
+      "request": "2215EC",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_CHG_DCDC_LINE_T", "name": "Charger DC to DC power line temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.221DA7",
+      "bus": "can11",
+      "tx": "744",
+      "request": "221DA7",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_OUT_V", "name": "Charger output voltage", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.221DA8",
+      "bus": "can11",
+      "tx": "744",
+      "request": "221DA8",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_CHG_AC_I", "name": "Charger AC input current", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.221DA9",
+      "bus": "can11",
+      "tx": "744",
+      "request": "221DA9",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_AC_V", "name": "Charger AC input voltage", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.224237",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224237",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_CHG_HV_I", "name": "Charger output current", "group": "Battery", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.749, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.224238",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224238",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CHG_HV_I_SET", "name": "Charger output current setpoint", "group": "Battery", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.749, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.221017",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221017",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_AC_REFRIG_P", "name": "Air conditioning refrigerant pressure", "group": "Climate", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.221028",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221028",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_DOWNSHIFT_ADAPT_V", "name": "Downshift point adaptation voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.221029",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221029",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP_REDUCE_V", "name": "Accelerator pedal release detection threshold voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.22102A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22102A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP_V1", "name": "Accelerator pedal sensor 1 voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.22102B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22102B",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP_V2", "name": "Accelerator pedal sensor 2 voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.22105A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22105A",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_BAT_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "multiply": 20, "min": 0, "max": 1310700, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.221077",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221077",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_AUX_PWR", "name": "Onboard electrical system power", "group": "Battery", "bit": 0, "bits": 16, "multiply": 4, "min": 0, "max": 262140, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E0.221165",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221165",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_LOAD", "name": "HV battery temperature load", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22147D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22147D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_I", "name": "Drive motor current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.968, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.22147E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22147E",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_PWR", "name": "Drive motor power", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 250, "min": -131.072, "max": 131.068, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E0.22147F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22147F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_TQ", "name": "Drive motor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 3, "min": -10922.666, "max": 10922.333, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.221484",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221484",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_MOTOR_V", "name": "Drive motor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.221485",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221485",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_HVBAT_PWR", "name": "HV battery power", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 250, "min": -131.072, "max": 131.068, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E0.22149A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22149A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_RPM_ECM", "name": "Drive motor speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.749, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.22149B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22149B",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_REL", "name": "HV battery relative temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.221502",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221502",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_HVBAT_PWR_MAX", "name": "HV battery maximum power", "group": "Battery", "bit": 0, "bits": 16, "multiply": 4, "min": 0, "max": 262140, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E0.221587",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221587",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_DCDC_HV_V", "name": "DC to DC converter high-voltage side voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.221604",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221604",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PTC_HEATER_I", "name": "PTC heater current", "group": "Climate", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.221617",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221617",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_AUX_I", "name": "Onboard electrical system current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.968, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.22F433",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F433",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.22F446",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F446",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22F449",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F449",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP1", "name": "Accelerator pedal position 1", "group": "Control", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22F44A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F44A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP2", "name": "Accelerator pedal position 2", "group": "Control", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22F45B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F45B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_REMAINING", "name": "HV battery remaining charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221164",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221164",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_SOC_DISP", "name": "HV battery charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_MIL_DIST", "name": "Distance traveled while mil was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "signals": [
+        {"id": "EUP_WARM_UPS", "name": "Number of warm-ups since diagnostic trouble codes cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_CLR_DIST", "name": "Distance traveled since diagnostic trouble codes cleared", "group": "DTCs", "metric": "distanceSinceDTCsCleared", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_KL30_V", "name": "Terminal 30 voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E0E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E0E",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_MAX", "name": "HV battery temperature, maximum", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"},
+        {"id": "EUP_HVBAT_T_MAX_NO", "name": "HV battery hottest sensor", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.221E0F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E0F",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_T_MIN_NO", "name": "HV battery coldest sensor", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.221E17",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E17",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HV_ISO_POS_SYS", "name": "HV system isolation resistance, positive", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.221E18",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E18",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_ISO_POS", "name": "HV battery isolation resistance, positive", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.221E19",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E19",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HV_ISO_NEG_SYS", "name": "HV system isolation resistance, negative", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.221E1A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E1A",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_ISO_NEG", "name": "HV battery isolation resistance, negative", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.221E1B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E1B",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_CHG_I_LIM", "name": "HV battery charge current limit", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.221E1C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E1C",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_DISCHG_I_LIM", "name": "HV battery discharge current limit", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.221E1D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E1D",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_CHG_I_LIM_PRED", "name": "HV battery charge current limit, predicted", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.221E1E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E1E",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_DISCHG_I_LIM_PRED", "name": "HV battery discharge current limit, predicted", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.221E33",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E33",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_V_MAX", "name": "HV battery cell voltage, maximum", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"},
+        {"id": "EUP_HVBAT_CELL_V_MAX_NO", "name": "HV battery highest cell", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.221E34",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E34",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_V_MIN", "name": "HV battery cell voltage, minimum", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"},
+        {"id": "EUP_HVBAT_CELL_V_MIN_NO", "name": "HV battery lowest cell", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.221E35",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E35",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_NEG_V_PRE", "name": "HV battery negative voltage before the contactors", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E36",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E36",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_POS_V_PRE", "name": "HV battery positive voltage before the contactors", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E39",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E39",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_POS_V_POST_CHG", "name": "HV battery positive voltage after the charging contactors", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E3C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E3C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_SUM_V", "name": "HV battery cell voltage sum", "group": "Battery", "bit": 0, "bits": 24, "divide": 4096, "min": 0, "max": 4095.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E40",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E40",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_1_V", "name": "HV battery cell 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E41",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E41",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_2_V", "name": "HV battery cell 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E42",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E42",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_3_V", "name": "HV battery cell 3 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E43",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E43",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_4_V", "name": "HV battery cell 4 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E44",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E44",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_5_V", "name": "HV battery cell 5 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E45",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E45",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_6_V", "name": "HV battery cell 6 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E46",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E46",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_7_V", "name": "HV battery cell 7 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E47",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E47",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_8_V", "name": "HV battery cell 8 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E48",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E48",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_9_V", "name": "HV battery cell 9 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E49",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E49",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_10_V", "name": "HV battery cell 10 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_11_V", "name": "HV battery cell 11 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_12_V", "name": "HV battery cell 12 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_13_V", "name": "HV battery cell 13 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_14_V", "name": "HV battery cell 14 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_15_V", "name": "HV battery cell 15 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E4F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E4F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_16_V", "name": "HV battery cell 16 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E50",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E50",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_17_V", "name": "HV battery cell 17 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E51",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E51",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_18_V", "name": "HV battery cell 18 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E52",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E52",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_19_V", "name": "HV battery cell 19 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E53",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E53",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_20_V", "name": "HV battery cell 20 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E54",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E54",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_21_V", "name": "HV battery cell 21 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E55",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E55",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_22_V", "name": "HV battery cell 22 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E56",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E56",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_23_V", "name": "HV battery cell 23 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E57",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E57",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_24_V", "name": "HV battery cell 24 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E58",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E58",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_25_V", "name": "HV battery cell 25 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E59",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E59",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_26_V", "name": "HV battery cell 26 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_27_V", "name": "HV battery cell 27 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_28_V", "name": "HV battery cell 28 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_29_V", "name": "HV battery cell 29 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_30_V", "name": "HV battery cell 30 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_31_V", "name": "HV battery cell 31 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E5F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E5F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_32_V", "name": "HV battery cell 32 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E60",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E60",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_33_V", "name": "HV battery cell 33 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E61",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E61",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_34_V", "name": "HV battery cell 34 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E62",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E62",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_35_V", "name": "HV battery cell 35 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E63",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E63",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_36_V", "name": "HV battery cell 36 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E64",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E64",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_37_V", "name": "HV battery cell 37 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E65",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E65",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_38_V", "name": "HV battery cell 38 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E66",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E66",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_39_V", "name": "HV battery cell 39 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E67",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E67",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_40_V", "name": "HV battery cell 40 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E68",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E68",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_41_V", "name": "HV battery cell 41 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E69",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E69",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_42_V", "name": "HV battery cell 42 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_43_V", "name": "HV battery cell 43 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_44_V", "name": "HV battery cell 44 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_45_V", "name": "HV battery cell 45 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_46_V", "name": "HV battery cell 46 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_47_V", "name": "HV battery cell 47 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E6F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E6F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_48_V", "name": "HV battery cell 48 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E70",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E70",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_49_V", "name": "HV battery cell 49 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E71",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E71",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_50_V", "name": "HV battery cell 50 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E72",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E72",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_51_V", "name": "HV battery cell 51 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E73",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E73",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_52_V", "name": "HV battery cell 52 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E74",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E74",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_53_V", "name": "HV battery cell 53 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E75",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E75",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_54_V", "name": "HV battery cell 54 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E76",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E76",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_55_V", "name": "HV battery cell 55 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E77",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E77",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_56_V", "name": "HV battery cell 56 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E78",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E78",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_57_V", "name": "HV battery cell 57 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E79",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E79",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_58_V", "name": "HV battery cell 58 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_59_V", "name": "HV battery cell 59 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_60_V", "name": "HV battery cell 60 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_61_V", "name": "HV battery cell 61 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_62_V", "name": "HV battery cell 62 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_63_V", "name": "HV battery cell 63 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E7F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E7F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_64_V", "name": "HV battery cell 64 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E80",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E80",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_65_V", "name": "HV battery cell 65 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E81",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E81",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_66_V", "name": "HV battery cell 66 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E82",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E82",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_67_V", "name": "HV battery cell 67 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E83",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E83",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_68_V", "name": "HV battery cell 68 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E84",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E84",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_69_V", "name": "HV battery cell 69 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E85",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E85",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_70_V", "name": "HV battery cell 70 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E86",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E86",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_71_V", "name": "HV battery cell 71 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E87",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E87",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_72_V", "name": "HV battery cell 72 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E88",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E88",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_73_V", "name": "HV battery cell 73 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E89",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E89",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_74_V", "name": "HV battery cell 74 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_75_V", "name": "HV battery cell 75 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_76_V", "name": "HV battery cell 76 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_77_V", "name": "HV battery cell 77 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_78_V", "name": "HV battery cell 78 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_79_V", "name": "HV battery cell 79 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E8F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E8F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_80_V", "name": "HV battery cell 80 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E90",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E90",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_81_V", "name": "HV battery cell 81 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E91",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E91",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_82_V", "name": "HV battery cell 82 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E92",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E92",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_83_V", "name": "HV battery cell 83 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E93",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E93",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_84_V", "name": "HV battery cell 84 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E94",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E94",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_85_V", "name": "HV battery cell 85 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E95",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E95",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_86_V", "name": "HV battery cell 86 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E96",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E96",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_87_V", "name": "HV battery cell 87 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E97",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E97",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_88_V", "name": "HV battery cell 88 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E98",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E98",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_89_V", "name": "HV battery cell 89 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E99",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E99",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_90_V", "name": "HV battery cell 90 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9A",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9A",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_91_V", "name": "HV battery cell 91 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9B",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_92_V", "name": "HV battery cell 92 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_93_V", "name": "HV battery cell 93 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9D",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9D",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_94_V", "name": "HV battery cell 94 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9E",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9E",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_95_V", "name": "HV battery cell 95 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221E9F",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221E9F",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_96_V", "name": "HV battery cell 96 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA0",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA0",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_97_V", "name": "HV battery cell 97 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA1",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA1",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_98_V", "name": "HV battery cell 98 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA2",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA2",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_99_V", "name": "HV battery cell 99 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA3",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA3",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_100_V", "name": "HV battery cell 100 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA4",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA4",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_101_V", "name": "HV battery cell 101 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EA5",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EA5",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_CELL_102_V", "name": "HV battery cell 102 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.221EAE",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EAE",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_1", "name": "HV battery temperature sensor 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EAF",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EAF",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_2", "name": "HV battery temperature sensor 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB0",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB0",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_3", "name": "HV battery temperature sensor 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB1",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB1",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_4", "name": "HV battery temperature sensor 4", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB2",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB2",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_5", "name": "HV battery temperature sensor 5", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB3",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB3",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_6", "name": "HV battery temperature sensor 6", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB4",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB4",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_7", "name": "HV battery temperature sensor 7", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB5",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB5",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_8", "name": "HV battery temperature sensor 8", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB6",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB6",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_9", "name": "HV battery temperature sensor 9", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB7",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB7",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_10", "name": "HV battery temperature sensor 10", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB8",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB8",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_11", "name": "HV battery temperature sensor 11", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EB9",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EB9",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_12", "name": "HV battery temperature sensor 12", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EBA",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EBA",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_13", "name": "HV battery temperature sensor 13", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EBC",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EBC",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_15", "name": "HV battery temperature sensor 15", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.221EBD",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "221EBD",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_16", "name": "HV battery temperature sensor 16", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.222A0B",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "222A0B",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.227425",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "227425",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_HVBAT_T_17", "name": "HV battery temperature sensor 17", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.2274B9",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "2274B9",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HV_INTERLOCK_DET_V", "name": "HV interlock detector voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 3276, "min": 0, "max": 20.004, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.2274BA",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "2274BA",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HV_INTERLOCK_SRC_V", "name": "HV interlock source voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 3276, "min": 0, "max": 20.004, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.2274BC",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "2274BC",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_HV_INTERLOCK_SRC_I", "name": "HV interlock source current", "group": "Battery", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 63.999, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22028C",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22028C",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E32",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E32",
+      "interval": 3600,
+      "signals": [
+        {"id": "EUP_HVBAT_AH_CHG", "name": "HV battery charge throughput", "group": "Battery", "bit": 0, "bits": 32, "divide": 549.31642, "min": 0, "max": 7818700, "unit": "Ah"},
+        {"id": "EUP_HVBAT_AH_DISCHG", "name": "HV battery discharge throughput", "group": "Battery", "bit": 32, "bits": 32, "signed": true, "divide": 549.31642, "min": -3909350, "max": 3909350, "unit": "Ah"},
+        {"id": "EUP_HVBAT_KWH_CHG", "name": "HV battery energy charged", "group": "Battery", "bit": 64, "bits": 32, "divide": 8583.07212, "min": 0, "max": 500300, "unit": "kWh"},
+        {"id": "EUP_HVBAT_KWH_DISCHG", "name": "HV battery energy discharged", "group": "Battery", "bit": 96, "bits": 32, "signed": true, "divide": 8583.07212, "min": -250199.883, "max": 250199.883, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E3B",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E3B",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E3D",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E3D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_HVBAT_I", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "divide": 4, "add": -511, "min": -200, "max": 200, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.2251E0",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "2251E0",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "multiply": 0.127, "add": -1798.574, "min": -1798.574, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E6.220308",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "220308",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_TQ_CALC", "name": "Drive motor torque, calculated", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.223E72",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223E72",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_DCDC_LINK_V", "name": "DC to DC converter link voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.223E93",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223E93",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_LINK_V", "name": "Power electronics link voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.223E94",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223E94",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_MOTOR_T", "name": "Drive motor temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.223E97",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223E97",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_RPM", "name": "Drive motor speed, actual", "group": "Engine", "metric": "engineSpeed", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.749, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.223EB5",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EB5",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_PE_DCDC_T", "name": "DC to DC converter temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.223EE9",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EE9",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_TQ_PE", "name": "Drive motor torque, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.223EEC",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EEC",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_RPM_2", "name": "Drive motor speed 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.749, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.223EED",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EED",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_PE_LINK_V_SET", "name": "Power electronics link voltage setpoint", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.223EF9",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EF9",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_U_I", "name": "Drive motor phase U current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.223EFA",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EFA",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_V_I", "name": "Drive motor phase V current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.223EFB",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "223EFB",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_W_I", "name": "Drive motor phase W current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.22464E",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22464E",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_DCDC_PCB_T", "name": "DC to DC converter circuit board temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.22464F",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22464F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_DCDC_PWR_T", "name": "DC to DC converter power stage temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.224650",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224650",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_DCDC_HV_I", "name": "DC to DC converter traction current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.998, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.224656",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224656",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_PWR_PE", "name": "Drive motor power, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511.984, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E6.224658",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224658",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_PWR_CALC", "name": "Drive motor power, calculated", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511.984, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E6.224659",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224659",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_RPM_ACT", "name": "Drive motor speed, measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.749, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.22465A",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22465A",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_IGBT_SUPPLY_V", "name": "Power electronics transistor supply voltage", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22465C",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22465C",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_PE_DCDC_KL30_V", "name": "DC to DC converter regulated output voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22465D",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22465D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_KL30_V", "name": "Power electronics terminal 30 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22465E",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22465E",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_PE_DCDC_HV_V", "name": "DC to DC converter traction voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22465F",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22465F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_BMS_HV_I", "name": "Traction current reported by the battery management system", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.224660",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224660",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_SIN", "name": "Rotor position sensor sine track", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E6.224661",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224661",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_COS", "name": "Rotor position sensor cosine track", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E6.224662",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224662",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_IGBT_W_T", "name": "Power electronics phase W transistor temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.224663",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224663",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_IGBT_V_T", "name": "Power electronics phase V transistor temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.224664",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224664",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_IGBT_U_T", "name": "Power electronics phase U transistor temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.224665",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224665",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_I_RMS", "name": "Drive motor effective current", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.22466B",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22466B",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_SUPPLY_V2", "name": "Power electronics internal supply voltage 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22466C",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22466C",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_SUPPLY_V1", "name": "Power electronics internal supply voltage 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22466E",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22466E",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_PE_BMS_HV_V", "name": "Traction voltage reported by the battery management system", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22466F",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22466F",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_MOTOR_W_I_RAW", "name": "Drive motor phase W current, unlimited", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.224670",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224670",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_MOTOR_V_I_RAW", "name": "Drive motor phase V current, unlimited", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.224671",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224671",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_MOTOR_U_I_RAW", "name": "Drive motor phase U current, unlimited", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.937, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E6.224672",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224672",
+      "interval": 5,
+      "signals": [
+        {"id": "EUP_MOTOR_STATOR_T", "name": "Drive motor stator temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.984, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.224675",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224675",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_PE_HV_V", "name": "Power electronics traction voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.224E90",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224E90",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_SIN_AMP_V", "name": "Rotor position sensor sine amplitude", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.224E91",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224E91",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_COS_AMP_V", "name": "Rotor position sensor cosine amplitude", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.224E92",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224E92",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_SIN_V", "name": "Rotor position sensor sine voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.224E93",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "224E93",
+      "interval": 1,
+      "signals": [
+        {"id": "EUP_ROTOR_COS_OFS_V", "name": "Rotor position sensor cosine offset", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.22F404",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22F404",
+      "interval": 30,
+      "signals": [
+        {"id": "EUP_PE_SOC", "name": "HV battery charge, normalized", "group": "Battery", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E6.22F40C",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22F40C",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_MOTOR_RPM_SAE", "name": "Drive motor speed, standard", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.749, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.22F449",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "22F449",
+      "interval": 0.25,
+      "signals": [
+        {"id": "EUP_APP_PE", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

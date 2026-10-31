@@ -1,0 +1,369 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/fiat/fastback",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "FIAT",
+    "model": "Fastback",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2022}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/FIAT-Fastback",
+    "file": "signalsets/v3/default.json",
+    "revision": "2d05d3feab69e8b1bebb134e7111a3315f1d9462",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189B",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_SWIRL_CMD", "name": "Swirl actuator command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189F",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_VGT_CMD", "name": "Variable geometry turbo position commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A0|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A0",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_VGT_ACT", "name": "Variable geometry turbo position actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A4|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A4",
+      "interval": 3600,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_REGEN_STARTED_TOT", "name": "Particulate filter regeneration starts", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A5|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A5",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_REGEN_INTERRUPTED", "name": "Particulate filter regen interrupted count", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218AE|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218AE",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_REGEN_CONSEC_INTERRUPTED", "name": "Consecutive interrupted particulate filter regeneration count", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E8|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E8",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_DPF_FLOW_RES", "name": "Particulate filter flow resistance", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "DA10.10.2218EC|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218EC",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_FORCED_REGEN", "name": "Forced regen state", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218ED|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218ED",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_LAMBDA_DPF_DS", "name": "Lambda downstream DPF O2 concentration", "group": "Emissions", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 25, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.22192F",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192F",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350}
+      ]
+    },
+    {
+      "id": "DA10.10.22193A",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193A",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_TURBO_BOOST_ACTUATOR", "name": "Turbo boost actuator duty", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 7813, "divide": 10000, "min": -100, "max": 99.22, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.221948",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221948",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_FUEL_RAMP_P_ADC", "name": "Fuel ramp pressure ADC", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.221959",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221959",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_TURBO_BOOST_CMD", "name": "Turbo boost, commanded", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.22195B",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195B",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_TURBO_BOOST_ADC", "name": "Turbo boost ADC", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA10.10.2219BD",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2219BD",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_BAT_ST_CHG", "name": "Battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222001",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222001",
+      "interval": 30,
+      "signals": [
+        {"id": "FASTBACK_ODO_DA10", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.222005",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222005",
+      "interval": 0.25,
+      "signals": [
+        {"id": "FASTBACK_MAX_RPM_REACHED", "name": "Max RPM reached", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 40, "min": -5120, "max": 5080, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D07",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D07",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_AT_OUTPUT_RPM", "name": "Transmission output speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D08",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D08",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_AT_INPUT_RPM", "name": "Transmission input speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D09",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D09",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_ATF_T", "name": "Automatic transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D12",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D12",
+      "interval": 1,
+      "signals": [
+        {"id": "FASTBACK_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.222024",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "FASTBACK_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "FASTBACK_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    }
+  ]
+}

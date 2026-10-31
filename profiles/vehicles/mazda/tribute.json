@@ -1,0 +1,1137 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mazda/tribute",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mazda",
+    "model": "Tribute",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2000, "to": 2004},
+      {"name": "First Generation (2004 Facelift)", "from": 2004, "to": 2006},
+      {
+        "name": "First Generation (Asia-Pacific Facelift)",
+        "from": 2006,
+        "to": 2010
+      },
+      {"name": "Second Generation", "from": 2007, "to": 2011}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mazda-Tribute",
+    "file": "signalsets/v3/default.json",
+    "revision": "44fcb409f58c071dae16dfda7133c832609e6f27",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "720.728.226185|f=-2012",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226185",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_FLI_ALT", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "720.728.22C901",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22C901",
+      "interval": 15,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_C901_RAW", "name": "Tire monitor one-byte reply", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.225B28",
+      "bus": "can11",
+      "tx": "737",
+      "request": "225B28",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PASSENGER_AIRBAG", "name": "Passenger airbag cutoff switch", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.225B29",
+      "bus": "can11",
+      "tx": "737",
+      "request": "225B29",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PASSENGER_AIRBAG_ACTIVATED", "name": "Passenger airbag activated", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "737.73F.225B19",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B19",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_SEAT_BUCKLE_DRIVER", "name": "Seat buckle driver locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "737.73F.225B1A",
+      "bus": "can11",
+      "tx": "737",
+      "rx": "73F",
+      "request": "225B1A",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_SEAT_BUCKLE", "name": "Seat buckle passenger locked", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127}
+      ]
+    },
+    {
+      "id": "760.768.223201",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223201",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 6.25, "min": -790, "max": 790, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.223987",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223987",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ABS_WHL_SPD_1", "name": "Anti-lock brake wheel speed 1", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "TRIBUTE_ABS_WHL_SPD_2", "name": "Anti-lock brake wheel speed 2", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "TRIBUTE_ABS_WHL_SPD_3", "name": "Anti-lock brake wheel speed 3", "group": "Control", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "TRIBUTE_ABS_WHL_SPD_4", "name": "Anti-lock brake wheel speed 4", "group": "Control", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.22EE03",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE03",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EE03_RAW", "name": "Sensor offset one-byte reply", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "760.768.22EE04",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE04",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EE04_RAW", "name": "Stored sensor offset one-byte reply", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "760.768.22EE07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22EE07",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EE07_RAW", "name": "Brake disc temperature one-byte reply", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220202",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220202",
+      "interval": 3600,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_MAP_V", "name": "Manifold pressure sensor voltage", "description": "Typically varies from 1 volt at idle to 5 volts during wide open throttle.", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220304",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220304",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_CMD_GEN_V", "name": "Commanded generator voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000488, "min": 0, "max": 16, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_LPFP_DUTY", "name": "Fuel pump duty cycle, low pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VCT_INT_DUTY", "name": "Camshaft solenoid duty cycle, intake", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VCT_INT_ACT", "name": "Camshaft position, intake actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VCT_INT_ERR", "name": "Camshaft position error, intake", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ACC_POS", "name": "Accelerator position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220334",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220334",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_CYL_HEAD_T_CORR", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511.984375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ETC_TRIM_LRN", "name": "Throttle control trim angle, learned", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220345",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220345",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_MISF_EVENTS_LATEST_CYC", "name": "Misfire events, latest cycle", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_RO2_V", "name": "O2 sensor voltage, rear", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220378",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220378",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_GEN_CTRL", "name": "Generator control", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220382",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220382",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_MISF_ACCEL_CYL1_NORM", "name": "Misfire acceleration, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.984375}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220388",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220388",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_MISF_ACCEL_CYL2_NORM", "name": "Misfire acceleration, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.984375}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038A",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_MISF_ACCEL_CYL3_NORM", "name": "Misfire acceleration, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.984375}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038B",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_MISF_ACCEL_CYL4_NORM", "name": "Misfire acceleration, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.984375}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EVAP_V", "name": "Evaporative pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ECT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220393",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220393",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AC_P", "name": "A/C compressor pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 245251, "divide": 845473, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203AF",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TRQ_CTRL_REQ", "name": "Torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VCT_INT_DES", "name": "Camshaft position, intake desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_CL_LC", "name": "Lambda correction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.9}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203C0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203C0",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_MIS_MON_STAT", "name": "Misfire monitor status", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_OAR", "name": "Octane adjustment", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220403",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_KS1_RAW", "name": "Knock sensor, 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220914",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220914",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_APP1_V", "name": "APP sensor 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220915",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220915",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_APP2_V", "name": "APP sensor 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220917",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220917",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TP1_V", "name": "Throttle position 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220918",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220918",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TP2_V", "name": "Throttle position 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ETC_ANG_DES", "name": "Throttle angle, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ETC_ANG_ACT", "name": "Throttle angle, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2209CD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2209CD",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_09CD_RAW", "name": "Engine 09CD one-byte reply", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 0.5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_CMD_GEN_DUTY", "name": "Commanded generator duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216F0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216F0",
+      "interval": 3600,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TIRESIZE", "name": "Tire revolutions per mile", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E13",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E13",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TURBINE_RPM", "name": "Actual turbine shaft speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E14",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E14",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TCC_SLIP", "name": "Actual torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -8192, "max": 8191, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E19",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E19",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_CMD_TRANS_GEAR_RATIO", "name": "Gear ratio, commanded", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1A",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_PCM_CMD_TRANS_MAIN_LINE_P", "name": "Transmission pressure, commanded", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1B",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_OUTPUT_RPM", "name": "Actual output shaft speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TOT", "name": "Transmission oil temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -40, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E35",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E35",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_TCC_SLIP_DES", "name": "Desired torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -8192, "max": 8191, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D137",
+      "interval": 3600,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_DTC_CNT", "name": "DTC counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 0.5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F405",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F405",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ECT_F4", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_STFT", "name": "Fuel trim, short term", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 0.5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40E",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_SPARKADV_F4", "name": "Ignition timing advance", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 2,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F411",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F411",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_THROTTLE_POS", "name": "Absolute throttle position", "group": "Engine", "metric": "throttlePosition", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 60,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42C",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_EGR", "name": "Exhaust gas recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 60,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 60,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F433",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F433",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AIR_FUEL_RAT", "name": "Air/fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.000446787, "min": 0, "max": 29.2801}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_VPWR_F4", "name": "Control module voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 0.5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F446",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F446",
+      "interval": 5,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F449",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F449",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_APP_D", "name": "Accelerator pedal position D", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F44A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F44A",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_APP_E", "name": "Accelerator pedal position E", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22FD18",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22FD18",
+      "interval": 1,
+      "answeredIn": [2010],
+      "signals": [
+        {"id": "TRIBUTE_AC_P_7E0", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 12.156863, "min": 0, "max": 3100, "unit": "kPa"}
+      ]
+    }
+  ]
+}

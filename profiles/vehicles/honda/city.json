@@ -1,0 +1,263 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/city",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "City",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 1981, "to": 1986},
+      {"name": "Second Generation", "from": 1986, "to": 1994},
+      {"name": "Third Generation", "from": 1996, "to": 2002},
+      {"name": "Fourth Generation", "from": 2002, "to": 2008},
+      {"name": "Fifth Generation", "from": 2008, "to": 2013},
+      {"name": "Sixth Generation", "from": 2013, "to": 2023},
+      {"name": "Seventh Generation", "from": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-City",
+    "file": "signalsets/v3/default.json",
+    "revision": "8d36419a4ef94948a7f2537a13587fb952192a27",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "DA10.10.222610",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006, 2014],
+      "signals": [
+        {"id": "CITY_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CITY_AC_CLUTCH", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222611",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 5,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006, 2014],
+      "signals": [
+        {"id": "CITY_FUEL_AIR_RATIO", "name": "Fuel/air commanded equivalence ratio", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "CITY_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CITY_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222614",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222614",
+      "interval": 5,
+      "signals": [
+        {"id": "CITY_ST_CHG_RAW_CNT_DA10", "name": "State of charge, raw count", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CITY_IMA_BAT_T_DA10", "name": "Motor assist battery temperature", "group": "Battery", "bit": 176, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.222615",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222615",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2014, 2023],
+      "signals": [
+        {"id": "CITY_ACTIVE_CYL", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA10.10.222660|fc=1",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "CITY_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006, 2014],
+      "signals": [
+        {"id": "CITY_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006, 2014],
+      "signals": [
+        {"id": "CITY_KNOCK_CONTROL", "name": "Knock control", "description": "ECU's determination of fuel quality.", "group": "Engine", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "CITY_VTC_DUTY", "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential.", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006, 2014],
+      "signals": [
+        {"id": "CITY_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CITY_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CITY_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CITY_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.222666",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222666",
+      "interval": 5,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "CITY_EOT_VAR_3", "name": "Engine oil temperature, variant 3", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CITY_EOT_VAR_4", "name": "Engine oil temperature, variant 4", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.222668",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222668",
+      "interval": 1,
+      "signals": [
+        {"id": "CITY_ELEC_MOTOR_LOAD_DA10", "name": "Electric motor load", "group": "Engine", "bit": 216, "bits": 8, "multiply": 40, "divide": 51, "add": -100, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA28.28.224004",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224004",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_BRK_SW", "name": "Brake switch", "group": "Electrical", "bit": 127, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA28.28.224005",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224005",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_BRK_P", "name": "Brake pressure", "group": "Electrical", "bit": 56, "bits": 16, "add": -25, "min": 0, "max": 120, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA60.60.227022",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227022",
+      "interval": 30,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_ODO_V3", "name": "Odometer", "group": "Trips", "bit": 48, "bits": 24, "min": 0, "max": 200000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|fc=1",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_AAT", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°C", "invalidAtOrAbove": 141}
+      ]
+    },
+    {
+      "id": "DA60.60.227029",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227029",
+      "interval": 30,
+      "answeredIn": [2014, 2023],
+      "notAnsweredIn": [2006],
+      "signals": [
+        {"id": "CITY_FLV", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"}
+      ]
+    },
+    {
+      "id": "DA60.60.227060",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227060",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2023],
+      "signals": [
+        {"id": "CITY_MAINT_OIL_FLT", "name": "Maintenance, oil & filter", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_SPARK", "name": "Maintenance, spark plugs & valves", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_INSP", "name": "Maintenance, general inspection", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_TIRE", "name": "Maintenance, tire rotation", "group": "Tires", "bit": 224, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_CABIN_FLT", "name": "Maintenance, cabin filter", "group": "Engine", "bit": 240, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_TRANS_FLD", "name": "Maintenance, transmission fluid", "group": "Engine", "bit": 256, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_COOL", "name": "Maintenance, engine coolant", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_BRK_FLD", "name": "Maintenance, rake fluid", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CITY_MAINT_AIR_CLN", "name": "Maintenance, air cleaner", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 9999}
+      ]
+    }
+  ]
+}

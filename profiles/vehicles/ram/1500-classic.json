@@ -1,0 +1,940 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ram/1500-classic",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ram",
+    "model": "1500 Classic",
+    "years": null,
+    "generations": [{"name": "DS", "from": 2019, "to": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ram-1500-Classic",
+    "file": "signalsets/v3/default.json",
+    "revision": "9ad2d3a2b99e1fce889a94ead8d865148d23cdd5",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "740.4C0.22A0A1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A1",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_FL_740", "name": "Front left tire pressure, altitude compensated", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAMC_TP_FR_740", "name": "Front right tire pressure, altitude compensated", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAMC_TP_RR_740", "name": "Rear right tire pressure, altitude compensated", "group": "Tires", "metric": "rearRightTirePressure", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAMC_TP_RL_740", "name": "Rear left tire pressure, altitude compensated", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0A5|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A5",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_RL_VALID", "name": "Rear left tire pressure, valid", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAMC_TP_RR_VALID", "name": "Rear right tire pressure, valid", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAMC_TP_FR_VALID", "name": "Front right tire pressure, valid", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAMC_TP_FL_VALID", "name": "Front left tire pressure, valid", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_FL_F", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAMC_TT_FL_F", "name": "Front left tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F2|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F2",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_FR_F", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAMC_TT_FR_F", "name": "Front right tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F3|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F3",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_RR_F", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAMC_TT_RR_F", "name": "Rear right tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F4|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F4",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_TP_RL_F", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAMC_TT_RL_F", "name": "Rear left tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "742.4C2.22A077|fc=1,f=-2017",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "4C2",
+      "request": "22A077",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2017},
+      "signals": [
+        {"id": "RAMC_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAMC_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAMC_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAMC_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RAMC_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_V_2", "name": "Transmission fluid temperature v.2", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_AAT", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "RAMC_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "RAMC_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_FLI", "name": "Fuel level", "group": "Fuel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "RAMC_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "RAMC_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D2|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D2",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_EOT_21D2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_AAT_2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_AC_HIGH_SIDE_P_2", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22040F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22040F",
+      "interval": 30,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_FLI_7E0", "name": "Fuel level", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 711, "divide": 1250, "min": -18638, "max": 18637, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22059E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22059E",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_CAM_CRANK_DIFF", "name": "Cam crank difference", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206F3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206F3",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_FUEL_RAIL_P_06F3", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C9|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C9",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_LOW_SIDE_ECT", "name": "Low side coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B3|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B3",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_THROTTLE_INLET_AIR_T_RAW", "name": "Throttle inlet air temperature raw", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221F59|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221F59",
+      "interval": 1,
+      "years": {"from": 2019, "to": 2024},
+      "signals": [
+        {"id": "RAMC_WASTEGATE_POS_SENS", "name": "Wastegate position sensor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 61, "divide": 12500, "min": 0, "max": 319.8107, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A001|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A001",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TQ_CONV_SLIP_VAR_2", "name": "Torque converter slip, variant 2", "group": "Transmission", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A002|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A002",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A043|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A043",
+      "interval": 30,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_FLI_AVG", "name": "Fuel level average", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A09F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A09F",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_GEAR_CMD", "name": "Transmission gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A0|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A0",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_GEAR_7E0", "name": "Transmission gear, actual", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A3",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TRANS_SUMP_T", "name": "Transmission sump temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TRANS_TQ_CONV_T", "name": "Transmission torque converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 320, "min": 0, "max": 1843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TQ_CONV_SLIP_VAR_1", "name": "Torque converter slip, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 9, "divide": 640, "min": -460, "max": 460, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.210A|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "210A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TRANS_T_VAR_2", "name": "Transmission temperature, variant 2", "group": "Transmission", "bit": 128, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225034|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225034",
+      "interval": 1,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_MAIN_CYL_P", "name": "AT main cylinder pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225043|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225043",
+      "interval": 5,
+      "years": {"to": 2024},
+      "signals": [
+        {"id": "RAMC_ATF_T_7E1_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RAMC_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    }
+  ]
+}

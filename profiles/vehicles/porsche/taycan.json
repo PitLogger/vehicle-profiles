@@ -1,0 +1,3298 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/porsche/taycan",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Porsche",
+    "model": "Taycan",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (J1)", "from": 2020, "to": 2024},
+      {"name": "First Generation Refresh", "from": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Porsche-Taycan",
+    "file": "signalsets/v3/default.json",
+    "revision": "31df1b9b5430fc5b4e679ad5e41ca1b2647a4991",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "710", "type": "gateway"},
+    {"tx": "714", "type": "cluster"},
+    {"tx": "715", "type": "airbag"},
+    {"tx": "744", "type": "charger"},
+    {"tx": "7E0", "type": "vehicleControl"}
+  ],
+  "requests": [
+    {
+      "id": "70B.775.2218A0|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "rx": "775",
+      "request": "2218A0",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "TAYCAN_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar", "invalidAtOrAbove": 6.37},
+        {"id": "TAYCAN_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "TAYCAN_TP_SET_FR", "name": "Front right tire pressure, set point", "group": "Tires", "bit": 56, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.775.2218A1|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "rx": "775",
+      "request": "2218A1",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "TAYCAN_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar", "invalidAtOrAbove": 6.37},
+        {"id": "TAYCAN_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "TAYCAN_TP_SET_FL", "name": "Front left tire pressure, set point", "group": "Tires", "bit": 56, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.775.2218A2|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "rx": "775",
+      "request": "2218A2",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "TAYCAN_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar", "invalidAtOrAbove": 6.37},
+        {"id": "TAYCAN_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "TAYCAN_TP_SET_RL", "name": "Rear left tire pressure, set point", "group": "Tires", "bit": 56, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "70B.775.2218A3|fc=1",
+      "bus": "can11",
+      "tx": "70B",
+      "rx": "775",
+      "request": "2218A3",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "TAYCAN_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar", "invalidAtOrAbove": 6.37},
+        {"id": "TAYCAN_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "TAYCAN_TP_SET_RR", "name": "Rear right tire pressure, set point", "group": "Tires", "bit": 56, "bits": 8, "divide": 40, "min": 0, "max": 6.375, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "710.77A.222A00|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A00",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_VT", "name": "12V battery target voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 10.6, "min": 0, "max": 36.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222A06|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A06",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_12V_BAT_CAP", "name": "12V battery capacity", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "710.77A.222A07|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A07",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_BAT_V_2A07", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 4, "max": 69.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222A09",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A09",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 1000, "min": 0, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0A",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0A",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_SENSOR_T", "name": "12V battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0B",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0B",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_T", "name": "12V battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0C",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0C",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0E",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0E",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_R", "name": "12V battery resistance", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 10, "min": 0, "max": 51, "unit": "mΩ"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0F",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0F",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_SSB_AH", "name": "12V battery charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "710.77A.222A10|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A10",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_BAT_V_AT_REST", "name": "Battery voltage at rest", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 9, "min": 9, "max": 34.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222A25|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A25",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_BAT_R_RAW", "name": "Battery internal resistance, raw", "group": "Battery", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51}
+      ]
+    },
+    {
+      "id": "710.77A.222A53|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A53",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_DCDC_V_LOW", "name": "DC-DC converter, low voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "TAYCAN_DCDC_I", "name": "DC-DC converter, current", "group": "Battery", "bit": 8, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"},
+        {"id": "TAYCAN_DCDC_I_RSV", "name": "DC-DC converter, reserved current", "group": "Battery", "bit": 24, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB2|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB2",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_E_MAX", "name": "HV battery, max energy", "group": "Battery", "bit": 0, "bits": 16, "multiply": 50, "min": 0, "max": 3276750, "unit": "W"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB4|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB4",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_RANGE_EST_INT", "name": "Estimated electric power reserve", "group": "Battery.Internal", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "TAYCAN_HVBAT_CSMP_AVG_INT", "name": "Average battery consumption", "group": "Battery.Internal", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB5|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB5",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB6|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB6",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_RANGE", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB7",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_AVG_CSMP_CAT0", "name": "Average consumption, cat 0", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT1", "name": "Average consumption, cat 1", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT2", "name": "Average consumption, cat 2", "group": "Trips", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT3", "name": "Average consumption, cat 3", "group": "Trips", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT4", "name": "Average consumption, cat 4", "group": "Trips", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT5", "name": "Average consumption, cat 5", "group": "Trips", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TAYCAN_AVG_CSMP_CAT6", "name": "Average consumption, cat 6", "group": "Trips", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB8|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB8",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_E_CONTENT", "name": "HV battery energy content", "description": "Energy stored in the high voltage battery", "group": "Battery", "bit": 16, "bits": 16, "multiply": 25, "divide": 1000, "min": 0, "max": 1638, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.225505|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "225505",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_STEER_WHL_T", "name": "Steering wheel temperature, raw", "description": "Reads 254 on a 2022 and 67-74 on a 2025, which no temperature unit has been shown to fit.", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "713.77D.222005|fc=1",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222005",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_P_BRAKE_SERVO_UNIT", "name": "Pressure in brake servo unit", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375}
+      ]
+    },
+    {
+      "id": "713.77D.222B1B",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B1B",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "713.77D.222B1C",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B1C",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "713.77D.222B1D",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B1D",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "713.77D.222B1E",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B1E",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "713.77D.222B21|fc=1",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B21",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 152999, "divide": 10000000, "add": -42.503, "min": -543.8501, "max": 458.8288, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "713.77D.222B29",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B29",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
+      ]
+    },
+    {
+      "id": "714.77E.220530|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "220530",
+      "interval": 0.5,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_TRIP_USE_SHORT", "name": "Trip consumption (short)", "group": "Trips", "metric": "tractionBatteryEfficiency", "bit": 238, "bits": 18, "signed": true, "divide": 1000, "min": -131, "max": 131, "unit": "kWh/100mi"}
+      ]
+    },
+    {
+      "id": "715.77F.222353|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222353",
+      "interval": 3600,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CRASH_CNT_FRONT", "name": "Crashes, front", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.77F.222354",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222354",
+      "interval": 3600,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CRASH_CNT_DRVR", "name": "Crashes, driver side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.77F.222355",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222355",
+      "interval": 3600,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CRASH_CNT_PSNGR", "name": "Crashes, passenger side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.77F.222356",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222356",
+      "interval": 3600,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CRASH_CNT_REAR", "name": "Crashes, rear", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "715.77F.222357",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222357",
+      "interval": 3600,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CRASH_CNT_ROLL", "name": "Crashes, rollover", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "71E.788.22F105|fc=1,din=03",
+      "bus": "can11",
+      "tx": "71E",
+      "rx": "788",
+      "request": "22F105",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2024, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "TAYCAN_DIFF_MOTOR_T", "name": "Motor temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "add": -50, "min": -50, "max": 460, "unit": "°C"},
+        {"id": "TAYCAN_DIFF_OIL_T", "name": "Oil temperature", "group": "Engine", "bit": 8, "bits": 8, "multiply": 2, "add": -50, "min": -50, "max": 460, "unit": "°C"},
+        {"id": "TAYCAN_DIFF_CLUTCH_T", "name": "Clutch temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 2, "add": -50, "min": -50, "max": 460, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "742.7AC.222609|fc=1",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "7AC",
+      "request": "222609",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_PTC_OUTSIDE_T", "name": "Outside temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "742.7AC.2227D6|fc=1",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "7AC",
+      "request": "2227D6",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_PTC_PUMP_RPM", "name": "Water pump RPM", "group": "Engine.Water pump", "bit": 0, "bits": 8, "multiply": 300, "min": 0, "max": 76500, "unit": "rpm"},
+        {"id": "TAYCAN_PTC_PUMP_PWR", "name": "Water pump power", "group": "Engine.Water pump", "bit": 16, "bits": 8, "multiply": 40, "min": 0, "max": 10200}
+      ]
+    },
+    {
+      "id": "742.7AC.22475F|fc=1",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "7AC",
+      "request": "22475F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_PTC_HTR_I", "name": "Heater current", "group": "Climate.Heater", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.74, "unit": "A"},
+        {"id": "TAYCAN_PTC_HTR_FLUID_T1", "name": "Heater fluid temperature #1", "group": "Climate.Heater", "bit": 64, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_PTC_HTR_FLUID_T2", "name": "Heater fluid temperature #2", "group": "Climate.Heater", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.7AE.221507|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221507",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_RAIL1_E", "name": "Rail 1 energy transformation", "group": "Battery", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "kWh"},
+        {"id": "TAYCAN_CHRGR_RAIL2_E", "name": "Rail 2 energy transformation", "group": "Battery", "bit": 24, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "kWh"},
+        {"id": "TAYCAN_CHRGR_RAIL3_E", "name": "Rail 3 energy transformation", "group": "Battery", "bit": 48, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "744.7AE.221525|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221525",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_OBC_V_PROX_A", "name": "Voltage proximity, socket a", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "744.7AE.221529|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221529",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_PRX_V_CONN_B", "name": "PRX voltage charging connector b", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "744.7AE.221553|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221553",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_HI_I", "name": "HV booster, HV highside current", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.221554|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221554",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_HI_V", "name": "HV booster, HV highside voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.7AE.221557|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221557",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_LO_I", "name": "HV booster, HV lowside current", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.221558|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221558",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_LO_V", "name": "HV booster, HV lowside voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.7AE.221559|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221559",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_CMD_V", "name": "HV booster, commanded voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.7AE.22155A|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "22155A",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_BOOST_CMD_I", "name": "HV booster, commanded current", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215D5|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215D5",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_PWR_MAX", "name": "Maximum charging power", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215D6|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215D6",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_EFFICIENCY", "name": "Power efficiency", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 75, "min": 75, "max": 100.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215E1|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215E1",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_PWR_LOSS", "name": "Power loss battery charger", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "min": 0, "max": 5100}
+      ]
+    },
+    {
+      "id": "744.7AE.2215E2|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215E2",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_COOLANT_T", "name": "Charger coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215EE|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215EE",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_DUR_TOTAL", "name": "Charging duration total", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "min"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215EF|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215EF",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_E_TOTAL", "name": "Energy turnover total", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "744.7AE.2215F7|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "2215F7",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2024, 2025],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_3V_SUPPLY", "name": "3V supply voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 100, "add": 3.1, "min": 3.1, "max": 5.65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.7AE.221DA7|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221DA7",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_V_OUT", "name": "HV charger output voltage", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "744.7AE.221DD0|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221DD0",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_SOC_DISP", "name": "HV battery state of charge display", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "744.7AE.221DD3|fc=1,din=03",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221DD3",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHRGR_CHG_PWR_MAX", "name": "Maximum charge power", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "744.7AE.221DDA|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "221DDA",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_OBC_T_A", "name": "Temperature sensor, socket a", "group": "Battery", "bit": 8, "bits": 16, "divide": 10, "add": -55, "min": -55, "max": 6498.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.7AE.224237",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "224237",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHG_HV_I", "name": "Charger output current", "group": "Battery", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.749, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.224238",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "224238",
+      "interval": 30,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_CHG_HV_I_SET", "name": "Charger output current set point", "group": "Battery", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.749, "unit": "A"}
+      ]
+    },
+    {
+      "id": "744.7AE.224965|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "7AE",
+      "request": "224965",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_KWH", "name": "HV battery energy", "description": "Energy stored in the high voltage battery", "group": "Battery", "metric": "tractionBatteryCapacity", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "746.7B0.222603|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222603",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_A_C_CMPR_SPEED", "name": "A/C compressor, speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "746.7B0.222604|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222604",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_AC_LOAD", "name": "A/C compressor load", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "746.7B0.222605|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222605",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_REFRIG_P", "name": "Refrigerant pressure", "group": "Climate", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "746.7B0.222606|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222606",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_FAN1_ACT", "name": "Radiator fan actual value #1", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "%"},
+        {"id": "TAYCAN_HVAC_FAN2_ACT", "name": "Radiator fan actual value #2", "group": "Climate", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.222607|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222607",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_FAN_CMD", "name": "Radiator fan commanded value", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.222609|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222609",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_OUTSIDE_T", "name": "Outside temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260A|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260A",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "TAYCAN_AAT_CABIN", "name": "Outside temperature, from cabin sensor", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260C|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_FL_DEFL_T", "name": "Temperature, front left deflector", "group": "Climate", "bit": 0, "bits": 8, "multiply": 0.333, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260D|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260D",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_FR_DEFL_T", "name": "Temperature, front right deflector", "group": "Climate", "bit": 0, "bits": 8, "multiply": 0.333, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222611|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222611",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_LEG_DEFL_T", "name": "Leg air vent temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 0.333, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222612|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222612",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_EVAP_T", "name": "Evaporator output temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222613|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222613",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_INTERIOR_T", "name": "Interior temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222620|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222620",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_RECIRC_STOP_FRESH", "name": "Recirculation flap stop, fresh air", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222621|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222621",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_RECIRC_STOP_RECIRC", "name": "Recirculation flap stop, recirculated air", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222622|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222622",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_FL_T_FLAP_ACT", "name": "Front left temperature flap actual", "group": "Climate", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.2226ED|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "2226ED",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_AIR_POLLUTION", "name": "Air pollution level", "description": "0 means clean air.", "group": "Climate", "bit": 0, "bits": 8, "signed": true, "divide": 10, "min": -12.7, "max": 12.7}
+      ]
+    },
+    {
+      "id": "746.7B0.2227C3|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "2227C3",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_OUTSIDE_HUM", "name": "Outside humidity", "group": "Climate", "bit": 56, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.2227C4|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "2227C4",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVAC_INSIDE_HUM", "name": "Inside humidity", "group": "Climate", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "767.7D1.222431|fc=1",
+      "bus": "can11",
+      "tx": "767",
+      "rx": "7D1",
+      "request": "222431",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22028D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22028D",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_ECU_TEMP", "name": "ECU temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2208D2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2208D2",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_SOC_DISP", "name": "HV battery charge (displayed)", "description": "HV battery charge displayed on the dashboard", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221004",
+      "interval": 5,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_AAT", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -255, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221151",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_EM_RPM_1", "name": "Electric motor 1 rpm", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221152",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221152",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_EM_RPM_2", "name": "Electric motor 2 rpm", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221153",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221153",
+      "interval": 10.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_EM_TORQ_1", "name": "Elector motor 1 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221154",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221154",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_EM_TORQ_2", "name": "Elector motor 2 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221155",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221155",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_EM_TORQ_3", "name": "Elector motor 3 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221156",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221156",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221158",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221158",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_MAX_DCHA_CUR_2", "name": "Maximum discharge current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3200, "max": 3200, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221159",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221159",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_MAX_CHA_CUR_2", "name": "Maximum charge current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3200, "max": 3200, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22115B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22115B",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_VSS_DIR", "name": "Vehicle speed (directional)", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222005",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BRAKE_BST_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222061",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222061",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_APP_POS1", "name": "Accelerator pedal position sensor 1", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222062",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222062",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_APP_POS2", "name": "Accelerator pedal position sensor 2", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2229D4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2229D4",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_ENG_TRQ_REQ_1", "name": "Driver torque requested #1", "group": "Drivetrain", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22395E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22395E",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_ENG_BRAKE_PUMP", "name": "Brake vacuum pump", "group": "Control", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223DF8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223DF8",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_ENG_MOTOR_RPM", "name": "Electric motor RPM", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224380",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224380",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_ENG_TRQ_REQ_2", "name": "Driver torque requested #2", "group": "Drivetrain", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h", "invalidAtOrAbove": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 5,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_MIL_DIST", "name": "Distance traveled while MIL was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_WARM_UPS", "name": "Number of warm-ups since DTCs cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 5,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_CLR_DIST", "name": "Distance traveled since DTCs cleared", "group": "DTCs", "metric": "distanceSinceDTCsCleared", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_VPWR", "name": "Control module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22028C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22028C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_SOC", "name": "HV battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221801",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221801",
+      "interval": 0.25,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_VOLT", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221802|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221802",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_I", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "multiply": 2.56, "add": -1500, "min": -1500, "max": 166269, "unit": "A", "invalidAtOrBelow": -1500}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180A",
+      "interval": 1,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_V_180A", "name": "HV battery voltage, measurement 2", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V", "invalidAtOrAbove": 6553.4}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180B",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180B",
+      "interval": 1,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_V_180B", "name": "HV battery voltage, measurement 3", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_BMCE_T1", "name": "BMC-E temperature, 1", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_BMCE_T2", "name": "BMC-E temperature, 2", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180E|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_BMCE_T3", "name": "BMC-E temperature, 3", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22180F|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22180F",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_SHUNT_T", "name": "Shunt temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221810|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221810",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_BMCE_T_CAN", "name": "BMC-E temperature, 4", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221818",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221818",
+      "interval": 1,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_V_1818", "name": "HV battery voltage, measurement 4", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22181B",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22181B",
+      "interval": 1,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_V_181B", "name": "HV battery voltage, measurement 5", "description": "Reads within 1 V of the pack voltage on 1801; which point of the pack it measures is not known.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22181C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22181C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_COOL_IN_T", "name": "Cooling inlet temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22181D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22181D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_COOL_OUT_T", "name": "Cooling outlet temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221821|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221821",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD1_T1", "name": "Module 1, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD1_T2", "name": "Module 1, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD1_T3", "name": "Module 1, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221822|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221822",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD2_T1", "name": "Module 2, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD2_T2", "name": "Module 2, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD2_T3", "name": "Module 2, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221823|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221823",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD3_T1", "name": "Module 3, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD3_T2", "name": "Module 3, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD3_T3", "name": "Module 3, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221824|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221824",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD4_T1", "name": "Module 4, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD4_T2", "name": "Module 4, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD4_T3", "name": "Module 4, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221825|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221825",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD5_T1", "name": "Module 5, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD5_T2", "name": "Module 5, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD5_T3", "name": "Module 5, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221826|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221826",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD6_T1", "name": "Module 6, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD6_T2", "name": "Module 6, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD6_T3", "name": "Module 6, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221827|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221827",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD7_T1", "name": "Module 7, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD7_T2", "name": "Module 7, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD7_T3", "name": "Module 7, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221828|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221828",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD8_T1", "name": "Module 8, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD8_T2", "name": "Module 8, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD8_T3", "name": "Module 8, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221829|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221829",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD9_T1", "name": "Module 9, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD9_T2", "name": "Module 9, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD9_T3", "name": "Module 9, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182A|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD10_T1", "name": "Module 10, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD10_T2", "name": "Module 10, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD10_T3", "name": "Module 10, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD11_T1", "name": "Module 11, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD11_T2", "name": "Module 11, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD11_T3", "name": "Module 11, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD12_T1", "name": "Module 12, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD12_T2", "name": "Module 12, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD12_T3", "name": "Module 12, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD13_T1", "name": "Module 13, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD13_T2", "name": "Module 13, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD13_T3", "name": "Module 13, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182E|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD14_T1", "name": "Module 14, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD14_T2", "name": "Module 14, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD14_T3", "name": "Module 14, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22182F|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22182F",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD15_T1", "name": "Module 15, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD15_T2", "name": "Module 15, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD15_T3", "name": "Module 15, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221830|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221830",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD16_T1", "name": "Module 16, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD16_T2", "name": "Module 16, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD16_T3", "name": "Module 16, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221831|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221831",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD17_T1", "name": "Module 17, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD17_T2", "name": "Module 17, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD17_T3", "name": "Module 17, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221832|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221832",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD18_T1", "name": "Module 18, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD18_T2", "name": "Module 18, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD18_T3", "name": "Module 18, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221833|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221833",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD19_T1", "name": "Module 19, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD19_T2", "name": "Module 19, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD19_T3", "name": "Module 19, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221834|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221834",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD20_T1", "name": "Module 20, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD20_T2", "name": "Module 20, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD20_T3", "name": "Module 20, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221835|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221835",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD21_T1", "name": "Module 21, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD21_T2", "name": "Module 21, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD21_T3", "name": "Module 21, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221836|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221836",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD22_T1", "name": "Module 22, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD22_T2", "name": "Module 22, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD22_T3", "name": "Module 22, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221837|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221837",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD23_T1", "name": "Module 23, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD23_T2", "name": "Module 23, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD23_T3", "name": "Module 23, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221838|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221838",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD24_T1", "name": "Module 24, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD24_T2", "name": "Module 24, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD24_T3", "name": "Module 24, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221839|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221839",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD25_T1", "name": "Module 25, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD25_T2", "name": "Module 25, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD25_T3", "name": "Module 25, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183A|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD26_T1", "name": "Module 26, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD26_T2", "name": "Module 26, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD26_T3", "name": "Module 26, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD27_T1", "name": "Module 27, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD27_T2", "name": "Module 27, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD27_T3", "name": "Module 27, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD28_T1", "name": "Module 28, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD28_T2", "name": "Module 28, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD28_T3", "name": "Module 28, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD29_T1", "name": "Module 29, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD29_T2", "name": "Module 29, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD29_T3", "name": "Module 29, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183E|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD30_T1", "name": "Module 30, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD30_T2", "name": "Module 30, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD30_T3", "name": "Module 30, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22183F|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22183F",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD31_T1", "name": "Module 31, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD31_T2", "name": "Module 31, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD31_T3", "name": "Module 31, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221840|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221840",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD32_T1", "name": "Module 32, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD32_T2", "name": "Module 32, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD32_T3", "name": "Module 32, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221841|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221841",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD33_T1", "name": "Module 33, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD33_T2", "name": "Module 33, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "TAYCAN_HVBAT_MOD33_T3", "name": "Module 33, temperature 3", "group": "Battery.Modules", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221850",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221850",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD1_ID", "name": "HV battery module 1 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD1_C1_V", "name": "HV battery module 1 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C1_SOC", "name": "HV battery module 1 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD1_C2_V", "name": "HV battery module 1 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C2_SOC", "name": "HV battery module 1 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD1_C3_V", "name": "HV battery module 1 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C3_SOC", "name": "HV battery module 1 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD1_C4_V", "name": "HV battery module 1 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C4_SOC", "name": "HV battery module 1 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD1_C5_V", "name": "HV battery module 1 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C5_SOC", "name": "HV battery module 1 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD1_C6_V", "name": "HV battery module 1 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD1_C6_SOC", "name": "HV battery module 1 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221851",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221851",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD2_ID", "name": "HV battery module 2 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD2_C1_V", "name": "HV battery module 2 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C1_SOC", "name": "HV battery module 2 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD2_C2_V", "name": "HV battery module 2 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C2_SOC", "name": "HV battery module 2 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD2_C3_V", "name": "HV battery module 2 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C3_SOC", "name": "HV battery module 2 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD2_C4_V", "name": "HV battery module 2 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C4_SOC", "name": "HV battery module 2 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD2_C5_V", "name": "HV battery module 2 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C5_SOC", "name": "HV battery module 2 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD2_C6_V", "name": "HV battery module 2 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD2_C6_SOC", "name": "HV battery module 2 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221852",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221852",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD3_ID", "name": "HV battery module 3 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD3_C1_V", "name": "HV battery module 3 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C1_SOC", "name": "HV battery module 3 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD3_C2_V", "name": "HV battery module 3 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C2_SOC", "name": "HV battery module 3 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD3_C3_V", "name": "HV battery module 3 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C3_SOC", "name": "HV battery module 3 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD3_C4_V", "name": "HV battery module 3 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C4_SOC", "name": "HV battery module 3 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD3_C5_V", "name": "HV battery module 3 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C5_SOC", "name": "HV battery module 3 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD3_C6_V", "name": "HV battery module 3 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD3_C6_SOC", "name": "HV battery module 3 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221853",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221853",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD4_ID", "name": "HV battery module 4 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD4_C1_V", "name": "HV battery module 4 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C1_SOC", "name": "HV battery module 4 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD4_C2_V", "name": "HV battery module 4 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C2_SOC", "name": "HV battery module 4 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD4_C3_V", "name": "HV battery module 4 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C3_SOC", "name": "HV battery module 4 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD4_C4_V", "name": "HV battery module 4 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C4_SOC", "name": "HV battery module 4 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD4_C5_V", "name": "HV battery module 4 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C5_SOC", "name": "HV battery module 4 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD4_C6_V", "name": "HV battery module 4 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD4_C6_SOC", "name": "HV battery module 4 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221854",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221854",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD5_ID", "name": "HV battery module 5 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD5_C1_V", "name": "HV battery module 5 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C1_SOC", "name": "HV battery module 5 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD5_C2_V", "name": "HV battery module 5 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C2_SOC", "name": "HV battery module 5 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD5_C3_V", "name": "HV battery module 5 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C3_SOC", "name": "HV battery module 5 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD5_C4_V", "name": "HV battery module 5 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C4_SOC", "name": "HV battery module 5 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD5_C5_V", "name": "HV battery module 5 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C5_SOC", "name": "HV battery module 5 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD5_C6_V", "name": "HV battery module 5 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD5_C6_SOC", "name": "HV battery module 5 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221855",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221855",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD6_ID", "name": "HV battery module 6 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD6_C1_V", "name": "HV battery module 6 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C1_SOC", "name": "HV battery module 6 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD6_C2_V", "name": "HV battery module 6 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C2_SOC", "name": "HV battery module 6 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD6_C3_V", "name": "HV battery module 6 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C3_SOC", "name": "HV battery module 6 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD6_C4_V", "name": "HV battery module 6 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C4_SOC", "name": "HV battery module 6 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD6_C5_V", "name": "HV battery module 6 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C5_SOC", "name": "HV battery module 6 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD6_C6_V", "name": "HV battery module 6 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD6_C6_SOC", "name": "HV battery module 6 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221856",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221856",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD7_ID", "name": "HV battery module 7 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD7_C1_V", "name": "HV battery module 7 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C1_SOC", "name": "HV battery module 7 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD7_C2_V", "name": "HV battery module 7 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C2_SOC", "name": "HV battery module 7 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD7_C3_V", "name": "HV battery module 7 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C3_SOC", "name": "HV battery module 7 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD7_C4_V", "name": "HV battery module 7 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C4_SOC", "name": "HV battery module 7 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD7_C5_V", "name": "HV battery module 7 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C5_SOC", "name": "HV battery module 7 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD7_C6_V", "name": "HV battery module 7 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD7_C6_SOC", "name": "HV battery module 7 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221857",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221857",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD8_ID", "name": "HV battery module 8 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD8_C1_V", "name": "HV battery module 8 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C1_SOC", "name": "HV battery module 8 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD8_C2_V", "name": "HV battery module 8 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C2_SOC", "name": "HV battery module 8 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD8_C3_V", "name": "HV battery module 8 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C3_SOC", "name": "HV battery module 8 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD8_C4_V", "name": "HV battery module 8 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C4_SOC", "name": "HV battery module 8 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD8_C5_V", "name": "HV battery module 8 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C5_SOC", "name": "HV battery module 8 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD8_C6_V", "name": "HV battery module 8 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD8_C6_SOC", "name": "HV battery module 8 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221858",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221858",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD9_ID", "name": "HV battery module 9 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD9_C1_V", "name": "HV battery module 9 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C1_SOC", "name": "HV battery module 9 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD9_C2_V", "name": "HV battery module 9 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C2_SOC", "name": "HV battery module 9 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD9_C3_V", "name": "HV battery module 9 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C3_SOC", "name": "HV battery module 9 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD9_C4_V", "name": "HV battery module 9 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C4_SOC", "name": "HV battery module 9 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD9_C5_V", "name": "HV battery module 9 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C5_SOC", "name": "HV battery module 9 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD9_C6_V", "name": "HV battery module 9 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD9_C6_SOC", "name": "HV battery module 9 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221859",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221859",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD10_ID", "name": "HV battery module 10 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD10_C1_V", "name": "HV battery module 10 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C1_SOC", "name": "HV battery module 10 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD10_C2_V", "name": "HV battery module 10 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C2_SOC", "name": "HV battery module 10 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD10_C3_V", "name": "HV battery module 10 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C3_SOC", "name": "HV battery module 10 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD10_C4_V", "name": "HV battery module 10 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C4_SOC", "name": "HV battery module 10 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD10_C5_V", "name": "HV battery module 10 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C5_SOC", "name": "HV battery module 10 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD10_C6_V", "name": "HV battery module 10 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD10_C6_SOC", "name": "HV battery module 10 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185A",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD11_ID", "name": "HV battery module 11 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD11_C1_V", "name": "HV battery module 11 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C1_SOC", "name": "HV battery module 11 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD11_C2_V", "name": "HV battery module 11 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C2_SOC", "name": "HV battery module 11 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD11_C3_V", "name": "HV battery module 11 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C3_SOC", "name": "HV battery module 11 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD11_C4_V", "name": "HV battery module 11 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C4_SOC", "name": "HV battery module 11 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD11_C5_V", "name": "HV battery module 11 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C5_SOC", "name": "HV battery module 11 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD11_C6_V", "name": "HV battery module 11 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD11_C6_SOC", "name": "HV battery module 11 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185B",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185B",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD12_ID", "name": "HV battery module 12 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD12_C1_V", "name": "HV battery module 12 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C1_SOC", "name": "HV battery module 12 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD12_C2_V", "name": "HV battery module 12 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C2_SOC", "name": "HV battery module 12 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD12_C3_V", "name": "HV battery module 12 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C3_SOC", "name": "HV battery module 12 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD12_C4_V", "name": "HV battery module 12 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C4_SOC", "name": "HV battery module 12 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD12_C5_V", "name": "HV battery module 12 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C5_SOC", "name": "HV battery module 12 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD12_C6_V", "name": "HV battery module 12 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD12_C6_SOC", "name": "HV battery module 12 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185C",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185C",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD13_ID", "name": "HV battery module 13 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD13_C1_V", "name": "HV battery module 13 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C1_SOC", "name": "HV battery module 13 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD13_C2_V", "name": "HV battery module 13 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C2_SOC", "name": "HV battery module 13 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD13_C3_V", "name": "HV battery module 13 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C3_SOC", "name": "HV battery module 13 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD13_C4_V", "name": "HV battery module 13 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C4_SOC", "name": "HV battery module 13 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD13_C5_V", "name": "HV battery module 13 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C5_SOC", "name": "HV battery module 13 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD13_C6_V", "name": "HV battery module 13 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD13_C6_SOC", "name": "HV battery module 13 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185D",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185D",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD14_ID", "name": "HV battery module 14 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD14_C1_V", "name": "HV battery module 14 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C1_SOC", "name": "HV battery module 14 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD14_C2_V", "name": "HV battery module 14 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C2_SOC", "name": "HV battery module 14 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD14_C3_V", "name": "HV battery module 14 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C3_SOC", "name": "HV battery module 14 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD14_C4_V", "name": "HV battery module 14 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C4_SOC", "name": "HV battery module 14 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD14_C5_V", "name": "HV battery module 14 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C5_SOC", "name": "HV battery module 14 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD14_C6_V", "name": "HV battery module 14 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD14_C6_SOC", "name": "HV battery module 14 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185E",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185E",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD15_ID", "name": "HV battery module 15 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD15_C1_V", "name": "HV battery module 15 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C1_SOC", "name": "HV battery module 15 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD15_C2_V", "name": "HV battery module 15 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C2_SOC", "name": "HV battery module 15 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD15_C3_V", "name": "HV battery module 15 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C3_SOC", "name": "HV battery module 15 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD15_C4_V", "name": "HV battery module 15 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C4_SOC", "name": "HV battery module 15 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD15_C5_V", "name": "HV battery module 15 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C5_SOC", "name": "HV battery module 15 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD15_C6_V", "name": "HV battery module 15 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD15_C6_SOC", "name": "HV battery module 15 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22185F",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22185F",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD16_ID", "name": "HV battery module 16 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD16_C1_V", "name": "HV battery module 16 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C1_SOC", "name": "HV battery module 16 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD16_C2_V", "name": "HV battery module 16 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C2_SOC", "name": "HV battery module 16 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD16_C3_V", "name": "HV battery module 16 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C3_SOC", "name": "HV battery module 16 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD16_C4_V", "name": "HV battery module 16 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C4_SOC", "name": "HV battery module 16 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD16_C5_V", "name": "HV battery module 16 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C5_SOC", "name": "HV battery module 16 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD16_C6_V", "name": "HV battery module 16 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD16_C6_SOC", "name": "HV battery module 16 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221860",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221860",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD17_ID", "name": "HV battery module 17 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD17_C1_V", "name": "HV battery module 17 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C1_SOC", "name": "HV battery module 17 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD17_C2_V", "name": "HV battery module 17 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C2_SOC", "name": "HV battery module 17 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD17_C3_V", "name": "HV battery module 17 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C3_SOC", "name": "HV battery module 17 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD17_C4_V", "name": "HV battery module 17 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C4_SOC", "name": "HV battery module 17 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD17_C5_V", "name": "HV battery module 17 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C5_SOC", "name": "HV battery module 17 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD17_C6_V", "name": "HV battery module 17 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD17_C6_SOC", "name": "HV battery module 17 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221861",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221861",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD18_ID", "name": "HV battery module 18 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD18_C1_V", "name": "HV battery module 18 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C1_SOC", "name": "HV battery module 18 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD18_C2_V", "name": "HV battery module 18 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C2_SOC", "name": "HV battery module 18 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD18_C3_V", "name": "HV battery module 18 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C3_SOC", "name": "HV battery module 18 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD18_C4_V", "name": "HV battery module 18 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C4_SOC", "name": "HV battery module 18 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD18_C5_V", "name": "HV battery module 18 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C5_SOC", "name": "HV battery module 18 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD18_C6_V", "name": "HV battery module 18 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD18_C6_SOC", "name": "HV battery module 18 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221862",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221862",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD19_ID", "name": "HV battery module 19 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD19_C1_V", "name": "HV battery module 19 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C1_SOC", "name": "HV battery module 19 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD19_C2_V", "name": "HV battery module 19 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C2_SOC", "name": "HV battery module 19 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD19_C3_V", "name": "HV battery module 19 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C3_SOC", "name": "HV battery module 19 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD19_C4_V", "name": "HV battery module 19 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C4_SOC", "name": "HV battery module 19 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD19_C5_V", "name": "HV battery module 19 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C5_SOC", "name": "HV battery module 19 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD19_C6_V", "name": "HV battery module 19 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD19_C6_SOC", "name": "HV battery module 19 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221863",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221863",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD20_ID", "name": "HV battery module 20 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD20_C1_V", "name": "HV battery module 20 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C1_SOC", "name": "HV battery module 20 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD20_C2_V", "name": "HV battery module 20 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C2_SOC", "name": "HV battery module 20 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD20_C3_V", "name": "HV battery module 20 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C3_SOC", "name": "HV battery module 20 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD20_C4_V", "name": "HV battery module 20 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C4_SOC", "name": "HV battery module 20 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD20_C5_V", "name": "HV battery module 20 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C5_SOC", "name": "HV battery module 20 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD20_C6_V", "name": "HV battery module 20 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD20_C6_SOC", "name": "HV battery module 20 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221864",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221864",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD21_ID", "name": "HV battery module 21 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD21_C1_V", "name": "HV battery module 21 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C1_SOC", "name": "HV battery module 21 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD21_C2_V", "name": "HV battery module 21 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C2_SOC", "name": "HV battery module 21 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD21_C3_V", "name": "HV battery module 21 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C3_SOC", "name": "HV battery module 21 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD21_C4_V", "name": "HV battery module 21 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C4_SOC", "name": "HV battery module 21 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD21_C5_V", "name": "HV battery module 21 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C5_SOC", "name": "HV battery module 21 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD21_C6_V", "name": "HV battery module 21 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD21_C6_SOC", "name": "HV battery module 21 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221865",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221865",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD22_ID", "name": "HV battery module 22 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD22_C1_V", "name": "HV battery module 22 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C1_SOC", "name": "HV battery module 22 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD22_C2_V", "name": "HV battery module 22 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C2_SOC", "name": "HV battery module 22 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD22_C3_V", "name": "HV battery module 22 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C3_SOC", "name": "HV battery module 22 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD22_C4_V", "name": "HV battery module 22 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C4_SOC", "name": "HV battery module 22 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD22_C5_V", "name": "HV battery module 22 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C5_SOC", "name": "HV battery module 22 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD22_C6_V", "name": "HV battery module 22 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD22_C6_SOC", "name": "HV battery module 22 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221866",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221866",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD23_ID", "name": "HV battery module 23 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD23_C1_V", "name": "HV battery module 23 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C1_SOC", "name": "HV battery module 23 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD23_C2_V", "name": "HV battery module 23 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C2_SOC", "name": "HV battery module 23 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD23_C3_V", "name": "HV battery module 23 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C3_SOC", "name": "HV battery module 23 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD23_C4_V", "name": "HV battery module 23 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C4_SOC", "name": "HV battery module 23 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD23_C5_V", "name": "HV battery module 23 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C5_SOC", "name": "HV battery module 23 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD23_C6_V", "name": "HV battery module 23 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD23_C6_SOC", "name": "HV battery module 23 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221867",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221867",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD24_ID", "name": "HV battery module 24 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD24_C1_V", "name": "HV battery module 24 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C1_SOC", "name": "HV battery module 24 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD24_C2_V", "name": "HV battery module 24 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C2_SOC", "name": "HV battery module 24 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD24_C3_V", "name": "HV battery module 24 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C3_SOC", "name": "HV battery module 24 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD24_C4_V", "name": "HV battery module 24 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C4_SOC", "name": "HV battery module 24 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD24_C5_V", "name": "HV battery module 24 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C5_SOC", "name": "HV battery module 24 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD24_C6_V", "name": "HV battery module 24 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD24_C6_SOC", "name": "HV battery module 24 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221868",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221868",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD25_ID", "name": "HV battery module 25 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD25_C1_V", "name": "HV battery module 25 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C1_SOC", "name": "HV battery module 25 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD25_C2_V", "name": "HV battery module 25 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C2_SOC", "name": "HV battery module 25 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD25_C3_V", "name": "HV battery module 25 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C3_SOC", "name": "HV battery module 25 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD25_C4_V", "name": "HV battery module 25 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C4_SOC", "name": "HV battery module 25 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD25_C5_V", "name": "HV battery module 25 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C5_SOC", "name": "HV battery module 25 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD25_C6_V", "name": "HV battery module 25 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD25_C6_SOC", "name": "HV battery module 25 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221869",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221869",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD26_ID", "name": "HV battery module 26 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD26_C1_V", "name": "HV battery module 26 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C1_SOC", "name": "HV battery module 26 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD26_C2_V", "name": "HV battery module 26 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C2_SOC", "name": "HV battery module 26 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD26_C3_V", "name": "HV battery module 26 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C3_SOC", "name": "HV battery module 26 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD26_C4_V", "name": "HV battery module 26 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C4_SOC", "name": "HV battery module 26 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD26_C5_V", "name": "HV battery module 26 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C5_SOC", "name": "HV battery module 26 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD26_C6_V", "name": "HV battery module 26 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD26_C6_SOC", "name": "HV battery module 26 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186A",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD27_ID", "name": "HV battery module 27 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD27_C1_V", "name": "HV battery module 27 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C1_SOC", "name": "HV battery module 27 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD27_C2_V", "name": "HV battery module 27 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C2_SOC", "name": "HV battery module 27 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD27_C3_V", "name": "HV battery module 27 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C3_SOC", "name": "HV battery module 27 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD27_C4_V", "name": "HV battery module 27 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C4_SOC", "name": "HV battery module 27 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD27_C5_V", "name": "HV battery module 27 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C5_SOC", "name": "HV battery module 27 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD27_C6_V", "name": "HV battery module 27 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD27_C6_SOC", "name": "HV battery module 27 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186B",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186B",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD28_ID", "name": "HV battery module 28 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD28_C1_V", "name": "HV battery module 28 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C1_SOC", "name": "HV battery module 28 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD28_C2_V", "name": "HV battery module 28 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C2_SOC", "name": "HV battery module 28 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD28_C3_V", "name": "HV battery module 28 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C3_SOC", "name": "HV battery module 28 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD28_C4_V", "name": "HV battery module 28 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C4_SOC", "name": "HV battery module 28 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD28_C5_V", "name": "HV battery module 28 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C5_SOC", "name": "HV battery module 28 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD28_C6_V", "name": "HV battery module 28 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD28_C6_SOC", "name": "HV battery module 28 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186C",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186C",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD29_ID", "name": "HV battery module 29 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD29_C1_V", "name": "HV battery module 29 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C1_SOC", "name": "HV battery module 29 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD29_C2_V", "name": "HV battery module 29 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C2_SOC", "name": "HV battery module 29 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD29_C3_V", "name": "HV battery module 29 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C3_SOC", "name": "HV battery module 29 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD29_C4_V", "name": "HV battery module 29 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C4_SOC", "name": "HV battery module 29 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD29_C5_V", "name": "HV battery module 29 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C5_SOC", "name": "HV battery module 29 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD29_C6_V", "name": "HV battery module 29 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD29_C6_SOC", "name": "HV battery module 29 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186D",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186D",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD30_ID", "name": "HV battery module 30 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD30_C1_V", "name": "HV battery module 30 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C1_SOC", "name": "HV battery module 30 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD30_C2_V", "name": "HV battery module 30 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C2_SOC", "name": "HV battery module 30 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD30_C3_V", "name": "HV battery module 30 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C3_SOC", "name": "HV battery module 30 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD30_C4_V", "name": "HV battery module 30 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C4_SOC", "name": "HV battery module 30 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD30_C5_V", "name": "HV battery module 30 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C5_SOC", "name": "HV battery module 30 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD30_C6_V", "name": "HV battery module 30 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD30_C6_SOC", "name": "HV battery module 30 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186E",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186E",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD31_ID", "name": "HV battery module 31 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD31_C1_V", "name": "HV battery module 31 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C1_SOC", "name": "HV battery module 31 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD31_C2_V", "name": "HV battery module 31 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C2_SOC", "name": "HV battery module 31 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD31_C3_V", "name": "HV battery module 31 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C3_SOC", "name": "HV battery module 31 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD31_C4_V", "name": "HV battery module 31 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C4_SOC", "name": "HV battery module 31 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD31_C5_V", "name": "HV battery module 31 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C5_SOC", "name": "HV battery module 31 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD31_C6_V", "name": "HV battery module 31 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD31_C6_SOC", "name": "HV battery module 31 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22186F",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22186F",
+      "interval": 10,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD32_ID", "name": "HV battery module 32 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD32_C1_V", "name": "HV battery module 32 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C1_SOC", "name": "HV battery module 32 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD32_C2_V", "name": "HV battery module 32 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C2_SOC", "name": "HV battery module 32 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD32_C3_V", "name": "HV battery module 32 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C3_SOC", "name": "HV battery module 32 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD32_C4_V", "name": "HV battery module 32 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C4_SOC", "name": "HV battery module 32 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD32_C5_V", "name": "HV battery module 32 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C5_SOC", "name": "HV battery module 32 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD32_C6_V", "name": "HV battery module 32 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD32_C6_SOC", "name": "HV battery module 32 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221870|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221870",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_MOD33_ID", "name": "HV battery module 31 id", "group": "Battery.Cells", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TAYCAN_HVBAT_MOD33_C1_V", "name": "HV battery module 33 cell 1 voltage", "group": "Battery.Cells", "bit": 8, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C1_SOC", "name": "HV battery module 33 cell 1 state of charge", "group": "Battery.Cells", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD33_C2_V", "name": "HV battery module 33 cell 2 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C2_SOC", "name": "HV battery module 33 cell 2 state of charge", "group": "Battery.Cells", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD33_C3_V", "name": "HV battery module 33 cell 3 voltage", "group": "Battery.Cells", "bit": 120, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C3_SOC", "name": "HV battery module 33 cell 3 state of charge", "group": "Battery.Cells", "bit": 136, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD33_C4_V", "name": "HV battery module 33 cell 4 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C4_SOC", "name": "HV battery module 33 cell 4 state of charge", "group": "Battery.Cells", "bit": 192, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD33_C5_V", "name": "HV battery module 33 cell 5 voltage", "group": "Battery.Cells", "bit": 232, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C5_SOC", "name": "HV battery module 33 cell 5 state of charge", "group": "Battery.Cells", "bit": 248, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_HVBAT_MOD33_C6_V", "name": "HV battery module 33 cell 6 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5, "unit": "V"},
+        {"id": "TAYCAN_HVBAT_MOD33_C6_SOC", "name": "HV battery module 33 cell 6 state of charge", "group": "Battery.Cells", "bit": 304, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22192B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22192B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_COOL_PUMP_PWR_SP", "name": "Cooling puump power set point", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E0A|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E0A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_PWR_REDUCE_ACT", "name": "Battery power reduction active", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E0E|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E0E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_T_MAX", "name": "HV battery temperature, maximum", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
+        {"id": "TAYCAN_BMS_T_MAX_CELL", "name": "HV battery temperature, maximum (cell #)", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E0F|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E0F",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_T_MIN", "name": "HV battery temperature, minimum", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
+        {"id": "TAYCAN_BMS_T_MIN_CELL", "name": "HV battery temperature, minimum (cell #)", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E10|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E10",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_T_AVG", "name": "HV battery temperature, average", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E17",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E17",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HV_ISO_POS_SYS", "name": "HV system isolation resistance, positive", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E18",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E18",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_ISO_POS", "name": "HV battery isolation resistance, positive", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E19",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E19",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HV_ISO_NEG_SYS", "name": "HV system isolation resistance, negative", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E1A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E1A",
+      "interval": 5,
+      "answeredIn": [2022, 2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_ISO_NEG", "name": "HV battery isolation resistance, negative", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E1B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E1B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_I_CHG_LIM_DYN", "name": "Maximum dynamic charge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E1C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E1C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_I_DCHG_LIM_DYN", "name": "Maximum dynamic discharge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E1D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E1D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_I_CHG_LIM_PRED", "name": "Maximum predicted charge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E1E|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E1E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_I_DCHG_LIM_PRED", "name": "Maximum predicted discharge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E2C|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E2C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_CELL_SOC_MAX", "name": "Cell state of charge max, value", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_BMS_CELL_SOC_MAX_IDX", "name": "Cell state of charge max, index", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E2D|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E2D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_CELL_SOC_MIN", "name": "Cell state of charge min, value", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TAYCAN_BMS_CELL_SOC_MIN_IDX", "name": "Cell state of charge min, index", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E33|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E33",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_CELL_V_MAX", "name": "Cell voltage max, value", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "TAYCAN_BMS_CELL_V_MAX_IDX", "name": "Cell voltage max, index", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E34|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E34",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_CELL_V_MIN", "name": "Cell voltage min, value", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "TAYCAN_BMS_CELL_V_MIN_IDX", "name": "Cell voltage min, index", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.221E3B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "221E3B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_CELL_V_SUM", "name": "Cell voltage sum", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225170|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225170",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_DCHG_MIN", "name": "Minimum discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225171|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225171",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_CHG_MAX", "name": "Maximum charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225172|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225172",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_CHG_PRED_MIN", "name": "Minimum predicted charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225173|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225173",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_DCHG_PRED_MIN", "name": "Minimum predicted discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225174|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225174",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_CHG_DYN_MIN", "name": "Minimum dynamic charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225175|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225175",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_V_DCHG_DYN_MIN", "name": "Minimum dynamic discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.2251E0|f=-2024",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "2251E0",
+      "interval": 30,
+      "years": {"to": 2024},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "multiply": 0.127, "add": -1798.574, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E5.7ED.2251E0|f=2025-",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "2251E0",
+      "interval": 30,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TAYCAN_HVBAT_SOH_J12", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "divide": 10, "add": -1369.5, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225200",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225200",
+      "interval": 3600,
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_LAUNCH", "name": "Launch control count", "description": "How many times you've initiated launch control on the car.", "group": "Stats", "bit": 0, "bits": 32, "min": 0, "max": 1000000}
+      ]
+    },
+    {
+      "id": "7E5.7ED.2280EC|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "2280EC",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_COOL_PUMP_CTL", "name": "HV battery coolant pump control value", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22F45B|din=03",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22F45B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "TAYCAN_BMS_SOC_HIRES", "name": "HV battery state of charge, hd", "group": "Battery", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "TAYCAN_HVBAT_PACK_SOC",
+      "name": "HV battery cell state of charge",
+      "group": "Battery.BatteryPack",
+      "match": "TAYCAN_HVBAT_(MOD\\d+)_(C\\d+)_SOC",
+      "metric": "batteryModulesStateOfCharge"
+    },
+    {
+      "id": "TAYCAN_HVBAT_PACK_V",
+      "name": "HV battery cell voltage",
+      "group": "Battery.BatteryPack",
+      "match": "TAYCAN_HVBAT_(MOD\\d+)_(C\\d+)_V",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

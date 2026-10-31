@@ -1,0 +1,445 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/ridgeline",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "Ridgeline",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2006, "to": 2014},
+      {"name": "Second Generation", "from": 2017, "to": 2020},
+      {"name": "Second Generation (2021 Facelift)", "from": 2021}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-Ridgeline",
+    "file": "signalsets/v3/default.json",
+    "revision": "b6a249242cf69389e493744ffd63821eac38c28d",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA0E", "type": "engine"},
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA1E", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "DA0E.0E.222240",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222240",
+      "interval": 30,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_BAT_DIST", "name": "Distance traveled since last charge", "group": "Battery", "bit": 80, "bits": 32, "min": 0, "max": 250000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222610",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222610",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_GENERATOR_PCM", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RIDGELINE_AC_CLU_PCM", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222611",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222611",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_AIRGAS_RAT_PCM", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4, "invalidAtOrAbove": 29.4}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222612",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222612",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_VTEC_VALVE_CTRL_PCM", "name": "VTEC valve control", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RIDGELINE_CURRENT_GEAR_VAR_2", "name": "Current gear var.2", "group": "Transmission", "bit": 352, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_CURRENT_GEAR_VAR_3", "name": "Current gear var.3", "group": "Transmission", "bit": 368, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222613",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222613",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_AC_P", "name": "A/C pressure", "group": "Climate", "bit": 120, "bits": 16, "min": 0, "max": 4000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222615",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222615",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_ACTIVE_CYL_PCM", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222660",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222660",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_ODO_PCM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "RIDGELINE_RUNTM_PCM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222661",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222661",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_FUELAIR_CAR_PCM", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222662",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222662",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_KNOCK_CTRL_PCM", "name": "Knock control", "group": "ECU", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "RIDGELINE_VTC_DUTY_PCM", "name": "Variable valve timing duty", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222663",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222663",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_MIS_CNT_1_VAR_3_PCM", "name": "Misfire count #1, variant 3", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_CNT_2_VAR_3_PCM", "name": "Misfire count #2, variant 3", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_CNT_3_VAR_3_PCM", "name": "Misfire count #3, variant 3", "group": "Engine", "bit": 192, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_CNT_4_VAR_3_PCM", "name": "Misfire count #4, variant 3", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_CNT_5_VAR_3_PCM", "name": "Misfire count #5, variant 3", "group": "Engine", "bit": 224, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_CNT_6_VAR_3_PCM", "name": "Misfire count #6, variant 3", "group": "Engine", "bit": 240, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_1_PCM", "name": "Misfire count, cylinder 1", "group": "ECU", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_2_PCM", "name": "Misfire count, cylinder 2", "group": "ECU", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_3_PCM", "name": "Misfire count, cylinder 3", "group": "ECU", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_4_PCM", "name": "Misfire count, cylinder 4", "group": "ECU", "bit": 320, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_5_PCM", "name": "Misfire count, cylinder 5", "group": "ECU", "bit": 336, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_6_PCM", "name": "Misfire count, cylinder 6", "group": "ECU", "bit": 352, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222666",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222666",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_EOT_VAR_3_PCM", "name": "Engine oil temperature, variant 3", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RIDGELINE_EOT_VAR_4_PCM", "name": "Engine oil temperature, variant 4", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.22266C",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "22266C",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023],
+      "signals": [
+        {"id": "RIDGELINE_MIS_CNT_1_VAR_1_PCM", "name": "Misfire count #1, variant 1", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_MIS_CNT_2_VAR_1_PCM", "name": "Misfire count #2, variant 1", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_MIS_CNT_3_VAR_1_PCM", "name": "Misfire count #3, variant 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_MIS_CNT_4_VAR_1_PCM", "name": "Misfire count #4, variant 1", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_MIS_CNT_5_VAR_1_PCM", "name": "Misfire count #5, variant 1", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255},
+        {"id": "RIDGELINE_MIS_CNT_6_VAR_1_PCM", "name": "Misfire count #6, variant 1", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA0E.0E.22266D",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "22266D",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2023],
+      "signals": [
+        {"id": "RIDGELINE_AIR_FUEL_MIXTURE", "name": "Air-fuel mixture heater", "group": "Fuel", "bit": 72, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222610",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RIDGELINE_AC_CLUTCH", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222611",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RIDGELINE_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222615",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222615",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_ACTIVE_CYL", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA10.10.222660|fc=1",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "RIDGELINE_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_KNOCK_CONTROL", "name": "Knock control", "description": "ECU's determination of fuel quality.", "group": "Engine", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "RIDGELINE_VTC_DUTY", "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential.", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_5", "name": "Misfire count #5", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RIDGELINE_MIS_6", "name": "Misfire count #6", "group": "Engine", "bit": 352, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223083",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223083",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_ATF_T_DA1E", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223086",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223086",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_GEAR", "name": "Transmission gear", "group": "Transmission", "bit": 160, "bits": 8, "values": {"0": "P", "1": "D1", "2": "D2", "3": "D3", "4": "D4", "5": "D5", "6": "D6", "7": "D7", "8": "D8", "9": "D9", "14": "N", "15": "R"}, "valueDescriptions": {"0": "Park", "1": "Drive 1", "2": "Drive 2", "3": "Drive 3", "4": "Drive 4", "5": "Drive 5", "6": "Drive 6", "7": "Drive 7", "8": "Drive 8", "9": "Drive 9", "14": "Neutral", "15": "Reverse"}}
+      ]
+    },
+    {
+      "id": "DA26.26.226001",
+      "bus": "can29",
+      "tx": "18DA26F1",
+      "rx": "18DAF126",
+      "request": "226001",
+      "interval": 15,
+      "answeredIn": [2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "RIDGELINE_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "RIDGELINE_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "RIDGELINE_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "RIDGELINE_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 192, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "RIDGELINE_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 200, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "RIDGELINE_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 208, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "RIDGELINE_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 216, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA28.28.224004",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224004",
+      "interval": 1,
+      "answeredIn": [2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_BRK_SW", "name": "Brake switch", "group": "Electrical", "bit": 127, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA28.28.224005",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224005",
+      "interval": 1,
+      "answeredIn": [2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_BRK_P", "name": "Brake pressure", "group": "Electrical", "bit": 56, "bits": 16, "add": -25, "min": 0, "max": 120, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA60.60.227022",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227022",
+      "interval": 30,
+      "answeredIn": [2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_ODO_V3", "name": "Odometer, variation 3", "group": "Trips", "bit": 48, "bits": 24, "min": 0, "max": 200000, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|fc=1,f=2020-;-2018",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"from": 2020, "to": 2018},
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_AAT", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°F", "invalidAtOrAbove": 141}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|fc=1,f=2019",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"years": [2019]},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RIDGELINE_AAT_C", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°C", "invalidAtOrAbove": 61}
+      ]
+    },
+    {
+      "id": "DA60.60.227029",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227029",
+      "interval": 30,
+      "answeredIn": [2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "RIDGELINE_FLV", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"}
+      ]
+    }
+  ]
+}

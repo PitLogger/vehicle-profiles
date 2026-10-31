@@ -1,0 +1,694 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/hyundai/kona",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Hyundai",
+    "model": "Kona",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2017, "to": 2023},
+      {"name": "Second Generation", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Hyundai-Kona",
+    "file": "signalsets/v3/default.json",
+    "revision": "f4f06b728c427791fd4196cc4db02bfae182abde",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7A0", "type": "bodyControl"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "7E4", "type": "battery"}
+  ],
+  "requests": [
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_BELT_PASS", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_BELT_DRIV", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_GEAR_R", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "KONA_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "KONA_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "answeredIn": [2020, 2022, 2023],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "KONA_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2020, 2023, 2024],
+      "signals": [
+        {"id": "KONA_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "KONA_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 1,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "KONA_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "KONA_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|f=-2023",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "years": {"to": 2023},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_TP_FL_PRE24", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_FL_PRE24", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TP_FR_PRE24", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_FR_PRE24", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TP_RL_PRE24", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 96, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_RL_PRE24", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TP_RR_PRE24", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 128, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_RR_PRE24", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 136, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|f=2024-",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "years": {"from": 2024},
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "KONA_TP_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TW_FL", "name": "Tire alert front left", "group": "Tires", "bit": 56, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_TP_FR", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 72, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TW_FR", "name": "Tire alert front right", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_TP_RL", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 120, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TW_RL", "name": "Tire alert rear left", "group": "Tires", "bit": 136, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "KONA_TP_RR", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 152, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 51},
+        {"id": "KONA_TT_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 160, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "KONA_TW_RR", "name": "Tire alert rear right", "group": "Tires", "bit": 176, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_1_ODO_EVT_3", "name": "Sensor 1 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_2_ODO_EVT_3", "name": "Sensor 2 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_3_ODO_EVT_3", "name": "Sensor 3 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "KONA_SENS_4_ODO_EVT_3", "name": "Sensor 4 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_TEMP_INT", "name": "Interior Temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "KONA_TEMP_EXT", "name": "Exterior Temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "KONA_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "KONA_FLI_VOL", "name": "Fuel level (volume)", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
+        {"id": "KONA_CLUSTER_VOLTAGE", "name": "Cluster Voltage", "group": "Electrical", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "KONA_ODO_KM", "name": "Odometer (Metric)", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrBelow": 0},
+        {"id": "KONA_ODO_MI", "name": "Odometer (Imperial)", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "KONA_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_TIRE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_TIRE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_TIRE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "KONA_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2019, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2018, 2020],
+      "signals": [
+        {"id": "KONA_WHEEL_ANGLE_ABS", "name": "Wheel turn angle, absolute", "group": "Tires", "bit": 56, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "KONA_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22E005",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "KONA_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
+        {"id": "KONA_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
+        {"id": "KONA_INTAKE_TEMP", "name": "Intake Air Temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"},
+        {"id": "KONA_OIL_TEMP", "name": "Engine Oil Temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_INJ_DUR_1", "name": "Injection Duration Cyl 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "KONA_INJ_DUR_2", "name": "Injection Duration Cyl 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "KONA_INJ_DUR_3", "name": "Injection Duration Cyl 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "KONA_INJ_DUR_4", "name": "Injection Duration Cyl 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "KONA_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 1,
+      "answeredIn": [2019, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "KONA_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_WIDE_OPEN_THROTTLE", "name": "Wide open throttle", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_KNOCK_DETECTED_7E0", "name": "Knock detected", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "KONA_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E011",
+      "interval": 5,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_CALC_OIL_T", "name": "Calculated oil temperature", "group": "Engine", "bit": 304, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 16, "multiply": 15.21, "divide": 10000, "min": 0, "max": 99.67, "unit": "%"},
+        {"id": "KONA_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 13.79, "min": 0, "max": 3516.45, "unit": "kPa"},
+        {"id": "KONA_OVERHEAT_PROTECTION", "name": "Overheat protection, active", "group": "Engine", "bit": 132, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_HARMFUL_CAT_1", "name": "Misfires harmful for catalyst, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_HARMFUL_CAT_2", "name": "Misfires harmful for catalyst, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_HARMFUL_CAT_3", "name": "Misfires harmful for catalyst, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "KONA_MIS_HARMFUL_CAT_4", "name": "Misfires harmful for catalyst, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E020",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_INT_CAM_POS", "name": "Intake camshaft position", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"},
+        {"id": "KONA_EXH_CAM_POS", "name": "Exhaust camshaft position", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E021",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E021",
+      "interval": 0.1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_TURBO_BOOST", "name": "Turbo boost pressure, absolute", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa", "invalidAtOrBelow": 0},
+        {"id": "KONA_WG_VOLTAGE", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 10, "divide": 65535, "min": 0, "max": 10, "unit": "V"},
+        {"id": "KONA_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_FUEL_P_ACT", "name": "Fuel pressure, actual", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "KONA_FUEL_P_SET_POINT_7E0", "name": "Fuel pressure, set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "KONA_FUEL_P_SET_POINT_DEV", "name": "Fuel pressure set point deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53066, "divide": 10000, "min": -173886.6688, "max": 173881.3622},
+        {"id": "KONA_INJ_IMPULSE_1_CYL_1", "name": "Injection impulse 1, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_1_CYL_2", "name": "Injection impulse 1, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_1_CYL_3", "name": "Injection impulse 1, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_1_CYL_4", "name": "Injection impulse 1, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_2_CYL_1", "name": "Injection impulse 2, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_2_CYL_2", "name": "Injection impulse 2, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_2_CYL_3", "name": "Injection impulse 2, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_2_CYL_4", "name": "Injection impulse 2, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_3_CYL_1", "name": "Injection impulse 3, cylinder 1", "group": "Engine", "bit": 328, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_3_CYL_2", "name": "Injection impulse 3, cylinder 2", "group": "Engine", "bit": 344, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_3_CYL_3", "name": "Injection impulse 3, cylinder 3", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "KONA_INJ_IMPULSE_3_CYL_4", "name": "Injection impulse 3, cylinder 4", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "KONA_CYCLE_FUEL_CONS", "name": "Cycle fuel consumption", "group": "Fuel", "bit": 416, "bits": 8, "multiply": 8.478, "divide": 100, "min": 0, "max": 21.6189}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "KONA_RPM", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "KONA_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "KONA_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "KONA_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "KONA_OUTPUT_RPM", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "signed": true, "divide": 4, "min": -8192, "max": 8191.75, "unit": "rpm"},
+        {"id": "KONA_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "KONA_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "KONA_GEAR", "name": "Gear", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22E004|f=2021-",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E004",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "KONA_VPWR_V3", "name": "12v battery charge", "group": "Battery", "bit": 152, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220101|f=2021-",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220101",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "KONA_HVBAT_SOC", "name": "HV battery charge, dashboard", "group": "Battery", "metric": "stateOfCharge", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "KONA_HVBAT_CURR", "name": "HV battery current", "group": "Battery", "bit": 80, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"},
+        {"id": "KONA_HVBAT_VDC", "name": "HV battery DC voltage", "group": "Battery", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "KONA_HVBAT_T_MAX", "name": "HV battery temperature, maximum", "group": "Battery", "bit": 112, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "KONA_HVBAT_T_MIN", "name": "HV battery temperature, minimum", "group": "Battery", "bit": 120, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "KONA_HVBAT_MOD1_T", "name": "HV battery temperature, module 1", "group": "Battery", "bit": 128, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "KONA_HVBAT_MOD2_T", "name": "HV battery temperature, module 2", "group": "Battery", "bit": 136, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "KONA_C_V_MAX", "name": "Maximum cell voltage", "group": "Battery", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_C_V_MAX_ID", "name": "Maximum cell voltage id", "description": "The id of the cell with the highest voltage.", "group": "Battery", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_C_V_MIN", "name": "Minimum cell voltage", "group": "Battery", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_C_V_MIN_ID", "name": "Minimum cell voltage id", "description": "The id of the cell with the lowest voltage.", "group": "Battery", "bit": 208, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_HVBAT_FAN_STATUS", "name": "HV battery fan status", "group": "Battery", "bit": 216, "bits": 8, "min": 0, "max": 255},
+        {"id": "KONA_HVBAT_FAN", "name": "HV battery fan", "group": "Battery", "bit": 224, "bits": 8, "min": 0, "max": 255, "unit": "Hz"},
+        {"id": "KONA_VPWR_V2", "name": "Battery auxiliary voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 232, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V", "invalidAtOrBelow": 0},
+        {"id": "KONA_HVBAT_CHRG_TOT_C", "name": "Total charge current", "group": "Battery", "bit": 240, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "KONA_HVBAT_DSCH_TOT_C", "name": "Total discharge current", "group": "Battery", "bit": 272, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "KONA_HVBAT_CHRG_TOT_E", "name": "Total charge energy", "group": "Battery", "bit": 304, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "KONA_HVBAT_DSCH_TOT_E", "name": "Total discharge energy", "group": "Battery", "bit": 336, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "KONA_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 368, "bits": 32, "min": 0, "max": 4294967295, "unit": "s"},
+        {"id": "KONA_INVRT_CV", "name": "Inverter capacitor voltage", "group": "Battery", "bit": 408, "bits": 16, "min": 0, "max": 65535, "unit": "V", "invalidAtOrAbove": 65535},
+        {"id": "KONA_RPM_7E4", "name": "Drive motor speed", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "KONA_ISO_R", "name": "Isolation resistance", "group": "Battery", "bit": 456, "bits": 16, "min": 0, "max": 65535, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220102|f=2021-",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220102",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "KONA_CELL_V_001", "name": "Cell voltage 001", "group": "Battery.Cells", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_002", "name": "Cell voltage 002", "group": "Battery.Cells", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_003", "name": "Cell voltage 003", "group": "Battery.Cells", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_004", "name": "Cell voltage 004", "group": "Battery.Cells", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_005", "name": "Cell voltage 005", "group": "Battery.Cells", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_006", "name": "Cell voltage 006", "group": "Battery.Cells", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_007", "name": "Cell voltage 007", "group": "Battery.Cells", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_008", "name": "Cell voltage 008", "group": "Battery.Cells", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_009", "name": "Cell voltage 009", "group": "Battery.Cells", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_010", "name": "Cell voltage 010", "group": "Battery.Cells", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_011", "name": "Cell voltage 011", "group": "Battery.Cells", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_012", "name": "Cell voltage 012", "group": "Battery.Cells", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_013", "name": "Cell voltage 013", "group": "Battery.Cells", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_014", "name": "Cell voltage 014", "group": "Battery.Cells", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_015", "name": "Cell voltage 015", "group": "Battery.Cells", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_016", "name": "Cell voltage 016", "group": "Battery.Cells", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_017", "name": "Cell voltage 017", "group": "Battery.Cells", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_018", "name": "Cell voltage 018", "group": "Battery.Cells", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_019", "name": "Cell voltage 019", "group": "Battery.Cells", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_020", "name": "Cell voltage 020", "group": "Battery.Cells", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_021", "name": "Cell voltage 021", "group": "Battery.Cells", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_022", "name": "Cell voltage 022", "group": "Battery.Cells", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_023", "name": "Cell voltage 023", "group": "Battery.Cells", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_024", "name": "Cell voltage 024", "group": "Battery.Cells", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_025", "name": "Cell voltage 025", "group": "Battery.Cells", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_026", "name": "Cell voltage 026", "group": "Battery.Cells", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_027", "name": "Cell voltage 027", "group": "Battery.Cells", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_028", "name": "Cell voltage 028", "group": "Battery.Cells", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_029", "name": "Cell voltage 029", "group": "Battery.Cells", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_030", "name": "Cell voltage 030", "group": "Battery.Cells", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_031", "name": "Cell voltage 031", "group": "Battery.Cells", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_032", "name": "Cell voltage 032", "group": "Battery.Cells", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220103|f=2021-",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220103",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "KONA_CELL_V_033", "name": "Cell voltage 033", "group": "Battery.Cells", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_034", "name": "Cell voltage 034", "group": "Battery.Cells", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_035", "name": "Cell voltage 035", "group": "Battery.Cells", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_036", "name": "Cell voltage 036", "group": "Battery.Cells", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_037", "name": "Cell voltage 037", "group": "Battery.Cells", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_038", "name": "Cell voltage 038", "group": "Battery.Cells", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_039", "name": "Cell voltage 039", "group": "Battery.Cells", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_040", "name": "Cell voltage 040", "group": "Battery.Cells", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_041", "name": "Cell voltage 041", "group": "Battery.Cells", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_042", "name": "Cell voltage 042", "group": "Battery.Cells", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_043", "name": "Cell voltage 043", "group": "Battery.Cells", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_044", "name": "Cell voltage 044", "group": "Battery.Cells", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_045", "name": "Cell voltage 045", "group": "Battery.Cells", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_046", "name": "Cell voltage 046", "group": "Battery.Cells", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_047", "name": "Cell voltage 047", "group": "Battery.Cells", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_048", "name": "Cell voltage 048", "group": "Battery.Cells", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_049", "name": "Cell voltage 049", "group": "Battery.Cells", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_050", "name": "Cell voltage 050", "group": "Battery.Cells", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_051", "name": "Cell voltage 051", "group": "Battery.Cells", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_052", "name": "Cell voltage 052", "group": "Battery.Cells", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_053", "name": "Cell voltage 053", "group": "Battery.Cells", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_054", "name": "Cell voltage 054", "group": "Battery.Cells", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_055", "name": "Cell voltage 055", "group": "Battery.Cells", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_056", "name": "Cell voltage 056", "group": "Battery.Cells", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_057", "name": "Cell voltage 057", "group": "Battery.Cells", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_058", "name": "Cell voltage 058", "group": "Battery.Cells", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_059", "name": "Cell voltage 059", "group": "Battery.Cells", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_060", "name": "Cell voltage 060", "group": "Battery.Cells", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_061", "name": "Cell voltage 061", "group": "Battery.Cells", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_062", "name": "Cell voltage 062", "group": "Battery.Cells", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_063", "name": "Cell voltage 063", "group": "Battery.Cells", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "KONA_CELL_V_064", "name": "Cell voltage 064", "group": "Battery.Cells", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220105|f=2021-",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220105",
+      "interval": 1,
+      "years": {"from": 2021},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "KONA_HVBAT_SOH", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 200, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0},
+        {"id": "KONA_HVBAT_SOC_DISP", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 248, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

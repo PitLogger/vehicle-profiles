@@ -1,0 +1,951 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/hyundai/hb20",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Hyundai",
+    "model": "HB20",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2012, "to": 2019},
+      {"name": "Second Generation", "from": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Hyundai-HB20",
+    "file": "signalsets/v3/default.json",
+    "revision": "6d4161e43fa320a41537126e60b8b1b5b83c5a99",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E0.7E8.2100",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2100",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_FUEL_CUT", "name": "Fuel cut", "group": "Fuel", "bit": 88, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_IDLE_CONTROL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_COOLANT_FAN_LOW_SPEED", "name": "Coolant fan low speed", "group": "Movement", "bit": 170, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_COOLANT_FAN_HIGH_SPEED", "name": "Coolant fan high speed", "group": "Movement", "bit": 171, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_KNOCK_DETECTED", "name": "Knock detected", "group": "Engine", "bit": 200, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_CONTROL_MODULE_VOLTAGE", "name": "Control module voltage", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "HB20_CONTROL_MODULE_VOLTAGE_AFTER_IGNITION", "name": "Control module voltage after ignition", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "HB20_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "bit": 56, "bits": 16, "byteOrder": "little", "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
+        {"id": "HB20_MAP_SENSOR_VOLTAGE", "name": "Manifold absolute pressure sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "HB20_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HB20_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "HB20_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "HB20_IAT_SENSOR_VOLTAGE", "name": "IAT sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "HB20_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "HB20_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2102",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2102",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "HB20_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "Engine", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "HB20_VSS_V2", "name": "Vehicle speed, v2", "group": "Movement", "metric": "speed", "bit": 96, "bits": 8, "multiply": 1.25, "min": 0, "max": 318.75, "unit": "km/h"},
+        {"id": "HB20_COMMANDED_EVAPORATIVE_PURGE", "name": "Commanded evaporative purge", "group": "Engine", "bit": 160, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "HB20_FUEL_INJECTION_TIMING_1", "name": "Fuel injection timing #1", "group": "Fuel", "bit": 176, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "HB20_FUEL_INJECTION_TIMING_2", "name": "Fuel injection timing #2", "group": "Fuel", "bit": 192, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "HB20_FUEL_INJECTION_TIMING_3", "name": "Fuel injection timing #3", "group": "Fuel", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "HB20_FUEL_INJECTION_TIMING_4", "name": "Fuel injection timing #4", "group": "Fuel", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_EXHAUST_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 368, "bits": 8, "multiply": 4.709803922, "add": 99, "min": 99, "max": 1300, "unit": "°C"},
+        {"id": "HB20_ODO_LAST_DPF_REGEN", "name": "Odometer at last DPF regeneration", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_DISTANCE_SINCE_LAST_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 424, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 456, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_COOLANT_FAN_HIGH_SPEED_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_COOLANT_FAN_LOW_SPEED_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2105",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2105",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_TQ_ACT", "name": "Torque, actual", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 61, "divide": 40000, "min": 0, "max": 99.94, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_DPF_REGENERATION_STATE", "name": "Diesel particulate filter regeneration state", "group": "Engine", "bit": 207, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_CURRENT_BATSENS_7E0_7E0_06", "name": "Battery current, battery sensor", "group": "Battery", "bit": 736, "bits": 16, "byteOrder": "little", "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "A"},
+        {"id": "HB20_BAT_V_BATSENS_7E0_7E0_06", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 752, "bits": 16, "byteOrder": "little", "multiply": 32, "divide": 65535, "min": 0, "max": 32, "unit": "V"},
+        {"id": "HB20_BAT_T_BATSENS_7E0_7E0_06", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 768, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1953, "divide": 250000, "min": -255.9836, "max": 255.9758, "unit": "°C"},
+        {"id": "HB20_BAT_ST_CHG_BATSENS_7E0_7E0_06", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 784, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MAIN_INJECTION_QTY", "name": "Main injection volume", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.392156863, "min": 0, "max": 100, "unit": "L"},
+        {"id": "HB20_PILOT_INJECTION_QTY", "name": "Pilot injection volume", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "L"},
+        {"id": "HB20_POST_INJECTION_QTY", "name": "Post injection volume", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2108",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2108",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_EMIS_MIS_TOT_1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 144, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_5", "name": "Emission relevant misfires total, cylinder 5", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_6", "name": "Emission relevant misfires total, cylinder 6", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_5", "name": "Catalyst damaging misfires total, cylinder 5", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_6", "name": "Catalyst damaging misfires total, cylinder 6", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMIS_MIS_TOT_ALL", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATDMG_MIS_TOT_ALL", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CURRENT_1", "name": "Misfires current, cylinder 1", "group": "Engine", "bit": 536, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_2", "name": "Misfires current, cylinder 2", "group": "Engine", "bit": 544, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_3", "name": "Misfires current, cylinder 3", "group": "Engine", "bit": 552, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_4", "name": "Misfires current, cylinder 4", "group": "Engine", "bit": 560, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_5", "name": "Misfires current, cylinder 5", "group": "Engine", "bit": 568, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_6", "name": "Misfires current, cylinder 6", "group": "Engine", "bit": 576, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_MIS_CURRENT_TOT", "name": "Misfires current total", "group": "Engine", "bit": 584, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210A",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_KNOCK_RETARD_CYL_1_ALT", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 160, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_2_ALT", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 168, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_3_ALT", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 176, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_4_ALT", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 184, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210B",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_DI_TIME_1", "name": "Direct injection time 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "HB20_DI_TIME_2", "name": "Direct injection time 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "HB20_DI_TIME_3", "name": "Direct injection time 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "HB20_DI_TIME_4", "name": "Direct injection time 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "HB20_DI_TIME_5", "name": "Direct injection time 5", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "HB20_DI_TIME_6", "name": "Direct injection time 6", "group": "Engine", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_EMIS_3", "name": "Emission-relevant misfires, cylinder #3", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_EMIS_4", "name": "Emission-relevant misfires, cylinder #4", "group": "Engine.Misfires", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_1", "name": "Misfires total counter, cylinder #1", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_2", "name": "Misfires total counter, cylinder #2", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_3", "name": "Misfires total counter, cylinder #3", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_4", "name": "Misfires total counter, cylinder #4", "group": "Engine.Misfires", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CNT_ALL", "name": "Misfires total counter, all cylinders", "group": "Engine.Misfires", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210E",
+      "interval": 30,
+      "signals": [
+        {"id": "HB20_ENG_RUN_TIME_TOT", "name": "Engine run time, total", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 6, "min": 0, "max": 393209.9999, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2113",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2113",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "HB20_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "HB20_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "HB20_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "HB20_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "HB20_THROTTLE_POSITION__1", "name": "Throttle position #1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "HB20_THROTTLE_POSITION__2", "name": "Throttle position #2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "HB20_THROTTLE_POSITION_SENSOR_VOLTAGE__2", "name": "Throttle position sensor voltage #2", "group": "Battery", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"},
+        {"id": "HB20_COOLANT_FAN", "name": "Coolant", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_RELATIVE_ACCELERATOR_PEDAL_POSITION_VOLTAGE", "name": "Relative accelerator pedal position voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "V"},
+        {"id": "HB20_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 128, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "HB20_REQUESTED_TORQUE", "name": "Requested torque", "group": "Engine", "bit": 176, "bits": 16, "multiply": 0.001526, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_THROTTLE_POSITION_SENSOR_VOLTAGE__1", "name": "Throttle position sensor voltage #1", "group": "Battery", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2115",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2115",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0030517578, "add": -100, "min": 0, "max": 99.99, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2116",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2116",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYLINDER_3", "name": "Knock retard cylinder #3", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYLINDER_4", "name": "Knock retard cylinder #4", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
+        {"id": "HB20_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "Engine", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_CVVT_T", "name": "Variable valve timing temperature", "description": "Continuously variable valve timing temperature.", "group": "Engine", "bit": 272, "bits": 8, "add": -48, "min": -48, "max": 207, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2119",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2119",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_TURBO_BOOST_P", "name": "Turbo boost pressure", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 829.1, "divide": 10000, "min": 0, "max": 5433},
+        {"id": "HB20_IGN_RETARD_KNOCK_1", "name": "Ignition retard due to knock control 1", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_IGN_RETARD_KNOCK_2", "name": "Ignition retard due to knock control 2", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_IGN_RETARD_KNOCK_3", "name": "Ignition retard due to knock control 3", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_IGN_RETARD_KNOCK_4", "name": "Ignition retard due to knock control 4", "group": "Engine", "bit": 128, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_CYL_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_ADPT_LO_STOP", "name": "Adaptation value for lower stop of wastegate actuator", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1.53, "divide": 10000, "min": -5.01, "max": 5.01, "unit": "V"},
+        {"id": "HB20_WASTEGATE_POS_V", "name": "Wastegate position voltage", "group": "Battery", "bit": 400, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1.53, "divide": 10000, "min": -5.01, "max": 5.01, "unit": "V"},
+        {"id": "HB20_WASTEGATE_CTRL_PWM", "name": "Wastegate control PWM, wastegate actuator", "group": "Engine", "bit": 416, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 100, "divide": 32767, "min": -100, "max": 100, "unit": "%"},
+        {"id": "HB20_WASTEGATE_POS", "name": "Wastegate position, wastegate actuator", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 200, "divide": 32767, "min": -200, "max": 200, "unit": "%"},
+        {"id": "HB20_WASTEGATE_POS_TGT", "name": "Wastegate position target, wastegate actuator", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 200, "divide": 32767, "min": -200, "max": 200, "unit": "%"},
+        {"id": "HB20_MAX_ADPT_LO_MECH_P", "name": "Max adaptation value for lower mechanical stop of the boost pressure actuator during engine stop", "group": "Engine", "bit": 464, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "HB20_MAX_ADPT_LO_MECH_STOP_P", "name": "Max adaptation value for lower mechanical stop of the boost pressure actuator during engine running", "group": "Engine", "bit": 480, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "HB20_MIN_ADPT_LO_MECH_P", "name": "Min adaptation value for lower mechanical stop of the boost pressure actuator during engine stop", "group": "Engine", "bit": 496, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "HB20_MIN_ADPT_LO_MECH_STOP_P", "name": "Min adaptation value for lower mechanical stop of the boost pressure actuator during engine running", "group": "Engine", "bit": 512, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211D",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MIS_1", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_2", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_3", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_4", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CAT_1", "name": "Misfires harmful for catalyst cylinder 1", "group": "Engine.Misfires", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CAT_2", "name": "Misfires harmful for catalyst cylinder 2", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CAT_3", "name": "Misfires harmful for catalyst cylinder 3", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_CAT_4", "name": "Misfires harmful for catalyst cylinder 4", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2120",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2120",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_CAM_INT_POS_ACT", "name": "Camshaft intake position, actual", "group": "Engine", "bit": 72, "bits": 8, "multiply": 3, "divide": 8, "add": 60, "min": 0, "max": 155, "unit": "°"},
+        {"id": "HB20_CAM_EXH_POS_ACT", "name": "Camshaft exhaust position, actual", "group": "Engine", "bit": 80, "bits": 8, "multiply": -3, "divide": 8, "add": -40, "min": -135, "max": -40, "unit": "°"},
+        {"id": "HB20_CAM_INT_POS_CMD", "name": "Camshaft intake position, commanded", "group": "Engine", "bit": 104, "bits": 8, "multiply": 3, "divide": 8, "add": 60, "min": 0, "max": 155, "unit": "°"},
+        {"id": "HB20_CAM_EXH_POS_CMD", "name": "Camshaft exhaust position, commanded", "group": "Engine", "bit": 112, "bits": 8, "multiply": -3, "divide": 8, "add": -40, "min": -135, "max": -40, "unit": "°"},
+        {"id": "HB20_OIL_CTRL_VLV_IMPULSE", "name": "Intake cam oil control valve duty", "group": "Engine", "bit": 144, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_OIL_CTRL_VLV_IMPULSE_WIDTH", "name": "Exhaust cam oil control valve duty", "group": "Engine", "bit": 160, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_TURBO_BOOST_P_7E0", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543},
+        {"id": "HB20_WASTE_GATE_V", "name": "Waste gate voltage", "group": "Battery", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
+        {"id": "HB20_WASTE_GATE_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"},
+        {"id": "HB20_WASTE_GATE_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"},
+        {"id": "HB20_WASTE_GATE_TGT", "name": "Waste gate target", "group": "Engine", "bit": 440, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2122",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2122",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_LPG_LOW_SIDE_T", "name": "Liquefied petroleum gas low side temperature", "group": "Engine", "bit": 32, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "HB20_LPG_P_FUEL_RAIL_AVG", "name": "Liquefied petroleum gas pressure in fuel rail, average", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 2, "min": 0, "max": 32767},
+        {"id": "HB20_LPG_ELECTRICAL_FUEL", "name": "Liquefied petroleum gas electrical fuel pump PWM", "group": "Fuel", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_BUTANE_LPG", "name": "Butane in liquefied petroleum gas", "group": "Engine", "bit": 104, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "HB20_FUEL_P_SET_POINT", "name": "Fuel pressure set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "HB20_FUEL_P_DEV", "name": "Fuel pressure deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53067, "divide": 10000, "min": -173889.9456, "max": 173884.6389},
+        {"id": "HB20_CYL_1_INJ_TIME_2ND", "name": "Cylinder 1 injection time, 2nd pulse", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_2_INJ_TIME_2ND", "name": "Cylinder 2 injection time, 2nd pulse", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_3_INJ_TIME_2ND", "name": "Cylinder 3 injection time, 2nd pulse", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_4_INJ_TIME_2ND", "name": "Cylinder 4 injection time, 2nd pulse", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_1_INJ_TIME_1ST", "name": "Cylinder 1 injection time, 1st pulse", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_2_INJ_TIME_1ST", "name": "Cylinder 2 injection time, 1st pulse", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_3_INJ_TIME_1ST", "name": "Cylinder 3 injection time, 1st pulse", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_CYL_4_INJ_TIME_1ST", "name": "Cylinder 4 injection time, 1st pulse", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2127",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_BAT_CURRENT_BATSENS_7E0_7E0_27", "name": "Battery current, battery sensor", "group": "Battery", "bit": 48, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "HB20_BAT_V_BATSENS_7E0_7E0_27", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 64, "bits": 16, "divide": 1000, "add": 6, "min": 0, "max": 71.53, "unit": "V"},
+        {"id": "HB20_BAT_T_BATSENS_7E0_7E0_27", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 80, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727, "unit": "°C"},
+        {"id": "HB20_BAT_ST_CHG_BATSENS_7E0_7E0_27", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "HB20_BAT_ST_HEALTH_BATSENS", "name": "Battery state of health, battery sensor", "group": "Battery", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A0",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 80, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 104, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "HB20_ATF_T_7E0", "name": "Transmission fluid temperature", "group": "Engine", "bit": 264, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 30,
+      "signals": [
+        {"id": "HB20_VEH_TOT_DIST", "name": "Vehicle total distance", "group": "Trips", "bit": 248, "bits": 40, "min": 0, "max": 1099511627775, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "HB20_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "HB20_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E006",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E006",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_FUEL_RAIL_LOW_P", "name": "Fuel rail low pressure", "group": "Fuel", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E007",
+      "interval": 30,
+      "signals": [
+        {"id": "HB20_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 112, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "L"},
+        {"id": "HB20_INJ_CORR_FACTOR_1", "name": "Injector correction factor 1", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "HB20_INJ_CORR_FACTOR_2", "name": "Injector correction factor 2", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "HB20_INJ_CORR_FACTOR_3", "name": "Injector correction factor 3", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "HB20_INJ_CORR_FACTOR_4", "name": "Injector correction factor 4", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E009",
+      "interval": 30,
+      "signals": [
+        {"id": "HB20_GPF_INLET_T_SENS_RAW_V", "name": "Gasoline particulate filter inlet temperature sensor raw voltage", "group": "Battery", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "HB20_GPF_OUTLET_T_SENS_V", "name": "Gasoline particulate filter outlet temperature sensor raw voltage", "group": "Battery", "bit": 272, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "HB20_EXH_GAS_T_BEFORE_GPF_1", "name": "Exhaust gas temperature before gasoline particulate filter sensor 1", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "HB20_EXH_GAS_T_BEFORE_GPF_2", "name": "Exhaust gas temperature before gasoline particulate filter sensor 2", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "HB20_GPF_CHG_ST", "name": "Gasoline particulate filter charge state", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_ODO_LAST_GPF_REGEN", "name": "Odometer at last gasoline particulate filter regeneration", "group": "Trips", "bit": 328, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_DIST_SINCE_GPF_REGEN", "name": "Distance since last gasoline particulate filter regeneration", "group": "Trips", "bit": 360, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_COVERAGE_DRIVEN", "name": "Coverage driven length", "group": "Engine", "bit": 392, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00E",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_ENG_RUNNING_TIME_TOT", "name": "Engine running time total", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 6, "min": 0, "max": 393210, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E011",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_CALC_OIL_T", "name": "Calculated oil temperature", "group": "Engine", "bit": 304, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E013",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E013",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "divide": 25, "min": -1310, "max": 1310}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 16, "multiply": 15.21, "divide": 10000, "min": 0, "max": 99.67, "unit": "%"},
+        {"id": "HB20_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 13.79, "min": 0, "max": 3516.45, "unit": "kPa"},
+        {"id": "HB20_OVERHEAT_PROTECTION", "name": "Overheat protection, active", "group": "Engine", "bit": 132, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E019",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_3_E019", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "HB20_KNOCK_RETARD_4_E019", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_HARMFUL_CAT_1", "name": "Misfires harmful for catalyst, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_HARMFUL_CAT_2", "name": "Misfires harmful for catalyst, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_HARMFUL_CAT_3", "name": "Misfires harmful for catalyst, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "HB20_MIS_HARMFUL_CAT_4", "name": "Misfires harmful for catalyst, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E020",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_INT_CAM_POS", "name": "Intake camshaft position", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"},
+        {"id": "HB20_EXH_CAM_POS", "name": "Exhaust camshaft position", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_FUEL_P_ACT", "name": "Fuel pressure, actual", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "HB20_FUEL_P_SET_POINT_7E0", "name": "Fuel pressure, set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "HB20_FUEL_P_SET_POINT_DEV", "name": "Fuel pressure set point deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53066, "divide": 10000, "min": -173886.6688, "max": 173881.3622},
+        {"id": "HB20_INJ_IMPULSE_1_CYL_1", "name": "Injection impulse 1, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_1_CYL_2", "name": "Injection impulse 1, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_1_CYL_3", "name": "Injection impulse 1, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_1_CYL_4", "name": "Injection impulse 1, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_2_CYL_1", "name": "Injection impulse 2, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_2_CYL_2", "name": "Injection impulse 2, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_2_CYL_3", "name": "Injection impulse 2, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_2_CYL_4", "name": "Injection impulse 2, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_3_CYL_1", "name": "Injection impulse 3, cylinder 1", "group": "Engine", "bit": 328, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_3_CYL_2", "name": "Injection impulse 3, cylinder 2", "group": "Engine", "bit": 344, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_3_CYL_3", "name": "Injection impulse 3, cylinder 3", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "HB20_INJ_IMPULSE_3_CYL_4", "name": "Injection impulse 3, cylinder 4", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "HB20_CYCLE_FUEL_CONS", "name": "Cycle fuel consumption", "group": "Fuel", "bit": 416, "bits": 8, "multiply": 8.478, "divide": 100, "min": 0, "max": 21.6189}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F1",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_EXH_GAS_VOLUME_FLOW", "name": "Exhaust gas volume flow", "group": "Engine", "bit": 240, "bits": 8, "multiply": 78449, "divide": 10000, "min": 0, "max": 2000},
+        {"id": "HB20_DPF_DIFF_P", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 248, "bits": 8, "multiply": 431.373, "divide": 100, "add": -100, "min": -100, "max": 1000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F2",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_DPF_SUCCESSFUL_REGEN", "name": "Diesel particulate filter successful regeneration count", "group": "Engine", "bit": 432, "bits": 16, "min": 0, "max": 65535},
+        {"id": "HB20_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 496, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED01",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_RAIL_P_CTRL_VLV", "name": "Rail pressure control valve", "group": "Engine", "bit": 55, "bits": 1, "multiply": 20, "divide": 51, "min": 0, "max": 0.3921, "labels": ["Off", "On"]},
+        {"id": "HB20_AC_RELAY", "name": "Air conditioning relay", "group": "Engine", "bit": 101, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_ENG_CLT_FAN_LOW_SPD", "name": "Engine coolant fan low speed", "group": "Movement", "bit": 176, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_ENG_CLT_FAN_HIGH_SPD_ON_OFF", "name": "Engine coolant fan high speed, on/off", "group": "Movement", "bit": 184, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 216, "bits": 8, "multiply": 7843, "divide": 10000, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"},
+        {"id": "HB20_ENG_ACT_TQ", "name": "Engine, actual torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 23529, "divide": 10000, "min": 0, "max": 599.9895, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED03|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED03",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "HB20_DPF_DIFF_P_7E0", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 288, "bits": 8, "multiply": 431.373, "divide": 100, "min": 0, "max": 1100},
+        {"id": "HB20_EXH_T_1_UP_OXICAT", "name": "Exhaust temperature 1, upstream of oxidation catalyst", "group": "Engine", "bit": 296, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "HB20_EXH_T_2_UP_DPF", "name": "Exhaust temperature 2, upstream of DPF", "group": "Engine", "bit": 304, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "HB20_REGEN_DEMAND_CNT", "name": "Regeneration demand counter by soot load", "group": "Engine", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_DPF_ODO_LAST_REGEN", "name": "Diesel particulate filter odometer at last regeneration", "group": "Trips", "bit": 328, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_DIST_SINCE_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 360, "bits": 32, "divide": 1000, "min": 0, "max": 50000, "unit": "km"},
+        {"id": "HB20_ODO_7E0", "name": "Odometer", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "HB20_SUCCESSFUL_REGEN_ST", "name": "Successful regeneration state", "group": "Engine", "bit": 424, "bits": 8, "min": 0, "max": 1},
+        {"id": "HB20_FUEL_CONS_SINCE_DPF", "name": "Fuel consumption since last DPF regeneration", "group": "Fuel", "bit": 432, "bits": 8, "multiply": 1.2549, "min": 0, "max": 319, "unit": "L"},
+        {"id": "HB20_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration count", "group": "Engine", "bit": 440, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED04",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_ACT_ACCEL", "name": "Actual acceleration", "group": "Movement", "bit": 240, "bits": 8, "multiply": 64, "divide": 255, "min": 0, "max": 64, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED05",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED05",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED06",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED06",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_REQ_TQ_LIM_TRACTION", "name": "Requested torque limitation from traction control", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED07|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED07",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "HB20_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 152, "bits": 8, "multiply": 0.7843, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED08",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED08",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_12V_BAT_V", "name": "12V battery voltage", "group": "Battery", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 1000, "add": 6, "min": 0, "max": 71.53, "unit": "V"},
+        {"id": "HB20_12V_BAT_T", "name": "12V battery temperature", "group": "Battery", "bit": 80, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED13",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED13",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_OIL_PMP_PWM", "name": "Oil pump PWM", "group": "Engine", "bit": 71, "bits": 1, "multiply": 20, "divide": 51, "min": 0, "max": 0.392, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED27",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED27",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_BAT_CURRENT_BATSENS", "name": "Battery current, battery sensor", "group": "Battery", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"},
+        {"id": "HB20_BAT_V_BATSENS", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 56, "bits": 8, "multiply": 12.75, "divide": 255, "add": 6, "min": 0, "max": 18.75, "unit": "V"},
+        {"id": "HB20_BAT_T_BATSENS", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "HB20_BAT_ST_CHG_BATSENS", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 72, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_BAT_ST_HEALTH", "name": "Battery state of health, battery sensor", "group": "Battery", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_BAT_ST_FUNCTION", "name": "Battery state of function, battery sensor", "group": "Battery", "bit": 88, "bits": 8, "multiply": 12.75, "divide": 255, "min": 0, "max": 12.75, "unit": "V"},
+        {"id": "HB20_BAT_CAP_BATSENS", "name": "Battery capacity, battery sensor", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 255, "unit": "Ah"},
+        {"id": "HB20_RESPONSE_ERROR", "name": "Response error from battery sensor flag, battery sensor", "group": "Battery", "bit": 178, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BATSENS_INVALID_COND", "name": "Battery sensor invalid condition flag, battery sensor", "group": "Battery", "bit": 179, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_QUIESCENT", "name": "Battery quiescent current flag, battery sensor", "group": "Battery", "bit": 180, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_CRANK_ENG_FLAG", "name": "Battery is in use to crank the engine flag, battery sensor", "group": "Battery", "bit": 181, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_HEALTH_AGING", "name": "Battery health aging flag, battery sensor", "group": "Battery", "bit": 182, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_CHG_FLAG_BATSENS", "name": "Battery charge flag, battery sensor", "group": "Battery", "bit": 183, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HB20_BAT_CURRENT", "name": "Battery current", "group": "Battery", "bit": 256, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7, "unit": "A"},
+        {"id": "HB20_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 272, "bits": 16, "multiply": 10, "divide": 10000, "add": 6, "min": 0, "max": 71.535, "unit": "V"},
+        {"id": "HB20_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 288, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED29",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED29",
+      "interval": 1,
+      "signals": [
+        {"id": "HB20_TOT_SULFUR_MASS", "name": "Total sulfur mass", "group": "Engine", "bit": 0, "bits": 16, "multiply": 15259, "divide": 100000, "min": 0, "max": 9999}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A0",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_ENGINE_RPM_TCM", "name": "Engine RPM", "group": "Engine", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HB20_APP_REL_TCM", "name": "Relative accelerator pedal position", "group": "Control", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_TURBINE_SPEED", "name": "Turbine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_OUTPUT_SPEED", "name": "Output speed", "group": "Engine", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HB20_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "HB20_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A1",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_CURRENT_GEAR_7E1_2", "name": "Current gear", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A4",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_DUAL_CLU_TRANS_RPM", "name": "Dual-clutch transmission engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"},
+        {"id": "HB20_DUAL_CLU_TRANS_VSS", "name": "Dual-clutch transmission vehicle speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HB20_DUAL_CLU_TRANS", "name": "Dual-clutch transmission throttle position", "group": "Transmission", "bit": 56, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_DUAL_CLU_TRANS_ABS_D", "name": "Dual-clutch transmission absolute pedal position d", "group": "Transmission", "bit": 64, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_DUAL_CLU_TRANS_INPUT_1", "name": "Dual-clutch transmission input shaft 1", "group": "Transmission", "bit": 72, "bits": 16, "divide": 2, "add": -16384, "min": -16384, "max": 16383, "unit": "rpm"},
+        {"id": "HB20_DUAL_CLU_TRANS_INPUT_2", "name": "Dual-clutch transmission input shaft 2", "group": "Transmission", "bit": 88, "bits": 16, "divide": 2, "add": -16384, "min": -16384, "max": 16383, "unit": "rpm"},
+        {"id": "HB20_DUAL_CLU_TRANS_GEAR", "name": "Dual-clutch transmission gear ratio", "group": "Transmission", "bit": 112, "bits": 16, "divide": 1000, "min": 0, "max": 65.53},
+        {"id": "HB20_DUAL_CLU_TRANS_CLU_1", "name": "Dual-clutch transmission clutch 1 slip", "group": "Transmission", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871, "unit": "rpm"},
+        {"id": "HB20_DUAL_CLU_TRANS_CTRL_V", "name": "Dual-clutch transmission control module voltage", "group": "Battery", "bit": 144, "bits": 8, "divide": 13.6, "min": 0, "max": 18.75, "unit": "V"},
+        {"id": "HB20_DUAL_CLU_TRANS_CLU_1_T", "name": "Dual-clutch transmission clutch 1 temperature", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "°C"},
+        {"id": "HB20_DUAL_CLU_TRANS_CLU_2", "name": "Dual-clutch transmission clutch 2 slip", "group": "Transmission", "bit": 224, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HB20_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HB20_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HB20_TURBINE_SPEED_7E1", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HB20_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HB20_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "HB20_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A5",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A5",
+      "interval": 5,
+      "signals": [
+        {"id": "HB20_DUAL_CLU_TRANS_ODD", "name": "Dual-clutch transmission odd shaft, gear engaged", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_DUAL_CLU_TRANS_EVEN", "name": "Dual-clutch transmission even shaft, gear engaged", "group": "Transmission", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "HB20_DUAL_CLU_ATF_T_1", "name": "Dual-clutch transmission fluid temperature 1", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HB20_DUAL_CLU_ATF_T_2", "name": "Dual-clutch transmission fluid temperature 2", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HB20_DUAL_CLU_TRANS_CLU_1_P", "name": "Dual-clutch transmission clutch 1, pressure sensor a", "group": "Engine", "bit": 192, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "HB20_DUAL_CLU_TRANS_CLU_2_P_B", "name": "Dual-clutch transmission clutch 2, pressure sensor b", "group": "Engine", "bit": 208, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "HB20_DUAL_CLU_TRANS_LINE_P_C", "name": "Dual-clutch transmission line pressure, sensor c", "group": "Engine", "bit": 224, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"}
+      ]
+    }
+  ]
+}

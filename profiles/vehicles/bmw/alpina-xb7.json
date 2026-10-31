@@ -1,0 +1,1085 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/bmw/alpina-xb7",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "BMW",
+    "model": "ALPINA XB7",
+    "years": null,
+    "generations": [{"name": "G07", "from": 2020}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/BMW-ALPINA-XB7",
+    "file": "signalsets/v3/default.json",
+    "revision": "b5e67a3079965a9dc8d12c0ce47a695a94b838e4",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6F1.607.22E54D|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22E54D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6F1.612.22400B|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22400B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LAMBDA", "name": "Lambda 1, excess air ratio", "group": "Engine", "metric": "o2Lambda", "bit": 40, "bits": 8, "divide": 100, "min": 0, "max": 2}
+      ]
+    },
+    {
+      "id": "6F1.612.224015|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224015",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.22402B|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22402B",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_12V_T", "name": "12V battery temperature", "group": "Electrical", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"},
+        {"id": "XB7_12V_V", "name": "12V battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 16, "bits": 16, "divide": 4000, "add": 6, "min": 6, "max": 22.3837, "unit": "V"},
+        {"id": "XB7_12V_A", "name": "12V battery current", "group": "Electrical", "bit": 32, "bits": 16, "divide": 12.5, "add": -200, "min": -200, "max": 5042.8, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6F1.612.2240A9|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2240A9",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BAT_CAP", "name": "Battery capacity", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Ah"},
+        {"id": "XB7_ORIGINAL_BAT_CAP", "name": "Original battery capacity", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "6F1.612.2240AD|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2240AD",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BAT_ST_CHG_CURRENT", "name": "Battery state of charge current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_ST_CHG_LAST_1", "name": "Battery state of charge last-1", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_ST_CHG_LAST_2", "name": "Battery state of charge last-2", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_ST_CHG_LAST_3", "name": "Battery state of charge last-3", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_ST_CHG_LAST_4", "name": "Battery state of charge last-4", "group": "Battery", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_ST_CHG_LAST_5", "name": "Battery state of charge last-5", "group": "Battery", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_0_40", "name": "Battery time in state of charge 0-40%", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_40_60", "name": "Battery time in state of charge 40-60%", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_60_70", "name": "Battery time in state of charge 60-70%", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_70_80", "name": "Battery time in state of charge 70-80%", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_80_90", "name": "Battery time in state of charge 80-90%", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_ST_CHG_90_100", "name": "Battery time in state of charge 90-100%", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "XB7_BAT_TIME_INVALID_ST", "name": "Battery time in invalid state of charge", "group": "Battery", "bit": 192, "bits": 16, "min": 0, "max": 65535, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.612.2240CB|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2240CB",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_ETHANOL_CAN", "name": "Ethanol content, CAN broadcast, live", "group": "Fuel", "bit": 104, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.612.22411E|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22411E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_COOLANT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 16, "bits": 8, "min": 0, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.224201|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224201",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "6F1.612.224205|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224205",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "6F1.612.224300|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224300",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_ET", "name": "Engine temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.224408|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224408",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_EOT_DME_K", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.22442C|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22442C",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.612.224506|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224506",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_OIL_TEMP", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.22480C|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22480C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LOAD_TGT", "name": "Engine load, target", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "min": 0, "max": 1535, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A2D|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A2D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A2E|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A2E",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_REV_LIMIT", "name": "Rev limiter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A49|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A49",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IGN_TIMING_1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A4A|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A4A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IGN_TIMING_2", "name": "Ignition timing, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A4B|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A4B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LOAD_2", "name": "Engine load 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A4C|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A4C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IGN_TIMING_3", "name": "Ignition timing, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "6F1.612.224A4D|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224A4D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IGN_TIMING_4", "name": "Ignition timing, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "6F1.612.224AB0|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224AB0",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BOOST_P_SET", "name": "Boost pressure, set point", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "6F1.612.224AB1|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224AB1",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_VSS2", "name": "Vehicle speed", "description": "High resolution vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.612.224C5B|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "224C5B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_EGT_CALC", "name": "Exhaust gas calculated temperature", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 1200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.22558E|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22558E",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_ODO_DME", "name": "Odometer, engine computer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.612.22558F|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22558F",
+      "interval": 60,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_ENG_HOURS", "name": "Engine operating hours", "group": "Trips", "bit": 0, "bits": 32, "divide": 2, "min": 0, "max": 2147483647, "unit": "h"}
+      ]
+    },
+    {
+      "id": "6F1.612.2256D7|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2256D7",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6F1.612.2257C3|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2257C3",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_OIL_TEMP_ALT", "name": "Engine oil temperature, alternate", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.22580F|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22580F",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.225813|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "225813",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LOAD", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.612.22582C|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22582C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LAMBDA_2", "name": "Lambda 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99, "invalidAtOrAbove": 15.99}
+      ]
+    },
+    {
+      "id": "6F1.612.22582F|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22582F",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_CAT_T", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.612.225889|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "225889",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LAMBDA_6F1", "name": "Lambda", "group": "Engine", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16, "invalidAtOrAbove": 15.99}
+      ]
+    },
+    {
+      "id": "6F1.612.2258BA|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2258BA",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_CRANK_TQ", "name": "Crank torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.612.2258F3|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2258F3",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_LOW_SIDE_FUEL_P", "name": "Low side fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6F1.612.2259FA|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "2259FA",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IGN_ANGLE", "name": "Ignition angle", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "6F1.612.22DE9C|e=12,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "612",
+      "extendedAddress": "12",
+      "request": "22DE9C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_APP", "name": "Accelerator pedal position", "group": "Engine", "bit": 32, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.618.2105|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "2105",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_TURBINE_SPD", "name": "AT turbine speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6F1.618.2107|e=18",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "2107",
+      "interval": 0.25,
+      "signals": [
+        {"id": "XB7_AVG_WHEELS_SPD", "name": "Average wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.618.2108|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "2108",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_ENG_TQ", "name": "AT engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.618.210B|e=18",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "210B",
+      "interval": 1,
+      "signals": [
+        {"id": "XB7_CLU_LOCK_UP", "name": "Clutch lock-up speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.618.22442F|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22442F",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_ENG_TQ_6F1", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA1F|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA1F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_KICKDOWN", "name": "Kickdown", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA22|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA22",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_TQ_CNVRT_LOCKUP", "name": "Torque converter lockup", "group": "Transmission", "bit": 8, "bits": 8, "values": {"0": "OPEN", "1": "CONTROL_LOW", "2": "CONTROL_HIGH", "3": "CLOSED_LOW", "4": "CLOSED_HIGH", "8": "TRANSITION_OPEN"}, "valueDescriptions": {"0": "Open", "1": "Controlled low", "2": "Controlled high", "3": "Closed low", "4": "Closed high", "8": "Transition to open"}}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA23|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA23",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_ODO_LOWRES", "name": "Odometer, low resolution", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "multiply": 8, "min": 0, "max": 1000000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA25|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA25",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "add": -48, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA2A|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA2A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_TQ_CNVRT_RPM", "name": "Torque converter speed", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "XB7_TRANS_SHAFT_RPM", "name": "Transmission output shaft speed", "group": "Transmission", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6F1.618.22DA2E|e=18,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "618",
+      "extendedAddress": "18",
+      "request": "22DA2E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "XB7_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
+      ]
+    },
+    {
+      "id": "6F1.619.22DB32|e=19,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "619",
+      "extendedAddress": "19",
+      "request": "22DB32",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_AXLE_FRONT_ACTUAL_TORQUE", "name": "Front axle, actual torque", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -8000, "max": 8000, "unit": "Nm"},
+        {"id": "XB7_AXLE_FRONT_SETPOINT_TORQUE", "name": "Front axle, set point torque", "group": "Tires", "bit": 32, "bits": 16, "signed": true, "divide": 4, "min": -8000, "max": 8000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.61A.22DE8A|e=1A,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "61A",
+      "extendedAddress": "1A",
+      "request": "22DE8A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_EM_I_W", "name": "Drive motor phase w current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
+        {"id": "XB7_EM_I_V", "name": "Drive motor phase v current", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
+        {"id": "XB7_EM_I_U", "name": "Drive motor phase u current", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
+        {"id": "XB7_EM_I_EXC", "name": "Drive motor excitation current", "group": "Engine", "bit": 48, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
+        {"id": "XB7_EM_INV_I_DC", "name": "Drive inverter HV DC current", "group": "Engine", "bit": 64, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6F1.61A.22DEA6|e=1A,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "61A",
+      "extendedAddress": "1A",
+      "request": "22DEA6",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_EM_T_1", "name": "Drive motor temperature 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"},
+        {"id": "XB7_EM_T_2", "name": "Drive motor temperature 2", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.61A.22DEA7|e=1A,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "61A",
+      "extendedAddress": "1A",
+      "request": "22DEA7",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_EM_RPM", "name": "Drive motor speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -5000, "min": -5000, "max": 27767, "unit": "rpm"},
+        {"id": "XB7_EM_TQ", "name": "Drive motor torque, actual", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "Nm"},
+        {"id": "XB7_EM_TQ_TGT", "name": "Drive motor torque, requested", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.629.22DBE4|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DBE4",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "XB7_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "XB7_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "XB7_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.629.22DBE5|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DBE5",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6F1.629.22DC98|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DC98",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_TPMS_POS_FL", "name": "Front left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
+        {"id": "XB7_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 56, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "XB7_TP_SET_FL", "name": "Front left tire pressure, set point", "group": "Tires", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"},
+        {"id": "XB7_TPMS_RX_FL", "name": "Tire sensor reception, front left", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_TPMS_BAT_FL", "name": "Front left tire sensor battery life, months", "group": "Tires", "bit": 120, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6F1.629.22DC99|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DC99",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_TPMS_POS_FR", "name": "Front right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
+        {"id": "XB7_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 56, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "XB7_TP_SET_FR", "name": "Front right tire pressure, set point", "group": "Tires", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"},
+        {"id": "XB7_TPMS_RX_FR", "name": "Tire sensor reception, front right", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_TPMS_BAT_FR", "name": "Front right tire sensor battery life, months", "group": "Tires", "bit": 120, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6F1.629.22DC9A|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DC9A",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_TPMS_POS_RL", "name": "Rear left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
+        {"id": "XB7_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 56, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "XB7_TP_SET_RL", "name": "Rear left tire pressure, set point", "group": "Tires", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"},
+        {"id": "XB7_TPMS_RX_RL", "name": "Tire sensor reception, rear left", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_TPMS_BAT_RL", "name": "Rear left tire sensor battery life, months", "group": "Tires", "bit": 120, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6F1.629.22DC9B|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DC9B",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_TPMS_POS_RR", "name": "Rear right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
+        {"id": "XB7_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 56, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C", "invalidAtOrAbove": 127},
+        {"id": "XB7_TP_SET_RR", "name": "Rear right tire pressure, set point", "group": "Tires", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"},
+        {"id": "XB7_TPMS_RX_RR", "name": "Tire sensor reception, rear right", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "XB7_TPMS_BAT_RR", "name": "Rear right tire sensor battery life, months", "group": "Tires", "bit": 120, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6F1.630.22DB99|e=30,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "630",
+      "extendedAddress": "30",
+      "request": "22DB99",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_STEER_TQ", "name": "Steering torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6F1.640.22D130|e=40,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "640",
+      "extendedAddress": "40",
+      "request": "22D130",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_PARK_BRAKE", "name": "Parking brake applied", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "6F1.640.22D906|e=40,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "640",
+      "extendedAddress": "40",
+      "request": "22D906",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_AC_COMP_STAT", "name": "Air conditioning compressor status", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_AC_COMP_PWM", "name": "Air conditioning compressor PWM", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.656.22DCDD|e=56,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "656",
+      "extendedAddress": "56",
+      "request": "22DCDD",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_DOOR_DRIVER", "name": "Driver door open", "group": "Doors", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_DOOR_PASSENGER", "name": "Passenger door open", "group": "Doors", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_DOOR_DRIVER_REAR", "name": "Rear driver door open", "group": "Doors", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_DOOR_PASSENGER_REAR", "name": "Rear passenger door open", "group": "Doors", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_HOOD", "name": "Hood open", "group": "Doors", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_TRUNK", "name": "Trunk open", "group": "Doors", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_REAR_WINDOW", "name": "Rear window open", "group": "Windows", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_CENTRAL_LOCK", "name": "Locked", "description": "Overall lock state of the vehicle", "group": "Doors", "bit": 56, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.660.22D107|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D107",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_VSS", "name": "Vehicle speed", "description": "Speedometer vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D10D|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D10D",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"},
+        {"id": "XB7_ODO_ALT", "name": "Odometer, alternative", "group": "Trips", "metric": "odometer", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D112|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D112",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "XB7_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D129|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D129",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_BC_AVG_CONS", "name": "Trip computer average consumption", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh/100km"},
+        {"id": "XB7_BC_AVG_SPD", "name": "Trip computer average speed", "group": "Engine", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"},
+        {"id": "XB7_BC_RANGE", "name": "Trip computer range", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D12A|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D12A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_CONS_KWH_100KM", "name": "Consumption, kwh/100km", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "6F1.663.22D030|e=63,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "663",
+      "extendedAddress": "63",
+      "request": "22D030",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_NBT_WHL_SPD_1", "name": "Wheel sensor speed 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
+        {"id": "XB7_NBT_WHL_SPD_2", "name": "Wheel sensor speed 2", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
+        {"id": "XB7_NBT_WHL_SPD_3", "name": "Wheel sensor speed 3", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
+        {"id": "XB7_NBT_WHL_SPD_4", "name": "Wheel sensor speed 4", "group": "Engine", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
+        {"id": "XB7_GPS_SPD", "name": "Speed from satellite positioning", "group": "Engine", "bit": 80, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.678.22D85C|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D85C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_CABIN_T", "name": "Cabin temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.678.22D8C5|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D8C5",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_COMP_STATE", "name": "A/C compressor operating state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.678.22D91A|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D91A",
+      "interval": 10,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_AIR_DIST_L", "name": "Front air distribution, left", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "XB7_AIR_DIST_R", "name": "Front air distribution, right", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.678.22D92C|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D92C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_HVAC_OFF", "name": "Climate control off", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "6F1.678.22D930|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D930",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_HVAC_AUC", "name": "Automatic air recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "6F1.678.22D931|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D931",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_HVAC_RECIRC", "name": "Recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "6F1.678.22D96B|e=78,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "678",
+      "extendedAddress": "78",
+      "request": "22D96B",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "XB7_IHX_AAT", "name": "Outside temperature, climate control", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "add": -40, "min": -16424, "max": 16343, "unit": "°C"}
+      ]
+    }
+  ]
+}

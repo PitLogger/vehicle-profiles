@@ -1,0 +1,135 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/s2000",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "S2000",
+    "years": null,
+    "generations": [
+      {"name": "AP1", "from": 1999, "to": 2003},
+      {"name": "AP2", "from": 2004, "to": 2009}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-S2000",
+    "file": "signalsets/v3/default.json",
+    "revision": "3f1cf3385de2fa11a210e057197475f883ec7b11",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "DA10", "type": "engine"}],
+  "requests": [
+    {
+      "id": "DA10.10.222610",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 1,
+      "answeredIn": [2006, 2007],
+      "notAnsweredIn": [2005],
+      "signals": [
+        {"id": "S2000_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "S2000_AC_CLUTCH", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222611",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 5,
+      "answeredIn": [2006, 2007],
+      "notAnsweredIn": [2005],
+      "signals": [
+        {"id": "S2000_FUEL_AIR_RATIO", "name": "Fuel/air commanded equivalence ratio", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "invalidAtOrAbove": 255},
+        {"id": "S2000_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "answeredIn": [2006, 2007],
+      "signals": [
+        {"id": "S2000_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "S2000_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222660|fc=1",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2006, 2007],
+      "signals": [
+        {"id": "S2000_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "S2000_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "answeredIn": [2006, 2007],
+      "notAnsweredIn": [2005],
+      "signals": [
+        {"id": "S2000_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "answeredIn": [2006, 2007],
+      "notAnsweredIn": [2005],
+      "signals": [
+        {"id": "S2000_KNOCK_CONTROL", "name": "Knock control", "description": "ECU's determination of fuel quality.", "group": "Engine", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "S2000_VTC_DUTY", "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential.", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2006, 2007],
+      "notAnsweredIn": [2005],
+      "signals": [
+        {"id": "S2000_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "S2000_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "S2000_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "S2000_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.222666",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222666",
+      "interval": 5,
+      "signals": [
+        {"id": "S2000_EOT_VAR_3", "name": "Engine oil temperature, variant 3", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "S2000_EOT_VAR_4", "name": "Engine oil temperature, variant 4", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    }
+  ]
+}

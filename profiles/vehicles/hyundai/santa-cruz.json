@@ -1,0 +1,628 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/hyundai/santa-cruz",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Hyundai",
+    "model": "Santa Cruz",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2021}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Hyundai-Santa-Cruz",
+    "file": "signalsets/v3/default.json",
+    "revision": "476f78e6157de2035c71dcdd070dd6cd7842d521",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7A0", "type": "bodyControl"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "740.748.2201A1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "748",
+      "request": "2201A1",
+      "interval": 0.25,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_AWD_CALC_CMD_TQ", "name": "4WD calculated, commanded torque", "group": "Engine", "bit": 40, "bits": 16, "signed": true, "divide": 8, "min": -4096, "max": 4095.875, "unit": "Nm"},
+        {"id": "SANTA_CRUZ_AWD_PMP_PWM_DUTY", "name": "4WD pump PWM duty", "group": "Engine", "bit": 56, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 100, "unit": "%"},
+        {"id": "SANTA_CRUZ_AWD_MAX_CLU_STRESS", "name": "4WD max clutch stress", "group": "Engine", "bit": 88, "bits": 16, "multiply": 19.531, "divide": 10000, "min": 0, "max": 100, "unit": "%"},
+        {"id": "SANTA_CRUZ_AWD_PMP_CURRENT", "name": "4WD pump current", "group": "Engine", "bit": 112, "bits": 16, "signed": true, "multiply": 78.125, "divide": 10000, "min": -256, "max": 255, "unit": "A"},
+        {"id": "SANTA_CRUZ_AWD_CLU_ACT_TQ", "name": "4WD clutch, actual torque", "group": "Engine", "bit": 128, "bits": 16, "signed": true, "divide": 8, "min": -4096, "max": 4095.875, "unit": "Nm"},
+        {"id": "SANTA_CRUZ_AWD_CLU_ACT_P", "name": "4WD clutch, actual pressure", "group": "Engine", "bit": 144, "bits": 16, "signed": true, "multiply": 19.53, "divide": 10000, "min": -63.99, "max": 63.99, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "740.748.2201A3",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "748",
+      "request": "2201A3",
+      "interval": 0.25,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_AWD_CALC_CLU_POWER", "name": "4WD calculated clutch power", "group": "Engine", "bit": 56, "bits": 16, "multiply": 39.062, "divide": 10000, "min": 0, "max": 255, "unit": "kWh"},
+        {"id": "SANTA_CRUZ_AWD_CALC_ENG_POWER", "name": "4WD calculated engine power", "group": "Engine", "bit": 72, "bits": 16, "multiply": 9.766, "divide": 10000, "min": 0, "max": 64, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_BELT_PASS", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_BELT_DRIV", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_GEAR_R", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "SANTA_CRUZ_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "SANTA_CRUZ_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SANTA_CRUZ_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SANTA_CRUZ_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC10|fc=1",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC10",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_LIGHTS_CODE", "name": "Exterior lights state code", "group": "Lights", "bit": 32, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B008|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B008",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_BRAKE_SW", "name": "Brake switch", "group": "Control", "bit": 51, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B009",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B009",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_PARKING_SENS_REAR", "name": "Parking sensor rear center left level", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_PARKING_SENS_REAR_CENTER", "name": "Parking sensor rear center right level", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B00C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_HEATED_WHEEL", "name": "Heated steering wheel", "group": "Climate", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SANTA_CRUZ_HEATED_WHEEL_ALT", "name": "Heated steering wheel, alternate bit", "group": "Climate", "bit": 42, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C002|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C002",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_TID_1", "name": "Tire sensor 1 ID", "group": "Tires", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "SANTA_CRUZ_TID_2", "name": "Tire sensor 2 ID", "group": "Tires", "bit": 64, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "SANTA_CRUZ_TID_3", "name": "Tire sensor 3 ID", "group": "Tires", "bit": 96, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "SANTA_CRUZ_TID_4", "name": "Tire sensor 4 ID", "group": "Tires", "bit": 128, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "SANTA_CRUZ_TW_FL", "name": "Tire alert front left", "group": "Tires", "bit": 56, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 72, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_TT_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "SANTA_CRUZ_TW_FR", "name": "Tire alert front right", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_TT_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 120, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "SANTA_CRUZ_TW_RL", "name": "Tire alert rear left", "group": "Tires", "bit": 136, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 152, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_TT_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 160, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "SANTA_CRUZ_TW_RR", "name": "Tire alert rear right", "group": "Tires", "bit": 176, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SANTA_CRUZ_TB_FL", "name": "Tire battery front left", "group": "Tires", "bit": 48, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "SANTA_CRUZ_TB_FR", "name": "Tire battery front right", "group": "Tires", "bit": 88, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "SANTA_CRUZ_TB_RL", "name": "Tire battery rear left", "group": "Tires", "bit": 128, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "SANTA_CRUZ_TB_RR", "name": "Tire battery rear right", "group": "Tires", "bit": 168, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_1_ODO_EVT_3", "name": "Sensor 1 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_2_ODO_EVT_3", "name": "Sensor 2 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_3_ODO_EVT_3", "name": "Sensor 3 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "SANTA_CRUZ_SENS_4_ODO_EVT_3", "name": "Sensor 4 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
+        {"id": "SANTA_CRUZ_CLUSTER_VOLTAGE", "name": "Cluster voltage", "group": "Electrical", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "SANTA_CRUZ_ODO_KM", "name": "Odometer, metric", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_ODO_MI", "name": "Odometer, imperial", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SANTA_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SANTA_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SANTA_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
+        {"id": "SANTA_CRUZ_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
+        {"id": "SANTA_CRUZ_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "SANTA_CRUZ_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "SANTA_CRUZ_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_WIDE_OPEN_THROTTLE", "name": "Wide open throttle", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_KNOCK_DETECTED_7E0", "name": "Knock detected", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "SANTA_CRUZ_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E007",
+      "interval": 30,
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 112, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "L"},
+        {"id": "SANTA_CRUZ_INJ_CORR_FACTOR_1", "name": "Injector correction factor 1", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "SANTA_CRUZ_INJ_CORR_FACTOR_2", "name": "Injector correction factor 2", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "SANTA_CRUZ_INJ_CORR_FACTOR_3", "name": "Injector correction factor 3", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "SANTA_CRUZ_INJ_CORR_FACTOR_4", "name": "Injector correction factor 4", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E009",
+      "interval": 30,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_GPF_INLET_T_SENS_RAW_V", "name": "Gasoline particulate filter inlet temperature sensor raw voltage", "group": "Battery", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "SANTA_CRUZ_GPF_OUTLET_T_SENS_V", "name": "Gasoline particulate filter outlet temperature sensor raw voltage", "group": "Battery", "bit": 272, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "SANTA_CRUZ_EXH_GAS_T_BEFORE_GPF_1", "name": "Exhaust gas temperature before gasoline particulate filter sensor 1", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "SANTA_CRUZ_EXH_GAS_T_BEFORE_GPF_2", "name": "Exhaust gas temperature before gasoline particulate filter sensor 2", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "SANTA_CRUZ_GPF_CHG_ST", "name": "Gasoline particulate filter charge state", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_ODO_LAST_GPF_REGEN", "name": "Odometer at last gasoline particulate filter regeneration", "group": "Trips", "bit": 328, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "SANTA_CRUZ_DIST_SINCE_GPF_REGEN", "name": "Distance since last gasoline particulate filter regeneration", "group": "Trips", "bit": 360, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "SANTA_CRUZ_COVERAGE_DRIVEN", "name": "Coverage driven length", "group": "Engine", "bit": 392, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E011",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_CALC_OIL_T", "name": "Calculated oil temperature", "group": "Engine", "bit": 304, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E013",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E013",
+      "interval": 0.25,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "divide": 25, "min": -1310, "max": 1310}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 16, "multiply": 15.21, "divide": 10000, "min": 0, "max": 99.67, "unit": "%"},
+        {"id": "SANTA_CRUZ_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 13.79, "min": 0, "max": 3516.45, "unit": "kPa"},
+        {"id": "SANTA_CRUZ_OVERHEAT_PROTECTION", "name": "Overheat protection, active", "group": "Engine", "bit": 132, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_HARMFUL_CAT_1", "name": "Misfires harmful for catalyst, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_HARMFUL_CAT_2", "name": "Misfires harmful for catalyst, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_HARMFUL_CAT_3", "name": "Misfires harmful for catalyst, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "SANTA_CRUZ_MIS_HARMFUL_CAT_4", "name": "Misfires harmful for catalyst, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E020",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_INT_CAM_POS", "name": "Intake camshaft position", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"},
+        {"id": "SANTA_CRUZ_EXH_CAM_POS", "name": "Exhaust camshaft position", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E021",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E021",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa"},
+        {"id": "SANTA_CRUZ_WG_V", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
+        {"id": "SANTA_CRUZ_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "signals": [
+        {"id": "SANTA_CRUZ_FUEL_P_ACT", "name": "Fuel pressure, actual", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "SANTA_CRUZ_FUEL_P_SET_POINT_7E0", "name": "Fuel pressure, set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "SANTA_CRUZ_FUEL_P_SET_POINT_DEV", "name": "Fuel pressure set point deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53066, "divide": 10000, "min": -173886.6688, "max": 173881.3622},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_1_CYL_1", "name": "Injection impulse 1, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_1_CYL_2", "name": "Injection impulse 1, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_1_CYL_3", "name": "Injection impulse 1, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_1_CYL_4", "name": "Injection impulse 1, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_2_CYL_1", "name": "Injection impulse 2, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_2_CYL_2", "name": "Injection impulse 2, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_2_CYL_3", "name": "Injection impulse 2, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_2_CYL_4", "name": "Injection impulse 2, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_3_CYL_1", "name": "Injection impulse 3, cylinder 1", "group": "Engine", "bit": 328, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_3_CYL_2", "name": "Injection impulse 3, cylinder 2", "group": "Engine", "bit": 344, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_3_CYL_3", "name": "Injection impulse 3, cylinder 3", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "SANTA_CRUZ_INJ_IMPULSE_3_CYL_4", "name": "Injection impulse 3, cylinder 4", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "SANTA_CRUZ_CYCLE_FUEL_CONS", "name": "Cycle fuel consumption", "group": "Fuel", "bit": 416, "bits": 8, "multiply": 8.478, "divide": 100, "min": 0, "max": 21.6189}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2022, 2023],
+      "signals": [
+        {"id": "SANTA_CRUZ_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "SANTA_CRUZ_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SANTA_CRUZ_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "SANTA_CRUZ_TURBINE_SPEED_7E1", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "SANTA_CRUZ_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "SANTA_CRUZ_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SANTA_CRUZ_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "SANTA_CRUZ_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "SANTA_CRUZ_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

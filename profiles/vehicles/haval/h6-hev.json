@@ -1,0 +1,946 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/haval/h6-hev",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Haval",
+    "model": "H6 HEV",
+    "years": null,
+    "generations": [{"name": "Third Generation (HEV)", "from": 2021}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Haval-H6-HEV",
+    "file": "signalsets/v3/default.json",
+    "revision": "194848cde8f0299de1315d683309a35b8d0ab8ad",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "763.7A3.22A012",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "7A3",
+      "request": "22A012",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_HVAC_EVAPORATOR_T_FRONT", "name": "Evaporator temperature, front", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "add": -20, "min": -20, "max": 655.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "763.7A3.22A019",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "7A3",
+      "request": "22A019",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_HVAC_CABIN_T_FRONT", "name": "Cabin temperature, front", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "add": -30, "min": -30, "max": 655.15, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "76C.7AC.220210|fc=1",
+      "bus": "can11",
+      "tx": "76C",
+      "rx": "7AC",
+      "request": "220210",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_FL_TIRE_P", "name": "Front left tire pressure", "group": "Tires", "bit": 0, "bits": 8, "multiply": 137, "divide": 100, "min": 0, "max": 349, "unit": "kPa"},
+        {"id": "H6HEV_FL_TIRE_T", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "H6HEV_FR_TIRE_P", "name": "Front right tire pressure", "group": "Tires", "bit": 16, "bits": 8, "multiply": 137, "divide": 100, "min": 0, "max": 349, "unit": "kPa"},
+        {"id": "H6HEV_FR_TIRE_T", "name": "Front right tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "H6HEV_RL_TIRE_P", "name": "Rear left tire pressure", "group": "Tires", "bit": 32, "bits": 8, "multiply": 137, "divide": 100, "min": 0, "max": 349, "unit": "kPa"},
+        {"id": "H6HEV_RL_TIRE_T", "name": "Rear left tire temperature", "group": "Tires", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "H6HEV_RR_TIRE_P", "name": "Rear right tire pressure", "group": "Tires", "bit": 48, "bits": 8, "multiply": 137, "divide": 100, "min": 0, "max": 349, "unit": "kPa"},
+        {"id": "H6HEV_RR_TIRE_T", "name": "Rear right tire temperature", "group": "Tires", "bit": 56, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "782.7C2.226303|fc=1",
+      "bus": "can11",
+      "tx": "782",
+      "rx": "7C2",
+      "request": "226303",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_FRONT_LEFT_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "H6HEV_FRONT_RIGHT_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "H6HEV_REAR_LEFT_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "H6HEV_REAR_RIGHT_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "787.7C7.221109",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "221109",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_MOTOR_T_1", "name": "Motor temperature, generator", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "787.7C7.221110",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "221110",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_MOTOR_SPEED", "name": "Motor speed, generator", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "787.7C7.221111",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "221111",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_MOTOR_T_2", "name": "Motor winding temperature, generator", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "787.7C7.222108",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222108",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_TMCU_INVERTOR_T", "name": "Inverter temperature", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "787.7C7.222109",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222109",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_TMCU_MOTOR_T_1", "name": "Motor temperature", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "787.7C7.222110",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222110",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_TMCU_MOTOR_SPEED", "name": "Motor speed", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "787.7C7.222111",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222111",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_TMCU_MOTOR_T_2", "name": "Motor winding temperature", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "787.7C7.222304",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222304",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_TORQUE_MAX", "name": "Torque maximum, generator", "group": "Drivetrain", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "787.7C7.222305",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222305",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_TORQUE_MIN", "name": "Torque minimum, generator", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -1023, "min": -1023, "max": 64512, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "787.7C7.222306|fc=1",
+      "bus": "can11",
+      "tx": "787",
+      "rx": "7C7",
+      "request": "222306",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MCU_GMCU_TORQUE", "name": "Torque, generator, actual", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -1023, "min": -1023, "max": 64512, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E006",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E006",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_VOLTAGE", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E007",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E007",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_TOTAL_CELL_VOLTAGES", "name": "Cell voltages, total", "group": "Battery", "bit": 0, "bits": 16, "add": 1, "min": 1, "max": 65536, "unit": "V"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E008",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E008",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_CELL_VOLTAGE_MAX", "name": "Cell voltage, maximum", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E009",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E009",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_CELL_VOLTAGE_MIN", "name": "Cell voltage, minimum", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E00A",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MAX_CELL_VOLTAGE_POSITION", "name": "Cell position, maximum voltage", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 1, "max": 256}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E00B",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E00B",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MIN_CELL_VOLTAGE_POSITION", "name": "Cell position, minimum voltage", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 1, "max": 256}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E088",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E088",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MODULE_T_MAXIMUM", "name": "Module temperature, maximum", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E089",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E089",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MODULE_T_MINIMUM", "name": "Module temperature, minimum", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0A1",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0A1",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MODULE_T_AVERAGE", "name": "Module temperature, average", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0A4",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0A4",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_BUS_CURRENT", "name": "Battery current, bus", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "add": -1200, "min": -1200, "max": 11907, "unit": "A"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0C6",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0C6",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_DISCHARGE_CURRENT_LIMIT", "name": "Discharge current limit, pack", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "add": -1200, "min": -1200, "max": 11907, "unit": "A"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0C8",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0C8",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_RECHARGE_CURRENT_LIMIT", "name": "Recharge current limit, pack", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "add": -1200, "min": -1200, "max": 11907, "unit": "A"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0DD",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0DD",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_LAST_SLEEP_DURATION", "name": "Sleep duration, last", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "s"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0E4",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0E4",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_LOOP_INLET_T", "name": "Coolant inlet temperature, pack", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0F1",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0F1",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MAX_CELL_SOC", "name": "Cell state of charge, maximum", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0F2",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0F2",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MIN_CELL_SOC", "name": "Cell state of charge, minimum", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0F4",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0F4",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_BATT_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0F5",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0F5",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_SOH", "name": "State of health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E0F6",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E0F6",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_SOE", "name": "State of energy", "group": "Battery", "metric": "tractionBatteryCapacity", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E114|fc=1",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E114",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BAT_CELL_01", "name": "Battery cell 01", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_02", "name": "Battery cell 02", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_03", "name": "Battery cell 03", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_04", "name": "Battery cell 04", "group": "Battery", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_05", "name": "Battery cell 05", "group": "Battery", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_06", "name": "Battery cell 06", "group": "Battery", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_07", "name": "Battery cell 07", "group": "Battery", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_08", "name": "Battery cell 08", "group": "Battery", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_09", "name": "Battery cell 09", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_10", "name": "Battery cell 10", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_11", "name": "Battery cell 11", "group": "Battery", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_12", "name": "Battery cell 12", "group": "Battery", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_13", "name": "Battery cell 13", "group": "Battery", "bit": 192, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_14", "name": "Battery cell 14", "group": "Battery", "bit": 208, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_15", "name": "Battery cell 15", "group": "Battery", "bit": 224, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_16", "name": "Battery cell 16", "group": "Battery", "bit": 240, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_17", "name": "Battery cell 17", "group": "Battery", "bit": 256, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_18", "name": "Battery cell 18", "group": "Battery", "bit": 272, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_19", "name": "Battery cell 19", "group": "Battery", "bit": 288, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_20", "name": "Battery cell 20", "group": "Battery", "bit": 304, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_21", "name": "Battery cell 21", "group": "Battery", "bit": 320, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_22", "name": "Battery cell 22", "group": "Battery", "bit": 336, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_23", "name": "Battery cell 23", "group": "Battery", "bit": 352, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_24", "name": "Battery cell 24", "group": "Battery", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_25", "name": "Battery cell 25", "group": "Battery", "bit": 384, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_26", "name": "Battery cell 26", "group": "Battery", "bit": 400, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_27", "name": "Battery cell 27", "group": "Battery", "bit": 416, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_28", "name": "Battery cell 28", "group": "Battery", "bit": 432, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_29", "name": "Battery cell 29", "group": "Battery", "bit": 448, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_30", "name": "Battery cell 30", "group": "Battery", "bit": 464, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_31", "name": "Battery cell 31", "group": "Battery", "bit": 480, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_32", "name": "Battery cell 32", "group": "Battery", "bit": 496, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_33", "name": "Battery cell 33", "group": "Battery", "bit": 512, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_34", "name": "Battery cell 34", "group": "Battery", "bit": 528, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_35", "name": "Battery cell 35", "group": "Battery", "bit": 544, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_36", "name": "Battery cell 36", "group": "Battery", "bit": 560, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_37", "name": "Battery cell 37", "group": "Battery", "bit": 576, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_38", "name": "Battery cell 38", "group": "Battery", "bit": 592, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_39", "name": "Battery cell 39", "group": "Battery", "bit": 608, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_40", "name": "Battery cell 40", "group": "Battery", "bit": 624, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_41", "name": "Battery cell 41", "group": "Battery", "bit": 640, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_42", "name": "Battery cell 42", "group": "Battery", "bit": 656, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_43", "name": "Battery cell 43", "group": "Battery", "bit": 672, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_44", "name": "Battery cell 44", "group": "Battery", "bit": 688, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_45", "name": "Battery cell 45", "group": "Battery", "bit": 704, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_46", "name": "Battery cell 46", "group": "Battery", "bit": 720, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_47", "name": "Battery cell 47", "group": "Battery", "bit": 736, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_48", "name": "Battery cell 48", "group": "Battery", "bit": 752, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_49", "name": "Battery cell 49", "group": "Battery", "bit": 768, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_50", "name": "Battery cell 50", "group": "Battery", "bit": 784, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_51", "name": "Battery cell 51", "group": "Battery", "bit": 800, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_52", "name": "Battery cell 52", "group": "Battery", "bit": 816, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_53", "name": "Battery cell 53", "group": "Battery", "bit": 832, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_54", "name": "Battery cell 54", "group": "Battery", "bit": 848, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_55", "name": "Battery cell 55", "group": "Battery", "bit": 864, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_56", "name": "Battery cell 56", "group": "Battery", "bit": 880, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_57", "name": "Battery cell 57", "group": "Battery", "bit": 896, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_58", "name": "Battery cell 58", "group": "Battery", "bit": 912, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_59", "name": "Battery cell 59", "group": "Battery", "bit": 928, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_60", "name": "Battery cell 60", "group": "Battery", "bit": 944, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_61", "name": "Battery cell 61", "group": "Battery", "bit": 960, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_62", "name": "Battery cell 62", "group": "Battery", "bit": 976, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_63", "name": "Battery cell 63", "group": "Battery", "bit": 992, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_64", "name": "Battery cell 64", "group": "Battery", "bit": 1008, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_65", "name": "Battery cell 65", "group": "Battery", "bit": 1024, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_66", "name": "Battery cell 66", "group": "Battery", "bit": 1040, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_67", "name": "Battery cell 67", "group": "Battery", "bit": 1056, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_68", "name": "Battery cell 68", "group": "Battery", "bit": 1072, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_69", "name": "Battery cell 69", "group": "Battery", "bit": 1088, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_70", "name": "Battery cell 70", "group": "Battery", "bit": 1104, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_71", "name": "Battery cell 71", "group": "Battery", "bit": 1120, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_72", "name": "Battery cell 72", "group": "Battery", "bit": 1136, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_73", "name": "Battery cell 73", "group": "Battery", "bit": 1152, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_74", "name": "Battery cell 74", "group": "Battery", "bit": 1168, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_75", "name": "Battery cell 75", "group": "Battery", "bit": 1184, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_76", "name": "Battery cell 76", "group": "Battery", "bit": 1200, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_77", "name": "Battery cell 77", "group": "Battery", "bit": 1216, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_78", "name": "Battery cell 78", "group": "Battery", "bit": 1232, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_79", "name": "Battery cell 79", "group": "Battery", "bit": 1248, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_80", "name": "Battery cell 80", "group": "Battery", "bit": 1264, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_81", "name": "Battery cell 81", "group": "Battery", "bit": 1280, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_82", "name": "Battery cell 82", "group": "Battery", "bit": 1296, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_83", "name": "Battery cell 83", "group": "Battery", "bit": 1312, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_84", "name": "Battery cell 84", "group": "Battery", "bit": 1328, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_85", "name": "Battery cell 85", "group": "Battery", "bit": 1344, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_86", "name": "Battery cell 86", "group": "Battery", "bit": 1360, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_87", "name": "Battery cell 87", "group": "Battery", "bit": 1376, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_88", "name": "Battery cell 88", "group": "Battery", "bit": 1392, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_89", "name": "Battery cell 89", "group": "Battery", "bit": 1408, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_90", "name": "Battery cell 90", "group": "Battery", "bit": 1424, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_91", "name": "Battery cell 91", "group": "Battery", "bit": 1440, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "H6HEV_BAT_CELL_92", "name": "Battery cell 92", "group": "Battery", "bit": 1456, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E115|fc=1",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E115",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_MODULE_1_T", "name": "Battery module 1 temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "H6HEV_BMS_MODULE_2_T", "name": "Battery module 2 temperature", "group": "Battery", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "H6HEV_BMS_MODULE_3_T", "name": "Battery module 3 temperature", "group": "Battery", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "H6HEV_BMS_MODULE_4_T", "name": "Battery module 4 temperature", "group": "Battery", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "H6HEV_BMS_MODULE_5_T", "name": "Battery module 5 temperature", "group": "Battery", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "H6HEV_BMS_MODULE_6_T", "name": "Battery module 6 temperature", "group": "Battery", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E13D",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E13D",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_2S_DISCHARGE_POWER_LIMIT", "name": "Discharge power limit, pack, 2 seconds", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E13E",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E13E",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_10S_DISCHARGE_POWER_LIMIT", "name": "Discharge power limit, pack, 10 seconds", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E13F",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E13F",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_2S_RECHARGE_POWER_LIMIT", "name": "Recharge power limit, pack, 2 seconds", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E140",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E140",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_10S_RECHARGE_POWER_LIMIT", "name": "Recharge power limit, pack, 10 seconds", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E15B",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E15B",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_ACCUMULATED_CHARGE_1", "name": "Accumulated charge, pack, counter 1", "group": "Battery", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "78B.7CB.22E15C",
+      "bus": "can11",
+      "tx": "78B",
+      "rx": "7CB",
+      "request": "22E15C",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BMS_PACK_ACCUMULATED_CHARGE_2", "name": "Accumulated charge, pack, counter 2", "group": "Battery", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E0.220106",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220106",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_FUEL_LEVEL_LITERS", "name": "Fuel level, liters", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.220107",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220107",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_OIL_T", "name": "Oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "multiply": 0.023437, "add": -273.15, "min": -273.15, "max": 1262.793795, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22010F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22010F",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BOOST_PRESSURE_ACTUAL", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220111",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220111",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_FUEL_FLOW", "name": "Fuel flow", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.00429156, "min": 0, "max": 281.2473846, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.220112",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220112",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BOOST_PRESSURE_TARGET", "name": "Boost pressure, target", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220113",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220113",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_TURBOCHARGER_INLET_PRESSURE", "name": "Turbocharger inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220114",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220114",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_TURBOCHARGER_INLET_T", "name": "Turbocharger inlet temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.023437, "add": -273.15, "min": -273.15, "max": 1262.793795, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.220132",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220132",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_GEAR", "name": "Gear position", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22016A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22016A",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_BOOST_PRESSURE_VALUE", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.22016D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22016D",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_INJECTION_PULSE_WIDTH", "name": "Injection pulse width", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967.295, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.220170",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220170",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_RETARD_CYL_1", "name": "Knock retard, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220171",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220171",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_RETARD_CYL_2", "name": "Knock retard, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220172",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220172",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_RETARD_CYL_3", "name": "Knock retard, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220173",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220173",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_RETARD_CYL_4", "name": "Knock retard, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220174",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220174",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_SENSOR_VOLTAGE_CYL_1", "name": "Knock sensor voltage, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220175",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220175",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_SENSOR_VOLTAGE_CYL_2", "name": "Knock sensor voltage, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220176",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220176",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_SENSOR_VOLTAGE_CYL_3", "name": "Knock sensor voltage, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220177",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220177",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_KNOCK_SENSOR_VOLTAGE_CYL_4", "name": "Knock sensor voltage, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22017F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22017F",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MISFIRES_TOTAL", "name": "Misfires, total count", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220180",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220180",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MISFIRES_CYL_1", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220181",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220181",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MISFIRES_CYL_3", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220182",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220182",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MISFIRES_CYL_4", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220183",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220183",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_MISFIRES_CYL_2", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22210C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22210C",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_AC_PRESSURE_HVAC2", "name": "A/C pressure, enhanced", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "divide": 10, "min": -6553.6, "max": 6553.4, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220152",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220152",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_INTAKE_VVT_ACTUAL", "name": "Valve timing opening, intake, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 156, "divide": 10000, "min": -511.1808, "max": 511.1652, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220154",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220154",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_INTAKE_VVT_TARGET", "name": "Valve timing opening, intake, target", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78, "divide": 10000, "min": -255.5, "max": 255.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221611",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221611",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_TURBOCHARGER_TGT", "name": "Turbocharger, target opening", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1953, "divide": 250000, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221612",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221612",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "H6HEV_TURBOCHARGER_ACT", "name": "Turbocharger, actual opening", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1953, "divide": 250000, "min": 0, "max": 511, "unit": "%"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "H6HEV_BMS_CELLS_V",
+      "name": "Battery cell voltages",
+      "group": "Battery",
+      "match": "H6HEV_BAT_(CELL_\\d+)",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

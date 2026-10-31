@@ -1,0 +1,120 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mini/cooper-se",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "MINI",
+    "model": "Cooper SE",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (F56)", "from": 2020, "to": 2023},
+      {"name": "Second Generation (J01)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/MINI-Cooper-SE",
+    "file": "signalsets/v3/default.json",
+    "revision": "dcf00c2b2fd0e97ca5955f4154ecaf18ae6cdcf4",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6F1.607.226335|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "226335",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DD68|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DD68",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_HVBAT_VOLT", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DD69|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DD69",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_HVBAT_CURR", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 100, "min": -10000, "max": 10000, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DDBC|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DDBC",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "COOPSE_HVBAT_SOC_MAX", "name": "HV battery charge (maximum)", "group": "Battery", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "COOPSE_HVBAT_SOC_MIN", "name": "HV battery charge (minimum)", "group": "Battery", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.660.22420C|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22420C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_RANGE_ECO", "name": "Estimated range remaining in economy mode", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "COOPSE_RANGE_COMF", "name": "Estimated range remaining in comfort mode", "group": "Trips", "metric": "electricRange", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "COOPSE_RANGE", "name": "Estimated range remaining", "group": "Trips", "metric": "electricRange", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D107|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D107",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D10D|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D10D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "COOPSE_ODO1", "name": "Odometer #1", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"},
+        {"id": "COOPSE_ODO2", "name": "Odometer #2", "group": "Trips", "metric": "odometer", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    }
+  ]
+}

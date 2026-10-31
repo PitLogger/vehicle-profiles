@@ -1,0 +1,970 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/toyota/bz4x",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Toyota",
+    "model": "bZ4X",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2022, "to": 2024},
+      {"name": "First Generation Facelift", "from": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Toyota-bZ4X",
+    "file": "signalsets/v3/default.json",
+    "revision": "dcf08ef454d0ec822cbaa9237cb9c604db3a1e30",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "745.74D.22106E|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22106E",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_HVAC_P_745", "name": "Climate power, charging control", "group": "Climate", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.2210D1|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2210D1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CTRL_MODE", "name": "Control system mode", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "DRIVING", "3": "CHARGING"}, "valueDescriptions": {"0": "None", "1": "Driving", "3": "Charging"}}
+      ]
+    },
+    {
+      "id": "745.74D.2210D4|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2210D4",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_P", "name": "Battery charging power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221619|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221619",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_AC_P_TGT", "name": "AC target power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "kW"},
+        {"id": "BZ4X_AC_A_LIMIT", "name": "AC current limit", "group": "Battery", "bit": 24, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "BZ4X_CHGR_OP", "name": "Charger operation status", "group": "Battery", "bit": 16, "bits": 8, "values": {"0": "STANDBY", "1": "READY", "2": "STOP", "3": "ROB_STOP"}, "valueDescriptions": {"0": "Standby", "1": "Ready", "2": "Stopped", "3": "Stopped by request"}}
+      ]
+    },
+    {
+      "id": "745.74D.22161C|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161C",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_V_TYPE", "name": "Charger supply voltage type", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "V100", "2": "V200"}, "valueDescriptions": {"0": "None", "1": "100V series", "2": "200V series"}}
+      ]
+    },
+    {
+      "id": "745.74D.22161D|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161D",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_IN_P", "name": "Charger input power", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.22161E|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22161E",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHGR_OUT_P", "name": "Charger output power", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"},
+        {"id": "BZ4X_CHGR_OUT_P_TGT", "name": "Charger output power, target", "group": "Battery", "bit": 16, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221625|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221625",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_LID", "name": "Charging lid open", "group": "Doors", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "745.74D.221665|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221665",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_AC_P_USABLE", "name": "AC usable power", "group": "Battery", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221666|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221666",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_HLC", "name": "DC high level communication state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221667|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221667",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_STOP_REQ", "name": "Charge stop request code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221669|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221669",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_PISW", "name": "Plug-in switch status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.22166A|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166A",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_DC_STA_P_MAX", "name": "DC charger maximum power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.22166B|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166B",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_DC_STA_V", "name": "DC charger present voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "745.74D.22166C|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_DC_STA_A", "name": "DC charger present current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.22166D|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22166D",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_A_TGT", "name": "Target charging current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.221679|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221679",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_DC_STA_A_MAX", "name": "DC charger maximum current", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "745.74D.221681|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221681",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_DC_STA_V_MAX", "name": "DC charger maximum voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "745.74D.221684|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221684",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_AC_OP", "name": "AC charging operation status", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "STOP", "1": "STARTUP", "2": "RUNNING", "3": "FINISHING"}, "valueDescriptions": {"0": "Stopped", "1": "Starting up", "2": "Running", "3": "Finishing"}}
+      ]
+    },
+    {
+      "id": "745.74D.221688|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221688",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_OUTCOME", "name": "Last charge outcome code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "745.74D.221692|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221692",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_MY_ROOM", "name": "Cabin mode active while parked", "group": "Climate", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "745.74D.2216A1|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "2216A1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CHG_P_PERMIT", "name": "Minimum permission power", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "745.74D.221738|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221738",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_SOC_745", "name": "State of charge, charging control", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "745.74D.221739|fc=1",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221739",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_SOC_DISPLAY", "name": "HV battery charge (displayed)", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "747.74F.220103|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "747.74F.22182E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22182E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_CMU01_VOLT", "name": "HV battery module 01 voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"},
+        {"id": "BZ4X_HVBAT_CMU02_VOLT", "name": "HV battery module 02 voltage", "group": "Battery.Modules.02", "bit": 16, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "747.74F.221D3E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221D3E",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CAP_1", "name": "Full charge capacity 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_2", "name": "Full charge capacity 2", "group": "Battery", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_3", "name": "Full charge capacity 3", "group": "Battery", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_4", "name": "Full charge capacity 4", "group": "Battery", "bit": 48, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_5", "name": "Full charge capacity 5", "group": "Battery", "bit": 64, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_6", "name": "Full charge capacity 6", "group": "Battery", "bit": 80, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_7", "name": "Full charge capacity 7", "group": "Battery", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "BZ4X_CAP_8", "name": "Full charge capacity 8", "group": "Battery", "bit": 112, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "747.74F.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F5B",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_SOC_747", "name": "State of charge, battery ECU", "group": "Battery", "bit": 0, "bits": 8, "divide": 2.55, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "750.758.221004|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "BZ4X_TT_1", "name": "Front right tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "BZ4X_TT_2", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "BZ4X_TT_3", "name": "Rear right tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "BZ4X_TT_4", "name": "Rear left tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30}
+      ]
+    },
+    {
+      "id": "750.758.221005|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221005",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "BZ4X_TP_1", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 8, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "BZ4X_TP_2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "BZ4X_TP_3", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "BZ4X_TP_4", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 56, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "750.758.222021|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "222021",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "BZ4X_TID_1", "name": "Tire 1 position", "group": "Tires", "bit": 0, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "BZ4X_TID_2", "name": "Tire 2 position", "group": "Tires", "bit": 8, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "BZ4X_TID_3", "name": "Tire 3 position", "group": "Tires", "bit": 16, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "BZ4X_TID_4", "name": "Tire 4 position", "group": "Tires", "bit": 24, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221006",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221006",
+      "interval": 5,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_MASTER_CYL_TEMP", "name": "Master cylinder sensor temperature", "group": "Brakes", "bit": 0, "bits": 8, "add": -80, "min": -20, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221045|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221045",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_EPB", "name": "Parking brake actuator status", "group": "Brakes", "bit": 0, "bits": 8, "values": {"0": "APPLIED"}, "valueDescriptions": {"0": "Applied"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.22104C|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "22104C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_BRAKE_STROKE", "name": "Brake pedal stroke", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221001|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221001",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221002|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221002",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_AAT_7C4", "name": "Ambient temperature, climate", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221036|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221036",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_HVAC_SET_RAW", "name": "Climate set point code", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221086|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221086",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_HEATER_RAW", "name": "Electric heater power count", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7C4.7CC.222801|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "222801",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_BLOWER", "name": "Blower level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_ODO_7D2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221004|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2022, 2023],
+      "signals": [
+        {"id": "BZ4X_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "notAnsweredIn": [2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "BZ4X_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221060|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221060",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_APP", "name": "Accelerator pedal position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221061|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221061",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_SOC_MAX", "name": "HV battery charge (max)", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "BZ4X_HVBAT_SOC_MIN", "name": "HV battery charge (min)", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106E|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106E",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_HVAC_P", "name": "Climate power", "group": "Climate", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "BZ4X_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "BZ4X_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "BZ4X_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221076|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221076",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_READY", "name": "Ready to drive", "group": "Drivetrain", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221087|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221087",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2022, 2023],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "BZ4X_AWD_MODE", "name": "All-wheel drive mode", "group": "Drivetrain", "bit": 8, "bits": 8, "values": {"0": "NORMAL", "2": "SNOW_DIRT", "3": "DEEP_SNOW_MUD", "4": "SNOW_DIRT_PAUSED", "5": "DEEP_SNOW_MUD_PAUSED"}, "valueDescriptions": {"0": "Normal", "2": "Snow/dirt", "3": "Deep snow/mud", "4": "Snow/dirt, paused", "5": "Deep snow/mud, paused"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "BZ4X_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A2",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023],
+      "notAnsweredIn": [2024, 2026],
+      "signals": [
+        {"id": "BZ4X_RM_TQ_REQ", "name": "Rear motor torque, requested", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "Nm"},
+        {"id": "BZ4X_RM_TQ", "name": "Rear motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A6",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A6",
+      "interval": 1,
+      "answeredIn": [2022, 2023],
+      "notAnsweredIn": [2024, 2026],
+      "signals": [
+        {"id": "BZ4X_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "BZ4X_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E5|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E5",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_12V_CAP", "name": "12V battery full charge capacity", "group": "Electrical", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E8|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E8",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_12V_AH_IN", "name": "12V battery charge, total", "group": "Electrical", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "BZ4X_12V_AH_OUT", "name": "12V battery discharge, total", "group": "Electrical", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "BZ4X_READY_HOURS", "name": "Ready-on time, total", "group": "Stats", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_12V_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221609",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221609",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_CHRG_V", "name": "HV battery charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221829",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221829",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_MAX_T", "name": "HV battery maximum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22182A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22182A",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_MIN_T", "name": "HV battery minimum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "notAnsweredIn": [2022, 2023, 2024, 2026],
+      "signals": [
+        {"id": "BZ4X_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F46",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F46",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2026],
+      "signals": [
+        {"id": "BZ4X_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "BZ4X_HVBAT_C", "name": "HV battery current", "group": "Battery", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221FA6|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221FA6",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "BZ4X_ODO_1FA6", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "BZ4X_HVBAT_CMU_VOLT",
+      "name": "HV battery pack voltage",
+      "group": "Battery.Modules",
+      "match": "BZ4X_HVBAT_(CMU\\d+)_VOLT",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

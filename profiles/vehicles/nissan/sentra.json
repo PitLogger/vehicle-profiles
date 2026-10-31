@@ -1,0 +1,269 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/sentra",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Sentra",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (B11)", "from": 1982, "to": 1986},
+      {"name": "Second Generation (B12)", "from": 1987, "to": 1990},
+      {"name": "Third Generation (B13)", "from": 1991, "to": 1994},
+      {"name": "Fourth Generation (B14)", "from": 1995, "to": 1999},
+      {"name": "Fifth Generation (B15)", "from": 2000, "to": 2006},
+      {"name": "Sixth Generation (B16)", "from": 2007, "to": 2012},
+      {"name": "Seventh Generation (B17)", "from": 2013, "to": 2019},
+      {"name": "Eighth Generation (B18)", "from": 2020}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Sentra",
+    "file": "signalsets/v3/default.json",
+    "revision": "b4225bc4ccceec8edbc2209f93652442d54fa08a",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "answeredIn": [2014, 2016, 2017, 2019, 2022, 2024],
+      "signals": [
+        {"id": "SENTRA_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "answeredIn": [2014, 2016, 2017, 2019, 2022, 2024],
+      "signals": [
+        {"id": "SENTRA_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1,f=-2019",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "years": {"to": 2019},
+      "answeredIn": [2014, 2016, 2017, 2019],
+      "signals": [
+        {"id": "SENTRA_ODO_METER", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1,f=2020-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 30,
+      "flowControl": true,
+      "years": {"from": 2020},
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "SENTRA_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1,f=2020-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2020},
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "SENTRA_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1,f=2020-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2020},
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "SENTRA_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1,f=2020-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2020},
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "SENTRA_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1,f=2020-",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"from": 2020},
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "SENTRA_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2016, 2017, 2019, 2022, 2024],
+      "signals": [
+        {"id": "SENTRA_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SENTRA_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SENTRA_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SENTRA_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "SENTRA_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SENTRA_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SENTRA_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "SENTRA_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2013, 2014, 2016, 2017, 2018, 2019, 2020],
+      "signals": [
+        {"id": "SENTRA_AC_STATUS", "name": "Air conditioning status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2013, 2014, 2016, 2017, 2018, 2019, 2020],
+      "signals": [
+        {"id": "SENTRA_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2013, 2014, 2016, 2017, 2018, 2019, 2020],
+      "signals": [
+        {"id": "SENTRA_ECT", "name": "Engine coolant temperature", "group": "Climate", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 214, "unit": "°C", "invalidAtOrAbove": 214}
+      ]
+    },
+    {
+      "id": "797.79A.221155|fc=1",
+      "bus": "can11",
+      "tx": "797",
+      "rx": "79A",
+      "request": "221155",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2014, 2016, 2017, 2019, 2024],
+      "signals": [
+        {"id": "SENTRA_RANGE_DISP", "name": "Range shown on the display", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221186|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221186",
+      "interval": 30,
+      "years": {"to": 2012},
+      "answeredIn": [2012],
+      "signals": [
+        {"id": "SENTRA_FUEL_REMAINING", "name": "Remaining fuel", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221266|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221266",
+      "interval": 5,
+      "years": {"to": 2012},
+      "answeredIn": [2012],
+      "signals": [
+        {"id": "SENTRA_VVT_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2014, 2016, 2019],
+      "signals": [
+        {"id": "SENTRA_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1},
+        {"id": "SENTRA_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2014, 2016, 2019],
+      "signals": [
+        {"id": "SENTRA_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "SENTRA_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1}
+      ]
+    }
+  ]
+}

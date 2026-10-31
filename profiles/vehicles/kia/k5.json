@@ -1,0 +1,1234 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/kia/k5",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Kia",
+    "model": "K5",
+    "years": null,
+    "generations": [
+      {
+        "name": "First Generation (as Optima/Magentis, MS)",
+        "from": 2000,
+        "to": 2005
+      },
+      {
+        "name": "Second Generation (as Optima/Magentis, MG)",
+        "from": 2005,
+        "to": 2010
+      },
+      {"name": "Third Generation (as Optima, TF)", "from": 2010, "to": 2015},
+      {
+        "name": "Fourth Generation (as Optima/K5, JF)",
+        "from": 2015,
+        "to": 2020
+      },
+      {"name": "Fifth Generation (as K5, DL3)", "from": 2019},
+      {"name": "Fifth Generation (as K5, DL3 Facelift)", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Kia-K5",
+    "file": "signalsets/v3/default.json",
+    "revision": "2c5373432151a6dcbe09e9e43c931384a78d37ba",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7A0", "type": "bodyControl"},
+    {"tx": "7C6", "type": "cluster"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_BELT_PASS", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_BELT_DRIV", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_GEAR_R", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "K5_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "K5_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2025],
+      "signals": [
+        {"id": "K5_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "K5_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "K5_TT_FL", "name": "Front left tire temperature", "group": "Tires", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "K5_FL_INVALID", "name": "Front left tire reading invalid?", "group": "Tires", "bit": 70, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 72, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "K5_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "K5_FR_INVALID", "name": "Front right tire reading invalid?", "group": "Tires", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "K5_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 120, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "K5_RL_INVALID", "name": "Rear left tire reading invalid?", "group": "Tires", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 152, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "K5_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "bit": 160, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "K5_RR_INVALID", "name": "Rear right tire reading invalid?", "group": "Tires", "bit": 190, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_TB_FL", "name": "Tire battery front left", "group": "Tires", "bit": 48, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "K5_TB_FR", "name": "Tire battery front right", "group": "Tires", "bit": 88, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "K5_TB_RR", "name": "Tire battery rear right", "group": "Tires", "bit": 128, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "K5_TB_RL", "name": "Tire battery rear left", "group": "Tires", "bit": 168, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "K5_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "K5_SENS_1_ODO_EVT_3", "name": "Sensor 1 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_2_ODO_EVT_3", "name": "Sensor 2 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_3_ODO_EVT_3", "name": "Sensor 3 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "K5_SENS_4_ODO_EVT_3", "name": "Sensor 4 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_TEMP_INT", "name": "Interior temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "K5_TEMP_EXT", "name": "Exterior temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "K5_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [1993, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C", "invalidAtOrAbove": 87.5},
+        {"id": "K5_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C", "invalidAtOrAbove": 87.5}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220102",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220102",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [1993, 2021],
+      "signals": [
+        {"id": "K5_HVAC_COOLANT_T", "name": "Coolant temperature", "group": "Engine", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "K5_HVAC_INVERTER_T", "name": "Inverter temperature", "group": "Engine", "bit": 96, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002|fc=1",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
+        {"id": "K5_VPWR", "name": "12v battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "K5_ODO_KM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrBelow": 0},
+        {"id": "K5_ODO_MI", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D1.7D9.2101|f=-2020",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "2101",
+      "interval": 0.25,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.220104",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "220104",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_VSS_AVG", "name": "Vehicle speed, average", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TC_SWITCH", "name": "Vehicle traction control", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "K5_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°", "invalidAtOrAbove": 3276.7},
+        {"id": "K5_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000|f=-2020",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 0.25,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_TIRE_FL_VSS_7D1", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_FR_VSS_7D1", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_RL_VSS_7D1", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_TIRE_RR_VSS_7D1", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.2101|f=-2020",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "2101",
+      "interval": 0.25,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_STEER_ANGLE_V2", "name": "Steering angle", "group": "Control", "bit": 24, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D6.7DE.2106",
+      "bus": "can11",
+      "tx": "7D6",
+      "rx": "7DE",
+      "request": "2106",
+      "interval": 15,
+      "notAnsweredIn": [1993, 2021, 2025],
+      "signals": [
+        {"id": "K5_TP_1", "name": "Sensor 1 pressure", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"},
+        {"id": "K5_TT_1", "name": "Sensor 1 temperature", "group": "Tires", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "K5_TP_2", "name": "Sensor 2 pressure", "group": "Tires", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"},
+        {"id": "K5_TT_2", "name": "Sensor 2 temperature", "group": "Tires", "bit": 64, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "K5_TP_3", "name": "Sensor 3 pressure", "group": "Tires", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"},
+        {"id": "K5_TT_3", "name": "Sensor 3 temperature", "group": "Tires", "bit": 112, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"},
+        {"id": "K5_TP_4", "name": "Sensor 4 pressure", "group": "Tires", "bit": 144, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"},
+        {"id": "K5_TT_4", "name": "Sensor 4 temperature", "group": "Tires", "bit": 160, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2100|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2100",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_FUEL_CUT", "name": "Fuel cut", "group": "Fuel", "bit": 88, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_IDLE_CONTROL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_COOLANT_FAN_LOW_SPEED", "name": "Coolant fan low speed", "group": "Movement", "bit": 170, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_COOLANT_FAN_HIGH_SPEED", "name": "Coolant fan high speed", "group": "Movement", "bit": 171, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_KNOCK_DETECTED", "name": "Knock detected", "group": "Engine", "bit": 200, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_CONTROL_MODULE_VOLTAGE", "name": "Control module voltage", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "K5_CONTROL_MODULE_VOLTAGE_AFTER_IGNITION", "name": "Control module voltage after ignition", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "K5_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 56, "bits": 16, "byteOrder": "little", "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
+        {"id": "K5_MAP_SENSOR_VOLTAGE", "name": "Manifold absolute pressure sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "K5_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "K5_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "K5_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "K5_IAT_SENSOR_VOLTAGE", "name": "IAT sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
+        {"id": "K5_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "K5_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2102|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2102",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "ECU", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "K5_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "ECU", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "K5_VSS_V2", "name": "Vehicle speed, v2", "group": "Movement", "metric": "speed", "bit": 96, "bits": 8, "multiply": 1.25, "min": 0, "max": 318.75, "unit": "km/h"},
+        {"id": "K5_COMMANDED_EVAPORATIVE_PURGE", "name": "Commanded evaporative purge", "group": "ECU", "bit": 160, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "K5_FUEL_INJECTION_TIMING_1", "name": "Fuel injection timing #1", "group": "Fuel", "bit": 176, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "K5_FUEL_INJECTION_TIMING_2", "name": "Fuel injection timing #2", "group": "Fuel", "bit": 192, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "K5_FUEL_INJECTION_TIMING_3", "name": "Fuel injection timing #3", "group": "Fuel", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "K5_FUEL_INJECTION_TIMING_4", "name": "Fuel injection timing #4", "group": "Fuel", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 5,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_EXHAUST_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 368, "bits": 8, "multiply": 4.709803922, "add": 99, "min": 99, "max": 1300, "unit": "°C"},
+        {"id": "K5_ODO_LAST_DPF_REGEN", "name": "Odometer at last DPF regeneration", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "K5_DISTANCE_SINCE_LAST_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 424, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "K5_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 456, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_COOLANT_FAN_HIGH_SPEED_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_COOLANT_FAN_LOW_SPEED_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_MAIN_INJECTION_QTY", "name": "Main injection volume", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.392156863, "min": 0, "max": 100, "unit": "L"},
+        {"id": "K5_PILOT_INJECTION_QTY", "name": "Pilot injection volume", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "L"},
+        {"id": "K5_POST_INJECTION_QTY", "name": "Post injection volume", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2108|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2108",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_EMIS_MIS_TOT_1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 144, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_5", "name": "Emission relevant misfires total, cylinder 5", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_6", "name": "Emission relevant misfires total, cylinder 6", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_5", "name": "Catalyst damaging misfires total, cylinder 5", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_6", "name": "Catalyst damaging misfires total, cylinder 6", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMIS_MIS_TOT_ALL", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATDMG_MIS_TOT_ALL", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CURRENT_1", "name": "Misfires current, cylinder 1", "group": "Engine", "bit": 536, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_2", "name": "Misfires current, cylinder 2", "group": "Engine", "bit": 544, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_3", "name": "Misfires current, cylinder 3", "group": "Engine", "bit": 552, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_4", "name": "Misfires current, cylinder 4", "group": "Engine", "bit": 560, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_5", "name": "Misfires current, cylinder 5", "group": "Engine", "bit": 568, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_6", "name": "Misfires current, cylinder 6", "group": "Engine", "bit": 576, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_MIS_CURRENT_TOT", "name": "Misfires current total", "group": "Engine", "bit": 584, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210A|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210A",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_KNOCK_RETARD_CYL_1_ALT", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 160, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_2_ALT", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 168, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_3_ALT", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 176, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_4_ALT", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 184, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210B|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210B",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_DI_TIME_1", "name": "Direct injection time 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "K5_DI_TIME_2", "name": "Direct injection time 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "K5_DI_TIME_3", "name": "Direct injection time 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "K5_DI_TIME_4", "name": "Direct injection time 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "K5_DI_TIME_5", "name": "Direct injection time 5", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "K5_DI_TIME_6", "name": "Direct injection time 6", "group": "Engine", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_EMIS_3", "name": "Emission-relevant misfires, cylinder #3", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_EMIS_4", "name": "Emission-relevant misfires, cylinder #4", "group": "Engine.Misfires", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_1", "name": "Misfires total counter, cylinder #1", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_2", "name": "Misfires total counter, cylinder #2", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_3", "name": "Misfires total counter, cylinder #3", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_4", "name": "Misfires total counter, cylinder #4", "group": "Engine.Misfires", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CNT_ALL", "name": "Misfires total counter, all cylinders", "group": "Engine.Misfires", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210E|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210E",
+      "interval": 30,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_ENG_RUN_TIME_TOT", "name": "Engine run time, total", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 6, "min": 0, "max": 393209.9999, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2113|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2113",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "K5_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "K5_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "K5_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "K5_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "K5_THROTTLE_POSITION__1", "name": "Throttle position #1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "K5_THROTTLE_POSITION__2", "name": "Throttle position #2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "K5_THROTTLE_POSITION_SENSOR_VOLTAGE__2", "name": "Throttle position sensor voltage #2", "group": "Battery", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"},
+        {"id": "K5_COOLANT_FAN_PWM", "name": "Coolant)", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_RELATIVE_ACCELERATOR_PEDAL_POSITION_VOLTAGE", "name": "Relative accelerator pedal position voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "V"},
+        {"id": "K5_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 128, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "K5_REQUESTED_TORQUE", "name": "Requested torque", "group": "Engine", "bit": 176, "bits": 16, "multiply": 0.001526, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_THROTTLE_POSITION_SENSOR_VOLTAGE__1", "name": "Throttle position sensor voltage #1", "group": "Battery", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2115|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2115",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 32768, "add": -100, "min": 0, "max": 99.99, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2116|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2116",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "ECU", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "ECU", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYLINDER_3", "name": "Knock retard cylinder #3", "group": "ECU", "bit": 112, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYLINDER_4", "name": "Knock retard cylinder #4", "group": "ECU", "bit": 120, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "ECU", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
+        {"id": "K5_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "ECU", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_CVVT_T", "name": "Variable valve timing temperature", "description": "Continuously variable valve timing temperature.", "group": "Engine", "bit": 272, "bits": 8, "add": -48, "min": -48, "max": 207, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2119|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2119",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_KNOCK_RETARD_CYL_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 168, "bits": 8, "multiply": 3, "divide": 4, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 176, "bits": 8, "multiply": 3, "divide": 4, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 184, "bits": 8, "multiply": 3, "divide": 4, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_CYL_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 192, "bits": 8, "multiply": 3, "divide": 4, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211D|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211D",
+      "interval": 1,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_MIS_1", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_2", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_3", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_4", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CAT_1", "name": "Misfires harmful for catalyst cylinder 1", "group": "Engine.Misfires", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CAT_2", "name": "Misfires harmful for catalyst cylinder 2", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CAT_3", "name": "Misfires harmful for catalyst cylinder 3", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_CAT_4", "name": "Misfires harmful for catalyst cylinder 4", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_TURBO_BOOST_P", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543},
+        {"id": "K5_WASTE_GATE_V", "name": "Waste gate voltage", "group": "Battery", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
+        {"id": "K5_WASTE_GATE_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"},
+        {"id": "K5_WASTE_GATE_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"},
+        {"id": "K5_WASTE_GATE_TGT", "name": "Waste gate target", "group": "Engine", "bit": 440, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 1,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_FUEL_P_7E0", "name": "Fuel pressure", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "K5_FUEL_P_SET_POINT", "name": "Fuel pressure set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "K5_FUEL_P_DEV", "name": "Fuel pressure deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53067, "divide": 10000, "min": -173889.9456, "max": 173884.6389},
+        {"id": "K5_CYL_1_INJ_TIME_2ND", "name": "Cylinder 1 injection time, 2nd pulse", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_2_INJ_TIME_2ND", "name": "Cylinder 2 injection time, 2nd pulse", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_3_INJ_TIME_2ND", "name": "Cylinder 3 injection time, 2nd pulse", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_4_INJ_TIME_2ND", "name": "Cylinder 4 injection time, 2nd pulse", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_1_INJ_TIME_1ST", "name": "Cylinder 1 injection time, 1st pulse", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_2_INJ_TIME_1ST", "name": "Cylinder 2 injection time, 1st pulse", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_3_INJ_TIME_1ST", "name": "Cylinder 3 injection time, 1st pulse", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_CYL_4_INJ_TIME_1ST", "name": "Cylinder 4 injection time, 1st pulse", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A0|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A0",
+      "interval": 5,
+      "years": {"to": 2020},
+      "signals": [
+        {"id": "K5_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 80, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 104, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "K5_ATF_T_7E0", "name": "Transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 264, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2221A0|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2221A0",
+      "interval": 5,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "K5_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "K5_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "K5_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "K5_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "K5_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 1,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "K5_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_KNOCK_RETARD_1_E00A", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_2_E00A", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_3_E00A", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_4_E00A", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_LEARN_1", "name": "Knock learn cylinder 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_LEARN_2", "name": "Knock learn cylinder 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_LEARN_3", "name": "Knock learn cylinder 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "K5_KNOCK_LEARN_4", "name": "Knock learn cylinder 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "K5_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "answeredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E011",
+      "interval": 5,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_CALC_OIL_T", "name": "Calculated oil temperature", "group": "Engine", "bit": 304, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 16, "multiply": 15.21, "divide": 10000, "min": 0, "max": 99.67, "unit": "%"},
+        {"id": "K5_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 13.79, "min": 0, "max": 3516.45, "unit": "kPa"},
+        {"id": "K5_OVERHEAT_PROTECTION", "name": "Overheat protection, active", "group": "Engine", "bit": 132, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E019",
+      "interval": 1,
+      "answeredIn": [1993, 2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_3_E019", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "K5_KNOCK_RETARD_4_E019", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_HARMFUL_CAT_1", "name": "Misfires harmful for catalyst, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_HARMFUL_CAT_2", "name": "Misfires harmful for catalyst, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_HARMFUL_CAT_3", "name": "Misfires harmful for catalyst, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "K5_MIS_HARMFUL_CAT_4", "name": "Misfires harmful for catalyst, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E020",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_INT_CAM_POS", "name": "Intake camshaft position", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"},
+        {"id": "K5_EXH_CAM_POS", "name": "Exhaust camshaft position", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E021|f=2024-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E021",
+      "interval": 0.1,
+      "years": {"from": 2024},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_TURBO_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "divide": 831.55690902, "add": -12, "min": -10, "max": 66.81, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_FUEL_P_ACT", "name": "Fuel pressure, actual", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "K5_FUEL_P_SET_POINT_7E0", "name": "Fuel pressure, set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "K5_FUEL_P_SET_POINT_DEV", "name": "Fuel pressure set point deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53066, "divide": 10000, "min": -173886.6688, "max": 173881.3622},
+        {"id": "K5_INJ_IMPULSE_1_CYL_1", "name": "Injection impulse 1, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_1_CYL_2", "name": "Injection impulse 1, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_1_CYL_3", "name": "Injection impulse 1, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_1_CYL_4", "name": "Injection impulse 1, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_2_CYL_1", "name": "Injection impulse 2, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_2_CYL_2", "name": "Injection impulse 2, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_2_CYL_3", "name": "Injection impulse 2, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_2_CYL_4", "name": "Injection impulse 2, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_3_CYL_1", "name": "Injection impulse 3, cylinder 1", "group": "Engine", "bit": 328, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_3_CYL_2", "name": "Injection impulse 3, cylinder 2", "group": "Engine", "bit": 344, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_3_CYL_3", "name": "Injection impulse 3, cylinder 3", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "K5_INJ_IMPULSE_3_CYL_4", "name": "Injection impulse 3, cylinder 4", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "K5_CYCLE_FUEL_CONS", "name": "Cycle fuel consumption", "group": "Fuel", "bit": 416, "bits": 8, "multiply": 8.478, "divide": 100, "min": 0, "max": 21.6189}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED01|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED01",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 40, "bits": 8, "multiply": 980392157, "divide": 100000, "min": 0, "max": 2500000.0003},
+        {"id": "K5_GLOW_RELAY_DUTY", "name": "Glow relay duty", "group": "Engine", "bit": 136, "bits": 8, "multiply": 2451, "divide": 6250, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 200, "bits": 8, "multiply": 1372549, "divide": 100000, "min": 0, "max": 3499.9999},
+        {"id": "K5_BOOST_REGULATOR_DUTY", "name": "Boost regulator duty", "group": "Engine", "bit": 208, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 216, "bits": 8, "multiply": 98, "divide": 125, "add": -50, "min": -50, "max": 149.9199, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED02|f=-2020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED02",
+      "interval": 5,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 251, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED03|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED03",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_FUEL_CONS", "name": "Fuel consumption", "group": "Fuel", "bit": 40, "bits": 8, "multiply": 25647, "divide": 20000, "min": 0, "max": 326.9992, "unit": "L"},
+        {"id": "K5_EXH_GAS_FLOW_PF", "name": "Exhaust gas flow in the particulate filter", "group": "Engine", "bit": 256, "bits": 8, "multiply": 392157, "divide": 50, "min": 0, "max": 2000000.7, "unit": "L"},
+        {"id": "K5_EXH_GAS_T_CAT", "name": "Exhaust gas temperature at catalyst", "group": "Engine", "bit": 272, "bits": 8, "multiply": 471, "divide": 100, "add": 99, "min": 0, "max": 1300.05, "unit": "°C"},
+        {"id": "K5_NOX_TRAP_OUTLET_P", "name": "NOx trap outlet pressure", "group": "Engine", "bit": 288, "bits": 8, "multiply": 3212451, "divide": 25000, "min": 0, "max": 32767.0002},
+        {"id": "K5_DPF_LOAD_MODEL", "name": "Diesel particulate filter load, from model", "group": "Engine", "bit": 296, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_ODO_LAST_DPF_REGEN_7E0", "name": "Odometer at last DPF regen", "group": "Trips", "bit": 304, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "K5_DIST_SINCE_DPF_REGEN", "name": "Distance since last DPF regen", "group": "Trips", "bit": 336, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "K5_ODO_7E0", "name": "Odometer", "group": "Trips", "bit": 368, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "K5_DPF_REGEN_SUCCESS_ST", "name": "Diesel particulate filter regen success state", "group": "Engine", "bit": 407, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_DPF_REGEN_DEMAND_CNT", "name": "Diesel particulate filter regen demand counter", "group": "Engine", "bit": 432, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED04",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_ACT_ACCEL", "name": "Actual acceleration", "group": "Movement", "bit": 240, "bits": 8, "multiply": 64, "divide": 255, "min": 0, "max": 64, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED05|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED05",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_GEAR_INFORMATION", "name": "Gear information", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED07|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED07",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 152, "bits": 8, "multiply": 0.7843, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED27|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED27",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_GEAR_NEUTRAL_POS", "name": "Gear in neutral position", "group": "Transmission", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "K5_BRAKE_BOOSTER_VACUUM_P", "name": "Brake booster vacuum pressure", "group": "Control", "bit": 128, "bits": 16, "multiply": 39, "divide": 1000, "add": -1200, "min": -1200, "max": 1355.8649}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A0|f=-2020",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A0",
+      "interval": 0.25,
+      "years": {"to": 2020},
+      "notAnsweredIn": [1993],
+      "signals": [
+        {"id": "K5_ENGINE_RPM_TCM", "name": "Engine RPM", "group": "Engine", "metric": "engineSpeed", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_APP_REL_TCM", "name": "Relative accelerator pedal position", "group": "Control", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_TURBINE_SPEED_7E1", "name": "Turbine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Engine", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "K5_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "K5_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A1",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2025],
+      "signals": [
+        {"id": "K5_CURRENT_GEAR_7E1_2", "name": "Current gear", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 1,
+      "answeredIn": [1993, 2021, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "K5_RPM", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "K5_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "K5_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_OUTPUT_SPEED", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "K5_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "K5_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "K5_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A4|f=2024-",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A4",
+      "interval": 1,
+      "years": {"from": 2024},
+      "answeredIn": [2025],
+      "notAnsweredIn": [2024, 2026],
+      "signals": [
+        {"id": "K5_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
+        {"id": "K5_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A5",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A5",
+      "interval": 5,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021],
+      "signals": [
+        {"id": "K5_DUAL_CLU_TRANS_ODD", "name": "Dual-clutch transmission odd shaft, gear engaged", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_DUAL_CLU_TRANS_EVEN", "name": "Dual-clutch transmission even shaft, gear engaged", "group": "Transmission", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "K5_DUAL_CLU_ATF_T_1", "name": "Dual-clutch transmission fluid temperature 1", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "K5_DUAL_CLU_ATF_T_2", "name": "Dual-clutch transmission fluid temperature 2", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "K5_DUAL_CLU_TRANS_CLU_1_P", "name": "Dual-clutch transmission clutch 1, pressure sensor a", "group": "Engine", "bit": 192, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "K5_DUAL_CLU_TRANS_CLU_2_P_B", "name": "Dual-clutch transmission clutch 2, pressure sensor b", "group": "Engine", "bit": 208, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "K5_DUAL_CLU_TRANS_LINE_P_C", "name": "Dual-clutch transmission line pressure, sensor c", "group": "Engine", "bit": 224, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"}
+      ]
+    }
+  ]
+}

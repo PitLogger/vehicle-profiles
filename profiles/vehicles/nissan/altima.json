@@ -1,0 +1,432 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/altima",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Altima",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (U13)", "from": 1993, "to": 1997},
+      {"name": "Second Generation (L30)", "from": 1997, "to": 2001},
+      {"name": "Third Generation (L31)", "from": 2002, "to": 2006},
+      {"name": "Fourth Generation (L32)", "from": 2007, "to": 2012},
+      {"name": "Fifth Generation (L33)", "from": 2013, "to": 2018},
+      {"name": "Sixth Generation (L34)", "from": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Altima",
+    "file": "signalsets/v3/default.json",
+    "revision": "ef6f8f6281f52de4cb2d5e7f90ef98d405d94269",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 0.1,
+      "answeredIn": [2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2019, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALTIMA_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "723.735.220101",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220101",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_YAW_RATE", "name": "Yaw rate", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "723.735.220107",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220107",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_RADAR_DISTANCE", "name": "Radar distance", "group": "Cruise control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "m"}
+      ]
+    },
+    {
+      "id": "723.735.220108",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220108",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_RADAR_SPEED", "name": "Relative speed", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "m/s"}
+      ]
+    },
+    {
+      "id": "723.735.220110",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220110",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_STEER_ANGLE", "name": "Steering wheel angle", "description": "Negative values are clockwise, positive values are counter-clockwise.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2009],
+      "notAnsweredIn": [2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_MTR_ODO", "name": "Odometer, meter group 1", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_FR_743", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_FL_743", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_RR_743", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_RL_743", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ALTIMA_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ALTIMA_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ALTIMA_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "ALTIMA_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALTIMA_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALTIMA_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "ALTIMA_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_AC_STATUS", "name": "A/C status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_ECT", "name": "Engine coolant temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "758.778.220201",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220201",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220202",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220202",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021, 2022],
+      "signals": [
+        {"id": "ALTIMA_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220203",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220203",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220204",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220204",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020D",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020D",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TPW_FL", "name": "Front left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020E",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020E",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TPW_FR", "name": "Front right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020F",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020F",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TPW_RR", "name": "Rear right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220210",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220210",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2015, 2017, 2018, 2021],
+      "signals": [
+        {"id": "ALTIMA_TPW_RL", "name": "Rear left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2009, 2018],
+      "signals": [
+        {"id": "ALTIMA_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2009, 2018],
+      "signals": [
+        {"id": "ALTIMA_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122B|f=2019-;-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122B",
+      "interval": 30,
+      "years": {"from": 2019, "to": 2012},
+      "notAnsweredIn": [2009],
+      "signals": [
+        {"id": "ALTIMA_CC_S", "name": "Cruise control set speed", "group": "Cruise control", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALTIMA_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2009, 2018, 2019, 2021],
+      "signals": [
+        {"id": "ALTIMA_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALTIMA_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    }
+  ]
+}

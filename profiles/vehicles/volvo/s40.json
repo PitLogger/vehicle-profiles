@@ -1,0 +1,75 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volvo/s40",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volvo",
+    "model": "S40",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 1995, "to": 2004},
+      {"name": "Second Generation", "from": 2003, "to": 2012}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volvo-S40",
+    "file": "signalsets/v3/default.json",
+    "revision": "48c8f94bd05774cdcdc20c93542b70587bc336a6",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "DA10.10.22F40A|f=-2014",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22F40A",
+      "interval": 1,
+      "years": {"to": 2014},
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "S40_FUEL_P_DA10", "name": "Fuel pressure", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA18.18.221E3F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221E3F",
+      "interval": 5,
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "S40_ATF_T_1E3F", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22E004|f=-2014",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22E004",
+      "interval": 5,
+      "years": {"to": 2014},
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "S40_ATF_T_DA18", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22E501|f=-2014",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22E501",
+      "interval": 0.25,
+      "years": {"to": 2014},
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "S40_TQ_ENG", "name": "Torque from engine", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    }
+  ]
+}

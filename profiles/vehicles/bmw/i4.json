@@ -1,0 +1,48 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/bmw/i4",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "BMW",
+    "model": "i4",
+    "years": null,
+    "generations": [{"name": "First Generation (G26)", "from": 2021}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/BMW-i4",
+    "file": "signalsets/v3/default.json",
+    "revision": "92a8776771555ec9d0712c34d759c77bae4c5c41",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6F1.660.22D107|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D107",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "I4_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D10D|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D10D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "I4_ODO1", "name": "Odometer #1", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"},
+        {"id": "I4_ODO2", "name": "Odometer #2", "group": "Trips", "metric": "odometer", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/jaguar/i-pace",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Jaguar",
+    "model": "I-PACE",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2018, "to": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Jaguar-I-PACE",
+    "file": "signalsets/v3/default.json",
+    "revision": "8782a0b5dded7d52818ee776aaeb0e1184828fc9",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "732.22D928",
+      "bus": "can11",
+      "tx": "732",
+      "request": "22D928",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_PARKED", "name": "Parked?", "group": "Movement", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "733.229924",
+      "bus": "can11",
+      "tx": "733",
+      "request": "229924",
+      "interval": 30,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2021, 2023],
+      "signals": [
+        {"id": "IPACE_AAT", "name": "Outside Temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "733.22DD04",
+      "bus": "can11",
+      "tx": "733",
+      "request": "22DD04",
+      "interval": 30,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "751.222076",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222076",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "multiply": 0.01373, "min": 0, "max": 899.79, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "751.222077",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222077",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "multiply": 0.01373, "min": 0, "max": 899.79, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "751.222078",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222078",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "multiply": 0.01373, "min": 0, "max": 899.79, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "751.222079",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222079",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "multiply": 0.01373, "min": 0, "max": 899.79, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "751.222A0A",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222A0A",
+      "interval": 15,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "751.222A0B",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222A0B",
+      "interval": 15,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "751.222A0C",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222A0C",
+      "interval": 15,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "751.222A0D",
+      "bus": "can11",
+      "tx": "751",
+      "request": "222A0D",
+      "interval": 15,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "754.22A0A6|fc=1",
+      "bus": "can11",
+      "tx": "754",
+      "request": "22A0A6",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_GPS_SATS", "name": "Satellites in view", "group": "GPS", "bit": 72, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.224903",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "224903",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_CELL_V_MAX", "name": "Maximum Cell Voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 32767, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E4.224904",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "224904",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_CELL_V_MIN", "name": "Minimum Cell Voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 32767, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E4.224907",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "224907",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_T", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.22490C",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "22490C",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_CURR", "name": "Current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 40, "min": -500, "max": 1000, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.22490F",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "22490F",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_V", "name": "High voltage battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 450, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.224910",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "224910",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.224918",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "224918",
+      "interval": 3600,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_HVB_SOH", "name": "Battery state of health (average)", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.22DD01",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "22DD01",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_ODOMETER", "name": "Odometer", "group": "Movement", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 1000000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E4.22DD09",
+      "bus": "can11",
+      "tx": "7E4",
+      "request": "22DD09",
+      "interval": 0.1,
+      "answeredIn": [2019, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IPACE_VSS", "name": "Vehicle Speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E5.22FD37",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "22FD37",
+      "interval": 10,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_CHG_STATE", "name": "Charging state", "group": "Battery", "bit": 8, "bits": 8, "values": {"29": "DC_CHARGING", "48": "AC_CHARGING"}, "valueDescriptions": {"29": "DC fast charging", "48": "AC charging"}}
+      ]
+    },
+    {
+      "id": "7E5.22FE0C",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "22FE0C",
+      "interval": 5,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "IPACE_VEHICLE_STATE", "name": "Charging state, vehicle", "group": "Battery", "bit": 0, "bits": 4, "values": {"0": "NOT_CHARGING", "6": "CHARGING", "9": "INIT", "10": "WAITING"}, "valueDescriptions": {"0": "Not charging", "6": "Charging", "9": "Initializing", "10": "Waiting"}}
+      ]
+    }
+  ]
+}

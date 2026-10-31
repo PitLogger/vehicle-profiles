@@ -1,0 +1,1790 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/lexus/rx",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Lexus",
+    "model": "RX",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (XU10)", "from": 1999, "to": 2003},
+      {"name": "Second Generation (XU30)", "from": 2004, "to": 2009},
+      {"name": "Third Generation (AL10)", "from": 2010, "to": 2015},
+      {"name": "Fourth Generation (AL20)", "from": 2016, "to": 2022},
+      {"name": "Fifth Generation (ALA10)", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Lexus-RX",
+    "file": "signalsets/v3/default.json",
+    "revision": "baa1aad03e4ea3962a311fed61d11097da1330f0",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E2", "type": "hybridControl"}
+  ],
+  "requests": [
+    {
+      "id": "700.708.221002|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221002",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_12V_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "multiply": 12.207, "divide": 10000, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.221017|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221017",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INJ_VOL", "name": "Injection volume", "group": "Engine", "bit": 0, "bits": 16, "divide": 3200, "min": 0, "max": 20.4, "unit": "L"}
+      ]
+    },
+    {
+      "id": "700.708.221018|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221018",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INJECTOR_PORT", "name": "Injector port", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "700.708.221019|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221019",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INJECTION", "name": "Injection", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "DIRECT", "2": "BOTH"}, "valueDescriptions": {"1": "Direct", "2": "Both"}}
+      ]
+    },
+    {
+      "id": "700.708.22102A|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22102A",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_A_F_RATIO_LEARNED_IDLE_BANK_1", "name": "A/f ratio learned idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_A_F_RATIO_LEARNED_LOW_BANK_1", "name": "A/f ratio learned low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_A_F_RATIO_LEARNED_MID_1_BANK_1", "name": "A/f ratio learned mid 1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_A_F_RATIO_LEARNED_MID_2_BANK_1", "name": "A/f ratio learned mid 2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_A_F_RATIO_LEARNED_HIGH_BANK_1", "name": "A/f ratio learned high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221041|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221041",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ECT_IGN", "name": "Engine coolant temperature, at ignition", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"},
+        {"id": "RX_ECT_INIT", "name": "Engine coolant temperature, initial", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 8, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221043|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221043",
+      "interval": 0.25,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RX_EWP_TARGET_VSS", "name": "Electric water pump target speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "RX_EWP_RPM", "name": "Electric water pump RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.221046|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221046",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_COOLING_FAN_DUTY_RATIO", "name": "Cooling fan duty ratio", "group": "Engine", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221059|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221059",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ACCEL_PEDAL", "name": "Accelerator pedal", "group": "Control", "bit": 0, "bits": 8, "divide": 1.42, "add": -28.873, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22105C|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105C",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_KNOCK_CORRECT_LEARNED_VALUE", "name": "Knock correction, learned value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023},
+        {"id": "RX_KNOCK_FEEDBACK_VALUE", "name": "Knock feedback value", "group": "Engine", "bit": 16, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023}
+      ]
+    },
+    {
+      "id": "700.708.22105E|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105E",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2023, 2025, 2026],
+      "notAnsweredIn": [2017, 2020, 2022],
+      "signals": [
+        {"id": "RX_ECU_INTERNAL_T", "name": "Internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221062|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221062",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EXHAUST_VVT_OCV_CONTROL_DUTY", "name": "Exhaust vvt oil control valve control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 400, "divide": 65535, "min": 0, "max": 400, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22106A|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106A",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FP_DUTY_RATIO", "name": "Fuel pump duty ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0609756098, "min": 0, "max": 3996.0365853659, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.22106C|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106C",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_DIST_SINCE_BAT_DISC", "name": "Distance since last battery cable disconnection", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.22106F|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106F",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INTAKE_VVT_TARGET_ANGLE_B1", "name": "Intake vvt target angle b1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221071|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221071",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EXHAUST_VVT_TARGET_ANGLE_B1", "name": "Exhaust vvt target angle b1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221074|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221074",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2023, 2025, 2026],
+      "notAnsweredIn": [2020, 2022],
+      "signals": [
+        {"id": "RX_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "divide": 128, "min": 0, "max": 1000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221078|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221078",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2023, 2025, 2026],
+      "notAnsweredIn": [2020, 2022],
+      "signals": [
+        {"id": "RX_IDLE_SAC_CYL_1", "name": "Idle spark advance control, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "RX_IDLE_SAC_CYL_2", "name": "Idle spark advance control, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "RX_IDLE_SAC_CYL_3", "name": "Idle spark advance control, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "RX_IDLE_SAC_CYL_4", "name": "Idle spark advance control, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22107B|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22107B",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 192, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221084|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221084",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_ROUGH_IDLE_CYL_1", "name": "Rough idle, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "RX_ROUGH_IDLE_CYL_2", "name": "Rough idle, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "RX_ROUGH_IDLE_CYL_3", "name": "Rough idle, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "RX_ROUGH_IDLE_CYL_4", "name": "Rough idle, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221087|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221087",
+      "interval": 0.25,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "name": "Intake vvt change angle bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221088|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221088",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EXHAUST_VVT_ANGLE_B1", "name": "Exhaust VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221089|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221089",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EXHAUST_VVT_HOLD_LEARN_VALUE_1", "name": "Exhaust VVT hold learn value bank 1", "group": "ECU", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108A|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108A",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RX_VVT_IE_DUTY_RATIO_BANK_1", "name": "Variable valve timing duty ratio, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "add": -200, "min": -200, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108D|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108D",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INTAKE_VVT_OVER_RET_LEARN_B1", "name": "Intake VVT most over-retarded learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22108F|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108F",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EXHAUST_VVT_OVER_ADV_LEARN_B1", "name": "Exhaust VVT timing most over-advanced learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.2210A2|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A2",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2020, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "RX_AF_LEARN_IDLE_PORT_B1", "name": "A/F ratio learn value idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_AF_LEARN_LOW_PORT_B1", "name": "A/F ratio learn value low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_AF_LEARN_MID1_PORT_B1", "name": "A/F ratio learn value mid.1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_AF_LEARN_MID2_PORT_B1", "name": "A/F ratio learn value mid.2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "RX_AF_LEARN_HIGH_PORT_B1", "name": "A/F ratio learn value high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.2210A5|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A5",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_MISFIRE_COUNT", "name": "Misfire, all cylinders counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210A7|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A7",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2023, 2025, 2026],
+      "notAnsweredIn": [2020, 2022],
+      "signals": [
+        {"id": "RX_MISFIRE_CYL1", "name": "Misfire count, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_MISFIRE_CYL2", "name": "Misfire count, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_MISFIRE_CYL3", "name": "Misfire count, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_MISFIRE_CYL4", "name": "Misfire count, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210AA|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210AA",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_MISFIRE_LOAD", "name": "Misfire load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 510, "divide": 255, "min": 0, "max": 510, "unit": "%"},
+        {"id": "RX_MISFIRE_RPM", "name": "Misfire rpm", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6375, "divide": 255, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "RX_MISFIRE_MARGIN", "name": "Misfire margin", "group": "Engine", "bit": 32, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.2210CD|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210CD",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2020, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "RX_LFPS", "name": "Low fuel pressure sensor", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2215FA|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215FA",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ALT_DUTY_CYCLE", "name": "Alternator output duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 164, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221620|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221620",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_AT_LOCK_UP_STATE", "name": "Lock up state", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "700.708.221621|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221621",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.221627|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221627",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_ATF_T_PAN_V3", "name": "Transmission fluid temperature, pan var.3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F2F|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F2F",
+      "interval": 30,
+      "years": {"from": 2016},
+      "answeredIn": [2020, 2022],
+      "notAnsweredIn": [2017, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221F3C|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3C",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CAT_T_BANK_1_SENSOR_1", "name": "Catalyst temperature, bank 1 sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3E|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3E",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CAT_T_BANK_1_SENSOR_2", "name": "Catalyst temperature, bank 1 sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F46|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F46",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2020, 2022, 2023, 2025, 2026],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "RX_AMBIENT_T", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F5C|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F5C",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2023, 2025, 2026],
+      "notAnsweredIn": [2020, 2022],
+      "signals": [
+        {"id": "RX_EOT_V2_V2", "name": "Engine oil temperature, variation 2", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F6D|f=2016-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F6D",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_HFP_TARGET", "name": "High fuel pressure, target", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "RX_HFP_ACTUAL", "name": "High fuel pressure, actual", "group": "Fuel", "bit": 24, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "RX_LOW_FUEL_PRESSURE", "name": "Low fuel pressure", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.222827|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222827",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RX_ELECTRIC_WATER_PUMP", "name": "Electric water pump", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "min": 0, "max": 10200, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.22282C|f=20232-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22282C",
+      "interval": 1,
+      "years": {"from": 20232},
+      "signals": [
+        {"id": "RX_COOLANT_VALVE_1_CLOSE", "name": "Coolant water route switching valve 1, closed?", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "700.708.222843|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222843",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RX_VVT_IE_OPENING_ANGLE_BANK_1", "name": "Variable valve timing opening angle bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.222848|f=2023-",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222848",
+      "interval": 0.5,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EOP_CONTROL_VALVE", "name": "Engine oil pressure control valve", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0762939, "min": 0, "max": 4999.9207, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "701.709.220103|f=2016-",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "220103",
+      "interval": 10,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "701.709.221620|f=2016-",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221620",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_LOCK_UP_STATE", "name": "Lock up state", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "701.709.221627|f=2016-",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221627",
+      "interval": 1,
+      "years": {"from": 2016},
+      "answeredIn": [2017, 2020, 2022, 2023],
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_ATF_T_PAN_GEN3", "name": "Transmission fluid temperature, pan", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2103",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "RX_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "RX_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "RX_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2105",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2105",
+      "interval": 0.5,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_DECEL", "name": "Deceleration", "group": "Orientation", "bit": 0, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"},
+        {"id": "RX_DECEL_2", "name": "Deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2106",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2106",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_YAW_RATE", "name": "Yaw rate sensor", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "RX_YAW_RATE2", "name": "Yaw rate sensor, alternate", "group": "Orientation", "bit": 8, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2107",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2107",
+      "interval": 1,
+      "answeredIn": [2006],
+      "notAnsweredIn": [2002, 2005, 2010, 2013, 2015, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_WHEEL_CYLINDER_PRESSURE", "name": "Wheel cylinder pressure", "group": "Tires", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211D",
+      "interval": 1,
+      "answeredIn": [2006, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2008, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_RESERVOIR_WARNING_SW", "name": "Reservoir warning", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_MAIN_IDLE_SW", "name": "Main idle", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211F",
+      "interval": 1,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_STOP_LIGHT_SW", "name": "Stop light", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_PARKING_BRAKE_SW", "name": "Parking brake", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2121",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2121",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "multiply": 1.28, "min": 0, "max": 326, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213C",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213C",
+      "interval": 1,
+      "answeredIn": [2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2006, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_STOP_LIGHT_RELAY", "name": "Stop light relay", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213D",
+      "interval": 1,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ABS_WARN", "name": "Anti-lock brake system warning light", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_BRAKE_WARN", "name": "Brake warning light", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_SLIP_WARN", "name": "Slip indicator light", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_BUZZER", "name": "Buzzer", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_ECB_WARN", "name": "ECB warning light", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2142",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2142",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FR_WHEEL_ACCELERATION", "name": "Front right wheel acceleration", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "RX_FL_WHEEL_ACCELERATION", "name": "Front left wheel acceleration", "group": "Movement", "bit": 8, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "RX_RR_WHEEL_ACCELERATION", "name": "Rear right wheel acceleration", "group": "Movement", "bit": 16, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "RX_RL_WHEEL_ACCELERATION", "name": "Rear left wheel acceleration", "group": "Movement", "bit": 24, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2146",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2146",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ZP_DEC", "name": "Zero point of deceleration", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "RX_ZP_DEC2", "name": "Zero point of deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "RX_ZP_YAW_RATE", "name": "Zero point of yaw rate", "group": "Control", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RX_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RX_YAW_RATE3", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "RX_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2148",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2148",
+      "interval": 1,
+      "answeredIn": [2006],
+      "notAnsweredIn": [2002, 2005, 2010, 2013, 2015, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FR_REGEN_REQUEST", "name": "Regenerative request", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "RX_FR_REGEN_OPERATION", "name": "Regenerative operation", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215A",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215A",
+      "interval": 1,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_TRC_TRAC", "name": "Traction control, status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_TRC_TRAC_ENGINE", "name": "Traction control, engine status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_TRC_TRAC_BRAKE", "name": "Traction control, brake status", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_FR_WHEEL_VSC", "name": "Front right wheel vehicle stability control status", "group": "Tires", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_FL_WHEEL_VSC", "name": "Front left wheel vehicle stability control status", "group": "Tires", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RR_WHEEL_VSC", "name": "Rear right wheel vehicle stability control status", "group": "Tires", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RL_WHEEL_VSC", "name": "Rear left wheel vehicle stability control status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215F",
+      "interval": 1,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FR_WHEEL_ABS_CTRL", "name": "Front right wheel ABS status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_FL_WHEEL_ABS_CTRL", "name": "Front left wheel ABS status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RR_WHEEL_ABS_CTRL", "name": "Rear right wheel ABS status", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RL_WHEEL_ABS_CTRL", "name": "Rear left wheel ABS status", "group": "Tires", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RR_WHEEL_EBD_CTRL", "name": "Rear right wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_RL_WHEEL_EBD_CTRL", "name": "Rear left wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_BA_CTRL_STATUS", "name": "Brake assist status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_PBA_CTRL_STATUS", "name": "Predictive brake assist status", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BE",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BE",
+      "interval": 0.25,
+      "answeredIn": [2006, 2010, 2013, 2015, 2017],
+      "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FR_VSS_OPEN", "name": "Front right wheel speed?", "group": "Movement", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_FL_VSS_OPEN", "name": "Front left wheel speed?", "group": "Movement", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_RR_VSS_OPEN", "name": "Rear right wheel speed?", "group": "Movement", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_RL_VSS_OPEN", "name": "Rear left wheel speed?", "group": "Movement", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_YAW_RATE_OPEN_ERROR", "name": "Yaw rate, error?", "group": "Orientation", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_DECELERATION_OPEN", "name": "Deceleration open", "group": "Orientation", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_MASTER_CYLINDER_OPEN", "name": "Master cylinder open", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_STROKE_OPEN", "name": "Stroke open", "group": "Engine", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_FR_WHEEL_CYLINDER_OPEN", "name": "Front right wheel cylinder open", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_ACCUMULATOR_OPEN", "name": "Accumulator open", "group": "Engine", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_HV_COMM_OPEN", "name": "Hydraulic valve, communication open", "group": "Engine", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7C4.2143|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "2143",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_AIR_OUTLET_SERVO_PULSE_D", "name": "Air outlet servo pulse, driver", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_AIR_OUTLET_SERVO_ACTU_PULSE_D", "name": "Air outlet servo actual pulse, driver", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.2144|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "2144",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_AIR_INLET_DAMPER_TARGET_PULSE", "name": "Air inlet damper target pulse", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_AIR_INLET_DAMPER_ACTUAL_PULSE", "name": "Air inlet damper actual pulse", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.214C|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "214C",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EVAP_TARGET_T", "name": "Evaporator target temperature", "group": "Climate", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2121|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2121",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 63.75, "divide": 255, "add": -6.5, "min": -6.5, "max": 57.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2122|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2122",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_AAT_7C4", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -23.3, "min": -23.3, "max": 65.95, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2124|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2124",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_SOLAR_DRIVER", "name": "Solar sensor, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2126|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2126",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ECT", "name": "Engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": 1.3, "min": 1.3, "max": 90.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2129|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2129",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015],
+      "notAnsweredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_T_DRIVER", "name": "Set temperature, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213C|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213C",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_BLOWER_MOTOR_SPEED_LEVEL", "name": "Blower motor speed level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213D|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213D",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ADJUSTED_AMBIENT_T", "name": "Adjusted ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 81.6, "divide": 255, "add": -30.8, "min": -30.8, "max": 50.8, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214B|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214B",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_EVAP_FIN_THERMISTOR", "name": "Evaporator fin thermistor", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -29.7, "min": -29.7, "max": 59.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2153|f=2009-",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2153",
+      "interval": 1,
+      "years": {"from": 2009},
+      "answeredIn": [2010, 2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_REGULATOR_P", "name": "Regulator pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 375105, "divide": 25500, "add": -456.68, "min": -456.68, "max": 3294, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7D0.7D8.2162|f=2011-",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7D8",
+      "request": "2162",
+      "interval": 1,
+      "years": {"from": 2011},
+      "answeredIn": [2013, 2015, 2017, 2020, 2022],
+      "notAnsweredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7D2.221F5B|fc=1,f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "RX_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1,f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ODO_V2_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RX_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1,f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_HVBAT_SOC_MAX", "name": "HV battery charge (max)", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_HVBAT_SOC_MIN", "name": "HV battery charge (min)", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "RX_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "RX_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "RX_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "RX_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A6|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A6",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_12V_V_V2", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1,f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_VSS_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A|f=2023-",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "years": {"from": 2023},
+      "answeredIn": [2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "RX_HVBAT_C", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101|f=-2011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "years": {"to": 2011},
+      "answeredIn": [2006, 2008, 2010],
+      "notAnsweredIn": [2002, 2005],
+      "signals": [
+        {"id": "RX_CALCULATED_LOAD_7E0_V2", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_VEHICLE_LOAD_V2", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_MAF_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
+        {"id": "RX_MAP_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_INTAKE_AIR_V2", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_ATMOSPHERE_PRESSURE_V2", "name": "Atmosphere pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_COOLANT_TEMP_V2", "name": "Coolant temp", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_ENGINE_SPEED_V2", "name": "Engine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "RX_VEHICLE_SPEED_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RX_ENGINE_RUN_TIME_V2", "name": "Engine run time", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "s"},
+        {"id": "RX_THROTTLE_SENSOR_POSITION_V2", "name": "Throttle sensor position", "group": "Engine", "bit": 112, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTLE_SENSOR_VOLT_V2", "name": "Throttle sensor volt %, 1", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTL_SENSOR_2_VOLT_V2", "name": "Throttle sensor volt %, 2", "group": "Engine", "bit": 128, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_ACCEL_SENS_NO_1_VOLT_V2", "name": "Accelerator sensor volt %, 1", "group": "Engine", "bit": 136, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_ACCEL_SENS_NO_2_VOLT_V2", "name": "Accelerator sensor volt %, 2", "group": "Engine", "bit": 144, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTLE_MOTOR_DUTY_V2", "name": "Throttle motor DUTY", "group": "Engine", "bit": 152, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_WARMUP_CYCLE_CLEARED_DTC_V2", "name": "Warm-up cycle cleared DTC", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_TIME_AFTER_DTC_CLEARED_V2", "name": "Time after DTC cleared", "group": "Engine", "bit": 184, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "RX_BATTERY_VOLTAGE_V2", "name": "Battery voltage", "group": "Battery", "bit": 200, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101|f=2012-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "years": {"from": 2012},
+      "answeredIn": [2013, 2015],
+      "notAnsweredIn": [2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CALCULATED_LOAD_7E0", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
+        {"id": "RX_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "RX_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RX_ENGINE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 88, "bits": 16, "min": 0, "max": 65535, "unit": "s"},
+        {"id": "RX_THROTTLE_SENSOR_POSITION", "name": "Throttle sensor position", "group": "Engine", "bit": 104, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTLE_SENSOR_VOLT", "name": "Throttle sensor volt %, 1", "group": "Engine", "bit": 112, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTL_SENSOR_2_VOLT", "name": "Throttle sensor volt %, 2", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_ACCEL_SENS_NO_1_VOLT", "name": "Accelerator sensor volt %, 1", "group": "Engine", "bit": 128, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_ACCEL_SENS_NO_2_VOLT", "name": "Accelerator sensor volt %, 2", "group": "Engine", "bit": 136, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_THROTTLE_MOTOR_DUTY", "name": "Throttle motor DUTY", "group": "Engine", "bit": 144, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RX_WARMUP_CYCLE_CLEARED_DTC", "name": "Warm-up cycle cleared DTC", "group": "Engine", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_TIME_AFTER_DTC_CLEARED", "name": "Time after DTC cleared", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "RX_BATTERY_VOLTAGE", "name": "Battery voltage", "group": "Battery", "bit": 192, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_SHORT_FT_B1S1", "name": "Short FT B1S1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.218, "unit": "%"},
+        {"id": "RX_LONG_FT_B1S1", "name": "Long FT B1S1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.218, "unit": "%"},
+        {"id": "RX_IGN_ADVANCE", "name": "Ignition advance", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "RX_EVAP_PURGE_DUTY", "name": "EVAP purge duty", "group": "Engine", "bit": 40, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_TARGET_AIR_FUEL_RATIO", "name": "Target air-fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "RX_AF_LAMBDA_B1S1", "name": "AF lambda, bank 1 sensor 1", "group": "Engine", "bit": 16, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "RX_AFS_VOLTAGE_B1S1", "name": "Air fuel sensor voltage, bank 1 sensor 1", "group": "Battery", "bit": 32, "bits": 16, "multiply": 7.99, "divide": 65535, "min": 0, "max": 7.99, "unit": "V"},
+        {"id": "RX_AFS_CURRENT_B1S1", "name": "Air fuel sensor current, bank 1 sensor 1", "group": "Engine", "bit": 64, "bits": 16, "divide": 256, "add": -128, "min": -128, "max": 127.99, "unit": "mA"},
+        {"id": "RX_O2S_B1S2", "name": "O2S, bank 1 sensor 2", "group": "Engine", "bit": 80, "bits": 8, "multiply": 5, "divide": 1000, "min": 0, "max": 1.275, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2105",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2105",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CATALYST_T_B1S1", "name": "Catalyst temperature B1S1", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"},
+        {"id": "RX_CATALYST_T_B1S2", "name": "Catalyst temperature B1S2", "group": "Engine", "bit": 32, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
+        {"id": "RX_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_MISFIRE_MONITOR_AVAIL", "name": "Misfire monitor_avail", "group": "DTCs", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_EGR_VVT_MONITOR_AVAIL", "name": "EGR/VVT monitor_avail", "group": "DTCs", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_O2S_A_FS_HEATER_MONITOR_AVAIL", "name": "O2S heater monitor_avail", "group": "DTCs", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_O2S_A_FS_MONITOR_AVAIL", "name": "O2S monitor_avail", "group": "DTCs", "bit": 18, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_A_C_MONITOR_AVAIL", "name": "A/C monitor_avail", "group": "DTCs", "bit": 19, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_2ND_AIR_MONITOR_AVAIL", "name": "2nd air monitor_avail", "group": "DTCs", "bit": 20, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_EVAP_MONITOR_AVAIL", "name": "EVAP monitor_avail", "group": "DTCs", "bit": 21, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_HEATED_CATALYST_MONITOR_AVAIL", "name": "Heated catalyst monitor_avail", "group": "DTCs", "bit": 22, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CATALYST_MONITOR_AVAIL", "name": "Catalyst monitor_avail", "group": "DTCs", "bit": 23, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_EGR_VVT_MONITOR_INCMPL", "name": "EGR/VVT monitor_incmpl", "group": "DTCs", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_O2S_A_FS_HEATER_MONITOR_INCMPL", "name": "O2S heater monitor_incmpl", "group": "DTCs", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_O2S_A_FS_MONITOR_INCMPL", "name": "O2S monitor_incmpl", "group": "DTCs", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_A_C_MONITOR_INCMPL", "name": "A/C monitor_incmpl", "group": "DTCs", "bit": 27, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_2ND_AIR_MONITOR_INCMPL", "name": "2nd air monitor_incmpl", "group": "DTCs", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_EVAP_MONITOR_ICMPL", "name": "EVAP monitor_icmpl", "group": "DTCs", "bit": 29, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_HEATED_CATALYST_MONITOR_INCMPL", "name": "Heated catalyst monitor_incmpl", "group": "DTCs", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CATALYST_MONITOR_INCMPL", "name": "Catalyst monitor_incmpl", "group": "DTCs", "bit": 31, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_MILON_RUN_DISTANCE", "name": "MIL ON run distance", "group": "DTCs", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "RX_RUNNING_TIME_FROM_MIL_ON", "name": "Running time from MIL ON", "group": "DTCs", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_CC_VSS", "name": "Cruise control speed", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RX_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RX_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
+        {"id": "RX_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_STOP_LIGHT_SWITCH_1_ON", "name": "Cruise control stop light switch 1", "group": "Cruise control", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_STOP_LIGHT_SWITCH_2_ON", "name": "Cruise control stop light switch 2", "group": "Cruise control", "bit": 33, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_RES_ACC_SWITCH_ON", "name": "Resume/accelerate switch", "group": "Cruise control", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_LIVE_SET_COAST_SWITCH_ON", "name": "Coast switch", "group": "Cruise control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_CC_CANCEL_SWITCH_ON", "name": "Cancel switch", "group": "Cruise control", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2124",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2124",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_COMMUNICATION_WITH_HV", "name": "Communication with HV", "group": "Climate", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_COMMUNICATION_WITH_BRAKE", "name": "Communication with brake", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_COMM_WITH_AIR_CONDITIONER", "name": "Communication with air conditioner", "group": "Climate", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_COMM_WITH_VALVEMATIC_COMM", "name": "Communication with valvematic", "group": "Climate", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2125",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2125",
+      "interval": 1,
+      "answeredIn": [2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2006, 2008, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_POWER_STEERING_SIGNAL", "name": "Power steering", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_STOP_LIGHT_SWITCH", "name": "Stop light", "group": "Lights", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_CRUISE_CONTROL_LIVE_BRAKE_CANCEL_SWITCH", "name": "Cruise control live brake cancel", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_STARTER_SIGNAL", "name": "Starter signal", "group": "Control", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_STARTER_CONTROL", "name": "Starter control", "group": "Control", "bit": 12, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_ELECTRICAL_LOAD_SIGNAL_1", "name": "Electrical load signal 1", "group": "Control", "bit": 16, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_ELECTRICAL_LOAD_SIGNAL_2", "name": "Electrical load signal 2", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SHIFT_SW_STATUS_P_RANGE", "name": "Shift SW status, parking", "group": "Control", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SHIFT_SW_STATUS_R_RANGE", "name": "Shift SW status, reverse", "group": "Control", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SHIFT_SW_STATUS_N_RANGE", "name": "Shift SW status, neutral", "group": "Control", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SHIFT_SW_STATUS_D_RANGE", "name": "Shift SW status, drive", "group": "Control", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SPORTS_MODE_SELECTION_SW", "name": "Sports mode selection", "group": "Control", "bit": 32, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SPORTS_SHIFT_UP_SW", "name": "Sports shift up", "group": "Control", "bit": 33, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_SPORTS_SHIFT_DOWN_SW", "name": "Sports shift down", "group": "Control", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_PATTERN_SWITCH_PWR_M", "name": "Pattern switch", "group": "Control", "bit": 42, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_NEUTRAL_POSITION_SW_SIGNAL", "name": "Neutral position", "group": "Control", "bit": 53, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_TC_TERMINAL", "name": "TC", "group": "Control", "bit": 61, "bits": 1, "min": 0, "max": 1},
+        {"id": "RX_A_C_COMPRESSOR", "name": "A/C compressor", "group": "Control", "bit": 64, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2128|f=-2008",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2128",
+      "interval": 5,
+      "years": {"to": 2008},
+      "answeredIn": [2006, 2008],
+      "notAnsweredIn": [2002, 2005],
+      "signals": [
+        {"id": "RX_ODO_2NDGEN", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2145",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2145",
+      "interval": 1,
+      "answeredIn": [2006, 2008, 2010, 2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_MISFIRE_RPM_V2", "name": "Misfire RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "RX_MISFIRE_LOAD_V2", "name": "Misfire load", "group": "Engine.Misfires", "bit": 16, "bits": 8, "multiply": 4, "divide": 256, "min": 0, "max": 3.98},
+        {"id": "RX_CYL1_MISFIRE_CNT", "name": "Cylinder #1 misfire count", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_CYL2_MISFIRE_CNT", "name": "Cylinder #2 misfire count", "group": "Engine.Misfires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_CYL3_MISFIRE_CNT", "name": "Cylinder #3 misfire count", "group": "Engine.Misfires", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_CYL4_MISFIRE_CNT", "name": "Cylinder #4 misfire count", "group": "Engine.Misfires", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_ALL_CYLINDERS_MISFIRE_CNT", "name": "All cylinders misfire count", "group": "Engine.Misfires", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_IGNITION_TRIG_CNT", "name": "Ignition trigger count", "group": "Control", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RX_MISFIRE_MARGIN_V2", "name": "Misfire margin", "group": "Engine.Misfires", "bit": 80, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2147",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2147",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_EGR_STEP_POSITION", "name": "EGR step position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2151",
+      "interval": 1,
+      "answeredIn": [2013, 2015],
+      "notAnsweredIn": [2002, 2005, 2006, 2008, 2010, 2017, 2020, 2022, 2023, 2025, 2026],
+      "signals": [
+        {"id": "RX_ENG_START_T", "name": "Engine starting time", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"},
+        {"id": "RX_ENG_SPD_START_OFF", "name": "Engine speed, starter off", "group": "Movement", "bit": 16, "bits": 16, "multiply": 100, "divide": 128, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "RX_IMMOB_FUEL_CUT", "name": "Immobilizer fuel cut", "group": "Fuel", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_STARTER_CNT", "name": "Starter count", "group": "Engine", "bit": 33, "bits": 7, "min": 0, "max": 127},
+        {"id": "RX_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
+        {"id": "RX_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_PREV_TRIP_IAT", "name": "Intake air temperature, previous trip", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_PREV_TRIP_EOT", "name": "Engine oil temperature, previous trip", "group": "Engine", "metric": "engineOilTemperature", "bit": 80, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_AC_AMB_T", "name": "Ambient temperature for A/C", "group": "Climate", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_PREV_TRIP_AMB_T", "name": "Ambient temperature, previous trip", "group": "Trips", "bit": 96, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_TPS", "name": "Throttle position", "group": "Engine", "bit": 104, "bits": 16, "multiply": 125, "divide": 16384, "min": 0, "max": 499.99, "unit": "°"},
+        {"id": "RX_ISC_FLOW", "name": "Idle speed control flow", "group": "Engine", "bit": 120, "bits": 16, "multiply": 10, "divide": 8192, "min": 0, "max": 79.99},
+        {"id": "RX_ISC_POS", "name": "Idle speed control position", "group": "Engine", "bit": 136, "bits": 16, "multiply": 125, "divide": 16384, "min": 0, "max": 499.99, "unit": "°"},
+        {"id": "RX_ISC_FB", "name": "Idle speed control feedback", "group": "Engine", "bit": 168, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "RX_ISC_LEARN", "name": "Idle speed control learning value", "group": "Engine", "bit": 184, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "RX_ELEC_LOAD_FB", "name": "Electric load feedback", "group": "Electrical", "bit": 200, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "RX_AC_FB", "name": "Air conditioner feedback", "group": "Climate", "bit": 216, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "RX_N_RANGE_STS", "name": "Neutral range status", "group": "Transmission", "bit": 232, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_NEUTRAL_CTRL", "name": "Neutral control", "group": "Transmission", "bit": 233, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_LOW_RPM_CTRL", "name": "Low revolution control", "group": "Engine", "bit": 234, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_VVT_ADV_FAIL", "name": "Variable valve timing advance fail", "group": "Engine", "bit": 235, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_LOW_RPM_START", "name": "Low revolution for engine start", "group": "Engine", "bit": 236, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_ENG_START_HESIT", "name": "Engine start hesitation", "group": "Engine", "bit": 237, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21C1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21C1",
+      "interval": 1,
+      "answeredIn": [2013, 2015],
+      "notAnsweredIn": [2006, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_CYLINDER_NUMBER", "name": "Cylinder number", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_DESTINATION", "name": "Destination", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "RX_MODEL_YEAR", "name": "Model year", "group": "Engine", "bit": 128, "bits": 8, "add": 1900, "min": 1900, "max": 2155}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DA|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DA",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2008],
+      "notAnsweredIn": [2002, 2005, 2006],
+      "signals": [
+        {"id": "RX_GEAR_2NDGEN", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.21C3",
+      "bus": "can11",
+      "tx": "7E2",
+      "request": "21C3",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_MG2_RPM", "name": "MG2 rpm", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "RX_MG2_TORQUE", "name": "MG2 torque", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "RX_MG1_RPM", "name": "MG1 rpm", "group": "Movement", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "RX_MG1_TORQUE", "name": "MG1 torque", "group": "Engine", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "RX_REQUEST_POWER", "name": "Request power", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "kW"},
+        {"id": "RX_STATE_OF_CHARGE", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 112, "bits": 8, "multiply": 0.392, "min": 0, "max": 99.96, "unit": "%"},
+        {"id": "RX_MG1_INVERTER_T", "name": "MG1 inverter temperature", "group": "Engine", "bit": 160, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_MG2_INVERTER_T", "name": "MG2 inverter temperature", "group": "Engine", "bit": 168, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_MG1_T", "name": "MG1 temperature", "group": "Engine", "bit": 176, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_MG2_T", "name": "MG2 temperature", "group": "Engine", "bit": 184, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_POWER_RESOURCE_KW", "name": "Power resource KW", "group": "Engine", "bit": 192, "bits": 24, "min": 0, "max": 16777215, "unit": "kW"},
+        {"id": "RX_REGENERATIVE_BRAKE_TORQ", "name": "Regenerative brake torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E2.21C4",
+      "bus": "can11",
+      "tx": "7E2",
+      "request": "21C4",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_MGR_RPM", "name": "MGR rpm", "group": "Movement", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "RX_MGR_TORQUE", "name": "MGR torque", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "RX_MGR_INVERTER_T", "name": "MGR inverter temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_MGR_T", "name": "MGR temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_REAR_TORQUE_RATIO", "name": "Rear torque ratio", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "%"},
+        {"id": "RX_VL_VAGE_BEFORE_BOOSTING", "name": "Vl-vage before boosting", "group": "Engine", "bit": 88, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"},
+        {"id": "RX_VH_VAGE_AFTER_BOOSTING", "name": "Vh-vage after boosting", "group": "Engine", "bit": 96, "bits": 8, "multiply": 3, "min": 0, "max": 765, "unit": "V"},
+        {"id": "RX_CONVERTER_T", "name": "Converter temperature", "group": "Engine", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "RX_REAR_REGEN_BRAKE_TORQ", "name": "Rear regen brake torque", "group": "Engine", "bit": 192, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E2.21CE",
+      "bus": "can11",
+      "tx": "7E2",
+      "request": "21CE",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_BATT_PACK_CUR_VAL", "name": "Battery pack, current value", "group": "Engine", "bit": 8, "bits": 16, "min": 0, "max": 65535},
+        {"id": "RX_BATTERY_BLOCK_VOL_V01", "name": "Battery block vol -V01", "group": "Battery", "bit": 24, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V02", "name": "Battery block vol -V02", "group": "Battery", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V03", "name": "Battery block vol -V03", "group": "Battery", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V04", "name": "Battery block vol -V04", "group": "Battery", "bit": 72, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V05", "name": "Battery block vol -V05", "group": "Battery", "bit": 88, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V06", "name": "Battery block vol -V06", "group": "Battery", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V07", "name": "Battery block vol -V07", "group": "Battery", "bit": 120, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V08", "name": "Battery block vol -V08", "group": "Battery", "bit": 136, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V09", "name": "Battery block vol -V09", "group": "Battery", "bit": 152, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V10", "name": "Battery block vol -V10", "group": "Battery", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V11", "name": "Battery block vol -V11", "group": "Battery", "bit": 184, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V12", "name": "Battery block vol -V12", "group": "Battery", "bit": 200, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V13", "name": "Battery block vol -V13", "group": "Battery", "bit": 216, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V14", "name": "Battery block vol -V14", "group": "Battery", "bit": 232, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "RX_BATTERY_BLOCK_VOL_V15", "name": "Battery block vol -V15", "group": "Battery", "bit": 248, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.21CF",
+      "bus": "can11",
+      "tx": "7E2",
+      "request": "21CF",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_TEMPERATURE_OF_BATT_TB1", "name": "Temperature of battery 1", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB2", "name": "Temperature of battery 2", "group": "Engine", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB3", "name": "Temperature of battery 3", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB4", "name": "Temperature of battery 4", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB5", "name": "Temperature of battery 5", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB6", "name": "Temperature of battery 6", "group": "Engine", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB7", "name": "Temperature of battery 7", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535, "unit": "°C"},
+        {"id": "RX_TEMPERATURE_OF_BATT_TB8", "name": "Temperature of battery 8", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.21D0",
+      "bus": "can11",
+      "tx": "7E2",
+      "request": "21D0",
+      "interval": 1,
+      "notAnsweredIn": [2006, 2013, 2015, 2017, 2023, 2025],
+      "signals": [
+        {"id": "RX_INTERNAL_RESISTANCE_R01", "name": "Internal resistance 1", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R02", "name": "Internal resistance 2", "group": "Engine", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R03", "name": "Internal resistance 3", "group": "Engine", "bit": 136, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R04", "name": "Internal resistance 4", "group": "Engine", "bit": 144, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R05", "name": "Internal resistance 5", "group": "Engine", "bit": 152, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R06", "name": "Internal resistance 6", "group": "Engine", "bit": 160, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R07", "name": "Internal resistance 7", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R08", "name": "Internal resistance 8", "group": "Engine", "bit": 176, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R09", "name": "Internal resistance 9", "group": "Engine", "bit": 184, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R10", "name": "Internal resistance 10", "group": "Engine", "bit": 192, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R11", "name": "Internal resistance 11", "group": "Engine", "bit": 200, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R12", "name": "Internal resistance 12", "group": "Engine", "bit": 208, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R13", "name": "Internal resistance 13", "group": "Engine", "bit": 216, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R14", "name": "Internal resistance 14", "group": "Engine", "bit": 224, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"},
+        {"id": "RX_INTERNAL_RESISTANCE_R15", "name": "Internal resistance 15", "group": "Engine", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "MΩ"}
+      ]
+    }
+  ]
+}

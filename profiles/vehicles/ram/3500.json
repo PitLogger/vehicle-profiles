@@ -1,0 +1,2832 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ram/3500",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ram",
+    "model": "3500",
+    "years": null,
+    "generations": [
+      {"name": "Fourth Generation", "from": 2010, "to": 2018},
+      {"name": "Fifth Generation", "from": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ram-3500",
+    "file": "signalsets/v3/default.json",
+    "revision": "0d421f2ffdb10173a7626868318436d4512c06e3",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"},
+    {"tx": "DA40", "type": "bodyControl"},
+    {"tx": "DAC7", "type": "tpms"}
+  ],
+  "requests": [
+    {
+      "id": "740.4C0.22A0A1|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A1",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_FL", "name": "Front left tire pressure, altitude compensated", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAM3500_TP_FR", "name": "Front right tire pressure, altitude compensated", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAM3500_TP_RR", "name": "Rear right tire pressure, altitude compensated", "group": "Tires", "metric": "rearRightTirePressure", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "RAM3500_TP_RL", "name": "Rear left tire pressure, altitude compensated", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0A5|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A5",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_RL_VALID", "name": "Rear left tire pressure, valid", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_RR_VALID", "name": "Rear right tire pressure, valid", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_FR_VALID", "name": "Front right tire pressure, valid", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_FL_VALID", "name": "Front left tire pressure, valid", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F1|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F1",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_FL_F", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAM3500_TT_FL_F", "name": "Front left tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F2|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F2",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_FR_F", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAM3500_TT_FR_F", "name": "Front right tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F3|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F3",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_RR_F", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAM3500_TT_RR_F", "name": "Rear right tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F4|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F4",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_TP_RL_F", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa", "invalidAtOrAbove": 6553.5},
+        {"id": "RAM3500_TT_RL_F", "name": "Rear left tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "742.4C2.22A077|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "4C2",
+      "request": "22A077",
+      "interval": 15,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2017],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FL_TIRE_P", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAM3500_FR_TIRE_P", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAM3500_RL_TIRE_P", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "RAM3500_RR_TIRE_P", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255}
+      ]
+    },
+    {
+      "id": "7AB.52B.222802|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7AB",
+      "rx": "52B",
+      "request": "222802",
+      "interval": 0.25,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "RAM3500_GPS_HEADING", "name": "Heading", "group": "GPS", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 360, "unit": "°"},
+        {"id": "RAM3500_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 200, "bits": 4, "min": 0, "max": 15},
+        {"id": "RAM3500_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 204, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "RAM3500_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_V_2", "name": "Transmission fluid temperature v.2", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AAT", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "RAM3500_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "RAM3500_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2148|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2148",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_1_7E0", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 112, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "°F"},
+        {"id": "RAM3500_EXH_GAS_T_2_7E0", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 288, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "°F"},
+        {"id": "RAM3500_DPF_REGEN", "name": "Diesel particulate filter regeneration", "group": "Engine", "bit": 383, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.214D|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "214D",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_SOOT_LOAD", "name": "Soot load", "group": "Engine", "bit": 8, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "g"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2157|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2157",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_SOOT_LOAD_BASED_ON_P", "name": "Soot load based on delta pressure", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "add": 32, "min": 0, "max": 34.55},
+        {"id": "RAM3500_ESITMATED_SOOT", "name": "Estimated soot removal time", "group": "Engine", "bit": 8, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FLI", "name": "Fuel level", "group": "Fuel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B2",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_BOOST_P_ESTIMATE", "name": "Boost pressure estimate", "group": "Engine", "bit": 32, "bits": 16, "divide": 441, "min": 0, "max": 148, "unit": "psi"},
+        {"id": "RAM3500_CRANKCASE_P", "name": "Crankcase pressure", "group": "Engine", "bit": 96, "bits": 16, "divide": 1761, "min": 0, "max": 37.21, "unit": "psi"},
+        {"id": "RAM3500_CHG_T", "name": "Charge temperature", "group": "Battery", "bit": 144, "bits": 16, "multiply": 10, "divide": 711, "add": 32, "min": 0, "max": 953, "unit": "°F"},
+        {"id": "RAM3500_CHG_P", "name": "Charge pressure", "group": "Battery", "bit": 160, "bits": 16, "divide": 221, "min": 0, "max": 296, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_P_SENS_1000_S", "name": "Fuel pressure sensor, 1000's psi", "group": "Fuel", "bit": 0, "bits": 16, "divide": 552, "min": 0, "max": 118, "unit": "psi"},
+        {"id": "RAM3500_CHG_AIR_COOLER_T", "name": "Charge air cooler outlet temperature", "group": "Battery", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "RAM3500_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "RAM3500_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D2",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EOT_21D2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D6|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D6",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_DELTA_P", "name": "Diesel particulate filter delta pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 73, "divide": 500, "min": 0, "max": 37.23, "unit": "psi"},
+        {"id": "RAM3500_TIME_SINCE_REGEN", "name": "Time since regen started", "group": "Engine", "bit": 32, "bits": 16, "divide": 40, "min": 0, "max": 1638, "unit": "s"},
+        {"id": "RAM3500_EXH_GAS_T_1", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 80, "bits": 8, "multiply": 144, "divide": 5, "add": 32, "min": 0, "max": 7376, "unit": "°F"},
+        {"id": "RAM3500_EXH_GAS_T_2", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 176, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "RAM3500_EXH_GAS_T_3", "name": "Exhaust gas temperature 3", "group": "Engine", "bit": 208, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "RAM3500_EXH_GAS_T_4", "name": "Exhaust gas temperature 4", "group": "Engine", "bit": 256, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D7|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D7",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EGR_AIRFLOW_CTRL_VLV", "name": "Exhaust gas recirculation airflow control valve position", "group": "Engine", "bit": 32, "bits": 16, "multiply": 39, "divide": 5000, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D8",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ESTIMATED_NO", "name": "Estimated NO accumulation via fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 3624, "min": 0, "max": 18.08},
+        {"id": "RAM3500_DPF_REGEN_ACTIVE", "name": "Diesel particulate filter regen active", "group": "Engine", "bit": 79, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RAM3500_REGEN_ENABLE_ON_OFF", "name": "Regen enable, on/off – alternative", "group": "Engine", "bit": 95, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D9|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D9",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EGR_VLV_CMD_POSTIION", "name": "Exhaust gas recirculation valve, commanded position", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "add": 32, "min": 0, "max": 543, "unit": "%"},
+        {"id": "RAM3500_EGR_ORIFICE_T", "name": "Exhaust gas recirculation orifice temperature", "group": "Engine", "bit": 40, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "RAM3500_EGR_FLOW", "name": "Exhaust gas recirculation flow", "group": "Engine", "bit": 120, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kg/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DA",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_VGT_VIRTUAL_CHG_FLOW", "name": "Turbocharger virtual charge flow", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0035436904, "add": 32, "min": 0, "max": 264, "unit": "kg/h"},
+        {"id": "RAM3500_TURBO_SPD", "name": "Turbo speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"},
+        {"id": "RAM3500_VGT_COMP_OULET_AIR_T", "name": "Turbocharger compressor outlet air temperature", "group": "Engine", "bit": 112, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "RAM3500_VGT_COMP_INLET_AIR_T", "name": "Turbocharger compressor inlet air temperature", "group": "Engine", "bit": 144, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AAT_2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220166|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220166",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_1", "name": "Fuel mass correction, cylinder 1", "group": "Fuel", "bit": 144, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_2", "name": "Fuel mass correction, cylinder 2", "group": "Fuel", "bit": 160, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_3", "name": "Fuel mass correction, cylinder 3", "group": "Fuel", "bit": 176, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_4", "name": "Fuel mass correction, cylinder 4", "group": "Fuel", "bit": 192, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_5", "name": "Fuel mass correction, cylinder 5", "group": "Fuel", "bit": 208, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_FUEL_MASS_CORR_CYL_6", "name": "Fuel mass correction, cylinder 6", "group": "Fuel", "bit": 224, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220168|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220168",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 160, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "RAM3500_SENSED_P_PF_DN", "name": "Sensed pressure particulate filter downstream", "group": "Engine", "bit": 176, "bits": 16, "signed": true, "min": -32768, "max": 32767},
+        {"id": "RAM3500_TURBINE_UP_T", "name": "Turbine upstream temperature", "group": "Engine", "bit": 224, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "RAM3500_T_BEFORE_CAT", "name": "Temperature before catalyst", "group": "Engine", "bit": 240, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "RAM3500_SENSED_OIL_P", "name": "Sensed oil pressure", "group": "Engine", "bit": 272, "bits": 16, "signed": true, "min": -32768, "max": 32767},
+        {"id": "RAM3500_CRANKCASE_DIFF_P", "name": "Crankcase differential pressure", "group": "Engine", "bit": 328, "bits": 16, "divide": 100, "min": 0, "max": 655.35},
+        {"id": "RAM3500_T_BEFORE_DPF", "name": "Temperature before diesel particulate filter", "group": "Engine", "bit": 392, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "RAM3500_T_BEFORE_TURBINE", "name": "Temperature before turbine", "group": "Engine", "bit": 408, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_SOOT_MASS_FLOW_EXH", "name": "Soot mass flow in exhaust gas after combustion", "group": "Engine", "bit": 192, "bits": 32, "signed": true, "divide": 100, "min": -21474836, "max": 21474836}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_P_PF", "name": "Pressure in the particulate filter", "group": "Engine", "bit": 160, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017E",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_T_EGR_COOLER_DN", "name": "Exhaust temperature, EGR cooler downstream", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "RAM3500_EXH_T_DN_EXH", "name": "Exhaust temperature, downstream of exhaust manifold", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "RAM3500_EXH_T_UP_EXH", "name": "Exhaust temperature, upstream of exhaust manifold", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A0|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A0",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DIFF_P_PF", "name": "Differential pressure at particulate filter", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201E2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201E2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_SIM_MASS", "name": "Simulated particulate mass, stored", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "RAM3500_DPF_SOOT_LOAD", "name": "Diesel particulate filter soot load", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "g/L"},
+        {"id": "RAM3500_DPF_FLOW_RES", "name": "Diesel particulate filter flow resistance", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 10000, "min": -3.2768, "max": 3.2767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220255|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220255",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_MASS_CYL_1", "name": "Fuel mass, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220256|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220256",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_MASS_CYL_2", "name": "Fuel mass, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220257|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220257",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_MASS_CYL_3", "name": "Fuel mass, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220258|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220258",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_MASS_CYL_4", "name": "Fuel mass, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202A1|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202A1",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_RAIL_P_2", "name": "Fuel rail pressure", "group": "Fuel", "bit": 24, "bits": 8, "multiply": 29, "divide": 200, "min": 0, "max": 36.9749, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_REQUIRED_FUEL_CHG_1", "name": "Required fuel charge, cylinder 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B3",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_REQUIRED_FUEL_CHG_2", "name": "Required fuel charge, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B4",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_REQUIRED_FUEL_CHG_3", "name": "Required fuel charge, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B5|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B5",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_REQUIRED_FUEL_CHG_4", "name": "Required fuel charge, cylinder 4", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AC_HIGH_SIDE_P_2", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206F3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206F3",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_RAIL_P_06F3", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221250|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221250",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C9|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C9",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_LOW_SIDE_ECT", "name": "Low side coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B3",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_THROTTLE_INLET_AIR_T_RAW", "name": "Throttle inlet air temperature raw", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215D4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215D4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_LOW_T_CHG_AIR_CLT", "name": "Low temperature/charge air coolant pump speed", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22189F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22189F",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_VGT_CMD_189F", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218DE|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218DE",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_INLET_DPF_GAS_T", "name": "Diesel particulate filter inlet gas temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.019608, "add": -40, "min": -40, "max": 1245.0102, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218E2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218E2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_DIFF_P", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -32768, "min": -32768, "max": -26214.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218E4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218E4",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_SOOT_MASS", "name": "Diesel particulate filter soot mass", "group": "Engine", "bit": 0, "bits": 16, "multiply": 763, "divide": 50000, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218E7|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218E7",
+      "interval": 3600,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_REGENS_18E7", "name": "Total number of started particulate filter cleanings", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221935|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221935",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_IAT_1935", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221D89|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221D89",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_RAIL_P_TGT", "name": "Fuel rail pressure, target", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221F59|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221F59",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_WASTEGATE_POS_SENS", "name": "Wastegate position sensor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 61, "divide": 12500, "min": 0, "max": 319.8107, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 3600,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ODO_LAST_OVERSPEED", "name": "Odometer at last engine over-speed", "group": "Movement", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223800|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223800",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_1", "name": "Total fuel correction, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223801|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223801",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_2", "name": "Total fuel correction, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223802|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223802",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_3", "name": "Total fuel correction, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223803|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223803",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_4", "name": "Total fuel correction, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223804|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223804",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_5", "name": "Total fuel correction, cylinder 5", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223805|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223805",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TOT_FUEL_CORR_CYL_6", "name": "Total fuel correction, cylinder 6", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223807|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223807",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DIST_SINCE_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22507B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22507B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_VGT_CMD_507B", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.225089|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "225089",
+      "interval": 3600,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_REGENS_5089", "name": "Total number of started particulate filter cleanings", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22508D|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22508D",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_SOOT_MASS_LOAD", "name": "Soot mass load", "group": "Engine", "bit": 0, "bits": 16, "divide": 650, "min": 0, "max": 100.823, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2250AF|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2250AF",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DPF_REGEN_ACTIVE_2", "name": "Regeneration active", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A001|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A001",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TQ_CONV_SLIP_VAR_2", "name": "Torque converter slip, variant 2", "group": "Transmission", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A002|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A002",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A003|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A003",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TIME_SINCE_ACTIVE", "name": "Time since active regen", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A004|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A004",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DEF_T", "name": "DEF temperature", "group": "Engine", "bit": 24, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A006|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A006",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DEF_LEVEL", "name": "DEF level", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A00A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A00A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AFT_DPF_OULET_P_SENS", "name": "Particulate filter outlet pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 2000, "min": 0, "max": 294, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A043|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A043",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FLI_AVG", "name": "Fuel level average", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A054|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A054",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 435, "min": 0, "max": 150, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A067|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A067",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_FUEL_RAIL_P", "name": "Fuel rail pressure", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A09F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A09F",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_GEAR_CMD", "name": "Transmission gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A0|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A0",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_GEAR", "name": "Transmission gear, actual", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A3",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TRANS_SUMP_T", "name": "Transmission sump temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TRANS_TQ_CONV_T", "name": "Transmission torque converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 320, "min": 0, "max": 1843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0BD|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0BD",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_1_DOC", "name": "Exhaust gas temperature 1 – DOC inlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C2",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_2_DOC", "name": "Exhaust gas temperature 2 – DOC outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_3_DPF", "name": "Exhaust gas temperature 3 – DPF outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C6|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C6",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_4_SCR_CAT", "name": "Exhaust gas temperature 4, middle of SCR catalyst", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C8",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EXH_GAS_T_5_SCR_CAT", "name": "Exhaust gas temperature 5, SCR catalyst outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EGR_VLV_POS", "name": "Exhaust gas recirculation valve position", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DC|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DC",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_EGR_T", "name": "Exhaust gas recirculation temperature", "group": "Engine", "bit": 16, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0E4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0E4",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TURBOCHARGER_SPD", "name": "Turbocharger speed", "group": "Battery", "bit": 16, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EC|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EC",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TURBO_COMP_INLET_T", "name": "Turbo compressor inlet temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 36, "divide": 5, "add": 32, "min": 0, "max": 1868, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EE|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EE",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_CHARGED_AIR_COOLER_T", "name": "Charged air cooler outlet temperature", "group": "Battery", "bit": 16, "bits": 16, "multiply": 36, "divide": 125, "add": 32, "min": 0, "max": 18906, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A114|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A114",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AFTERTREATMENT_INT", "name": "Nitrogen oxides before exhaust treatment, ppm", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A11A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A11A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_AFTERTREATMENT", "name": "Nitrogen oxides after exhaust treatment, ppm", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A129|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A129",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DEF_DOSING_RATE_GPH", "name": "DEF dosing rate, gph", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A12B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A12B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_DEF_QUALITY", "name": "DEF quality", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TQ_CONV_SLIP_VAR_1", "name": "Torque converter slip, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 9, "divide": 640, "min": -460, "max": 460, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2118|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2118",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_3RDGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "add": -40, "min": -40, "max": 983.984375, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.215C|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "215C",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_3RDGEN_V2", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 32, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2017, 2021],
+      "signals": [
+        {"id": "RAM3500_ATF_T_2", "name": "Transmission temperature", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "RAM3500_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_GEAR_2", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2017, 2024],
+      "signals": [
+        {"id": "RAM3500_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "DA10.10.2118|f=2025-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2118",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TOT", "name": "Transmission oil temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -512, "max": 512, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "DA10.10.221000|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189B|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189B",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_SWIRL_CMD", "name": "Swirl actuator command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189F|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189F",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_VGT_CMD", "name": "Turbocharger vane position commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A0|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A0",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_VGT_ACT", "name": "Turbocharger vane position actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A4|fc=1,f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A4",
+      "interval": 3600,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_REGEN_TOTAL", "name": "Total particulate filter cleanings started", "group": "Emissions", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A5|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A5",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_REGEN_INTERRUPTED", "name": "Particulate filter cleanings interrupted", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218D0|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218D0",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_MPROP_CMD", "name": "M-Prop injection command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218DE|fc=1,f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218DE",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DPF_INLET_T", "name": "Particulate filter inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E2|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E2",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DPF_DIFF_PRESS", "name": "Particulate filter differential pressure", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -50, "max": 50, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E4|fc=1,f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E4",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DPF_SOOT_PCT", "name": "Particulate filter soot level", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 1000, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E8|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E8",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DPF_FLOW_RES_2", "name": "Particulate filter flow resistance", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535}
+      ]
+    },
+    {
+      "id": "DA10.10.2218EC|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218EC",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FORCED_REGEN", "name": "Forced regen state", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218ED|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218ED",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_LAMBDA_DPF_DS", "name": "Lambda downstream DPF O2 concentration", "group": "Emissions", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 25, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.221900|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221900",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FUEL_TEMP", "name": "Diesel fuel temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22190B|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22190B",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_VSS_ECU", "name": "Vehicle speed, engine module", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.221935|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221935",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_IAT_TURBO", "name": "IAT post-intercooler", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193F|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193F",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_MAF_TEMP", "name": "Mass airflow sensor temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221946|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221946",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_RAIL_PRESS_CMD", "name": "Fuel rail pressure commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.221947|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221947",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_RAIL_PRESS", "name": "Fuel rail pressure measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.22195A|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.223800|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223800",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FUEL_CORR_CYL1", "name": "Fuel correction cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223801|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223801",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FUEL_CORR_CYL2", "name": "Fuel correction cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223802|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223802",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FUEL_CORR_CYL3", "name": "Fuel correction cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223803|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223803",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_FUEL_CORR_CYL4", "name": "Fuel correction cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223807|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223807",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DIST_SINCE_REGEN", "name": "Distance since last DPF regen", "group": "Emissions", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.223808|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223808",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_AVG_REGEN_TEMP", "name": "Particulate filter cleaning temperature, last 5 average", "group": "Emissions", "bit": 0, "bits": 16, "divide": 50, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223809|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223809",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_AVG_DIST_REGENS", "name": "Distance between particulate filter cleanings, last 5 average", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380A|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380A",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_AVG_REGEN_DUR", "name": "Particulate filter cleaning duration, last 5 average", "group": "Emissions", "bit": 0, "bits": 16, "divide": 60, "min": 0, "max": 30, "unit": "min"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380B|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380B",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_REGEN_PROGRESS", "name": "Particulate filter cleaning progress", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223813|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223813",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_OIL_DEGRAD", "name": "Engine oil degradation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223912|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223912",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_REGEN_COMPLETED", "name": "Total particulate filter cleanings completed", "group": "Emissions", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.223914|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223914",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_CATALYST_INLET_T", "name": "Catalyst inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223915|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223915",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_DPF_OUTLET_T", "name": "Particulate filter outlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223917|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223917",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_EGR_COOLER_T", "name": "Exhaust gas recirculation cooler outlet temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22392B|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22392B",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_NOX_LOAD_PCT", "name": "NOx storage catalyst load", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA18.221D07|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D07",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_AT_OUTPUT_RPM", "name": "Transmission output speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D08|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D08",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_AT_INPUT_RPM", "name": "Transmission input speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D09|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D09",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_ATF_T_3", "name": "Automatic transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D12|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D12",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_GEAR_3", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_ATF_T_4THGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.5,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
+        {"id": "RAM3500_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13}
+      ]
+    },
+    {
+      "id": "DA18.18.221018|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TCM_TORQUE", "name": "Transmission reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 2000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222102|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222102",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_GEARBOX_RPM", "name": "Gearbox output speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1B|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1B",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_WSS_RR", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1C|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1C",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_WSS_RL", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1D|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1D",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_WSS_FR", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1E|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1E",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_WSS_FL", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA40.40.221004|f=2025-",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22012F|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22012F",
+      "interval": 5,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TP_RL_INVALID", "name": "Rear left tire pressure invalid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_RR_INVALID", "name": "Rear right tire pressure invalid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_FR_INVALID", "name": "Front right tire pressure invalid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TP_FL_INVALID", "name": "Front left tire pressure invalid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013C|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013C",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TP_FL_2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "RAM3500_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013D|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013D",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TP_FR_2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "RAM3500_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013E|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013E",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TP_RL_2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "RAM3500_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013F|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013F",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_TP_RR_2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "RAM3500_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220302|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220302",
+      "interval": 1,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "RAM3500_RRD_OPEN", "name": "Rear right door open", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_RLD_OPEN", "name": "Rear left door open", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_PASSENGER_DOOR_OPEN", "name": "Passenger door open", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_DRIVER_DOOR_OPEN", "name": "Driver door open", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAM3500_TRUNK_OPEN", "name": "Trunk open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    }
+  ]
+}

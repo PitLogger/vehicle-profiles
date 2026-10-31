@@ -1,0 +1,295 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/bmw/i3s",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "BMW",
+    "model": "i3s",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (I01, 2018-2019)", "from": 2018, "to": 2019},
+      {"name": "First Generation (I01, 2019-2022)", "from": 2019, "to": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/BMW-i3s",
+    "file": "signalsets/v3/default.json",
+    "revision": "81e2212111210324094332f3a23448b73c76eabe",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6F1.607.226335|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "226335",
+      "interval": 3600,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 24, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DD68|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DD68",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DD69|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DD69",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_C", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 100, "min": -10000, "max": 10000, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DDBC|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DDBC",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "I3_HVBAT_SOC_MAX", "name": "HV battery charge (maximum)", "group": "Battery", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "I3_HVBAT_SOC_MIN", "name": "HV battery charge (minimum)", "group": "Battery", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DDC0|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DDC0",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_CT_MIN", "name": "HV battery cell temperature (min)", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.67, "max": 327.67, "unit": "°C"},
+        {"id": "I3_HVBAT_CT_MAX", "name": "HV battery cell temperature (max)", "group": "Battery", "bit": 16, "bits": 16, "signed": true, "divide": 100, "min": -327.67, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.607.22DF71|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DF71",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_C_CNT", "name": "Number of cells", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "I3_HVBAT_C_CNT_MOD", "name": "Number of cells per module", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_HVBAT_MOD_CNT", "name": "Number of modules", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_HVBAT_MOD_T_CNT", "name": "Number of temperature sensors per module", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.607.22DFA0|e=07,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "607",
+      "extendedAddress": "07",
+      "request": "22DFA0",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_C_CAP_MIN", "name": "Cell capacity (min)", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "I3_HVBAT_C_CAP_MAX", "name": "Cell capacity (max)", "group": "Battery", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "I3_HVBAT_C_CAP_AVG", "name": "Cell capacity (average)", "group": "Battery", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "Ah"},
+        {"id": "I3_HVBAT_C_V_MIN", "name": "Cell voltage (min))", "group": "Battery", "bit": 48, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_C_V_MAX", "name": "Cell voltage (max)", "group": "Battery", "bit": 64, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_C_V_AVG", "name": "Cell voltage (avg)", "group": "Battery", "bit": 80, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_C_TEMP_MIN", "name": "Cell temperature (min)", "group": "Battery", "bit": 96, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"},
+        {"id": "I3_HVBAT_C_TEMP_MAX", "name": "Cell temperature (max)", "group": "Battery", "bit": 112, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"},
+        {"id": "I3_HVBAT_C_TEMP_AVG", "name": "Cell temperature (avg)", "group": "Battery", "bit": 128, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"},
+        {"id": "I3_HVBAT_C_RES_FACTOR_MIN", "name": "Cell resistance factor (min)", "group": "Battery", "bit": 144, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535},
+        {"id": "I3_HVBAT_C_RES_FACTOR_MAX", "name": "Cell resistance factor (max)", "group": "Battery", "bit": 160, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535},
+        {"id": "I3_HVBAT_C_RES_FACTOR_AVG", "name": "Cell resistance factor (avg)", "group": "Battery", "bit": 176, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535},
+        {"id": "I3_HVBAT_C_SOC_MIN", "name": "Cell SoC (min)", "group": "Battery", "bit": 192, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"},
+        {"id": "I3_HVBAT_C_SOC_MAX", "name": "Cell SoC (max)", "group": "Battery", "bit": 208, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"},
+        {"id": "I3_HVBAT_C_SOC_AVG", "name": "Cell SoC (avg)", "group": "Battery", "bit": 224, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"},
+        {"id": "I3_HVBAT_C_OCV_MIN", "name": "Cell OCV (min)", "group": "Battery", "bit": 240, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_C_OCV_MAX", "name": "Cell OCV (max)", "group": "Battery", "bit": 256, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_C_OCV_AVG", "name": "Cell OCV (avg)", "group": "Battery", "bit": 272, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
+        {"id": "I3_HVBAT_IMPEDANCE_ALPHA", "name": "Aging factor", "group": "Battery", "bit": 288, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535}
+      ]
+    },
+    {
+      "id": "6F1.61A.22DE00|e=1A,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "61A",
+      "extendedAddress": "1A",
+      "request": "22DE00",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_HVBAT_HVPM_SOC", "name": "State of charge (hvpm)", "description": "Battery level reading from the high voltage power module", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "I3_HVBAT_HVPM_MIN_SOC", "name": "Minimum state of charge", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "I3_HVBAT_CHG_CON", "name": "Is charger connected", "group": "Battery", "metric": "pluggedIn", "bit": 24, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "I3_HVBAT_CHG_CON_EXT", "name": "Is charging", "group": "Battery", "metric": "isCharging", "bit": 32, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "I3_HVBAT_CHG_RDY", "name": "Ready to drive", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "6F1.629.22DBE4|e=29,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "629",
+      "extendedAddress": "29",
+      "request": "22DBE4",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "I3_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "I3_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "I3_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.656.22DCDD|e=56,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "656",
+      "extendedAddress": "56",
+      "request": "22DCDD",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "I3_DOOR_DRIVER", "name": "Driver door open", "group": "Doors", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_DOOR_PASSENGER", "name": "Passenger door open", "group": "Doors", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_DOOR_DRIVER_REAR", "name": "Rear driver door open", "group": "Doors", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_DOOR_PASSENGER_REAR", "name": "Rear passenger door open", "group": "Doors", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_HOOD", "name": "Hood open", "group": "Doors", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_TRUNK", "name": "Trunk open", "group": "Doors", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_REAR_WINDOW", "name": "Rear window open", "group": "Doors", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "I3_CENTRAL_LOCK", "name": "Locked", "description": "Overall lock state of the vehicle", "group": "Doors", "bit": 56, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6F1.660.22420C|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22420C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_RANGE_ECO", "name": "Estimated range remaining in economy mode", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "I3_RANGE_COMF", "name": "Estimated range remaining in comfort mode", "group": "Trips", "metric": "electricRange", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "I3_RANGE", "name": "Estimated range remaining", "group": "Trips", "metric": "electricRange", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D107|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D107",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D10D|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D10D",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_ODO1", "name": "Odometer #1", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"},
+        {"id": "I3_ODO2", "name": "Odometer #2", "group": "Trips", "metric": "odometer", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6F1.660.22D111|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D111",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_RANGE_E_CUR", "name": "Current electric range", "description": "Current estimated electric range", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"},
+        {"id": "I3_RANGE_E_MAX", "name": "Maximum electric range", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"},
+        {"id": "I3_RANGE_F_CUR", "name": "Current fuel range", "description": "Requires range extender.", "group": "Trips", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km", "invalidAtOrAbove": 6553},
+        {"id": "I3_RANGE_F_MAX", "name": "Maximum fuel range", "description": "Requires range extender.", "group": "Trips", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km", "invalidAtOrBelow": 0, "invalidAtOrAbove": 6553},
+        {"id": "I3_RANGE_E_USE", "name": "Electric consumption / 100km", "group": "Trips", "bit": 64, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "kWh", "invalidAtOrBelow": 0, "invalidAtOrAbove": 65},
+        {"id": "I3_AUX_PWR", "name": "Auxiliary power consumption", "group": "Trips", "bit": 80, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "kW", "invalidAtOrAbove": 655}
+      ]
+    },
+    {
+      "id": "6F1.660.22D112|e=60,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "660",
+      "extendedAddress": "60",
+      "request": "22D112",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6F1.663.22D031|e=63,fc=1",
+      "bus": "can11",
+      "tx": "6F1",
+      "rx": "663",
+      "extendedAddress": "63",
+      "request": "22D031",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2019, 2021],
+      "signals": [
+        {"id": "I3_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

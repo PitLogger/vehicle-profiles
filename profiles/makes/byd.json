@@ -1,0 +1,1810 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "makes/byd",
+  "kind": "make",
+  "use": "fallback",
+  "vehicle": {"makes": ["BYD"], "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/BYD",
+    "file": "signalsets/v3/default.json",
+    "revision": "8dae083782e5d24fbd997344afb24707391bd31f",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E7", "type": "battery"}],
+  "requests": [
+    {
+      "id": "743.22001F",
+      "bus": "can11",
+      "tx": "743",
+      "request": "22001F",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_ECT", "name": "Engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "743.220025",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220025",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_VSS", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "743.220026",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220026",
+      "interval": 30,
+      "signals": [
+        {"id": "BYD_ODO", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "byteOrder": "little", "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.220101",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220101",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_THROTTLE_DEPTH", "name": "Throttle depth", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "743.220102",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220102",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_BRAKE_DEPTH", "name": "Brake depth", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "743.220104",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220104",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_FRONT_DRIVE_TGT_TQ", "name": "Front drive, target torque", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "add": -500, "min": -3776, "max": 2776, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "743.220105",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220105",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_REAR_DRIVE_TGT_TQ", "name": "Rear drive, target torque", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "add": -500, "min": -3776, "max": 2776, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "762.22000C",
+      "bus": "can11",
+      "tx": "762",
+      "request": "22000C",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_12V_BAT_V", "name": "12V battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "762.22000D",
+      "bus": "can11",
+      "tx": "762",
+      "request": "22000D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_12V_BAT_CELL_1", "name": "12V battery cell 1", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "762.220013",
+      "bus": "can11",
+      "tx": "762",
+      "request": "220013",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_12V_BAT_NEGATIVE_T", "name": "12V battery negative contact temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "762.220014",
+      "bus": "can11",
+      "tx": "762",
+      "request": "220014",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_12V_BAT_MOS_T", "name": "12V battery MOS temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.22019C",
+      "bus": "can11",
+      "tx": "781",
+      "request": "22019C",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_7_LOWEST_V_CELL", "name": "Pack 7 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.22019D",
+      "bus": "can11",
+      "tx": "781",
+      "request": "22019D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_7_LOWEST_V_CELL_781", "name": "Pack 7 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.22019E",
+      "bus": "can11",
+      "tx": "781",
+      "request": "22019E",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_7_HIGHEST_V", "name": "Pack 7 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.22019F",
+      "bus": "can11",
+      "tx": "781",
+      "request": "22019F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_7_HIGHEST_V_CELL", "name": "Pack 7 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201A0",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A0",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_7_LOWEST_T_CELL", "name": "Pack 7 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201A1",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A1",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_7_LOWEST_T_CELL_781", "name": "Pack 7 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201A2",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A2",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_7_HIGHEST_T", "name": "Pack 7 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201A3",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A3",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_7_HIGHEST_T_CELL", "name": "Pack 7 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201A4",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A4",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_8_LOWEST_V_CELL", "name": "Pack 8 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201A5",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A5",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_8_LOWEST_V_CELL_781", "name": "Pack 8 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201A6",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A6",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_8_HIGHEST_V", "name": "Pack 8 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201A7",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A7",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_8_HIGHEST_V_CELL", "name": "Pack 8 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201A8",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A8",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_8_LOWEST_T_CELL", "name": "Pack 8 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201A9",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201A9",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_8_LOWEST_T_CELL_781", "name": "Pack 8 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201AA",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AA",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_8_HIGHEST_T", "name": "Pack 8 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201AB",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AB",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_8_HIGHEST_T_CELL", "name": "Pack 8 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201AC",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AC",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_9_LOWEST_V_CELL", "name": "Pack 9 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201AD",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AD",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_9_LOWEST_V_CELL_781", "name": "Pack 9 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201AE",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AE",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_9_HIGHEST_V", "name": "Pack 9 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201AF",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201AF",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_9_HIGHEST_V_CELL", "name": "Pack 9 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201B0",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B0",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_9_LOWEST_T_CELL", "name": "Pack 9 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201B1",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B1",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_9_LOWEST_T_CELL_781", "name": "Pack 9 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201B2",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B2",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_9_HIGHEST_T", "name": "Pack 9 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201B3",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B3",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_9_HIGHEST_T_CELL", "name": "Pack 9 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201B4",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B4",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_10_LOWEST_V", "name": "Pack 10 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201B5",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B5",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_10_LOWEST_V_CELL", "name": "Pack 10 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201B6",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B6",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_10_HIGHEST_V", "name": "Pack 10 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201B7",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B7",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_10_HIGHEST_V_CELL", "name": "Pack 10 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201B8",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B8",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_10_LOWEST_T", "name": "Pack 10 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201B9",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201B9",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_10_LOWEST_T_CELL", "name": "Pack 10 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201BA",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BA",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_10_HIGHEST_T", "name": "Pack 10 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201BB",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BB",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_10_HIGHEST_T_CELL", "name": "Pack 10 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201BC",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BC",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_V_CELL_NUMBER", "name": "Pack 11 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201BD",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BD",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_V_CELL_781", "name": "Pack 11 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201BE",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BE",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_V_CELL_NUMBER", "name": "Pack 11 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201BF",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201BF",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_V_CELL_781", "name": "Pack 11 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201C0",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C0",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_T", "name": "Pack 11 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201C1",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C1",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_T_CELL", "name": "Pack 11 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201C2",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C2",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_T", "name": "Pack 11 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201C3",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C3",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_T_CELL", "name": "Pack 11 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201C4",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C4",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_V_CELL_NUMBER", "name": "Pack 12 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201C5",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C5",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_V_CELL_781", "name": "Pack 12 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201C6",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C6",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_V_CELL_NUMBER", "name": "Pack 12 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201C7",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C7",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_V_CELL_781", "name": "Pack 12 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201C8",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C8",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_T", "name": "Pack 12 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201C9",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201C9",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_T_CELL", "name": "Pack 12 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201CA",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CA",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_T", "name": "Pack 12 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201CB",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CB",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_T_CELL", "name": "Pack 12 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201CC",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CC",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_V_CELL_NUMBER", "name": "Pack 13 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201CD",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CD",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_V_CELL_781", "name": "Pack 13 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201CE",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CE",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_V_CELL_NUMBER", "name": "Pack 13 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201CF",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201CF",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_V_CELL_781", "name": "Pack 13 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.2201D0",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201D0",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_T", "name": "Pack 13 lowest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201D1",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201D1",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_T_CELL", "name": "Pack 13 lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.2201D2",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201D2",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_T", "name": "Pack 13 highest temperature cell number", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "781.2201D3",
+      "bus": "can11",
+      "tx": "781",
+      "request": "2201D3",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_T_CELL", "name": "Pack 13 highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.221FFD",
+      "bus": "can11",
+      "tx": "781",
+      "request": "221FFD",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ST_CHG_ACT", "name": "State of charge, actual", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "782.222001",
+      "bus": "can11",
+      "tx": "782",
+      "request": "222001",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 2749, "divide": 40000, "min": 0, "max": 4503, "unit": "km/h"},
+        {"id": "BYD_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 16, "bits": 16, "multiply": 2749, "divide": 40000, "min": 0, "max": 4503, "unit": "km/h"},
+        {"id": "BYD_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 32, "bits": 16, "multiply": 2749, "divide": 40000, "min": 0, "max": 4503, "unit": "km/h"},
+        {"id": "BYD_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 48, "bits": 16, "multiply": 2749, "divide": 40000, "min": 0, "max": 4503, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "783.220003",
+      "bus": "can11",
+      "tx": "783",
+      "request": "220003",
+      "interval": 0.25,
+      "signals": [
+        {"id": "BYD_STEER_WHL_ANG", "name": "Steering wheel angle", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "797.220007",
+      "bus": "can11",
+      "tx": "797",
+      "request": "220007",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_AC_SIDE_CURRENT", "name": "AC side current", "group": "Engine", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "A"}
+      ]
+    },
+    {
+      "id": "797.220019",
+      "bus": "can11",
+      "tx": "797",
+      "request": "220019",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_COOLING_FAN_DUTY", "name": "Cooling fan duty cycle", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220103",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_ENG_OUTLET_WATER_T", "name": "Engine outlet water temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220106",
+      "interval": 30,
+      "signals": [
+        {"id": "BYD_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220107",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_CYL_HEAD_OIL_T", "name": "Cylinder head oil temperature, modeled", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 1280000, "add": -273.15, "min": -273, "max": -273, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22010F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22010F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220111",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220111",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_FUEL_FLOW", "name": "Fuel flow", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 149, "divide": 250000000, "min": 0, "max": 0.039}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220112",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220112",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_BOOST_P_TGT", "name": "Boost pressure, target", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017C",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_ENG_WATER_T_START", "name": "Engine water temperature at start", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220180",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220180",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MIS_1", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220181",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220181",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MIS_4", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220182",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220182",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MIS_3", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220183",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220183",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MIS_2", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22210A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22210A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ENG_TOT_MILEAGE", "name": "Engine total mileage", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22211F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22211F",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_RADIATOR_OUTLET_T", "name": "Radiator outlet water temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222129",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222129",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_BOOST_T", "name": "Boost temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222143",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222143",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_INSTRUMENT_PANEL_TOT", "name": "Instrument panel total mileage", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220004",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220004",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_TIMES_OFF_FULL_POWER", "name": "Times off full power, second-rate", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220005",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220005",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_HVBAT_ST_CHG", "name": "High voltage battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220008",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220008",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_BAT_TOT_V", "name": "Battery total voltage", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220009",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220009",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_BAT_TOT_CURRENT", "name": "Battery total current", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10, "add": -500, "min": -500, "max": 6053, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22000A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22000A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MAX_ALLOWED_CHG", "name": "Maximum allowed charge power", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22000B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22000B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_CHG_TIMES", "name": "Charge times", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22000E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22000E",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_MAX_ALLOWED_DCHG", "name": "Maximum allowed discharge power", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22000F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22000F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ACCUMULATED_CHG", "name": "Accumulated charge power, ah", "group": "Battery", "bit": 0, "bits": 24, "byteOrder": "little", "min": 0, "max": 16777215, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220010",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220010",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ACCUMULATED_DCHG", "name": "Accumulated discharge power, ah", "group": "Battery", "bit": 0, "bits": 24, "byteOrder": "little", "min": 0, "max": 16777215, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220011",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220011",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ACCUMULATED_CHG_ENERGY", "name": "Accumulated charge energy", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220012",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220012",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_ACCUMULATED_DCHG_ENERGY", "name": "Accumulated discharge energy", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_LOWEST_V_CELL", "name": "Lowest voltage cell #", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_LOWEST_V_CELL_7E7", "name": "Lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002C",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_HIGHEST_V_CELL", "name": "Highest voltage cell #", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_HIGHEST_V_CELL_7E7", "name": "Highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002E",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_LOWEST_T_CELL", "name": "Lowest temperature cell #", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22002F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22002F",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_LOWEST_T_CELL_7E7", "name": "Lowest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220030",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220030",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_HIGHEST_T_CELL", "name": "Highest temperature cell #", "group": "Engine", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220031",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220031",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_HIGHEST_T_CELL_7E7", "name": "Highest temperature cell value", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220032",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220032",
+      "interval": 5,
+      "signals": [
+        {"id": "BYD_BAT_PACK_AVG_T", "name": "Battery pack average temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220160",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220160",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_1_LOWEST_V_CELL", "name": "Pack 1 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220161",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220161",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_1_LOWEST_V_CELL_7E7", "name": "Pack 1 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220162",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220162",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_1_HIGHEST_V", "name": "Pack 1 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220163",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220163",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_1_HIGHEST_V_CELL", "name": "Pack 1 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220164",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220164",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_2_LOWEST_V_CELL", "name": "Pack 2 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220165",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220165",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_2_LOWEST_V_CELL_7E7", "name": "Pack 2 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220166",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220166",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_2_HIGHEST_V", "name": "Pack 2 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220167",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220167",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_2_HIGHEST_V_CELL", "name": "Pack 2 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220168",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220168",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_3_LOWEST_V_CELL", "name": "Pack 3 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220169",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220169",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_3_LOWEST_V_CELL_7E7", "name": "Pack 3 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_3_HIGHEST_V", "name": "Pack 3 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_3_HIGHEST_V_CELL", "name": "Pack 3 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016C",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_4_LOWEST_V_CELL", "name": "Pack 4 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_4_LOWEST_V_CELL_7E7", "name": "Pack 4 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016E",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_4_HIGHEST_V", "name": "Pack 4 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22016F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22016F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_4_HIGHEST_V_CELL", "name": "Pack 4 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220170",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220170",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_5_LOWEST_V_CELL", "name": "Pack 5 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220171",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220171",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_5_LOWEST_V_CELL_7E7", "name": "Pack 5 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220172",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220172",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_5_HIGHEST_V", "name": "Pack 5 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220173",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220173",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_5_HIGHEST_V_CELL", "name": "Pack 5 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220174",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220174",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_6_LOWEST_V_CELL", "name": "Pack 6 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220175",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220175",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_6_LOWEST_V_CELL_7E7", "name": "Pack 6 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220176",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220176",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_6_HIGHEST_V", "name": "Pack 6 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220177",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220177",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_6_HIGHEST_V_CELL", "name": "Pack 6 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220178",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220178",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_7_LOWEST_V_CELL", "name": "Pack 7 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220179",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220179",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_7_LOWEST_V_CELL_7E7", "name": "Pack 7 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_7_HIGHEST_V", "name": "Pack 7 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_7_HIGHEST_V_CELL", "name": "Pack 7 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017C",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_8_LOWEST_V_CELL", "name": "Pack 8 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_8_LOWEST_V_CELL_7E7", "name": "Pack 8 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017E",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_8_HIGHEST_V", "name": "Pack 8 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22017F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22017F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_8_HIGHEST_V_CELL", "name": "Pack 8 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220180",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220180",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_9_LOWEST_V_CELL", "name": "Pack 9 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220181",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220181",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_9_LOWEST_V_CELL_7E7", "name": "Pack 9 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220182",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220182",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_9_HIGHEST_V", "name": "Pack 9 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220183",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220183",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_9_HIGHEST_V_CELL", "name": "Pack 9 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220184",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220184",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_10_LOWEST_V", "name": "Pack 10 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220185",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220185",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_10_LOWEST_V_CELL", "name": "Pack 10 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220186",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220186",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_10_HIGHEST_V", "name": "Pack 10 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220187",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220187",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_6_PACK_10_HIGHEST_V_CELL", "name": "Pack 10 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220188",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220188",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_V", "name": "Pack 11 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220189",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220189",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_LOWEST_V_CELL", "name": "Pack 11 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_V", "name": "Pack 11 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_11_HIGHEST_V_CELL", "name": "Pack 11 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018C",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_V", "name": "Pack 12 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018D",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_LOWEST_V_CELL", "name": "Pack 12 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018E",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_V", "name": "Pack 12 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22018F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22018F",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_12_HIGHEST_V_CELL", "name": "Pack 12 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220190",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220190",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_V", "name": "Pack 13 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220191",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220191",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_LOWEST_V_CELL", "name": "Pack 13 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220192",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220192",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_V", "name": "Pack 13 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220193",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220193",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_13_HIGHEST_V_CELL", "name": "Pack 13 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220194",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220194",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_14_LOWEST_V", "name": "Pack 14 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220195",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220195",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_14_LOWEST_V_CELL", "name": "Pack 14 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220196",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220196",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_14_HIGHEST_V", "name": "Pack 14 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220197",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220197",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_14_HIGHEST_V_CELL", "name": "Pack 14 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220198",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220198",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_15_LOWEST_V", "name": "Pack 15 lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.220199",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "220199",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_15_LOWEST_V_CELL", "name": "Pack 15 lowest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22019A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22019A",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_15_HIGHEST_V", "name": "Pack 15 highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22019B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22019B",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_PACK_15_HIGHEST_V_CELL", "name": "Pack 15 highest voltage cell value", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221FFC",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221FFC",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_HVBAT_PACK_NOMINAL", "name": "High voltage battery pack nominal state of charge", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 100, "min": 0, "max": 655, "unit": "%"},
+        {"id": "BYD_HVBAT_PACK_FACTORY", "name": "High voltage battery pack factory capacity", "group": "Battery", "bit": 16, "bits": 16, "byteOrder": "little", "divide": 100, "min": 0, "max": 655, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221FFE",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221FFE",
+      "interval": 1,
+      "signals": [
+        {"id": "BYD_HVBAT_PACK_FACTORY_ST_CHG", "name": "High voltage battery pack factory state of charge", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 100, "min": 0, "max": 655, "unit": "%"},
+        {"id": "BYD_HVBAT_PACK_FACTORY_CAP", "name": "High voltage battery pack factory capacity", "group": "Battery", "bit": 16, "bits": 16, "byteOrder": "little", "divide": 100, "min": 0, "max": 655, "unit": "Ah"}
+      ]
+    }
+  ]
+}

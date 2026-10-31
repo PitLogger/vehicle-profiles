@@ -1,0 +1,316 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/350z",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "350Z",
+    "years": null,
+    "generations": [{"name": "Z33", "from": 2003, "to": 2009}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-350Z",
+    "file": "signalsets/v3/default.json",
+    "revision": "f88c694aeb35a8ee15f37cba9e473652b4e7f071",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "signals": [
+        {"id": "Z350_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221208|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221208",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "Z350_ABS_STEER_ANG", "name": "Anti-lock brake steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "signals": [
+        {"id": "Z350_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "Z350_ODO_METER", "name": "Odometer, meter group 1", "group": "Trips", "metric": "odometer", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22110A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22110A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_IGN_TIM_ADVANCE", "name": "Ignition timing advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 110, "min": -145, "max": 110, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_EVAP_PURGE_DUTY", "name": "EVAP purge duty", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221111",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111F",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221123|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221123",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_F_RAT_ADJ_B1", "name": "A/F ratio adj, B1", "group": "Engine", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221135|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221135",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_CAM_ADV_ANG_B1", "name": "Camshaft adv angle, B1", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221138|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221138",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_CAM_VLV_DUTY_B1", "name": "Camshaft valve duty, B1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221201",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_CURRENT_RPM", "name": "Current engine speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 2, "min": 0, "max": 819187, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221204",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_MAF_VOLTS_B1", "name": "Mass air flow volts, B1", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221208",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_FUEL_BASE_WIDTH", "name": "Fuel base pulse width", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221209|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221209",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_MAF", "name": "Mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221305|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221305",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 5, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z350_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "Z350_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "Z350_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "Z350_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "Z350_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "Z350_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "Z350_TRANS_B", "name": "Transmission-B", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "Z350_TRANS_WORK_HOURS", "name": "Transmission work hours", "group": "Transmission", "bit": 32, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"},
+        {"id": "Z350_TRANS", "name": "Transmission-A", "group": "Transmission", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "Z350_TRANS_WORK_HOURS_WARM_ENG", "name": "Transmission work hours warm engine", "group": "Transmission", "bit": 192, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"}
+      ]
+    }
+  ]
+}

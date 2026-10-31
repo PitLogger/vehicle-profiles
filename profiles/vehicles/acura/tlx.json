@@ -1,0 +1,317 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/acura/tlx",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Acura",
+    "model": "TLX",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2015, "to": 2017},
+      {"name": "First Generation (2018 Facelift)", "from": 2018, "to": 2020},
+      {"name": "Second Generation", "from": 2021, "to": 2023},
+      {"name": "Second Generation (2024 Facelift)", "from": 2024, "to": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Acura-TLX",
+    "file": "signalsets/v3/default.json",
+    "revision": "912bc72a6b0fbc538c5644e4714f488395644748",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA1E", "type": "transmission"},
+    {"tx": "DA26", "type": "tpms"},
+    {"tx": "DA28", "type": "abs"},
+    {"tx": "DA60", "type": "cluster"}
+  ],
+  "requests": [
+    {
+      "id": "DA10.10.222610",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 5,
+      "answeredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TLX_AC_CLUTCH", "name": "Air conditioner clutch", "group": "Climate", "bit": 256, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.222611",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 0.25,
+      "answeredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_FUEL_AIR_RATIO", "name": "Fuel/air commanded equivalence ratio", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "invalidAtOrAbove": 255},
+        {"id": "TLX_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4, "invalidAtOrAbove": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "answeredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "TLX_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222615",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222615",
+      "interval": 0.5,
+      "answeredIn": [2015, 2020, 2021, 2024, 2025],
+      "signals": [
+        {"id": "TLX_ACTIVE_CYL", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "DA10.10.222660",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "answeredIn": [2015, 2020, 2021, 2024, 2025],
+      "signals": [
+        {"id": "TLX_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrBelow": 0},
+        {"id": "TLX_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "answeredIn": [2015, 2025],
+      "signals": [
+        {"id": "TLX_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "answeredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_KNOCK_CTRL", "name": "Knock control", "group": "ECU", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "TLX_VTC_DUTY", "name": "Variable valve timing duty", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_MISFIRE_1", "name": "Misfire count, cylinder 1", "group": "ECU", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "TLX_MISFIRE_2", "name": "Misfire count, cylinder 2", "group": "ECU", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "TLX_MISFIRE_3", "name": "Misfire count, cylinder 3", "group": "ECU", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "TLX_MISFIRE_4", "name": "Misfire count, cylinder 4", "group": "ECU", "bit": 320, "bits": 16, "min": 0, "max": 65535},
+        {"id": "TLX_MISFIRE_5", "name": "Misfire count, cylinder 5", "group": "ECU", "bit": 336, "bits": 16, "min": 0, "max": 65535},
+        {"id": "TLX_MISFIRE_6", "name": "Misfire count, cylinder 6", "group": "ECU", "bit": 352, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222201",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222201",
+      "interval": 1,
+      "notAnsweredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_ATF_T_NEW", "name": "Transmission fluid temperature", "group": "Engine", "bit": 208, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222203",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222203",
+      "interval": 1,
+      "notAnsweredIn": [2015, 2020, 2021, 2025],
+      "signals": [
+        {"id": "TLX_TRANS_OIL_P2", "name": "Transmission oil pressure sensor 2", "group": "Transmission", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223083",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223083",
+      "interval": 5,
+      "answeredIn": [2015, 2020],
+      "notAnsweredIn": [2021, 2024, 2025],
+      "signals": [
+        {"id": "TLX_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223086|f=-2020",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223086",
+      "interval": 0.25,
+      "years": {"to": 2020},
+      "answeredIn": [2015, 2020],
+      "signals": [
+        {"id": "TLX_GEAR", "name": "Transmission gear", "group": "Transmission", "bit": 160, "bits": 8, "values": {"0": "P", "1": "D1", "2": "D2", "3": "D3", "4": "D4", "5": "D5", "6": "D6", "7": "D7", "8": "D8", "9": "D9", "14": "N", "15": "R"}, "valueDescriptions": {"0": "Park", "1": "Drive 1", "2": "Drive 2", "3": "Drive 3", "4": "Drive 4", "5": "Drive 5", "6": "Drive 6", "7": "Drive 7", "8": "Drive 8", "9": "Drive 9", "14": "Neutral", "15": "Reverse"}}
+      ]
+    },
+    {
+      "id": "DA26.26.226001",
+      "bus": "can29",
+      "tx": "18DA26F1",
+      "rx": "18DAF126",
+      "request": "226001",
+      "interval": 5,
+      "answeredIn": [2015, 2020, 2021, 2024, 2025],
+      "signals": [
+        {"id": "TLX_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "TLX_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "TLX_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "TLX_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "TLX_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 192, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "TLX_TT_FL", "name": "Front left tire temperature", "group": "Tires", "bit": 200, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "TLX_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "bit": 208, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "TLX_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 216, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA28.28.224004",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224004",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "TLX_BRK_SW", "name": "Brake switch", "group": "Electrical", "bit": 127, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA28.28.224005",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224005",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "TLX_BRK_P", "name": "Brake pressure", "group": "Electrical", "bit": 56, "bits": 16, "add": -25, "min": 0, "max": 120, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA60.60.227022",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227022",
+      "interval": 30,
+      "answeredIn": [2015, 2025],
+      "signals": [
+        {"id": "TLX_ODO_V3", "name": "Odometer, variation 3", "group": "Trips", "bit": 48, "bits": 24, "min": 0, "max": 200000, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|f=-2020",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "years": {"to": 2020},
+      "answeredIn": [2015, 2020],
+      "signals": [
+        {"id": "TLX_AAT_FIRSTGEN", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°C", "invalidAtOrAbove": 61}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|f=2021-2024",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "years": {"from": 2021, "to": 2024},
+      "answeredIn": [2021, 2024],
+      "signals": [
+        {"id": "TLX_AAT", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°F", "invalidAtOrAbove": 141}
+      ]
+    },
+    {
+      "id": "DA60.60.227028|f=2025-",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "years": {"from": 2025},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TLX_AAT_C", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°C", "invalidAtOrAbove": 61}
+      ]
+    },
+    {
+      "id": "DA60.60.227029",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227029",
+      "interval": 30,
+      "answeredIn": [2015, 2025],
+      "signals": [
+        {"id": "TLX_FLV", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L", "invalidAtOrAbove": 655}
+      ]
+    },
+    {
+      "id": "DA60.60.227060",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227060",
+      "interval": 30,
+      "notAnsweredIn": [2015, 2025],
+      "signals": [
+        {"id": "TLX_MAINT_OIL_FLT", "name": "Maintenance, oil & filter", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_SPARK", "name": "Maintenance, spark plugs & valves", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_INSP", "name": "Maintenance, general inspection", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_TIRE", "name": "Maintenance, tire rotation", "group": "Tires", "bit": 224, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_CABIN_FLT", "name": "Maintenance, cabin filter", "group": "Engine", "bit": 240, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_TRANS_FLD", "name": "Maintenance, transmission fluid", "group": "Engine", "bit": 256, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_COOL", "name": "Maintenance, engine coolant", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_BRK_FLD", "name": "Maintenance, brake fluid", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 9999},
+        {"id": "TLX_MAINT_AIR_CLN", "name": "Maintenance, air cleaner", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 9999}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2785 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/toyota/avalon-hybrid",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Toyota",
+    "model": "Avalon Hybrid",
+    "years": null,
+    "generations": [
+      {"name": "Fourth Generation (XX40)", "from": 2013, "to": 2018},
+      {"name": "Fifth Generation (XX50)", "from": 2019, "to": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Toyota-Avalon-Hybrid",
+    "file": "signalsets/v3/default.json",
+    "revision": "87ec4f5b379a04d3685f3525fa4285213e763413",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E2", "type": "hybridControl"}
+  ],
+  "requests": [
+    {
+      "id": "700.708.220103",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "220103",
+      "interval": 30,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_ENG_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.221002",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221002",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_12V_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "multiply": 12.207, "divide": 10000, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.221017",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221017",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INJ_VOL", "name": "Injection volume", "group": "Engine", "bit": 0, "bits": 16, "divide": 3200, "min": 0, "max": 20, "unit": "L"}
+      ]
+    },
+    {
+      "id": "700.708.221018",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221018",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INJECTOR_PORT", "name": "Injector port", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "700.708.221019",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221019",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INJECTION", "name": "Injection", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "DIRECT", "2": "BOTH"}, "valueDescriptions": {"1": "Direct", "2": "Both"}}
+      ]
+    },
+    {
+      "id": "700.708.22102A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22102A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_A_F_RATIO_LEARNED_IDLE_BANK_1", "name": "A/F ratio learned idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_A_F_RATIO_LEARNED_LOW_BANK_1", "name": "A/F ratio learned low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_A_F_RATIO_LEARNED_MID_1_BANK_1", "name": "A/F ratio learned mid 1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_A_F_RATIO_LEARNED_MID_2_BANK_1", "name": "A/F ratio learned mid 2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_A_F_RATIO_LEARNED_HIGH_BANK_1", "name": "A/F ratio learned high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221041",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221041",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ECT_IGN", "name": "Engine coolant temperature, at ignition", "group": "Engine", "bit": 0, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"},
+        {"id": "AVALONH_ECT_INIT", "name": "Engine coolant temperature, initial", "group": "Engine", "bit": 8, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221043",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221043",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EWP_TARGET_VSS", "name": "Electric water pump target speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "AVALONH_EWP_RPM", "name": "Electric water pump RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.221046",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221046",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_COOLING_FAN_DUTY_RATIO", "name": "Cooling fan duty ratio", "group": "Engine", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221059",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221059",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ACCEL_PEDAL", "name": "Accelerator pedal", "group": "Control", "bit": 0, "bits": 8, "divide": 1.42, "add": -28.873, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22105C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_KNOCK_CORRECT_LEARNED_VALUE", "name": "Knock correction, learned value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023},
+        {"id": "AVALONH_KNOCK_FEEDBACK_VALUE", "name": "Knock feedback value", "group": "Engine", "bit": 16, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023}
+      ]
+    },
+    {
+      "id": "700.708.22105E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105E",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ECU_INTERNAL_T", "name": "Internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221062",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221062",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EXHAUST_VVT_OCV_CONTROL_DUTY", "name": "Exhaust VVT oil control valve control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 400, "divide": 65535, "min": 0, "max": 400, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22106A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FUEL_PUMP_DUTY_RATIO", "name": "Fuel pump duty ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0609756098, "min": 0, "max": 3996, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.22106C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_DIST_SINCE_BAT_DISC", "name": "Distance since last battery cable disconnection", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.22106F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106F",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INTAKE_VVT_TARGET_ANGLE_B1", "name": "Intake VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221071",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221071",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EXHAUST_VVT_TARGET_ANGLE_B1", "name": "Exhaust VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221074",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221074",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "divide": 128, "min": 0, "max": 5119.92, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221078",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221078",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_IDLE_SAC_CYL_1", "name": "Idle spark advance control, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "AVALONH_IDLE_SAC_CYL_2", "name": "Idle spark advance control, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "AVALONH_IDLE_SAC_CYL_3", "name": "Idle spark advance control, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "AVALONH_IDLE_SAC_CYL_4", "name": "Idle spark advance control, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22107B",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22107B",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 192, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221084",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221084",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ROUGH_IDLE_CYL_1", "name": "Rough idle, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "AVALONH_ROUGH_IDLE_CYL_2", "name": "Rough idle, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "AVALONH_ROUGH_IDLE_CYL_3", "name": "Rough idle, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "AVALONH_ROUGH_IDLE_CYL_4", "name": "Rough idle, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221087",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221087",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "name": "Intake VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221088",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221088",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EXHAUST_VVT_ANGLE_B1", "name": "Exhaust VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221089",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221089",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EXHAUST_VVT_HOLD_LEARN_B1", "name": "Exhaust VVT hold learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "min": 0, "max": 399.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_VVT_IE_DUTY_RATIO_BANK_1", "name": "Variable valve timing duty ratio, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "add": -200, "min": -200, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108D",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INTAKE_VVT_OVER_RET_LEARN_B1", "name": "Intake VVT most over-retarded learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22108F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108F",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EXHAUST_VVT_OVER_ADV_LEARN_B1", "name": "Exhaust VVT timing most over-advanced learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.2210A2",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A2",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AF_LEARN_IDLE_PORT_B1", "name": "A/F ratio learn value idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_AF_LEARN_LOW_PORT_B1", "name": "A/F ratio learn value low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_AF_LEARN_MID1_PORT_B1", "name": "A/F ratio learn value mid.1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_AF_LEARN_MID2_PORT_B1", "name": "A/F ratio learn value mid.2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "AVALONH_AF_LEARN_HIGH_PORT_B1", "name": "A/F ratio learn value high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.2210A5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A5",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_MISFIRE_CNT", "name": "Misfire count, all cylinders", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210A7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A7",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_MISFIRE_CYL1", "name": "Misfire count, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_MISFIRE_CYL2", "name": "Misfire count, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_MISFIRE_CYL3", "name": "Misfire count, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_MISFIRE_CYL4", "name": "Misfire count, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210AA",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210AA",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_MISFIRE_LOAD", "name": "Misfire load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 510, "divide": 255, "min": 0, "max": 510, "unit": "%"},
+        {"id": "AVALONH_MISFIRE_RPM", "name": "Misfire RPM", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6375, "divide": 255, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "AVALONH_MISFIRE_MARGIN", "name": "Misfire margin", "group": "Engine", "bit": 32, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.2210CD",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210CD",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_LFP", "name": "Low fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": 0, "max": 3276.7, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2215FA",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215FA",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ALT_DUTY_CYCLE", "name": "Alternator output duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 164, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221620",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221620",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AT_LOCK_UP_STATE", "name": "Lock up state", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "700.708.221621",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221621",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.221627",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221627",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ATF_T_PAN_V3", "name": "Transmission fluid temperature, pan var.3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F2F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F2F",
+      "interval": 30,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221F3C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_CAT_T_11", "name": "Catalyst temperature, bank 1 sensor 1", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3D",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CAT_T_BANK_2_SENS_1", "name": "Catalyst temperature bank 2 sensor 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -40, "min": -40, "max": 11756.3, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "700.708.221F3E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3E",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_CAT_T_12", "name": "Catalyst temperature, bank 1 sensor 2", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3F",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CAT_T_BANK_2_SENS_2", "name": "Catalyst temperature bank 2 sensor 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -40, "min": -40, "max": 11756.3, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "700.708.221F46",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F46",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AMBIENT_T", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F5C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F5C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EOT_V2", "name": "Engine oil temperature, variation 2", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F6D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F6D",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_HFP_TARGET", "name": "High fuel pressure, target", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "AVALONH_HFP_ACTUAL", "name": "High fuel pressure, actual", "group": "Fuel", "bit": 24, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "AVALONH_LOW_FUEL_PRESSURE", "name": "Low fuel pressure", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.222827",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222827",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ELECTRIC_WATER_PUMP", "name": "Electric water pump", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "min": 0, "max": 10200, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.222829",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222829",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ELECTRIC_THERMOSTAT_DUTY_RATIO", "name": "Electric thermostat duty ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22282C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22282C",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_COOLANT_VALVE_1_CLOSE", "name": "Coolant water route switching valve 1, closed?", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "700.708.222843",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222843",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_VVT_IE_OPENING_ANGLE_BANK_1", "name": "Variable valve timing opening angle bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.222848",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222848",
+      "interval": 0.5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EOP_CONTROL_VALVE", "name": "Engine oil pressure control valve", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0762939, "min": 0, "max": 4999.9207, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "701.709.220103",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "220103",
+      "interval": 10,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "701.709.221620",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221620",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_LOCK_UP_STATE", "name": "Lock up state", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "701.709.221627",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221627",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ATF_T_PAN", "name": "Transmission fluid temperature, pan", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "701.709.22162B",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "22162B",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ATF_THERMAL_DEGRAD_EST", "name": "Automatic transmission fluid thermal degradation estimate", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "747.74F.220103|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_ODO_V6", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "747.74F.221814",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221814",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BAT_T_01", "name": "Battery temperature 01", "group": "Battery", "bit": 0, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_02", "name": "Battery temperature 02", "group": "Battery", "bit": 16, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_03", "name": "Battery temperature 03", "group": "Battery", "bit": 32, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_04", "name": "Battery temperature 04", "group": "Battery", "bit": 48, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_05", "name": "Battery temperature 05", "group": "Battery", "bit": 64, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_06", "name": "Battery temperature 06", "group": "Battery", "bit": 80, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_07", "name": "Battery temperature 07", "group": "Battery", "bit": 96, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_08", "name": "Battery temperature 08", "group": "Battery", "bit": 112, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_09", "name": "Battery temperature 09", "group": "Battery", "bit": 128, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_10", "name": "Battery temperature 10", "group": "Battery", "bit": 144, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_11", "name": "Battery temperature 11", "group": "Battery", "bit": 160, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_12", "name": "Battery temperature 12", "group": "Battery", "bit": 176, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_13", "name": "Battery temperature 13", "group": "Battery", "bit": 192, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_14", "name": "Battery temperature 14", "group": "Battery", "bit": 208, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_15", "name": "Battery temperature 15", "group": "Battery", "bit": 224, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_BAT_T_16", "name": "Battery temperature 16", "group": "Battery", "bit": 240, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "747.74F.22182E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22182E",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_HVBAT_C01_V", "name": "HV battery cell #01 voltage", "group": "Battery.Cells", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C02_V", "name": "HV battery cell #02 voltage", "group": "Battery.Cells", "bit": 16, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C03_V", "name": "HV battery cell #03 voltage", "group": "Battery.Cells", "bit": 32, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C04_V", "name": "HV battery cell #04 voltage", "group": "Battery.Cells", "bit": 48, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C05_V", "name": "HV battery cell #05 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C06_V", "name": "HV battery cell #06 voltage", "group": "Battery.Cells", "bit": 80, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C07_V", "name": "HV battery cell #07 voltage", "group": "Battery.Cells", "bit": 96, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C08_V", "name": "HV battery cell #08 voltage", "group": "Battery.Cells", "bit": 112, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C09_V", "name": "HV battery cell #09 voltage", "group": "Battery.Cells", "bit": 128, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C10_V", "name": "HV battery cell #10 voltage", "group": "Battery.Cells", "bit": 144, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C11_V", "name": "HV battery cell #11 voltage", "group": "Battery.Cells", "bit": 160, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C12_V", "name": "HV battery cell #12 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C13_V", "name": "HV battery cell #13 voltage", "group": "Battery.Cells", "bit": 192, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C14_V", "name": "HV battery cell #14 voltage", "group": "Battery.Cells", "bit": 208, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C15_V", "name": "HV battery cell #15 voltage", "group": "Battery.Cells", "bit": 224, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C16_V", "name": "HV battery cell #16 voltage", "group": "Battery.Cells", "bit": 240, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C17_V", "name": "HV battery cell #17 voltage", "group": "Battery.Cells", "bit": 256, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C18_V", "name": "HV battery cell #18 voltage", "group": "Battery.Cells", "bit": 272, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C19_V", "name": "HV battery cell #19 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C20_V", "name": "HV battery cell #20 voltage", "group": "Battery.Cells", "bit": 304, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C21_V", "name": "HV battery cell #21 voltage", "group": "Battery.Cells", "bit": 320, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C22_V", "name": "HV battery cell #22 voltage", "group": "Battery.Cells", "bit": 336, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C23_V", "name": "HV battery cell #23 voltage", "group": "Battery.Cells", "bit": 352, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C24_V", "name": "HV battery cell #24 voltage", "group": "Battery.Cells", "bit": 368, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C25_V", "name": "HV battery cell #25 voltage", "group": "Battery.Cells", "bit": 384, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C26_V", "name": "HV battery cell #26 voltage", "group": "Battery.Cells", "bit": 400, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C27_V", "name": "HV battery cell #27 voltage", "group": "Battery.Cells", "bit": 416, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C28_V", "name": "HV battery cell #28 voltage", "group": "Battery.Cells", "bit": 432, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C29_V", "name": "HV battery cell #29 voltage", "group": "Battery.Cells", "bit": 448, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C30_V", "name": "HV battery cell #30 voltage", "group": "Battery.Cells", "bit": 464, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C31_V", "name": "HV battery cell #31 voltage", "group": "Battery.Cells", "bit": 480, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C32_V", "name": "HV battery cell #32 voltage", "group": "Battery.Cells", "bit": 496, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C33_V", "name": "HV battery cell #33 voltage", "group": "Battery.Cells", "bit": 512, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C34_V", "name": "HV battery cell #34 voltage", "group": "Battery.Cells", "bit": 528, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C35_V", "name": "HV battery cell #35 voltage", "group": "Battery.Cells", "bit": 544, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C36_V", "name": "HV battery cell #36 voltage", "group": "Battery.Cells", "bit": 560, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C37_V", "name": "HV battery cell #37 voltage", "group": "Battery.Cells", "bit": 576, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C38_V", "name": "HV battery cell #38 voltage", "group": "Battery.Cells", "bit": 592, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C39_V", "name": "HV battery cell #39 voltage", "group": "Battery.Cells", "bit": 608, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C40_V", "name": "HV battery cell #40 voltage", "group": "Battery.Cells", "bit": 624, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C41_V", "name": "HV battery cell #41 voltage", "group": "Battery.Cells", "bit": 640, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C42_V", "name": "HV battery cell #42 voltage", "group": "Battery.Cells", "bit": 656, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C43_V", "name": "HV battery cell #43 voltage", "group": "Battery.Cells", "bit": 672, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C44_V", "name": "HV battery cell #44 voltage", "group": "Battery.Cells", "bit": 688, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C45_V", "name": "HV battery cell #45 voltage", "group": "Battery.Cells", "bit": 704, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C46_V", "name": "HV battery cell #46 voltage", "group": "Battery.Cells", "bit": 720, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C47_V", "name": "HV battery cell #47 voltage", "group": "Battery.Cells", "bit": 736, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C48_V", "name": "HV battery cell #48 voltage", "group": "Battery.Cells", "bit": 752, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C49_V", "name": "HV battery cell #49 voltage", "group": "Battery.Cells", "bit": 768, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C50_V", "name": "HV battery cell #50 voltage", "group": "Battery.Cells", "bit": 784, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C51_V", "name": "HV battery cell #51 voltage", "group": "Battery.Cells", "bit": 800, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C52_V", "name": "HV battery cell #52 voltage", "group": "Battery.Cells", "bit": 816, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C53_V", "name": "HV battery cell #53 voltage", "group": "Battery.Cells", "bit": 832, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C54_V", "name": "HV battery cell #54 voltage", "group": "Battery.Cells", "bit": 848, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C55_V", "name": "HV battery cell #55 voltage", "group": "Battery.Cells", "bit": 864, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C56_V", "name": "HV battery cell #56 voltage", "group": "Battery.Cells", "bit": 880, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C57_V", "name": "HV battery cell #57 voltage", "group": "Battery.Cells", "bit": 896, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C58_V", "name": "HV battery cell #58 voltage", "group": "Battery.Cells", "bit": 912, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C59_V", "name": "HV battery cell #59 voltage", "group": "Battery.Cells", "bit": 928, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C60_V", "name": "HV battery cell #60 voltage", "group": "Battery.Cells", "bit": 944, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C61_V", "name": "HV battery cell #61 voltage", "group": "Battery.Cells", "bit": 960, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C62_V", "name": "HV battery cell #62 voltage", "group": "Battery.Cells", "bit": 976, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C63_V", "name": "HV battery cell #63 voltage", "group": "Battery.Cells", "bit": 992, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C64_V", "name": "HV battery cell #64 voltage", "group": "Battery.Cells", "bit": 1008, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C65_V", "name": "HV battery cell #65 voltage", "group": "Battery.Cells", "bit": 1024, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C66_V", "name": "HV battery cell #66 voltage", "group": "Battery.Cells", "bit": 1040, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C67_V", "name": "HV battery cell #67 voltage", "group": "Battery.Cells", "bit": 1056, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C68_V", "name": "HV battery cell #68 voltage", "group": "Battery.Cells", "bit": 1072, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C69_V", "name": "HV battery cell #69 voltage", "group": "Battery.Cells", "bit": 1088, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C70_V", "name": "HV battery cell #70 voltage", "group": "Battery.Cells", "bit": 1104, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C71_V", "name": "HV battery cell #71 voltage", "group": "Battery.Cells", "bit": 1120, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C72_V", "name": "HV battery cell #72 voltage", "group": "Battery.Cells", "bit": 1136, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C73_V", "name": "HV battery cell #73 voltage", "group": "Battery.Cells", "bit": 1152, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C74_V", "name": "HV battery cell #74 voltage", "group": "Battery.Cells", "bit": 1168, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C75_V", "name": "HV battery cell #75 voltage", "group": "Battery.Cells", "bit": 1184, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C76_V", "name": "HV battery cell #76 voltage", "group": "Battery.Cells", "bit": 1200, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C77_V", "name": "HV battery cell #77 voltage", "group": "Battery.Cells", "bit": 1216, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C78_V", "name": "HV battery cell #78 voltage", "group": "Battery.Cells", "bit": 1232, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C79_V", "name": "HV battery cell #79 voltage", "group": "Battery.Cells", "bit": 1248, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C80_V", "name": "HV battery cell #80 voltage", "group": "Battery.Cells", "bit": 1264, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C81_V", "name": "HV battery cell #81 voltage", "group": "Battery.Cells", "bit": 1280, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C82_V", "name": "HV battery cell #82 voltage", "group": "Battery.Cells", "bit": 1296, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C83_V", "name": "HV battery cell #83 voltage", "group": "Battery.Cells", "bit": 1312, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C84_V", "name": "HV battery cell #84 voltage", "group": "Battery.Cells", "bit": 1328, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C85_V", "name": "HV battery cell #85 voltage", "group": "Battery.Cells", "bit": 1344, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C86_V", "name": "HV battery cell #86 voltage", "group": "Battery.Cells", "bit": 1360, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C87_V", "name": "HV battery cell #87 voltage", "group": "Battery.Cells", "bit": 1376, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C88_V", "name": "HV battery cell #88 voltage", "group": "Battery.Cells", "bit": 1392, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C89_V", "name": "HV battery cell #89 voltage", "group": "Battery.Cells", "bit": 1408, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C90_V", "name": "HV battery cell #90 voltage", "group": "Battery.Cells", "bit": 1424, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C91_V", "name": "HV battery cell #91 voltage", "group": "Battery.Cells", "bit": 1440, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C92_V", "name": "HV battery cell #92 voltage", "group": "Battery.Cells", "bit": 1456, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C93_V", "name": "HV battery cell #93 voltage", "group": "Battery.Cells", "bit": 1472, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C94_V", "name": "HV battery cell #94 voltage", "group": "Battery.Cells", "bit": 1488, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C95_V", "name": "HV battery cell #95 voltage", "group": "Battery.Cells", "bit": 1504, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C96_V", "name": "HV battery cell #96 voltage", "group": "Battery.Cells", "bit": 1520, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "750.758.2116|t=96,e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2116",
+      "interval": 5,
+      "timeout": 0.6,
+      "flowControl": true,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_TIRE_T_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "AVALONH_TIRE_T_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "AVALONH_TIRE_T_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "AVALONH_TIRE_T_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "AVALONH_TIRE_T_SPARE", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "750.758.2130|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2130",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TIRE_P_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "AVALONH_TIRE_P_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "AVALONH_TIRE_P_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "AVALONH_TIRE_P_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "AVALONH_TIRE_P_SPARE", "name": "Spare tire pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896}
+      ]
+    },
+    {
+      "id": "780.788.2104",
+      "bus": "can11",
+      "tx": "780",
+      "rx": "788",
+      "request": "2104",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_BUCKLE_RS", "name": "Buckle switch, right side", "group": "Seatbelts", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_BUCKLE_LS", "name": "Buckle switch, left side", "group": "Seatbelts", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7B0.21BC",
+      "bus": "can11",
+      "tx": "7B0",
+      "request": "21BC",
+      "interval": 1,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_HAZARD_SWITCH_HISTORY", "name": "Hazard switch history", "group": "Lights", "bit": 2, "bits": 1, "values": {"0": "INCOMPLETE", "1": "COMPLETE"}, "valueDescriptions": {"0": "Incomplete", "1": "Complete"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2103",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "divide": 25, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "AVALONH_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 32, "divide": 25, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "AVALONH_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 32, "divide": 25, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "AVALONH_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 32, "divide": 25, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2105",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2105",
+      "interval": 0.5,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_DECEL", "name": "Deceleration", "group": "Orientation", "bit": 0, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"},
+        {"id": "AVALONH_DECEL_2", "name": "Deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2106",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2106",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_YAW_1", "name": "Yaw rate, sensor 1", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127},
+        {"id": "AVALONH_YAW_2", "name": "Yaw rate, sensor 2", "group": "Orientation", "bit": 8, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2107",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2107",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_WHEEL_CYLINDER_PRESSURE", "name": "Wheel cylinder pressure", "group": "Tires", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211D",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_RESERVOIR_WARNING_SW", "name": "Reservoir warning", "group": "ECU", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MAIN_IDLE_SW", "name": "Main idle", "group": "ECU", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211F",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_STOP_LIGHT_SW", "name": "Stop light", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_PARKING_BRAKE_SW", "name": "Parking brake", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2121",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2121",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_VEHICLE_SPEED_7B0", "name": "Vehicle speed, 7B0", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "multiply": 326.4, "divide": 255, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213C",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213C",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_STOP_LIGHT_RELAY", "name": "Stop light relay", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213D",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ABS_WARN", "name": "Anti-lock braking system warning light", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_BRAKE_WARN", "name": "Brake warning light", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_SLIP_WARN", "name": "Slip indicator light", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_BUZZER", "name": "Buzzer", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_ECB_WARN", "name": "Electronic control brake warning light", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2142",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2142",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FR_WHEEL_ACCELERATION", "name": "Front right wheel acceleration", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "AVALONH_FL_WHEEL_ACCELERATION", "name": "Front left wheel acceleration", "group": "Movement", "bit": 8, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "AVALONH_RR_WHEEL_ACCELERATION", "name": "Rear right wheel acceleration", "group": "Movement", "bit": 16, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "AVALONH_RL_WHEEL_ACCELERATION", "name": "Rear left wheel acceleration", "group": "Movement", "bit": 24, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2146",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2146",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ZP_DEC", "name": "Zero point of deceleration", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "AVALONH_ZP_DEC2", "name": "Zero point of deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "AVALONH_ZP_YAW", "name": "Zero point of yaw rate", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "AVALONH_LNG_G", "name": "Forward and rearward g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "AVALONH_YAW", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127},
+        {"id": "AVALONH_STEERING_ANGLE", "name": "Steering angle value", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2148",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2148",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FR_REGEN_REQUEST", "name": "Regenerative request", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "AVALONH_FR_REGEN_OPERATION", "name": "Regenerative operation", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2158",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2158",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_REGEN_COOPERATION", "name": "Regenerative braking cooperation", "group": "Battery", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215A",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215A",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TRC_TRAC_CTRL", "name": "Traction control, status", "group": "Control.Traction", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_TRC_TRAC_ENGINE_CTRL", "name": "Traction control, engine status", "group": "Control.Traction", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_TRC_TRAC_BRAKE_CTRL", "name": "Traction control, brake status", "group": "Control.Traction", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FR_WHEEL_VSC_CTRL", "name": "Front right wheel vehicle stability control status", "group": "Control.Traction", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FL_WHEEL_VSC_CTRL", "name": "Front left wheel vehicle stability control status", "group": "Control.Traction", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RR_WHEEL_VSC_CTRL", "name": "Rear right wheel vehicle stability control status", "group": "Control.Traction", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RL_WHEEL_VSC_CTRL", "name": "Rear left wheel vehicle stability control status", "group": "Control.Traction", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215F",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FR_WHEEL_ABS_CTRL", "name": "Front right wheel ABS status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FL_WHEEL_ABS_CTRL", "name": "Front left wheel ABS status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RR_WHEEL_ABS_CTRL", "name": "Rear right wheel ABS status", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RL_WHEEL_ABS_CTRL", "name": "Rear left wheel ABS status", "group": "Tires", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RR_WHEEL_EBD_CTRL", "name": "Rear right wheel electronic brake force distribution status", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RL_WHEEL_EBD_CTRL", "name": "Rear left wheel electronic brake force distribution status", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_BA_CTRL", "name": "Brake assist status", "group": "ECU", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_PBA_CTRL", "name": "Predictive brake assist status", "group": "ECU", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A1",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ZERO_POINT_OF_YAW_RATE", "name": "Zero point of yaw rate", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A3",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A3",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_SLA_SOLENOID_CURRENT", "name": "Main relay a, solenoid current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "AVALONH_SLR_SOLENOID_CURRENT", "name": "Main relay r solenoid current", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "AVALONH_SSC_SOLENOID_CURRENT", "name": "Service contactor solenoid current", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "AVALONH_SCC_SOLENOID_CURRENT", "name": "Charge contactor current", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "AVALONH_SMC_SOLENOID_CURRENT", "name": "Main connector solenoid current", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "AVALONH_SRC_SOLENOID_CURRENT", "name": "Relay control solenoid current", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A6",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A6",
+      "interval": 60,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INSPECTION_MODE", "name": "Inspection mode", "group": "ECU", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BE",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BE",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FR_WHEEL_SPEED_OPEN", "name": "Front right wheel speed open", "group": "Movement", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FL_WHEEL_SPEED_OPEN", "name": "Front left wheel speed open", "group": "Movement", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RR_WHEEL_SPEED_OPEN", "name": "Rear right wheel speed open", "group": "Movement", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RL_WHEEL_SPEED_OPEN", "name": "Rear left wheel speed open", "group": "Movement", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_YAW_RATE_OPEN", "name": "Yaw rate open error?", "group": "Orientation", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "AVALONH_DECELERATION_OPEN", "name": "Deceleration open", "group": "Orientation", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MASTER_CYLINDER_OPEN", "name": "Master cylinder open", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_STROKE_OPEN", "name": "Stroke open", "group": "Engine", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FR_WHEEL_CYLINDER_OPEN", "name": "Front right wheel cylinder open", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_ACCUMULATOR_OPEN", "name": "Accumulator open", "group": "Engine", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_HV_COMMUNICATION_OPEN", "name": "HV communication open", "group": "Engine", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2112",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2112",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TAIL_CANCEL_LIGHT", "name": "Tail cancel SW", "group": "Lights", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_P_SEATBELT_BUCKLE_LIGHT", "name": "P-seatbelt buckle SW", "group": "Lights", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CHECK_ENGINE_LIGHT", "name": "Check engine SW", "group": "Lights", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_EOP_LIGHT", "name": "Oil pressure switch", "group": "Lights", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2113",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2113",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2121",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2121",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_VSS", "name": "Speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2123",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2123",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ECT_7C0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2129",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2129",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FUEL_INPUT", "name": "Fuel input", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2141",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2141",
+      "interval": 5,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_OIL_CHANGE_ODO", "name": "Distance since oil change", "group": "Fluids", "bit": 0, "bits": 8, "multiply": 2514600, "divide": 15625, "min": 0, "max": 41038.272, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2168",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2168",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_RHEOSTAT", "name": "Rheostat", "description": "Higher values are brighter", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A1",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_KEY_REMIND_SOUND", "name": "Key remind sound", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A7",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A7",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_SEAT_BELT_BEEP_DRIVER", "name": "Seat belt beep, driver", "group": "Seatbelts", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_SEAT_BELT_BEEP_PASSENGER", "name": "Seat belt beep, passenger", "group": "Seatbelts", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_SEAT_BELT_BEEP_REMINDER", "name": "Seat belt beep, reminder", "group": "Seatbelts", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221021",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221021",
+      "interval": 5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_BATTERY_VOLTAGE_7C0", "name": "B+ battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221022",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FUEL_LEVEL", "name": "Fuel level", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L", "invalidAtOrAbove": 655.35}
+      ]
+    },
+    {
+      "id": "7C4.2143",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "2143",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AIR_OUTLET_SERVO_PULSE_D", "name": "Air outlet servo pulse, driver", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_AIR_OUTLET_SERVO_ACTU_PULSE_D", "name": "Air outlet servo actual pulse, driver", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.2144",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "2144",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AIR_INLET_DAMPER_TARGET_PULSE", "name": "Air inlet damper target pulse", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_AIR_INLET_DAMPER_ACTUAL_PULSE", "name": "Air inlet damper actual pulse", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.214C",
+      "bus": "can11",
+      "tx": "7C4",
+      "request": "214C",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EVAPORATOR_TARGET_TEMP", "name": "Evaporator target temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2121",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2121",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 63.75, "divide": 255, "add": -6.5, "min": -6.5, "max": 57.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2122",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2122",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AAT_7C4", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -23.3, "min": -23.3, "max": 65.95, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2124",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2124",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_SOLAR_DRIVER", "name": "Solar sensor, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2126",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2126",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ECT", "name": "Engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": 1.3, "min": 1.3, "max": 90.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2129",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2129",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_T_DRIVER", "name": "Set temperature, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213C",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213C",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_BLOWER_MOTOR_SPEED_LEVEL", "name": "Blower motor speed level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213D",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213D",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ADJUSTED_AMBIENT_T", "name": "Adjusted ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 81.6, "divide": 255, "add": -30.8, "min": -30.8, "max": 50.8, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2141",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2141",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_AIR_MIX_SERVO_TARG_D", "name": "Air mix servo target pulse, driver", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_AIR_MIX_SERVO_ACT_D", "name": "Air mix servo, actual pulse, d", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2149",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2149",
+      "interval": 0.25,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_COMP_SPD", "name": "Compressor speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214A",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214A",
+      "interval": 0.25,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_COMP_TGT_SPD", "name": "Compressor, target speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214B",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214B",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_EVAP_FIN_THERMISTOR", "name": "Evaporator fin thermistor", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -29.7, "min": -29.7, "max": 59.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2153",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2153",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_REGULATOR_P", "name": "Regulator pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 375105, "divide": 25500, "add": -456.68, "min": -456.68, "max": 3294, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.21AF",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "21AF",
+      "interval": 5,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_GLASS_T", "name": "Glass temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 500, "add": -557.8, "min": -557, "max": 621, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.21B1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "21B1",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_GLASS_HUMIDITY", "name": "Glass humidity", "group": "Engine", "bit": 0, "bits": 16, "multiply": 20, "divide": 13107, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D0.7D8.2162",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7D8",
+      "request": "2162",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_PARKING_BRAKE_2", "name": "Parking brake", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220102",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220102",
+      "interval": 1,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_KEY_CYCLE", "name": "Key cycle", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ODO_V2_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221002",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221002",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_AUX_BAT_V", "name": "Auxiliary battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 61, "divide": 50000, "min": 0, "max": 79.95, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221039",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221039",
+      "interval": 0.25,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_FRONT_REAR_MOTOR_TQ", "name": "Front/rear motor torque ratio", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "add": -32.768, "min": -32.76, "max": 32.76}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221069",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221069",
+      "interval": 0.25,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MOTOR_REGENERATIVE", "name": "Motor regenerative brake torque, requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"},
+        {"id": "AVALONH_MOTOR_REGENERATIVE_BREAK", "name": "Motor regenerative brake torque", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_HVBAT_SOC_MAX", "name": "HV battery charge, maximum", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_HVBAT_SOC_MIN", "name": "HV battery charge, minimum", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106E",
+      "interval": 1,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_AC_POWER_CONS", "name": "Air conditioning power consumption", "group": "Engine", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "AVALONH_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "AVALONH_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "AVALONH_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22107E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22107E",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_12V_BAT_V_BEFORE_SMR", "name": "12V battery voltage before system main relay", "group": "Battery", "bit": 0, "bits": 8, "multiply": 61, "divide": 50000, "add": 11.25, "min": 0, "max": 11.56, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "AVALONH_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A4",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A4",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_GEN_INVERTER_T", "name": "Generator inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A5",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A5",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MOTOR_INVERTER_T", "name": "Motor inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MOTOR_INVERTER_T_ON", "name": "Motor inverter temperature after ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MAX_MOTOR_INVERTER_T", "name": "Maximum motor inverter temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A7",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BOOSTING_CONV_T_HI", "name": "Boosting converter temperature, upper", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_BOOSTING_CONV_T_LO", "name": "Boosting converter temperature, lower", "group": "Transmission", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B0",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B0",
+      "interval": 1,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_VL_V_BEFORE_BOOSTING", "name": "Boost converter voltage before boosting", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"},
+        {"id": "AVALONH_VH_V_AFTER_BOOSTING", "name": "Boost converter voltage after boosting", "group": "Battery", "bit": 16, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_12V_V_7D2", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_VSS_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F42",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F42",
+      "interval": 5,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_12V_BAT_V_SMOOTHED", "name": "12V battery voltage smoothed", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F46",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F46",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "notAnsweredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "AVALONH_HVBAT_C", "name": "HV battery current", "group": "Battery", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
+        {"id": "AVALONH_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "AVALONH_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "AVALONH_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "AVALONH_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "AVALONH_ENGINE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "s"},
+        {"id": "AVALONH_THROTTLE_SENSOR_POSITION", "name": "Throttle sensor position", "group": "Engine", "bit": 112, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_THROTTLE_SENSOR_VOLT", "name": "Throttle sensor volt %, 1", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_THROTTL_SENSOR_2_VOLT", "name": "Throttle sensor volt %, 2", "group": "Engine", "bit": 128, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_THROTTLE_MOTOR_DUTY", "name": "Throttle motor duty", "group": "Engine", "bit": 136, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_WARMUP_CYCLE_CLEARED_DTC", "name": "Warm-up cycles since DTCs cleared", "group": "Engine", "bit": 152, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_TIME_AFTER_DTC_CLEARED", "name": "Time since DTCs cleared", "group": "Engine", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "AVALONH_BATTERY_VOLTAGE", "name": "Battery voltage", "group": "Battery", "bit": 184, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_SHORT_FT_B1S1", "name": "Short FT B1S1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.218, "unit": "%"},
+        {"id": "AVALONH_LONG_FT_B1S1", "name": "Long FT B1S1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.218, "unit": "%"},
+        {"id": "AVALONH_IGN_ADVANCE", "name": "Ignition advance", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "AVALONH_EVAP_PURGE_DUTY", "name": "EVAP purge duty", "group": "Engine", "bit": 40, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_TARGET_AIR_FUEL_RATIO", "name": "Target air-fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "AVALONH_AF_LAMBDA_B1S1", "name": "AF lambda, bank 1 sensor 1", "group": "Engine", "bit": 16, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "AVALONH_AFS_VOLTAGE_B1S1", "name": "Air fuel sensor voltage, bank 1 sensor 1", "group": "Battery", "bit": 32, "bits": 16, "multiply": 7.99, "divide": 65535, "min": 0, "max": 7.99, "unit": "V"},
+        {"id": "AVALONH_AFS_CURRENT_B1S1", "name": "Air fuel sensor current, bank 1 sensor 1", "group": "Engine", "bit": 64, "bits": 16, "divide": 256, "add": -128, "min": -128, "max": 127.99, "unit": "mA"},
+        {"id": "AVALONH_O2S_B1S2", "name": "O2S, bank 1 sensor 2", "group": "Engine", "bit": 80, "bits": 8, "multiply": 5, "divide": 1000, "min": 0, "max": 1.275, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2105",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2105",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_CATALYST_T_B1S1", "name": "Catalyst temperature B1S1", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"},
+        {"id": "AVALONH_CATALYST_T_B1S2", "name": "Catalyst temperature B1S2", "group": "Engine", "bit": 32, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
+        {"id": "AVALONH_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MISFIRE_MONITOR_AVAIL", "name": "Misfire monitor_avail", "group": "DTCs", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_EGR_VVT_MONITOR_AVAIL", "name": "EGR/VVT monitor_avail", "group": "DTCs", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_O2S_A_FS_HEATER_MONITOR_AVAIL", "name": "O2S heater monitor_avail", "group": "DTCs", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_O2S_A_FS_MONITOR_AVAIL", "name": "O2S monitor_avail", "group": "DTCs", "bit": 18, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_A_C_MONITOR_AVAIL", "name": "A/C monitor_avail", "group": "DTCs", "bit": 19, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_2ND_AIR_MONITOR_AVAIL", "name": "2nd air monitor_avail", "group": "DTCs", "bit": 20, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_EVAP_MONITOR_AVAIL", "name": "EVAP monitor_avail", "group": "DTCs", "bit": 21, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_HEATED_CATALYST_MONITOR_AVAIL", "name": "Heated catalyst monitor_avail", "group": "DTCs", "bit": 22, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CATALYST_MONITOR_AVAIL", "name": "Catalyst monitor_avail", "group": "DTCs", "bit": 23, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_EGR_VVT_MONITOR_INCMPL", "name": "EGR/VVT monitor_incmpl", "group": "DTCs", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_O2S_A_FS_HEATER_MONITOR_INCMPL", "name": "O2S heater monitor_incmpl", "group": "DTCs", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_O2S_A_FS_MONITOR_INCMPL", "name": "O2S monitor_incmpl", "group": "DTCs", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_A_C_MONITOR_INCMPL", "name": "A/C monitor_incmpl", "group": "DTCs", "bit": 27, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_2ND_AIR_MONITOR_INCMPL", "name": "2nd air monitor_incmpl", "group": "DTCs", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_EVAP_MONITOR_ICMPL", "name": "EVAP monitor_icmpl", "group": "DTCs", "bit": 29, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_HEATED_CATALYST_MONITOR_INCMPL", "name": "Heated catalyst monitor_incmpl", "group": "DTCs", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CATALYST_MONITOR_INCMPL", "name": "Catalyst monitor_incmpl", "group": "DTCs", "bit": 31, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MILON_RUN_DISTANCE", "name": "MIL ON run distance", "group": "DTCs", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "AVALONH_RUNNING_TIME_FROM_MIL_ON", "name": "Running time from MIL ON", "group": "DTCs", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2124",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2124",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_COMMUNICATION_WITH_HV", "name": "Communication with HV", "group": "Climate", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_COMMUNICATION_WITH_BRAKE", "name": "Communication with brake", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_COMM_WITH_AIR_CONDITIONER", "name": "Communication with air conditioner", "group": "Climate", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_COMM_WITH_VALVEMATIC_COMM", "name": "Communication with valvematic", "group": "Climate", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2125",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2125",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_POWER_STEERING_SIGNAL", "name": "Power steering", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_STOP_LIGHT_SWITCH", "name": "Stop light", "group": "Lights", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_CRUISE_CONTROL_LIVE_BRAKE_CANCEL_SWITCH", "name": "Cruise control live brake cancel", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_STARTER_SIGNAL", "name": "Starter signal", "group": "Control", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_STARTER_CONTROL", "name": "Starter control", "group": "Control", "bit": 12, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ELECTRICAL_LOAD_SIGNAL_1", "name": "Electrical load signal 1", "group": "Control", "bit": 16, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ELECTRICAL_LOAD_SIGNAL_2", "name": "Electrical load signal 2", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SHIFT_SW_STATUS_P_RANGE", "name": "Shift SW status, parking", "group": "Control", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SHIFT_SW_STATUS_R_RANGE", "name": "Shift SW status, reverse", "group": "Control", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SHIFT_SW_STATUS_N_RANGE", "name": "Shift SW status, neutral", "group": "Control", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SHIFT_SW_STATUS_D_RANGE", "name": "Shift SW status, drive", "group": "Control", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SPORTS_MODE_SELECTION_SW", "name": "Sports mode selection", "group": "Control", "bit": 32, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SPORTS_SHIFT_UP_SW", "name": "Sports shift up", "group": "Control", "bit": 33, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SPORTS_SHIFT_DOWN_SW", "name": "Sports shift down", "group": "Control", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_PATTERN_SWITCH_PWR_M", "name": "Pattern switch", "group": "Control", "bit": 42, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_NEUTRAL_POSITION_SW_SIGNAL", "name": "Neutral position", "group": "Control", "bit": 53, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_TC_TERMINAL", "name": "TC", "group": "Control", "bit": 61, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_A_C_COMPRESSOR", "name": "A/C compressor", "group": "Control", "bit": 64, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2128|f=2010-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2128",
+      "interval": 5,
+      "years": {"from": 2010},
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ODO_7E0", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2137",
+      "interval": 3600,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_INITIAL_ECT", "name": "Initial engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 531, "divide": 850, "add": -40, "min": -40, "max": 119.3},
+        {"id": "AVALONH_INITIAL_IAT", "name": "Initial intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"},
+        {"id": "AVALONH_KNOCK_CORRECT_LEARN", "name": "Knock correct learn value", "group": "Engine", "bit": 16, "bits": 16, "divide": 32, "add": -1024, "min": -1024, "max": 1023, "unit": "°"},
+        {"id": "AVALONH_KNOCK_ADJUST_7E0", "name": "Knock adjust", "group": "Engine", "bit": 32, "bits": 16, "multiply": 2048, "divide": 65535, "add": -1024, "min": -1024, "max": 1024, "unit": "°"},
+        {"id": "AVALONH_KNOCK_FEEDBACK_7E0", "name": "Knock feedback", "group": "Engine", "bit": 48, "bits": 16, "multiply": 2048, "divide": 65535, "add": -1024, "min": -1024, "max": 1024, "unit": "°"},
+        {"id": "AVALONH_EVAP_PURGE_FLOW", "name": "Evaporative purge flow", "group": "Engine", "bit": 64, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.99, "unit": "%"},
+        {"id": "AVALONH_IG_OFF_ELAPSED_TIME", "name": "IG OFF elapsed time", "group": "Engine", "bit": 80, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "min"},
+        {"id": "AVALONH_DIST_BATT_CABLE", "name": "Dist battery cable disconnect", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "AVALONH_IMMOBILIZER_ON", "name": "Immobilizer communication on", "group": "Engine", "bit": 120, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 121, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CLOSED_THROTTLE_POS_ON", "name": "Closed throttle position switch on", "group": "Engine", "bit": 125, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_FC_TAU_ON", "name": "Fuel cut TAU on", "group": "Engine", "bit": 127, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2139",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2139",
+      "interval": 0.25,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_ACIS_VSV_ON", "name": "Acoustic control induction system vacuum switching valve on", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_EVAP_PURGE_VSV_ON", "name": "Evaporative purge vacuum switching valve on", "group": "Engine", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_FUEL_PMP_SPD_STAT_ON", "name": "Fuel pump/speed status on", "group": "Fuel", "bit": 14, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_VARIABLE_VLV_TIM_1_ON", "name": "Variable valve timing control status 1 on", "group": "Engine", "bit": 22, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_TQ_CONV_TE1_ON", "name": "Torque converter and TE1 on", "group": "Transmission", "bit": 30, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ELEC_FAN_MOTOR_ON", "name": "Electric fan motor on", "group": "Engine", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ACC_RELAY_ON", "name": "Accessory relay on", "group": "Engine", "bit": 46, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_STARTER_RELAY_ON", "name": "Starter relay on", "group": "Engine", "bit": 47, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_VALVEMATIC_TGT_ANG", "name": "Valvematic, target angle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 512, "min": 0, "max": 639.9, "unit": "°"},
+        {"id": "AVALONH_PURGE_CUT_VSV_DUTY", "name": "Purge cut vacuum switching valve duty", "group": "Engine", "bit": 16, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "AVALONH_F_HEATER_DUTY_B1S1", "name": "A/F heater duty bank 1 sensor 1", "group": "Engine", "bit": 32, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "AVALONH_O2_HEATER_CURR_VAL", "name": "O2 heater current val bank 1 sensor 2", "group": "Engine", "bit": 48, "bits": 16, "divide": 13107, "min": 0, "max": 4.999, "unit": "A"},
+        {"id": "AVALONH_O2_HEATER_B1S2", "name": "O2 heater b1s2_active", "group": "Engine", "bit": 68, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213C",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_INJ_VOL_CYL_1", "name": "Injection volume per 10 injections, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 32000000, "min": 0, "max": 0.002, "unit": "L"},
+        {"id": "AVALONH_INJ_DUR_CYL_1", "name": "Injection duration for cylinder 1", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"},
+        {"id": "AVALONH_TOT_FT_1", "name": "Total fuel trim, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 256, "add": -50, "min": -50, "max": 49.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2141",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2141",
+      "interval": 3600,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_THROTTLE_SENS_OPEN_1", "name": "Throttle sensor open position 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_SENS_OPEN_2", "name": "Throttle sensor open position 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_ACCEL_FULLY_CLOSE_1", "name": "Accelerator fully close learn 1", "group": "Movement", "bit": 16, "bits": 8, "multiply": 125, "divide": 256, "min": 0, "max": 124.5, "unit": "°"},
+        {"id": "AVALONH_ACCEL_FULLY_CLOSE_2", "name": "Accelerator fully close learn 2", "group": "Movement", "bit": 24, "bits": 8, "multiply": 125, "divide": 256, "min": 0, "max": 124.5, "unit": "°"},
+        {"id": "AVALONH_THROTTLE_POS_COMMAND", "name": "Throttle position command", "group": "Engine", "bit": 32, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_ACCEL_POS", "name": "Accelerator position", "group": "Movement", "bit": 40, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "AVALONH_BM_V", "name": "+BM voltage", "group": "Battery", "bit": 56, "bits": 16, "multiply": 5, "divide": 4096, "min": 0, "max": 79.998, "unit": "V"},
+        {"id": "AVALONH_ACCEL_SENS_OUT_1", "name": "Accelerator sensor out, number 1", "group": "Movement", "bit": 72, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_ACCEL_SENS_OUT_2", "name": "Accelerator sensor out, number 2", "group": "Movement", "bit": 80, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_POS_NUMBER_1", "name": "Throttle position, number 1", "group": "Engine", "bit": 88, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_POS_NUMBER_2", "name": "Throttle position, number 2", "group": "Engine", "bit": 96, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_REQUIRE_POS", "name": "Throttle require position", "group": "Engine", "bit": 104, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_FULLY_CLOSE", "name": "Throttle fully close learn", "group": "Engine", "bit": 112, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "AVALONH_THROTTLE_MOTOR_DUTY_OPEN", "name": "Throttle motor duty, open", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "AVALONH_THROTTLE_MOTOR_DUTY_CLOSE", "name": "Throttle motor duty, close", "group": "Engine", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "AVALONH_THROTTLE_MOTOR", "name": "Throttle motor current", "group": "Engine", "bit": 136, "bits": 8, "multiply": 5, "divide": 64, "min": 0, "max": 19.9, "unit": "A"},
+        {"id": "AVALONH_SYSTEM_GUARD_ON", "name": "System guard on", "group": "Engine", "bit": 144, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_OPEN_SIDE_ON", "name": "Open side malfunction on", "group": "Engine", "bit": 145, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ACTUATOR_POWER_SUP_ON", "name": "Actuator power supply on", "group": "Engine", "bit": 146, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_ACCEL_IDLE_POS_ON", "name": "Accelerator idle position on", "group": "Movement", "bit": 148, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_THROTTLE_IDLE_POS_ON", "name": "Throttle idle position on", "group": "Engine", "bit": 149, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2144",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2144",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_VARIABLE_VLV_TIM_AIM_1", "name": "Variable valve timing aim angle 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1333, "divide": 218450, "min": 0, "max": 399, "unit": "%"},
+        {"id": "AVALONH_VARIABLE_VLV_TIM_OIL_1", "name": "Variable valve timing oil control valve duty 1", "group": "Engine", "bit": 16, "bits": 16, "multiply": 0.0061020829, "min": 0, "max": 399, "unit": "%"},
+        {"id": "AVALONH_VARIABLE_VLV_TIM_1", "name": "Variable valve timing change angle 1", "group": "Engine", "bit": 32, "bits": 16, "multiply": 0.0097642481, "min": 0, "max": 639, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2145",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2145",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_MISFIRE_RPM_V2", "name": "Misfire RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "AVALONH_MISFIRE_LOAD_V2", "name": "Misfire load", "group": "Engine.Misfires", "bit": 16, "bits": 8, "multiply": 4, "divide": 256, "min": 0, "max": 3.98},
+        {"id": "AVALONH_CYL1_MISFIRE_CNT", "name": "Cylinder #1 misfire count", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_CYL2_MISFIRE_CNT", "name": "Cylinder #2 misfire count", "group": "Engine.Misfires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_CYL3_MISFIRE_CNT", "name": "Cylinder #3 misfire count", "group": "Engine.Misfires", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_CYL4_MISFIRE_CNT", "name": "Cylinder #4 misfire count", "group": "Engine.Misfires", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_ALL_CYLINDERS_MISFIRE_CNT", "name": "All cylinders misfire count", "group": "Engine.Misfires", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_IGNITION_TRIG_CNT", "name": "Ignition trigger count", "group": "Control", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "AVALONH_MISFIRE_MARGIN_V2", "name": "Misfire margin", "group": "Engine.Misfires", "bit": 80, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2147",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2147",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_EGR_STEP_POSITION", "name": "Exhaust gas recirculation step position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2149",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2149",
+      "interval": 3600,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_REQ_ENG_TQ", "name": "Requested engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383},
+        {"id": "AVALONH_HIGH_V_TGT_RPM", "name": "High voltage, target engine speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "AVALONH_ACT_ENG_TQ", "name": "Actual engine torque", "group": "Engine", "bit": 24, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "Nm"},
+        {"id": "AVALONH_ENG_RUN_TIME_UP_255", "name": "Engine run time, up to 255 sec. only", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "s"},
+        {"id": "AVALONH_REQ_ENG_RUN_TIME", "name": "Request engine run time", "group": "Engine", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "AVALONH_JUDGE_TIME_ENG_IGN", "name": "Judge time engine ignition", "group": "Engine", "bit": 56, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "AVALONH_JUDGE_TIME_ENG", "name": "Judge time engine output", "group": "Engine", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "AVALONH_IDLE_SPD_CTRL_L_S", "name": "Idle speed control learning value, l/s", "group": "Engine", "bit": 72, "bits": 16, "multiply": 0.0012206912, "min": 0, "max": 79.99},
+        {"id": "AVALONH_ENG_INDEPENDENT_CTRL", "name": "Engine independent control", "group": "Engine", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_REQ_WARM_UP", "name": "Request warm-up", "group": "Engine", "bit": 89, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RACING_OPERATION", "name": "Racing operation", "group": "Engine", "bit": 90, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_ENG_INDEPENDENT", "name": "Engine independent", "group": "Engine", "bit": 91, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_F_C_ENG_STOP_REQ", "name": "Fuel cut for engine stop request", "group": "Engine", "bit": 92, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_IDLE_SPD_CTRL", "name": "Idle speed control learning", "group": "Engine", "bit": 93, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2151",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "signals": [
+        {"id": "AVALONH_ENG_START_T", "name": "Engine starting time", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"},
+        {"id": "AVALONH_ENG_SPD_START_OFF", "name": "Engine speed, starter off", "group": "Movement", "bit": 16, "bits": 16, "multiply": 100, "divide": 128, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "AVALONH_IMMOB_FUEL_CUT", "name": "Immobilizer fuel cut", "group": "Fuel", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_STARTER_CNT", "name": "Starter count", "group": "Engine", "bit": 33, "bits": 7, "min": 0, "max": 127},
+        {"id": "AVALONH_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
+        {"id": "AVALONH_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_PREV_TRIP_IAT", "name": "Intake air temperature, previous trip", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_EOT_V3", "name": "Engine oil temperature", "group": "Engine", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_PREV_TRIP_EOT", "name": "Engine oil temperature, previous trip", "group": "Engine", "bit": 80, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_AC_AMB_T", "name": "Ambient temperature for A/C", "group": "Climate", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_PREV_TRIP_AMB_T", "name": "Ambient temperature, previous trip", "group": "Trips", "bit": 96, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_TPS", "name": "Throttle position", "group": "Engine", "bit": 104, "bits": 16, "multiply": 125, "divide": 16384, "min": 0, "max": 499.99, "unit": "°"},
+        {"id": "AVALONH_ISC_FLOW", "name": "Idle speed control flow", "group": "Engine", "bit": 120, "bits": 16, "multiply": 10, "divide": 8192, "min": 0, "max": 79.99},
+        {"id": "AVALONH_ISC_POS", "name": "Idle speed control position", "group": "Engine", "bit": 136, "bits": 16, "multiply": 125, "divide": 16384, "min": 0, "max": 499.99, "unit": "°"},
+        {"id": "AVALONH_ISC_FB", "name": "Idle speed control feedback", "group": "Engine", "bit": 168, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "AVALONH_ISC_LEARN", "name": "Idle speed control learning value", "group": "Engine", "bit": 184, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "AVALONH_ELEC_LOAD_FB", "name": "Electric load feedback", "group": "Electrical", "bit": 200, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "AVALONH_AC_FB", "name": "Air conditioner feedback", "group": "Climate", "bit": 216, "bits": 16, "multiply": 10, "divide": 8192, "add": -40, "min": -40, "max": 39.99},
+        {"id": "AVALONH_N_RANGE_STS", "name": "Neutral range status", "group": "Transmission", "bit": 232, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_NEUTRAL_CTRL", "name": "Neutral control", "group": "Transmission", "bit": 233, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_LOW_RPM_CTRL", "name": "Low revolution control", "group": "Engine", "bit": 234, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_VVT_ADV_FAIL", "name": "Variable valve timing advance fail", "group": "Engine", "bit": 235, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_LOW_RPM_START", "name": "Low revolution for engine start", "group": "Engine", "bit": 236, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_ENG_START_HESIT", "name": "Engine start hesitation", "group": "Engine", "bit": 237, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2152",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2152",
+      "interval": 0.25,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_IDLE_SPARK_ADVN_CTRL_1", "name": "Idle spark advance control 1", "group": "Engine", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "AVALONH_IDLE_SPARK_ADVN_CTRL_2", "name": "Idle spark advance control 2", "group": "Engine", "bit": 8, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "AVALONH_IDLE_SPARK_ADVN_CTRL_3", "name": "Idle spark advance control 3", "group": "Engine", "bit": 16, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "AVALONH_IDLE_SPARK_ADVN_CTRL_4", "name": "Idle spark advance control 4", "group": "Engine", "bit": 24, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "AVALONH_MIN_RPM", "name": "Minimum engine speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "AVALONH_ENG_STALL_CTRL_FB", "name": "Engine stall control FB flow", "group": "Engine", "bit": 48, "bits": 16, "multiply": 5, "divide": 4096, "add": -40, "min": -40, "max": 39.99},
+        {"id": "AVALONH_FUEL_CUT_TIME", "name": "Fuel cut time", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 537, "divide": 512, "min": 0, "max": 68734.9511}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2154",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2154",
+      "interval": 0.25,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_RPM_CYL_1", "name": "Engine speed of cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
+        {"id": "AVALONH_RPM_CYL_2", "name": "Engine speed of cylinder 2", "group": "Movement", "bit": 16, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
+        {"id": "AVALONH_RPM_CYL_3", "name": "Engine speed of cylinder 3", "group": "Movement", "bit": 32, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
+        {"id": "AVALONH_RPM_CYL_4", "name": "Engine speed of cylinder 4", "group": "Movement", "bit": 48, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
+        {"id": "AVALONH_AV_RPM_ALL_CYL", "name": "Average engine speed of all cylinders", "group": "Movement", "metric": "engineSpeed", "bit": 64, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B2",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_KNOCK_ADJUST", "name": "Knock adjust", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"},
+        {"id": "AVALONH_KNOCK_FEEDBACK", "name": "Knock feedback", "group": "Engine", "bit": 16, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21C1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21C1",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CYLINDER_NUMBER", "name": "Cylinder number", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_DESTINATION", "name": "Destination", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_MODEL_YEAR", "name": "Model year", "group": "Engine", "bit": 128, "bits": 8, "add": 1900, "min": 1900, "max": 2155}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E1",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CODES_INCLUDE", "name": "Codes, include history", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E3",
+      "interval": 1,
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CHECK_MODE_ON", "name": "Check mode on", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_SPD_TEST_RESULT", "name": "Vehicle speed sensor test result, incomplete", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_MIS_TEST_RESULT", "name": "Misfire test result, incomplete", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "AVALONH_OXS1_FS2_TEST_RESULT", "name": "OXS1, A/FS2 test result, incomplete", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_F_TEST_RESULTS_1", "name": "A/F test results 1, incomplete", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2101|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2101",
+      "interval": 30,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CALC_LOAD_7E2", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_MANIFOLD_AIR_P_7E2", "name": "Manifold air pressure", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "AVALONH_IAT_7E2", "name": "Intake air temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_AAT_7E2", "name": "Ambient temperature", "group": "Engine", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_ATMOSPHERE_P_7E2", "name": "Atmosphere pressure", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "AVALONH_ECT_7E2", "name": "Engine coolant temperature", "group": "Engine", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_RPM_7E2", "name": "Engine speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"},
+        {"id": "AVALONH_VSS_7E2", "name": "Vehicle speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "AVALONH_ENG_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 72, "bits": 16, "min": 0, "max": 65535, "unit": "s"},
+        {"id": "AVALONH_THROTTLE_POS", "name": "Throttle position", "group": "Engine", "bit": 88, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_ACCEL_PEDAL_POS_1", "name": "Accelerator pedal position 1", "group": "Movement", "bit": 96, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_ACCEL_PEDAL_POS_2", "name": "Accelerator pedal position 2", "group": "Movement", "bit": 104, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "AVALONH_DTC_CLEAR_WARM_UP", "name": "Warm-up cycles since DTCs cleared", "group": "Engine", "bit": 112, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_DTC_CLEAR_RUN_DIST", "name": "Distance since DTCs cleared", "group": "Trips", "bit": 120, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "AVALONH_DTC_CLEAR_MIN_RAW", "name": "Time since DTCs cleared, raw count", "group": "Engine", "bit": 136, "bits": 16, "min": 0, "max": 65535},
+        {"id": "AVALONH_B", "name": "Battery voltage", "group": "Engine", "bit": 152, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "AVALONH_ST_CHG_ALL_BAT", "name": "State of charge", "group": "Battery", "bit": 168, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2121|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2121",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_CCS_VEH_SPD", "name": "Cruise control vehicle speed", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "AVALONH_CCS_MEM_VEH_SPD", "name": "Cruise control set speed", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "AVALONH_CRUISE_OPERATION", "name": "Cruise operation status", "group": "Engine", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CRUISE_CTRL", "name": "Cruise control", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_RES_ACC_SWITCH", "name": "Cruise resume and accelerate switch", "group": "Engine", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_SET_COAST_SWITCH", "name": "Cruise set and coast switch", "group": "Engine", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CANCEL_SWITCH", "name": "Cancel switch", "group": "Engine", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2141|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2141",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_SHIFT_SENS_MAIN", "name": "Shift sensor main", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"},
+        {"id": "AVALONH_SHIFT_SENS_SUB", "name": "Shift sensor sub", "group": "Transmission", "bit": 8, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"},
+        {"id": "AVALONH_SHIFT_SENS_SELECT", "name": "Shift sensor select main", "group": "Transmission", "bit": 16, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"},
+        {"id": "AVALONH_SHIFT_SENS_SELECT_SUB", "name": "Shift sensor select sub", "group": "Transmission", "bit": 24, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"},
+        {"id": "AVALONH_AUXILIARY_BAT_T", "name": "Auxiliary battery temperature", "group": "Battery", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215},
+        {"id": "AVALONH_ENG_REV_SENS", "name": "Engine speed sensor", "group": "Engine", "bit": 40, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"},
+        {"id": "AVALONH_P_POS_SW_TERMINAL", "name": "Park position switch terminal voltage", "group": "Engine", "bit": 56, "bits": 8, "multiply": 0.3137207031, "min": 0, "max": 79.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2161|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2161",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG1_T", "name": "MG1 temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG1_T_AFTER_IG_ON", "name": "MG1 temperature at ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG1_T_MAX", "name": "MG1 temperature max", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG1_REVOLUTION", "name": "MG1 revolution", "group": "Engine", "bit": 24, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2162|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2162",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG2_T", "name": "MG2 temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG2_T_AFTER_IG_ON", "name": "MG2 temperature at ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG2_T_MAX", "name": "MG2 temperature max", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG2_REVOLUTION", "name": "MG2 revolution", "group": "Engine", "bit": 24, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2167|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2167",
+      "interval": 0.25,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG1_TQ", "name": "MG1 torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"},
+        {"id": "AVALONH_MG1_TQ_EXECUTION", "name": "MG1 torque execution value", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"},
+        {"id": "AVALONH_MG1_CTRL_MODE_PWM_0_1_2", "name": "MG1 control mode, pwm=0,variable pwm=1,rectangular wave=2", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2168|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2168",
+      "interval": 0.25,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG2_TQ", "name": "MG2 torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"},
+        {"id": "AVALONH_MG2_TQ_EXECUTION", "name": "MG2 torque execution value", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"},
+        {"id": "AVALONH_MG2_CTRL_MODE_PWM_0_1_2", "name": "MG2 control mode, pwm=0,variable pwm=1,rectangular wave=2", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2170|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2170",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_INVERTER_MG1_T", "name": "Inverter MG1 temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_INVERTER_MG1_T_AFTER_ON", "name": "Inverter MG1 temperature at ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_INVERTER_MG1_T_MAX", "name": "Inverter MG1 temperature max", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG1_GATE_STAT", "name": "MG1 gate status", "group": "Engine", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2171|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2171",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_INVERTER_MG2_T", "name": "Inverter MG2 temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_INVERTER_MG2_T_AFTER_ON", "name": "Inverter MG2 temperature at ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_INVERTER_MG2_T_MAX", "name": "Inverter MG2 temperature max", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_MG2_GATE_STAT", "name": "MG2 gate status", "group": "Engine", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2174|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2174",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BOOST_CONV_T_HI", "name": "Boost converter temperature, upper", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_BOOST_CONV_T_LO", "name": "Boost converter temperature, lower", "group": "Transmission", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_BOOST_CONV_T_AFTER_ON", "name": "Boost converter temperature at ignition on", "group": "Transmission", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_BOOST_CONV_T_MAX", "name": "Boost converter temperature max", "group": "Transmission", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "AVALONH_CONV_GATE_STAT", "name": "Converter gate status", "group": "Transmission", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_OVERVOLTAGE_INPUT", "name": "Converter input voltage too high", "group": "Battery", "bit": 33, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_OVERVOLTAGE_INPUT_INVERTER", "name": "Inverter input voltage too high", "group": "Battery", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_VL_V_BEFORE_BOOSTING_7E2", "name": "Boost converter voltage before boosting", "group": "Battery", "bit": 40, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"},
+        {"id": "AVALONH_VH_V_AFTER_BOOSTING_7E2", "name": "Boost converter voltage after boosting", "group": "Battery", "bit": 56, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2175|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2175",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_PROHIBIT_DC_DC_CONV", "name": "Prohibit DC/DC converter signal", "group": "Transmission", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_AIRCON_GATE_STAT", "name": "Air conditioning gate status", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_WATER_PMP_RUNNING", "name": "Water pump running", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_INVERTER_WATER_PMP_REVOLUTION", "name": "Inverter water pump revolution", "group": "Engine", "bit": 8, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "AVALONH_INVERTER_ECT", "name": "Inverter coolant temperature", "group": "Engine", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2178|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2178",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG1_INVERTER", "name": "MG1 inverter shutdown", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MG1_INVERTER_FAIL", "name": "MG1 inverter fail", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MG2_INVERTER", "name": "MG2 inverter shutdown", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_MG2_INVERTER_FAIL", "name": "MG2 inverter fail", "group": "Engine", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2179|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2179",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_DCDC_CNV_TGT_DUTY", "name": "DC-DC converter target pulse duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1333, "divide": 218450, "min": 0, "max": 399, "unit": "%"},
+        {"id": "AVALONH_WATER_PMP_RUN_CTRL", "name": "Water pump run control duty", "group": "Engine", "bit": 16, "bits": 8, "multiply": 25, "divide": 4, "min": 0, "max": 1593, "unit": "%"},
+        {"id": "AVALONH_CONV_SHUTDOWN", "name": "Converter shutdown", "group": "Transmission", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_CONV_FAIL", "name": "Converter fail", "group": "Transmission", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.217C|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "217C",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_MG1_CARRIER", "name": "MG1 carrier frequency", "group": "Engine", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "Hz"},
+        {"id": "AVALONH_MG2_CARRIER", "name": "MG2 carrier frequency", "group": "Engine", "bit": 8, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "Hz"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.217D|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "217D",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BOOST_RAT", "name": "Boost ratio", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "AVALONH_CONV_CARRIER_9_0_9_1_8_2_8_3_7_4_7_5_4_6", "name": "Converter carrier frequency, 9.55khz=0,9.13khz=1,8.71khz=2,8.29khz=3,7.87khz=4,7.45khz=5,4.8khz=6", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_AC_CONS_POWER_W", "name": "Air conditioning power consumption", "group": "Engine", "bit": 16, "bits": 8, "multiply": 50, "min": 0, "max": 12750}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2181|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2181",
+      "interval": 5,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BAT_BLOCK_V_V01", "name": "Battery block 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V02", "name": "Battery block 2 voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V03", "name": "Battery block 3 voltage", "group": "Battery", "bit": 32, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V04", "name": "Battery block 4 voltage", "group": "Battery", "bit": 48, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V05", "name": "Battery block 5 voltage", "group": "Battery", "bit": 64, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V06", "name": "Battery block 6 voltage", "group": "Battery", "bit": 80, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V07", "name": "Battery block 7 voltage", "group": "Battery", "bit": 96, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V08", "name": "Battery block 8 voltage", "group": "Battery", "bit": 112, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V09", "name": "Battery block 9 voltage", "group": "Battery", "bit": 128, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V10_RAW", "name": "Battery block 10 voltage, raw count", "group": "Battery", "bit": 144, "bits": 16, "multiply": 7999, "divide": 6553500, "min": 0, "max": 79.99},
+        {"id": "AVALONH_BAT_BLOCK_V_V11", "name": "Battery block 11 voltage", "group": "Battery", "bit": 160, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V12", "name": "Battery block 12 voltage", "group": "Battery", "bit": 176, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V13", "name": "Battery block 13 voltage", "group": "Battery", "bit": 192, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V14", "name": "Battery block 14 voltage", "group": "Battery", "bit": 208, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V15", "name": "Battery block 15 voltage", "group": "Battery", "bit": 224, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V16", "name": "Battery block 16 voltage", "group": "Battery", "bit": 240, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_V_V17", "name": "Battery block 17 voltage", "group": "Battery", "bit": 256, "bits": 16, "multiply": 7999, "divide": 6553500, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_AUXILIARY_BAT_V", "name": "Auxiliary battery voltage", "group": "Battery", "bit": 272, "bits": 16, "multiply": 47, "divide": 38550, "add": -40, "min": -40, "max": 39.9, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2187|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2187",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.0039047837, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_T_BATT_TB1", "name": "HV battery temperature 1", "group": "Battery", "bit": 16, "bits": 16, "multiply": 0.0039047837, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_T_BATT_TB2", "name": "HV battery temperature 2", "group": "Battery", "bit": 32, "bits": 16, "multiply": 0.0039047837, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "AVALONH_T_BATT_TB3", "name": "HV battery temperature 3", "group": "Battery", "bit": 48, "bits": 16, "multiply": 0.0039047837, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.218A|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "218A",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_POWER_RESOURCE_IB", "name": "Power resource IB", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "add": -327.68, "min": -327, "max": 655022, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.218E|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "218E",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_COOLING_FAN_0", "name": "Cooling fan 0", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "AVALONH_COOLING_FAN_RELAY", "name": "Cooling fan relay status", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2192|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2192",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BAT_BLOCK_MIN_V", "name": "Battery block, minimum voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_NUMBER_MIN_V", "name": "Battery block with the minimum voltage", "group": "Battery", "bit": 16, "bits": 8, "add": 1, "min": 0, "max": 256},
+        {"id": "AVALONH_BAT_BLOCK_MAX_V", "name": "Battery block, maximum voltage", "group": "Battery", "bit": 24, "bits": 16, "multiply": 0.0012205692, "min": 0, "max": 79.99, "unit": "V"},
+        {"id": "AVALONH_BAT_BLOCK_NUMBER_MAX_V", "name": "Battery block with the maximum voltage", "group": "Battery", "bit": 40, "bits": 8, "add": 1, "min": 0, "max": 256},
+        {"id": "AVALONH_NUM_BAT_BLOCKS", "name": "Number of battery blocks", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_ACCUMULATED_TIME_BAT", "name": "Accumulated time of battery low", "group": "Battery", "bit": 56, "bits": 16, "min": 0, "max": 65535},
+        {"id": "AVALONH_ACCUMULATED_TIME_DC", "name": "Accumulated time of DC inhibit", "group": "Engine", "bit": 72, "bits": 16, "min": 0, "max": 65535},
+        {"id": "AVALONH_ACCUMULATED_TIME_BAT_TOO", "name": "Accumulated time of battery too high", "group": "Battery", "bit": 88, "bits": 16, "min": 0, "max": 65535},
+        {"id": "AVALONH_ACCUMULATED_TIME_HOT_T", "name": "Accumulated time of hot temperature", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2195|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2195",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_INTERNAL_RES_R01", "name": "Internal resistance R01", "group": "Engine", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R02", "name": "Internal resistance R02", "group": "Engine", "bit": 8, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R03", "name": "Internal resistance R03", "group": "Engine", "bit": 16, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R04", "name": "Internal resistance R04", "group": "Engine", "bit": 24, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R05", "name": "Internal resistance R05", "group": "Engine", "bit": 32, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R06", "name": "Internal resistance R06", "group": "Engine", "bit": 40, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R07", "name": "Internal resistance R07", "group": "Engine", "bit": 48, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R08", "name": "Internal resistance R08", "group": "Engine", "bit": 56, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R09", "name": "Internal resistance R09", "group": "Engine", "bit": 64, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R10", "name": "Internal resistance R10", "group": "Engine", "bit": 72, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R11", "name": "Internal resistance R11", "group": "Engine", "bit": 80, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R12", "name": "Internal resistance R12", "group": "Engine", "bit": 88, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R13", "name": "Internal resistance R13", "group": "Engine", "bit": 96, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R14", "name": "Internal resistance R14", "group": "Engine", "bit": 104, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R15", "name": "Internal resistance R15", "group": "Engine", "bit": 112, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R16", "name": "Internal resistance R16", "group": "Engine", "bit": 120, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"},
+        {"id": "AVALONH_INTERNAL_RES_R17", "name": "Internal resistance R17", "group": "Engine", "bit": 128, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2198|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2198",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_BATT_PACK_CURRENT", "name": "Battery pack current", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "add": -327680, "min": -327680, "max": 327670, "unit": "mA"},
+        {"id": "AVALONH_HVBAT_CHG_CTRL_KW", "name": "High voltage battery charge control, kw", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5},
+        {"id": "AVALONH_HVBAT_DCHG_CTRL_KW", "name": "High voltage battery discharge control, kw", "group": "Battery", "bit": 24, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5},
+        {"id": "AVALONH_DELTA_SOC", "name": "Delta SOC", "group": "Battery", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "AVALONH_SOC_AFTER_IG_ON", "name": "SOC at ignition on", "group": "Battery", "bit": 40, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "AVALONH_SOC_MAX", "name": "SOC max", "group": "Battery", "bit": 48, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "AVALONH_SOC_MIN", "name": "SOC min", "group": "Battery", "bit": 56, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.219B|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "219B",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_ENG_CTRL_MODULE_CTRL_1_2_3_4", "name": "Engine control module control mode, driving control mode=1,current sensor offset mode=2,external charge control mode=3,power supply end mode=4", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_COOLING_FAN_MODE_1", "name": "Cooling fan mode 1", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_STANDBY_BLOWER_REQ", "name": "Standby blower request status", "group": "Engine", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "AVALONH_SHORT_CIRCUIT_WAVE", "name": "Short circuit wave highest value", "group": "Engine", "bit": 24, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.21C1|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "21C1",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_DESTINATION_AMERICA_65", "name": "Destination code", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.21E1|f=2013-2018",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "21E1",
+      "interval": 1,
+      "years": {"from": 2013, "to": 2018},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "AVALONH_NUM_CURRENT_CODE", "name": "Number of current DTCs", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "AVALONH_NUM_HISTORY_CODE", "name": "Number of history DTCs", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

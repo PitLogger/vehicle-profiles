@@ -1,0 +1,519 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/cr-v",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "CR-V",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (Pre-Facelift)", "from": 1995, "to": 1999},
+      {"name": "First Generation (Facelift)", "from": 1999, "to": 2001},
+      {"name": "Second Generation (Pre-Facelift)", "from": 2001, "to": 2004},
+      {"name": "Second Generation (Facelift)", "from": 2004, "to": 2006},
+      {"name": "Third Generation (Pre-Facelift)", "from": 2007, "to": 2009},
+      {"name": "Third Generation (Facelift)", "from": 2010, "to": 2012},
+      {"name": "Fourth Generation (Pre-Facelift)", "from": 2012, "to": 2014},
+      {"name": "Fourth Generation (Facelift)", "from": 2015, "to": 2017},
+      {"name": "Fifth Generation (Pre-Facelift)", "from": 2017, "to": 2019},
+      {"name": "Fifth Generation (Facelift)", "from": 2020, "to": 2023},
+      {"name": "Sixth Generation", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-CR-V",
+    "file": "signalsets/v3/default.json",
+    "revision": "d07b3b8b47ccddd55d8845dfc2e77c4f18923ad1",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA0E", "type": "engine"},
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA11", "type": "engine"},
+    {"tx": "DA1D", "type": "transmission"},
+    {"tx": "DA1E", "type": "transmission"},
+    {"tx": "DA26", "type": "tpms"}
+  ],
+  "requests": [
+    {
+      "id": "DA0E.0E.222612",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222612",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_CURRENT_GEAR_VAR_2", "name": "Current gear var.2", "group": "Transmission", "bit": 352, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_CURRENT_GEAR_VAR_3", "name": "Current gear var.3", "group": "Transmission", "bit": 368, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222613",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222613",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_AC_P", "name": "A/C pressure", "group": "Climate", "bit": 120, "bits": 16, "min": 0, "max": 4000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.222610",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CRV_AC_CLUTCH", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222611",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_FUEL_AIR_RATIO", "name": "Fuel/air commanded equivalence ratio", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CRV_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222615",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222615",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2021],
+      "notAnsweredIn": [2010, 2011, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_ACTIVE_CYL", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA10.10.222660",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "answeredIn": [
+        2011,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026,
+        2027
+      ],
+      "notAnsweredIn": [2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015],
+      "signals": [
+        {"id": "CRV_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "CRV_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_KNOCK_CONTROL", "name": "Knock control", "description": "ECU's determination of fuel quality.", "group": "Engine", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "CRV_VTC_DUTY", "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential.", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.222666",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222666",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_EOT_VAR_3", "name": "Engine oil temperature, variant 3", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CRV_EOT_VAR_4", "name": "Engine oil temperature, variant 4", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222611",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222611",
+      "interval": 5,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_AIRGAS_RATIO_V2", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA11.11.222612",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222612",
+      "interval": 1,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_VTEC_VALVE_CTRL", "name": "VTEC valve control", "description": "VTEC works by switching between two (or sometimes three) different camshaft profiles by engaging or disengaging a mechanism that locks the valve rocker arms together. When VTEC is OFF, the engine operates using the standard cam profile, which is typically optimized for fuel efficiency and low-end torque. When VTEC is ON, the system switches to a high-performance cam profile that allows the valves to open wider and for a longer duration, enabling better airflow at higher RPMs for increased power.", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA11.11.222660",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222660",
+      "interval": 5,
+      "answeredIn": [2010],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_RUNTM_V2", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA11.11.222662",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222662",
+      "interval": 5,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_KNOCK_CONTROL_V2", "name": "Knock control", "group": "Engine", "bit": 80, "bits": 8, "multiply": 1.99, "divide": 255, "min": 0, "max": 1.99},
+        {"id": "CRV_CAT_T", "name": "Catalyst temperature", "group": "Engine", "bit": 96, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 1500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222663",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222663",
+      "interval": 1,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_MISFIRE_COUNT_1_VAR_3", "name": "Misfire count #1, variant 3", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_2_VAR_3", "name": "Misfire count #2, variant 3", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_3_VAR_3", "name": "Misfire count #3, variant 3", "group": "Engine", "bit": 192, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_4_VAR_3", "name": "Misfire count #4, variant 3", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_5_VAR_3", "name": "Misfire count #5, variant 3", "group": "Engine", "bit": 224, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_6_VAR_3", "name": "Misfire count #6, variant 3", "group": "Engine", "bit": 240, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_1_VAR_2", "name": "Misfire count #1, variant 2", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_2_VAR_2", "name": "Misfire count #2, variant 2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_3_VAR_2", "name": "Misfire count #3, variant 2", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_4_VAR_2", "name": "Misfire count #4, variant 2", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_5_VAR_2", "name": "Misfire count #5, variant 2", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRV_MISFIRE_COUNT_6_VAR_2", "name": "Misfire count #6, variant 2", "group": "Engine", "bit": 352, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222666",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222666",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_EOT_VAR_1", "name": "Engine oil temperature, variant 1", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CRV_EOT_VAR_2", "name": "Engine oil temperature, variant 2", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.22266C",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "22266C",
+      "interval": 1,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_MISFIRE_COUNT_1_VAR_1", "name": "Misfire count #1, variant 1", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_MISFIRE_COUNT_2_VAR_1", "name": "Misfire count #2, variant 1", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_MISFIRE_COUNT_3_VAR_1", "name": "Misfire count #3, variant 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_MISFIRE_COUNT_4_VAR_1", "name": "Misfire count #4, variant 1", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_MISFIRE_COUNT_5_VAR_1", "name": "Misfire count #5, variant 1", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRV_MISFIRE_COUNT_6_VAR_1", "name": "Misfire count #6, variant 1", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222201",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222201",
+      "interval": 5,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 208, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222203",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222203",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_TRANS_OIL_P2", "name": "Transmission oil pressure sensor 2", "group": "Transmission", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222221",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222221",
+      "interval": 1,
+      "answeredIn": [2010, 2011],
+      "notAnsweredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_GEAR_1D", "name": "Current gear", "group": "Transmission", "bit": 184, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA1D.1D.222660",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "rx": "18DAF11D",
+      "request": "222660",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_ODO_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.222201",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "222201",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_ATF_T_VAR_4", "name": "Transmission fluid temperature, variant 4", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 208, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223083",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223083",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_ATF_T_DA1E", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA1E.1E.223086",
+      "bus": "can29",
+      "tx": "18DA1EF1",
+      "rx": "18DAF11E",
+      "request": "223086",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_GEAR", "name": "Transmission gear", "group": "Transmission", "bit": 160, "bits": 8, "values": {"0": "P", "1": "D1", "2": "D2", "3": "D3", "4": "D4", "5": "D5", "6": "D6", "7": "D7", "8": "D8", "9": "D9", "14": "N", "15": "R"}, "valueDescriptions": {"0": "Park", "1": "Drive 1", "2": "Drive 2", "3": "Drive 3", "4": "Drive 4", "5": "Drive 5", "6": "Drive 6", "7": "Drive 7", "8": "Drive 8", "9": "Drive 9", "14": "Neutral", "15": "Reverse"}}
+      ]
+    },
+    {
+      "id": "DA26.26.226001",
+      "bus": "can29",
+      "tx": "18DA26F1",
+      "rx": "18DAF126",
+      "request": "226001",
+      "interval": 15,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "CRV_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "CRV_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "CRV_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"},
+        {"id": "CRV_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 192, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "CRV_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 200, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "CRV_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 208, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "CRV_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 216, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA28.28.224004",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224004",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_BRK_SW", "name": "Brake switch", "group": "Electrical", "bit": 127, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA28.28.224005",
+      "bus": "can29",
+      "tx": "18DA28F1",
+      "rx": "18DAF128",
+      "request": "224005",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_BRK_P", "name": "Brake pressure", "group": "Electrical", "bit": 56, "bits": 16, "add": -25, "min": 0, "max": 120, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA2A.2A.224201",
+      "bus": "can29",
+      "tx": "18DA2AF1",
+      "rx": "18DAF12A",
+      "request": "224201",
+      "interval": 1,
+      "answeredIn": [2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021],
+      "signals": [
+        {"id": "CRV_BRK_PED_STK", "name": "Brake pedal stroke", "group": "Electrical", "bit": 88, "bits": 16, "divide": 10, "min": 0, "max": 50, "unit": "mm"},
+        {"id": "CRV_BRK_FLD_P", "name": "Brake fluid pressure", "group": "Electrical", "bit": 168, "bits": 16, "divide": 100, "min": 0, "max": 5},
+        {"id": "CRV_MSTR_CYL_STK", "name": "Master cylinder stroke", "group": "Electrical", "bit": 232, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "mm"},
+        {"id": "CRV_SLV_CYL_STK", "name": "Slave cylinder stroke", "group": "Electrical", "bit": 248, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA60.60.227022",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227022",
+      "interval": 30,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_ODO_V3", "name": "Odometer, variation 3", "group": "Trips", "bit": 48, "bits": 24, "min": 0, "max": 200000, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "DA60.60.227028",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227028",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_AAT", "name": "Outside air temperature", "group": "Climate", "bit": 132, "bits": 12, "signed": true, "min": -40, "max": 2047, "unit": "°F", "invalidAtOrAbove": 141}
+      ]
+    },
+    {
+      "id": "DA60.60.227029",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227029",
+      "interval": 30,
+      "answeredIn": [2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "notAnsweredIn": [2010, 2011],
+      "signals": [
+        {"id": "CRV_FLV", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"}
+      ]
+    },
+    {
+      "id": "DA60.60.227060",
+      "bus": "can29",
+      "tx": "18DA60F1",
+      "rx": "18DAF160",
+      "request": "227060",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2011, 2017, 2020, 2021, 2023, 2024, 2025, 2027],
+      "signals": [
+        {"id": "CRV_MAINT_OIL_FLT", "name": "Maintenance, oil & filter", "group": "Engine", "bit": 112, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_SPARK", "name": "Maintenance, spark plugs & valves", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_INSP", "name": "Maintenance, general inspection", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_TIRE", "name": "Maintenance, tire rotation", "group": "Tires", "bit": 224, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_CABIN_FLT", "name": "Maintenance, cabin filter", "group": "Engine", "bit": 240, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_TRANS_FLD", "name": "Maintenance, transmission fluid", "group": "Engine", "bit": 256, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_COOL", "name": "Maintenance, engine coolant", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_BRK_FLD", "name": "Maintenance, rake fluid", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 9999},
+        {"id": "CRV_MAINT_AIR_CLN", "name": "Maintenance, air cleaner", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 9999}
+      ]
+    }
+  ]
+}

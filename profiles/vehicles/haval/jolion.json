@@ -1,0 +1,715 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/haval/jolion",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Haval",
+    "model": "Jolion",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2021, "to": 2024},
+      {"name": "First Generation Facelift", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Haval-Jolion",
+    "file": "signalsets/v3/default.json",
+    "revision": "08d194b3e6a5c5fdec6fb20ecd6c934516d792e2",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "782.7C2.226303|fc=1",
+      "bus": "can11",
+      "tx": "782",
+      "rx": "7C2",
+      "request": "226303",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_FRONT_LEFT_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "JOLION_FRONT_RIGHT_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "JOLION_REAR_LEFT_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"},
+        {"id": "JOLION_REAR_RIGHT_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "multiply": 0.05625, "min": 0, "max": 3686.34375, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.22002F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22002F",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_FUEL_LEVEL_INPUT", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.2200A6",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2200A6",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_ODO", "name": "Vehicle odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.220106",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220106",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_FUEL_LEVEL_LITERS", "name": "Fuel level, liters", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.220107",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220107",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_OIL_T", "name": "Oil temperature, model", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280.35, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22010F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22010F",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_BP_ACTUAL", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220111",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220111",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_FUEL_FLOW", "name": "Fuel flow", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.00429156, "min": 0, "max": 281.2473846, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.220112",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220112",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_BP_TARGET", "name": "Boost pressure, target", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220113",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220113",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_PRESSURE_BEFORE_TURBOCHARGER", "name": "Turbocharger inlet pressure, model", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.220114",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220114",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_AIR_T_BEFORE_TURBOCHARGER", "name": "Turbocharger inlet temperature, model", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.023437, "add": -273.15, "min": -273.15, "max": 1262.793795, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.220132",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220132",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22016A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22016A",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_BOOST_PRESSURE_VALUE", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.9921875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.22016D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22016D",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_INJECTION_PULSE_WIDTH", "name": "Injection pulse width", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967.295, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.220170",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220170",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_INJECTION_KNOCK_RETARD_CYL_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220171",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220171",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_INJECTION_KNOCK_RETARD_CYL_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220172",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220172",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_INJECTION_KNOCK_RETARD_CYL_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220173",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220173",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_INJECTION_KNOCK_RETARD_CYL_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.220174",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220174",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_SENSOR_REFERENCE_CYL_1", "name": "Knock sensor reference voltage cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 7.625e-05, "min": 0, "max": 4.99704375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220175",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220175",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_SENSOR_REFERENCE_CYL_2", "name": "Knock sensor reference voltage cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 7.625e-05, "min": 0, "max": 4.99704375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220176",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220176",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_SENSOR_REFERENCE_CYL_3", "name": "Knock sensor reference voltage cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "multiply": 7.625e-05, "min": 0, "max": 4.99704375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.220177",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220177",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_SENSOR_REFERENCE_CYL_4", "name": "Knock sensor reference voltage cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "multiply": 7.625e-05, "min": 0, "max": 4.99704375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22017F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22017F",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRES_TOTAL", "name": "Misfires total", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220180",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220180",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRES_CYL_1", "name": "Misfires cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220181",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220181",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRES_CYL_3", "name": "Misfires cylinder 3", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220182",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220182",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRES_CYL_4", "name": "Misfires cylinder 4", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.220183",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220183",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRES_CYL_2", "name": "Misfires cylinder 2", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.2211A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211A0",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_COUNTER", "name": "Knock counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.2211A6",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211A6",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_KNOCK_RETARD", "name": "Knock retard", "group": "Engine", "bit": 0, "bits": 8, "multiply": 8.82, "divide": 100, "min": 0, "max": 22.491, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.221200",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221200",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_CURRENT_TOTAL", "name": "Misfire current, total", "group": "Engine", "bit": 0, "bits": 8, "multiply": 256, "min": 0, "max": 65280}
+      ]
+    },
+    {
+      "id": "7E0.221201",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221201",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_HISTORY_CYL_1", "name": "Misfire history cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.221202",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221202",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_HISTORY_CYL_2", "name": "Misfire history cylinder 2", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.221203",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221203",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_HISTORY_CYL_3", "name": "Misfire history cylinder 3", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.221204",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221204",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_HISTORY_CYL_4", "name": "Misfire history cylinder 4", "group": "Engine.Misfires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.221205",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221205",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_CURRENT_CYL_2", "name": "Misfire current cylinder 2", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.221206",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221206",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_CURRENT_CYL_1", "name": "Misfire current cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.221207",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221207",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_CURRENT_CYL_3", "name": "Misfire current cylinder 3", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.221208",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221208",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_MISFIRE_CURRENT_CYL_4", "name": "Misfire current cylinder 4", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22121E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22121E",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_ODO_ENG", "name": "Odometer, engine", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.2212C5",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2212C5",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_FUEL_LEVEL_OUTPUT", "name": "Fuel level, output", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.221469",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221469",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_AC_PRESSURE_HVAC", "name": "A/C pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 1250, "divide": 10000, "add": -4096, "min": -4096, "max": 4095.875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.221602",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221602",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_EOT", "name": "Oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.221603",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221603",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_OT_VCPC_MIN", "name": "Variable clutch pressure control, min oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.221702",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221702",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_BATTERY_VOLTAGE", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 12.5, "divide": 100, "min": 0, "max": 31.875, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22210C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22210C",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "JOLION_AC_PRESSURE_HVAC2", "name": "A/C pressure, enhanced", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "divide": 10, "min": -6553.6, "max": 6553.4, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.22FD19",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22FD19",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_OIL_PRESSURE", "name": "Oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023.984375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.226901",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226901",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_ODO_TRANS", "name": "Transmission odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.226902",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226902",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_ODD_AXIS_SPEED", "name": "Transmission odd axis speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.226903",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226903",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_EVEN_AXIS_SPEED", "name": "Transmission even axis speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.22690B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22690B",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_1_PRESSURE", "name": "Clutch 1 pressure", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10, "add": -200, "min": -200, "max": 6353.5, "unit": "kPa"},
+        {"id": "JOLION_TRANSMISSION_ODD_CLUTCH_ACTUAL_PRESSURE", "name": "Odd clutch actual pressure", "group": "Transmission", "bit": 16, "bits": 16, "add": -2000, "min": -2000, "max": 63535, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.22690C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22690C",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_2_PRESSURE", "name": "Clutch 2 pressure", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10, "add": -200, "min": -200, "max": 6353.5, "unit": "kPa"},
+        {"id": "JOLION_TRANSMISSION_EVEN_CLUTCH_ACTUAL_PRESSURE", "name": "Even clutch actual pressure", "group": "Transmission", "bit": 16, "bits": 16, "add": -2000, "min": -2000, "max": 63535, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.22690D",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22690D",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_INPUT_SHAFT_SPEED", "name": "Transmission input shaft speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.226915",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226915",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_ENGINE_TORQUE", "name": "Engine torque", "group": "Drivetrain", "bit": 0, "bits": 8, "signed": true, "multiply": 4, "min": -512, "max": 508, "unit": "Nm"},
+        {"id": "JOLION_TRANSMISSION_ENGINE_NET_TORQUE", "name": "Engine net torque", "group": "Drivetrain", "bit": 8, "bits": 16, "add": -510, "min": -510, "max": 65025, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.226925",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226925",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.226926",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226926",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_TARGET_GEAR", "name": "Target gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.226932",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226932",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_1_TORQUE", "name": "Clutch 1 torque", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 16, "min": 0, "max": 4080, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.226933",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226933",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_2_TORQUE", "name": "Clutch 2 torque", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 16, "min": 0, "max": 4080, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.226934",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226934",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_TEMP", "name": "Clutch temperature", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 4, "add": -55, "min": -55, "max": 965, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.2269BC",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "2269BC",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_ODD_CLUTCH_REQUESTED_PRESSURE", "name": "Odd clutch requested pressure", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.2269BD",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "2269BD",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_EVEN_CLUTCH_REQUESTED_PRESSURE", "name": "Even clutch requested pressure", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.226A0A",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226A0A",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_CLUTCH_TEMP_V1", "name": "Clutch temperature v2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 4, "add": -55, "min": -55, "max": 965, "unit": "°C"},
+        {"id": "JOLION_TFT_PAN", "name": "Transmission temperature, pan", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 8, "bits": 16, "add": -55, "min": -55, "max": 65480, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.226A1A",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "226A1A",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TRANSMISSION_ELECTRIC_PUMP_SPEED", "name": "Transmission electric pump speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.22D126",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22D126",
+      "interval": 1,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "JOLION_TFT", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"}
+      ]
+    }
+  ]
+}

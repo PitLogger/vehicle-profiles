@@ -1,0 +1,69 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mercedes-benz/g-class",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mercedes Benz",
+    "model": "G Class",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (W460)", "from": 1979, "to": 1991},
+      {"name": "Second Generation (W461)", "from": 1992, "to": 2022},
+      {
+        "name": "Third Generation (W463, First Generation)",
+        "from": 1990,
+        "to": 2018
+      },
+      {
+        "name": "Fourth Generation (W463, Second Generation)",
+        "from": 2018,
+        "to": 2024
+      },
+      {"name": "Fifth Generation (W465)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mercedes-Benz-G-Class",
+    "file": "signalsets/v3/default.json",
+    "revision": "d94d8ebbf3fd4fc22a1f5efd388b2e985c5bc931",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E2.7EA.222001",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222001",
+      "interval": 0.25,
+      "answeredIn": [2019, 2025],
+      "notAnsweredIn": [2011, 2015],
+      "signals": [
+        {"id": "GCLASS_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GCLASS_TIRE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GCLASS_TIRE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GCLASS_TIRE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222002",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222002",
+      "interval": 0.25,
+      "answeredIn": [2019, 2025],
+      "notAnsweredIn": [2011, 2015],
+      "signals": [
+        {"id": "GCLASS_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 8, "bits": 16, "signed": true, "divide": 192747, "min": -0.17, "max": 0.17, "unit": "g"},
+        {"id": "GCLASS_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 24, "bits": 16, "signed": true, "divide": 627.6, "min": -52.21, "max": 52.21, "unit": "g"},
+        {"id": "GCLASS_YAW_RATE", "name": "Yaw rate", "description": "The angular velocity of the car around its vertical axis. Indicates how quickly the car is rotating to its left or right.", "group": "Orientation", "bit": 48, "bits": 16, "signed": true, "multiply": 2, "divide": 32767, "min": -2, "max": 2, "unit": "rad"},
+        {"id": "GCLASS_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the right, negative is rotated to the left.", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "GCLASS_MCYL_BREAK", "name": "Master break cylinder pressure", "group": "Orientation", "bit": 96, "bits": 16, "signed": true, "divide": 65.35883831, "min": -501.34, "max": 501.34, "unit": "bar"},
+        {"id": "GCLASS_VACC_BREAK", "name": "Vaccuum cylinder pressure", "group": "Orientation", "bit": 144, "bits": 16, "signed": true, "divide": 1000, "min": -32, "max": 32, "unit": "bar"}
+      ]
+    }
+  ]
+}

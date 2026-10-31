@@ -1,0 +1,901 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/peugeot/e-208",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Peugeot",
+    "model": "e-208",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2019, "to": 2023},
+      {"name": "First Generation (Refresh)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Peugeot-e-208",
+    "file": "signalsets/v3/default.json",
+    "revision": "79d3a884fc21753517eb2c794b1c9b6b88af6615",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6A2.682.22D402|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D402",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D434|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D434",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D496|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D496",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_SERVICE_BAT_T", "name": "Service battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D49C|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D49C",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ODO_6A2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D802|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D802",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_VSS_ESP", "name": "Vehicle speed, ESP", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "multiply": 1953, "divide": 250000, "min": 0, "max": 511, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D880|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D880",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DRIVE_MOTOR_TQ_DES", "name": "Drive motor torque, desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8CD|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8CD",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DRIVE_MOTOR_STATOR_T", "name": "Drive motor stator temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8CE|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8CE",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DC_DC_CONV_T", "name": "DC-DC converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8D0|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8D0",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DRIVE_MOTOR_TQ_ACT", "name": "Drive motor torque, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8D6|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8D6",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DRIVE_MOTOR_CLT_T", "name": "Drive motor coolant inlet temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8D9|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8D9",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_DRIVE_MOTOR_POWER", "name": "Drive motor power", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "min": -3276800, "max": 3276700, "unit": "W"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8E1|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8E1",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ON_BOARD_CHARGER_T", "name": "On-board charger temperature", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8EF|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8EF",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8F9|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8F9",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_TRACTION_CIRCUIT_ECT", "name": "Traction circuit coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8FB|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8FB",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ECT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A2.682.22D8FF|fc=1",
+      "bus": "can11",
+      "tx": "6A2",
+      "rx": "682",
+      "request": "22D8FF",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A6.686.22D407|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22D407",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ACCEL_PEDAL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A6.686.22D49C|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22D49C",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ODO_6A6", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A6.686.22DC00|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22DC00",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MOTOR_SPD", "name": "Motor speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A6.686.22DC04|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22DC04",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_INVERTER_T_CMD", "name": "Inverter temperature, commanded", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A6.686.22DC69|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22DC69",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ELEC_MACHINE_TQ_REDUCTION", "name": "Electric machine torque reduction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A6.686.22DC6A|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22DC6A",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_INVERTER_T_ESTIMATED", "name": "Inverter temperature estimated", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A6.686.22DCB6|fc=1",
+      "bus": "can11",
+      "tx": "6A6",
+      "rx": "686",
+      "request": "22DCB6",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ELEC_MACHINE_TQ", "name": "Electric machine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D407|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D407",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ACCEL_PEDAL_POS_6B4", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D410|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D410",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_SOC", "name": "High voltage battery charge, calibrated", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D413|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D413",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MIN_CELL_CAP", "name": "Minimum cell capacity", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D438|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D438",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_CELL_V_SUMM", "name": "Cell voltage sum", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D43B|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D43B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HIGHEST_V_CELL", "name": "Highest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "6B4.694.22D43C|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D43C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_LOWEST_V_CELL_NUMBER", "name": "Lowest voltage cell number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "6B4.694.22D43D|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D43D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_AVG_CELL_V", "name": "Average cell voltage value", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D440|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D440",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_CELL_001_V", "name": "Battery cell 001 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_002_V", "name": "Battery cell 002 voltage", "group": "Battery", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_003_V", "name": "Battery cell 003 voltage", "group": "Battery", "bit": 32, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_004_V", "name": "Battery cell 004 voltage", "group": "Battery", "bit": 48, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_005_V", "name": "Battery cell 005 voltage", "group": "Battery", "bit": 64, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_006_V", "name": "Battery cell 006 voltage", "group": "Battery", "bit": 80, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_007_V", "name": "Battery cell 007 voltage", "group": "Battery", "bit": 96, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_008_V", "name": "Battery cell 008 voltage", "group": "Battery", "bit": 112, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_009_V", "name": "Battery cell 009 voltage", "group": "Battery", "bit": 128, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_010_V", "name": "Battery cell 010 voltage", "group": "Battery", "bit": 144, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_011_V", "name": "Battery cell 011 voltage", "group": "Battery", "bit": 160, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_012_V", "name": "Battery cell 012 voltage", "group": "Battery", "bit": 176, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_013_V", "name": "Battery cell 013 voltage", "group": "Battery", "bit": 192, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_014_V", "name": "Battery cell 014 voltage", "group": "Battery", "bit": 208, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_015_V", "name": "Battery cell 015 voltage", "group": "Battery", "bit": 224, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_016_V", "name": "Battery cell 016 voltage", "group": "Battery", "bit": 240, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_017_V", "name": "Battery cell 017 voltage", "group": "Battery", "bit": 256, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_018_V", "name": "Battery cell 018 voltage", "group": "Battery", "bit": 272, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_019_V", "name": "Battery cell 019 voltage", "group": "Battery", "bit": 288, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_020_V", "name": "Battery cell 020 voltage", "group": "Battery", "bit": 304, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_021_V", "name": "Battery cell 021 voltage", "group": "Battery", "bit": 320, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_022_V", "name": "Battery cell 022 voltage", "group": "Battery", "bit": 336, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_023_V", "name": "Battery cell 023 voltage", "group": "Battery", "bit": 352, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_024_V", "name": "Battery cell 024 voltage", "group": "Battery", "bit": 368, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_025_V", "name": "Battery cell 025 voltage", "group": "Battery", "bit": 384, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_026_V", "name": "Battery cell 026 voltage", "group": "Battery", "bit": 400, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_027_V", "name": "Battery cell 027 voltage", "group": "Battery", "bit": 416, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_028_V", "name": "Battery cell 028 voltage", "group": "Battery", "bit": 432, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_029_V", "name": "Battery cell 029 voltage", "group": "Battery", "bit": 448, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_030_V", "name": "Battery cell 030 voltage", "group": "Battery", "bit": 464, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_031_V", "name": "Battery cell 031 voltage", "group": "Battery", "bit": 480, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_032_V", "name": "Battery cell 032 voltage", "group": "Battery", "bit": 496, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_033_V", "name": "Battery cell 033 voltage", "group": "Battery", "bit": 512, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_034_V", "name": "Battery cell 034 voltage", "group": "Battery", "bit": 528, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_035_V", "name": "Battery cell 035 voltage", "group": "Battery", "bit": 544, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_036_V", "name": "Battery cell 036 voltage", "group": "Battery", "bit": 560, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_037_V", "name": "Battery cell 037 voltage", "group": "Battery", "bit": 576, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_038_V", "name": "Battery cell 038 voltage", "group": "Battery", "bit": 592, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_039_V", "name": "Battery cell 039 voltage", "group": "Battery", "bit": 608, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_040_V", "name": "Battery cell 040 voltage", "group": "Battery", "bit": 624, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_041_V", "name": "Battery cell 041 voltage", "group": "Battery", "bit": 640, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_042_V", "name": "Battery cell 042 voltage", "group": "Battery", "bit": 656, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_043_V", "name": "Battery cell 043 voltage", "group": "Battery", "bit": 672, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_044_V", "name": "Battery cell 044 voltage", "group": "Battery", "bit": 688, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_045_V", "name": "Battery cell 045 voltage", "group": "Battery", "bit": 704, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_046_V", "name": "Battery cell 046 voltage", "group": "Battery", "bit": 720, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_047_V", "name": "Battery cell 047 voltage", "group": "Battery", "bit": 736, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_048_V", "name": "Battery cell 048 voltage", "group": "Battery", "bit": 752, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_049_V", "name": "Battery cell 049 voltage", "group": "Battery", "bit": 768, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_050_V", "name": "Battery cell 050 voltage", "group": "Battery", "bit": 784, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_051_V", "name": "Battery cell 051 voltage", "group": "Battery", "bit": 800, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_052_V", "name": "Battery cell 052 voltage", "group": "Battery", "bit": 816, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_053_V", "name": "Battery cell 053 voltage", "group": "Battery", "bit": 832, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_054_V", "name": "Battery cell 054 voltage", "group": "Battery", "bit": 848, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_055_V", "name": "Battery cell 055 voltage", "group": "Battery", "bit": 864, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_056_V", "name": "Battery cell 056 voltage", "group": "Battery", "bit": 880, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_057_V", "name": "Battery cell 057 voltage", "group": "Battery", "bit": 896, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_058_V", "name": "Battery cell 058 voltage", "group": "Battery", "bit": 912, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_059_V", "name": "Battery cell 059 voltage", "group": "Battery", "bit": 928, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_060_V", "name": "Battery cell 060 voltage", "group": "Battery", "bit": 944, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_061_V", "name": "Battery cell 061 voltage", "group": "Battery", "bit": 960, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_062_V", "name": "Battery cell 062 voltage", "group": "Battery", "bit": 976, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_063_V", "name": "Battery cell 063 voltage", "group": "Battery", "bit": 992, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_064_V", "name": "Battery cell 064 voltage", "group": "Battery", "bit": 1008, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_065_V", "name": "Battery cell 065 voltage", "group": "Battery", "bit": 1024, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_066_V", "name": "Battery cell 066 voltage", "group": "Battery", "bit": 1040, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_067_V", "name": "Battery cell 067 voltage", "group": "Battery", "bit": 1056, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_068_V", "name": "Battery cell 068 voltage", "group": "Battery", "bit": 1072, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_069_V", "name": "Battery cell 069 voltage", "group": "Battery", "bit": 1088, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_070_V", "name": "Battery cell 070 voltage", "group": "Battery", "bit": 1104, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_071_V", "name": "Battery cell 071 voltage", "group": "Battery", "bit": 1120, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_072_V", "name": "Battery cell 072 voltage", "group": "Battery", "bit": 1136, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_073_V", "name": "Battery cell 073 voltage", "group": "Battery", "bit": 1152, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_074_V", "name": "Battery cell 074 voltage", "group": "Battery", "bit": 1168, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_075_V", "name": "Battery cell 075 voltage", "group": "Battery", "bit": 1184, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_076_V", "name": "Battery cell 076 voltage", "group": "Battery", "bit": 1200, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_077_V", "name": "Battery cell 077 voltage", "group": "Battery", "bit": 1216, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_078_V", "name": "Battery cell 078 voltage", "group": "Battery", "bit": 1232, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_079_V", "name": "Battery cell 079 voltage", "group": "Battery", "bit": 1248, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_080_V", "name": "Battery cell 080 voltage", "group": "Battery", "bit": 1264, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_081_V", "name": "Battery cell 081 voltage", "group": "Battery", "bit": 1280, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_082_V", "name": "Battery cell 082 voltage", "group": "Battery", "bit": 1296, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_083_V", "name": "Battery cell 083 voltage", "group": "Battery", "bit": 1312, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_084_V", "name": "Battery cell 084 voltage", "group": "Battery", "bit": 1328, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_085_V", "name": "Battery cell 085 voltage", "group": "Battery", "bit": 1344, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_086_V", "name": "Battery cell 086 voltage", "group": "Battery", "bit": 1360, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_087_V", "name": "Battery cell 087 voltage", "group": "Battery", "bit": 1376, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_088_V", "name": "Battery cell 088 voltage", "group": "Battery", "bit": 1392, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_089_V", "name": "Battery cell 089 voltage", "group": "Battery", "bit": 1408, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_090_V", "name": "Battery cell 090 voltage", "group": "Battery", "bit": 1424, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_091_V", "name": "Battery cell 091 voltage", "group": "Battery", "bit": 1440, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_092_V", "name": "Battery cell 092 voltage", "group": "Battery", "bit": 1456, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_093_V", "name": "Battery cell 093 voltage", "group": "Battery", "bit": 1472, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_094_V", "name": "Battery cell 094 voltage", "group": "Battery", "bit": 1488, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_095_V", "name": "Battery cell 095 voltage", "group": "Battery", "bit": 1504, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_096_V", "name": "Battery cell 096 voltage", "group": "Battery", "bit": 1520, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_097_V", "name": "Battery cell 097 voltage", "group": "Battery", "bit": 1536, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_098_V", "name": "Battery cell 098 voltage", "group": "Battery", "bit": 1552, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_099_V", "name": "Battery cell 099 voltage", "group": "Battery", "bit": 1568, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_100_V", "name": "Battery cell 100 voltage", "group": "Battery", "bit": 1584, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_101_V", "name": "Battery cell 101 voltage", "group": "Battery", "bit": 1600, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_102_V", "name": "Battery cell 102 voltage", "group": "Battery", "bit": 1616, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_103_V", "name": "Battery cell 103 voltage", "group": "Battery", "bit": 1632, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_104_V", "name": "Battery cell 104 voltage", "group": "Battery", "bit": 1648, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_105_V", "name": "Battery cell 105 voltage", "group": "Battery", "bit": 1664, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_106_V", "name": "Battery cell 106 voltage", "group": "Battery", "bit": 1680, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_107_V", "name": "Battery cell 107 voltage", "group": "Battery", "bit": 1696, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_108_V", "name": "Battery cell 108 voltage", "group": "Battery", "bit": 1712, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_109_V", "name": "Battery cell 109 voltage", "group": "Battery", "bit": 1728, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_110_V", "name": "Battery cell 110 voltage", "group": "Battery", "bit": 1744, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_111_V", "name": "Battery cell 111 voltage", "group": "Battery", "bit": 1760, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_112_V", "name": "Battery cell 112 voltage", "group": "Battery", "bit": 1776, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_113_V", "name": "Battery cell 113 voltage", "group": "Battery", "bit": 1792, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_114_V", "name": "Battery cell 114 voltage", "group": "Battery", "bit": 1808, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_115_V", "name": "Battery cell 115 voltage", "group": "Battery", "bit": 1824, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_116_V", "name": "Battery cell 116 voltage", "group": "Battery", "bit": 1840, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_117_V", "name": "Battery cell 117 voltage", "group": "Battery", "bit": 1856, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_118_V", "name": "Battery cell 118 voltage", "group": "Battery", "bit": 1872, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_119_V", "name": "Battery cell 119 voltage", "group": "Battery", "bit": 1888, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"},
+        {"id": "208_BAT_CELL_120_V", "name": "Battery cell 120 voltage", "group": "Battery", "bit": 1904, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D445|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D445",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_MAX_UNIT_T_NUMBER", "name": "Battery max unit temperature number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "6B4.694.22D446|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D446",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_MIN_UNIT_T_NUMBER", "name": "Battery min unit temperature number", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "6B4.694.22D47A|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D47A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_INSULATION_RES", "name": "Battery insulation resistance", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D49C|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D49C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1024, "min": 0, "max": 4194303, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D4B5|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D4B5",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_CELL_001_SOH", "name": "Battery cell 001 health", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_002_SOH", "name": "Battery cell 002 health", "group": "Battery", "bit": 16, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_003_SOH", "name": "Battery cell 003 health", "group": "Battery", "bit": 32, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_004_SOH", "name": "Battery cell 004 health", "group": "Battery", "bit": 48, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_005_SOH", "name": "Battery cell 005 health", "group": "Battery", "bit": 64, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_006_SOH", "name": "Battery cell 006 health", "group": "Battery", "bit": 80, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_007_SOH", "name": "Battery cell 007 health", "group": "Battery", "bit": 96, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_008_SOH", "name": "Battery cell 008 health", "group": "Battery", "bit": 112, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_009_SOH", "name": "Battery cell 009 health", "group": "Battery", "bit": 128, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_010_SOH", "name": "Battery cell 010 health", "group": "Battery", "bit": 144, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_011_SOH", "name": "Battery cell 011 health", "group": "Battery", "bit": 160, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_012_SOH", "name": "Battery cell 012 health", "group": "Battery", "bit": 176, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_013_SOH", "name": "Battery cell 013 health", "group": "Battery", "bit": 192, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_014_SOH", "name": "Battery cell 014 health", "group": "Battery", "bit": 208, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_015_SOH", "name": "Battery cell 015 health", "group": "Battery", "bit": 224, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_016_SOH", "name": "Battery cell 016 health", "group": "Battery", "bit": 240, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_017_SOH", "name": "Battery cell 017 health", "group": "Battery", "bit": 256, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_018_SOH", "name": "Battery cell 018 health", "group": "Battery", "bit": 272, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_019_SOH", "name": "Battery cell 019 health", "group": "Battery", "bit": 288, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_020_SOH", "name": "Battery cell 020 health", "group": "Battery", "bit": 304, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_021_SOH", "name": "Battery cell 021 health", "group": "Battery", "bit": 320, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_022_SOH", "name": "Battery cell 022 health", "group": "Battery", "bit": 336, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_023_SOH", "name": "Battery cell 023 health", "group": "Battery", "bit": 352, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_024_SOH", "name": "Battery cell 024 health", "group": "Battery", "bit": 368, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_025_SOH", "name": "Battery cell 025 health", "group": "Battery", "bit": 384, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_026_SOH", "name": "Battery cell 026 health", "group": "Battery", "bit": 400, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_027_SOH", "name": "Battery cell 027 health", "group": "Battery", "bit": 416, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_028_SOH", "name": "Battery cell 028 health", "group": "Battery", "bit": 432, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_029_SOH", "name": "Battery cell 029 health", "group": "Battery", "bit": 448, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_030_SOH", "name": "Battery cell 030 health", "group": "Battery", "bit": 464, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_031_SOH", "name": "Battery cell 031 health", "group": "Battery", "bit": 480, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_032_SOH", "name": "Battery cell 032 health", "group": "Battery", "bit": 496, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_033_SOH", "name": "Battery cell 033 health", "group": "Battery", "bit": 512, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_034_SOH", "name": "Battery cell 034 health", "group": "Battery", "bit": 528, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_035_SOH", "name": "Battery cell 035 health", "group": "Battery", "bit": 544, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_036_SOH", "name": "Battery cell 036 health", "group": "Battery", "bit": 560, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_037_SOH", "name": "Battery cell 037 health", "group": "Battery", "bit": 576, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_038_SOH", "name": "Battery cell 038 health", "group": "Battery", "bit": 592, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_039_SOH", "name": "Battery cell 039 health", "group": "Battery", "bit": 608, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_040_SOH", "name": "Battery cell 040 health", "group": "Battery", "bit": 624, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_041_SOH", "name": "Battery cell 041 health", "group": "Battery", "bit": 640, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_042_SOH", "name": "Battery cell 042 health", "group": "Battery", "bit": 656, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_043_SOH", "name": "Battery cell 043 health", "group": "Battery", "bit": 672, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_044_SOH", "name": "Battery cell 044 health", "group": "Battery", "bit": 688, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_045_SOH", "name": "Battery cell 045 health", "group": "Battery", "bit": 704, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_046_SOH", "name": "Battery cell 046 health", "group": "Battery", "bit": 720, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_047_SOH", "name": "Battery cell 047 health", "group": "Battery", "bit": 736, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_048_SOH", "name": "Battery cell 048 health", "group": "Battery", "bit": 752, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_049_SOH", "name": "Battery cell 049 health", "group": "Battery", "bit": 768, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_050_SOH", "name": "Battery cell 050 health", "group": "Battery", "bit": 784, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_051_SOH", "name": "Battery cell 051 health", "group": "Battery", "bit": 800, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_052_SOH", "name": "Battery cell 052 health", "group": "Battery", "bit": 816, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_053_SOH", "name": "Battery cell 053 health", "group": "Battery", "bit": 832, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_054_SOH", "name": "Battery cell 054 health", "group": "Battery", "bit": 848, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_055_SOH", "name": "Battery cell 055 health", "group": "Battery", "bit": 864, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_056_SOH", "name": "Battery cell 056 health", "group": "Battery", "bit": 880, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_057_SOH", "name": "Battery cell 057 health", "group": "Battery", "bit": 896, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_058_SOH", "name": "Battery cell 058 health", "group": "Battery", "bit": 912, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_059_SOH", "name": "Battery cell 059 health", "group": "Battery", "bit": 928, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_060_SOH", "name": "Battery cell 060 health", "group": "Battery", "bit": 944, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_061_SOH", "name": "Battery cell 061 health", "group": "Battery", "bit": 960, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_062_SOH", "name": "Battery cell 062 health", "group": "Battery", "bit": 976, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_063_SOH", "name": "Battery cell 063 health", "group": "Battery", "bit": 992, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_064_SOH", "name": "Battery cell 064 health", "group": "Battery", "bit": 1008, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_065_SOH", "name": "Battery cell 065 health", "group": "Battery", "bit": 1024, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_066_SOH", "name": "Battery cell 066 health", "group": "Battery", "bit": 1040, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_067_SOH", "name": "Battery cell 067 health", "group": "Battery", "bit": 1056, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_068_SOH", "name": "Battery cell 068 health", "group": "Battery", "bit": 1072, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_069_SOH", "name": "Battery cell 069 health", "group": "Battery", "bit": 1088, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_070_SOH", "name": "Battery cell 070 health", "group": "Battery", "bit": 1104, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_071_SOH", "name": "Battery cell 071 health", "group": "Battery", "bit": 1120, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_072_SOH", "name": "Battery cell 072 health", "group": "Battery", "bit": 1136, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_073_SOH", "name": "Battery cell 073 health", "group": "Battery", "bit": 1152, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_074_SOH", "name": "Battery cell 074 health", "group": "Battery", "bit": 1168, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_075_SOH", "name": "Battery cell 075 health", "group": "Battery", "bit": 1184, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_076_SOH", "name": "Battery cell 076 health", "group": "Battery", "bit": 1200, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_077_SOH", "name": "Battery cell 077 health", "group": "Battery", "bit": 1216, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_078_SOH", "name": "Battery cell 078 health", "group": "Battery", "bit": 1232, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_079_SOH", "name": "Battery cell 079 health", "group": "Battery", "bit": 1248, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_080_SOH", "name": "Battery cell 080 health", "group": "Battery", "bit": 1264, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_081_SOH", "name": "Battery cell 081 health", "group": "Battery", "bit": 1280, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_082_SOH", "name": "Battery cell 082 health", "group": "Battery", "bit": 1296, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_083_SOH", "name": "Battery cell 083 health", "group": "Battery", "bit": 1312, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_084_SOH", "name": "Battery cell 084 health", "group": "Battery", "bit": 1328, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_085_SOH", "name": "Battery cell 085 health", "group": "Battery", "bit": 1344, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_086_SOH", "name": "Battery cell 086 health", "group": "Battery", "bit": 1360, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_087_SOH", "name": "Battery cell 087 health", "group": "Battery", "bit": 1376, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_088_SOH", "name": "Battery cell 088 health", "group": "Battery", "bit": 1392, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_089_SOH", "name": "Battery cell 089 health", "group": "Battery", "bit": 1408, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_090_SOH", "name": "Battery cell 090 health", "group": "Battery", "bit": 1424, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_091_SOH", "name": "Battery cell 091 health", "group": "Battery", "bit": 1440, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_092_SOH", "name": "Battery cell 092 health", "group": "Battery", "bit": 1456, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_093_SOH", "name": "Battery cell 093 health", "group": "Battery", "bit": 1472, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_094_SOH", "name": "Battery cell 094 health", "group": "Battery", "bit": 1488, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_095_SOH", "name": "Battery cell 095 health", "group": "Battery", "bit": 1504, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_096_SOH", "name": "Battery cell 096 health", "group": "Battery", "bit": 1520, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_097_SOH", "name": "Battery cell 097 health", "group": "Battery", "bit": 1536, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_098_SOH", "name": "Battery cell 098 health", "group": "Battery", "bit": 1552, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_099_SOH", "name": "Battery cell 099 health", "group": "Battery", "bit": 1568, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_100_SOH", "name": "Battery cell 100 health", "group": "Battery", "bit": 1584, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_101_SOH", "name": "Battery cell 101 health", "group": "Battery", "bit": 1600, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_102_SOH", "name": "Battery cell 102 health", "group": "Battery", "bit": 1616, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_103_SOH", "name": "Battery cell 103 health", "group": "Battery", "bit": 1632, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_104_SOH", "name": "Battery cell 104 health", "group": "Battery", "bit": 1648, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_105_SOH", "name": "Battery cell 105 health", "group": "Battery", "bit": 1664, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_106_SOH", "name": "Battery cell 106 health", "group": "Battery", "bit": 1680, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_107_SOH", "name": "Battery cell 107 health", "group": "Battery", "bit": 1696, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"},
+        {"id": "208_BAT_CELL_108_SOH", "name": "Battery cell 108 health", "group": "Battery", "bit": 1712, "bits": 16, "divide": 16, "min": 0, "max": 4095.93, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D802|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D802",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_VSS_6B4", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 32, "multiply": 64, "divide": 65535, "min": 0, "max": 4194368, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D810|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D810",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_SOC_RAW", "name": "High voltage battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D815|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D815",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_VOLT", "name": "High voltage battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D816|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D816",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_DC_CURRENT", "name": "Battery DC current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 32, "divide": 64, "add": -1200, "min": -1200, "max": 67107663, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D817|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D817",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_MAX_UNIT_T", "name": "Battery max unit temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D822|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D822",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_SERVICE_CELL_V", "name": "Service cell voltage value", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D860|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D860",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_SOH", "name": "High voltage battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 8, "bits": 16, "divide": 16, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D865|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D865",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_KWH", "name": "HV battery energy", "description": "Energy stored in the high voltage battery", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D86F|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D86F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_MIN_VOLT", "name": "High voltage minimum voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D870|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D870",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_HVBAT_MAX_VOLT", "name": "High voltage maximum voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D871|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D871",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MAX_POWER_BAT_CAN_10", "name": "Maximum power the battery can withstand for 10 seconds", "group": "Battery", "bit": 0, "bits": 32, "multiply": 1953, "divide": 250000, "add": -500, "min": -500, "max": 33551784, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D872|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D872",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MAX_POWER_BAT_CAN_30", "name": "Maximum power the battery can withstand for 30 seconds", "group": "Battery", "bit": 0, "bits": 32, "multiply": 1953, "divide": 250000, "add": -500, "min": -500, "max": 33551784, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D873|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D873",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MAX_POWER_BAT_CAN_PROVIDE_10", "name": "Maximum power the battery can provide for 10 seconds", "group": "Battery", "bit": 0, "bits": 32, "multiply": 1953, "divide": 250000, "add": -500, "min": -500, "max": 33551784, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D874|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D874",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_MAX_POWER_BAT_CAN_PROVIDE_30", "name": "Maximum power the battery can provide for 30 seconds", "group": "Battery", "bit": 0, "bits": 32, "multiply": 1953, "divide": 250000, "add": -500, "min": -500, "max": 33551784, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D877|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D877",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_AVG_T", "name": "Battery average temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D878|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D878",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_T_DIFF_HOTEST", "name": "Temperature difference between the hottest and the coolest cells", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6B4.694.22D87D|fc=1",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D87D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "208_BAT_MIN_UNIT_T", "name": "Battery min unit temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "208_BAT_CELLS_SOH",
+      "name": "Battery cell health",
+      "group": "Battery",
+      "match": "208_BAT_(CELL_\\d+)_SOH"
+    },
+    {
+      "id": "208_BAT_CELLS_V",
+      "name": "Battery cell voltage",
+      "group": "Battery",
+      "match": "208_BAT_(CELL_\\d+)_V",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

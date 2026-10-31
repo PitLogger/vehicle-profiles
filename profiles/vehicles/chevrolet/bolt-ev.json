@@ -1,0 +1,3586 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/chevrolet/bolt-ev",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Chevrolet",
+    "model": "Bolt EV",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2017, "to": 2021},
+      {"name": "Second Generation", "from": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Chevrolet-Bolt-EV",
+    "file": "signalsets/v3/default.json",
+    "revision": "d0cc6bd9ae734acc7793a804c3fdda4834dcaa30",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E1", "type": "hybridControl"},
+    {"tx": "7E4", "type": "hybridControl"},
+    {"tx": "7E6", "type": "abs"},
+    {"tx": "7E7", "type": "battery"}
+  ],
+  "requests": [
+    {
+      "id": "7E0.7E8.22000D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22000D",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221144",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221144",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_HIGH_SIDE_V", "name": "Cabin A/C high side sensor voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22135F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22135F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MIL_CAUSE", "name": "MIL cause", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221564",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221564",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_HIGH_SIDE_P", "name": "Cabin A/C high side sensor pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221C38",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221C38",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_14V_POWER_MODULE", "name": "14V power module set point", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221C39",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221C39",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_14V_APM_ENABLE", "name": "14V auxiliary power module enable command", "group": "Engine", "bit": 0, "bits": 8, "divide": 128, "min": 0, "max": 1.99}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221C47",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221C47",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_14V_POWER_MODULE_V", "name": "14V power module set point voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222020",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MIL_STAT", "name": "MIL status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222067",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222067",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CRUISE_CTRL_STAT", "name": "Cruise control status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22232C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22232C",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_AIR_TEMP_AMBIENT_2", "name": "Ambient air temperature 2", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222364",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222364",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ACTIVE_GRILLE", "name": "Active grille shutter position command", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222366",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222366",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ACTIVE_GRILLE_SHUTTER_POS", "name": "Active grille shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22239B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22239B",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ACTIVE_GRILLE_COLD_T", "name": "Active grille cold temperature mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221124",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221124",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_PEDAL_POS", "name": "Brake pedal position circuit signal", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221141",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221141",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_IGN_V", "name": "Ignition voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221940",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221940",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221942",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221942",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_TRANS_RPM", "name": "Transmission RPM", "group": "Transmission", "bit": 0, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221C24",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221C24",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_CIRCUIT_HPCM", "name": "High voltage circuit, hybrid powertrain control module", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221C26",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221C26",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_INVERTER_T_1", "name": "Motor inverter temperature sensor 1", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221C28",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221C28",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_INVERTER_T_2", "name": "Motor inverter temperature sensor 2", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221C2A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221C2A",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_INVERTER_T_3", "name": "Motor inverter temperature sensor 3", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22207E",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22207E",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_IGN_POWER_MODE", "name": "Ignition power mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2220D0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2220D0",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_IGN_INPUT_ON_OFF", "name": "Ignition input on/off/start", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222411",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222411",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_ST_CHG_RAW_2", "name": "Battery pack state of charge raw LD 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222414",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222414",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_CURRENT_HD", "name": "High voltage current HD", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222416",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222416",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MAX_ALT", "name": "Battery pack maximum temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222417",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222417",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MIN_ALT", "name": "Battery pack minimum temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222426",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222426",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_REGEN_BRAKING_AXLE", "name": "Regen braking axle torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22242B",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22242B",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_REGEN_BRAKING_AXLE_TQ", "name": "Regen braking axle torque predicted", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22242C",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22242C",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_TQ", "name": "Brake torque", "group": "Control", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222434",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222434",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_AXLE_TQ_DRIVER_REQ", "name": "Axle torque driver requested", "group": "Engine", "bit": 0, "bits": 16, "add": -22534, "min": -22534, "max": 43001, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22248C",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22248C",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_1", "name": "Contactor open reason history 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22248D",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22248D",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_2", "name": "Contactor open reason history 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22248E",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22248E",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_3", "name": "Contactor open reason history 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22248F",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22248F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_4", "name": "Contactor open reason history 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222490",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222490",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_5", "name": "Contactor open reason history 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222491",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222491",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_6", "name": "Contactor open reason history 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222492",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222492",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_7", "name": "Contactor open reason history 7", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222493",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222493",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_OPEN_8", "name": "Contactor open reason history 8", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222810",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222810",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_THROTTLE_POS_CALC", "name": "Throttle position calculated", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222881",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222881",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_INVERTER", "name": "Motor inverter active", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222885",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222885",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_MG_V", "name": "High voltage MG voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222889",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222889",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_TRANS_GEAR_POS", "name": "Transmission gear position", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22288A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22288A",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_TRANS_TQ_REQ", "name": "Transmission torque requested", "group": "Transmission", "bit": 0, "bits": 16, "add": -22534, "min": -22534, "max": 43001, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228CB",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228CB",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_T", "name": "Motor temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228CD",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228CD",
+      "interval": 3600,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_POS_SENS", "name": "Motor position sensor offset learn status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228CF",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228CF",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_CONTROLLER_V", "name": "Motor controller positive isolation voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228D0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228D0",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_CONTROLLER_ISOLATION_V", "name": "Motor controller negative isolation voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228DE",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228DE",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_PHASE_U", "name": "Motor phase U current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 25, "min": -1310, "max": 1310, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228E1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228E1",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_PHASE_V", "name": "Motor phase V current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 25, "min": -1310, "max": 1310, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2228E4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2228E4",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_PHASE_W", "name": "Motor phase W current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 25, "min": -1310, "max": 1310, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222C05",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222C05",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_TRANS_FLUID_PMP_AUX", "name": "Transmission fluid pump, auxiliary", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C3",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C3",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_1", "name": "Internal mode switch 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C4",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_2", "name": "Internal mode switch 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C5",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C5",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_3", "name": "Internal mode switch 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C6",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C6",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_4", "name": "Internal mode switch 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C7",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C7",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_5", "name": "Internal mode switch 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C8",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C8",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_6", "name": "Internal mode switch 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233C9",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233C9",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_7", "name": "Internal mode switch 7", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233CA",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233CA",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_8", "name": "Internal mode switch 8", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233CB",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233CB",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_9", "name": "Internal mode switch 9", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233CC",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233CC",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_10", "name": "Internal mode switch 10", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2233CD",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2233CD",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_INTERNAL_MODE_SWITCH_11", "name": "Internal mode switch 11", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236EE",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236EE",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_1", "name": "One pedal disengage history 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236EF",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236EF",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_2", "name": "One pedal disengage history 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F0",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_3", "name": "One pedal disengage history 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F1",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_4", "name": "One pedal disengage history 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F2",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F2",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_5", "name": "One pedal disengage history 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F3",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F3",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_6", "name": "One pedal disengage history 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F4",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_7", "name": "One pedal disengage history 7", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F5",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F5",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DISENGAGE_8", "name": "One pedal disengage history 8", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F6",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F6",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_1", "name": "One pedal driving inhibit history 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F7",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F7",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_2", "name": "One pedal driving inhibit history 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F8",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F8",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_3", "name": "One pedal driving inhibit history 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236F9",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236F9",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_4", "name": "One pedal driving inhibit history 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236FA",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236FA",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_5", "name": "One pedal driving inhibit history 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236FB",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236FB",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_6", "name": "One pedal driving inhibit history 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236FC",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236FC",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_7", "name": "One pedal driving inhibit history 7", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2236FD",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2236FD",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ONE_PEDAL_DRIVING_8", "name": "One pedal driving inhibit history 8", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1A",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1A",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_POS", "name": "Shifter position indicator", "group": "Transmission", "bit": 0, "bits": 8, "add": -146, "min": -146, "max": 109}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1B",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1B",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_X_POS_SENS_1", "name": "Shifter X position sensor 1 duty cycle", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1C",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1C",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_Y_POS_SENS_1", "name": "Shifter Y position sensor 1 duty cycle", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1D",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1D",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_X_POS_SENS_2", "name": "Shifter X position sensor 2 duty cycle", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1E",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1E",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_Y_POS_SENS_2", "name": "Shifter Y position sensor 2 duty cycle", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B1F",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B1F",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_X_POS_SENS_1_FREQUENCY", "name": "Shifter X position sensor 1 frequency", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B20",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B20",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_Y_POS_SENS_1_FREQUENCY", "name": "Shifter Y position sensor 1 frequency", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B21",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B21",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_X_POS_SENS_2_FREQUENCY", "name": "Shifter X position sensor 2 frequency", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B22",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B22",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_SHIFTER_Y_POS_SENS_2_FREQUENCY", "name": "Shifter Y position sensor 2 frequency", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B23",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B23",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_TRANS_PARK_POS_1", "name": "Transmission park position switch 1", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B24",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B24",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_TRANS_PARK_POS_2", "name": "Transmission park position switch 2", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B25",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B25",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_TRANS_SHIFT_1", "name": "Transmission shift interlock switch 1", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221B26",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221B26",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "BOLT_TRANS_SHIFT_2", "name": "Transmission shift interlock switch 2", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2213AF",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2213AF",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_COOLING_FAN_RADIATOR_CMD", "name": "Cooling fan, radiator motor, commanded", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.221C43",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "221C43",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ELECTRONICS_CLT_TEMP", "name": "Electronics coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22247A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22247A",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HOOD_SWITCH", "name": "Hood switch", "group": "Doors", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2224AB",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2224AB",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM", "name": "Charger system inactive time", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2224AC",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2224AC",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_THERMAL", "name": "Battery thermal conditioning inactive time", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2240E9",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2240E9",
+      "interval": 1,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_RES", "name": "Battery pack resistance", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241A3|f=-2018",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241A3",
+      "interval": 1,
+      "years": {"to": 2018},
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_CAP_AH_RAW_2017_2018", "name": "Battery pack capacity, raw", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241A4",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241A4",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CLT_TEMP", "name": "Battery coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241AF",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241AF",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_TOT_POWER", "name": "Charger total power output available", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B0",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B0",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_14V_POWER_AVAILABLE", "name": "14V power available", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B1",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_COMMAND_W", "name": "Cabin A/C power, commanded", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B2",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B2",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_MEAS_W", "name": "Cabin A/C power, measured", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B3",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B3",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_HEATER_COMMAND_W", "name": "Cabin heater power, commanded", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B4",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B4",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_HEATER_MEAS_W", "name": "Cabin heater power, measured", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B5",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B5",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_HEATER_COMMAND_W", "name": "Battery heater power, commanded", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241B6",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241B6",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_HEATER_MEAS_W", "name": "Battery heater power, measured", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241C4",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241C4",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_INVERTER_V_HD", "name": "High voltage inverter voltage HD", "group": "Engine", "bit": 0, "bits": 16, "divide": 40, "min": 0, "max": 1638, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241DA",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241DA",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_INVERTER_V_LD", "name": "High voltage inverter voltage LD", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 25, "min": 0, "max": 34078, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2241EC",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2241EC",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_ACTIVELY", "name": "High voltage actively tested vehicle isolation resistance", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22430E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22430E",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CONTACTOR_COMMANDS", "name": "Contactor commands", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224310",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224310",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_SYSTEM", "name": "High voltage system interlock circuit", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224311",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224311",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_SYSTEM_INTERLOCK", "name": "High voltage system interlock circuit status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224329",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224329",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_MIN_V", "name": "Battery cell minimum voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 5000, "min": 0, "max": 39.32, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22432A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22432A",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_MIN", "name": "Lowest voltage cell number", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22432B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22432B",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_MAX_V", "name": "Battery cell maximum voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 5000, "min": 0, "max": 39.32, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22432C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22432C",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_MAX", "name": "Highest voltage cell number", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22432D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22432D",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_V_LD", "name": "Battery pack voltage LD", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 25, "min": 0, "max": 34078, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22432F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22432F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_ST_CHG_RAW_3", "name": "Battery pack state of charge raw LD 3", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22433B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22433B",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_MIN_V", "name": "Battery pack minimum voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 25, "min": 0, "max": 34078, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22433C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22433C",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_MAX_V", "name": "Battery pack maximum voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 25, "min": 0, "max": 34078, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22433F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22433F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_MIN_ST_CHG", "name": "Battery pack minimum state of charge limit", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224349",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224349",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MAX", "name": "Battery pack maximum temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22434A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22434A",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MIN", "name": "Battery pack minimum temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22434B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22434B",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MAX_MODULE", "name": "Battery pack hottest module", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22434C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22434C",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_MIN_MODULE", "name": "Battery pack coolest module", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22434F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22434F",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_TEMP", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224356",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224356",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_CURRENT", "name": "High voltage current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": -40, "divide": 267, "min": -4908, "max": 4909, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224357",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224357",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ELECTRONICS_CLT_PMP_CMD", "name": "Electronics coolant pump, commanded", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224358",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224358",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_ELECTRONICS_CLT_PMP", "name": "Electronics coolant pump speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224359",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224359",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CLT_PMP_CMD", "name": "Battery coolant pump, commanded", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22435A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22435A",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CLT_PMP_SPD", "name": "Battery coolant pump speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22435F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22435F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_ST_CHG", "name": "Battery pack state of charge variation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224368",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224368",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_AC_VOLT", "name": "Charger AC voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224369",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224369",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_AC_CURR", "name": "Charger AC current", "group": "Battery", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22436B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22436B",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_HV_VOLT", "name": "Charger HV voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22436C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22436C",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_HV_CURR", "name": "Charger HV current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224372",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224372",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_PORT_DOOR", "name": "Charger port door status", "group": "Doors", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224373",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224373",
+      "interval": 5,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_MODE", "name": "Charging mode", "group": "Battery", "metric": "isCharging", "bit": 15, "bits": 1, "values": {"0": "NOT_CHARGING", "1": "CHARGING"}, "valueDescriptions": {"0": "Not charging", "1": "Charging"}}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224375",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224375",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_POWER_OUTPUT", "name": "Charger power output available", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224376",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224376",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_BAT_CHARGER", "name": "Charger power input available", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22437D|f=-2018",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22437D",
+      "interval": 1,
+      "years": {"to": 2018},
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "BOLT_CHARGER_LAST_CHG_AC_2017_2018", "name": "Charger last charge AC energy", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22437F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22437F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_LAST_CHG_HV", "name": "Charger last charge HV energy output", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22439E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22439E",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_HEATER_COMMAND", "name": "Battery heater, commanded", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2243A5",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2243A5",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CHRG_CNT", "name": "HV battery charge count", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2243A6",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2243A6",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HIGH_V_ISOLATION", "name": "High voltage isolation test resistance", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2243AF",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2243AF",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_SOC_RAW", "name": "HV battery charge (raw)", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2243B0",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2243B0",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_HEATER_CLT", "name": "Cabin heater coolant control solenoid valve command", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2243BB",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2243BB",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_PROXIMITY_V", "name": "Charger proximity detection circuit voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224416",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224416",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CLOCK_DOW", "name": "Clock day of week", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224419",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224419",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_CTRL_MODULE_V", "name": "Motor control module positive supply isolation voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 100, "min": 0, "max": 8519, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22441A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22441A",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_MOTOR_CTRL_MODULE_NEGATIVE_V", "name": "Motor control module negative supply isolation voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 13, "divide": 100, "min": 0, "max": 8519, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224423",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224423",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_DC_PORT", "name": "Charger DC port positive isolation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"},
+        {"id": "BOLT_CHARGER_DC_PORT_NEGATIVE", "name": "Charger DC port negative isolation", "group": "Engine", "bit": 8, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224424",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224424",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_DC_PORT_CURRENT", "name": "Charger DC port current", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "add": -256, "min": -256, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224425",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224425",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_DC_PORT_T", "name": "Charger DC port temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22442C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22442C",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_CLT_LEVEL", "name": "Battery pack coolant level switch", "group": "Engine", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224445",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224445",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_DC_PORT_CURRENT_REQ", "name": "Charger DC port current requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "add": -256, "min": -256, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22445D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22445D",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_PORT_LOCK", "name": "Charger port lock actuator position signal", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22451E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22451E",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_BLOWER_MOTOR", "name": "Cabin blower motor speed request", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22451F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22451F",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_COMP", "name": "Cabin A/C compressor command", "group": "Engine", "bit": 0, "bits": 8, "add": -1, "min": -1, "max": 254}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22452D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22452D",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_AC_INPUT", "name": "Charger AC input status duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22452E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22452E",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_DC_OUTPUT", "name": "Charger DC output status duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224531",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224531",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGE_LVL", "name": "Charging level", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NOT_CHARGING", "1": "AC_1", "2": "AC_2", "3": "DC"}, "valueDescriptions": {"0": "Not charging", "1": "A/C Level 1", "2": "A/C Level 2", "3": "DC"}}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224533",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224533",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_AC_CURRENT", "name": "Charger AC current requested", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 10, "min": 0, "max": 76.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224545",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224545",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_AC_CTRL_V", "name": "Charger AC control pilot voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224546",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224546",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_AC_CTRL", "name": "Charger AC control pilot", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224558",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224558",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM_HV_INTERLOCK", "name": "Charger system HV interlock circuit", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224559",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224559",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM_HV", "name": "Charger system HV interlock circuit status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224564",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224564",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM_EFFICIENCY", "name": "Charger system efficiency, active test status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224565",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224565",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM_EFFICIENCY_ACTIVE", "name": "Charger system efficiency, active test", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "min": 0, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224566",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224566",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CHARGER_SYSTEM_EFFICIENCY_PASSIVE", "name": "Charger system efficiency, passive test", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "divide": 51, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2245F9|f=2019-",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2245F9",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_CAP_AH_RAW_2019", "name": "Battery pack capacity, raw", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22801E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22801E",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_AIR_TEMP_UNFILTERED", "name": "Air temperature unfiltered", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22801F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22801F",
+      "interval": 5,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2020, 2023],
+      "signals": [
+        {"id": "BOLT_AIR_TEMP_FILTERED", "name": "Air temperature filtered", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2282B2",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2282B2",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_LOW_SIDE_P", "name": "Cabin A/C low side sensor pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 13647, "divide": 5000, "min": 0, "max": 695, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2282B3",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2282B3",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_LOW_SIDE_V", "name": "Cabin A/C low side sensor voltage", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2282B4",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2282B4",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_COMP_SPD_CMD", "name": "Cabin A/C compressor speed commanded", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2282B5",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2282B5",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_COMP_SPD", "name": "Cabin A/C compressor speed", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2282B7",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2282B7",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_CABIN_AC_COMP_POWER", "name": "Cabin A/C compressor power consumption", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.228334",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "228334",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_SOC_DISPLAY", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22905C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22905C",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_HOOD_POS", "name": "Hood position", "group": "Doors", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224501",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224501",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_PEDAL_POS_1", "name": "Brake pedal position 1", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224502",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224502",
+      "interval": 0.25,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_PEDAL_POS_2", "name": "Brake pedal position 2", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224509",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224509",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_MOTOR_DRIVER_1", "name": "Brake motor driver temperature 1", "group": "Control", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22450A",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22450A",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BRAKE_MOTOR_DRIVER_2", "name": "Brake motor driver temperature 2", "group": "Control", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240D3",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240D3",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_5V_REFERENCE_V_1", "name": "Battery 5V reference voltage", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 13107, "add": 5, "min": 0, "max": 7.49, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240D4",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240D4",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_CURRENT_HD", "name": "Battery pack current HD", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240D7",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240D7",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_1", "name": "Battery pack temperature 1", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240D9",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240D9",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_2", "name": "Battery pack temperature 2", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240DB",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240DB",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_3", "name": "Battery pack temperature 3", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240DD",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240DD",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_4", "name": "Battery pack temperature 4", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240DF",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240DF",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_5", "name": "Battery pack temperature 5", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2240E1",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2240E1",
+      "interval": 5,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TEMP_6", "name": "Battery pack temperature 6", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224181",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224181",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU01_VOLT", "name": "HV battery module 01 voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224182",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224182",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU02_VOLT", "name": "HV battery module 02 voltage", "group": "Battery.Modules.02", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224183",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224183",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU03_VOLT", "name": "HV battery module 03 voltage", "group": "Battery.Modules.03", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224184",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224184",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU04_VOLT", "name": "HV battery module 04 voltage", "group": "Battery.Modules.04", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224185",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224185",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU05_VOLT", "name": "HV battery module 05 voltage", "group": "Battery.Modules.05", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224186",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224186",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU06_VOLT", "name": "HV battery module 06 voltage", "group": "Battery.Modules.06", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224187",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224187",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU07_VOLT", "name": "HV battery module 07 voltage", "group": "Battery.Modules.07", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224188",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224188",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU08_VOLT", "name": "HV battery module 08 voltage", "group": "Battery.Modules.08", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224189",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224189",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU09_VOLT", "name": "HV battery module 09 voltage", "group": "Battery.Modules.09", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU10_VOLT", "name": "HV battery module 10 voltage", "group": "Battery.Modules.10", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU11_VOLT", "name": "HV battery module 11 voltage", "group": "Battery.Modules.11", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU12_VOLT", "name": "HV battery module 12 voltage", "group": "Battery.Modules.12", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU13_VOLT", "name": "HV battery module 13 voltage", "group": "Battery.Modules.13", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU14_VOLT", "name": "HV battery module 14 voltage", "group": "Battery.Modules.14", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22418F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22418F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU15_VOLT", "name": "HV battery module 15 voltage", "group": "Battery.Modules.15", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224190",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224190",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU16_VOLT", "name": "HV battery module 16 voltage", "group": "Battery.Modules.16", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224191",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224191",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU17_VOLT", "name": "HV battery module 17 voltage", "group": "Battery.Modules.17", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224192",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224192",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU18_VOLT", "name": "HV battery module 18 voltage", "group": "Battery.Modules.18", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224193",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224193",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU19_VOLT", "name": "HV battery module 19 voltage", "group": "Battery.Modules.19", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224194",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224194",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU20_VOLT", "name": "HV battery module 20 voltage", "group": "Battery.Modules.20", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224195",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224195",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU21_VOLT", "name": "HV battery module 21 voltage", "group": "Battery.Modules.21", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224196",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224196",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU22_VOLT", "name": "HV battery module 22 voltage", "group": "Battery.Modules.22", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224197",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224197",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU23_VOLT", "name": "HV battery module 23 voltage", "group": "Battery.Modules.23", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224198",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224198",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU24_VOLT", "name": "HV battery module 24 voltage", "group": "Battery.Modules.24", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224199",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224199",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU25_VOLT", "name": "HV battery module 25 voltage", "group": "Battery.Modules.25", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU26_VOLT", "name": "HV battery module 26 voltage", "group": "Battery.Modules.26", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU27_VOLT", "name": "HV battery module 27 voltage", "group": "Battery.Modules.27", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU28_VOLT", "name": "HV battery module 28 voltage", "group": "Battery.Modules.28", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU29_VOLT", "name": "HV battery module 29 voltage", "group": "Battery.Modules.29", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU30_VOLT", "name": "HV battery module 30 voltage", "group": "Battery.Modules.30", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22419F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22419F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU31_VOLT", "name": "HV battery module 31 voltage", "group": "Battery.Modules.31", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224200",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224200",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU32_VOLT", "name": "HV battery module 32 voltage", "group": "Battery.Modules.32", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224201",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224201",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU33_VOLT", "name": "HV battery module 33 voltage", "group": "Battery.Modules.33", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224202",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224202",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU34_VOLT", "name": "HV battery module 34 voltage", "group": "Battery.Modules.34", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224203",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224203",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU35_VOLT", "name": "HV battery module 35 voltage", "group": "Battery.Modules.35", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224204",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224204",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU36_VOLT", "name": "HV battery module 36 voltage", "group": "Battery.Modules.36", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224205",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224205",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU37_VOLT", "name": "HV battery module 37 voltage", "group": "Battery.Modules.37", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224206",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224206",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU38_VOLT", "name": "HV battery module 38 voltage", "group": "Battery.Modules.38", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224207",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224207",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU39_VOLT", "name": "HV battery module 39 voltage", "group": "Battery.Modules.39", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224208",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224208",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU40_VOLT", "name": "HV battery module 40 voltage", "group": "Battery.Modules.40", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224209",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224209",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU41_VOLT", "name": "HV battery module 41 voltage", "group": "Battery.Modules.41", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU42_VOLT", "name": "HV battery module 42 voltage", "group": "Battery.Modules.42", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU43_VOLT", "name": "HV battery module 43 voltage", "group": "Battery.Modules.43", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU44_VOLT", "name": "HV battery module 44 voltage", "group": "Battery.Modules.44", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU45_VOLT", "name": "HV battery module 45 voltage", "group": "Battery.Modules.45", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU46_VOLT", "name": "HV battery module 46 voltage", "group": "Battery.Modules.46", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22420F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22420F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU47_VOLT", "name": "HV battery module 47 voltage", "group": "Battery.Modules.47", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224210",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224210",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU48_VOLT", "name": "HV battery module 48 voltage", "group": "Battery.Modules.48", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224211",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224211",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU49_VOLT", "name": "HV battery module 49 voltage", "group": "Battery.Modules.49", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224212",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224212",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU50_VOLT", "name": "HV battery module 50 voltage", "group": "Battery.Modules.50", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224213",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224213",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU51_VOLT", "name": "HV battery module 51 voltage", "group": "Battery.Modules.51", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224214",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224214",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU52_VOLT", "name": "HV battery module 52 voltage", "group": "Battery.Modules.52", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224215",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224215",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU53_VOLT", "name": "HV battery module 53 voltage", "group": "Battery.Modules.53", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224216",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224216",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU54_VOLT", "name": "HV battery module 54 voltage", "group": "Battery.Modules.54", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224217",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224217",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU55_VOLT", "name": "HV battery module 55 voltage", "group": "Battery.Modules.55", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224218",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224218",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU56_VOLT", "name": "HV battery module 56 voltage", "group": "Battery.Modules.56", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224219",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224219",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU57_VOLT", "name": "HV battery module 57 voltage", "group": "Battery.Modules.57", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU58_VOLT", "name": "HV battery module 58 voltage", "group": "Battery.Modules.58", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU59_VOLT", "name": "HV battery module 59 voltage", "group": "Battery.Modules.59", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU60_VOLT", "name": "HV battery module 60 voltage", "group": "Battery.Modules.60", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU61_VOLT", "name": "HV battery module 61 voltage", "group": "Battery.Modules.61", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU62_VOLT", "name": "HV battery module 62 voltage", "group": "Battery.Modules.62", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22421F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22421F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU63_VOLT", "name": "HV battery module 63 voltage", "group": "Battery.Modules.63", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224220",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224220",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU64_VOLT", "name": "HV battery module 64 voltage", "group": "Battery.Modules.64", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224221",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224221",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU65_VOLT", "name": "HV battery module 65 voltage", "group": "Battery.Modules.65", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224222",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224222",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU66_VOLT", "name": "HV battery module 66 voltage", "group": "Battery.Modules.66", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224223",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224223",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU67_VOLT", "name": "HV battery module 67 voltage", "group": "Battery.Modules.67", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224224",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224224",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU68_VOLT", "name": "HV battery module 68 voltage", "group": "Battery.Modules.68", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224225",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224225",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU69_VOLT", "name": "HV battery module 69 voltage", "group": "Battery.Modules.69", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224226",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224226",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU70_VOLT", "name": "HV battery module 70 voltage", "group": "Battery.Modules.70", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224227",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224227",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU71_VOLT", "name": "HV battery module 71 voltage", "group": "Battery.Modules.71", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224228",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224228",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU72_VOLT", "name": "HV battery module 72 voltage", "group": "Battery.Modules.72", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224229",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224229",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU73_VOLT", "name": "HV battery module 73 voltage", "group": "Battery.Modules.73", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU74_VOLT", "name": "HV battery module 74 voltage", "group": "Battery.Modules.74", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU75_VOLT", "name": "HV battery module 75 voltage", "group": "Battery.Modules.75", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU76_VOLT", "name": "HV battery module 76 voltage", "group": "Battery.Modules.76", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU77_VOLT", "name": "HV battery module 77 voltage", "group": "Battery.Modules.77", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU78_VOLT", "name": "HV battery module 78 voltage", "group": "Battery.Modules.78", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22422F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22422F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU79_VOLT", "name": "HV battery module 79 voltage", "group": "Battery.Modules.79", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224230",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224230",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU80_VOLT", "name": "HV battery module 80 voltage", "group": "Battery.Modules.80", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224231",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224231",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU81_VOLT", "name": "HV battery module 81 voltage", "group": "Battery.Modules.81", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224232",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224232",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU82_VOLT", "name": "HV battery module 82 voltage", "group": "Battery.Modules.82", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224233",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224233",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU83_VOLT", "name": "HV battery module 83 voltage", "group": "Battery.Modules.83", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224234",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224234",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU84_VOLT", "name": "HV battery module 84 voltage", "group": "Battery.Modules.84", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224235",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224235",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU85_VOLT", "name": "HV battery module 85 voltage", "group": "Battery.Modules.85", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224236",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224236",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU86_VOLT", "name": "HV battery module 86 voltage", "group": "Battery.Modules.86", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224237",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224237",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU87_VOLT", "name": "HV battery module 87 voltage", "group": "Battery.Modules.87", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224238",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224238",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU88_VOLT", "name": "HV battery module 88 voltage", "group": "Battery.Modules.88", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224239",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224239",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU89_VOLT", "name": "HV battery module 89 voltage", "group": "Battery.Modules.89", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423A",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU90_VOLT", "name": "HV battery module 90 voltage", "group": "Battery.Modules.90", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423B",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423B",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU91_VOLT", "name": "HV battery module 91 voltage", "group": "Battery.Modules.91", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423C",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU92_VOLT", "name": "HV battery module 92 voltage", "group": "Battery.Modules.92", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423D",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423D",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU93_VOLT", "name": "HV battery module 93 voltage", "group": "Battery.Modules.93", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423E",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU94_VOLT", "name": "HV battery module 94 voltage", "group": "Battery.Modules.94", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22423F",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22423F",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU95_VOLT", "name": "HV battery module 95 voltage", "group": "Battery.Modules.95", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224240",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224240",
+      "interval": 10,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "BOLT_HVBAT_CMU96_VOLT", "name": "HV battery module 96 voltage", "group": "Battery.Modules.96", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2244B9",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2244B9",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_AVG_V_2", "name": "Battery cell average voltage 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 8000, "min": 0, "max": 8.19, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.228002",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "228002",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_IGN_POWER_MODE_BECM", "name": "Ignition power mode, battery energy control module", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2282A3",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2282A3",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_PACK_TERMINAL_V", "name": "Battery pack terminal voltage LD", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22C218",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22C218",
+      "interval": 1,
+      "answeredIn": [2017, 2020, 2023],
+      "signals": [
+        {"id": "BOLT_BAT_CELL_AVG_V", "name": "Battery cell average voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "BOLT_HVBAT_CMU_VOLT",
+      "name": "HV battery pack voltage",
+      "group": "Battery.Modules",
+      "match": "BOLT_HVBAT_(CMU\\d+)_VOLT",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

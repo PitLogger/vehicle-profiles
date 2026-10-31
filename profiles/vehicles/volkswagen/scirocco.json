@@ -1,0 +1,1887 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/volkswagen/scirocco",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Volkswagen",
+    "model": "Scirocco",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (Type 53)", "from": 1974, "to": 1981},
+      {"name": "Second Generation (Type 53B)", "from": 1981, "to": 1992},
+      {"name": "Third Generation (Type 13)", "from": 2008, "to": 2014},
+      {
+        "name": "Third Generation (Type 13 Facelift)",
+        "from": 2014,
+        "to": 2018
+      }
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Volkswagen-Scirocco",
+    "file": "signalsets/v3/default.json",
+    "revision": "a875220ad11bd2edf997bd022ee46baff5404f8e",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "714", "type": "cluster"}, {"tx": "7E0", "type": "engine"}],
+  "requests": [
+    {
+      "id": "714.77E.221014|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "221014",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2010, 2012, 2017],
+      "signals": [
+        {"id": "SCIROCCO_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "714.77E.222206|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222206",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "714.77E.22220C|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "22220C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OUTSIDE_T", "name": "Outside temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "714.77E.22224B|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "22224B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_THERMAL_WEAR", "name": "Oil thermal wear", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.222294|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222294",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2010, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "SCIROCCO_DTE", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.222299|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222299",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_FUEL_USE_AVG", "name": "Average fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.2211C4",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211C4",
+      "interval": 30,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_MAX", "name": "Oil level, max", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.2211C5",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211C5",
+      "interval": 30,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_MIN", "name": "Oil level, min", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22080C|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22080C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_2", "name": "Post injection 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22081A|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22081A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_1", "name": "Post injection 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22081B|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22081B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_3", "name": "Post injection 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221000|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221000",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_AAT_7E0", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221001|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221001",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221010|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221010",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22101A|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22101A",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_A_C_COMPRESSOR_TORQUE", "name": "A/C compressor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22101B|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22101B",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_GENERATOR_TORQUE_REQUEST", "name": "Generator torque request", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22101C|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22101C",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_GENERATOR_LOAD_SIG", "name": "Generator load signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22102C|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22102C",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ECT_RADIATOR_OUTLET_ACT_7E0", "name": "Coolant temperature at radiator outlet, actual value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221056|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221056",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_AIR_P_CAC_DS", "name": "Charge air pressure, actual value", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221059",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221059",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ACCEL_PEDAL_TQ_LIM", "name": "Accelerator pedal torque limit", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221064|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221064",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ECT_ENG_OUTLET_CALC", "name": "Coolant temperature at engine outlet, calculated", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22108C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22108C",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ODO_7E0", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221097|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221097",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_GENERATOR_PERFORMANCE", "name": "Generator performance", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 94248, "divide": 10000, "min": -308831.8464, "max": 308822.421, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210CA",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ACCEL_7E0", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210E5|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210E5",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_IGNITION_TIMING_ANGLE_RETARD_C4", "name": "Ignition timing angle retard, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 75, "divide": 100, "min": -24576, "max": 24575.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210F5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210F5",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_4", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221117|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221117",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CLT_FAN_1_ACTIVATION_1117", "name": "Coolant fan 1 activation, $1117", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111B",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_HIGH_FUEL_P_TGT", "name": "High fuel pressure, target", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 32.76}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111C|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111C",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_FUEL_T_7E0_2", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CAMSHAFT_VSS", "name": "Camshaft speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 2500, "divide": 10000, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221130|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221130",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_COOLANT_FAN_1_ACTIVATION", "name": "Coolant fan 1, activation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221153",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221153",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PQ35_DPF_OIL_ASH_VOL", "name": "Diesel particulate filter oil ash volume", "group": "Engine.DPF", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221156|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221156",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PQ35_DIST_LAST_REGEN", "name": "Distance since last regeneration", "group": "Engine.DPF", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22115B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22115B",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PARTICLE_FLT_FIELD", "name": "Particle filter, field regeneration request status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221161|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221161",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ENGINE_RPM_AT_IDLE_REQUIRED", "name": "Engine RPM at idle required", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221164",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221164",
+      "interval": 30,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PQ35_SRV_REGEN_DUR", "name": "Service regeneration current duration", "group": "Battery", "bit": 0, "bits": 32, "multiply": 0.0001666667, "min": 0, "max": 715827, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221177|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221177",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_T_AC_HEAT_EXCHANGER", "name": "Temperature at air conditioner heat exchanger output", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221181|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221181",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_HIGH_P_TURBOCHARGER", "name": "Charge adjuster output stage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211A0",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_INLET_FLAPS_REQ", "name": "Inlet flaps - requested value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 20, "divide": 13107, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211A9|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211A9",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_HIGH_P_EGR_ACTUATOR_ACT_V", "name": "High pressure exhaust gas recirculation actuator, actual unconditioned voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211B5|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211B5",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ECT_RADIATOR_OUTLET", "name": "Coolant temperature at radiator outlet", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BD",
+      "interval": 3600,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_LEVEL_WARN", "name": "Oil level warning threshold", "group": "Fluids", "bit": 0, "bits": 16, "divide": 2500, "min": 0, "max": 26.2, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BE",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PQ35_OIL_T_2", "name": "Oil temperature variant", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211CE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211CE",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_LOW_FUEL_P_CMD", "name": "Low fuel pressure, commanded", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211CF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211CF",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "multiply": 19531, "divide": 500000, "min": 0, "max": 2559}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211D0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211D0",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_TCO_1_ST", "name": "TCO_1_ST", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211D7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211D7",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_HIGH_FUEL_P_CMD", "name": "High fuel pressure, commanded", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 32.7675}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211FF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211FF",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EA888B_BOOST_P_CTRL_0", "name": "Ea888b boost pressure control, adaptation value 0", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 281, "divide": 100, "min": -359.68, "max": 356.87}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120E|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120E",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SNS_C1_V_MS", "name": "Knock sensor, cylinder 1 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22120F|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22120F",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SNS_C3_V_MS", "name": "Knock sensor, cylinder 3 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221210|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221210",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SNS_C4_V_MS", "name": "Knock sensor, cylinder 4 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221211|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221211",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SNS_C2_V_MS", "name": "Knock sensor, cylinder 2 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22121A|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22121A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PRE_INJ_3_ACTIVATION", "name": "Pilot injection 3, activation duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2500, "min": -13.1, "max": 13.1, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22121B|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22121B",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_2_7E0", "name": "Post-injection 2, activation duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2500, "min": -13.1, "max": 13.1, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22121D|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22121D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PRE_INJ_3_ACTIVATION_START", "name": "Pilot injection 3, activation start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221272|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221272",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_REAR_CAT_CONV_T_MAIN_CAT_CONV_MODEL_VALUE", "name": "Rear cat converter temperature, main catalytic converter model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221290|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221290",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OXYGEN_SNS_1_BANK_1_CERAMIC_T", "name": "Oxygen sensor 1 bank 1 ceramic temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 234.37, "divide": 10000, "add": -273.15, "min": -273.15, "max": 1262.793, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221291|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221291",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_COOLANT_T_AT_ENGINE_START", "name": "Coolant temperature at engine start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221298|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221298",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_CAT_T_BANK_1", "name": "Cat. temperature, bank 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221299|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221299",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CAT_T_BANK_2", "name": "Cat. temperature, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212B0|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212B0",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ACCELERATION_29BIT", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C7|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C7",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PRE_INJ_2_ACTIVATION", "name": "Pilot injection 2, activation start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C8|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C8",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_PRE_INJ_1_ACTIVATION", "name": "Pilot injection 1, activation start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221334|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221334",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_HIGH_P_EGR_ACTUATOR", "name": "High pressure EGR actuator, activation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22139C|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22139C",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EXHAUST_GAS_T_AT_PROBE_BEFOR_PRECAT_MODEL_VALUE", "name": "Exhaust gas temperature before the front catalytic converter, model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213A0|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213A0",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_COOLANT_T_MODELED_VALUE", "name": "Coolant temperature modeled value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213B8|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213B8",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_P_SWITCH_VLV", "name": "Oil pressure switch valve activation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213CD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213CD",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213FA|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213FA",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SENS_V_CYL_3", "name": "Knock sensor voltage:, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213FC|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213FC",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SENS_V_CYL_2", "name": "Knock sensor voltage:, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2213FD|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2213FD",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SENS_V_CYL_5", "name": "Knock sensor voltage:, cylinder 5", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221480|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221480",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_CNT_3", "name": "Misfires counter:, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221482|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221482",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_CNT_2", "name": "Misfires counter:, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221483|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221483",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_CNT_5", "name": "Misfires counter:, cylinder 5", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221486|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221486",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_PER_1000_RPM_3", "name": "Misfires per 1000 rpm:, cylinder 3", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221489|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221489",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIS_PER_1000_RPM_5", "name": "Misfires per 1000 rpm:, cylinder 5", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22148B|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22148B",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_MIS_PER_1000_RPM_ALL", "name": "Misfires per 1000 rpm, all cylinders", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22149E|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22149E",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214F9|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214F9",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MAIN_CAT_OSC_AGE_CORRECTION_FACTOR", "name": "Main cat oxygen storage capacity age correction factor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 65535, "min": 0, "max": 2}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221503",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221503",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 416, "min": 0, "max": 157, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221507|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221507",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CAT_CONVERTER_OXYGEN_STORAGE_CAPACITY_MEASURED", "name": "Cat. converter oxygen storage capacity measured", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221512",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221512",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ECT_MIN", "name": "Coolant temperature, minimum value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215C0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215C0",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_IAT_RAW", "name": "Intake air temperature raw value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215CA|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215CA",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_GENERATOR_LOAD_NORMALIZED_VALUE", "name": "Generator load normalized value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215CF|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215CF",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_LONGTITUDINAL_ACCELERATION_RAW_VALUE", "name": "Longitudinal acceleration, raw", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215D1|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215D1",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_VEHICLE_LATERAL_ACCELERATION_RAW_VALUE", "name": "Vehicle lateral acceleration, raw value", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": -327.68, "max": 327.67, "unit": "g"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216F3|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216F3",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CRANKSHAFT_VSS", "name": "Crankshaft speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221713",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221713",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_TOT_MASS_GASOLINE", "name": "Total mass of gasoline and ethyl alcohol in oil", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.021333, "min": 0, "max": 1398.0581}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221725",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221725",
+      "interval": 3600,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EARLY_IGN_CNT_CYL_2", "name": "Early ignition counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22174B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22174B",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_INT_CAM_ADPT_BIAS", "name": "Intake camshaft, adaptation bias", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221793|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221793",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_ASH_LIM", "name": "Oil ash limit", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217F4|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217F4",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_LOW_P_EGR_CLOSING", "name": "Low pressure EGR closing", "group": "Engine", "bit": 0, "bits": 16, "multiply": -25, "divide": 2048, "add": 100, "min": -699, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218CC|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218CC",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_REDUCING_AGENT_PMP", "name": "Reducing agent pump, differential speed calculated", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221A6C|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221A6C",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_REDUCING_AGENT_TANK_ACT", "name": "Reducing agent tank volume, act. value filtered", "group": "Engine", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 131, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221AF9|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221AF9",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_LEVEL_METHOD_1", "name": "Oil level method 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221AFA|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221AFA",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_LEVEL_METHOD_2", "name": "Oil level method 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221AFB|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221AFB",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_LEVEL_METHOD_3", "name": "Oil level method 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221B0E|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221B0E",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CHG_AIR_P_ACT", "name": "Charge air pressure, actual value", "group": "Battery", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221B11|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221B11",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CHG_AIR_P_ACTUATOR_7E0", "name": "Charge air pressure actuator position digit.value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_WARN_THR", "name": "Oil warning threshold", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22205D|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22205D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_1_7E0", "name": "Post injection 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22205F|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22205F",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_2_7E0_7E0", "name": "Post injection 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22208A|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22208A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_ASH_RESIDUE", "name": "Oil ash residue", "group": "Engine", "bit": 0, "bits": 32, "multiply": 3.052e-07, "min": 0, "max": 1310}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2220C0|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2220C0",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_POST_INJ_3_7E0", "name": "Post injection 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2224FC|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2224FC",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_FUEL_TANK_FILL_LEVEL", "name": "Fuel tank fill level", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2225CF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2225CF",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_OIL_P_TGT_7E0", "name": "Oil pressure target", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22291D|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22291D",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_1000_RPM_C1", "name": "Misfires/1000 rpm, cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22291E|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22291E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_1000_RPM_C3", "name": "Misfires/1000 rpm, cylinder 3", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22291F|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22291F",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_1000_RPM_C4", "name": "Misfires/1000 rpm, cylinder 4", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222920|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222920",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_1000_RPM_C2", "name": "Misfires/1000 rpm, cylinder 2", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222966|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222966",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_C1_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222967|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222967",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_C3_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222968|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222968",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_C4", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222969|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222969",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MISFIRES_C2", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22297B|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22297B",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_DPF_INPUT_GAS_T", "name": "Diesel particulate filter input gas temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "add": -20, "min": -20, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22297D|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22297D",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_DPF_OUTPUT_GAS_T", "name": "Diesel particulate filter output gas temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "add": -20, "min": -20, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22299C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22299C",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_COMPRESSION_TEST_CYL_2", "name": "Compression test, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2229B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2229B1",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_REMAINING_DIST_UNTIL", "name": "Remaining distance until reducing agent deficiency", "group": "Trips", "bit": 0, "bits": 32, "divide": 20, "min": 0, "max": 214748364, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2229D1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2229D1",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_AIR_MASS_ACT_MG", "name": "Air mass, actual value, mg/stroke", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222AE9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222AE9",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EXH_GAS_T_CALC_AFTER", "name": "Exhaust gas temperature - calculated after catalyst", "group": "Engine", "bit": 0, "bits": 16, "multiply": 293, "divide": 12500, "add": -273.15, "min": -273.15, "max": 1262.9904, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223961",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223961",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SENS_CYL_2", "name": "Knock sensor, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223962",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223962",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_KNOCK_SENS_CYL_3", "name": "Knock sensor, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2239E9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2239E9",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_SENS_PARTICLE_FLT_P", "name": "Sensor for particle filter differential pressure, raw value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223F47",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223F47",
+      "interval": 3600,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ADPT_VAL_CYL4_FAST", "name": "Adaptation val.cylinder4 fast diagnosis", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223F4F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223F4F",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CORR_FACTOR_OIL_T", "name": "Correction factor of oil temperature for engine protection", "group": "Engine", "bit": 0, "bits": 16, "multiply": 12207, "divide": 100000000, "min": 0, "max": 7.99}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223F68",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223F68",
+      "interval": 1,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_SECONDARY_AIR_INJ_1", "name": "Secondary air injection sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2240CE|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2240CE",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2010],
+      "signals": [
+        {"id": "SCIROCCO_OIL_LEVEL_STATIC_7E0", "name": "Oil level, static measurement", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -127, "min": -127, "max": 3968, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224183",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224183",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_TIM_DEV_CURRENT_INT_1", "name": "Timing deviation current value intake bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22430E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22430E",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_NUM_INJECTIONS", "name": "Number of injections", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224366|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224366",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_NOX_SULFUR_CHG", "name": "Nox sulfur charge", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22437C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22437C",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ENG_TQ_7E0", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224490|fc=1,c=17",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224490",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_COOLANT_T_AT_ENGINE_OUTLET_CALCULATED", "name": "Coolant temperature at engine outlet, calculated", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2244FB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2244FB",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_DPF_SURFACE_T", "name": "Diesel particulate filter surface temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "add": -273.15, "min": -2321.15, "max": 1774.7875, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224E4A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224E4A",
+      "interval": 3600,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_EARLY_IGN_CNT_TOQUE_1", "name": "Early ignition counter for toque reduction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "SCIROCCO_EARLY_IGN_CNT_TOQUE_2", "name": "Early ignition counter for toque reduction, cylinder 2", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535},
+        {"id": "SCIROCCO_EARLY_IGN_CNT_TOQUE_3", "name": "Early ignition counter for toque reduction, cylinder 3", "group": "Engine", "bit": 32, "bits": 16, "min": 0, "max": 65535},
+        {"id": "SCIROCCO_EARLY_IGN_CNT_TOQUE_4", "name": "Early ignition counter for toque reduction, cylinder 4", "group": "Engine", "bit": 48, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224F3F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224F3F",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_ODO_OXYDATION", "name": "Odometer at oxidation catalytic converter replacement", "group": "Trips", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2251A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2251A0",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MILEAGE_OXIDATION", "name": "Mileage of oxidation catalytic converter", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2251D4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2251D4",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CYL_BLOCK_T_SENS", "name": "Cylinder block temperature sensor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22584D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22584D",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CYL_4_INTERNAL_TQ", "name": "Cylinder 4 internal torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.225851|din=03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "225851",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_SERVICE_LIM_7E0", "name": "Service limit", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_MIL_DIST", "name": "Distance traveled while mil was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_WARM_UPS", "name": "Number of warm-ups since diagnostic trouble codes cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_CLR_DIST", "name": "Distance traveled since diagnostic trouble codes cleared", "group": "DTCs", "metric": "distanceSinceDTCsCleared", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 0.25,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2010, 2017],
+      "signals": [
+        {"id": "SCIROCCO_VPWR", "name": "Control module voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    }
+  ]
+}

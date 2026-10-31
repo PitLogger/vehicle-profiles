@@ -1,0 +1,1148 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/dodge/charger",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Dodge",
+    "model": "Charger",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 1966, "to": 1967},
+      {"name": "Second Generation", "from": 1968, "to": 1970},
+      {"name": "Third Generation", "from": 1971, "to": 1974},
+      {"name": "Fourth Generation", "from": 1975, "to": 1978},
+      {"name": "Fifth Generation", "from": 1981, "to": 1987},
+      {"name": "Sixth Generation (LX)", "from": 2006, "to": 2010},
+      {"name": "Seventh Generation (LD)", "from": 2011, "to": 2014},
+      {
+        "name": "Seventh Generation (LD, 2015 Facelift)",
+        "from": 2015,
+        "to": 2023
+      },
+      {"name": "Eighth Generation (LB)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Dodge-Charger",
+    "file": "signalsets/v3/default.json",
+    "revision": "345ccc4256d62f8b6149237f92e10c09af4d4ebe",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "763.4E3.22032D|fc=1,f=2015-2023",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "4E3",
+      "request": "22032D",
+      "interval": 0.25,
+      "flowControl": true,
+      "years": {"from": 2015, "to": 2023},
+      "answeredIn": [2015, 2016, 2018, 2019, 2021],
+      "signals": [
+        {"id": "CHARGER_HIGHBEAMS_ON", "name": "High beams", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CHARGER_HIGHBEAMS_MODE", "name": "High beam mode", "group": "Control", "bit": 4, "bits": 4, "values": {"0": "OFF", "1": "ON", "2": "HELD"}, "valueDescriptions": {"0": "Off", "1": "On", "2": "Held"}},
+        {"id": "CHARGER_REAR_WIPER", "name": "Rear wiper", "group": "Control", "bit": 12, "bits": 4, "values": {"0": "OFF", "1": "SPRAY", "2": "AUTO", "4": "ON"}, "valueDescriptions": {"0": "Off", "1": "Spray", "2": "Auto", "4": "On"}}
+      ]
+    },
+    {
+      "id": "7DA.22A020|f=-2016",
+      "bus": "can11",
+      "tx": "7DA",
+      "request": "22A020",
+      "interval": 15,
+      "years": {"to": 2016},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TP_FL_7DA", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1541, "divide": 4250, "min": 0, "max": 92, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7DA.22A021|f=-2016",
+      "bus": "can11",
+      "tx": "7DA",
+      "request": "22A021",
+      "interval": 15,
+      "years": {"to": 2016},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TP_FR_7DA", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 1541, "divide": 4250, "min": 0, "max": 92, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7DA.22A022|f=-2016",
+      "bus": "can11",
+      "tx": "7DA",
+      "request": "22A022",
+      "interval": 15,
+      "years": {"to": 2016},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TP_RL_7DA", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1541, "divide": 4250, "min": 0, "max": 92, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7DA.22A023|f=-2016",
+      "bus": "can11",
+      "tx": "7DA",
+      "request": "22A023",
+      "interval": 15,
+      "years": {"to": 2016},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TP_RR_7DA", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 1541, "divide": 4250, "min": 0, "max": 92, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CHARGER_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "CHARGER_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "CHARGER_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_AC_HIGH_SIDE_P_7E0", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B4|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B4",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FUEL_P_SENS_1000_S", "name": "Fuel pressure sensor, 1000's psi", "group": "Fuel", "bit": 0, "bits": 16, "divide": 552, "min": 0, "max": 118, "unit": "psi"},
+        {"id": "CHARGER_CHG_AIR_COOLER_T", "name": "Charge air cooler outlet temperature", "group": "Battery", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "CHARGER_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "CHARGER_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220255|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220255",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FUEL_MASS_CYL_1", "name": "Fuel mass, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220256|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220256",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FUEL_MASS_CYL_2", "name": "Fuel mass, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220257|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220257",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FUEL_MASS_CYL_3", "name": "Fuel mass, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220258|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220258",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FUEL_MASS_CYL_4", "name": "Fuel mass, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B2|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B2",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_REQUIRED_FUEL_CHG_1", "name": "Required fuel charge, cylinder 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B3|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B3",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_REQUIRED_FUEL_CHG_2", "name": "Required fuel charge, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B4|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B4",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_REQUIRED_FUEL_CHG_3", "name": "Required fuel charge, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B5|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B5",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_REQUIRED_FUEL_CHG_4", "name": "Required fuel charge, cylinder 4", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B|f=2011-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 30,
+      "years": {"from": 2011, "to": 2023},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019],
+      "signals": [
+        {"id": "CHARGER_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221250|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221250",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F", "invalidAtOrBelow": -83}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "years": {"to": 2023},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A|f=-2023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221935|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221935",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_IAT_1935", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 3600,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ODO_LAST_OVERSPEED", "name": "Odometer at last excess speed event", "group": "Movement", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.210A|f=-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "210A",
+      "interval": 5,
+      "years": {"to": 2023},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TRANS_T_VAR_2", "name": "Transmission temperature, variant 2", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 128, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130|f=-2018",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A|f=-2018",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.215C|fc=1,f=-2014",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "215C",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2014},
+      "answeredIn": [2006],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "CHARGER_ATF_T_3RDGEN_V2", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 32, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172|f=-2018",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE|f=2011-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"from": 2011, "to": 2023},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021],
+      "signals": [
+        {"id": "CHARGER_ATF_T", "name": "Transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF|f=-2018",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22|f=-2018",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "years": {"to": 2018},
+      "notAnsweredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225034|f=-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225034",
+      "interval": 1,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_MAIN_CYL_P", "name": "Transmission main cylinder pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225043|f=-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225043",
+      "interval": 5,
+      "years": {"to": 2023},
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "CHARGER_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1,f=2011-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2011, "to": 2023},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021],
+      "signals": [
+        {"id": "CHARGER_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1,f=2011-2023",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2011, "to": 2023},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021],
+      "signals": [
+        {"id": "CHARGER_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "DA10.10.221000|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2026],
+      "notAnsweredIn": [2006, 2016, 2018, 2019],
+      "signals": [
+        {"id": "CHARGER_RPM_ECU", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2026],
+      "notAnsweredIn": [2006, 2016, 2018, 2019],
+      "signals": [
+        {"id": "CHARGER_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2026],
+      "notAnsweredIn": [2006, 2016, 2018, 2019],
+      "signals": [
+        {"id": "CHARGER_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE|f=2024-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 5,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_ATF_T_DA18", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A|f=2024-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.25,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15},
+        {"id": "CHARGER_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "DA18.18.221018|f=2024-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TCM_TORQUE", "name": "Transmission-reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|f=2024-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA40.40.221004|f=2024-",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22012F|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22012F",
+      "interval": 5,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_TP_RL_INVALID", "name": "Rear left tire pressure invalid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_TP_RR_INVALID", "name": "Rear right tire pressure invalid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_TP_FR_INVALID", "name": "Front right tire pressure invalid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_TP_FL_INVALID", "name": "Front left tire pressure invalid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220302|f=2024-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220302",
+      "interval": 1,
+      "years": {"from": 2024},
+      "answeredIn": [2026],
+      "signals": [
+        {"id": "CHARGER_RRD_OPEN", "name": "Rear right door open", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_RLD_OPEN", "name": "Rear left door open", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_PASSENGER_DOOR_OPEN", "name": "Passenger door open", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_DRIVER_DOOR_OPEN", "name": "Driver door open", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "CHARGER_TRUNK_OPEN", "name": "Trunk open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1095 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/kia/stinger",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Kia",
+    "model": "Stinger",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (CK) Pre-Facelift", "from": 2018, "to": 2020},
+      {"name": "First Generation (CK) Facelift", "from": 2021, "to": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Kia-Stinger",
+    "file": "signalsets/v3/default.json",
+    "revision": "9e4c9341b0d54e1b9c09903dd2ffef2a8e49984b",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7A0", "type": "bodyControl"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "740.748.2201A1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "748",
+      "request": "2201A1",
+      "interval": 0.25,
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_AWD_CLU_DUTY", "name": "4WD clutch duty", "group": "Engine", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 100, "unit": "%"},
+        {"id": "STINGER_AWD_CLU_STRESS", "name": "4WD clutch stress", "group": "Engine", "bit": 104, "bits": 16, "signed": true, "multiply": 0.001953, "min": -63.99, "max": 63.99, "unit": "%"},
+        {"id": "STINGER_AWD_STEER_WHL_ANG", "name": "4WD steering wheel angle", "group": "Tires", "bit": 184, "bits": 16, "signed": true, "divide": 8, "min": -4096, "max": 4095.875, "unit": "°"},
+        {"id": "STINGER_AWD_CLU_TQ", "name": "4WD clutch torque", "group": "Engine", "bit": 200, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "Nm"},
+        {"id": "STINGER_AWD_CLU_P", "name": "4WD clutch pressure", "group": "Engine", "bit": 216, "bits": 16, "signed": true, "multiply": 0.001953, "min": -63.99, "max": 63.99, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "740.748.2201A3",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "748",
+      "request": "2201A3",
+      "interval": 0.25,
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_AWD_FRONT_AXLE_RAT", "name": "4WD front axle ratio", "group": "Engine", "bit": 56, "bits": 16, "signed": true, "multiply": 2, "divide": 65535, "min": -1, "max": 0.999},
+        {"id": "STINGER_AWD_AXLE_SPD_DIFF", "name": "4WD delta speed between front and rear axle", "group": "Movement", "bit": 144, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 2,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_BELT_PASS", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_BELT_DRIV", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 2,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_GEAR_R", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "STINGER_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "STINGER_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 2,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 0.25,
+      "answeredIn": [2020, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 5,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 2,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_TP_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "STINGER_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "STINGER_TP_FR", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "STINGER_TT_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "STINGER_TP_RR", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "STINGER_TT_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
+        {"id": "STINGER_TP_RL", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 128, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "STINGER_TT_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 136, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_SENS_1_ODO_EVT_1", "name": "Sensor #1 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_1_ODO_EVT_2", "name": "Sensor #1 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_1_ODO_EVT_3", "name": "Sensor #1 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_SENS_2_ODO_EVT_1", "name": "Sensor #2 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_2_ODO_EVT_2", "name": "Sensor #2 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_2_ODO_EVT_3", "name": "Sensor #2 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_SENS_3_ODO_EVT_1", "name": "Sensor #3 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_3_ODO_EVT_2", "name": "Sensor #3 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_3_ODO_EVT_3", "name": "Sensor #3 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_SENS_4_ODO_EVT_1", "name": "Sensor #4 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_4_ODO_EVT_2", "name": "Sensor #4 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "STINGER_SENS_4_ODO_EVT_3", "name": "Sensor #4 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_TEMP_INT", "name": "Interior temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_TEMP_EXT", "name": "Exterior temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_HVAC_EVAPORATOR_T", "name": "Evaporator temperature", "group": "Climate", "bit": 56, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "STINGER_HVAC_DEFOG_HUMIDITY", "name": "Humidity sensor for automatic defogger", "group": "Climate", "bit": 200, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2020, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "STINGER_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002|fc=1",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_FLI_VOL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L"},
+        {"id": "STINGER_CLUSTER_VOLTAGE", "name": "Cluster voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "STINGER_ODO_KM", "name": "Odometer, metric", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "STINGER_ODO_MI", "name": "Odometer, imperial", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.2101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_VSS_AVG", "name": "Vehicle speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "STINGER_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "STINGER_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "STINGER_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"},
+        {"id": "STINGER_TC_SWITCH", "name": "Wheel traction control switch", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "STINGER_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.220104",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "220104",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_VSS_AVG_V2", "name": "Average wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_FL_VSS_V2", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_FR_VSS_V2", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RR_VSS_V2", "name": "Rear right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RL_VSS_V2", "name": "Rear left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TC_SWITCH_V2", "name": "Traction control switch", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "STINGER_STEER_ANGLE_V2", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "STINGER_BRAKE_P_V2", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_TIRE_FL_VSS_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_FR_VSS_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RL_VSS_V3", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RR_VSS_V3", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "answeredIn": [2020, 2022],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.2101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_STEER_ANGLE_V3", "name": "Steering wheel angle", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_BMS_SOC", "name": "State of charge", "group": "Battery", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_BMS_CHG_PWR", "name": "Available charge power", "group": "Battery", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "kW"},
+        {"id": "STINGER_BMS_DISCHG_PWR", "name": "Available discharge power", "group": "Battery", "bit": 56, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "kW"},
+        {"id": "STINGER_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"},
+        {"id": "STINGER_BMS_MIN_TEMP", "name": "Battery min temp", "group": "Battery", "bit": 120, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_BMS_MOD1_TEMP", "name": "Battery mod 1 temp", "group": "Battery", "bit": 128, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_BMS_MOD2_TEMP", "name": "Battery mod 2 temp", "group": "Battery", "bit": 136, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_BMS_MOD3_TEMP", "name": "Battery mod 3 temp", "group": "Battery", "bit": 144, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "STINGER_BMS_MOD4_TEMP", "name": "Battery mod 4 temp", "group": "Battery", "bit": 152, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D6.7DE.2106",
+      "bus": "can11",
+      "tx": "7D6",
+      "rx": "7DE",
+      "request": "2106",
+      "interval": 15,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_FL_TP", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "STINGER_FL_TT", "name": "Front left tire temperature", "group": "Engine", "metric": "frontLeftTireTemperature", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "STINGER_FR_TP", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "STINGER_FR_TT", "name": "Front right tire temperature", "group": "Engine", "metric": "frontRightTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "STINGER_RL_TP", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 64, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "STINGER_RL_TT", "name": "Rear left tire temperature", "group": "Engine", "metric": "rearLeftTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "STINGER_RR_TP", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "STINGER_RR_TT", "name": "Rear right tire temperature", "group": "Engine", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.012F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "012F",
+      "interval": 60,
+      "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "FLI", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "notAnsweredIn": [2018, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 56, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 104, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2102",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2102",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "STINGER_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "Engine", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "STINGER_VSS_V2_7E0", "name": "Vehicle speed, v2", "group": "Movement", "metric": "speed", "bit": 96, "bits": 8, "multiply": 1.25, "min": 0, "max": 318.75, "unit": "km/h"},
+        {"id": "STINGER_COMMANDED_EVAPORATIVE_PURGE", "name": "Commanded evaporative purge", "group": "Engine", "bit": 160, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "STINGER_FUEL_INJECTION_TIMING_1", "name": "Fuel injection timing #1", "group": "Fuel", "bit": 176, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "STINGER_FUEL_INJECTION_TIMING_2", "name": "Fuel injection timing #2", "group": "Fuel", "bit": 192, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "STINGER_FUEL_INJECTION_TIMING_3", "name": "Fuel injection timing #3", "group": "Fuel", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "STINGER_FUEL_INJECTION_TIMING_4", "name": "Fuel injection timing #4", "group": "Fuel", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 5,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_EXHAUST_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 368, "bits": 8, "multiply": 4.709803922, "add": 99, "min": 99, "max": 1300, "unit": "°C"},
+        {"id": "STINGER_ODO_LAST_DPF_REGEN", "name": "Odometer at last DPF regeneration", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "STINGER_DISTANCE_SINCE_LAST_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 424, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "STINGER_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 456, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_COOLANT_FAN_HIGH_SPEED_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_COOLANT_FAN_LOW_SPEED_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_DPF_REGENERATION_STATE", "name": "Diesel particulate filter regeneration state", "group": "Engine", "bit": 207, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_MAIN_INJECTION_QTY", "name": "Main injection volume", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.392156863, "min": 0, "max": 100, "unit": "L"},
+        {"id": "STINGER_PILOT_INJECTION_QTY", "name": "Pilot injection volume", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "L"},
+        {"id": "STINGER_POST_INJECTION_QTY", "name": "Post injection volume", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_EMIS_3", "name": "Emission-relevant misfires, cylinder #3", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_EMIS_4", "name": "Emission-relevant misfires, cylinder #4", "group": "Engine.Misfires", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_1", "name": "Misfires total counter, cylinder #1", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_2", "name": "Misfires total counter, cylinder #2", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_3", "name": "Misfires total counter, cylinder #3", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_4", "name": "Misfires total counter, cylinder #4", "group": "Engine.Misfires", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CNT_ALL", "name": "Misfires total counter, all cylinders", "group": "Engine.Misfires", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2113",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2113",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "STINGER_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "STINGER_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "STINGER_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "STINGER_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "STINGER_THROTTLE_POSITION__1", "name": "Throttle position #1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "STINGER_THROTTLE_POSITION__2", "name": "Throttle position #2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "STINGER_THROTTLE_POSITION_SENSOR_VOLTAGE__2", "name": "Throttle position sensor voltage #2", "group": "Battery", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"},
+        {"id": "STINGER_COOLANT_FAN", "name": "Coolant", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_RELATIVE_ACCELERATOR_PEDAL_POSITION_VOLTAGE", "name": "Relative accelerator pedal position voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "V"},
+        {"id": "STINGER_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 128, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "STINGER_REQUESTED_TORQUE", "name": "Requested torque", "group": "Engine", "bit": 176, "bits": 16, "multiply": 0.001526, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_THROTTLE_POSITION_SENSOR_VOLTAGE__1", "name": "Throttle position sensor voltage #1", "group": "Battery", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2115",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2115",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0030517578, "add": -100, "min": 0, "max": 99.99, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2116",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2116",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_CYLINDER_3", "name": "Knock retard cylinder #3", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_CYLINDER_4", "name": "Knock retard cylinder #4", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
+        {"id": "STINGER_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "Engine", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "notAnsweredIn": [2018, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_CVVT_T", "name": "Variable valve timing temperature", "description": "Continuously variable valve timing temperature.", "group": "Engine", "bit": 272, "bits": 8, "add": -48, "min": -48, "max": 207, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211B",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_DPF_DIFFERENTIAL_PRESSURE", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CAT_1", "name": "Misfires harmful for catalyst cylinder 1", "group": "Engine.Misfires", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CAT_2", "name": "Misfires harmful for catalyst cylinder 2", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CAT_3", "name": "Misfires harmful for catalyst cylinder 3", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MIS_CAT_4", "name": "Misfires harmful for catalyst cylinder 4", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2221A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2221A0",
+      "interval": 10,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 2,
+      "answeredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "STINGER_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "STINGER_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
+        {"id": "STINGER_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"},
+        {"id": "STINGER_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "STINGER_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "STINGER_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "STINGER_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "STINGER_INJ_DUR_5", "name": "Injection duration cylinder 5", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "STINGER_INJ_DUR_6", "name": "Injection duration cylinder 6", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 5,
+      "answeredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_22E004", "name": "Unknown", "group": "Engine.Unknown", "bit": 0, "bits": 8, "min": 0, "max": 100},
+        {"id": "STINGER_AUX_SOC", "name": "Aux battery state of charge", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0},
+        {"id": "STINGER_AUX_SOH", "name": "Aux battery state of health", "group": "Battery", "bit": 328, "bits": 8, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 2,
+      "answeredIn": [2020, 2022],
+      "signals": [
+        {"id": "STINGER_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "STINGER_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_KNOCK_RETARD_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_LEARN_1", "name": "Knock learn cylinder 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_LEARN_2", "name": "Knock learn cylinder 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_LEARN_3", "name": "Knock learn cylinder 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "STINGER_KNOCK_LEARN_4", "name": "Knock learn cylinder 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020, 2022],
+      "signals": [
+        {"id": "STINGER_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 5,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "STINGER_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 3520, "divide": 255, "min": 0, "max": 3520, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E019",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_3_E019", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "STINGER_KNOCK_RETARD_4_E019", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "STINGER_EMIS_MIS_TOT_1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMIS_MIS_TOT_2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMIS_MIS_TOT_3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_EMIS_MIS_TOT_4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATDMG_MIS_TOT_1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATDMG_MIS_TOT_2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATDMG_MIS_TOT_3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "STINGER_CATDMG_MIS_TOT_4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E021",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E021",
+      "interval": 0.1,
+      "answeredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_TURBO_BOOST", "name": "Turbo boost gauge pressure", "group": "Engine", "bit": 56, "bits": 16, "divide": 831.55690902, "add": -12, "min": -10, "max": 66.81, "unit": "psi"},
+        {"id": "STINGER_WG_VOLTAGE", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 10, "divide": 65535, "min": 0, "max": 10, "unit": "V"},
+        {"id": "STINGER_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"},
+        {"id": "STINGER_WG_POSITION", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 400, "divide": 65535, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
+        {"id": "STINGER_WG_SETPOINT", "name": "Waste gate set point", "group": "Engine", "bit": 440, "bits": 16, "signed": true, "multiply": 400, "divide": 65535, "min": -200, "max": 100, "unit": "%", "invalidAtOrBelow": -200}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 61, "divide": 10000, "min": 0, "max": 399.7635},
+        {"id": "STINGER_FUEL_P_TGT", "name": "Fuel pressure target", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 61, "divide": 10000, "min": 0, "max": 399.7635},
+        {"id": "STINGER_DI_TIME_2ND_CYL_1", "name": "Direct injection time 2nd pulse, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_2ND_CYL_2", "name": "Direct injection time 2nd pulse, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_2ND_CYL_3", "name": "Direct injection time 2nd pulse, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_2ND_CYL_4", "name": "Direct injection time 2nd pulse, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_1ST_CYL_1", "name": "Direct injection time 1st pulse, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_1ST_CYL_2", "name": "Direct injection time 1st pulse, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_1ST_CYL_3", "name": "Direct injection time 1st pulse, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_DI_TIME_1ST_CYL_4", "name": "Direct injection time 1st pulse, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_CYL5_INJ_TIME_2ND", "name": "Direct injection time 2nd pulse, cylinder 5", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_CYL6_INJ_TIME_2ND", "name": "Direct injection time 2nd pulse, cylinder 6", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_CYL5_INJ_TIME_1ST", "name": "Direct injection time 1st pulse, cylinder 5", "group": "Engine", "bit": 392, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "STINGER_CYL6_INJ_TIME_1ST", "name": "Direct injection time 1st pulse, cylinder 6", "group": "Engine", "bit": 408, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F1",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_DPF_DIFF_P", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 248, "bits": 8, "multiply": 431.373, "divide": 100, "add": -100, "min": -100, "max": 1000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED01",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "STINGER_AC_RELAY", "name": "Air conditioning relay", "group": "Engine", "bit": 101, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_ENG_CLT_FAN_LOW_SPD", "name": "Engine coolant fan low speed", "group": "Movement", "bit": 176, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_ENG_CLT_FAN_HIGH_SPD_OFF", "name": "Engine coolant fan high speed, on/off", "group": "Movement", "bit": 184, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 216, "bits": 8, "multiply": 0.7843, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"},
+        {"id": "STINGER_ENG_ACT_TQ", "name": "Engine, actual torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 2.3529, "min": 0, "max": 599.9895, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED02",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED02",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 251, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED03",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED03",
+      "interval": 30,
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_EXH_T_1_UP_OXICAT", "name": "Exhaust temperature 1, upstream of oxidation catalyst", "group": "Engine", "bit": 296, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "STINGER_EXH_T_2_UP_DPF", "name": "Exhaust temperature 2, upstream of DPF", "group": "Engine", "bit": 304, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "STINGER_DPF_ODO_LAST_REGEN", "name": "Diesel particulate filter odometer at last regeneration", "group": "Trips", "bit": 328, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "STINGER_DPF_DIST_SINCE_REGEN", "name": "Diesel particulate filter distance since last regeneration", "group": "Trips", "bit": 360, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "STINGER_ODO_7E0", "name": "Odometer", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "STINGER_DPF_REGEN_ST", "name": "Diesel particulate filter regeneration state", "group": "Engine", "bit": 431, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_FUEL_CONS_SINCE_DPF", "name": "Fuel consumption since last DPF regeneration", "group": "Fuel", "bit": 432, "bits": 8, "multiply": 1.2549, "min": 0, "max": 319, "unit": "L"},
+        {"id": "STINGER_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration count", "group": "Engine", "bit": 440, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED07",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED07",
+      "interval": 5,
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 152, "bits": 8, "multiply": 0.7843, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED29",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED29",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "STINGER_DPF_TOT_SULFUR_MASS", "name": "Diesel particulate filter total sulfur mass", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.15259, "min": 0, "max": 9999}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED94",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED94",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "STINGER_DPF_SOOT_MASS", "name": "Diesel particulate filter soot mass", "group": "Engine", "bit": 56, "bits": 8, "multiply": 99, "divide": 255, "min": 0, "max": 99}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A0",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_VSS_V3", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "STINGER_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 152, "bits": 8, "values": {"1": "NEUTRAL", "2": "REVERSE", "3": "PARK", "4": "MANUAL"}, "valueDescriptions": {"1": "Neutral", "2": "Reverse", "3": "Park", "4": "Manual"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "answeredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "STINGER_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "STINGER_OUTPUT_SPEED", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "STINGER_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "STINGER_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "STINGER_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A4",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
+        {"id": "STINGER_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "STINGER_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "STINGER_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2101",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_VSS_V2", "name": "Vehicle speed", "description": "Current vehicle speed", "group": "Movement", "metric": "speed", "bit": 104, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -180, "max": 180, "unit": "mph"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22E004",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E004",
+      "interval": 10,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2018, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_VPWR_V3", "name": "12v battery charge", "group": "Battery", "bit": 152, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.21C0",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "21C0",
+      "interval": 0.25,
+      "notAnsweredIn": [2019, 2020, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_RPM", "name": "Engine RPM", "group": "Engine", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "STINGER_VSS_AWD", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_APP_REL_AWD", "name": "Relative accelerator pedal position", "group": "Control", "bit": 56, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "STINGER_SUPPLY_VOLTAGE", "name": "Supply voltage", "group": "Battery", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "STINGER_SYSTEM_VOLTAGE", "name": "System voltage", "group": "Battery", "bit": 72, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "STINGER_COMMANDED_TORQUE", "name": "Commanded torque", "group": "Engine", "bit": 80, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "Nm"},
+        {"id": "STINGER_CLUTCH_SOLENOID_DUTY", "name": "Clutch solenoid duty", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "STINGER_HEAT", "name": "Heat", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "°C"},
+        {"id": "STINGER_FRONT_RIGHT_WHEEL_SPEED", "name": "Front right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_FRONT_LEFT_WHEEL_SPEED", "name": "Front left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_REAR_RIGHT_WHEEL_SPEED", "name": "Rear right wheel speed", "group": "Movement", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_LOCK_SWITCH", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
+        {"id": "STINGER_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22C101",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
+      "signals": [
+        {"id": "STINGER_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "STINGER_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    }
+  ]
+}

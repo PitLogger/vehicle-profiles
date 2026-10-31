@@ -1,0 +1,500 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/jeep/wagoneer-l",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Jeep",
+    "model": "Wagoneer L",
+    "years": null,
+    "generations": [{"name": "WS", "from": 2023}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Jeep-Wagoneer-L",
+    "file": "signalsets/v3/default.json",
+    "revision": "0ae7083896e9ca6a3dbac8544f1be51af6f54111",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"},
+    {"tx": "DA30", "type": "abs"},
+    {"tx": "DA40", "type": "bodyControl"},
+    {"tx": "DAC7", "type": "tpms"}
+  ],
+  "requests": [
+    {
+      "id": "DA10.10.221000|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22190B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22190B",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_VSS_ECU", "name": "Vehicle speed, engine computer", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.221935|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221935",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_IAT_TURBO", "name": "IAT post-intercooler", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193F",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_MAF_TEMP", "name": "Mass airflow sensor temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.22195A|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.223800|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223800",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_FUEL_CORR_CYL1", "name": "Fuel correction cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223801|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223801",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_FUEL_CORR_CYL2", "name": "Fuel correction cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223802|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223802",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_FUEL_CORR_CYL3", "name": "Fuel correction cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223803|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223803",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_FUEL_CORR_CYL4", "name": "Fuel correction cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223813|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223813",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_OIL_DEGRAD", "name": "Engine oil degradation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223914|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223914",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "WAGL_CATALYST_INLET_T", "name": "Catalyst inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D07",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D07",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_AT_OUTPUT_RPM", "name": "Transmission output speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D08",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D08",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_AT_INPUT_RPM", "name": "Transmission input speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D09",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D09",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_ATF_T_DA18", "name": "Automatic transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D12",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D12",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_GEAR_DA18", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_ATF_T_4THGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A|f=2020-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.5,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
+        {"id": "WAGL_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13}
+      ]
+    },
+    {
+      "id": "DA18.18.221018",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "signals": [
+        {"id": "WAGL_TCM_TORQUE", "name": "Transmission-reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|f=2020-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222102",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222102",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_GEARBOX_RPM", "name": "Gearbox output speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1B",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1B",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_WSS_RR", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1C",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1C",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_WSS_RL", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1D",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1D",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_WSS_FR", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1E",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1E",
+      "interval": 1,
+      "signals": [
+        {"id": "WAGL_WSS_FL", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158|f=2020-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA30.30.220885|f=2020-",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "220885",
+      "interval": 0.1,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "add": -720, "min": -720, "max": 720, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA30.30.222962|f=2020-",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "222962",
+      "interval": 0.1,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 4, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40},
+        {"id": "WAGL_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 20, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40}
+      ]
+    },
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "signals": [
+        {"id": "WAGL_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22012F|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22012F",
+      "interval": 5,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_TP_RL_INVALID", "name": "Rear left tire pressure invalid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_TP_RR_INVALID", "name": "Rear right tire pressure invalid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_TP_FR_INVALID", "name": "Front right tire pressure invalid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_TP_FL_INVALID", "name": "Front left tire pressure invalid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220302|f=2020-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220302",
+      "interval": 1,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "WAGL_RRD_OPEN", "name": "Rear right door open", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_RLD_OPEN", "name": "Rear left door open", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_PASSENGER_DOOR_OPEN", "name": "Passenger door open", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_DRIVER_DOOR_OPEN", "name": "Driver door open", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "WAGL_TRUNK_OPEN", "name": "Trunk open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    }
+  ]
+}

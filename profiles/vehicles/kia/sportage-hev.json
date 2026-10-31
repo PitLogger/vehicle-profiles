@@ -1,0 +1,56 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/kia/sportage-hev",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Kia",
+    "model": "Sportage HEV",
+    "years": null,
+    "generations": [{"name": "First Generation (NQ5)", "from": 2022}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Kia-Sportage-HEV",
+    "file": "signalsets/v3/default.json",
+    "revision": "29ad52d8e810c098d92ca11f3a4d468c5d6927c4",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E2.7EA.22E004",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E004",
+      "interval": 1,
+      "signals": [
+        {"id": "SPORTAGE_VPWR", "name": "12V battery charge", "group": "Battery", "bit": 152, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220101|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220101",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SPORTAGE_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 32, "bits": 8, "multiply": 0.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220105|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220105",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "SPORTAGE_HVBAT_SOC_DISP", "name": "HV battery charge (displayed)", "group": "Battery", "metric": "stateOfCharge", "bit": 248, "bits": 8, "multiply": 0.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

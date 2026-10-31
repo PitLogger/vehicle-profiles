@@ -1,0 +1,808 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/jeep/renegade",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Jeep",
+    "model": "Renegade",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2014, "to": 2018},
+      {"name": "First Generation (Facelift)", "from": 2019, "to": 2023},
+      {"name": "First Generation (Continued Production)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Jeep-Renegade",
+    "file": "signalsets/v3/default.json",
+    "revision": "bcc109352fbc14ad186a8488ec42302545d90c11",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "DA10.10.221000|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189B",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_SWIRL_CMD", "name": "Swirl actuator command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189F",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_VGT_CMD", "name": "VGT position commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A0|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A0",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_VGT_ACT", "name": "VGT position actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A4|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A4",
+      "interval": 3600,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_REGEN_TOTAL", "name": "Total DPF regenerations started", "group": "Emissions", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A5|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A5",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_REGEN_INTERRUPTED", "name": "DPF regen interrupted count", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218D0|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218D0",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_MPROP_CMD", "name": "M-Prop injection command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218DE|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218DE",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_INLET_T", "name": "DPF inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E2|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E2",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_DIFF_PRESS", "name": "DPF differential pressure", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -50, "max": 50, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E4|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E4",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_SOOT_PCT", "name": "DPF soot clogging level", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 1000, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E8|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E8",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_FLOW_RES", "name": "DPF flow resistance", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "DA10.10.2218EC|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218EC",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_FORCED_REGEN", "name": "Forced regen state", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218ED|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218ED",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_LAMBDA_DPF_DS", "name": "Lambda downstream DPF O2 concentration", "group": "Emissions", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 25, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.221900|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221900",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_FUEL_TEMP", "name": "Diesel fuel temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22190B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22190B",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_VSS_ECU", "name": "Vehicle speed (ECM)", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.221935|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221935",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_IAT_TURBO", "name": "IAT post-intercooler", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193F",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_MAF_TEMP", "name": "Mass airflow sensor temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221946|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221946",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_RAIL_PRESS_CMD", "name": "Fuel rail pressure commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.221947|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221947",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_RAIL_PRESS", "name": "Fuel rail pressure measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2015, 2023],
+      "signals": [
+        {"id": "RENEGADE_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.22195A|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.223800|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223800",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_FUEL_CORR_CYL1", "name": "Fuel correction cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223801|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223801",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_FUEL_CORR_CYL2", "name": "Fuel correction cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223802|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223802",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_FUEL_CORR_CYL3", "name": "Fuel correction cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223803|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223803",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_FUEL_CORR_CYL4", "name": "Fuel correction cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223807|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223807",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_DIST_SINCE_REGEN", "name": "Distance since last DPF regen", "group": "Emissions", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.223808|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223808",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_AVG_REGEN_TEMP", "name": "DPF regen temperature (last 5 average)", "group": "Emissions", "bit": 0, "bits": 16, "divide": 50, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223809|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223809",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_AVG_DIST_REGENS", "name": "Distance between DPF regens (last 5 average)", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380A|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380A",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_AVG_REGEN_DUR", "name": "DPF regen duration (last 5 average)", "group": "Emissions", "bit": 0, "bits": 16, "divide": 60, "min": 0, "max": 30, "unit": "min"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380B",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_REGEN_PROGRESS", "name": "DPF regen progress", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223813|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223813",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_OIL_DEGRAD", "name": "Engine oil degradation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223912|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223912",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_REGEN_COMPLETED", "name": "Total DPF regenerations completed", "group": "Emissions", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.223914|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223914",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_CATALYST_INLET_T", "name": "Catalyst inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223915|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223915",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_OUTLET_T", "name": "DPF outlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223917|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223917",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2015, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_EGR_COOLER_T", "name": "EGR cooler downstream temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22392B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22392B",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2018, 2019],
+      "notAnsweredIn": [2015, 2020, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_NOX_LOAD_PCT", "name": "NOx storage catalyst load", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA18.221D07",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D07",
+      "interval": 1,
+      "notAnsweredIn": [2018, 2019, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_AT_OUTPUT_RPM", "name": "Transmission output speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D08",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D08",
+      "interval": 1,
+      "notAnsweredIn": [2018, 2019, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_AT_INPUT_RPM", "name": "Transmission input speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D09",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D09",
+      "interval": 1,
+      "notAnsweredIn": [2018, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_ATF_T", "name": "Automatic transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D12",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D12",
+      "interval": 1,
+      "notAnsweredIn": [2018, 2021, 2023],
+      "signals": [
+        {"id": "RENEGADE_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 5,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_ATF_T_4THGEN", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "RENEGADE_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15},
+        {"id": "RENEGADE_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "DA18.18.221018",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_TCM_TORQUE", "name": "TCM reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|fc=1",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021, 2024],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222102",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222102",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_GEARBOX_RPM", "name": "Gearbox output speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1B",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1B",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_WSS_RR", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1C",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1C",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_WSS_RL", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1D",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1D",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_WSS_FR", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1E",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1E",
+      "interval": 1,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_WSS_FL", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "RENEGADE_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DB33.017C",
+      "bus": "can29",
+      "tx": "18DB33F1",
+      "request": "017C",
+      "interval": 5,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "RENEGADE_DPF_TEMP1", "name": "DPF temperature bank 1 sensor 1", "group": "Emissions", "bit": 8, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 900, "unit": "°C"},
+        {"id": "RENEGADE_DPF_TEMP2", "name": "DPF temperature bank 1 sensor 2", "group": "Emissions", "bit": 24, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/cr-z",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "CR-Z",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2010, "to": 2012},
+      {"name": "First Generation (2013 Facelift)", "from": 2013, "to": 2016}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-CR-Z",
+    "file": "signalsets/v3/default.json",
+    "revision": "56307066bc6697c489cec8e7917b4d00e3644aac",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "DA11", "type": "engine"}],
+  "requests": [
+    {
+      "id": "DA10.10.222610|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222610",
+      "interval": 1,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_GENERATOR", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CRZ_AC_CLUTCH", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222611|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222611",
+      "interval": 5,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_AIRGAS_RATIO", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222612|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222612",
+      "interval": 0.25,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CRZ_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222614|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222614",
+      "interval": 5,
+      "years": {"from": 2013},
+      "signals": [
+        {"id": "CRZ_ST_CHG_RAW_CNT_DA10", "name": "State of charge, raw count", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_IMA_BAT_T_DA10", "name": "Motor assist battery temperature", "group": "Battery", "bit": 176, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.222615|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222615",
+      "interval": 1,
+      "years": {"from": 2013},
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CRZ_ACTIVE_CYL", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA10.10.222660|fc=1,f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222660",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "CRZ_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA10.10.222661|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222661",
+      "interval": 0.25,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_FUELAIR_CAR", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA10.10.222662|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222662",
+      "interval": 0.25,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_KNOCK_CONTROL", "name": "Knock control", "description": "ECU's determination of fuel quality.", "group": "Engine", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "CRZ_VTC_DUTY", "name": "Variable timing control duty", "description": "How long the valve is energized versus how long it's not energized, expressed as a percentage. The higher the duty percentage, the more the cam timing is advanced toward its maximum potential.", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222663|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222663",
+      "interval": 1,
+      "years": {"from": 2013},
+      "answeredIn": [2015],
+      "signals": [
+        {"id": "CRZ_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.222666|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222666",
+      "interval": 5,
+      "years": {"from": 2013},
+      "signals": [
+        {"id": "CRZ_EOT_VAR_3", "name": "Engine oil temperature, variant 3", "group": "Engine", "metric": "engineOilTemperature", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CRZ_EOT_VAR_4", "name": "Engine oil temperature, variant 4", "group": "Engine", "metric": "engineOilTemperature", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.222668|f=2013-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222668",
+      "interval": 1,
+      "years": {"from": 2013},
+      "signals": [
+        {"id": "CRZ_ELEC_MOTOR_LOAD_DA10", "name": "Electric motor load", "group": "Engine", "bit": 216, "bits": 8, "multiply": 40, "divide": 51, "add": -100, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA11.11.222610|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222610",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_GENERATOR_DA11", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CRZ_AC_CLU_DA11", "name": "Air conditioner clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA11.11.222611|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222611",
+      "interval": 5,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_AIRGAS_RATIO_V2", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA11.11.222612|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222612",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_VTEC_VALVE_CTRL", "name": "VTEC valve control", "description": "VTEC works by switching between two (or sometimes three) different camshaft profiles by engaging or disengaging a mechanism that locks the valve rocker arms together. When VTEC is OFF, the engine operates using the standard cam profile, which is typically optimized for fuel efficiency and low-end torque. When VTEC is ON, the system switches to a high-performance cam profile that allows the valves to open wider and for a longer duration, enabling better airflow at higher RPMs for increased power.", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA11.11.222613|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222613",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_EVAP_PC_LOAD", "name": "Evaporative purge control load", "group": "Engine", "bit": 48, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 99.61, "unit": "%"},
+        {"id": "CRZ_AC_P_RAW_CNT", "name": "Air conditioning pressure, raw count", "group": "Engine", "bit": 120, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222614|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222614",
+      "interval": 5,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_ST_CHG_RAW_CNT", "name": "State of charge, raw count", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_IMA_BAT_T", "name": "Motor assist battery temperature", "group": "Battery", "bit": 176, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222615|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222615",
+      "interval": 1,
+      "years": {"to": 2012},
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "CRZ_SENS_FUEL_P_RAW_CNT", "name": "Fuel pressure sensor A, raw count", "group": "Fuel", "bit": 248, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222660|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222660",
+      "interval": 5,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_RUNTM_V2", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA11.11.222661|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222661",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_ELD_ELEC_LOAD_DUTY", "name": "Electric load detector current", "group": "Engine", "bit": 136, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA11.11.222662|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222662",
+      "interval": 5,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_KNOCK_CONTROL_V2", "name": "Knock control", "group": "Engine", "bit": 80, "bits": 8, "multiply": 1.99, "divide": 255, "min": 0, "max": 1.99},
+        {"id": "CRZ_CAT_T", "name": "Catalyst temperature", "group": "Engine", "bit": 96, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 1500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222663|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222663",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_MISFIRE_COUNT_1_VAR_3", "name": "Misfire count #1, variant 3", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_2_VAR_3", "name": "Misfire count #2, variant 3", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_3_VAR_3", "name": "Misfire count #3, variant 3", "group": "Engine", "bit": 192, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_4_VAR_3", "name": "Misfire count #4, variant 3", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_1_VAR_2", "name": "Misfire count #1, variant 2", "group": "Engine", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_2_VAR_2", "name": "Misfire count #2, variant 2", "group": "Engine", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_3_VAR_2", "name": "Misfire count #3, variant 2", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CRZ_MISFIRE_COUNT_4_VAR_2", "name": "Misfire count #4, variant 2", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222666|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222666",
+      "interval": 5,
+      "years": {"to": 2012},
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "CRZ_EOT_VAR_1", "name": "Engine oil temperature, variant 1", "group": "Engine", "metric": "engineOilTemperature", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CRZ_EOT_VAR_2", "name": "Engine oil temperature, variant 2", "group": "Engine", "metric": "engineOilTemperature", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222668|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222668",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_ELEC_MOTOR_LOAD", "name": "Electric motor load", "group": "Engine", "bit": 216, "bits": 8, "multiply": 40, "divide": 51, "add": -100, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA11.11.22266C|f=-2012",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "22266C",
+      "interval": 1,
+      "years": {"to": 2012},
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_MISFIRE_COUNT_1_VAR_1", "name": "Misfire count #1, variant 1", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRZ_MISFIRE_COUNT_2_VAR_1", "name": "Misfire count #2, variant 1", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRZ_MISFIRE_COUNT_3_VAR_1", "name": "Misfire count #3, variant 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "CRZ_MISFIRE_COUNT_4_VAR_1", "name": "Misfire count #4, variant 1", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DBEF.222001",
+      "bus": "can29",
+      "tx": "18DBEFF1",
+      "request": "222001",
+      "interval": 5,
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_MOTOR_INVERTER_CURRENT", "name": "Motor inverter, current", "group": "Engine", "bit": 48, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "CRZ_BATTERY_COOLANT_TEMPERATURE", "name": "Battery coolant temperature", "group": "Battery", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CRZ_BATTERY_MODULE_POWER", "name": "Battery module power", "group": "Battery", "bit": 168, "bits": 16, "signed": true, "multiply": 0.016, "min": -524.288, "max": 524.272, "unit": "kW"},
+        {"id": "CRZ_HV_BATTERY_FAN_3_SPEED", "name": "HV battery fan 3 speed", "group": "Battery", "bit": 288, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DBEF.222010",
+      "bus": "can29",
+      "tx": "18DBEFF1",
+      "request": "222010",
+      "interval": 5,
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_HV_BATTERY_CURRENT", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 32, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "CRZ_DC_DC_CONVERTER_TEMPERATURE", "name": "DC-DC converter temperature", "group": "Engine", "bit": 104, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DBEF.222012",
+      "bus": "can29",
+      "tx": "18DBEFF1",
+      "request": "222012",
+      "interval": 1,
+      "answeredIn": [2011],
+      "signals": [
+        {"id": "CRZ_HV_BATTERY_USABLE_CAPACITY", "name": "HV battery usable capacity", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CRZ_STATE_OF_CHARGE", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 40, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CRZ_HV_BATTERY_CELL_MAX_STATE_OF_CHARGE", "name": "HV battery cell max state of charge", "group": "Battery", "bit": 208, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,598 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/genesis/gv80",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Genesis",
+    "model": "GV80",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (JX1)", "from": 2020, "to": 2024},
+      {"name": "First Generation Facelift (JX1)", "from": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Genesis-GV80",
+    "file": "signalsets/v3/default.json",
+    "revision": "1c4cc14382e5b49b876624753adb01d011fcd6cf",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E7", "type": "abs"}],
+  "requests": [
+    {
+      "id": "730.738.22F010",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22F010",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_WHEEL_FR_VSS_HD", "name": "Front right wheel speed, high resolution", "group": "Movement", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2032, "unit": "km/h", "invalidAtOrAbove": 2032},
+        {"id": "GV80_WHEEL_FL_VSS_HD", "name": "Front left wheel speed, high resolution", "group": "Movement", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2032, "unit": "km/h", "invalidAtOrAbove": 2032},
+        {"id": "GV80_WHEEL_RR_VSS_HD", "name": "Rear right wheel speed, high resolution", "group": "Movement", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2032, "unit": "km/h", "invalidAtOrAbove": 2032},
+        {"id": "GV80_WHEEL_RL_VSS_HD", "name": "Rear left wheel speed, high resolution", "group": "Movement", "bit": 80, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2032, "unit": "km/h", "invalidAtOrAbove": 2032},
+        {"id": "GV80_STEERING_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 96, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "GV80_LATERAL_ACCELERATION", "name": "Lateral acceleration", "group": "Orientation", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "GV80_LONGITUDINAL_ACCELERATION", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "GV80_YAW_RATE", "name": "Yaw rate", "group": "Orientation", "bit": 144, "bits": 8, "divide": 200, "min": 0, "max": 1.275, "unit": "°"}
+      ]
+    },
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_BELT_PASSENGER", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_BELT_DRIVER", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_REVERSE_GEAR", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "GV80_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "GV80_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "GV80_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "GV80_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "GV80_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC10|fc=1",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC10",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_LIGHTS_CODE", "name": "Exterior lights state code", "group": "Lights", "bit": 32, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B008|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B008",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_BRAKE_SW", "name": "Brake switch", "group": "Control", "bit": 51, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B009",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B009",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_PARKING_SENS_REAR", "name": "Parking sensor rear center left level", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_PARKING_SENS_REAR_CENTER", "name": "Parking sensor rear center right level", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C002|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C002",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TID_1", "name": "Tire sensor 1 ID", "group": "Tires", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "GV80_TID_2", "name": "Tire sensor 2 ID", "group": "Tires", "bit": 64, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "GV80_TID_3", "name": "Tire sensor 3 ID", "group": "Tires", "bit": 96, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "GV80_TID_4", "name": "Tire sensor 4 ID", "group": "Tires", "bit": 128, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TP_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "GV80_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "GV80_TW_FL", "name": "Tire alert front left", "group": "Tires", "bit": 56, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_TP_FR", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 72, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "GV80_TT_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "GV80_TW_FR", "name": "Tire alert front right", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_TP_RL", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 112, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "GV80_TT_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 120, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "GV80_TW_RL", "name": "Tire alert rear left", "group": "Tires", "bit": 136, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_TP_RR", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 152, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "GV80_TT_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 160, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "GV80_TW_RR", "name": "Tire alert rear right", "group": "Tires", "bit": 176, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GV80_TB_FL", "name": "Tire battery front left", "group": "Tires", "bit": 48, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "GV80_TB_FR", "name": "Tire battery front right", "group": "Tires", "bit": 88, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "GV80_TB_RL", "name": "Tire battery rear left", "group": "Tires", "bit": 128, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}},
+        {"id": "GV80_TB_RR", "name": "Tire battery rear right", "group": "Tires", "bit": 168, "bits": 8, "values": {"0": "3V+", "1": "27_3V", "2": "2_4_2_7V", "3": "2_4-"}, "valueDescriptions": {"0": ">3 V", "1": "2.7 - 3 V", "2": "2.4 - 2.7 V", "3": "< 2.4"}}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_SENS_1_ODO_EVT_1", "name": "Sensor #1 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_1_ODO_EVT_2", "name": "Sensor #1 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_1_ODO_EVT_3", "name": "Sensor #1 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_SENS_2_ODO_EVT_1", "name": "Sensor #2 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_2_ODO_EVT_2", "name": "Sensor #2 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_2_ODO_EVT_3", "name": "Sensor #2 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_SENS_3_ODO_EVT_1", "name": "Sensor #3 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_3_ODO_EVT_2", "name": "Sensor #3 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_3_ODO_EVT_3", "name": "Sensor #3 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_SENS_4_ODO_EVT_1", "name": "Sensor #4 odometer event #1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_4_ODO_EVT_2", "name": "Sensor #4 odometer event #2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5},
+        {"id": "GV80_SENS_4_ODO_EVT_3", "name": "Sensor #4 odometer event #3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km", "invalidAtOrAbove": 1677721.5}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TEMP_INT", "name": "Interior temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "GV80_TEMP_EXT", "name": "Exterior temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "GV80_HVAC_EVAPORATOR_T", "name": "Evaporator temperature", "group": "Climate", "bit": 56, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "GV80_HVAC_DEFOG_HUMIDITY", "name": "Humidity sensor for automatic defogger", "group": "Climate", "bit": 200, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "GV80_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C", "invalidAtOrAbove": 87.5},
+        {"id": "GV80_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C", "invalidAtOrAbove": 87.5}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "GV80_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "GV80_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"},
+        {"id": "GV80_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "GV80_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "GV80_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "GV80_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "GV80_INJ_DUR_5", "name": "Injection duration cylinder 5", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"},
+        {"id": "GV80_INJ_DUR_6", "name": "Injection duration cylinder 6", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.68, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "GV80_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_E004_BYTE0", "name": "Engine status byte", "group": "Engine.Unknown", "bit": 0, "bits": 8, "min": 0, "max": 100},
+        {"id": "GV80_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_WIDE_OPEN_THROTTLE", "name": "Wide open throttle", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_KNOCK_DETECTED_7E0", "name": "Knock detected", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 2,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5},
+        {"id": "GV80_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms", "invalidAtOrAbove": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E007",
+      "interval": 30,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 112, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "L", "invalidAtOrAbove": 6553},
+        {"id": "GV80_INJ_CORR_FACTOR_1", "name": "Injector correction factor 1", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2, "invalidAtOrAbove": 2},
+        {"id": "GV80_INJ_CORR_FACTOR_2", "name": "Injector correction factor 2", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2, "invalidAtOrAbove": 2},
+        {"id": "GV80_INJ_CORR_FACTOR_3", "name": "Injector correction factor 3", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2, "invalidAtOrAbove": 2},
+        {"id": "GV80_INJ_CORR_FACTOR_4", "name": "Injector correction factor 4", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E009",
+      "interval": 30,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_GPF_INLET_T_SENS_RAW_V", "name": "Gasoline particulate filter inlet temperature sensor raw voltage", "group": "Battery", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "GV80_GPF_OUTLET_T_SENS_V", "name": "Gasoline particulate filter outlet temperature sensor raw voltage", "group": "Battery", "bit": 272, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "GV80_EXH_GAS_T_BEFORE_GPF_1", "name": "Exhaust gas temperature before gasoline particulate filter sensor 1", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "GV80_EXH_GAS_T_BEFORE_GPF_2", "name": "Exhaust gas temperature before gasoline particulate filter sensor 2", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "GV80_GPF_CHG_ST", "name": "Gasoline particulate filter charge state", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_ODO_LAST_GPF_REGEN", "name": "Odometer at last gasoline particulate filter regeneration", "group": "Trips", "bit": 328, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "GV80_DIST_SINCE_GPF_REGEN", "name": "Distance since last gasoline particulate filter regeneration", "group": "Trips", "bit": 360, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "GV80_COVERAGE_DRIVEN", "name": "Coverage driven length", "group": "Engine", "bit": 392, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_KNOCK_RETARD_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_RETARD_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_RETARD_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_RETARD_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_LEARN_1", "name": "Knock learn cylinder 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_LEARN_2", "name": "Knock learn cylinder 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_LEARN_3", "name": "Knock learn cylinder 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "GV80_KNOCK_LEARN_4", "name": "Knock learn cylinder 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F1|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F1",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_EXH_GAS_VOLUME_FLOW", "name": "Exhaust gas volume flow", "group": "Engine", "bit": 240, "bits": 8, "multiply": 78449, "divide": 10000, "min": 0, "max": 2000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F2",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_DPF_SUCCESSFUL_REGEN", "name": "Diesel particulate filter successful regeneration count", "group": "Engine", "bit": 432, "bits": 16, "min": 0, "max": 65535},
+        {"id": "GV80_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 496, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_RPM_7E1", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "GV80_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GV80_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "GV80_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "GV80_OUTPUT_SPEED", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "GV80_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "GV80_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "GV80_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "GV80_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220201",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220201",
+      "interval": 1,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_48_BAT_ST_CHG", "name": "48V battery state of charge", "group": "Battery", "bit": 144, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220204",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220204",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_CURRENT_SENS_NARROW", "name": "Current sensor narrow range, amps", "group": "Trips", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "GV80_CURRENT_SENS_WIDE", "name": "Current sensor wide range, amps", "group": "Trips", "bit": 48, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "GV80_48V_BAT_CURRENT", "name": "48V battery current monitoring", "group": "Battery", "bit": 64, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "GV80_48V_BAT_CURRENT_7E4", "name": "48V battery current", "group": "Battery", "bit": 80, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "GV80_BAT_T_1", "name": "Battery temperature 1", "group": "Battery", "bit": 96, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°C"},
+        {"id": "GV80_BAT_T_2", "name": "Battery temperature 2", "group": "Battery", "bit": 112, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°C"},
+        {"id": "GV80_48V_CELL_V_MIN", "name": "Minimum 48V battery cell voltage", "group": "Battery", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "GV80_48V_CELL_V_MAX", "name": "Maximum 48V battery cell voltage", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535, "unit": "mV"},
+        {"id": "GV80_CURRENT_SENS_NARROW_RANGE", "name": "Current sensor narrow range, volts", "group": "Battery", "bit": 304, "bits": 16, "multiply": 26651, "divide": 21845000, "min": 0, "max": 79.95, "unit": "V"},
+        {"id": "GV80_CURRENT_SENS_WIDE_RANGE", "name": "Current sensor wide range, volts", "group": "Battery", "bit": 320, "bits": 16, "multiply": 26651, "divide": 21845000, "min": 0, "max": 79.95, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220205",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220205",
+      "interval": 5,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_48_BAT_ST_CHG_2", "name": "48V battery state of charge 2", "group": "Battery", "bit": 40, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "%"},
+        {"id": "GV80_48V_BAT_CHG_LIM", "name": "48V battery charge limit", "group": "Battery", "bit": 216, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "A"},
+        {"id": "GV80_48V_BAT_V", "name": "48V battery voltage", "group": "Battery", "bit": 328, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22C101",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22C101",
+      "interval": 0.25,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "GV80_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GV80_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GV80_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GV80_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    }
+  ]
+}

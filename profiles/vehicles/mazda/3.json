@@ -1,0 +1,3325 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mazda/3",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mazda",
+    "model": "3",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (BK)", "from": 2004, "to": 2009},
+      {"name": "Second Generation (BL)", "from": 2010, "to": 2013},
+      {"name": "Third Generation (BM)", "from": 2014, "to": 2016},
+      {"name": "Third Generation (BN) Facelift", "from": 2017, "to": 2018},
+      {"name": "Fourth Generation (BP)", "from": 2019}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mazda-3",
+    "file": "signalsets/v3/default.json",
+    "revision": "62bfd266419c5d2e70e00aa7047b8d7bae180b1d",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "700.708.221074",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221074",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2017, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_EOP_700", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "divide": 128, "min": 0, "max": 1000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2210A5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A5",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2017, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_MIS_ALL", "name": "Misfire count, all", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210A7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A7",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2017, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_MIS_1", "name": "Misfire count, cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_MIS_2", "name": "Misfire count, cylinder 2", "group": "Engine.Misfires", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_MIS_3", "name": "Misfire count, cylinder 3", "group": "Engine.Misfires", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_MIS_4", "name": "Misfire count, cylinder 4", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210CD",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210CD",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2017, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_LFPS", "name": "Low fuel pressure sensor", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -3276.75, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221F5C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F5C",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2017, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.222A05",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A05",
+      "interval": 1,
+      "answeredIn": [2009, 2011, 2012, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2013,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TP_1", "name": "Wheel 1 pressure", "group": "Tires", "bit": 0, "bits": 8, "multiply": 1373, "divide": 100000, "min": 0, "max": 3.5, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.5}
+      ]
+    },
+    {
+      "id": "720.728.222A06",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A06",
+      "interval": 1,
+      "answeredIn": [2009, 2011, 2012, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2013,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TP_2", "name": "Wheel 2 pressure", "group": "Tires", "bit": 0, "bits": 8, "multiply": 1373, "divide": 100000, "min": 0, "max": 3.5, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.5}
+      ]
+    },
+    {
+      "id": "720.728.222A07",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A07",
+      "interval": 1,
+      "answeredIn": [2009, 2011, 2012, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2013,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TP_3", "name": "Wheel 3 pressure", "group": "Tires", "bit": 0, "bits": 8, "multiply": 1373, "divide": 100000, "min": 0, "max": 3.5, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.5}
+      ]
+    },
+    {
+      "id": "720.728.222A08",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A08",
+      "interval": 1,
+      "answeredIn": [2009, 2011, 2012, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2010,
+        2013,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TP_4", "name": "Wheel 4 pressure", "group": "Tires", "bit": 0, "bits": 8, "multiply": 1373, "divide": 100000, "min": 0, "max": 3.5, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.5}
+      ]
+    },
+    {
+      "id": "720.728.222A0A",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A0A",
+      "interval": 15,
+      "answeredIn": [2011, 2012],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TT_1", "name": "Wheel 1 temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.222A0B",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A0B",
+      "interval": 15,
+      "answeredIn": [2011, 2012],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TT_2", "name": "Wheel 2 temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.222A0C",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A0C",
+      "interval": 15,
+      "answeredIn": [2011, 2012],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TT_3", "name": "Wheel 3 temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.222A0D",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "222A0D",
+      "interval": 15,
+      "answeredIn": [2011, 2012],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_TT_4", "name": "Wheel 4 temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "720.728.2261B1",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261B1",
+      "interval": 1,
+      "answeredIn": [
+        2009,
+        2011,
+        2012,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "notAnsweredIn": [2004, 2005, 2006, 2007, 2008, 2010, 2013],
+      "signals": [
+        {"id": "MAZDA3_FUEL_LEVEL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "min": 0, "max": 55, "unit": "L"}
+      ]
+    },
+    {
+      "id": "726.72E.22D922|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D922",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TP_FL", "name": "Front left pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D923|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D923",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TP_FR", "name": "Front right pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D924|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D924",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TP_RL", "name": "Rear left pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D925|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D925",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TP_RR", "name": "Rear right pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.22D926|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D926",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TT_FL", "name": "Front left temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 204}
+      ]
+    },
+    {
+      "id": "726.72E.22D927|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D927",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TT_FR", "name": "Front right temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 204}
+      ]
+    },
+    {
+      "id": "726.72E.22D928|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D928",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TT_RL", "name": "Rear left temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 204}
+      ]
+    },
+    {
+      "id": "726.72E.22D929|f=2019-",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22D929",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_TT_RR", "name": "Rear right temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 204}
+      ]
+    },
+    {
+      "id": "726.72E.22DA05",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DA05",
+      "interval": 0.25,
+      "answeredIn": [2014, 2015, 2018, 2024, 2025],
+      "notAnsweredIn": [2007, 2020, 2021, 2023],
+      "signals": [
+        {"id": "MAZDA3_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "750.758.2116|e=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2116",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TT_FL_750", "name": "Front left tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "MAZDA3_TT_FR_750", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "MAZDA3_TT_RL_750", "name": "Rear left tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "MAZDA3_TT_RR_750", "name": "Rear right tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "MAZDA3_TT_SPARE", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "750.758.2130|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2130",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TP_FL_V1", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_FR_V1", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_RL_V1", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_RR_V1", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_SPARE_V1", "name": "Spare tire pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "750.758.221004|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221004",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TT_FL_V2", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_TT_FR_V2", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_TT_RL_V2", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_TT_RR_V2", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_TT_SPARE_V2", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "750.758.221005|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221005",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TP_FL_V2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_FR_V2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_RL_V2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_RR_V2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 56, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "MAZDA3_TP_SPARE_V2", "name": "Spare tire pressure", "group": "Tires", "bit": 72, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "750.758.222021|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "222021",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TID_1", "name": "Tire 1 position", "group": "Tires", "bit": 0, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "MAZDA3_TID_2", "name": "Tire 2 position", "group": "Tires", "bit": 8, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "MAZDA3_TID_3", "name": "Tire 3 position", "group": "Tires", "bit": 16, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "MAZDA3_TID_4", "name": "Tire 4 position", "group": "Tires", "bit": 24, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}}
+      ]
+    },
+    {
+      "id": "761.769.221E7A",
+      "bus": "can11",
+      "tx": "761",
+      "rx": "769",
+      "request": "221E7A",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_COUPLING_SOLENOID", "name": "Coupling solenoid duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "793.79B.22D901",
+      "bus": "can11",
+      "tx": "793",
+      "rx": "79B",
+      "request": "22D901",
+      "interval": 0.25,
+      "answeredIn": [2014, 2015, 2018, 2019, 2024],
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2016,
+        2017,
+        2020,
+        2021,
+        2022,
+        2023,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_CC_TGT_DIST", "name": "Distance from bumper to target", "group": "Cruise control", "bit": 8, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "m"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2103",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "MAZDA3_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "MAZDA3_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "MAZDA3_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2121",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2121",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VSS_V1", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "multiply": 1.28, "min": 0, "max": 326, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "MAZDA3_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "MAZDA3_YAW_RATE", "name": "Yaw rate value (degrees/se", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "MAZDA3_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221006",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221006",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_MASTER_CYL_TEMP", "name": "Master cylinder sensor temperature", "group": "Brakes", "bit": 0, "bits": 8, "add": -80, "min": -20, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.221004",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "221004",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_STEERING_ANGLE", "name": "Steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 1.5, "min": -410, "max": 410, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2129",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2129",
+      "interval": 30,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221021",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221021",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BATTERY_VOLTAGE", "name": "Battery voltage", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221022|fc=1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221022",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_FLV", "name": "Fuel remaining", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L", "invalidAtOrBelow": 0, "invalidAtOrAbove": 655}
+      ]
+    },
+    {
+      "id": "7D0.7DA.2162",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7DA",
+      "request": "2162",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 0, "bits": 8, "values": {"0": "Off", "2": "On"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2151",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
+        {"id": "MAZDA3_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_EOT_V1", "name": "Engine oil temperature", "group": "Engine", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2182",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2182",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ATF_PAN_T", "name": "Transmission temperature, pan", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "MAZDA3_ATF_TQC_T", "name": "Transmission temperature, torque converter", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 16, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220200|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220200",
+      "interval": 3600,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_DTC_CNT", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220202",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220202",
+      "interval": 3600,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 0.25,
+      "answeredIn": [
+        2009,
+        2010,
+        2011,
+        2012,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "notAnsweredIn": [2004, 2005, 2006, 2007, 2008, 2013],
+      "signals": [
+        {"id": "MAZDA3_MAP", "name": "Map voltage", "description": "A properly functioning sensor should read around 1 to 1.5 volts at idle.", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220306",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220306",
+      "interval": 1,
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_EGR_OPEN_MM", "name": "Exhaust gas recirculation open", "description": "Monitors the physical position of the EGR valve, which controls the amount of exhaust gas being recirculated back into the engine's intake system.", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 0.25,
+      "answeredIn": [
+        2012,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "notAnsweredIn": [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2013],
+      "signals": [
+        {"id": "MAZDA3_FP_LD", "name": "Fuel pump duty cycle", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22030F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22030F",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_CL", "name": "Lambda, commanded", "description": "The ratio of oxygen in the combustion chamber compared to the amount that should have been present for ideal combustion.", "group": "Engine", "bit": 0, "bits": 16, "divide": 32768, "min": 0, "max": 1.9999}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VCT_INT_DUTY", "name": "VCT intake camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220317|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220317",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_EXH_DUTY", "name": "VCT exhaust camshaft solenoid duty cycle", "bit": 0, "bits": 16, "multiply": 0.0030517578, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VCT_INT_ACT", "name": "VCT intake camshaft actual", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220319|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220319",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_EXH_ACT", "name": "VCT exhaust camshaft actual", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 1,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_INT_ERR", "name": "VCT intake camshaft error", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031B",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_EXH_ERR", "name": "VCT exhaust camshaft error", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220324|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220324",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_HPFP_V", "name": "High pressure fuel rail sensor voltage", "bit": 0, "bits": 16, "divide": 204.6, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_ACC_POS", "name": "Accelerator pedal position", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220334",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220334",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_HEAD_T_CORR", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 3600,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ETC_TRIM_LEARNED", "name": "Electronic throttle control learned trim angle", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033C",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TIP_V", "name": "Throttle inlet pressure sensor voltage", "bit": 0, "bits": 16, "divide": 204.8, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033E",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TIP_ABS", "name": "Throttle inlet pressure absolute", "bit": 0, "bits": 16, "divide": 903.8107848, "min": 0, "max": 60, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220345",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220345",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_EVENTS_LATEST_CYC", "name": "Misfire events, latest cycle", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "divide": 27.582114, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035A|f=-2018",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035A",
+      "interval": 1,
+      "years": {"to": 2018},
+      "answeredIn": [2011, 2014, 2015],
+      "notAnsweredIn": [2007, 2018],
+      "signals": [
+        {"id": "MAZDA3_BARO_V_7E0", "name": "Barometric pressure sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_RO2_V", "name": "Rear O2 voltage", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220380|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220380",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_REGEN", "name": "Diesel particulate filter regeneration status", "description": "The current phase of the regeneration cycle. Lower values typically indicate normal operation with no active regeneration. Mid-range values indicate the regeneration process is in progress. Higher values represent later stages of the regeneration cycle. A value returning to 0 or near-zero indicates a completed regeneration cycle.", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220382",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220382",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL1_NORM", "name": "Misfire acceleration, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220388",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220388",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL2_NORM", "name": "Misfire acceleration, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038A",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL3_NORM", "name": "Misfire acceleration, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038B",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL4_NORM", "name": "Misfire acceleration, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038C",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL5_NORM", "name": "Misfire acceleration, cylinder 5", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_EVAP_V", "name": "Evaporative vapor pressure sensor voltage", "bit": 0, "bits": 16, "signed": true, "divide": 5.0048876, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ECT", "name": "Engine coolant temperature", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -40, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220393|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220393",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AC_P", "name": "A/C compressor pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 245251, "divide": 845473, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220398",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220398",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_MISF_ACCEL_CYL6_NORM", "name": "Misfire acceleration, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203AF",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TRQ_CTRL_REQ", "name": "Torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203B9|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203B9",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MAZDA3_COOLING_FAN_DUTY", "name": "Cooling fan duty cycle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 40, "divide": 13107, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AAT_V", "name": "Ambient air temperature sensor voltage", "bit": 0, "bits": 16, "multiply": 0.0048875855, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BB",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_EXH_DES", "name": "VCT exhaust cam, desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VCT_INT_DES", "name": "VCT intake cam, desired", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_CL_LC", "name": "Closed loop lambda correction", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.9}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203CA",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_MCT", "name": "Manifold charge temperature", "bit": 0, "bits": 8, "min": 0, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DB|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DB",
+      "interval": 0.251,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_EXH_DIFF_P", "name": "Exhaust differential pressure", "description": "This sensor is crucial for monitoring how clogged the DPF has become. It measures the pressure before and after the DPF in the exhaust system, with the difference between these two measurements indicating how restricted the filter has become. When the pressure difference becomes too high (indicating a clogged filter), the ECM will initiate a regeneration process to burn off the accumulated soot and clean the filter.", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 4.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DC|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DC",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_HPFP_DES", "name": "High pressure fuel pressure desired", "bit": 0, "bits": 16, "multiply": 1.4503773969, "min": 0, "max": 3500, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DF|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DF",
+      "interval": 0.25,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2020],
+      "notAnsweredIn": [2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "MAZDA3_VGT_OPEN_PERC", "name": "Variable geometry turbocharger open", "description": "Measures the position of the vanes in the Variable Geometry Turbocharger (VGT) and reports this position as a percentage value.", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E5",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AC_LOAD_SIG_V", "name": "Air conditioning load signal voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 12207, "divide": 2500000, "min": 0, "max": 319.9942, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 3600,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_OAR", "name": "Octane adjust ratio", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 0.25,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203FB|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203FB",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_EGR_OPEN_PERC", "name": "Exhaust gas recirculation open", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220403",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_KS1_RAW", "name": "Knock sensor, 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220404",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_KS2_RAW", "name": "Knock sensor, 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220415|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220415",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2015, 2016, 2017, 2018],
+      "signals": [
+        {"id": "MAZDA3_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22041F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22041F",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_LPFP_DES", "name": "Fuel pressure, low desired", "group": "Engine", "bit": 0, "bits": 8, "multiply": 435, "divide": 1000, "min": 0, "max": 110, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220427",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220427",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BPV_OPEN", "name": "Bypass valve", "group": "Engine", "bit": 0, "bits": 8, "divide": 255, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22042C|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22042C",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_PM_ACC", "name": "Diesel particulate filter particulate matter accumulation", "group": "Engine.DPF", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "g/L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22042D|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22042D",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_PM_GEN", "name": "Diesel particulate filter particulate matter generation", "group": "Engine.DPF", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "g/L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220432|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220432",
+      "interval": 60,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration count", "group": "Engine.DPF", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220433|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220433",
+      "interval": 60,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_LAMP_CNT", "name": "Diesel particulate filter lamp count", "group": "Engine.DPF", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220434|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220434",
+      "interval": 2,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_REGEN_DIST", "name": "Diesel particulate filter regeneration distance", "group": "Engine.DPF", "bit": 8, "bits": 24, "multiply": 100, "divide": 65535, "min": 0, "max": 25600, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220435|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220435",
+      "interval": 60,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_OIL_DIL_CNT", "name": "Oil dilution events", "description": "Monitors fuel dilution in your engine oil, which is when fuel (gasoline) mixes with the engine oil in the crankcase.", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22044B|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22044B",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_DPF_PM_ACC_DES", "name": "Diesel particulate filter particulate matter accumulation (desired)", "group": "Engine.DPF", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "g/L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220451|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220451",
+      "interval": 0.25,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_OXY", "name": "Oxygen concentration", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220460",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220460",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_CAT_SENS_V", "name": "Charge air temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220461",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220461",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_CAT", "name": "Charge air temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "add": -40, "min": -40, "max": 189, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220462",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_WGDC", "name": "Wastegate duty cycle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220466",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220466",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TIP_DES_ABS", "name": "Throttle inlet pressure, desired", "group": "Engine", "bit": 0, "bits": 16, "multiply": 37, "divide": 33441, "min": 0, "max": 72.5, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22046F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22046F",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_INJ_MODE", "name": "Injection mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22050F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22050F",
+      "interval": 1,
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_VGT_OPEN", "name": "Variable geometry turbocharger open", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220519|f=2014-2016",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220519",
+      "interval": 5,
+      "years": {"from": 2014, "to": 2016},
+      "answeredIn": [2014],
+      "notAnsweredIn": [2015, 2016],
+      "signals": [
+        {"id": "MAZDA3_OIL_CHANGE_DIST", "name": "Distance since oil changed", "group": "Fluids", "bit": 0, "bits": 16, "multiply": 4, "min": 0, "max": 262140, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220522|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220522",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2019, 2026],
+      "signals": [
+        {"id": "MAZDA3_FUEL_T", "name": "Fuel temp", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22053B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22053B",
+      "interval": 1,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_CATDMG_MIS_1", "name": "Catalyst damaging misfires, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_CATDMG_MIS_2", "name": "Catalyst damaging misfires, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_CATDMG_MIS_3", "name": "Catalyst damaging misfires, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_CATDMG_MIS_4", "name": "Catalyst damaging misfires, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_EMISSION_FAILURE_MIS_1", "name": "Emission failure misfires, cylinder 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_EMISSION_FAILURE_MIS_2", "name": "Emission failure misfires, cylinder 2", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_EMISSION_FAILURE_MIS_3", "name": "Emission failure misfires, cylinder 3", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_EMISSION_FAILURE_MIS_4", "name": "Emission failure misfires, cylinder 4", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255},
+        {"id": "MAZDA3_CATDMG_MIS_TOT", "name": "Catalyst damaging misfires total during this trip", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MAZDA3_EMISSION_FAILURE_MIS", "name": "Emission failure misfires total during this trip", "group": "Engine", "bit": 176, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220542",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220542",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "signals": [
+        {"id": "MAZDA3_OIL_CHANGE_DIST_MAX", "name": "Max distance to oil change", "group": "Fluids", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220548",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220548",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_LPFP_ACT", "name": "Fuel pressure, low actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 10000, "divide": 137892, "min": 0, "max": 200, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054B",
+      "interval": 30,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_ENG_OIL_LIFE_REM", "name": "Oil life remaining", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054D",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_LPFP_SENS_V", "name": "Fuel pressure sensor voltage, low", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22057D|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22057D",
+      "interval": 5,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AAT_ALT", "name": "Ambient temperature, alternate", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GRILL_SHUTTER_POS", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AC",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_1_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AD",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_2_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AE",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_3_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AF",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_4_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205B0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205B0",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_5_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205B1",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_6_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205FC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205FC",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CYL_HEAD_T_SENS_2_RAW", "name": "Cylinder head temperature, sensor 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220604",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220604",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_A_C_REFRIG_P", "name": "A/C refrigerant pressure", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GRILL_SHUT_DC", "name": "Grill shutter duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220900|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220900",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_MAP_V", "name": "Manifold absolute pressure voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220914",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220914",
+      "interval": 1,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_APP1_V", "name": "APP sensor 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220915",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220915",
+      "interval": 1,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_APP2_V", "name": "APP sensor 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220917",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220917",
+      "interval": 1,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TP1_V", "name": "Throttle position 1 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220918",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220918",
+      "interval": 1,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TP2_V", "name": "Throttle position 2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ETC_DSD_DEG", "name": "Throttle control desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ETC_ACT_DEG", "name": "Throttle position actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220967",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220967",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_FAN3_SW", "name": "Cooling fan relay control", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220968|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220968",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_GEN_CHRGLP", "name": "Generator warning light", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22096E|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22096E",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IDLE", "name": "Idle speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22097C|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22097C",
+      "interval": 5,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_GEN_DSD_V", "name": "Generator voltage desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22098E|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22098E",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_EGRP_STEPS", "name": "Exhaust gas recirculation purge steps", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221101|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221101",
+      "interval": 0.25,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_PSP_SW", "name": "Power steering position switch", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_INGEAR_SW", "name": "In gear switch", "group": "Transmission", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_BOO_SW", "name": "Brake on/off switch", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_ACCS_SW", "name": "A/C relay", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221103|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221103",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_MIL_SW", "name": "Malfunction indicator lamp", "group": "DTCs", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_IMRC_SW", "name": "Intake manifold runner control", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_FAN2_SW", "name": "Cooling fan relay control", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_FAN1_SW", "name": "Cooling fan relay control", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221104|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221104",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_AC_REQ_SW", "name": "A/C refrigerant pressure switch", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22114A|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22114A",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IAT_V", "name": "Intake air temp voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22114D|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22114D",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_ECT_V", "name": "Engine coolant temp voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221169|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221169",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TPCT", "name": "Throttle position closed voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 0.25,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221174",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221174",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_O2S12_A_V", "name": "O2 sensor 1-2 voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221177|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221177",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_MAF_V", "name": "Mass air-flow voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BD",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TRANS_T_VAR_5", "name": "Transmission temperature, variant 5", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404.6875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221305",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221305",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BOOST_DES", "name": "Boost, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 6400, "min": 0, "max": 10.23, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221310",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221310",
+      "interval": 1,
+      "answeredIn": [
+        2012,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ],
+      "notAnsweredIn": [2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2013],
+      "signals": [
+        {"id": "MAZDA3_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -40, "min": -40, "max": 615.35, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221340|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221340",
+      "interval": 0.25,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_APP", "name": "Accelerator pedal position, full range", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221410|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221410",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_FUEL_PW", "name": "Injector fuel pulse width", "group": "Fuel", "bit": 0, "bits": 16, "divide": 125, "min": 0, "max": 524.28}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22160D|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22160D",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IMTV_SW", "name": "Variable intake air control", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221631|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221631",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_O2S_HTR12_SW", "name": "O2 sensor 2 heater control, rear", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_O2S_HTR11_SW", "name": "O2 sensor 1 heater control, front", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22163E|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22163E",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_O2S12_FT", "name": "Rear O2 sensor fuel trim", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 8192, "min": 0, "max": 799.98, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216B3|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216B3",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_BARO_V", "name": "BARO sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216CD|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216CD",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VT_ACT", "name": "Valve timing actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216CE|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216CE",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VT_DIFF", "name": "Valve timing error", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216CF|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216CF",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VT_DUTY", "name": "Valve timing OCV control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E1",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_WASTEGATE_DUTY", "name": "Wastegate duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GEN_FC", "name": "Generator field coil control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E9",
+      "interval": 5,
+      "answeredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GEN_V", "name": "Generator output voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "min": 0, "max": 8191.875, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216F0|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216F0",
+      "interval": 3600,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TIRESIZE", "name": "Tire revolutions per mile", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221706|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221706",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LAMBDA_MOD_SW", "name": "Lambda modification switch", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_HIDET_SW", "name": "High detonation switch", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221718|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221718",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_FP_RELAY_SW", "name": "Fuel pump relay switch", "group": "Fuel", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221723",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221723",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BOOSTED_AIR_T", "name": "Boosted air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 8, "add": -39.4, "min": -39.4, "max": 119, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221746|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221746",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_KNOCKR", "name": "Knock retard", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 284, "min": 0, "max": 89.78, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22174F|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22174F",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_AIR_FUEL_RAT_ACT", "name": "Air/fuel ratio, actual", "group": "Engine", "bit": 0, "bits": 8, "multiply": 287, "divide": 2500, "min": 0, "max": 29.274}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217B3",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TRANS_T_VAR_1", "name": "Transmission temperature, variant 1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 42, "divide": 25, "add": -57, "min": -57, "max": 371.4, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217F4|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217F4",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LDP_MON_CURRENT", "name": "EVAP LDP monitoring current", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 5.61e-07, "min": 0, "max": 0.036, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217F5|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217F5",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LDP_REF_CURRENT", "name": "EVAP LDP reference current", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 5.61e-07, "min": 0, "max": 0.036, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217F7|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217F7",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LDP_IDL_CURRENT", "name": "EVAP LDP idle current", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 5.61e-07, "min": 0, "max": 0.036, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217F8|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217F8",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LDP_SL_DV", "name": "EVAP LDP small leak detect value", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 5.61e-07, "min": 0, "max": 0.036, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2217FA|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2217FA",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LDP_EVAPCP", "name": "EVAP LDP incorrect purge flow value", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 5.61e-07, "min": 0, "max": 0.036, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 0.25,
+      "answeredIn": [2014, 2018],
+      "notAnsweredIn": [2007, 2011, 2015, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 3600,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E19",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E19",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CMD_TRANS_GEAR_RATIO", "name": "Gear ratio, commanded", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1A",
+      "interval": 1,
+      "answeredIn": [2014, 2018],
+      "notAnsweredIn": [2007, 2011, 2015, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_CMD_TRANS_MAIN_LINE_P", "name": "Transmission pressure, commanded", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 5,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TOT_7E0", "name": "Transmission oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1F|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1F",
+      "interval": 0.25,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 0.25,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22280A|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22280A",
+      "interval": 0.25,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021],
+      "notAnsweredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BRAKE_FLUID_P", "name": "Brake fluid pressure", "group": "Control", "bit": 0, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199.2187, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224028|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224028",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2021],
+      "notAnsweredIn": [2020, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BAT_ESTIMATED_ST_CHG", "name": "Battery estimated state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224029|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224029",
+      "interval": 5,
+      "years": {"from": 2019},
+      "answeredIn": [2021, 2023, 2024],
+      "notAnsweredIn": [2020, 2025],
+      "signals": [
+        {"id": "MAZDA3_BAT_FLUID_T", "name": "Battery fluid temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224194",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224194",
+      "interval": 30,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_DTE", "name": "Distance to empty, calculated", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224195",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224195",
+      "interval": 30,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_DTE_DISP", "name": "Distance to empty, displayed", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800|f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 1,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A211|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A211",
+      "interval": 0.25,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IVS_SW", "name": "Idle validation switch", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_PNP_SW", "name": "Park neutral position switch", "group": "Transmission", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_BPA_SW", "name": "Brake pressure applied switch", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA3_CPP_SW", "name": "Clutch pedal position switch", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A216|f=-2009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A216",
+      "interval": 1,
+      "years": {"to": 2009},
+      "answeredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_SCCS_V", "name": "Cruise control voltage", "description": "0.0V = On/Off Switch depressed, 1.1V = Cancel depressed, 3.1V = Set/- switch depressed, 4.2V = Res/+ switch depressed, 5.0V = Normal", "group": "Cruise control", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D988|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D988",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2021],
+      "notAnsweredIn": [2020, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BAT_ACCUMULATED_AMP", "name": "Battery accumulated amp hours", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "add": -100, "min": -100, "max": 227.675, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA01",
+      "interval": 1,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_OIL_P_SOLENOID_VLV", "name": "Oil pressure solenoid valve, open", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DA9D|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DA9D",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2021],
+      "notAnsweredIn": [2020, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_BAT_INTERNAL_RES", "name": "Battery internal resistance", "group": "Battery", "bit": 0, "bits": 16, "divide": 100000, "min": 0, "max": 0.6553, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DAA1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DAA1",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TIM_CHAIN_ELONGATION", "name": "Timing chain elongation angle", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "add": -32.768, "min": -32.76, "max": 32.76},
+        {"id": "MAZDA3_TIM_CHAIN_ELONGATION_2", "name": "Timing chain elongation angle 2", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "add": -32.768, "min": -32.76, "max": 32.76}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1,f=2014-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 30,
+      "flowControl": true,
+      "years": {"from": 2014},
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_STFT", "name": "Fuel trim, short term", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.25,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F411",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F411",
+      "interval": 1,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_INT_SHUTTER_VLV_POS", "name": "Intake shutter valve position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 3600,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 3600,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F433",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F433",
+      "interval": 1,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 1,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F45C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F45C",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_EOP_ALT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F462|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F462",
+      "interval": 0.25,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_ACT_ENG_PCT_TRQ", "name": "Actual engine percent torque", "group": "Engine", "bit": 0, "bits": 8, "add": -125, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F463|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F463",
+      "interval": 3600,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_ENG_REFERENCE_TRQ", "name": "Engine reference torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F469|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F469",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2023, 2025],
+      "notAnsweredIn": [2021, 2024],
+      "signals": [
+        {"id": "MAZDA3_EGR_VLV_POS_DES", "name": "Exhaust gas recirculation A valve position, desired", "group": "Engine", "bit": 8, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "MAZDA3_EGR_VLV_POS", "name": "Exhaust gas recirculation A valve position", "group": "Engine", "bit": 16, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "MAZDA3_EGR_ERROR", "name": "Exhaust gas recirculation A error", "group": "Engine", "bit": 24, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"},
+        {"id": "MAZDA3_EGR_B_VLV_POS_DES", "name": "Exhaust gas recirculation B valve position, desired", "group": "Engine", "bit": 32, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "MAZDA3_EGR_B_VLV_POS", "name": "Exhaust gas recirculation B valve position", "group": "Engine", "bit": 40, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "MAZDA3_EGR_B_ERROR", "name": "Exhaust gas recirculation B error", "group": "Engine", "bit": 48, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F46F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F46F",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TURBOCHARGER_COMP_P", "name": "Turbocharger A compressor inlet pressure", "group": "Battery", "bit": 8, "bits": 8, "multiply": 8, "min": 0, "max": 2040, "unit": "kPa"},
+        {"id": "MAZDA3_TURBOCHARGER_B_COMP_P", "name": "Turbocharger B compressor inlet pressure", "group": "Battery", "bit": 16, "bits": 8, "multiply": 8, "min": 0, "max": 2040, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F470",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F470",
+      "interval": 1,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_INT_MAP_DES", "name": "Intake manifold absolute pressure, desired", "group": "Engine", "bit": 8, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "kPa"},
+        {"id": "MAZDA3_INT_MAP", "name": "Intake manifold absolute pressure", "group": "Engine", "bit": 24, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F477",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F477",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_CHG_AIR_COOLER_T", "name": "Charge air cooler temperature", "group": "Battery", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F47A|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F47A",
+      "interval": 1,
+      "years": {"from": 2019},
+      "answeredIn": [2020],
+      "notAnsweredIn": [2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_DPF_DIFF_P", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 8, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F4A6|f=2019-",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F4A6",
+      "interval": 30,
+      "years": {"from": 2019},
+      "answeredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_PCM_VEH_ODO", "name": "Vehicle odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2211BD",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2211BD",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TRANS_T_VAR_6", "name": "Transmission temperature, variant 6", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404.6875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2217B3",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2217B3",
+      "interval": 5,
+      "notAnsweredIn": [2007, 2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MAZDA3_TRANS_T_V5", "name": "Transmission temperature v5", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 42, "divide": 25, "add": -57, "min": -57, "max": 371.4, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E12",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E12",
+      "interval": 0.25,
+      "answeredIn": [2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_GEAR_7E1", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E1C",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E1C",
+      "interval": 5,
+      "answeredIn": [2011, 2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TRANS_T_V6", "name": "Transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E24",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E24",
+      "interval": 1,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TQ_CONV_LOCK_UP", "name": "Torque converter lock-up", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221EC7",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221EC7",
+      "interval": 0.25,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TQ_DES", "name": "Torque, desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221EE4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221EE4",
+      "interval": 0.25,
+      "answeredIn": [2014, 2015, 2018, 2020, 2021, 2023, 2024, 2025],
+      "notAnsweredIn": [2007],
+      "signals": [
+        {"id": "MAZDA3_TQ_ACT", "name": "Torque, actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "Nm"}
+      ]
+    }
+  ]
+}

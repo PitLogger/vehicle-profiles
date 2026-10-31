@@ -1,0 +1,637 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mg/mg4",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "MG",
+    "model": "MG4",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2022}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/MG-MG4",
+    "file": "signalsets/v3/default.json",
+    "revision": "a1bb5c09ff9bc6af705df5ba8361ea846f7d67a4",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7DF", "rx": "7ED", "type": "battery"}],
+  "requests": [
+    {
+      "id": "710.718.22B921",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "718",
+      "request": "22B921",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_GWM_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "710.718.22D001",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "718",
+      "request": "22D001",
+      "interval": 4,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_GWM_STATUS", "name": "Vehicle Gateway Status", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B001",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B001",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_EVCC_CURRENT", "name": "Current", "group": "Battery.EVCC", "bit": 0, "bits": 16, "multiply": 0.2, "add": -409.6, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B003",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B003",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_EVCC_MAX_CURRENT", "name": "Max Current", "group": "Battery.EVCC", "bit": 0, "bits": 8, "multiply": 0.434782609, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B00F",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B00F",
+      "interval": 4,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_EVCC_CHARGING", "name": "Charging", "group": "Battery.EVCC", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B010",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B010",
+      "interval": 4,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_EVCC_VOLTAGE", "name": "Voltage", "group": "Battery.EVCC", "bit": 0, "bits": 16, "multiply": 0.0103092783, "min": 0, "max": 25000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.010C",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "010C",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.25, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.010D",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "010D",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.0146",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "0146",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.015B",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "015B",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 0.3921568627, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B001",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B001",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU01_MINVOLT", "name": "HV battery module 01 min voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU01_MAXVOLT", "name": "HV battery module 01 max voltage", "group": "Battery.Modules.01", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU01_MINTEMP", "name": "HV battery module 01 min temperature", "group": "Battery.Modules.01", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU01_MAXTEMP", "name": "HV battery module 01 max temperature", "group": "Battery.Modules.01", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B009",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B009",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU02_MINVOLT", "name": "HV battery module 02 min voltage", "group": "Battery.Modules.02", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU02_MAXVOLT", "name": "HV battery module 02 max voltage", "group": "Battery.Modules.02", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU02_MINTEMP", "name": "HV battery module 02 min temperature", "group": "Battery.Modules.02", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU02_MAXTEMP", "name": "HV battery module 02 max temperature", "group": "Battery.Modules.02", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B011",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B011",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU03_MINVOLT", "name": "HV battery module 03 min voltage", "group": "Battery.Modules.03", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU03_MAXVOLT", "name": "HV battery module 03 max voltage", "group": "Battery.Modules.03", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU03_MINTEMP", "name": "HV battery module 03 min temperature", "group": "Battery.Modules.03", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU03_MAXTEMP", "name": "HV battery module 03 max temperature", "group": "Battery.Modules.03", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B019",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B019",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU04_MINVOLT", "name": "HV battery module 04 min voltage", "group": "Battery.Modules.04", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU04_MAXVOLT", "name": "HV battery module 04 max voltage", "group": "Battery.Modules.04", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU04_MINTEMP", "name": "HV battery module 04 min temperature", "group": "Battery.Modules.04", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU04_MAXTEMP", "name": "HV battery module 04 max temperature", "group": "Battery.Modules.04", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B021",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B021",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU05_MINVOLT", "name": "HV battery module 05 min voltage", "group": "Battery.Modules.05", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU05_MAXVOLT", "name": "HV battery module 05 max voltage", "group": "Battery.Modules.05", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU05_MINTEMP", "name": "HV battery module 05 min temperature", "group": "Battery.Modules.05", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU05_MAXTEMP", "name": "HV battery module 05 max temperature", "group": "Battery.Modules.05", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B029",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B029",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU06_MINVOLT", "name": "HV battery module 06 min voltage", "group": "Battery.Modules.06", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU06_MAXVOLT", "name": "HV battery module 06 max voltage", "group": "Battery.Modules.06", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU06_MINTEMP", "name": "HV battery module 06 min temperature", "group": "Battery.Modules.06", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU06_MAXTEMP", "name": "HV battery module 06 max temperature", "group": "Battery.Modules.06", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B041",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B041",
+      "interval": 30,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_BUS_VOLTAGE", "name": "HV battery bus voltage", "group": "Battery.Internal", "bit": 0, "bits": 16, "multiply": 0.25, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B042",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B042",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_VOLTAGE", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.25, "min": 0, "max": 500, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B043",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B043",
+      "interval": 0.25,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CURRENT", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.025, "add": -1000, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B045",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B045",
+      "interval": 60,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_RESISTANCE", "name": "HV battery internal resistance", "group": "Battery.Internal", "bit": 0, "bits": 16, "multiply": 0.5, "min": 0, "max": 32767.5}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B046",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B046",
+      "interval": 30,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_RAW_SOC", "name": "HV battery raw charge", "description": "HV battery raw charge", "group": "Battery.Internal", "bit": 0, "bits": 16, "multiply": 0.1, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B048",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B048",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_BMS_STATUS", "name": "BMS Status", "group": "Battery.Internal", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B056",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B056",
+      "interval": 60,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_TEMP", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B05C",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B05C",
+      "interval": 60,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_COOLANT_TEMP", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B061",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B061",
+      "interval": 30,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "multiply": 0.01, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0A3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0A3",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU07_MINVOLT", "name": "HV battery module 07 min voltage", "group": "Battery.Modules.07", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU07_MAXVOLT", "name": "HV battery module 07 max voltage", "group": "Battery.Modules.07", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU07_MINTEMP", "name": "HV battery module 07 min temperature", "group": "Battery.Modules.07", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU07_MAXTEMP", "name": "HV battery module 07 max temperature", "group": "Battery.Modules.07", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0AB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0AB",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU08_MINVOLT", "name": "HV battery module 08 min voltage", "group": "Battery.Modules.08", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU08_MAXVOLT", "name": "HV battery module 08 max voltage", "group": "Battery.Modules.08", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU08_MINTEMP", "name": "HV battery module 08 min temperature", "group": "Battery.Modules.08", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU08_MAXTEMP", "name": "HV battery module 08 max temperature", "group": "Battery.Modules.08", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0B3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0B3",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU09_MINVOLT", "name": "HV battery module 09 min voltage", "group": "Battery.Modules.09", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU09_MAXVOLT", "name": "HV battery module 09 max voltage", "group": "Battery.Modules.09", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU09_MINTEMP", "name": "HV battery module 09 min temperature", "group": "Battery.Modules.09", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU09_MAXTEMP", "name": "HV battery module 09 max temperature", "group": "Battery.Modules.09", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0BB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0BB",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU10_MINVOLT", "name": "HV battery module 10 min voltage", "group": "Battery.Modules.10", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU10_MAXVOLT", "name": "HV battery module 10 max voltage", "group": "Battery.Modules.10", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU10_MINTEMP", "name": "HV battery module 10 min temperature", "group": "Battery.Modules.10", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU10_MAXTEMP", "name": "HV battery module 10 max temperature", "group": "Battery.Modules.10", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0C3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0C3",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU11_MINVOLT", "name": "HV battery module 11 min voltage", "group": "Battery.Modules.11", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU11_MAXVOLT", "name": "HV battery module 11 max voltage", "group": "Battery.Modules.11", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU11_MINTEMP", "name": "HV battery module 11 min temperature", "group": "Battery.Modules.11", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU11_MAXTEMP", "name": "HV battery module 11 max temperature", "group": "Battery.Modules.11", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0CB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0CB",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU12_MINVOLT", "name": "HV battery module 12 min voltage", "group": "Battery.Modules.12", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU12_MAXVOLT", "name": "HV battery module 12 max voltage", "group": "Battery.Modules.12", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU12_MINTEMP", "name": "HV battery module 12 min temperature", "group": "Battery.Modules.12", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU12_MAXTEMP", "name": "HV battery module 12 max temperature", "group": "Battery.Modules.12", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DB",
+      "interval": 180,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU13_MINVOLT", "name": "HV battery module 13 min voltage", "group": "Battery.Modules.13", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU13_MAXVOLT", "name": "HV battery module 13 max voltage", "group": "Battery.Modules.13", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU13_MINTEMP", "name": "HV battery module 13 min temperature", "group": "Battery.Modules.13", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU13_MAXTEMP", "name": "HV battery module 13 max temperature", "group": "Battery.Modules.13", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DC",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DC",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU14_MINVOLT", "name": "HV battery module 14 min voltage", "group": "Battery.Modules.14", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU14_MAXVOLT", "name": "HV battery module 14 max voltage", "group": "Battery.Modules.14", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU14_MINTEMP", "name": "HV battery module 14 min temperature", "group": "Battery.Modules.14", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU14_MAXTEMP", "name": "HV battery module 14 max temperature", "group": "Battery.Modules.14", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DD",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DD",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU15_MINVOLT", "name": "HV battery module 15 min voltage", "group": "Battery.Modules.15", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU15_MAXVOLT", "name": "HV battery module 15 max voltage", "group": "Battery.Modules.15", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU15_MINTEMP", "name": "HV battery module 15 min temperature", "group": "Battery.Modules.15", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU15_MAXTEMP", "name": "HV battery module 15 max temperature", "group": "Battery.Modules.15", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DE",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DE",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU16_MINVOLT", "name": "HV battery module 16 min voltage", "group": "Battery.Modules.16", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU16_MAXVOLT", "name": "HV battery module 16 max voltage", "group": "Battery.Modules.16", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU16_MINTEMP", "name": "HV battery module 16 min temperature", "group": "Battery.Modules.16", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU16_MAXTEMP", "name": "HV battery module 16 max temperature", "group": "Battery.Modules.16", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B10E",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B10E",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU17_MINVOLT", "name": "HV battery module 17 min voltage", "group": "Battery.Modules.17", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU17_MAXVOLT", "name": "HV battery module 17 max voltage", "group": "Battery.Modules.17", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU17_MINTEMP", "name": "HV battery module 17 min temperature", "group": "Battery.Modules.17", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU17_MAXTEMP", "name": "HV battery module 17 max temperature", "group": "Battery.Modules.17", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B10F",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B10F",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU18_MINVOLT", "name": "HV battery module 18 min voltage", "group": "Battery.Modules.18", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU18_MAXVOLT", "name": "HV battery module 18 max voltage", "group": "Battery.Modules.18", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU18_MINTEMP", "name": "HV battery module 18 min temperature", "group": "Battery.Modules.18", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU18_MAXTEMP", "name": "HV battery module 18 max temperature", "group": "Battery.Modules.18", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B110",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B110",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU19_MINVOLT", "name": "HV battery module 19 min voltage", "group": "Battery.Modules.19", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU19_MAXVOLT", "name": "HV battery module 19 max voltage", "group": "Battery.Modules.19", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU19_MINTEMP", "name": "HV battery module 19 min temperature", "group": "Battery.Modules.19", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU19_MAXTEMP", "name": "HV battery module 19 max temperature", "group": "Battery.Modules.19", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B111",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B111",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU20_MINVOLT", "name": "HV battery module 20 min voltage", "group": "Battery.Modules.20", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU20_MAXVOLT", "name": "HV battery module 20 max voltage", "group": "Battery.Modules.20", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU20_MINTEMP", "name": "HV battery module 20 min temperature", "group": "Battery.Modules.20", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU20_MAXTEMP", "name": "HV battery module 20 max temperature", "group": "Battery.Modules.20", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B112",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B112",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU21_MINVOLT", "name": "HV battery module 21 min voltage", "group": "Battery.Modules.21", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU21_MAXVOLT", "name": "HV battery module 21 max voltage", "group": "Battery.Modules.21", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU21_MINTEMP", "name": "HV battery module 21 min temperature", "group": "Battery.Modules.21", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU21_MAXTEMP", "name": "HV battery module 21 max temperature", "group": "Battery.Modules.21", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B113",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B113",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU22_MINVOLT", "name": "HV battery module 22 min voltage", "group": "Battery.Modules.22", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU22_MAXVOLT", "name": "HV battery module 22 max voltage", "group": "Battery.Modules.22", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU22_MINTEMP", "name": "HV battery module 22 min temperature", "group": "Battery.Modules.22", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU22_MAXTEMP", "name": "HV battery module 22 max temperature", "group": "Battery.Modules.22", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B114",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B114",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU23_MINVOLT", "name": "HV battery module 23 min voltage", "group": "Battery.Modules.23", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU23_MAXVOLT", "name": "HV battery module 23 max voltage", "group": "Battery.Modules.23", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU23_MINTEMP", "name": "HV battery module 23 min temperature", "group": "Battery.Modules.23", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU23_MAXTEMP", "name": "HV battery module 23 max temperature", "group": "Battery.Modules.23", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B115",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B115",
+      "interval": 180,
+      "answeredIn": [2022, 2023, 2024],
+      "signals": [
+        {"id": "MG4_HVBAT_CMU24_MINVOLT", "name": "HV battery module 24 min voltage", "group": "Battery.Modules.24", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU24_MAXVOLT", "name": "HV battery module 24 max voltage", "group": "Battery.Modules.24", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG4_HVBAT_CMU24_MINTEMP", "name": "HV battery module 24 min temperature", "group": "Battery.Modules.24", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG4_HVBAT_CMU24_MAXTEMP", "name": "HV battery module 24 max temperature", "group": "Battery.Modules.24", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "MG4_HVBAT_CMU_MAXTEMP",
+      "name": "HV battery pack max temperature",
+      "group": "Battery.Modules",
+      "match": "MG4_HVBAT_(CMU\\d+)_MAXTEMP"
+    },
+    {
+      "id": "MG4_HVBAT_CMU_MAXVOLT",
+      "name": "HV battery pack max voltage",
+      "group": "Battery.Modules",
+      "match": "MG4_HVBAT_(CMU\\d+)_MAXVOLT"
+    },
+    {
+      "id": "MG4_HVBAT_CMU_MINTEMP",
+      "name": "HV battery pack min temperature",
+      "group": "Battery.Modules",
+      "match": "MG4_HVBAT_(CMU\\d+)_MINTEMP"
+    },
+    {
+      "id": "MG4_HVBAT_CMU_MINVOLT",
+      "name": "HV battery pack min voltage",
+      "group": "Battery.Modules",
+      "match": "MG4_HVBAT_(CMU\\d+)_MINVOLT"
+    }
+  ]
+}

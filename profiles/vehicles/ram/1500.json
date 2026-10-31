@@ -1,0 +1,1488 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ram/1500",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ram",
+    "model": "1500",
+    "years": null,
+    "generations": [
+      {
+        "name": "Fourth Generation (DS) - Pre-Facelift",
+        "from": 2009,
+        "to": 2012
+      },
+      {"name": "Fourth Generation (DS) - Facelift", "from": 2013, "to": 2018},
+      {
+        "name": "Fifth Generation (DT) - Pre-Facelift",
+        "from": 2019,
+        "to": 2024
+      },
+      {"name": "Fifth Generation (DT) - Facelift", "from": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ram-1500",
+    "file": "signalsets/v3/default.json",
+    "revision": "059c83e93bbf7c629d15ccd22a04498d292aad39",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "742.4C2.22A077|fc=1,f=-2017",
+      "bus": "can11",
+      "tx": "742",
+      "rx": "4C2",
+      "request": "22A077",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"to": 2017},
+      "answeredIn": [2013, 2015, 2016, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "1500_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "1500_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "1500_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255},
+        {"id": "1500_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "psi", "invalidAtOrAbove": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "1500_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      "signals": [
+        {"id": "1500_ATF_T_V_2", "name": "Transmission fluid temperature v.2", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_AAT", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "1500_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "1500_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_FLI", "name": "Fuel level", "group": "Fuel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_RADIATOR_FAN_SPD", "name": "Radiator fan speed", "group": "Movement", "bit": 80, "bits": 8, "multiply": 520, "min": 0, "max": 132600, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "1500_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "1500_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D2|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D2",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_EOT_21D2", "name": "Engine oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C", "invalidAtOrBelow": -64}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_AAT_2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220227|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220227",
+      "interval": 30,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_AC_HIGH_SIDE_P_2", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "years": {"to": 2024},
+      "answeredIn": [2017],
+      "notAnsweredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22040F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22040F",
+      "interval": 30,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_FLI_7E0", "name": "Fuel level", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 711, "divide": 1250, "min": -18638, "max": 18637, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22059E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22059E",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_CAM_CRANK_DIFF", "name": "Cam crank difference", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206F3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206F3",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2022, 2023],
+      "notAnsweredIn": [2017, 2019, 2021],
+      "signals": [
+        {"id": "1500_FUEL_RAIL_P_06F3", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "1500_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C9|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C9",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_LOW_SIDE_ECT", "name": "Low side coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C", "invalidAtOrBelow": -64}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B3|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B3",
+      "interval": 5,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_THROTTLE_INLET_AIR_T_RAW", "name": "Throttle inlet air temperature raw", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C", "invalidAtOrBelow": -64}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221F59|f=2019-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221F59",
+      "interval": 1,
+      "years": {"from": 2019, "to": 2024},
+      "answeredIn": [2022, 2023],
+      "signals": [
+        {"id": "1500_WASTEGATE_POS_SENS", "name": "Wastegate position sensor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 61, "divide": 12500, "min": 0, "max": 319.8107, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A001|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A001",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TQ_CONV_SLIP_VAR_2", "name": "Torque converter slip, variant 2", "group": "Transmission", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A002|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A002",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A043|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A043",
+      "interval": 30,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_FLI_AVG", "name": "Fuel level average", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A09F|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A09F",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_GEAR_CMD", "name": "Transmission gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A0|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A0",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_GEAR_7E0", "name": "Transmission gear, actual", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A3|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A3",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TRANS_SUMP_T", "name": "Transmission sump temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A4|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A4",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TRANS_TQ_CONV_T", "name": "Transmission torque converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 320, "min": 0, "max": 1843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TQ_CONV_SLIP_VAR_1", "name": "Torque converter slip, variant 1", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 9, "divide": 640, "min": -460, "max": 460, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B|f=-2024",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.210A|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "210A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TRANS_T_VAR_2", "name": "Transmission temperature, variant 2", "group": "Transmission", "bit": 128, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2118|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2118",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      "signals": [
+        {"id": "1500_ATF_T_3RDGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "add": -40, "min": -40, "max": 983.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.215C|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "215C",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_3RDGEN_V2", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 32, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "1500_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "years": {"to": 2024},
+      "notAnsweredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225034|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225034",
+      "interval": 1,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_MAIN_CYL_P", "name": "AT main cylinder pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225043|f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225043",
+      "interval": 5,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023],
+      "signals": [
+        {"id": "1500_ATF_T_7E1_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2017, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "1500_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1,f=-2024",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"to": 2024},
+      "answeredIn": [2013, 2015, 2018, 2019, 2021, 2022, 2023],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "1500_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "DA10.10.2118|f=2025-",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2118",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TOT", "name": "Transmission oil temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -512, "max": 512, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "DA10.10.221000|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22190B|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22190B",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_VSS_ECU", "name": "Vehicle speed, engine computer", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.221935|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221935",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_IAT_TURBO", "name": "IAT post-intercooler", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193F|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193F",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_MAF_TEMP", "name": "Mass airflow sensor temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221946|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221946",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_RAIL_PRESS_CMD", "name": "Fuel rail pressure commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.221947|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221947",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_RAIL_PRESS", "name": "Fuel rail pressure measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.22195A|f=2025-,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 1,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_ATF_T_4THGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.5,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
+        {"id": "1500_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13}
+      ]
+    },
+    {
+      "id": "DA18.18.221018|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TCM_TORQUE", "name": "Transmission reported torque", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222102|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222102",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_GEARBOX_RPM", "name": "Gearbox output speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1B|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1B",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_WSS_RR", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1C|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1C",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_WSS_RL", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1D|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1D",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_WSS_FR", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1E|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1E",
+      "interval": 1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_WSS_FL", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158|f=2025-",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA30.30.220885|f=2025-",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "220885",
+      "interval": 0.1,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "add": -720, "min": -720, "max": 720, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA30.30.222962|f=2025-",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "222962",
+      "interval": 0.1,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 4, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40},
+        {"id": "1500_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 20, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40},
+        {"id": "1500_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 112, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "1500_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 144, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "1500_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 176, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "1500_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 208, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA40.40.221004|f=2025-",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22012F|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22012F",
+      "interval": 5,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TP_RL_INVALID", "name": "Rear left tire pressure invalid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_TP_RR_INVALID", "name": "Rear right tire pressure invalid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_TP_FR_INVALID", "name": "Front right tire pressure invalid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_TP_FL_INVALID", "name": "Front left tire pressure invalid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013C|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013C",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TP_FL_2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "1500_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013D|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013D",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TP_FR_2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "1500_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013E|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013E",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TP_RL_2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "1500_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013F|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013F",
+      "interval": 5,
+      "years": {"from": 2025},
+      "notAnsweredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_TP_RR_2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "1500_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220302|f=2025-",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220302",
+      "interval": 1,
+      "years": {"from": 2025},
+      "answeredIn": [2025, 2026],
+      "signals": [
+        {"id": "1500_RRD_OPEN", "name": "Rear right door open", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_RLD_OPEN", "name": "Rear left door open", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_PASSENGER_DOOR_OPEN", "name": "Passenger door open", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_DRIVER_DOOR_OPEN", "name": "Driver door open", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "1500_TRUNK_OPEN", "name": "Trunk open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    }
+  ]
+}

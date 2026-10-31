@@ -1,0 +1,1411 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/chrysler/300",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Chrysler",
+    "model": "300",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2005, "to": 2010},
+      {"name": "Second Generation (2011-2014)", "from": 2011, "to": 2014},
+      {
+        "name": "Second Generation (2015-2023 Facelift)",
+        "from": 2015,
+        "to": 2023
+      }
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Chrysler-300",
+    "file": "signalsets/v3/default.json",
+    "revision": "0d144de34b4ac82463434e50da8346f98cbe5c8d",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "763.4E3.22032D|fc=1",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "4E3",
+      "request": "22032D",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2016, 2019, 2023],
+      "notAnsweredIn": [2012, 2013, 2022],
+      "signals": [
+        {"id": "300_HIGHBEAMS_ON", "name": "High beams", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "300_HIGHBEAMS_MODE", "name": "High beam mode", "group": "Control", "bit": 4, "bits": 4, "values": {"0": "OFF", "1": "ON", "2": "HELD"}, "valueDescriptions": {"0": "Off", "1": "On", "2": "Held"}},
+        {"id": "300_REAR_WIPER", "name": "Rear wiper", "group": "Control", "bit": 12, "bits": 4, "values": {"0": "OFF", "1": "SPRAY", "2": "AUTO", "4": "ON"}, "valueDescriptions": {"0": "Off", "1": "Spray", "2": "Auto", "4": "On"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_LINE_P_DUTY", "name": "Line pressure duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 655, "min": 0, "max": 100, "unit": "%"},
+        {"id": "300_LINE_P", "name": "Line pressure", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_V_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_AAT_7E0", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"},
+        {"id": "300_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 48, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212D",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_EOT_212D", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 56, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TRANS_SUMP_T_VAR_1", "name": "Transmission sump temperature, variant 1", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "300_TRANS_TQ_CONV_T_VAR_1", "name": "Transmission torque converter temperature, variant 1", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A7",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_AC_HIGH_SIDE_P_7E0", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 48, "bits": 16, "divide": 55, "min": 0, "max": 1191, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A8",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 96, "bits": 16, "divide": 256, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21CA",
+      "interval": 5,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "300_OUTPUT_SHFT_SPD", "name": "Output shaft speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"},
+        {"id": "300_TRANS_SUMP_T_VAR_2", "name": "Transmission sump temperature, variant 2", "group": "Transmission", "bit": 80, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "°F"},
+        {"id": "300_TRANS_TQ_CONV_T_VAR_2", "name": "Transmission torque converter temperature, variant 2", "group": "Transmission", "bit": 96, "bits": 16, "multiply": 9, "divide": 320, "add": 32, "min": 0, "max": 1875, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D6",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_DPF_DELTA_P", "name": "Diesel particulate filter delta pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 73, "divide": 500, "min": 0, "max": 37.2299, "unit": "psi"},
+        {"id": "300_TIME_SINCE_REGEN", "name": "Time since regen started", "group": "Engine", "bit": 32, "bits": 16, "divide": 40, "min": 0, "max": 1638, "unit": "s"},
+        {"id": "300_EXH_GAS_T_1", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 80, "bits": 8, "multiply": 144, "divide": 5, "add": 32, "min": 0, "max": 7376, "unit": "°F"},
+        {"id": "300_EXH_GAS_T_2", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 176, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "300_EXH_GAS_T_3", "name": "Exhaust gas temperature 3", "group": "Engine", "bit": 208, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"},
+        {"id": "300_EXH_GAS_T_4", "name": "Exhaust gas temperature 4", "group": "Engine", "bit": 256, "bits": 16, "multiply": 9, "divide": 80, "add": 32, "min": 0, "max": 7404, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D7",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EGR_AIRFLOW_CTRL_VLV", "name": "Exhaust gas recirculation airflow control valve position", "group": "Engine", "bit": 32, "bits": 16, "multiply": 39, "divide": 5000, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D8",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ESTIMATED_NO", "name": "Estimated NO accumulation via fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 3624, "min": 0, "max": 18.08},
+        {"id": "300_DPF_REGEN_ACTIVE_7E0", "name": "Diesel particulate filter regen active", "group": "Engine", "bit": 79, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "300_REGEN_ENABLE_ON_OFF", "name": "Regen enable, on/off – alternative", "group": "Engine", "bit": 95, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D9",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EGR_VLV_CMD_POSTIION", "name": "Exhaust gas recirculation valve, commanded position", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "add": 32, "min": 0, "max": 543, "unit": "%"},
+        {"id": "300_EGR_ORIFICE_T", "name": "Exhaust gas recirculation orifice temperature", "group": "Engine", "bit": 40, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "300_EGR_FLOW", "name": "Exhaust gas recirculation flow", "group": "Engine", "bit": 120, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kg/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DA",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_VGT_VIRTUAL_CHG_FLOW", "name": "Variable geometry turbo virtual charge flow", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.0035436904, "add": 32, "min": 0, "max": 264, "unit": "kg/h"},
+        {"id": "300_TURBO_SPD", "name": "Turbo speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"},
+        {"id": "300_VGT_COMP_OULET_AIR_T", "name": "Variable geometry turbo compressor outlet air temperature", "group": "Engine", "bit": 112, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"},
+        {"id": "300_VGT_COMP_INLET_AIR_T", "name": "Variable geometry turbo compressor inlet air temperature", "group": "Engine", "bit": 144, "bits": 16, "multiply": 9, "divide": 20, "add": 32, "min": 0, "max": 29522, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220109",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220109",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220127",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22012B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22012B",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_CAT_MODEL_T", "name": "Catalyst modeled temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220166",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_FUEL_MASS_CORR_CYL_1", "name": "Fuel mass correction, cylinder 1", "group": "Fuel", "bit": 144, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "300_FUEL_MASS_CORR_CYL_2", "name": "Fuel mass correction, cylinder 2", "group": "Fuel", "bit": 160, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "300_FUEL_MASS_CORR_CYL_3", "name": "Fuel mass correction, cylinder 3", "group": "Fuel", "bit": 176, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "300_FUEL_MASS_CORR_CYL_4", "name": "Fuel mass correction, cylinder 4", "group": "Fuel", "bit": 192, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "300_FUEL_MASS_CORR_CYL_5", "name": "Fuel mass correction, cylinder 5", "group": "Fuel", "bit": 208, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "300_FUEL_MASS_CORR_CYL_6", "name": "Fuel mass correction, cylinder 6", "group": "Fuel", "bit": 224, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220168",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220168",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 160, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "300_SENSED_P_PF_DN", "name": "Sensed pressure particulate filter downstream", "group": "Engine", "bit": 176, "bits": 16, "signed": true, "min": -32768, "max": 32767},
+        {"id": "300_TURBINE_UP_T", "name": "Turbine upstream temperature", "group": "Engine", "bit": 224, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "300_T_BEFORE_CAT", "name": "Temperature before catalyst", "group": "Engine", "bit": 240, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "300_SENSED_OIL_P", "name": "Sensed oil pressure", "group": "Engine", "bit": 272, "bits": 16, "signed": true, "min": -32768, "max": 32767},
+        {"id": "300_CRANKCASE_DIFF_P", "name": "Crankcase differential pressure", "group": "Engine", "bit": 328, "bits": 16, "divide": 100, "min": 0, "max": 655.35},
+        {"id": "300_T_BEFORE_DPF", "name": "Temperature before diesel particulate filter", "group": "Engine", "bit": 392, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"},
+        {"id": "300_T_BEFORE_TURBINE", "name": "Temperature before turbine", "group": "Engine", "bit": 408, "bits": 16, "divide": 10, "add": -273.14, "min": -273.14, "max": 6280.36, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220174",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220174",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_MAP", "name": "Intake manifold air pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22017E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22017E",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_EXH_T_EGR_COOLER_DN", "name": "Exhaust temperature, EGR cooler downstream", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "300_EXH_T_DN_EXH", "name": "Exhaust temperature, downstream of exhaust manifold", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"},
+        {"id": "300_EXH_T_UP_EXH", "name": "Exhaust temperature, upstream of exhaust manifold", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 10, "add": -273.14, "min": -3549.94, "max": 3003.56, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201A9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201A9",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_KNOCK_SENS_1", "name": "Knock sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AA",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_KNOCK_SENS_2", "name": "Knock sensor 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 13107, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201AE",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_SHORT_TERM_KNOCK", "name": "Short term knock retard", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2201FF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2201FF",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22022A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22022A",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 29, "divide": 50, "min": 0, "max": 147.8999, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220234",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220234",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_INJ_WIDTH_CYL_1", "name": "Injector pulse width, cylinder 1", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220235",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220235",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_INJ_WIDTH_CYL_2", "name": "Injector pulse width, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220236",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220236",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_INJ_WIDTH_CYL_3", "name": "Injector pulse width, cylinder 3", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220237",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220237",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_INJ_WIDTH_CYL_4", "name": "Injector pulse width, cylinder 4", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220255",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220255",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_FUEL_MASS_CYL_1", "name": "Fuel mass, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220256",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220256",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_FUEL_MASS_CYL_2", "name": "Fuel mass, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220257",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220257",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_FUEL_MASS_CYL_3", "name": "Fuel mass, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220258",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220258",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_FUEL_MASS_CYL_4", "name": "Fuel mass, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202A1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202A1",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FUEL_RAIL_P", "name": "Fuel rail pressure", "group": "Fuel", "bit": 24, "bits": 8, "multiply": 29, "divide": 200, "min": 0, "max": 36.9749, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B2",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_REQUIRED_FUEL_CHG_1", "name": "Required fuel charge, cylinder 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B3",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_REQUIRED_FUEL_CHG_2", "name": "Required fuel charge, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B4",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_REQUIRED_FUEL_CHG_3", "name": "Required fuel charge, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2202B5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2202B5",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_REQUIRED_FUEL_CHG_4", "name": "Required fuel charge, cylinder 4", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220329",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220329",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_AC_HIGH_SIDE_P", "name": "Air conditioning high side pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 14, "min": 0, "max": 3570, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ODO_03BC", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22043B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22043B",
+      "interval": 30,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 8.192, "min": 0, "max": 536862.72, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22061B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22061B",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EXH_CAM_1_OFFSET", "name": "Exhaust camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069E",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_VARIABLE_VLV_TIM_OIL_P", "name": "Variable valve timing oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22069F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22069F",
+      "interval": 5,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2206C2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2206C2",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_INT_CAM_1_OFFSET", "name": "Intake camshaft 1 to crankshaft offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220944",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220944",
+      "interval": 0.25,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220ECA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220ECA",
+      "interval": 1,
+      "answeredIn": [2012],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "300_MDS_ACTIVE", "name": "Multi-displacement system active", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221247",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221247",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_THROTTLE_INLET_P", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 160, "min": 0, "max": 409.5937, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221250",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221250",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -83, "min": -83, "max": 376, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212C9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212C9",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_LOW_SIDE_ECT", "name": "Low side coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B1",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_THROTTLE_INLET_AIR_T", "name": "Throttle inlet air temperature filtered", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2214B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2214B3",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_THROTTLE_INLET_AIR_T_RAW", "name": "Throttle inlet air temperature raw", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2215D4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2215D4",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_LOW_T_CHG_AIR_CLT", "name": "Low temperature/charge air coolant pump speed", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221737",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221737",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221738",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221738",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221739",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221739",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22173A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22173A",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22189F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22189F",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_VGT_CMD_189F", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2218E7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2218E7",
+      "interval": 3600,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_DPF_REGENS_18E7", "name": "Particulate filter regeneration count", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221935",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221935",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_IAT_1935", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221D89",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221D89",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FUEL_RAIL_P_TGT", "name": "Fuel rail pressure, target", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221F59",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221F59",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_WASTEGATE_POS_SENS", "name": "Wastegate position sensor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 61, "divide": 12500, "min": 0, "max": 319.8107, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222007",
+      "interval": 3600,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ODO_LAST_OVERSPEED", "name": "Odometer at last excess speed event", "group": "Movement", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223800",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_1", "name": "Total fuel correction, cylinder 1", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223801",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223801",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_2", "name": "Total fuel correction, cylinder 2", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223802",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223802",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_3", "name": "Total fuel correction, cylinder 3", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223803",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223803",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_4", "name": "Total fuel correction, cylinder 4", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223804",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223804",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_5", "name": "Total fuel correction, cylinder 5", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.223805",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "223805",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TOT_FUEL_CORR_CYL_6", "name": "Total fuel correction, cylinder 6", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22507B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22507B",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_VGT_CMD_507B", "name": "Variable geometry turbo actuator, commanded position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39, "divide": 50, "add": -100, "min": -100, "max": 98.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.225089",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "225089",
+      "interval": 3600,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_DPF_REGENS_5089", "name": "Particulate filter regeneration count, variant 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2250AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2250AF",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_DPF_REGEN_ACTIVE", "name": "Regeneration active", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2270B8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2270B8",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_IAT_70B8", "name": "Intake manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0198412698, "add": -40, "min": -40, "max": 1260.2976, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A001",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TQ_CONV_SLIP_VAR_2", "name": "Torque converter slip, variant 2", "group": "Transmission", "bit": 48, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A002",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A003",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TIME_SINCE_ACTIVE", "name": "Time since active regen", "group": "Engine", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A043",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A043",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FLI_AVG", "name": "Fuel level average", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A054",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A054",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 435, "min": 0, "max": 150, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A067",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A067",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_FUEL_RAIL_P_7E0", "name": "Fuel rail pressure", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A09F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A09F",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_GEAR_CMD", "name": "Transmission gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A0",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_GEAR_7E0", "name": "Transmission gear, actual", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A3",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TRANS_SUMP_T", "name": "Transmission sump temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0A4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0A4",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TRANS_TQ_CONV_T", "name": "Transmission torque converter temperature", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 9, "divide": 320, "min": 0, "max": 1843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0BD",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EXH_GAS_T_1_DOC", "name": "Exhaust gas temperature 1 – DOC inlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C2",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EXH_GAS_T_2_DOC", "name": "Exhaust gas temperature 2 – DOC outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C6",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EXH_GAS_T_4_SCR_CAT", "name": "Exhaust gas temperature 4, catalyst middle", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0C8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0C8",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EXH_GAS_T_5_SCR_CAT", "name": "Exhaust gas temperature 5 – SCR CAT outlet", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "add": 32, "min": -32736, "max": 32799, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DA",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EGR_VLV_POS", "name": "Exhaust gas recirculation valve position", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0DC",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_EGR_T", "name": "Exhaust gas recirculation temperature", "group": "Engine", "bit": 16, "bits": 16, "multiply": 9, "divide": 640, "min": 0, "max": 921, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0E4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0E4",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TURBOCHARGER_SPD", "name": "Turbocharger speed", "group": "Battery", "bit": 16, "bits": 16, "multiply": 125, "divide": 16, "min": 0, "max": 511992, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EC",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TURBO_COMP_INLET_T", "name": "Turbo compressor inlet temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 36, "divide": 5, "add": 32, "min": 0, "max": 1868, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A0EE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A0EE",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_CHARGED_AIR_COOLER_T", "name": "Charged air cooler outlet temperature", "group": "Battery", "bit": 16, "bits": 16, "multiply": 36, "divide": 125, "add": 32, "min": 0, "max": 18906, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B028",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B028",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B09B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B09B",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TQ_CONV_LOCK", "name": "Torque converter lock status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.210A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "210A",
+      "interval": 5,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "300_TRANS_T_VAR_2", "name": "Transmission temperature, variant 2", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 128, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2118|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2118",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_3RDGEN", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "add": -40, "min": -40, "max": 983.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_2130", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 88, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.213A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "213A",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_TRANS_SUMP_T_7E1", "name": "Transmission sump temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 72, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.215C|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "215C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "300_ATF_T_3RDGEN_V2", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 32, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2172",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2172",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 32, "bits": 16, "divide": 64, "min": 0, "max": 1023.9843, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2016, 2019, 2022, 2023],
+      "signals": [
+        {"id": "300_ATF_T", "name": "Transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2208DF",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2208DF",
+      "interval": 5,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_08DF", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.223C22",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "223C22",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225034",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225034",
+      "interval": 1,
+      "answeredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_MAIN_CYL_P", "name": "Transmission main cylinder pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225043",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225043",
+      "interval": 5,
+      "answeredIn": [2012, 2022],
+      "signals": [
+        {"id": "300_ATF_T_7E1", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2012, 2013, 2016, 2019, 2022, 2023],
+      "signals": [
+        {"id": "300_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2012, 2013, 2016, 2019, 2022, 2023],
+      "signals": [
+        {"id": "300_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    }
+  ]
+}

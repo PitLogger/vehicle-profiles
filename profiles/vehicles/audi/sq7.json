@@ -1,0 +1,742 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/audi/sq7",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Audi",
+    "model": "SQ7",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2016, "to": 2020},
+      {"name": "First Generation (2020 Facelift)", "from": 2020, "to": 2024},
+      {"name": "First Generation (2025 Facelift)", "from": 2025}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Audi-SQ7",
+    "file": "signalsets/v3/default.json",
+    "revision": "067dd9c4532a80036b6aa22c22f7abcb9edebd56",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "710.222A0A",
+      "bus": "can11",
+      "tx": "710",
+      "request": "222A0A",
+      "interval": 30,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_SSB_SENSOR_T", "name": "Start/stop battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "710.222A61|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "request": "222A61",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "SQ7_SSB_TOTAL_CHARGE", "name": "Start/stop battery total charge", "group": "Battery", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 100, "unit": "Ah"},
+        {"id": "SQ7_SSB_TOTAL_DISCHARGE", "name": "Start/stop battery total discharge", "group": "Battery", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 100, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "710.77A.222A00|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A00",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_SSB_VT", "name": "Start/stop battery target voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 10.6, "min": 0, "max": 36.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222A07",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A07",
+      "interval": 1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_SSB_V", "name": "Start/stop battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 4, "max": 69.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222A09",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A09",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_SSB_C", "name": "Start/stop battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 1000, "min": 0, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0B",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0B",
+      "interval": 1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_SSB_T", "name": "Start/stop battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0E",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0E",
+      "interval": 5,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_SSB_R", "name": "Start/stop battery resistance", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 10, "min": 0, "max": 100, "unit": "mΩ"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0F",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0F",
+      "interval": 5,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_SSB_AH", "name": "Start/stop battery charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "710.77A.222A10",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A10",
+      "interval": 1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_SSB_V_REST", "name": "Start/stop battery voltage (at rest)", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 9, "min": 9, "max": 34.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB6|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB6",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_RANGE_V2", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB7",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_AVG_CSMP_CAT0", "name": "Average consumption (category 0)", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT1", "name": "Average consumption (category 1)", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT2", "name": "Average consumption (category 2)", "group": "Trips", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT3", "name": "Average consumption (category 3)", "group": "Trips", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT4", "name": "Average consumption (category 4)", "group": "Trips", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT5", "name": "Average consumption (category 5)", "group": "Trips", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "SQ7_AVG_CSMP_CAT6", "name": "Average consumption (category 6)", "group": "Trips", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "713.77D.222B29",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "222B29",
+      "interval": 0.1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
+      ]
+    },
+    {
+      "id": "714.220530|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "request": "220530",
+      "interval": 0.5,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TRIP_USE_SHORT", "name": "Trip consumption (short)", "group": "Trips", "bit": 238, "bits": 18, "signed": true, "divide": 1000, "min": -131, "max": 131, "unit": "kWh/100mi"}
+      ]
+    },
+    {
+      "id": "714.222294|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "request": "222294",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_DTE", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.2222E0",
+      "bus": "can11",
+      "tx": "714",
+      "request": "2222E0",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_RANGE_DSP", "name": "Range remaining (displayed)", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.221014",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "221014",
+      "interval": 5,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C", "invalidAtOrAbove": 77.5}
+      ]
+    },
+    {
+      "id": "746.2226ED|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "request": "2226ED",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "SQ7_AIR_POLUTION", "name": "Air pollution level", "description": "0 means clean air.", "group": "Climate", "bit": 0, "bits": 8, "signed": true, "divide": 10, "min": -12.7, "max": 12.7}
+      ]
+    },
+    {
+      "id": "767.7D1.222431|fc=1",
+      "bus": "can11",
+      "tx": "767",
+      "rx": "7D1",
+      "request": "222431",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "SQ7_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.2210E0",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2210E0",
+      "interval": 30,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_ODO_V3", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4000000000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.221158",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "221158",
+      "interval": 1,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "SQ7_MAX_DCHA_CUR_2", "name": "Maximum discharge current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3200, "max": 3200, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.22115B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22115B",
+      "interval": 1,
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "SQ7_VSS_DIR", "name": "Vehicle speed (directional)", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.2211BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211BA",
+      "interval": 15,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 16, "divide": 2500, "min": 0, "max": 26.2, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.2211BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2211BB",
+      "interval": 3600,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_OIL_CRIT", "name": "Oil level (critical)", "group": "Fluids", "bit": 0, "bits": 16, "divide": 2500, "min": 0, "max": 26.2, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.222005",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222005",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_BRAKE_BST_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.222061",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222061",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_APP_POS1", "name": "Accelerator pedal position sensor 1", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.222062",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222062",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_APP_POS2", "name": "Accelerator pedal position sensor 2", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22028D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22028D",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_ECU_TEMP", "name": "Ecu temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221002",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_AC_COMP_T", "name": "A/c compressor torque, requested", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221004",
+      "interval": 5,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_AAT_V2", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -255, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221151",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_EM_RPM_1", "name": "Electric motor 1 rpm", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -100, "max": 100, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221152",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221152",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_EM_RPM_2", "name": "Electric motor 2 rpm", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -100, "max": 100, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221153",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221153",
+      "interval": 10.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_EM_TORQ_1", "name": "Elector motor 1 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221154",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221154",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_EM_TORQ_2", "name": "Elector motor 2 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221155",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221155",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_EM_TORQ_3", "name": "Elector motor 3 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221159",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221159",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_MAX_CHA_CUR_2", "name": "Maximum charge current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3200, "max": 3200, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221160",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221160",
+      "interval": 1,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_ODO_HD", "name": "Odometer (high resolution)", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967.295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BD",
+      "interval": 15,
+      "answeredIn": [2023],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "SQ7_OIL_LEVEL_WARN", "name": "Oil level warning threshold", "group": "Fluids", "bit": 0, "bits": 16, "divide": 2500, "min": 0, "max": 26.2, "unit": "cm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BE",
+      "interval": 1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_EOT_V2", "name": "Engine oil temperature", "description": "Scaling is unknown, needs further validation.", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 5,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_MIL_DIST", "name": "Distance traveled while mil was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_WARM_UPS", "name": "Number of warm-ups since dtcs cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 5,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_CLR_DIST", "name": "Distance traveled since dtcs cleared", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 0.25,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_VPWR", "name": "Control module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.220302",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220302",
+      "interval": 300,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E1.220303",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220303",
+      "interval": 300,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_DRIVE_TIME_ECO", "name": "Driving time (eco)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.220304",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220304",
+      "interval": 300,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_DRIVE_TIME_SPORT", "name": "Driving time (sport)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.220305",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "220305",
+      "interval": 300,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_DRIVE_TIME_MANUAL", "name": "Driving time (manual)", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E1.221001",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221001",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_FR_SPD_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.221002",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221002",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_FL_SPD_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.221003",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221003",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_RR_SPD_V3", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.221004",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221004",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_RL_SPD_V3", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.22210F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22210F",
+      "interval": 2,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear"}}
+      ]
+    },
+    {
+      "id": "7E1.222B1B",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1B",
+      "interval": 30,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_FL_SPD_V2", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1C",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1C",
+      "interval": 30,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_FR_SPD_V2", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1D",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1D",
+      "interval": 30,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_RL_SPD_V2", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.222B1E",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "222B1E",
+      "interval": 30,
+      "answeredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_TIRE_RR_SPD_V2", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220805",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220805",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_BRAKE_LIGHT_ON_VALID", "name": "Brake light reading valid?", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SQ7_BRAKE_PRESSED_VALID", "name": "Brake pressure reading valid?", "group": "Control", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SQ7_BRAKE_PRESSED", "name": "Brake", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SQ7_BRAKE_LIGHT_ON", "name": "Brake light", "group": "Control", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E1.7E9.222104",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "222104",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "SQ7_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Fluids", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.225200",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "225200",
+      "interval": 3600,
+      "notAnsweredIn": [2017, 2023],
+      "signals": [
+        {"id": "SQ7_LAUNCH", "name": "Launch control count", "description": "How many times you've initiated launch control on the car.", "group": "Stats", "bit": 0, "bits": 32, "min": 0, "max": 1000000}
+      ]
+    }
+  ]
+}

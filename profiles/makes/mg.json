@@ -1,0 +1,2348 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "makes/mg",
+  "kind": "make",
+  "use": "fallback",
+  "vehicle": {"makes": ["MG"], "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/MG",
+    "file": "signalsets/v3/default.json",
+    "revision": "ad55b7fc12ad3e83df257fe0dbd85a038a5e3c97",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7DF", "rx": "7EC", "type": "charger"},
+    {"tx": "7DF", "rx": "7ED", "type": "battery"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"},
+    {"tx": "7E3", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "710.718.22B921",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "718",
+      "request": "22B921",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_GWM_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "710.718.22D001",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "718",
+      "request": "22D001",
+      "interval": 4,
+      "signals": [
+        {"id": "MG_GWM_STATUS", "name": "Vehicle gateway status", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "724.72C.22B001",
+      "bus": "can11",
+      "tx": "724",
+      "rx": "72C",
+      "request": "22B001",
+      "interval": 15,
+      "signals": [
+        {"id": "MG_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "MG_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "multiply": 4, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "MG_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 16, "bits": 8, "multiply": 4, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "MG_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 24, "bits": 8, "multiply": 4, "min": 0, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "724.72C.22B003",
+      "bus": "can11",
+      "tx": "724",
+      "rx": "72C",
+      "request": "22B003",
+      "interval": 15,
+      "signals": [
+        {"id": "MG_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"},
+        {"id": "MG_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"},
+        {"id": "MG_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"},
+        {"id": "MG_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 24, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "740.22E101",
+      "bus": "can11",
+      "tx": "740",
+      "request": "22E101",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_BCM_ODO", "name": "Odometer, body control module", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "740.22E209",
+      "bus": "can11",
+      "tx": "740",
+      "request": "22E209",
+      "interval": 15,
+      "signals": [
+        {"id": "MG_BCM_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "kPa"},
+        {"id": "MG_BCM_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "kPa"},
+        {"id": "MG_BCM_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "kPa"},
+        {"id": "MG_BCM_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "kPa"},
+        {"id": "MG_BCM_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 32, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"},
+        {"id": "MG_BCM_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 40, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"},
+        {"id": "MG_BCM_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 48, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"},
+        {"id": "MG_BCM_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 56, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "740.748.22D117",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "748",
+      "request": "22D117",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_DRL", "name": "Headlights on", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "745.74D.22B013",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "22B013",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_UNLOCKED", "name": "Vehicle unlocked", "group": "Doors", "bit": 31, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "750.758.22E00F",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "request": "22E00F",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_BLOWER", "name": "Blower speed", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_BLOWER_SPD", "name": "Blower speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "750.758.22E013",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "request": "22E013",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_FACE_OUTLET_T", "name": "Face vent outlet temperature", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "add": -30, "min": -30, "max": 6523.5, "unit": "°C"},
+        {"id": "MG_FL_FACE_OUTLET_T", "name": "FL face outlet temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "750.758.22E01B",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "request": "22E01B",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_AAT_ATC", "name": "Ambient temperature, climate control", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"},
+        {"id": "MG_AAT_RAW_CNT", "name": "Ambient temperature, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "750.758.22E01C",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "request": "22E01C",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_PTC_T", "name": "Cabin heater temperature", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "760.768.22B101",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22B101",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_ODO_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "MG_ODO_READING_RAW_CNT", "name": "Odometer reading, raw count", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "781.789.22B041",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B041",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_HVBAT_BUS_VOLTAGE_GEN1", "name": "HV battery bus voltage", "group": "Battery.Internal", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.789.22B042",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B042",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_HBAT_V", "name": "High voltage battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "min": 300, "max": 450, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.789.22B043",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B043",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_HBAT_C", "name": "High voltage battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 40, "add": -1000, "min": -1000, "max": 638.375, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "781.789.22B046",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B046",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "781.789.22B047",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B047",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_ERR_GEN1", "name": "HV battery error code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "781.789.22B048",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B048",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_IS_CHARGING", "name": "Is charging", "group": "Battery", "metric": "isCharging", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_IS_DCFC", "name": "Is DC fast charging", "group": "Battery", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "781.789.22B049",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B049",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_B_GEN1", "name": "HV battery main relay b state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "781.789.22B04A",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B04A",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_G_GEN1", "name": "HV battery main relay g state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "781.789.22B052",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B052",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_P_GEN1", "name": "HV battery main relay p state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "781.789.22B056",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B056",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_TEMP_GEN1", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.789.22B058",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B058",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_CELL_V_MAX_GEN1", "name": "Highest cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.789.22B059",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B059",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_CELL_V_MIN_GEN1", "name": "Lowest cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "781.789.22B05C",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B05C",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_COOLANT_TEMP_GEN1", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "781.789.22B061",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B061",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_SOH", "name": "State of health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "781.789.22B0CE",
+      "bus": "can11",
+      "tx": "781",
+      "rx": "789",
+      "request": "22B0CE",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RANGE_RAW_GEN1", "name": "HV battery range count", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "785.22B022",
+      "bus": "can11",
+      "tx": "785",
+      "request": "22B022",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_DCDC_LV_CURRENT", "name": "DC-DC converter low-voltage current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "A"}
+      ]
+    },
+    {
+      "id": "785.78D.22B025",
+      "bus": "can11",
+      "tx": "785",
+      "rx": "78D",
+      "request": "22B025",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_DCDC_LOAD", "name": "DC/DC converter load", "group": "Electrical", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "%"},
+        {"id": "MG_DCDC_POWER_LOAD", "name": "DC-DC converter power load", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "A"}
+      ]
+    },
+    {
+      "id": "785.78D.22B026",
+      "bus": "can11",
+      "tx": "785",
+      "rx": "78D",
+      "request": "22B026",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_DCDC_T", "name": "DC/DC converter temperature", "group": "Electrical", "bit": 0, "bits": 16, "add": -40, "min": -40, "max": 65495, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B001",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B001",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_EVCC_CURRENT", "name": "Current", "group": "Battery.EVCC", "bit": 0, "bits": 16, "divide": 5, "add": -409.6, "min": 0, "max": 250, "unit": "A"},
+        {"id": "MG_HVBAT_CMU01_MINVOLT", "name": "HV battery module 01 min voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU01_MAXVOLT", "name": "HV battery module 01 max voltage", "group": "Battery.Modules.01", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU01_MINTEMP", "name": "HV battery module 01 min temperature", "group": "Battery.Modules.01", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU01_MAXTEMP", "name": "HV battery module 01 max temperature", "group": "Battery.Modules.01", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B003",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B003",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_EVCC_MAX_CURRENT", "name": "Max current", "group": "Battery.EVCC", "bit": 0, "bits": 8, "multiply": 0.434782609, "min": 0, "max": 110.869565, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B00F",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B00F",
+      "interval": 4,
+      "signals": [
+        {"id": "MG_EVCC_CHARGING", "name": "Charging", "group": "Battery.EVCC", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7DF.7EC.22B010",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7EC",
+      "request": "22B010",
+      "interval": 4,
+      "signals": [
+        {"id": "MG_EVCC_VOLTAGE", "name": "Voltage", "group": "Battery.EVCC", "bit": 0, "bits": 16, "divide": 97, "min": 0, "max": 675.618556, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B009",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B009",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU02_MINVOLT", "name": "HV battery module 02 min voltage", "group": "Battery.Modules.02", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU02_MAXVOLT", "name": "HV battery module 02 max voltage", "group": "Battery.Modules.02", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU02_MINTEMP", "name": "HV battery module 02 min temperature", "group": "Battery.Modules.02", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU02_MAXTEMP", "name": "HV battery module 02 max temperature", "group": "Battery.Modules.02", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B011",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B011",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU03_MINVOLT", "name": "HV battery module 03 min voltage", "group": "Battery.Modules.03", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B011_RAW", "name": "Battery module B011 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU03_MAXVOLT", "name": "HV battery module 03 max voltage", "group": "Battery.Modules.03", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU03_MINTEMP", "name": "HV battery module 03 min temperature", "group": "Battery.Modules.03", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU03_MAXTEMP", "name": "HV battery module 03 max temperature", "group": "Battery.Modules.03", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B019",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B019",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU04_MINVOLT", "name": "HV battery module 04 min voltage", "group": "Battery.Modules.04", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU04_MAXVOLT", "name": "HV battery module 04 max voltage", "group": "Battery.Modules.04", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU04_MINTEMP", "name": "HV battery module 04 min temperature", "group": "Battery.Modules.04", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU04_MAXTEMP", "name": "HV battery module 04 max temperature", "group": "Battery.Modules.04", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B021",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B021",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU05_MINVOLT", "name": "HV battery module 05 min voltage", "group": "Battery.Modules.05", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU05_MAXVOLT", "name": "HV battery module 05 max voltage", "group": "Battery.Modules.05", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU05_MINTEMP", "name": "HV battery module 05 min temperature", "group": "Battery.Modules.05", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU05_MAXTEMP", "name": "HV battery module 05 max temperature", "group": "Battery.Modules.05", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B029",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B029",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU06_MINVOLT", "name": "HV battery module 06 min voltage", "group": "Battery.Modules.06", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU06_MAXVOLT", "name": "HV battery module 06 max voltage", "group": "Battery.Modules.06", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU06_MINTEMP", "name": "HV battery module 06 min temperature", "group": "Battery.Modules.06", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU06_MAXTEMP", "name": "HV battery module 06 max temperature", "group": "Battery.Modules.06", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B041",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B041",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_HVBAT_BUS_VOLTAGE", "name": "HV battery bus voltage", "group": "Battery.Internal", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B042",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B042",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MG_HVBAT_VOLTAGE", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 500, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B043",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B043",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MG_HVBAT_CURRENT", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 40, "add": -1000, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B045",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B045",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_RESISTANCE", "name": "HV battery internal resistance", "group": "Battery.Internal", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B046",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B046",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_HVBAT_RAW_SOC", "name": "HV battery raw charge", "description": "HV battery raw charge", "group": "Battery.Internal", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B048",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B048",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_BMS_B048_RAW", "name": "Battery module B048 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_BMS_STATUS", "name": "BMS Status", "group": "Battery.Internal", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "MG_HVBAT_CHARGING", "name": "HV battery is charging?", "group": "Battery", "metric": "isCharging", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B056",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B056",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_TEMP", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_BMS_B056_RAW", "name": "Battery module B056 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B05C",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B05C",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_COOLANT_TEMP", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B061",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B061",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"},
+        {"id": "MG_BMS_B061_RAW", "name": "Battery module B061 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0A3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0A3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU07_MINVOLT", "name": "HV battery module 07 min voltage", "group": "Battery.Modules.07", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU07_MAXVOLT", "name": "HV battery module 07 max voltage", "group": "Battery.Modules.07", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU07_MINTEMP", "name": "HV battery module 07 min temperature", "group": "Battery.Modules.07", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU07_MAXTEMP", "name": "HV battery module 07 max temperature", "group": "Battery.Modules.07", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0AB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0AB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU08_MINVOLT", "name": "HV battery module 08 min voltage", "group": "Battery.Modules.08", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU08_MAXVOLT", "name": "HV battery module 08 max voltage", "group": "Battery.Modules.08", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU08_MINTEMP", "name": "HV battery module 08 min temperature", "group": "Battery.Modules.08", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU08_MAXTEMP", "name": "HV battery module 08 max temperature", "group": "Battery.Modules.08", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0B3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0B3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU09_MINVOLT", "name": "HV battery module 09 min voltage", "group": "Battery.Modules.09", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU09_MAXVOLT", "name": "HV battery module 09 max voltage", "group": "Battery.Modules.09", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU09_MINTEMP", "name": "HV battery module 09 min temperature", "group": "Battery.Modules.09", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU09_MAXTEMP", "name": "HV battery module 09 max temperature", "group": "Battery.Modules.09", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0BB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0BB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU10_MINVOLT", "name": "HV battery module 10 min voltage", "group": "Battery.Modules.10", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU10_MAXVOLT", "name": "HV battery module 10 max voltage", "group": "Battery.Modules.10", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU10_MINTEMP", "name": "HV battery module 10 min temperature", "group": "Battery.Modules.10", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU10_MAXTEMP", "name": "HV battery module 10 max temperature", "group": "Battery.Modules.10", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0C3",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0C3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU11_MINVOLT", "name": "HV battery module 11 min voltage", "group": "Battery.Modules.11", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU11_MAXVOLT", "name": "HV battery module 11 max voltage", "group": "Battery.Modules.11", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU11_MINTEMP", "name": "HV battery module 11 min temperature", "group": "Battery.Modules.11", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU11_MAXTEMP", "name": "HV battery module 11 max temperature", "group": "Battery.Modules.11", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0CB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0CB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU12_MINVOLT", "name": "HV battery module 12 min voltage", "group": "Battery.Modules.12", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU12_MAXVOLT", "name": "HV battery module 12 max voltage", "group": "Battery.Modules.12", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU12_MINTEMP", "name": "HV battery module 12 min temperature", "group": "Battery.Modules.12", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU12_MAXTEMP", "name": "HV battery module 12 max temperature", "group": "Battery.Modules.12", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DB",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU13_MINVOLT", "name": "HV battery module 13 min voltage", "group": "Battery.Modules.13", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU13_MAXVOLT", "name": "HV battery module 13 max voltage", "group": "Battery.Modules.13", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU13_MINTEMP", "name": "HV battery module 13 min temperature", "group": "Battery.Modules.13", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU13_MAXTEMP", "name": "HV battery module 13 max temperature", "group": "Battery.Modules.13", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DC",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DC",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU14_MINVOLT", "name": "HV battery module 14 min voltage", "group": "Battery.Modules.14", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU14_MAXVOLT", "name": "HV battery module 14 max voltage", "group": "Battery.Modules.14", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU14_MINTEMP", "name": "HV battery module 14 min temperature", "group": "Battery.Modules.14", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU14_MAXTEMP", "name": "HV battery module 14 max temperature", "group": "Battery.Modules.14", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DD",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DD",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU15_MINVOLT", "name": "HV battery module 15 min voltage", "group": "Battery.Modules.15", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU15_MAXVOLT", "name": "HV battery module 15 max voltage", "group": "Battery.Modules.15", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU15_MINTEMP", "name": "HV battery module 15 min temperature", "group": "Battery.Modules.15", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU15_MAXTEMP", "name": "HV battery module 15 max temperature", "group": "Battery.Modules.15", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B0DE",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B0DE",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU16_MINVOLT", "name": "HV battery module 16 min voltage", "group": "Battery.Modules.16", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU16_MAXVOLT", "name": "HV battery module 16 max voltage", "group": "Battery.Modules.16", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU16_MINTEMP", "name": "HV battery module 16 min temperature", "group": "Battery.Modules.16", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU16_MAXTEMP", "name": "HV battery module 16 max temperature", "group": "Battery.Modules.16", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B10E",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B10E",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU17_MINVOLT", "name": "HV battery module 17 min voltage", "group": "Battery.Modules.17", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU17_MAXVOLT", "name": "HV battery module 17 max voltage", "group": "Battery.Modules.17", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU17_MINTEMP", "name": "HV battery module 17 min temperature", "group": "Battery.Modules.17", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU17_MAXTEMP", "name": "HV battery module 17 max temperature", "group": "Battery.Modules.17", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B10F",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B10F",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU18_MINVOLT", "name": "HV battery module 18 min voltage", "group": "Battery.Modules.18", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU18_MAXVOLT", "name": "HV battery module 18 max voltage", "group": "Battery.Modules.18", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU18_MINTEMP", "name": "HV battery module 18 min temperature", "group": "Battery.Modules.18", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU18_MAXTEMP", "name": "HV battery module 18 max temperature", "group": "Battery.Modules.18", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B110",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B110",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU19_MINVOLT", "name": "HV battery module 19 min voltage", "group": "Battery.Modules.19", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B110_RAW", "name": "Battery module B110 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU19_MAXVOLT", "name": "HV battery module 19 max voltage", "group": "Battery.Modules.19", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU19_MINTEMP", "name": "HV battery module 19 min temperature", "group": "Battery.Modules.19", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU19_MAXTEMP", "name": "HV battery module 19 max temperature", "group": "Battery.Modules.19", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B111",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B111",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU20_MINVOLT", "name": "HV battery module 20 min voltage", "group": "Battery.Modules.20", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B111_RAW", "name": "Battery module B111 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU20_MAXVOLT", "name": "HV battery module 20 max voltage", "group": "Battery.Modules.20", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU20_MINTEMP", "name": "HV battery module 20 min temperature", "group": "Battery.Modules.20", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU20_MAXTEMP", "name": "HV battery module 20 max temperature", "group": "Battery.Modules.20", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B112",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B112",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU21_MINVOLT", "name": "HV battery module 21 min voltage", "group": "Battery.Modules.21", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B112_RAW", "name": "Battery module B112 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU21_MAXVOLT", "name": "HV battery module 21 max voltage", "group": "Battery.Modules.21", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU21_MINTEMP", "name": "HV battery module 21 min temperature", "group": "Battery.Modules.21", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU21_MAXTEMP", "name": "HV battery module 21 max temperature", "group": "Battery.Modules.21", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B113",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B113",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU22_MINVOLT", "name": "HV battery module 22 min voltage", "group": "Battery.Modules.22", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B113_RAW", "name": "Battery module B113 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU22_MAXVOLT", "name": "HV battery module 22 max voltage", "group": "Battery.Modules.22", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU22_MINTEMP", "name": "HV battery module 22 min temperature", "group": "Battery.Modules.22", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU22_MAXTEMP", "name": "HV battery module 22 max temperature", "group": "Battery.Modules.22", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B114",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B114",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU23_MINVOLT", "name": "HV battery module 23 min voltage", "group": "Battery.Modules.23", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B114_RAW", "name": "Battery module B114 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU23_MAXVOLT", "name": "HV battery module 23 max voltage", "group": "Battery.Modules.23", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU23_MINTEMP", "name": "HV battery module 23 min temperature", "group": "Battery.Modules.23", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU23_MAXTEMP", "name": "HV battery module 23 max temperature", "group": "Battery.Modules.23", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.7ED.22B115",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7ED",
+      "request": "22B115",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU24_MINVOLT", "name": "HV battery module 24 min voltage", "group": "Battery.Modules.24", "bit": 0, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_BMS_B115_RAW", "name": "Battery module B115 raw value", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MG_HVBAT_CMU24_MAXVOLT", "name": "HV battery module 24 max voltage", "group": "Battery.Modules.24", "bit": 16, "bits": 16, "divide": 2000, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU24_MINTEMP", "name": "HV battery module 24 min temperature", "group": "Battery.Modules.24", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU24_MAXTEMP", "name": "HV battery module 24 max temperature", "group": "Battery.Modules.24", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": 0, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22B034",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B034",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_EO_T", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22B036",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B036",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 229, "divide": 10000, "min": 0, "max": 1500.7515, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.22B043",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B043",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_FUEL_TANK_LEVEL", "name": "Fuel tank level", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.22B140",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B140",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_KNOCK_SNS_V", "name": "Knock sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 5, "divide": 255, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22B143",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B143",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MISFIRES_C1", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22B144",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B144",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MISFIRES_C2", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22B145",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B145",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MISFIRES_C3", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22B146",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22B146",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MISFIRES_C4", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220112",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220112",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_VPWR", "name": "Control module voltage, engine module", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B001",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B001_RAW", "name": "Engine module B001 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B003",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B003_RAW", "name": "Engine module B003 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B009",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B009_RAW", "name": "Engine module B009 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B010",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B010_RAW", "name": "Engine module B010 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B011",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B011_RAW", "name": "Engine module B011 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B013",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B013",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B013_RAW", "name": "Engine module B013 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B019",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B019_RAW", "name": "Engine module B019 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B026",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B026",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B026_RAW", "name": "Engine module B026 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B029",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B029",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B029_RAW", "name": "Engine module B029 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B041",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B041",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B041_RAW", "name": "Engine module B041 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B042",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B042",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B042_RAW", "name": "Engine module B042 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B045",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B045",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B045_RAW", "name": "Engine module B045 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B046",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B046",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B046_RAW", "name": "Engine module B046 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B049",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B049",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B049_RAW", "name": "Engine module B049 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B052",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B052",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B052_RAW", "name": "Engine module B052 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B058",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B058",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B058_RAW", "name": "Engine module B058 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B059",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B059",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B059_RAW", "name": "Engine module B059 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B061",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B061",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B061_RAW", "name": "Engine module B061 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B101",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B101_RAW", "name": "Engine module B101 raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B110",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B110",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B110_RAW", "name": "Engine module B110 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B111",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B111",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B111_RAW", "name": "Engine module B111 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B120",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B120",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B120_RAW", "name": "Engine module B120 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B401",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B401",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B401_RAW", "name": "Engine module B401 raw value", "group": "ECU", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B705",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B705",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B705_RAW", "name": "Engine module B705 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B712",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B712",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B712_RAW", "name": "Engine module B712 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22B921",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22B921",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_B921_RAW", "name": "Engine module B921 raw value", "group": "ECU", "bit": 0, "bits": 32, "signed": true, "min": -2147483648, "max": 2147483647}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D001",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_ECM_D001_RAW", "name": "Engine module D001 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E101",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_ECM_ODO", "name": "Odometer, engine module", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E1.221940",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221940",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_ATF_T_ECU_10513229", "name": "Transmission fluid temperature, ECU 10513229", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.22B423",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "22B423",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_ATF_T_ECU_10472701_11194479", "name": "Transmission fluid temperature, ECU 10472701 and 11194479", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220112",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220112",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_VPWR", "name": "Control module voltage, transmission module", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B001",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B001",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B001_RAW", "name": "Transmission module B001 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B003",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B003",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B003_RAW", "name": "Transmission module B003 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B009",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B009",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B009_RAW", "name": "Transmission module B009 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B00F",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B00F",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B00F_RAW", "name": "Transmission module B00F raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B011",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B011",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B011_RAW", "name": "Transmission module B011 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B013",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B013",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B013_RAW", "name": "Transmission module B013 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B019",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B019",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B019_RAW", "name": "Transmission module B019 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B025",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B025",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B025_RAW", "name": "Transmission module B025 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B042",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B042",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B042_RAW", "name": "Transmission module B042 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B043",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B043",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B043_RAW", "name": "Transmission module B043 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B047",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B047",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B047_RAW", "name": "Transmission module B047 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B048",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B048",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B048_RAW", "name": "Transmission module B048 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B049",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B049",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B049_RAW", "name": "Transmission module B049 raw value", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B04A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B04A",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B04A_RAW", "name": "Transmission module B04A raw value", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B052",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B052",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B052_RAW", "name": "Transmission module B052 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B056",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B056",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B056_RAW", "name": "Transmission module B056 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B058",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B058",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B058_RAW", "name": "Transmission module B058 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22B059",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22B059",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_B059_RAW", "name": "Transmission module B059 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22D001",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22D001",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_TCM_D001_RAW", "name": "Transmission module D001 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.220112",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "220112",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_7EA_VPWR", "name": "Control module voltage, module 7EA", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22D001",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22D001",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_7EA_D001_RAW", "name": "Module 7EA D001 raw value", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.22D112",
+      "bus": "can11",
+      "tx": "7E3",
+      "request": "22D112",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_DOOR_BOOT", "name": "Door open, boot", "group": "Doors", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_DOOR_BONNET", "name": "Door open, bonnet", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_DOOR_RH_REAR", "name": "Door open, RH rear", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_DOOR_LH_REAR", "name": "Door open, LH rear", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_DOOR_PASSENGER", "name": "Door open, passenger", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "MG_DOOR_DRIVER", "name": "Door open, driver", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E3.7EB.220112",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "220112",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_12V_V", "name": "12V supply voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B120",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B120",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_BRAKE", "name": "Brake pedal", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B18C",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B18C",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_IGN", "name": "Ignition state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B309",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B309",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_MOTOR_COOLANT_T", "name": "Motor coolant temperature", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B401",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B401",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MOTOR_TQ", "name": "Motor torque", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -32767, "min": -32767, "max": 32768, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B402",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B402",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_MOTOR_RPM", "name": "Motor speed", "group": "Drivetrain", "bit": 0, "bits": 16, "add": -32767, "min": -32767, "max": 32768, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B405",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B405",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_MOTOR_T", "name": "Motor temperature", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B580",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B580",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_DCDC_MODE", "name": "DC/DC converter mode", "group": "Electrical", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B581",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B581",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_DCDC_IN_A", "name": "DC/DC converter input current", "group": "Electrical", "bit": 0, "bits": 16, "divide": 10, "add": -3276.7, "min": -3276.7, "max": 3276.8, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B582",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B582",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_DCDC_IN_V", "name": "DC/DC converter input voltage", "group": "Electrical", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B583",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B583",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_DCDC_OUT_A", "name": "DC/DC converter output current", "group": "Electrical", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B584",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B584",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_DCDC_OUT_V", "name": "DC/DC converter output voltage", "group": "Electrical", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B587",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B587",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_DCDC_T_VCU", "name": "DC/DC converter temperature, vehicle control unit", "group": "Electrical", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B703",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B703",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HV_CONTACTOR", "name": "HV contactor closed", "group": "Battery", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B705",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B705",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_V_VCU", "name": "HV battery voltage, vehicle control unit", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B712",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B712",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_CHG_A_LIMIT", "name": "Charge current limit", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B71B",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B71B",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_CHG_CONNECTED", "name": "Charger connected", "group": "Battery", "metric": "pluggedIn", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22B900",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22B900",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_GEAR_RAW", "name": "Gear selector code", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BA00",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BA00",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MG_VSS", "name": "Vehicle reported speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 100, "add": -200, "min": -200, "max": 455.35, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BA40",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BA40",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_PARK_BRAKE", "name": "Parking brake applied", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BB01",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BB01",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_AC_P", "name": "A/C power", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BB05",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BB05",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_AAT", "name": "External temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 80, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BB06",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BB06",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HOOD", "name": "Hood open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22BB91",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22BB91",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_RAD_FAN", "name": "Radiator fan state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22B001",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22B001",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_EVCC_CURRENT_V2", "name": "Current", "group": "Battery.EVCC", "bit": 0, "bits": 16, "divide": 5, "add": -409.6, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22B003",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22B003",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_EVCC_MAX_CURRENT_7E4", "name": "Max current", "group": "Battery.EVCC", "bit": 0, "bits": 8, "multiply": 0.434782609, "min": 0, "max": 110.8695, "unit": "A"},
+        {"id": "MG_EVCC_MAX_CURRENT_V2", "name": "Max Current", "group": "Battery.EVCC", "bit": 0, "bits": 8, "multiply": 0.434782609, "min": 0, "max": 110.869565, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22B00F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22B00F",
+      "interval": 4,
+      "signals": [
+        {"id": "MG_EVCC_CHARGING_7E4", "name": "Charging", "group": "Battery.EVCC", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22B010",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22B010",
+      "interval": 4,
+      "signals": [
+        {"id": "MG_EVCC_VOLTAGE_7E4", "name": "Voltage", "group": "Battery.EVCC", "bit": 0, "bits": 16, "divide": 97, "min": 0, "max": 675.6185, "unit": "V"},
+        {"id": "MG_EVCC_VOLTAGE_V2", "name": "Voltage", "group": "Battery.EVCC", "bit": 0, "bits": 16, "multiply": 0.0103092783, "min": 0, "max": 675.618553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B001",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B001",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU01_MINVOLT_V2", "name": "HV battery module 01 min voltage", "group": "Battery.Modules.01", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU01_MAXVOLT_V2", "name": "HV battery module 01 max voltage", "group": "Battery.Modules.01", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU01_MINTEMP_V2", "name": "HV battery module 01 min temperature", "group": "Battery.Modules.01", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU01_MAXTEMP_V2", "name": "HV battery module 01 max temperature", "group": "Battery.Modules.01", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B009",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B009",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU02_MINVOLT_V2", "name": "HV battery module 02 min voltage", "group": "Battery.Modules.02", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU02_MAXVOLT_V2", "name": "HV battery module 02 max voltage", "group": "Battery.Modules.02", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU02_MINTEMP_V2", "name": "HV battery module 02 min temperature", "group": "Battery.Modules.02", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU02_MAXTEMP_V2", "name": "HV battery module 02 max temperature", "group": "Battery.Modules.02", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B011",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B011",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU03_MINVOLT_V2", "name": "HV battery module 03 min voltage", "group": "Battery.Modules.03", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU03_MAXVOLT_V2", "name": "HV battery module 03 max voltage", "group": "Battery.Modules.03", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU03_MINTEMP_V2", "name": "HV battery module 03 min temperature", "group": "Battery.Modules.03", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU03_MAXTEMP_V2", "name": "HV battery module 03 max temperature", "group": "Battery.Modules.03", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B019",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B019",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU04_MINVOLT_V2", "name": "HV battery module 04 min voltage", "group": "Battery.Modules.04", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU04_MAXVOLT_V2", "name": "HV battery module 04 max voltage", "group": "Battery.Modules.04", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU04_MINTEMP_V2", "name": "HV battery module 04 min temperature", "group": "Battery.Modules.04", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU04_MAXTEMP_V2", "name": "HV battery module 04 max temperature", "group": "Battery.Modules.04", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B021",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B021",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU05_MINVOLT_V2", "name": "HV battery module 05 min voltage", "group": "Battery.Modules.05", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU05_MAXVOLT_V2", "name": "HV battery module 05 max voltage", "group": "Battery.Modules.05", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU05_MINTEMP_V2", "name": "HV battery module 05 min temperature", "group": "Battery.Modules.05", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU05_MAXTEMP_V2", "name": "HV battery module 05 max temperature", "group": "Battery.Modules.05", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B029",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B029",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU06_MINVOLT_V2", "name": "HV battery module 06 min voltage", "group": "Battery.Modules.06", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU06_MAXVOLT_V2", "name": "HV battery module 06 max voltage", "group": "Battery.Modules.06", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU06_MINTEMP_V2", "name": "HV battery module 06 min temperature", "group": "Battery.Modules.06", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU06_MAXTEMP_V2", "name": "HV battery module 06 max temperature", "group": "Battery.Modules.06", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B041",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B041",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_BUS_VOLTAGE_V2", "name": "HV battery bus voltage", "group": "Battery.Internal", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B042",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B042",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MG_HVBAT_VOLTAGE_V2", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.25, "min": 0, "max": 500, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B043",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B043",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MG_HVBAT_CURRENT_V2", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.025, "add": -1000, "min": 0, "max": 250, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B045",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B045",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_RESISTANCE_V2", "name": "HV battery internal resistance", "group": "Battery.Internal", "bit": 0, "bits": 16, "multiply": 0.5, "min": 0, "max": 32767.5}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B047",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B047",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_ERR", "name": "HV battery error code", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B048",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B048",
+      "interval": 1,
+      "signals": [
+        {"id": "MG_HVBAT_CHARGING_V2", "name": "HV battery is charging?", "group": "Battery", "bit": 7, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B049",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B049",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_B", "name": "HV battery main relay B state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B04A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B04A",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_G", "name": "HV battery main relay G state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B052",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B052",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RELAY_P", "name": "HV battery main relay P state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B056",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B056",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_TEMP_V2", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B058",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B058",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_CELL_V_MAX", "name": "Highest cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B059",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B059",
+      "interval": 5,
+      "signals": [
+        {"id": "MG_HVBAT_CELL_V_MIN", "name": "Lowest cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B05C",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B05C",
+      "interval": 60,
+      "signals": [
+        {"id": "MG_HVBAT_COOLANT_TEMP_V2", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B061",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B061",
+      "interval": 30,
+      "signals": [
+        {"id": "MG_HVBAT_SOH_V2", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0A3",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0A3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU07_MINVOLT_V2", "name": "HV battery module 07 min voltage", "group": "Battery.Modules.07", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU07_MAXVOLT_V2", "name": "HV battery module 07 max voltage", "group": "Battery.Modules.07", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU07_MINTEMP_V2", "name": "HV battery module 07 min temperature", "group": "Battery.Modules.07", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU07_MAXTEMP_V2", "name": "HV battery module 07 max temperature", "group": "Battery.Modules.07", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0AB",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0AB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU08_MINVOLT_V2", "name": "HV battery module 08 min voltage", "group": "Battery.Modules.08", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU08_MAXVOLT_V2", "name": "HV battery module 08 max voltage", "group": "Battery.Modules.08", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU08_MINTEMP_V2", "name": "HV battery module 08 min temperature", "group": "Battery.Modules.08", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU08_MAXTEMP_V2", "name": "HV battery module 08 max temperature", "group": "Battery.Modules.08", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0B3",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0B3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU09_MINVOLT_V2", "name": "HV battery module 09 min voltage", "group": "Battery.Modules.09", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU09_MAXVOLT_V2", "name": "HV battery module 09 max voltage", "group": "Battery.Modules.09", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU09_MINTEMP_V2", "name": "HV battery module 09 min temperature", "group": "Battery.Modules.09", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU09_MAXTEMP_V2", "name": "HV battery module 09 max temperature", "group": "Battery.Modules.09", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0BB",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0BB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU10_MINVOLT_V2", "name": "HV battery module 10 min voltage", "group": "Battery.Modules.10", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU10_MAXVOLT_V2", "name": "HV battery module 10 max voltage", "group": "Battery.Modules.10", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU10_MINTEMP_V2", "name": "HV battery module 10 min temperature", "group": "Battery.Modules.10", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU10_MAXTEMP_V2", "name": "HV battery module 10 max temperature", "group": "Battery.Modules.10", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0C3",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0C3",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU11_MINVOLT_V2", "name": "HV battery module 11 min voltage", "group": "Battery.Modules.11", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU11_MAXVOLT_V2", "name": "HV battery module 11 max voltage", "group": "Battery.Modules.11", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU11_MINTEMP_V2", "name": "HV battery module 11 min temperature", "group": "Battery.Modules.11", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU11_MAXTEMP_V2", "name": "HV battery module 11 max temperature", "group": "Battery.Modules.11", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0CB",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0CB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU12_MINVOLT_V2", "name": "HV battery module 12 min voltage", "group": "Battery.Modules.12", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU12_MAXVOLT_V2", "name": "HV battery module 12 max voltage", "group": "Battery.Modules.12", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU12_MINTEMP_V2", "name": "HV battery module 12 min temperature", "group": "Battery.Modules.12", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU12_MAXTEMP_V2", "name": "HV battery module 12 max temperature", "group": "Battery.Modules.12", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0CE",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0CE",
+      "interval": 10,
+      "signals": [
+        {"id": "MG_HVBAT_RANGE_RAW", "name": "HV battery range count", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0DB",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0DB",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU13_MINVOLT_V2", "name": "HV battery module 13 min voltage", "group": "Battery.Modules.13", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU13_MAXVOLT_V2", "name": "HV battery module 13 max voltage", "group": "Battery.Modules.13", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU13_MINTEMP_V2", "name": "HV battery module 13 min temperature", "group": "Battery.Modules.13", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU13_MAXTEMP_V2", "name": "HV battery module 13 max temperature", "group": "Battery.Modules.13", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0DC",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0DC",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU14_MINVOLT_V2", "name": "HV battery module 14 min voltage", "group": "Battery.Modules.14", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU14_MAXVOLT_V2", "name": "HV battery module 14 max voltage", "group": "Battery.Modules.14", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU14_MINTEMP_V2", "name": "HV battery module 14 min temperature", "group": "Battery.Modules.14", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU14_MAXTEMP_V2", "name": "HV battery module 14 max temperature", "group": "Battery.Modules.14", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0DD",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0DD",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU15_MINVOLT_V2", "name": "HV battery module 15 min voltage", "group": "Battery.Modules.15", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU15_MAXVOLT_V2", "name": "HV battery module 15 max voltage", "group": "Battery.Modules.15", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU15_MINTEMP_V2", "name": "HV battery module 15 min temperature", "group": "Battery.Modules.15", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU15_MAXTEMP_V2", "name": "HV battery module 15 max temperature", "group": "Battery.Modules.15", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B0DE",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B0DE",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU16_MINVOLT_V2", "name": "HV battery module 16 min voltage", "group": "Battery.Modules.16", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU16_MAXVOLT_V2", "name": "HV battery module 16 max voltage", "group": "Battery.Modules.16", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU16_MINTEMP_V2", "name": "HV battery module 16 min temperature", "group": "Battery.Modules.16", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU16_MAXTEMP_V2", "name": "HV battery module 16 max temperature", "group": "Battery.Modules.16", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B10E",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B10E",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU17_MINVOLT_V2", "name": "HV battery module 17 min voltage", "group": "Battery.Modules.17", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU17_MAXVOLT_V2", "name": "HV battery module 17 max voltage", "group": "Battery.Modules.17", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU17_MINTEMP_V2", "name": "HV battery module 17 min temperature", "group": "Battery.Modules.17", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU17_MAXTEMP_V2", "name": "HV battery module 17 max temperature", "group": "Battery.Modules.17", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B10F",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B10F",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU18_MINVOLT_V2", "name": "HV battery module 18 min voltage", "group": "Battery.Modules.18", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU18_MAXVOLT_V2", "name": "HV battery module 18 max voltage", "group": "Battery.Modules.18", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU18_MINTEMP_V2", "name": "HV battery module 18 min temperature", "group": "Battery.Modules.18", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU18_MAXTEMP_V2", "name": "HV battery module 18 max temperature", "group": "Battery.Modules.18", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B110",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B110",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU19_MINVOLT_V2", "name": "HV battery module 19 min voltage", "group": "Battery.Modules.19", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU19_MAXVOLT_V2", "name": "HV battery module 19 max voltage", "group": "Battery.Modules.19", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU19_MINTEMP_V2", "name": "HV battery module 19 min temperature", "group": "Battery.Modules.19", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU19_MAXTEMP_V2", "name": "HV battery module 19 max temperature", "group": "Battery.Modules.19", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B111",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B111",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU20_MINVOLT_V2", "name": "HV battery module 20 min voltage", "group": "Battery.Modules.20", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU20_MAXVOLT_V2", "name": "HV battery module 20 max voltage", "group": "Battery.Modules.20", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU20_MINTEMP_V2", "name": "HV battery module 20 min temperature", "group": "Battery.Modules.20", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU20_MAXTEMP_V2", "name": "HV battery module 20 max temperature", "group": "Battery.Modules.20", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B112",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B112",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU21_MINVOLT_V2", "name": "HV battery module 21 min voltage", "group": "Battery.Modules.21", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU21_MAXVOLT_V2", "name": "HV battery module 21 max voltage", "group": "Battery.Modules.21", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU21_MINTEMP_V2", "name": "HV battery module 21 min temperature", "group": "Battery.Modules.21", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU21_MAXTEMP_V2", "name": "HV battery module 21 max temperature", "group": "Battery.Modules.21", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B113",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B113",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU22_MINVOLT_V2", "name": "HV battery module 22 min voltage", "group": "Battery.Modules.22", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU22_MAXVOLT_V2", "name": "HV battery module 22 max voltage", "group": "Battery.Modules.22", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU22_MINTEMP_V2", "name": "HV battery module 22 min temperature", "group": "Battery.Modules.22", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU22_MAXTEMP_V2", "name": "HV battery module 22 max temperature", "group": "Battery.Modules.22", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B114",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B114",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU23_MINVOLT_V2", "name": "HV battery module 23 min voltage", "group": "Battery.Modules.23", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU23_MAXVOLT_V2", "name": "HV battery module 23 max voltage", "group": "Battery.Modules.23", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU23_MINTEMP_V2", "name": "HV battery module 23 min temperature", "group": "Battery.Modules.23", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU23_MAXTEMP_V2", "name": "HV battery module 23 max temperature", "group": "Battery.Modules.23", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22B115",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22B115",
+      "interval": 180,
+      "signals": [
+        {"id": "MG_HVBAT_CMU24_MINVOLT_V2", "name": "HV battery module 24 min voltage", "group": "Battery.Modules.24", "bit": 0, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU24_MAXVOLT_V2", "name": "HV battery module 24 max voltage", "group": "Battery.Modules.24", "bit": 16, "bits": 16, "multiply": 0.0005, "add": 1, "min": 0, "max": 10, "unit": "V"},
+        {"id": "MG_HVBAT_CMU24_MINTEMP_V2", "name": "HV battery module 24 min temperature", "group": "Battery.Modules.24", "bit": 32, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"},
+        {"id": "MG_HVBAT_CMU24_MAXTEMP_V2", "name": "HV battery module 24 max temperature", "group": "Battery.Modules.24", "bit": 40, "bits": 8, "multiply": 0.5, "add": -40, "min": 0, "max": 150, "unit": "°C"}
+      ]
+    }
+  ]
+}

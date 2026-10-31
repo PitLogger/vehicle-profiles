@@ -1,0 +1,297 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/honda/prologue",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Honda",
+    "model": "Prologue",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Honda-Prologue",
+    "file": "signalsets/v3/default.json",
+    "revision": "66fc770d573099f14fa91e2d1c9cc214250da790",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "DA17.17.222414",
+      "bus": "can29",
+      "tx": "18DA17F1",
+      "rx": "18DAF117",
+      "request": "222414",
+      "interval": 1,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_C", "name": "Traction battery current", "description": "Signed pack current from the drive-motor/power-electronics controller (negative = charging). Confirmed -22.75 A at a steady 9.22 kW AC charge and +0.9 A accessory draw in Ready. Same register family as Chevy Bolt 7E1 222414.", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1000, "max": 1000, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA17.17.222429",
+      "bus": "can29",
+      "tx": "18DA17F1",
+      "rx": "18DAF117",
+      "request": "222429",
+      "interval": 3600,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_NOM_V", "name": "Traction battery nominal voltage", "description": "Constant rated (nominal) pack voltage, 352.1 V on a 2025 LYRIQ - identical while charging at 70% SOC and at rest at 80% SOC, so it is not a live measurement. Duplicates at 2428/242D/2434/2489.", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA1D.2233E5",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "request": "2233E5",
+      "interval": 10,
+      "signals": [
+        {"id": "PROLOGUE_12V_V", "name": "12V battery voltage", "description": "12 V system voltage from the Drive Motor Control Module (matches Chevrolet-Equinox-EV DA1D 2233E5). Note: LYRIQ command_support docs list this DID as HV pack voltage - on-vehicle it reads 13.1-13.9 V under DC-DC float and does not track pack voltage.", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA28.224A7A|fc=1,c=14",
+      "bus": "can29",
+      "tx": "14DA28F1",
+      "request": "224A7A",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PROLOGUE_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "PROLOGUE_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "PROLOGUE_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "PROLOGUE_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA28.224A7C|fc=1,c=14",
+      "bus": "can29",
+      "tx": "14DA28F1",
+      "request": "224A7C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PROLOGUE_BP", "name": "Brake pressure", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 100, "add": -1000, "min": -13800, "max": 11700, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA28.224C2D|fc=1,c=14",
+      "bus": "can29",
+      "tx": "14DA28F1",
+      "request": "224C2D",
+      "interval": 0.1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PROLOGUE_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 220, "divide": 10000, "min": -720.896, "max": 720.8739, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA28.224C2F|fc=1,c=14",
+      "bus": "can29",
+      "tx": "14DA28F1",
+      "request": "224C2F",
+      "interval": 0.1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PROLOGUE_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+      ]
+    },
+    {
+      "id": "DA28.224C30|fc=1,c=14",
+      "bus": "can29",
+      "tx": "14DA28F1",
+      "request": "224C30",
+      "interval": 0.1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PROLOGUE_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+      ]
+    },
+    {
+      "id": "DA40.40.2240E5",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "2240E5",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_COOL_T1", "name": "Traction battery coolant temperature 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA40.40.2240E6",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "2240E6",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_COOL_T2", "name": "Traction battery coolant temperature 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA40.40.224124",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "224124",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_T_B", "name": "Traction battery temperature sensor B", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA40.40.224127",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "224127",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_T_A", "name": "Traction battery temperature sensor A", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA40.40.224149",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "224149",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_EVSE_PILOT_C", "name": "Charge station pilot current", "description": "J1772 pilot-advertised AC current limit. Read 38.8 A on a 9.2 kW EVSE while plugged; snaps to a 10.0 A default when unplugged.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA40.40.22416C",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "22416C",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_GRP1_V", "name": "Traction battery group 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA40.40.22416D",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "22416D",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_GRP2_V", "name": "Traction battery group 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA40.40.22416E",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "22416E",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_GRP3_V", "name": "Traction battery group 3 voltage", "description": "~51 V battery groups; rise under charge, fall under load, and read 0 with the vehicle off (live measurements behind the contactors).", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA40.40.22434F",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "22434F",
+      "interval": 5,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_T", "name": "Traction battery temperature", "description": "Same encoding as Chevy Bolt 7E4 22434F.", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA40.40.22448F",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "22448F",
+      "interval": 30,
+      "signals": [
+        {"id": "PROLOGUE_ODO", "name": "Odometer", "description": "u32/64 km. Verified against the dash to the mile (2,031,186/64 = 31,737 km = 19,720 mi). 22415B returns the same register.", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 64, "min": 0, "max": 671088, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA40.40.225005",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "225005",
+      "interval": 15,
+      "signals": [
+        {"id": "PROLOGUE_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA40.40.225006",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "225006",
+      "interval": 15,
+      "signals": [
+        {"id": "PROLOGUE_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA40.40.225007",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "225007",
+      "interval": 15,
+      "signals": [
+        {"id": "PROLOGUE_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA40.40.225008",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "225008",
+      "interval": 15,
+      "signals": [
+        {"id": "PROLOGUE_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DACB.2227C6",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "2227C6",
+      "interval": 0.5,
+      "signals": [
+        {"id": "PROLOGUE_SOC_HD", "name": "State of charge, high resolution", "description": "A high resolution measure of the battery pack's remaining state of charge.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DACB.222AF5",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "222AF5",
+      "interval": 1,
+      "signals": [
+        {"id": "PROLOGUE_HVBAT_C_V_AVG", "name": "Cell voltage, average", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"},
+        {"id": "PROLOGUE_HVBAT_C_V_MIN", "name": "Cell voltage, minimum", "group": "Battery", "bit": 16, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"},
+        {"id": "PROLOGUE_HVBAT_C_V_MAX", "name": "Cell voltage, maximum", "group": "Battery", "bit": 32, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DACB.222B43",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "222B43",
+      "interval": 1,
+      "signals": [
+        {"id": "PROLOGUE_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

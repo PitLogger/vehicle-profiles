@@ -1,0 +1,1125 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/land-rover/lr4",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Land Rover",
+    "model": "LR4",
+    "years": null,
+    "generations": [{"name": "Discovery 4 (L319)", "from": 2010, "to": 2016}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Land-Rover-LR4",
+    "file": "signalsets/v3/default.json",
+    "revision": "5df704aa1246d1ff46fef83590ed801155750b6a",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "726.22FD2A",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22FD2A",
+      "interval": 1,
+      "signals": [
+        {"id": "LR4_BRAKE", "name": "Brake", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "726.72E.220202",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "220202",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_726_0202_RAW", "name": "726 0202 raw", "description": "The only non-identification DID ever found on module 726, from a sweep of 0000-03FF. Has only ever returned 00.", "group": "ECU", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22DD09",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD09",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_VSS_726", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "732.22D928",
+      "bus": "can11",
+      "tx": "732",
+      "request": "22D928",
+      "interval": 10,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "LR4_GEAR_SELECTOR", "name": "Gear selector", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "7": "Sport"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "7": "Sport"}}
+      ]
+    },
+    {
+      "id": "761.769.22197C",
+      "bus": "can11",
+      "tx": "761",
+      "rx": "769",
+      "request": "22197C",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_197C_RAW", "name": "197C raw", "description": "Undecoded. Nine distinct values in fourteen samples, the most variable unmined DID on the truck.", "group": "ECU", "hidden": true, "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "761.769.22D11C",
+      "bus": "can11",
+      "tx": "761",
+      "rx": "769",
+      "request": "22D11C",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_D11C_RAW", "name": "D11C raw", "description": "Undecoded. Ranges 0x3A to 0x41, which would be a plausible temperature.", "group": "ECU", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "792.79A.222A32",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A32",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A32_RAW", "name": "2A32 raw", "description": "A counter, not a constant. Held 404720 across 19 samples taken over a single morning and was written off; nine hours and 111 km later it read 420200. 2A32 through 2A37 all advance. What they count is unknown - 2A32 gained 126 per km, 2A33 4.3, 2A34 8.6, 2A35 19.5, 2A36 0.8, 2A37 0.009 - and pinning it needs several samples within one drive, which is why these now poll at 120s.", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "792.79A.222A33",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A33",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A33_RAW", "name": "2A33 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "792.79A.222A34",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A34",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A34_RAW", "name": "2A34 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "792.79A.222A35",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A35",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A35_RAW", "name": "2A35 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "792.79A.222A36",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A36",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A36_RAW", "name": "2A36 distance counter", "group": "Tires", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "792.79A.222A37",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A37",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_2A37_RAW", "name": "2A37 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "792.79A.222A38",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A38",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_2A38_RAW", "name": "2A38 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "792.79A.222A39",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A39",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_2A39_RAW", "name": "2A39 raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "792.79A.222A3A",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A3A",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_2A3A_RAW", "name": "2A3A raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "792.79A.222A3B",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A3B",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_2A3B_RAW", "name": "2A3B raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "792.79A.222A3C",
+      "bus": "can11",
+      "tx": "792",
+      "rx": "79A",
+      "request": "222A3C",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_2A3C_RAW", "name": "2A3C raw", "group": "ECU", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "795.221E8A",
+      "bus": "can11",
+      "tx": "795",
+      "request": "221E8A",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_REAR_DIFF_TEMP", "name": "Locking diff oil temp", "group": "Drivetrain", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 150, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "795.79D.221E88",
+      "bus": "can11",
+      "tx": "795",
+      "rx": "79D",
+      "request": "221E88",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_1E88_RAW", "name": "1E88 raw", "description": "Undecoded rear differential DID. Flat at 0000 on every sample so far; a lock cycle is the test.", "group": "Drivetrain", "hidden": true, "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "795.79D.221E89",
+      "bus": "can11",
+      "tx": "795",
+      "rx": "79D",
+      "request": "221E89",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_1E89_RAW", "name": "1E89 raw", "description": "Undecoded rear differential DID. Flat at 09C4 on every sample so far.", "group": "Drivetrain", "hidden": true, "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7D3.7DB.222B12",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "222B12",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_SUSPENSION_2B12", "name": "Suspension height offset", "group": "Suspension", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B00",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B00",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_3B00_RAW", "name": "3B00 raw", "description": "Undecoded. Reads 0x03 in 111 of 113 samples; the exception is 0x103, once, with the truck sitting at Access. Bit 8 looks like a height-event flag, and 3B02 carries a bit-8 flag that behaves the same way.", "group": "Suspension", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B01",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B01",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_RIDE_HEIGHT_STATE", "name": "Ride height state", "description": "Runs in parallel with the ride height mode PID and agrees with it. All three observed bits are measured against the front height sensor: 0x100 at a front reading around 110 (Normal), 0x400 around 85 with the truck at its highest (Off-Road), 0x800 at 133 with it at its lowest (Access). Remember the sensor is inverted. Bit 9 (0x200) sits between Normal and Off-Road and has never been seen in 142 samples; the held-Access mode, where the lower button is held and the truck stays down, is the obvious candidate and has never been captured.", "group": "Suspension", "bit": 0, "bits": 32, "values": {"256": "Normal", "1024": "Off-Road", "2048": "Access"}, "valueDescriptions": {"256": "Normal", "1024": "Off-Road", "2048": "Access"}}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B02",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B02",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_3B02_B0", "name": "3B02 byte 1", "group": "Suspension", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "LR4_3B02_B1", "name": "3B02 byte 2", "group": "Suspension", "hidden": true, "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "LR4_3B02_B2", "name": "3B02 byte 3", "group": "Suspension", "hidden": true, "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "LR4_3B02_B3", "name": "3B02 byte 4", "group": "Suspension", "hidden": true, "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B03",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B03",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SUSPENSION_PRES_FR", "name": "Suspension pressure front right", "group": "Suspension", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B04",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B04",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SUSPENSION_PRES_FL", "name": "Suspension pressure front left", "group": "Suspension", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B05",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B05",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SUSPENSION_PRES_RR", "name": "Suspension pressure rear right", "group": "Suspension", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B06",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B06",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SUSPENSION_PRES_RL", "name": "Suspension pressure rear left", "group": "Suspension", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B07",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B07",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SUSPENSION_COMPRESSOR", "name": "Compressor activity", "group": "Suspension", "bit": 0, "bits": 16, "min": 0, "max": 65535, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B08",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B08",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_3B08_RAW", "name": "3B08 raw", "description": "Undecoded. Reads 0x00 in 130 of 131 samples; the exception is 0x01, once, with Off-Road engaged and the truck at its highest. One sample is not a decode, but it is not dead either.", "group": "Suspension", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B0B",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B0B",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_3B0B_RAW", "name": "3B0B raw", "description": "Undecoded suspension DID, narrow range around 0x3D5.", "group": "Suspension", "hidden": true, "bit": 0, "bits": 16, "min": 0, "max": 65535, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B3C",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B3C",
+      "interval": 10,
+      "signals": [
+        {"id": "LR4_RIDE_HEIGHT", "name": "Ride height mode", "description": "A bitfield, not an ordinal: bit 0 Normal, bit 1 Off-Road, bit 2 Access. 0x0D is 0x01|0x04|0x08 and has only been seen with the truck part-way between Normal and Access, so bit 3 reads as movement rather than a mode of its own. Bit 3 has never been seen set on its own, which is where a held-Access mode would most likely appear.", "group": "Suspension", "bit": 0, "bits": 8, "values": {"1": "Normal", "2": "Off-Road", "4": "Access", "13": "In Transit"}, "valueDescriptions": {"1": "Normal", "2": "Off-Road", "4": "Access", "13": "In Transit"}}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B4D",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B4D",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_3B4D_RAW", "name": "3B4D raw", "description": "Terrain Response candidate, and back in contention. It held a constant 0x00 across 236 samples and was written off as dead; the first short drive on which the off-road features were deliberately exercised produced 0x04, 0x01 and 0x00 within eight minutes. It does not track the ride height mode PID, so it is reporting something else. Needs one sample per selectable terrain mode to map.", "group": "Suspension", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B71",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B71",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_RIDE_HEIGHT_FRONT", "name": "Front height sensor, inverted", "description": "Inverted: a falling value means the truck is rising.", "group": "Suspension", "bit": 0, "bits": 8, "min": 0, "max": 255, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.223B72",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "223B72",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_RIDE_HEIGHT_REAR", "name": "Rear height sensor, inverted", "description": "Inverted: a falling value means the truck is rising.", "group": "Suspension", "bit": 0, "bits": 8, "min": 0, "max": 255, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7D3.7DB.22D11A",
+      "bus": "can11",
+      "tx": "7D3",
+      "rx": "7DB",
+      "request": "22D11A",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_D11A_RAW", "name": "D11A raw", "description": "Was called Suspension Module Voltage and scaled to volts. It is not battery voltage: across 221 paired samples its raw range spans 57 to 105, an 84% swing, while control module voltage moved only 12.51 to 14.75, an 18% swing, and the implied scale scatters by 9%. The old scaling also put it at 16.8 V, which no 12 V system reaches. Best correlation found so far is 0.58 against compressor activity, which is not enough to name it. Undecoded until something fits.", "group": "Suspension", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033E",
+      "interval": 30,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "LR4_FUEL_RAIL_P", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "min": 0, "max": 30000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E6",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_MEASURED_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F2",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_ENGINE_OIL_VOLUME_GAL", "name": "Oil volume", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.0264172, "min": 0, "max": 6.7363, "unit": "gal"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F3",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_ENGINE_OIL_TEMP", "name": "Oil temp", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 120, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220520",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220520",
+      "interval": 30,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "LR4_CHARGE_AIR_TEMP", "name": "Charge air temp", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F401",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F401",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_MONITOR_STATUS", "name": "Monitor status raw", "description": "SAE J1979 PID 01: MIL state, stored DTC count and readiness monitors. Listed as supported by the ECM's own bitmask but never once requested. Top byte is the DTC count with the MIL bit; a non-zero value here is the cheapest possible check for a stored fault.", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F403",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_FUEL_SYS_B2", "name": "Fuel system status B2", "description": "Bank 2 fuel system status. Has mirrored bank 1 on every sample so far.", "group": "Fuel", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "LR4_FUEL_SYS_B1", "name": "Fuel system status B1", "group": "Fuel", "bit": 0, "bits": 8, "values": {"1": "OpenLoopCold", "2": "ClosedLoop", "4": "OpenLoopLoad", "8": "OpenLoopFault", "16": "ClosedLoopFault"}, "valueDescriptions": {"1": "Open loop, engine cold", "2": "Closed loop", "4": "Open loop, load or decel fuel cut", "8": "Open loop, system fault", "16": "Closed loop with a feedback fault"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 5,
+      "signals": [
+        {"id": "LR4_LOAD_CALC", "name": "Calculated load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F405",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F405",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_SHRTFT1", "name": "Short term fuel trim B1", "group": "Fuel", "metric": "shortTermFuelTrim", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_LONGFT1", "name": "Long term fuel trim B1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F408",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F408",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SHRTFT2", "name": "Short term fuel trim B2", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F409",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F409",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_LONGFT2", "name": "Long term fuel trim B2", "description": "Bank 2. There is no long-term fuel trim metric slot, so this does not surface as a connectable.", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 5,
+      "signals": [
+        {"id": "LR4_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 2,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "LR4_RPM", "name": "Engine speed", "group": "Engine", "metric": "engineSpeed", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 2,
+      "signals": [
+        {"id": "LR4_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40E",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_SPARK_ADV", "name": "Timing advance", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_IAT", "name": "Intake air temp", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F410",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F410",
+      "interval": 2,
+      "signals": [
+        {"id": "LR4_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F411",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F411",
+      "interval": 10,
+      "signals": [
+        {"id": "LR4_THROTTLE_POS", "name": "Throttle position", "group": "Engine", "metric": "throttlePosition", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F413",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F413",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_O2_SENSORS_PRESENT", "name": "O2 sensors present raw", "description": "SAE J1979 PID 13, a bitmask of which oxygen sensor positions exist. Answered 0x77 on its one logged sample. Static, but it says exactly which O2 PIDs are worth probing.", "group": "ECU", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F415",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F415",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_O2_S2_VOLTAGE", "name": "O2 voltage B1S2", "group": "Engine", "bit": 0, "bits": 8, "divide": 200, "min": 0, "max": 1.275, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41C",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_OBD_STANDARD", "name": "Emissions standard raw", "description": "SAE J1979 PID 1C, which OBD standard this ECM claims. Supported per the bitmask, never requested. Static.", "group": "ECU", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_RUN_TIME", "name": "Run time since engine start", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_MIL_DIST", "name": "Distance with MIL on", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F423",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F423",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_FUEL_RAIL_GAUGE_P", "name": "Fuel rail gauge pressure", "description": "SAE J1979 PID 23, ranging 29 to 197 bar, the right shape for this engine's direct injection rail. It is not the same measurement as the proprietary DID 033E: across 157 paired samples the ratio between them drifts from 0.41 to 0.56 rather than holding constant, and in one stretch this PID sat pinned near 197 bar while 033E climbed from 79 to 110 bar. A fixed scaling error would give a fixed ratio, so these are two different quantities - plausibly a commanded rail target against a measured one. Worth sampling hard under load to separate them.", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42E",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_EVAP_PURGE", "name": "Commanded evap purge", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_FUEL_LEVEL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_WARMUPS", "name": "Warm-ups since codes cleared", "description": "Saturated. The PID is a single byte and has been pinned at 255 for as long as it has been logged, so it says only that codes were cleared more than 255 warm-up cycles ago.", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 300,
+      "signals": [
+        {"id": "LR4_DIST_SINCE_CLR", "name": "Distance since codes cleared", "group": "Trips", "metric": "distanceSinceDTCsCleared", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F433",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F433",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 15,
+      "signals": [
+        {"id": "LR4_O2_LAMBDA", "name": "O2 lambda B1S1", "group": "Engine", "metric": "o2Lambda", "bit": 0, "bits": 16, "divide": 32768, "min": 0, "max": 1.9999, "invalidAtOrBelow": 0},
+        {"id": "LR4_O2_CURRENT", "name": "O2 pump current B1S1", "description": "The second word of SAE J1979 PID 34 is sensor current, not voltage; the voltage variants are PIDs 24 to 2B, which this ECM does not support. Read as voltage it sat at a meaningless flat 4.0 across 28,432 samples. Read as current it spans -0.95 to +1.36 mA with a mean of +0.16, which is what a wideband pump cell should do.", "group": "Engine", "bit": 16, "bits": 16, "divide": 256, "add": -128, "min": -128, "max": 127.996, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F438",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F438",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_O2_LAMBDA_B2", "name": "O2 lambda B2S1", "description": "Bank 2 sensor 1. Rails at FFFF on roughly half of samples; treat those as invalid rather than lean.", "group": "Engine", "bit": 0, "bits": 16, "divide": 32768, "min": 0, "max": 1.999},
+        {"id": "LR4_O2_CURRENT_B2", "name": "O2 pump current B2S1", "description": "Bank 2 counterpart. See O2 Pump Current B1S1 - PID 38 reports current, not voltage.", "group": "Engine", "bit": 16, "bits": 16, "divide": 256, "add": -128, "min": -128, "max": 127.996, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_CAT_TEMP_B1", "name": "Catalyst temp B1S1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43D",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_CAT_TEMP_B2", "name": "Catalyst temp B2S1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F441",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F441",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_MONITOR_THIS_CYCLE", "name": "Monitor status this cycle raw", "description": "SAE J1979 PID 41, readiness monitors for the current drive cycle. Supported per the ECM bitmask, never requested. Changes across a drive as monitors complete, so unlike PID 01 it should not be static.", "group": "ECU", "hidden": true, "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F442",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F442",
+      "interval": 60,
+      "answeredIn": [2016],
+      "signals": [
+        {"id": "LR4_BAT_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_LOAD_ABS", "name": "Absolute load", "group": "Engine", "metric": "absoluteEngineLoad", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F444",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F444",
+      "interval": 3,
+      "signals": [
+        {"id": "LR4_EQ_RATIO", "name": "Equivalence ratio", "group": "Engine", "metric": "commandedLambda", "bit": 0, "bits": 16, "divide": 32768, "min": 0, "max": 1.9999}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F445",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F445",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_THROTTLE_REL", "name": "Relative throttle position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F446",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F446",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_AMBIENT_TEMP", "name": "Ambient air temp", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F447",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F447",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_THROTTLE_B", "name": "Absolute throttle position B", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F449",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F449",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_PEDAL_D", "name": "Accelerator pedal D", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F44A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F44A",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_PEDAL_E", "name": "Accelerator pedal E", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F44C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F44C",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_THROTTLE_CMD", "name": "Commanded throttle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F451",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F451",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_FUEL_TYPE", "name": "Fuel type raw", "description": "SAE J1979 PID 51. Supported per the ECM bitmask, never requested. Static, one sample settles it.", "group": "Fuel", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F456",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F456",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_SEC_O2_TRIM_B1", "name": "Long term secondary O2 trim B1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F458",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F458",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_SEC_O2_TRIM_B2", "name": "Long term secondary O2 trim B2", "description": "SAE J1979 PID 58, the bank 2 counterpart to PID 56. Previously carried as an undecoded raw byte and briefly deleted on the mistaken reading that its single logged reply was a negative response; 62F458 7F is a positive reply meaning -0.78%.", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F466",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F466",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_MAF_A", "name": "Mass air flow A", "description": "One of two intake tract sensors. Across 1,474 samples A and B sum to 0.88 of the single MAF PID by least squares, but the scatter between individual pairs is large enough that the split between the two is not trustworthy at this polling rate. Use the single MAF PID for anything quantitative.", "group": "Engine", "bit": 8, "bits": 16, "divide": 32, "min": 0, "max": 2047.96, "unit": "g/s"},
+        {"id": "LR4_MAF_B", "name": "Mass air flow B", "description": "One of two intake tract sensors. See Mass Air Flow A.", "group": "Engine", "bit": 24, "bits": 16, "divide": 32, "min": 0, "max": 2047.96, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F467",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F467",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_CAC_COOLANT_TEMP", "name": "Charge cooler coolant temp", "description": "The AJ126 runs a separate low-temperature circuit for the supercharger intercooler. Over 135 paired samples this sat 11.7 C above ambient and 24 C below charge air temperature, which is where that circuit belongs. Sensor 1 of the same PID was dropped: it matched the engine coolant PID to 0.0 C.", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F468",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F468",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_IAT_1", "name": "Intake air temp sensor 1", "description": "Pre-supercharger inlet air, measured 9.2 C above ambient over 135 samples.", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "LR4_IAT_2", "name": "Intake air temp sensor 2", "description": "Post-supercharger charge air. Tracks the proprietary charge air temperature DID to within 2.7 C on average, so it is close to redundant with it.", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F470",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F470",
+      "interval": 120,
+      "signals": [
+        {"id": "LR4_BOOST_A", "name": "Manifold pressure, fine", "description": "SAE J1979 PID 70 channel A. Over 525 samples it tracks the 1 kPa manifold pressure PID to within 1.3 kPa on average, so it is the same measurement at 1/32 kPa resolution, not a separate pre-throttle sensor. The other three channels the PID defines read a constant zero and have been removed.", "group": "Engine", "bit": 24, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.221E12",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E12",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_GEAR_CMD", "name": "Gear, commanded", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.221E1F",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221E1F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_GEAR_ENGAGED", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.221F12",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "221F12",
+      "interval": 5,
+      "signals": [
+        {"id": "LR4_TQ_CONV_T", "name": "Torque converter temperature", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 2, "add": -40, "min": -40, "max": 470, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E68",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E68",
+      "interval": 60,
+      "signals": [
+        {"id": "LR4_1E68_RAW", "name": "1E68 raw", "description": "Undecoded transmission DID, neighbour of the gearbox temperature.", "group": "Transmission", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255, "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E69",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E69",
+      "interval": 30,
+      "signals": [
+        {"id": "LR4_GEARBOX_OIL_TEMP", "name": "Gearbox temp", "group": "Drivetrain", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 120, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E6A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E6A",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_1E6A_RAW", "name": "1E6A raw", "description": "Undecoded transmission DID, neighbour of the gearbox temperature.", "group": "Drivetrain", "hidden": true, "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22DD01",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22DD01",
+      "interval": 600,
+      "signals": [
+        {"id": "LR4_DD01_RAW", "name": "DD01 raw", "group": "Drivetrain", "hidden": true, "bit": 0, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "7E6.222B06",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "222B06",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E6.222B07",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "222B07",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E6.222B08",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "222B08",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E6.222B09",
+      "bus": "can11",
+      "tx": "7E6",
+      "request": "222B09",
+      "interval": 0.25,
+      "signals": [
+        {"id": "LR4_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    }
+  ]
+}

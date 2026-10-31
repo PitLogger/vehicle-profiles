@@ -1,0 +1,1152 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/daihatsu/hijet",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Daihatsu",
+    "model": "Hijet",
+    "years": null,
+    "generations": [{"name": "Tenth Generation (S500)", "from": 2014}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Daihatsu-Hijet",
+    "file": "signalsets/v3/default.json",
+    "revision": "a66646f95e256b57689c5fc370ebdf3a7d61d3b9",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7B0.7B8.2103",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "HIJET_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "HIJET_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "HIJET_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "HIJET_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2105",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2105",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_DECEL", "name": "Deceleration", "group": "Orientation", "bit": 0, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"},
+        {"id": "HIJET_DECEL_2", "name": "Deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2106",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2106",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_YAW_1", "name": "Yaw rate, sensor 1", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127},
+        {"id": "HIJET_YAW_2", "name": "Yaw rate, sensor 2", "group": "Orientation", "bit": 8, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2107",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2107",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_WHEEL_CYLINDER_PRESSURE", "name": "Wheel cylinder pressure", "group": "Tires", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211D",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_RESERVOIR_WARNING_SW", "name": "Reservoir warning", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_MAIN_IDLE_SW", "name": "Main idle", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211F",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_STOP_LIGHT_SW", "name": "Stop light", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_PARKING_BRAKE_SW", "name": "Parking brake", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2121",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2121",
+      "interval": 0.2,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "HIJET_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "multiply": 1.35, "min": 0, "max": 323.85, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213C",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213C",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_STOP_LIGHT_RELAY", "name": "Stop light relay", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213D",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213D",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_ABS_WARN", "name": "Anti-lock brake warning light", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_BRAKE_WARN", "name": "Brake warning light", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_SLIP_WARN", "name": "Slip indicator light", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_BUZZER", "name": "Buzzer", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_ECB_WARN", "name": "Electronically controlled brake warning light", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2142",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2142",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_FR_WHEEL_ACCELERATION", "name": "Front right wheel acceleration", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "HIJET_FL_WHEEL_ACCELERATION", "name": "Front left wheel acceleration", "group": "Movement", "bit": 8, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "HIJET_RR_WHEEL_ACCELERATION", "name": "Rear right wheel acceleration", "group": "Movement", "bit": 16, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "HIJET_RL_WHEEL_ACCELERATION", "name": "Rear left wheel acceleration", "group": "Movement", "bit": 24, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2146",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2146",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_ZP_DEC", "name": "Zero point of deceleration", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "HIJET_ZP_DEC2", "name": "Zero point of deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "HIJET_ZP_YAW", "name": "Zero point of yaw rate, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "HIJET_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "HIJET_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "HIJET_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "HIJET_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2148",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2148",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_FR_REGEN_REQUEST", "name": "Regenerative request", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "HIJET_FR_REGEN_OPERATION", "name": "Regenerative operation", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2158",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2158",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_REGEN_COOPERATION", "name": "Regenerative braking cooperation", "group": "Battery", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215A",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215A",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_TRC_TRAC__CTRL", "name": "Traction control, status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_TRC_TRAC__ENGINE_CTRL", "name": "Traction control, engine status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_TRC_TRAC__BRAKE_CTRL", "name": "Traction control, brake status", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_FR_WHEEL_VSC_CTRL", "name": "Front right wheel vehicle stability control status", "group": "Tires", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_FL_WHEEL_VSC_CTRL", "name": "Front left wheel vehicle stability control status", "group": "Tires", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RR_WHEEL_VSC_CTRL", "name": "Rear right wheel vehicle stability control status", "group": "Tires", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RL_WHEEL_VSC_CTRL", "name": "Rear left wheel vehicle stability control status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215F",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215F",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_FR_WHEEL_ABS_CTRL", "name": "Front right wheel ABS status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_FL_WHEEL_ABS_CTRL", "name": "Front left wheel ABS status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RR_WHEEL_ABS_CTRL", "name": "Rear right wheel ABS status", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RL_WHEEL_ABS_CTRL", "name": "Rear left wheel ABS status", "group": "Tires", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RR_WHEEL_EBD_CTRL", "name": "Rear right wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RL_WHEEL_EBD_CTRL", "name": "Rear left wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_BA_CTRL_STATUS", "name": "Brake assist status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_PBA_CTRL_STATUS", "name": "Predictive brake assist status", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A1",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_ZERO_POINT_OF_YAW_RATE", "name": "Zero point of yaw rate", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A3",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A3",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_SLA_SOLENOID_CURRENT", "name": "Main relay a, solenoid current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "HIJET_SLR_SOLENOID_CURRENT", "name": "Main relay r solenoid current", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "HIJET_SSC_SOLENOID_CURRENT", "name": "Service contactor solenoid current", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "HIJET_SCC_SOLENOID_CURRENT", "name": "Charge contactor current", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "HIJET_SMC_SOLENOID_CURRENT", "name": "Main connector solenoid current", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "HIJET_SRC_SOLENOID_CURRENT", "name": "Relay control solenoid current", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A6",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A6",
+      "interval": 60,
+      "signals": [
+        {"id": "HIJET_INSPECTION_MODE", "name": "Inspection mode", "group": "Details", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BC",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BC",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_HAZARD_SWITCH_HISTORY", "name": "Hazard switch history", "group": "Lights", "bit": 2, "bits": 1, "values": {"0": "INCOMPLETE", "1": "COMPLETE"}, "valueDescriptions": {"0": "Incomplete", "1": "Complete"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BE",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BE",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_FR_WHEEL_SPEED_OPEN", "name": "Front right wheel speed?", "group": "Movement", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_FL_WHEEL_SPEED_OPEN", "name": "Front left wheel speed?", "group": "Movement", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_RR_WHEEL_SPEED_OPEN", "name": "Rear right wheel speed?", "group": "Movement", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_RL_WHEEL_SPEED_OPEN", "name": "Rear left wheel speed?", "group": "Movement", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_YAW_RATE_OPEN_ERROR", "name": "Yaw rate, error?", "group": "Orientation", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_DECELERATION_OPEN", "name": "Deceleration open", "group": "Orientation", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_MASTER_CYLINDER_OPEN", "name": "Master cylinder open", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_STROKE_OPEN", "name": "Stroke open", "group": "Engine", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_FR_WHEEL_CYLINDER_OPEN", "name": "Front right wheel cylinder open", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_ACCUMULATOR_OPEN", "name": "Accumulator open", "group": "Engine", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_HV_COMM_OPEN", "name": "Hydraulic valve, communication open", "group": "Engine", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2112",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2112",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_TAIL_CANCEL_LIGHT", "name": "Tail cancel SW", "group": "Lights", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_P_SEATBELT_BUCKLE_LIGHT", "name": "P-seatbelt buckle SW", "group": "Lights", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_CHECK_ENGINE_LIGHT", "name": "Check engine SW", "group": "Lights", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_EOP_LIGHT", "name": "Oil pressure switch", "group": "Lights", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2113",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2113",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2121",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2121",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_VSS_7C0", "name": "Speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2123",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2123",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_ECT_7C0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2129",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2129",
+      "interval": 5,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "HIJET_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 500, "divide": 3785, "min": 0, "max": 21, "unit": "gal"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2141",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2141",
+      "interval": 30,
+      "signals": [
+        {"id": "HIJET_OIL_CHANGE_ODO", "name": "Distance since oil change", "group": "Fluids", "bit": 0, "bits": 8, "multiply": 2514600, "divide": 15625, "min": 0, "max": 41038.272, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2168",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2168",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_RHEOSTAT", "name": "Rheostat", "description": "Higher values are brighter", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A1",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_KEY_REMIND_SOUND", "name": "Key remind sound", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A7",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A7",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_SEAT_BELT_BEEP_DRIVER", "name": "Seat belt beep, driver", "group": "Seatbelts", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_SEAT_BELT_BEEP_PASSENGER", "name": "Seat belt beep, passenger", "group": "Seatbelts", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_SEAT_BELT_BEEP_REMINDER", "name": "Seat belt beep, reminder", "group": "Seatbelts", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21AC",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21AC",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_REVERSE_BEEP", "name": "Reverse beep", "group": "Seatbelts", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["On", "Off"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221021",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221021",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_BATTERY_VOLTAGE_7C0", "name": "B+ battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221022",
+      "interval": 30,
+      "signals": [
+        {"id": "HIJET_FUEL_LEVEL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L", "invalidAtOrAbove": 655.35}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
+        {"id": "HIJET_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIJET_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HIJET_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIJET_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HIJET_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "HIJET_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HIJET_ENGINE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "s"},
+        {"id": "HIJET_THROTTLE_SENSOR_POSITION", "name": "Throttle sensor position", "group": "Engine", "bit": 112, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_THROTTLE_SENSOR_VOLT", "name": "Throttle sensor voltage, 1", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_THROTTLE_SENSOR_2_VOLT", "name": "Throttle sensor voltage, 2", "group": "Engine", "bit": 128, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_ACCEL_SENS_1_VOLT", "name": "Accelerator sensor voltage, 1", "group": "Control", "bit": 136, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_ACCEL_SENS_2_VOLT", "name": "Accelerator sensor voltage, 2", "group": "Control", "bit": 144, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_THROTTLE_MOTOR_DUTY", "name": "Throttle motor duty", "group": "Engine", "bit": 152, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "HIJET_WARMUP_CYCLES_DTC_CLEARED", "name": "Warm-up cycles since DTCs cleared", "group": "Engine", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_TIME_SINCE_DTC_CLEARED", "name": "Time since DTCs cleared", "group": "Engine", "bit": 184, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "HIJET_BATTERY_VOLTAGE_7E0", "name": "Battery voltage", "group": "Battery", "bit": 200, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_SHORT_FT_B1", "name": "Short term fuel trim, bank 1", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 16, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.21, "unit": "%"},
+        {"id": "HIJET_LONG_FT_B1", "name": "Long term fuel trim, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.21, "unit": "%"},
+        {"id": "HIJET_SHORT_FT_B2", "name": "Short term fuel trim, bank 2", "group": "Engine", "metric": "shortTermFuelTrim", "bit": 32, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.21, "unit": "%"},
+        {"id": "HIJET_LONG_FT_B2", "name": "Long term fuel trim, bank 2", "group": "Engine", "bit": 40, "bits": 8, "multiply": 200, "divide": 256, "add": -100, "min": -100, "max": 99.21, "unit": "%"},
+        {"id": "HIJET_IGN_ADVANCE", "name": "Ignition timing advance", "group": "Engine", "bit": 48, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_LAMBDA_TARGET", "name": "Target air-fuel equivalence ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "HIJET_AF_LAMBDA_B1S1", "name": "Air-fuel equivalence ratio, bank 1 sensor 1", "group": "Engine", "metric": "o2Lambda", "bit": 16, "bits": 16, "multiply": 1.99, "divide": 65535, "min": 0, "max": 1.99},
+        {"id": "HIJET_AFS_V_B1S1", "name": "Air-fuel sensor voltage, bank 1 sensor 1", "group": "Engine", "bit": 32, "bits": 16, "multiply": 7.99, "divide": 65535, "min": 0, "max": 7.99, "unit": "V"},
+        {"id": "HIJET_AFS_I_B1S1", "name": "Air-fuel sensor current, bank 1 sensor 1", "group": "Engine", "bit": 96, "bits": 16, "divide": 256, "add": -128, "min": -128, "max": 127.99, "unit": "mA"},
+        {"id": "HIJET_O2S_B1S2", "name": "Oxygen sensor voltage, bank 1 sensor 2", "group": "Engine", "bit": 144, "bits": 8, "multiply": 5, "divide": 1000, "min": 0, "max": 1.275, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2105",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2105",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_CAT_T_B1S1", "name": "Catalyst temperature, bank 1 sensor 1", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"},
+        {"id": "HIJET_CAT_T_B1S2", "name": "Catalyst temperature, bank 1 sensor 2", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2106",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2106",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
+        {"id": "HIJET_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_MISFIRE_MONITOR_AVAIL", "name": "Misfire monitor available?", "group": "DTCs", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_EGR_VVT_MONITOR_AVAIL", "name": "EGR/VVT monitor available?", "group": "DTCs", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_O2S_A_FS_HEATER_MONITOR_AVAIL", "name": "O2S heater monitor available?", "group": "DTCs", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_O2S_A_FS_MONITOR_AVAIL", "name": "O2S monitor available?", "group": "DTCs", "bit": 18, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_A_C_MONITOR_AVAIL", "name": "A/C monitor available?", "group": "DTCs", "bit": 19, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_2ND_AIR_MONITOR_AVAIL", "name": "2nd air monitor available?", "group": "DTCs", "bit": 20, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_EVAP_MONITOR_AVAIL", "name": "EVAP monitor available?", "group": "DTCs", "bit": 21, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_HEATED_CATALYST_MONITOR_AVAIL", "name": "Heated catalyst monitor available?", "group": "DTCs", "bit": 22, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_CATALYST_MONITOR_AVAIL", "name": "Catalyst monitor available?", "group": "DTCs", "bit": 23, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_EGR_VVT_MONITOR_INCMPL", "name": "EGR/VVT monitor incomplete?", "group": "DTCs", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_O2S_A_FS_HEATER_MONITOR_INCMPL", "name": "O2S heater monitor incomplete?", "group": "DTCs", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_O2S_A_FS_MONITOR_INCMPL", "name": "O2S monitor incomplete?", "group": "DTCs", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_A_C_MONITOR_INCMPL", "name": "A/C monitor incomplete?", "group": "DTCs", "bit": 27, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_2ND_AIR_MONITOR_INCMPL", "name": "2nd air monitor incomplete?", "group": "DTCs", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_EVAP_MONITOR_ICMPL", "name": "EVAP monitor_icmpl", "group": "DTCs", "bit": 29, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_HEATED_CATALYST_MONITOR_INCMPL", "name": "Heated catalyst monitor incomplete?", "group": "DTCs", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_CATALYST_MONITOR_INCMPL", "name": "Catalyst monitor incomplete?", "group": "DTCs", "bit": 31, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "HIJET_MILON_RUN_DISTANCE", "name": "MIL ON run distance", "group": "DTCs", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "HIJET_RUNNING_TIME_FROM_MIL_ON", "name": "Running time from MIL ON", "group": "DTCs", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_LTFT1_21", "name": "Long-term fuel trim, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.7809803922, "add": -100, "min": -100, "max": 99.15, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_VSS_21", "name": "Vehicle speed", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210E",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_SPARKADV_21", "name": "Ignition advance", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210F",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2110",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2110",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_MAF_21", "name": "Mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2111",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2111",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_THROTTLE_21", "name": "Throttle position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_O2S11_V", "name": "Oxygen sensor voltage, bank 1 sensor 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.0049960784, "min": 0, "max": 1.27, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "answeredIn": [2023],
+      "signals": [
+        {"id": "HIJET_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2124",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2124",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_COMMUNICATION_WITH_HV", "name": "Communication with HV", "group": "Climate", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_COMMUNICATION_WITH_BRAKE", "name": "Communication with brake", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_COMM_WITH_AIR_CONDITIONER", "name": "Communication with air conditioner", "group": "Climate", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_COMM_WITH_VALVEMATIC_COMM", "name": "Communication with valvematic", "group": "Climate", "bit": 6, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2125",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2125",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_POWER_STEERING_SIGNAL", "name": "Power steering", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_STOP_LIGHT_SWITCH", "name": "Stop light", "group": "Lights", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_CRUISE_CONTROL_LIVE_BRAKE_CANCEL_SWITCH", "name": "Cruise control live brake cancel", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_STARTER_SIGNAL", "name": "Starter signal", "group": "Control", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_STARTER_CONTROL", "name": "Starter control", "group": "Control", "bit": 12, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ELECTRICAL_LOAD_SIGNAL_1", "name": "Electrical load signal 1", "group": "Control", "bit": 16, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ELECTRICAL_LOAD_SIGNAL_2", "name": "Electrical load signal 2", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SHIFT_SW_STATUS_P_RANGE", "name": "Shift SW status, parking", "group": "Control", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SHIFT_SW_STATUS_R_RANGE", "name": "Shift SW status, reverse", "group": "Control", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SHIFT_SW_STATUS_N_RANGE", "name": "Shift SW status, neutral", "group": "Control", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SHIFT_SW_STATUS_D_RANGE", "name": "Shift SW status, drive", "group": "Control", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SPORTS_MODE_SELECTION_SW", "name": "Sports mode selection", "group": "Control", "bit": 32, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SPORTS_SHIFT_UP_SW", "name": "Sports shift up", "group": "Control", "bit": 33, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SPORTS_SHIFT_DOWN_SW", "name": "Sports shift down", "group": "Control", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_PATTERN_SWITCH_PWR_M", "name": "Pattern switch", "group": "Control", "bit": 42, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_NEUTRAL_POSITION_SW_SIGNAL", "name": "Neutral position", "group": "Control", "bit": 53, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_TC_TERMINAL", "name": "TC", "group": "Control", "bit": 61, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_A_C_COMPRESSOR", "name": "A/C compressor", "group": "Control", "bit": 64, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2128",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2128",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
+      ]
+    },
+    {
+      "id": "7E0.7E8.212E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "212E",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_EVAP_PURGE_DUTY_7E0", "name": "Evaporative purge duty", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2131",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2131",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_VALVEMATIC_CURRENT", "name": "Valvematic current angle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 512, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2137",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_INITIAL_ECT", "name": "Initial engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 531, "divide": 850, "add": -40, "min": -40, "max": 119.3},
+        {"id": "HIJET_INITIAL_IAT", "name": "Initial intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"},
+        {"id": "HIJET_KNOCK_CORRECT_LEARN", "name": "Knock correct learn value", "group": "Engine", "bit": 16, "bits": 16, "divide": 32, "add": -1024, "min": -1024, "max": 1023, "unit": "°"},
+        {"id": "HIJET_KNOCK_ADJUST_7E0", "name": "Knock adjust", "group": "Engine", "bit": 32, "bits": 16, "multiply": 2048, "divide": 65535, "add": -1024, "min": -1024, "max": 1024, "unit": "°"},
+        {"id": "HIJET_KNOCK_FEEDBACK_7E0", "name": "Knock feedback", "group": "Engine", "bit": 48, "bits": 16, "multiply": 2048, "divide": 65535, "add": -1024, "min": -1024, "max": 1024, "unit": "°"},
+        {"id": "HIJET_EVAP_PURGE_FLOW", "name": "Evaporative purge flow", "group": "Engine", "bit": 64, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.99, "unit": "%"},
+        {"id": "HIJET_IG_OFF_ELAPSED_TIME", "name": "IG OFF elapsed time", "group": "Engine", "bit": 80, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "min"},
+        {"id": "HIJET_DIST_BATT_CABLE", "name": "Dist battery cable disconnect", "group": "Engine", "bit": 96, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "HIJET_IMMOBILIZER_ON", "name": "Immobilizer communication on", "group": "Engine", "bit": 120, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_FUEL_CUT_7E0", "name": "Fuel cut", "group": "Fuel", "bit": 121, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_CLOSED_THROTTLE_POS_ON", "name": "Closed throttle position switch on", "group": "Engine", "bit": 125, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_FC_TAU_ON", "name": "Fuel cut TAU on", "group": "Engine", "bit": 127, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2139",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2139",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_ACIS_VSV_ON", "name": "Acoustic control induction system vacuum switching valve on", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_EVAP_PURGE_VSV_ON", "name": "Evaporative purge vacuum switching valve on", "group": "Engine", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_FUEL_PMP_SPD_STAT_ON", "name": "Fuel pump/speed status on", "group": "Fuel", "bit": 14, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_VARIABLE_VLV_TIM_1_ON", "name": "Variable valve timing control status 1 on", "group": "Engine", "bit": 22, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_TQ_CONV_TE1_ON", "name": "Torque converter and TE1 on", "group": "Transmission", "bit": 30, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ELEC_FAN_MOTOR_ON", "name": "Electric fan motor on", "group": "Engine", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ACC_RELAY_ON", "name": "Accessory relay on", "group": "Engine", "bit": 46, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_STARTER_RELAY_ON", "name": "Starter relay on", "group": "Engine", "bit": 47, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213A",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_VALVEMATIC_TGT_ANG", "name": "Valvematic, target angle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 512, "min": 0, "max": 639.9, "unit": "°"},
+        {"id": "HIJET_PURGE_CUT_VSV_DUTY", "name": "Purge cut vacuum switching valve duty", "group": "Engine", "bit": 16, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "HIJET_F_HEATER_DUTY_B1S1", "name": "A/F heater duty bank 1 sensor 1", "group": "Engine", "bit": 32, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "HIJET_O2_HEATER_CURR_VAL", "name": "O2 heater current val bank 1 sensor 2", "group": "Engine", "bit": 48, "bits": 16, "divide": 13107, "min": 0, "max": 4.999, "unit": "A"},
+        {"id": "HIJET_O2_HEATER_B1S2", "name": "O2 heater b1s2_active", "group": "Engine", "bit": 68, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213C",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_INJ_VOL_CYL_1", "name": "Injection volume per 10 injections, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 32000000, "min": 0, "max": 0.002, "unit": "L"},
+        {"id": "HIJET_INJ_DUR_CYL_1", "name": "Injection duration for cylinder 1", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"},
+        {"id": "HIJET_TOT_FT_1", "name": "Total fuel trim, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 256, "add": -50, "min": -50, "max": 49.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.213E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "213E",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_CAT_T_B1S2_V2", "name": "Catalyst temperature, bank 1 sensor 2, variant 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2141",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2141",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_THROTTLE_SENS_OPEN_1", "name": "Throttle sensor open position 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_SENS_OPEN_2", "name": "Throttle sensor open position 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_ACCEL_FULLY_CLOSE_1", "name": "Accelerator fully close learn 1", "group": "Movement", "bit": 16, "bits": 8, "multiply": 125, "divide": 256, "min": 0, "max": 124.5, "unit": "°"},
+        {"id": "HIJET_ACCEL_FULLY_CLOSE_2", "name": "Accelerator fully close learn 2", "group": "Movement", "bit": 24, "bits": 8, "multiply": 125, "divide": 256, "min": 0, "max": 124.5, "unit": "°"},
+        {"id": "HIJET_THROTTLE_POS_COMMAND", "name": "Throttle position command", "group": "Engine", "bit": 32, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_ACCEL_POS", "name": "Accelerator position", "group": "Movement", "bit": 40, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
+        {"id": "HIJET_BM_V", "name": "+BM voltage", "group": "Battery", "bit": 56, "bits": 16, "multiply": 5, "divide": 4096, "min": 0, "max": 79.998, "unit": "V"},
+        {"id": "HIJET_ACCEL_SENS_OUT_1", "name": "Accelerator sensor out, number 1", "group": "Movement", "bit": 72, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_ACCEL_SENS_OUT_2", "name": "Accelerator sensor out, number 2", "group": "Movement", "bit": 80, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_POS_NUMBER_1", "name": "Throttle position, number 1", "group": "Engine", "bit": 88, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_POS_NUMBER_2", "name": "Throttle position, number 2", "group": "Engine", "bit": 96, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_REQUIRE_POS", "name": "Throttle require position", "group": "Engine", "bit": 104, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_FULLY_CLOSE", "name": "Throttle fully close learn", "group": "Engine", "bit": 112, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "HIJET_THROTTLE_MOTOR_DUTY_OPEN", "name": "Throttle motor duty, open", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "HIJET_THROTTLE_MOTOR_DUTY_CLOSE", "name": "Throttle motor duty, close", "group": "Engine", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "HIJET_THROTTLE_MOTOR", "name": "Throttle motor current", "group": "Engine", "bit": 136, "bits": 8, "multiply": 5, "divide": 64, "min": 0, "max": 19.9, "unit": "A"},
+        {"id": "HIJET_SYSTEM_GUARD_ON", "name": "System guard on", "group": "Engine", "bit": 144, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_OPEN_SIDE_ON", "name": "Open side malfunction on", "group": "Engine", "bit": 145, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ACTUATOR_POWER_SUP_ON", "name": "Actuator power supply on", "group": "Engine", "bit": 146, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_ACCEL_IDLE_POS_ON", "name": "Accelerator idle position on", "group": "Movement", "bit": 148, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_THROTTLE_IDLE_POS_ON", "name": "Throttle idle position on", "group": "Engine", "bit": 149, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2142",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2142",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_BAT_CURRENT", "name": "Battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 50, "divide": 13107, "add": -125, "min": -125, "max": 124.9, "unit": "A"},
+        {"id": "HIJET_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 6513.5, "unit": "°C"},
+        {"id": "HIJET_ALT_VOL_NON_ACTIVE", "name": "Alt voltage - non active test", "group": "Engine", "bit": 32, "bits": 16, "multiply": 5, "divide": 4096, "min": 0, "max": 79.998, "unit": "V"},
+        {"id": "HIJET_ALT_VOL_ACTIVE_TEST", "name": "Alt voltage - active test", "group": "Engine", "bit": 48, "bits": 16, "multiply": 5, "divide": 4096, "min": 0, "max": 79.998, "unit": "V"},
+        {"id": "HIJET_ALTERNATOR_OUTPUT", "name": "Alternator output duty", "group": "Engine", "bit": 64, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2144",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2144",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_VARIABLE_VLV_TIM_AIM_1", "name": "Variable valve timing aim angle 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1333, "divide": 218450, "min": 0, "max": 399, "unit": "%"},
+        {"id": "HIJET_VARIABLE_VLV_TIM_OIL_1", "name": "Variable valve timing oil control valve duty 1", "group": "Engine", "bit": 16, "bits": 16, "multiply": 0.0061020829, "min": 0, "max": 399, "unit": "%"},
+        {"id": "HIJET_VARIABLE_VLV_TIM_1", "name": "Variable valve timing change angle 1", "group": "Engine", "bit": 32, "bits": 16, "multiply": 0.0097642481, "min": 0, "max": 639, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2145",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2145",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_MISFIRE_RPM_7E0", "name": "Misfire RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "HIJET_MISFIRE_LOAD_7E0", "name": "Misfire load", "group": "Engine.Misfires", "bit": 16, "bits": 8, "multiply": 4, "divide": 256, "min": 0, "max": 3.98},
+        {"id": "HIJET_CYL1_MISFIRE_CNT", "name": "Cylinder #1 misfire count", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_CYL2_MISFIRE_CNT", "name": "Cylinder #2 misfire count", "group": "Engine.Misfires", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_CYL3_MISFIRE_CNT", "name": "Cylinder #3 misfire count", "group": "Engine.Misfires", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_CYL4_MISFIRE_CNT", "name": "Cylinder #4 misfire count", "group": "Engine.Misfires", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_ALL_CYLINDERS_MISFIRE_CNT", "name": "All cylinders misfire count", "group": "Engine.Misfires", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_IGNITION_TRIG_CNT", "name": "Ignition trigger count", "group": "Control", "bit": 64, "bits": 16, "min": 0, "max": 65535},
+        {"id": "HIJET_MISFIRE_MARGIN_7E0", "name": "Misfire margin", "group": "Engine.Misfires", "bit": 80, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2147",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2147",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_EGR_STEP_POSITION", "name": "Exhaust gas recirculation step position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2149",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2149",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_REQ_ENG_TQ", "name": "Requested engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383},
+        {"id": "HIJET_HIGH_V_TGT_RPM", "name": "High voltage, target engine speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "HIJET_ACT_ENG_TQ", "name": "Actual engine torque", "group": "Engine", "bit": 24, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "Nm"},
+        {"id": "HIJET_ENG_RUN_TIME_UP_255", "name": "Engine run time, up to 255 sec. only", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "s"},
+        {"id": "HIJET_REQ_ENG_RUN_TIME", "name": "Request engine run time", "group": "Engine", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "HIJET_JUDGE_TIME_ENG_IGN", "name": "Judge time engine ignition", "group": "Engine", "bit": 56, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "HIJET_JUDGE_TIME_ENG", "name": "Judge time engine output", "group": "Engine", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "s"},
+        {"id": "HIJET_IDLE_SPD_CTRL_L_S", "name": "Idle speed control learning value, l/s", "group": "Engine", "bit": 72, "bits": 16, "multiply": 0.0012206912, "min": 0, "max": 79.99},
+        {"id": "HIJET_ENG_INDEPENDENT_CTRL", "name": "Engine independent control", "group": "Engine", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_REQ_WARM_UP", "name": "Request warm-up", "group": "Engine", "bit": 89, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_RACING_OPERATION", "name": "Racing operation", "group": "Engine", "bit": 90, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_ENG_INDEPENDENT", "name": "Engine independent", "group": "Engine", "bit": 91, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_F_C_ENG_STOP_REQ", "name": "Fuel cut for engine stop request", "group": "Engine", "bit": 92, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_IDLE_SPD_CTRL", "name": "Idle speed control learning", "group": "Engine", "bit": 93, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2151",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2151",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
+        {"id": "HIJET_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HIJET_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2152",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2152",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_IDLE_SPARK_ADVN_CTRL_1", "name": "Idle spark advance control 1", "group": "Engine", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "HIJET_IDLE_SPARK_ADVN_CTRL_2", "name": "Idle spark advance control 2", "group": "Engine", "bit": 8, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "HIJET_IDLE_SPARK_ADVN_CTRL_3", "name": "Idle spark advance control 3", "group": "Engine", "bit": 16, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "HIJET_IDLE_SPARK_ADVN_CTRL_4", "name": "Idle spark advance control 4", "group": "Engine", "bit": 24, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
+        {"id": "HIJET_MIN_RPM", "name": "Minimum engine speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "HIJET_ENG_STALL_CTRL_FB", "name": "Engine stall control FB flow", "group": "Engine", "bit": 48, "bits": 16, "multiply": 5, "divide": 4096, "add": -40, "min": -40, "max": 39.99},
+        {"id": "HIJET_FUEL_CUT_TIME", "name": "Fuel cut time", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 537, "divide": 512, "min": 0, "max": 68734.9511}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2154",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2154",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_RPM_CYL_1", "name": "Engine speed of cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "HIJET_RPM_CYL_2", "name": "Engine speed of cylinder 2", "group": "Movement", "bit": 16, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "HIJET_RPM_CYL_3", "name": "Engine speed of cylinder 3", "group": "Movement", "bit": 32, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "HIJET_RPM_CYL_4", "name": "Engine speed of cylinder 4", "group": "Movement", "bit": 48, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"},
+        {"id": "HIJET_AV_RPM_ALL_CYL", "name": "Average engine speed of all cylinders", "group": "Movement", "metric": "engineSpeed", "bit": 64, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2181",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2181",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_SPD_NT", "name": "Turbine speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"},
+        {"id": "HIJET_NT_SENS_V", "name": "Turbine speed sensor voltage", "group": "Battery", "bit": 8, "bits": 16, "divide": 13107, "min": 0, "max": 4.999, "unit": "V"},
+        {"id": "HIJET_SPD_NIN", "name": "Input shaft speed", "group": "Engine", "bit": 24, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"},
+        {"id": "HIJET_SPD_NOUT", "name": "Output shaft speed", "group": "Engine", "bit": 32, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"},
+        {"id": "HIJET_NOUT_SENS_V", "name": "Output speed sensor voltage", "group": "Battery", "bit": 40, "bits": 16, "divide": 13107, "min": 0, "max": 4.999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2183",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2183",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_TRANS_OIL_PRESS", "name": "Transmission oil pressure calibration, complete", "group": "Transmission", "bit": 1, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_G_SENS_CALIBRATION", "name": "G sensor calibration, complete", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_G_SENS_LEARNING", "name": "G sensor learning value", "group": "Engine", "bit": 8, "bits": 16, "multiply": 5, "divide": 4096, "min": 0, "max": 79.998, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B2",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_KNOCK_ADJUST", "name": "Knock adjust", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"},
+        {"id": "HIJET_KNOCK_FEEDBACK", "name": "Knock feedback", "group": "Engine", "bit": 16, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21BD",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_TRANS_OUT_RPM", "name": "Transmission output shaft speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21BE",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_CVT_OIL_P", "name": "Continuously variable transmission oil pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "min": 0, "max": 10200, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21C1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21C1",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_CYLINDER_NUMBER", "name": "Cylinder number", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_DESTINATION", "name": "Destination", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "HIJET_MODEL_YEAR", "name": "Model year", "group": "Engine", "bit": 128, "bits": 8, "add": 1900, "min": 1900, "max": 2155}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D3",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HIJET_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21D9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21D9",
+      "interval": 5,
+      "signals": [
+        {"id": "HIJET_ATF_T_V_14", "name": "Transmission fluid temperature, variant 14", "group": "Transmission", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"},
+        {"id": "HIJET_ATF_T_V_21", "name": "Transmission fluid temperature, variant 21", "group": "Transmission", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HIJET_ATF_T_V_5", "name": "Transmission fluid temperature, variant 5", "group": "Transmission", "bit": 32, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"},
+        {"id": "HIJET_ATF_T_V_8", "name": "Transmission fluid temperature, variant 8", "group": "Transmission", "bit": 48, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DA",
+      "interval": 0.25,
+      "signals": [
+        {"id": "HIJET_GEAR_V2", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21DD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21DD",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_CVT_LEARNED", "name": "Continuously variable transmission learning complete", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E1",
+      "interval": 3600,
+      "signals": [
+        {"id": "HIJET_CODES_INCLUDE", "name": "Codes, include history", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E3",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_CHECK_MODE_ON", "name": "Check mode on", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_SPD_TEST_RESULT", "name": "Vehicle speed sensor test result, incomplete", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_MIS_TEST_RESULT", "name": "Misfire test result, incomplete", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "HIJET_OXS1_FS2_TEST_RESULT", "name": "OXS1, A/FS2 test result, incomplete", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_F_TEST_RESULTS_1", "name": "A/F test results 1, incomplete", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E4",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_INJ_PW", "name": "Injector pulse width", "group": "Engine", "bit": 0, "bits": 8, "multiply": 163, "divide": 1275, "min": 0, "max": 32.6, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E6",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_IDLE_CTRL", "name": "Idle control", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_FUEL_CUT", "name": "Fuel cut", "group": "Fuel", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21E7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21E7",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_EGR_STEP", "name": "Exhaust gas recirculation valve step", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21ED",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21ED",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_EGR_T", "name": "Exhaust gas recirculation temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 53, "divide": 85, "min": 0, "max": 159, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21F3",
+      "interval": 1,
+      "signals": [
+        {"id": "HIJET_FUEL_INJ_TIM", "name": "Fuel injection timing", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 16, "divide": 125, "min": 0, "max": 32.64, "unit": "ms"},
+        {"id": "HIJET_INJ_WIDTH", "name": "Injector pulse width", "group": "Engine", "bit": 16, "bits": 8, "multiply": 16, "divide": 125, "min": 0, "max": 32.64, "unit": "ms"}
+      ]
+    }
+  ]
+}

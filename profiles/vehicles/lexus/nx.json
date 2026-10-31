@@ -1,0 +1,1572 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/lexus/nx",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Lexus",
+    "model": "NX",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (AZ10)", "from": 2015, "to": 2021},
+      {"name": "Second Generation (AZ20)", "from": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Lexus-NX",
+    "file": "signalsets/v3/default.json",
+    "revision": "b7e88177e776d64648e4483825cfacb8fbd571e9",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "700.708.220103",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "220103",
+      "interval": 30,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ENG_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.221002",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221002",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_V_700", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "multiply": 12.207, "divide": 10000, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.221017",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221017",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INJ_VOL", "name": "Injection volume", "group": "Engine", "bit": 0, "bits": 16, "divide": 3200, "min": 0, "max": 20, "unit": "L"}
+      ]
+    },
+    {
+      "id": "700.708.221018",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221018",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INJECTOR_PORT", "name": "Injector port", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "700.708.221019",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221019",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INJECTION", "name": "Injection", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "DIRECT", "2": "BOTH"}, "valueDescriptions": {"1": "Direct", "2": "Both"}}
+      ]
+    },
+    {
+      "id": "700.708.22102A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22102A",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_A_F_RATIO_LEARNED_IDLE_BANK_1", "name": "A/F ratio learned idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_A_F_RATIO_LEARNED_LOW_BANK_1", "name": "A/F ratio learned low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_A_F_RATIO_LEARNED_MID_1_BANK_1", "name": "A/F ratio learned mid 1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_A_F_RATIO_LEARNED_MID_2_BANK_1", "name": "A/F ratio learned mid 2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_A_F_RATIO_LEARNED_HIGH_BANK_1", "name": "A/F ratio learned high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221041",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221041",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ECT_IGN", "name": "Engine coolant temperature, at ignition", "group": "Engine", "bit": 0, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"},
+        {"id": "NX_ECT_INIT", "name": "Engine coolant temperature, initial", "group": "Engine", "bit": 8, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221043",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221043",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EWP_TARGET_VSS", "name": "Electric water pump target speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "NX_EWP_RPM", "name": "Electric water pump RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.221046",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221046",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_COOLING_FAN_DUTY_RATIO", "name": "Cooling fan duty ratio", "group": "Engine", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22105C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105C",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_KNOCK_CORRECT_LEARNED_VALUE", "name": "Knock correction, learned value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023},
+        {"id": "NX_KNOCK_FEEDBACK_VALUE", "name": "Knock feedback value", "group": "Engine", "bit": 16, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023}
+      ]
+    },
+    {
+      "id": "700.708.22105E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105E",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ECU_INTERNAL_T", "name": "Internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221062",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221062",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EXHAUST_VVT_OCV_CONTROL_DUTY", "name": "Exhaust VVT oil control valve control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 400, "divide": 65535, "min": 0, "max": 400, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22106A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106A",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FUEL_PUMP_DUTY_RATIO", "name": "Fuel pump duty ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0609756098, "min": 0, "max": 3996, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.22106C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106C",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_DIST_SINCE_BAT_DISC", "name": "Distance since last battery cable disconnection", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.22106F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106F",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INTAKE_VVT_TARGET_ANGLE_B1", "name": "Intake VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221071",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221071",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EXHAUST_VVT_TARGET_ANGLE_B1", "name": "Exhaust VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221074",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221074",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "divide": 128, "min": 0, "max": 1000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221078",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221078",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_IDLE_SAC_CYL_1", "name": "Idle spark advance control, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "NX_IDLE_SAC_CYL_2", "name": "Idle spark advance control, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "NX_IDLE_SAC_CYL_3", "name": "Idle spark advance control, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "NX_IDLE_SAC_CYL_4", "name": "Idle spark advance control, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221087",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221087",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "name": "Intake VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221088",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221088",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EXHAUST_VVT_ANGLE_B1", "name": "Exhaust VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221089",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221089",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EXHAUST_VVT_HOLD_LEARN_B1", "name": "Exhaust VVT hold learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "min": 0, "max": 399.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108A",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_VVT_IE_DUTY_RATIO_BANK_1", "name": "Variable valve timing duty ratio, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "add": -200, "min": -200, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108D",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INTAKE_VVT_OVER_RET_LEARN_B1", "name": "Intake VVT most over-retarded learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22108F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108F",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EXHAUST_VVT_OVER_ADV_LEARN_B1", "name": "Exhaust VVT timing most over-advanced learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.2210A2",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A2",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AF_LEARN_IDLE_PORT_B1", "name": "A/F ratio learn value idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_AF_LEARN_LOW_PORT_B1", "name": "A/F ratio learn value low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_AF_LEARN_MID1_PORT_B1", "name": "A/F ratio learn value mid.1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_AF_LEARN_MID2_PORT_B1", "name": "A/F ratio learn value mid.2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "NX_AF_LEARN_HIGH_PORT_B1", "name": "A/F ratio learn value high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.2210A5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A5",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MIS_ALL", "name": "Misfire count, all", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210A7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A7",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MIS_1", "name": "Misfire count, cylinder 1", "group": "Engine.Misfires", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "NX_MIS_2", "name": "Misfire count, cylinder 2", "group": "Engine.Misfires", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "NX_MIS_3", "name": "Misfire count, cylinder 3", "group": "Engine.Misfires", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "NX_MIS_4", "name": "Misfire count, cylinder 4", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210AA",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210AA",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MISFIRE_LOAD_700", "name": "Misfire load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 510, "divide": 255, "min": 0, "max": 510, "unit": "%"},
+        {"id": "NX_MISFIRE_RPM_700", "name": "Misfire RPM", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6375, "divide": 255, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "NX_MISFIRE_MARGIN_700", "name": "Misfire margin", "group": "Engine", "bit": 32, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.2210CD",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210CD",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_LFPS", "name": "Low fuel pressure sensor", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -3276.75, "min": -3276, "max": 3276, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221F3C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3C",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_CAT_T_11", "name": "Catalyst temperature, bank 1 sensor 1", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3E",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_CAT_T_12", "name": "Catalyst temperature, bank 1 sensor 2", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F46",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F46",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AMBIENT_T_700", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F5C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F5C",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F6D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F6D",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HFP_TARGET", "name": "High fuel pressure, target", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "NX_HFP_ACTUAL", "name": "High fuel pressure, actual", "group": "Fuel", "bit": 24, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "NX_LOW_FUEL_PRESSURE", "name": "Low fuel pressure", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.222827",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222827",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ELECTRIC_WATER_PUMP", "name": "Electric water pump", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "min": 0, "max": 10200, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.22282C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22282C",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_COOLANT_VALVE_1_CLOSE", "name": "Coolant water route switching valve 1, closed?", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "700.708.222843",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222843",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_VVT_IE_OPENING_ANGLE_BANK_1", "name": "Variable valve timing opening angle bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.222848",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222848",
+      "interval": 0.5,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EOP_CONTROL_VALVE", "name": "Engine oil pressure control valve", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0762939, "min": 0, "max": 4999.9207, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "701.709.220103",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "220103",
+      "interval": 10,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021, 2023, 2024, 2026],
+      "signals": [
+        {"id": "NX_ODO_V5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "701.709.221614",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221614",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_NC1_SPD", "name": "NC1 speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221616",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221616",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_NSS_SPD", "name": "NSS speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221618",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221618",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_NO_SPD", "name": "NO speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.22161A",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "22161A",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_NT_SPD", "name": "NT speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221622",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221622",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TRANS_SHIFT_ST_RAT_701", "name": "Transmission shift state ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5333, "divide": 21845000, "min": 0, "max": 15.999}
+      ]
+    },
+    {
+      "id": "701.709.221634",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221634",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_SYNCHRONIZE_STROKE", "name": "Synchronize stroke sensor position", "group": "Engine", "bit": 0, "bits": 16, "multiply": 256, "divide": 65535, "min": 0, "max": 256, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "747.74F.220103|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
+      ]
+    },
+    {
+      "id": "747.74F.221814",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221814",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BAT_T_01", "name": "Battery temperature 01", "group": "Battery", "bit": 0, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_02", "name": "Battery temperature 02", "group": "Battery", "bit": 16, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_03", "name": "Battery temperature 03", "group": "Battery", "bit": 32, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_04", "name": "Battery temperature 04", "group": "Battery", "bit": 48, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_05", "name": "Battery temperature 05", "group": "Battery", "bit": 64, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_06", "name": "Battery temperature 06", "group": "Battery", "bit": 80, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_07", "name": "Battery temperature 07", "group": "Battery", "bit": 96, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_08", "name": "Battery temperature 08", "group": "Battery", "bit": 112, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_09", "name": "Battery temperature 09", "group": "Battery", "bit": 128, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_10", "name": "Battery temperature 10", "group": "Battery", "bit": 144, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_11", "name": "Battery temperature 11", "group": "Battery", "bit": 160, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_12", "name": "Battery temperature 12", "group": "Battery", "bit": 176, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_13", "name": "Battery temperature 13", "group": "Battery", "bit": 192, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_14", "name": "Battery temperature 14", "group": "Battery", "bit": 208, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_15", "name": "Battery temperature 15", "group": "Battery", "bit": 224, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "NX_BAT_T_16", "name": "Battery temperature 16", "group": "Battery", "bit": 240, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "747.74F.221819",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221819",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HYBRID_BAT_BLOCK_1_V", "name": "Hybrid battery block 1 average voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "V"},
+        {"id": "NX_HYBRID_BAT_BLOCK_2_V", "name": "Hybrid battery block 2 average voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "V"},
+        {"id": "NX_HYBRID_BAT_BLOCK_3_V", "name": "Hybrid battery block 3 average voltage", "group": "Battery", "bit": 32, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "V"},
+        {"id": "NX_HYBRID_BAT_BLOCK_4_V", "name": "Hybrid battery block 4 average voltage", "group": "Battery", "bit": 48, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "V"},
+        {"id": "NX_HYBRID_BAT_BLOCK_5_V", "name": "Hybrid battery block 5 average voltage", "group": "Battery", "bit": 64, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "747.74F.221824",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221824",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BAT_HEATER_T", "name": "Battery heater temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "747.74F.221825",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221825",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HYBRID_BAT_HEATER_T_2", "name": "Hybrid battery heater temperature 2", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "747.74F.22182E|fc=1",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22182E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HVBAT_C01_V", "name": "HV battery cell #01 voltage", "group": "Battery.Cells", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C02_V", "name": "HV battery cell #02 voltage", "group": "Battery.Cells", "bit": 16, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C03_V", "name": "HV battery cell #03 voltage", "group": "Battery.Cells", "bit": 32, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C04_V", "name": "HV battery cell #04 voltage", "group": "Battery.Cells", "bit": 48, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C05_V", "name": "HV battery cell #05 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C06_V", "name": "HV battery cell #06 voltage", "group": "Battery.Cells", "bit": 80, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C07_V", "name": "HV battery cell #07 voltage", "group": "Battery.Cells", "bit": 96, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C08_V", "name": "HV battery cell #08 voltage", "group": "Battery.Cells", "bit": 112, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C09_V", "name": "HV battery cell #09 voltage", "group": "Battery.Cells", "bit": 128, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C10_V", "name": "HV battery cell #10 voltage", "group": "Battery.Cells", "bit": 144, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C11_V", "name": "HV battery cell #11 voltage", "group": "Battery.Cells", "bit": 160, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C12_V", "name": "HV battery cell #12 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C13_V", "name": "HV battery cell #13 voltage", "group": "Battery.Cells", "bit": 192, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C14_V", "name": "HV battery cell #14 voltage", "group": "Battery.Cells", "bit": 208, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C15_V", "name": "HV battery cell #15 voltage", "group": "Battery.Cells", "bit": 224, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C16_V", "name": "HV battery cell #16 voltage", "group": "Battery.Cells", "bit": 240, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C17_V", "name": "HV battery cell #17 voltage", "group": "Battery.Cells", "bit": 256, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C18_V", "name": "HV battery cell #18 voltage", "group": "Battery.Cells", "bit": 272, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C19_V", "name": "HV battery cell #19 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C20_V", "name": "HV battery cell #20 voltage", "group": "Battery.Cells", "bit": 304, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C21_V", "name": "HV battery cell #21 voltage", "group": "Battery.Cells", "bit": 320, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C22_V", "name": "HV battery cell #22 voltage", "group": "Battery.Cells", "bit": 336, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C23_V", "name": "HV battery cell #23 voltage", "group": "Battery.Cells", "bit": 352, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C24_V", "name": "HV battery cell #24 voltage", "group": "Battery.Cells", "bit": 368, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C25_V", "name": "HV battery cell #25 voltage", "group": "Battery.Cells", "bit": 384, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C26_V", "name": "HV battery cell #26 voltage", "group": "Battery.Cells", "bit": 400, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C27_V", "name": "HV battery cell #27 voltage", "group": "Battery.Cells", "bit": 416, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C28_V", "name": "HV battery cell #28 voltage", "group": "Battery.Cells", "bit": 432, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C29_V", "name": "HV battery cell #29 voltage", "group": "Battery.Cells", "bit": 448, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C30_V", "name": "HV battery cell #30 voltage", "group": "Battery.Cells", "bit": 464, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C31_V", "name": "HV battery cell #31 voltage", "group": "Battery.Cells", "bit": 480, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C32_V", "name": "HV battery cell #32 voltage", "group": "Battery.Cells", "bit": 496, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C33_V", "name": "HV battery cell #33 voltage", "group": "Battery.Cells", "bit": 512, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C34_V", "name": "HV battery cell #34 voltage", "group": "Battery.Cells", "bit": 528, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C35_V", "name": "HV battery cell #35 voltage", "group": "Battery.Cells", "bit": 544, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C36_V", "name": "HV battery cell #36 voltage", "group": "Battery.Cells", "bit": 560, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C37_V", "name": "HV battery cell #37 voltage", "group": "Battery.Cells", "bit": 576, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C38_V", "name": "HV battery cell #38 voltage", "group": "Battery.Cells", "bit": 592, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C39_V", "name": "HV battery cell #39 voltage", "group": "Battery.Cells", "bit": 608, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C40_V", "name": "HV battery cell #40 voltage", "group": "Battery.Cells", "bit": 624, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C41_V", "name": "HV battery cell #41 voltage", "group": "Battery.Cells", "bit": 640, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C42_V", "name": "HV battery cell #42 voltage", "group": "Battery.Cells", "bit": 656, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C43_V", "name": "HV battery cell #43 voltage", "group": "Battery.Cells", "bit": 672, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C44_V", "name": "HV battery cell #44 voltage", "group": "Battery.Cells", "bit": 688, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C45_V", "name": "HV battery cell #45 voltage", "group": "Battery.Cells", "bit": 704, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C46_V", "name": "HV battery cell #46 voltage", "group": "Battery.Cells", "bit": 720, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C47_V", "name": "HV battery cell #47 voltage", "group": "Battery.Cells", "bit": 736, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C48_V", "name": "HV battery cell #48 voltage", "group": "Battery.Cells", "bit": 752, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C49_V", "name": "HV battery cell #49 voltage", "group": "Battery.Cells", "bit": 768, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C50_V", "name": "HV battery cell #50 voltage", "group": "Battery.Cells", "bit": 784, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C51_V", "name": "HV battery cell #51 voltage", "group": "Battery.Cells", "bit": 800, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C52_V", "name": "HV battery cell #52 voltage", "group": "Battery.Cells", "bit": 816, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C53_V", "name": "HV battery cell #53 voltage", "group": "Battery.Cells", "bit": 832, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C54_V", "name": "HV battery cell #54 voltage", "group": "Battery.Cells", "bit": 848, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C55_V", "name": "HV battery cell #55 voltage", "group": "Battery.Cells", "bit": 864, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C56_V", "name": "HV battery cell #56 voltage", "group": "Battery.Cells", "bit": 880, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C57_V", "name": "HV battery cell #57 voltage", "group": "Battery.Cells", "bit": 896, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C58_V", "name": "HV battery cell #58 voltage", "group": "Battery.Cells", "bit": 912, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C59_V", "name": "HV battery cell #59 voltage", "group": "Battery.Cells", "bit": 928, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C60_V", "name": "HV battery cell #60 voltage", "group": "Battery.Cells", "bit": 944, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C61_V", "name": "HV battery cell #61 voltage", "group": "Battery.Cells", "bit": 960, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C62_V", "name": "HV battery cell #62 voltage", "group": "Battery.Cells", "bit": 976, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C63_V", "name": "HV battery cell #63 voltage", "group": "Battery.Cells", "bit": 992, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C64_V", "name": "HV battery cell #64 voltage", "group": "Battery.Cells", "bit": 1008, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C65_V", "name": "HV battery cell #65 voltage", "group": "Battery.Cells", "bit": 1024, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C66_V", "name": "HV battery cell #66 voltage", "group": "Battery.Cells", "bit": 1040, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C67_V", "name": "HV battery cell #67 voltage", "group": "Battery.Cells", "bit": 1056, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C68_V", "name": "HV battery cell #68 voltage", "group": "Battery.Cells", "bit": 1072, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C69_V", "name": "HV battery cell #69 voltage", "group": "Battery.Cells", "bit": 1088, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C70_V", "name": "HV battery cell #70 voltage", "group": "Battery.Cells", "bit": 1104, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C71_V", "name": "HV battery cell #71 voltage", "group": "Battery.Cells", "bit": 1120, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C72_V", "name": "HV battery cell #72 voltage", "group": "Battery.Cells", "bit": 1136, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C73_V", "name": "HV battery cell #73 voltage", "group": "Battery.Cells", "bit": 1152, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C74_V", "name": "HV battery cell #74 voltage", "group": "Battery.Cells", "bit": 1168, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C75_V", "name": "HV battery cell #75 voltage", "group": "Battery.Cells", "bit": 1184, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C76_V", "name": "HV battery cell #76 voltage", "group": "Battery.Cells", "bit": 1200, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C77_V", "name": "HV battery cell #77 voltage", "group": "Battery.Cells", "bit": 1216, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C78_V", "name": "HV battery cell #78 voltage", "group": "Battery.Cells", "bit": 1232, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C79_V", "name": "HV battery cell #79 voltage", "group": "Battery.Cells", "bit": 1248, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C80_V", "name": "HV battery cell #80 voltage", "group": "Battery.Cells", "bit": 1264, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C81_V", "name": "HV battery cell #81 voltage", "group": "Battery.Cells", "bit": 1280, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C82_V", "name": "HV battery cell #82 voltage", "group": "Battery.Cells", "bit": 1296, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C83_V", "name": "HV battery cell #83 voltage", "group": "Battery.Cells", "bit": 1312, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C84_V", "name": "HV battery cell #84 voltage", "group": "Battery.Cells", "bit": 1328, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C85_V", "name": "HV battery cell #85 voltage", "group": "Battery.Cells", "bit": 1344, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C86_V", "name": "HV battery cell #86 voltage", "group": "Battery.Cells", "bit": 1360, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C87_V", "name": "HV battery cell #87 voltage", "group": "Battery.Cells", "bit": 1376, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C88_V", "name": "HV battery cell #88 voltage", "group": "Battery.Cells", "bit": 1392, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C89_V", "name": "HV battery cell #89 voltage", "group": "Battery.Cells", "bit": 1408, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C90_V", "name": "HV battery cell #90 voltage", "group": "Battery.Cells", "bit": 1424, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C91_V", "name": "HV battery cell #91 voltage", "group": "Battery.Cells", "bit": 1440, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C92_V", "name": "HV battery cell #92 voltage", "group": "Battery.Cells", "bit": 1456, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C93_V", "name": "HV battery cell #93 voltage", "group": "Battery.Cells", "bit": 1472, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C94_V", "name": "HV battery cell #94 voltage", "group": "Battery.Cells", "bit": 1488, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C95_V", "name": "HV battery cell #95 voltage", "group": "Battery.Cells", "bit": 1504, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "NX_HVBAT_C96_V", "name": "HV battery cell #96 voltage", "group": "Battery.Cells", "bit": 1520, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "747.74F.221F5B",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F5B",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HYBRID_BAT_SOC", "name": "Hybrid battery SOC", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "747.74F.221F9A",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F9A",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HYBRID_BAT_CURRENT", "name": "Hybrid battery current", "group": "Battery", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "750.758.221004|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TT_FL_V2", "name": "Front left tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "NX_TT_FR_V2", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "NX_TT_RL_V2", "name": "Rear left tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "NX_TT_RR_V2", "name": "Rear right tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
+        {"id": "NX_TT_SPARE_V2", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "750.758.221005|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221005",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TP_FL_V2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.8},
+        {"id": "NX_TP_FR_V2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.8},
+        {"id": "NX_TP_RL_V2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.8},
+        {"id": "NX_TP_RR_V2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 56, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.8},
+        {"id": "NX_TP_SPARE_V2", "name": "Spare tire pressure", "group": "Tires", "bit": 72, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.8, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.8}
+      ]
+    },
+    {
+      "id": "750.758.222021|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "222021",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TID_1", "name": "Tire 1 position", "group": "Tires", "bit": 0, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "NX_TID_2", "name": "Tire 2 position", "group": "Tires", "bit": 8, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "NX_TID_3", "name": "Tire 3 position", "group": "Tires", "bit": 16, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "NX_TID_4", "name": "Tire 4 position", "group": "Tires", "bit": 24, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221006",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221006",
+      "interval": 5,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MASTER_CYL_TEMP", "name": "Master cylinder sensor temperature", "group": "Brakes", "bit": 0, "bits": 8, "add": -80, "min": -20, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221045|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221045",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_EPB", "name": "Parking brake actuator status", "group": "Brakes", "bit": 0, "bits": 8, "values": {"0": "APPLIED"}, "valueDescriptions": {"0": "Applied"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.22104C|fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "22104C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BRAKE_STROKE", "name": "Brake pedal stroke", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.220103",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "220103",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TOT_DIST", "name": "Total distance", "group": "Trips", "bit": 0, "bits": 32, "min": 0, "max": 150}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221003",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221003",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "NX_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 8, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "NX_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 16, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "NX_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 24, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221009",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221009",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_REAL_ENG_TQ", "name": "Real engine torque", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 32, "min": -20, "max": 150, "unit": "Nm"},
+        {"id": "NX_STEER_ANG", "name": "Steering angle", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -3276.8, "min": -20, "max": 150, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.22100E",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "22100E",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FRONT_AXLE_COUPLING", "name": "Front axle coupling clutch current", "group": "Transmission", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "NX_REAR_AXLE_COUPLING", "name": "Rear axle coupling clutch current", "group": "Transmission", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "NX_LEFT_COUPLING_CLU", "name": "Left coupling clutch current", "group": "Transmission", "bit": 32, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "NX_RIGHT_COUPLING_CLU", "name": "Right coupling clutch current", "group": "Transmission", "bit": 48, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.22100F",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "22100F",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FRONT_AXLE_COUPLING_CLU", "name": "Front axle coupling clutch position sensor status", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "NX_REAR_AXLE_COUPLING_CLU_POS", "name": "Rear axle coupling clutch position sensor status", "group": "Transmission", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221026",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221026",
+      "interval": 5,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2021, 2023, 2024, 2026],
+      "signals": [
+        {"id": "NX_COUPLING_TEMP", "name": "Coupling temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.221004",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "221004",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_STEERING_ANGLE", "name": "Steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 1.5, "min": -410, "max": 410, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221021",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221021",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BATTERY_VOLTAGE", "name": "Battery voltage", "group": "Electrical", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 20, "unit": "V", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221022|fc=1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221022",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FLV", "name": "Fuel remaining", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L", "invalidAtOrAbove": 655}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221001|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221001",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_CABIN_T_V2", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221002|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221002",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AAT_7C4_V2", "name": "Ambient temperature, climate", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.221036|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "221036",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HVAC_SET_RAW", "name": "Climate set point code", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.222801|fc=1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "222801",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BLOWER", "name": "Blower level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220102",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220102",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_KEY_CYCLE", "name": "Key cycle", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ODO_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221002",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221002",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AUX_BAT_V", "name": "Aux battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 61, "divide": 50000, "min": 0, "max": 79.95, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221004|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "NX_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221039",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221039",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FRONT_REAR_MOTOR_TQ", "name": "Front/rear motor torque ratio", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "add": -32.768, "min": -32.76, "max": 32.76}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221060|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221060",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_APP_V2", "name": "Accelerator pedal position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221061|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221061",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221069",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221069",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MOTOR_REGENERATIVE", "name": "Motor regenerative brake torque, requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"},
+        {"id": "NX_MOTOR_REGENERATIVE_BREAK", "name": "Motor regenerative brake torque", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106A",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_REAR_MOTOR", "name": "Rear motor regenerative brake torque, requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"},
+        {"id": "NX_REAR_MOTOR_REGENERATIVE", "name": "Rear motor regenerative brake torque", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HVBAT_SOC_MAX", "name": "HV battery charge, maximum", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "NX_HVBAT_SOC_MIN", "name": "HV battery charge, minimum", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106E",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AC_POWER_CONS", "name": "Air conditioning power consumption", "group": "Engine", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "NX_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "NX_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "NX_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221076|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221076",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_READY", "name": "Ready to drive", "group": "Drivetrain", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22107E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22107E",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_BAT_V_BEFORE_SMR", "name": "12V battery voltage before system main relay", "group": "Battery", "bit": 0, "bits": 8, "multiply": 61, "divide": 50000, "add": 11.25, "min": 0, "max": 11.56, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "NX_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A2",
+      "interval": 0.25,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_RM_TQ_REQ", "name": "Rear motor speed", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "NX_RM_TQ", "name": "Rear motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A5",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A5",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_MOTOR_INVERTER_T", "name": "Motor inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_MOTOR_INVERTER_T_ON", "name": "Motor inverter temperature after ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_MAX_MOTOR_INVERTER_T", "name": "Maximum motor inverter temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A6",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A6",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A7",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_BOOSTING_CONV_T_HI", "name": "Boosting converter temperature, upper", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_BOOSTING_CONV_T_LO", "name": "Boosting converter temperature, lower", "group": "Transmission", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A8",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_GEN_INVERTER_T_7D2", "name": "Generator inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_GEN_INVERTER_T_AFTER_ON", "name": "Generator inverter temperature after ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "NX_MAX_GEN_INVERTER_T", "name": "Maximum generator inverter temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B0",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B0",
+      "interval": 1,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_VL_V_BEFORE_BOOSTING", "name": "Vl-voltage before boosting", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"},
+        {"id": "NX_VH_V_AFTER_BOOSTING", "name": "Vh-voltage after boosting", "group": "Battery", "bit": 16, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E5|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E5",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_CAP", "name": "12V battery full charge capacity", "group": "Electrical", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215E8|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215E8",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_AH_IN", "name": "12V battery charge, total", "group": "Electrical", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "NX_12V_AH_OUT", "name": "12V battery discharge, total", "group": "Electrical", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "NX_READY_HOURS", "name": "Ready-on time, total", "group": "Stats", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221609",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221609",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "NX_HVBAT_CHRG_V", "name": "HV battery charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221829",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221829",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "NX_HVBAT_MAX_T", "name": "HV battery maximum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22182A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22182A",
+      "interval": 1,
+      "answeredIn": [2021, 2024, 2025, 2026],
+      "notAnsweredIn": [2023],
+      "signals": [
+        {"id": "NX_HVBAT_MIN_T", "name": "HV battery minimum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_VSS_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F42",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F42",
+      "interval": 5,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_12V_BAT_V_SMOOTHED", "name": "12V battery voltage smoothed", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F46",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F46",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_AAT", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "answeredIn": [2021, 2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "NX_HVBAT_C", "name": "HV battery current", "group": "Battery", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221FA6|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221FA6",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "NX_ODO_1FA6", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    }
+  ]
+}

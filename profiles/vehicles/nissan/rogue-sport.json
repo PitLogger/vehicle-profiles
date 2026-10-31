@@ -1,0 +1,818 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/rogue-sport",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Rogue Sport",
+    "years": null,
+    "generations": [
+      {
+        "name": "First Generation (J11; Pre-Facelift)",
+        "from": 2017,
+        "to": 2019
+      },
+      {"name": "First Generation (J11; Facelift)", "from": 2020, "to": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Rogue-Sport",
+    "file": "signalsets/v3/default.json",
+    "revision": "156e247956221a1a1e36d018239b23e6b041a460",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "707.727.220103",
+      "bus": "can11",
+      "tx": "707",
+      "rx": "727",
+      "request": "220103",
+      "interval": 1,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TURN_SIGNAL_RIGHT", "name": "Right turn signal", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RSPORT_TURN_SIGNAL_LEFT", "name": "Left turn signal", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "723.735.220101",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220101",
+      "interval": 0.25,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_YAW_RATE", "name": "Yaw rate", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "723.735.220107",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220107",
+      "interval": 0.25,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_RADAR_DISTANCE", "name": "Radar distance", "group": "Cruise control", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "m"}
+      ]
+    },
+    {
+      "id": "723.735.220108",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220108",
+      "interval": 0.25,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_RADAR_SPEED", "name": "Relative speed", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "m/s"}
+      ]
+    },
+    {
+      "id": "723.735.220110",
+      "bus": "can11",
+      "tx": "723",
+      "rx": "735",
+      "request": "220110",
+      "interval": 0.25,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_STEER_ANGLE", "name": "Steering wheel angle", "description": "Negative values are clockwise, positive values are counter-clockwise.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "758.778.220201",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220201",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220202",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220202",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "signals": [
+        {"id": "RSPORT_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220203",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220203",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220204",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220204",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020D",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020D",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TPW_FL", "name": "Front left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020E",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020E",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TPW_FR", "name": "Front right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020F",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020F",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TPW_RR", "name": "Rear right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220210",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220210",
+      "interval": 15,
+      "answeredIn": [2019, 2022],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TPW_RL", "name": "Rear left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "797.79A.221155|fc=1",
+      "bus": "can11",
+      "tx": "797",
+      "rx": "79A",
+      "request": "221155",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_RANGE_DISP", "name": "Range shown on the display", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221266",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221266",
+      "interval": 5,
+      "notAnsweredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_VVT_EOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RSPORT_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RSPORT_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221101",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_VSS_SENS", "name": "Vehicle speed sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221102|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221102",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_VSS_EST", "name": "Estimated vehicle speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221103",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2020],
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_P", "name": "Secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_P", "name": "Primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110C",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_LUBE_P", "name": "Lubrication pressure", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_P_TGT", "name": "Target primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEL_P_TGT", "name": "Target select pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221111",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_P_TGT", "name": "Target secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221112|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221112",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_REQ_TQ_D", "name": "Requested torque delta", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221113|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221113",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_REQ_TQ", "name": "Requested torque", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221114|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221114",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_REQ_RPM", "name": "Requested engine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm", "invalidAtOrAbove": 12700}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221201",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_INPUT_RPM", "name": "Input speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221202|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221202",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_RPM", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221203|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221203",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_RPM", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221204",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221206|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221206",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221207|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221207",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ATF_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221208",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_G_V", "name": "Acceleration sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.27, "max": 3.27, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_INPUT_RPM_2", "name": "Input speed, alternate", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_RPM_2", "name": "Primary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_RPM_2", "name": "Secondary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120F",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_RPM_2", "name": "Engine speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221210|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221210",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PULLEY_RAT", "name": "Pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221212|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221212",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ENG_TQ_ACT", "name": "Engine torque, active", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221213|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221213",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ENG_TQ_TX", "name": "Engine torque, transmitted", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221214|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221214",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ENG_TQ", "name": "Engine torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221215|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221215",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_TQ", "name": "Primary pulley torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221216|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221216",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "RSPORT_TCM_TQ_RAT", "name": "Torque ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 577, "divide": 160000, "min": 0, "max": 236}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221218|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221218",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PULLEY_RAT_TGT", "name": "Target pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221219|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221219",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ISO_1_C", "name": "Isolation solenoid 1 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_ISO_2_C", "name": "Isolation solenoid 2 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_SOL_C", "name": "Primary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_SOL_C", "name": "Secondary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEL_SOL_C", "name": "Select solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SOL_MON_1", "name": "Solenoid 1 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SOL_MON_2", "name": "Solenoid 2 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221221|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221221",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_PRI_SOL_MON", "name": "Primary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221222|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221222",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEC_SOL_MON", "name": "Secondary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221223|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221223",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2019, 2020],
+      "signals": [
+        {"id": "RSPORT_TCM_SEL_SOL_MON", "name": "Select solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    }
+  ]
+}

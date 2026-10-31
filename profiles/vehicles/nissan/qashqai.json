@@ -1,0 +1,3387 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/qashqai",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "Qashqai",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (J10)", "from": 2007, "to": 2013},
+      {"name": "Second Generation (J11)", "from": 2013, "to": 2021},
+      {"name": "Third Generation (J12)", "from": 2021}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-Qashqai",
+    "file": "signalsets/v3/default.json",
+    "revision": "f54514a49ad7b7dcd0970dc393fca5177ae42754",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "740.760.221115",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221115",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.760.221208|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221208",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "QASHQAI_ABS_STEER_ANG", "name": "Anti-lock brake steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "740.760.221209",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "760",
+      "request": "221209",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "QASHQAI_ODO_METER", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015, 2020],
+      "signals": [
+        {"id": "QASHQAI_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "QASHQAI_TP_FR_743", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "QASHQAI_TP_FL_743", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015, 2020],
+      "signals": [
+        {"id": "QASHQAI_TP_RR_743", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015, 2020],
+      "signals": [
+        {"id": "QASHQAI_TP_RL_743", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.224007",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224007",
+      "interval": 1,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "QASHQAI_AC_STATUS", "name": "A/C status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "744.224008",
+      "bus": "can11",
+      "tx": "744",
+      "request": "224008",
+      "interval": 1,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "QASHQAI_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "request": "22F467",
+      "interval": 1,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2014, 2015],
+      "signals": [
+        {"id": "QASHQAI_ECT", "name": "Engine coolant temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QASHQAI_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QASHQAI_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "QASHQAI_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "QASHQAI_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "QASHQAI_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.2153|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2153",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "QASHQAI_IH", "name": "Ih_feetventactrposition", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_LEFTMIXACTRPOSITION", "name": "Ih_leftmixactrposition", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_RECYACTRPOSITION", "name": "Ih_recyactrposition", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_RIGHTMIXACTRPOSITION", "name": "Ih_rightmixactrposition", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_DEFACTRPOSITION", "name": "Ih_defactrposition", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_RESERVEACTRPOSITION", "name": "Ih_reserveactrposition", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_FEETVENTACTRREQ", "name": "Oh_feetventactrreq", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_LEFTMIXACTRREQ", "name": "Oh_leftmixactrreq", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_RECYACTRREQ", "name": "Oh_recyactrreq", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_RIGHTMIXACTRREQ", "name": "Oh_rightmixactrreq", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_DEFACTRREQ", "name": "Oh_defactrreq", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_RESERVEACTRREQ", "name": "Oh_reserveactrreq", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_IH_REARMIXACTRPOSITION", "name": "Ih_rearmixactrposition", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "QASHQAI_OH_REARMIXACTRREQ", "name": "Oh_rearmixactrreq", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "748.768.221103|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221103",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_ELECTRONIC", "name": "All-wheel drive electronic traction support solenoid", "group": "Engine", "bit": 7, "bits": 1, "divide": 50, "min": 0, "max": 0.02, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221104|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221104",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_REQ_ENG_TQ", "name": "All-wheel drive request engine torque", "group": "Engine", "bit": 7, "bits": 1, "signed": true, "multiply": 5, "divide": 2, "min": -2.5, "max": 0, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221105|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221105",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_ESTIMATED_ENG_TQ", "name": "All-wheel drive estimated engine torque", "group": "Engine", "bit": 7, "bits": 1, "signed": true, "multiply": 5, "divide": 2, "min": -2.5, "max": 0, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221107|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221107",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_TGT_TRACTION", "name": "AWD, target traction control torque", "group": "Engine", "bit": 7, "bits": 1, "multiply": 2, "min": 0, "max": 2, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221114|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221114",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_COUPLING_T", "name": "All-wheel drive coupling temperature", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221201|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221201",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_FR_WHL_SPD", "name": "All-wheel drive front right wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221202|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221202",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_FL_WHL_SPD", "name": "All-wheel drive front left wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221203|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221203",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_RR_WHL_SPD", "name": "All-wheel drive rear right wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221204|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221204",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_RL_WHL_SPD", "name": "All-wheel drive rear left wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221314|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221314",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_CLU_HIGH_T_SIG_1", "name": "All-wheel drive clutch high temperature signal 1", "group": "Transmission", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "748.768.221315|fc=1,din=C0,dout=81",
+      "bus": "can11",
+      "tx": "748",
+      "rx": "768",
+      "request": "221315",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AWD_CLU_HIGH_T_SIG_2", "name": "All-wheel drive clutch high temperature signal 2", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "758.778.2110|fc=1",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "2110",
+      "interval": 15,
+      "flowControl": true,
+      "signals": [
+        {"id": "QASHQAI_WHL_1_P", "name": "Wheel 1 pressure", "group": "Tires", "bit": 16, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "QASHQAI_WHL_2_P", "name": "Wheel 2 pressure", "group": "Tires", "bit": 24, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "QASHQAI_WHL_3_P", "name": "Wheel 3 pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "QASHQAI_WHL_4_P", "name": "Wheel 4 pressure", "group": "Tires", "bit": 40, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220201",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220201",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TP_FL_V2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220202",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220202",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2020, 2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TP_FR_V2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220203",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220203",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2020, 2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TP_RR_V2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220204",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220204",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TP_RL_V2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020D",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020D",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TPW_FL", "name": "Front left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020E",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020E",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TPW_FR", "name": "Front right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.22020F",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "22020F",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2020, 2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TPW_RR", "name": "Rear right tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "758.778.220210",
+      "bus": "can11",
+      "tx": "758",
+      "rx": "778",
+      "request": "220210",
+      "interval": 5,
+      "answeredIn": [2014, 2015],
+      "notAnsweredIn": [2020, 2023, 2024],
+      "signals": [
+        {"id": "QASHQAI_TPW_RL", "name": "Rear left tire pressure, warning", "group": "Tires", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "75C.77C.2101|fc=1",
+      "bus": "can11",
+      "tx": "75C",
+      "rx": "77C",
+      "request": "2101",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "QASHQAI_STEER_ANG", "name": "Steer angle", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "°"},
+        {"id": "QASHQAI_VSS", "name": "Vehicle speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
+        {"id": "QASHQAI_SELECTOR_POS", "name": "Selector position", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "QASHQAI_HEAD_LAMP", "name": "Head lamp", "group": "Engine", "bit": 56, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_REVERSE", "name": "Reverse", "group": "Engine", "bit": 57, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_HEIGHT_SENS_SIG_REAR", "name": "Height sensor signal rear", "group": "Engine", "bit": 64, "bits": 16, "multiply": 5, "add": 1024, "min": 0, "max": 328699, "unit": "V"},
+        {"id": "QASHQAI_HEIGHT_SENS_SIG", "name": "Height sensor signal front", "group": "Engine", "bit": 80, "bits": 16, "multiply": 5, "add": 1024, "min": 0, "max": 328699, "unit": "V"},
+        {"id": "QASHQAI_HEADLAMP_LEVEL", "name": "Headlamp level", "group": "Engine", "bit": 96, "bits": 16, "multiply": 49, "divide": 125, "min": 0, "max": 25689, "unit": "%"},
+        {"id": "QASHQAI_SWIVEL_SENS_LEFT", "name": "Swivel sensor left", "group": "Engine", "bit": 112, "bits": 16, "divide": 10, "add": -32000, "min": -32000, "max": -25447, "unit": "°"},
+        {"id": "QASHQAI_SWIVEL_SENS_RIGHT", "name": "Swivel sensor right", "group": "Engine", "bit": 128, "bits": 16, "divide": 10, "add": -32000, "min": -32000, "max": -25447, "unit": "°"},
+        {"id": "QASHQAI_SWIVEL_ANG_LEFT", "name": "Swivel angle left", "group": "Engine", "bit": 144, "bits": 16, "divide": 10, "add": -32000, "min": -32000, "max": -25447, "unit": "°"},
+        {"id": "QASHQAI_SWIVEL_ANG_RIGHT", "name": "Swivel angle right", "group": "Engine", "bit": 160, "bits": 16, "divide": 10, "add": -32000, "min": -32000, "max": -25447, "unit": "°"},
+        {"id": "QASHQAI_HEIGHT_SENS_INIT", "name": "Height sensor initial value rear", "group": "Engine", "bit": 176, "bits": 16, "multiply": 5, "divide": 1024, "min": 0, "max": 319.99, "unit": "V"},
+        {"id": "QASHQAI_HEIGHT_SENS_INIT_FRONT", "name": "Height sensor initial value front", "group": "Engine", "bit": 192, "bits": 16, "multiply": 5, "divide": 1024, "min": 0, "max": 319.99, "unit": "V"},
+        {"id": "QASHQAI_FRONT_PINION_ANG", "name": "Front pinion angle", "group": "Engine", "bit": 208, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2169",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2169",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ALTERNATOR_SETPOINT_V", "name": "ALTERNATOR set point VOLTAGE", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21AD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21AD",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_COLD_STARTING", "name": "Cold starting programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "QASHQAI_FUEL_RAIL_T_SENS_V", "name": "Fuel rail temperature sensor voltage", "group": "Battery", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "QASHQAI_FUEL_RAIL_T", "name": "Fuel rail temperature", "group": "Fuel", "bit": 16, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "QASHQAI_VAPOR_LOCK_T", "name": "Vapor lock temperature", "group": "Engine", "bit": 24, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "QASHQAI_FUEL_TANK_T_SENS_V", "name": "Fuel tank temperature sensor voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
+        {"id": "QASHQAI_FUEL_TANK_T", "name": "Fuel tank temperature", "group": "Fuel", "bit": 40, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "QASHQAI_TANK_P", "name": "Tank pressure", "group": "Engine", "bit": 120, "bits": 16, "divide": 2, "min": 0, "max": 32767},
+        {"id": "QASHQAI_LPLI_PMP_PWM_SIG", "name": "Low-pressure fuel pump drive duty", "group": "Engine", "bit": 160, "bits": 16, "multiply": 0.0015259, "min": 0, "max": 99.99, "unit": "%"},
+        {"id": "QASHQAI_FUEL_PMP_FLOW", "name": "Fuel pump flow", "group": "Fuel", "bit": 176, "bits": 8, "divide": 8, "min": 0, "max": 31.87, "unit": "g/s"},
+        {"id": "QASHQAI_EFP_LEARNING", "name": "Electric fuel pump learning value", "group": "Engine", "bit": 184, "bits": 16, "divide": 65535, "add": -0.5, "min": -0.5, "max": 0.5, "unit": "%"},
+        {"id": "QASHQAI_BUTANE_PERCENTAGE", "name": "Butane percentage", "group": "Engine", "bit": 200, "bits": 8, "multiply": 7813, "divide": 20000, "min": 0, "max": 99.61, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221103",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2014],
+      "signals": [
+        {"id": "QASHQAI_VPWR_ECM", "name": "Battery voltage, engine module", "group": "Battery", "bit": 0, "bits": 8, "multiply": 0.08, "min": 0, "max": 20.4, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22110A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22110A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_IGN_TIM_ADVANCE", "name": "Ignition timing advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 110, "min": -145, "max": 110, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221110",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221110",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_EVAP_PURGE_DUTY", "name": "EVAP purge duty", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221111",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221111",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_FUEL_T_7E0", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22111F|din=C0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22111F",
+      "interval": 5,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "QASHQAI_VARIABLE_VLV_TIM_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221123",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_F_RAT_ADJ", "name": "A/F ratio adj", "group": "Engine", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221124|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221124",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22112A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22112A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MANIFOLD_P_SENS_V", "name": "Manifold pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221135",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221135",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_CAM_ADV_ANG", "name": "Camshaft adv angle", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221137|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221137",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221138",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221138",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_CAM_VLV_DUTY", "name": "Camshaft valve duty", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221139|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221139",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22113C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22113C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_IGN_ADVANCE", "name": "Ignition advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 112, "min": -143, "max": 112}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221186",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221186",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_REMAINING_FUEL", "name": "Remaining fuel", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221201",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221201",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_CURRENT_RPM", "name": "Current engine speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 2, "min": 0, "max": 819187, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221204",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221204",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MAF_VOLTS", "name": "Mass air flow volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221208",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221208",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_FUEL_BASE_WIDTH", "name": "Fuel base pulse width", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221209",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221209",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MAF", "name": "Mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221223",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221223",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_REFRIGERANT_FLUID_V", "name": "Refrigerant fluid sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221225",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221225",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_UP_OXYGEN_SENS_V", "name": "Upstream oxygen sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22122B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22122B",
+      "interval": 30,
+      "signals": [
+        {"id": "QASHQAI_CC_S", "name": "Cruise control set speed", "group": "Cruise control", "bit": 0, "bits": 16, "multiply": 9, "divide": 160, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221266",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221266",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_VVT_EOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221305|din=C0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221305",
+      "interval": 0.25,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "QASHQAI_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 5, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221307|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221307",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22130D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22130D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_BRAKE_SWITCH_NUMBER_2", "name": "BRAKE SWITCH, number 2", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_BRAKE_SWITCH_NUMBER_1", "name": "BRAKE SWITCH, number 1", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221313|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221313",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221406",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22140E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22140E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1000, "min": 0, "max": 255000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22140F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22140F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_THROTTLE_OPENING", "name": "Throttle opening", "group": "Engine", "bit": 0, "bits": 8, "multiply": 7, "divide": 20, "min": 0, "max": 89.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222004",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_ENG_TQ", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -400, "min": -400, "max": 32367, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22200F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22200F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BRAKING_DETECTED", "name": "Braking detected multiplex signal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222026",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222026",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_WIRED_BRAKE_CONTACT", "name": "Wired brake contact", "group": "Control", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22204B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22204B",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_CRUISE_CTRL_SPD", "name": "Cruise control/speed limiter buttons", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222079",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222079",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_CRUISE_CTRL", "name": "Cruise control", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_TRACTION_CTRL_ANTI", "name": "Traction control/anti-yaw control", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_ENGAGE_REVERSE_GEAR", "name": "Engage reverse gear", "group": "Transmission", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_STARTER_BUTTON", "name": "Starter button", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_DUR_RESUME_BUTTON", "name": "Duration of resume button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_DUR_BUTTON_PRESS", "name": "Duration of + button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_DUR_BUTTON_PRESS_7E0", "name": "Duration of - button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_DUR_SUSPEND_BUTTON", "name": "Duration of suspend button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22207E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22207E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_NUM_ABNORMAL_CC_SL", "name": "Number of abnormal cc/sl transitions", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222095",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222095",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222170",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222170",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_CHANGE_VSS_UNIT", "name": "Change of vehicle speed unit", "group": "Movement", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_AUTO_EMERGENCY", "name": "Auto emergency braking system request", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "QASHQAI_STOP_WARN_LIGHT", "name": "Stop warning light", "group": "Lights", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222225",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222225",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_VSS_MULTIPLEXED", "name": "Vehicle speed multiplexed information", "group": "Movement", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22222B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22222B",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_MANUAL_OR_ASSISTED", "name": "Manual or assisted parking brake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2222AA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2222AA",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_STARTER_WEAR_CNT", "name": "Starter wear counter", "group": "Engine", "bit": 40, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222C04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222C04",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_GEARBOX_RAT", "name": "Gearbox ratio", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2101",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "QASHQAI_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "QASHQAI_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "QASHQAI_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "QASHQAI_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2103",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TRANS_ATF", "name": "Transmission ATF deterioration date", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TRANS_B", "name": "Transmission-B", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "QASHQAI_TRANS_WORK_HOURS", "name": "Transmission work hours", "group": "Transmission", "bit": 32, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"},
+        {"id": "QASHQAI_TRANS", "name": "Transmission-A", "group": "Transmission", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "QASHQAI_TRANS_WORK_HOURS_WARM_ENG", "name": "Transmission work hours warm engine", "group": "Transmission", "bit": 192, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_ATF_T_VAR_2_7E1", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220230",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220230",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_ATF_T_VAR_1_7E1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221101|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221101",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_VSS_SENS", "name": "Vehicle speed sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221102|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221102",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_VSS_EST", "name": "Estimated vehicle speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221103|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221103",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_P", "name": "Secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_P", "name": "Primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110C",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_LUBE_P", "name": "Lubrication pressure", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22110F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22110F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_P_TGT", "name": "Target primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221110|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221110",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEL_P_TGT", "name": "Target select pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221111|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221111",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_P_TGT", "name": "Target secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221112|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221112",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_REQ_TQ_D", "name": "Requested torque delta", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221113|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221113",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_REQ_TQ", "name": "Requested torque", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221114|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221114",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_REQ_RPM", "name": "Requested engine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221201|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221201",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_INPUT_RPM", "name": "Input speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221202|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221202",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_RPM", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221203|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221203",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_RPM", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221204|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221204",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221205|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221205",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221206|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221206",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221207|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221207",
+      "interval": 5,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ATF_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221208|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221208",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_G_V", "name": "Acceleration sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.27, "max": 3.27, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_INPUT_RPM_2", "name": "Input speed, alternate", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120D",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_RPM_2", "name": "Primary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120E",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_RPM_2", "name": "Secondary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22120F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22120F",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_RPM_2", "name": "Engine speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221210|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221210",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PULLEY_RAT", "name": "Pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221212|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221212",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ENG_TQ_ACT", "name": "Engine torque, active", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221213|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221213",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ENG_TQ_TX", "name": "Engine torque, transmitted", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221214|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221214",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ENG_TQ", "name": "Engine torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221215|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221215",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_TQ", "name": "Primary pulley torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221216|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221216",
+      "interval": 0.25,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_TQ_RAT", "name": "Torque ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 577, "divide": 160000, "min": 0, "max": 236}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221218|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221218",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PULLEY_RAT_TGT", "name": "Target pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221219|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221219",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ISO_1_C", "name": "Isolation solenoid 1 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121A|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121A",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_ISO_2_C", "name": "Isolation solenoid 2 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121B|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121B",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_SOL_C", "name": "Primary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121C|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121C",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_SOL_C", "name": "Secondary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121D|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121D",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEL_SOL_C", "name": "Select solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121E|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121E",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SOL_MON_1", "name": "Solenoid 1 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22121F|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22121F",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SOL_MON_2", "name": "Solenoid 2 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221221|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221221",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_PRI_SOL_MON", "name": "Primary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221222|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221222",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEC_SOL_MON", "name": "Secondary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221223|din=C0,dout=81",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221223",
+      "interval": 1,
+      "session": {"enter": "C0", "exit": "81"},
+      "signals": [
+        {"id": "QASHQAI_TCM_SEL_SOL_MON", "name": "Select solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DA15.15.222004",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222004",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_ENG_TQ_DA15", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "add": -400, "min": -400, "max": 1647, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA15.15.222005",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222005",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA15.15.222007",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222007",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_EOT_DA15", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA15.15.222030",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222030",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_INT_CAM_PHASE_POS_TGT", "name": "Intake camshaft phase position target", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA15.15.222033",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222033",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_CAM_DEPHASE_SOLENOID", "name": "Camshaft phaser solenoid valve duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA15.15.222057",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222057",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ALTERNATOR_POWER", "name": "Alternator power", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "W"}
+      ]
+    },
+    {
+      "id": "DA15.15.222069",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222069",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_ENG_REFERENCE_TQ", "name": "Engine reference torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA15.15.2220C6",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "2220C6",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BOOST_P_SENS_V", "name": "Boost pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA15.15.222113",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222113",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_OIL_T", "name": "Oil temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA15.15.222161",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222161",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_CRANK_SIG_CORR", "name": "Crank signal, correction", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA15.15.22222A",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22222A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_REFRIGERANT_P", "name": "Refrigerant pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA15.15.222255",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222255",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_CAM_DEPHASE_MEAS_POS", "name": "Camshaft phase, measured position", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA15.15.222401",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222401",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_INLET_P", "name": "Inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22243F",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22243F",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_INLET_AIR_T", "name": "Inlet air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA15.15.22244D",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22244D",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_MANIFOLD_AIR_T", "name": "Manifold air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA15.15.2224D7",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "2224D7",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ESTIMATED_MANIFOLD_P", "name": "Estimated manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "DA15.15.222874",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "222874",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_COMBUSTION_MIS_CNT", "name": "Combustion misfire counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.2228C6",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "2228C6",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_FUEL_FLOW", "name": "Fuel flow", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 256, "divide": 3125, "min": 0, "max": 5368}
+      ]
+    },
+    {
+      "id": "DA15.15.2230D9",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "2230D9",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ENG_STARTS_AFTER_PF", "name": "Engine starts after PF regen", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22F40B",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22F40B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ROUGH_TURBOCHARGER_P", "name": "Rough turbocharger pressure", "group": "Battery", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7A",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7A",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_MIS_CNT_1", "name": "Misfire counter 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7B",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7B",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_MIS_CNT_2", "name": "Misfire counter 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7C",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7C",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_MIS_CNT_3", "name": "Misfire counter 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7D",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7D",
+      "interval": 3600,
+      "signals": [
+        {"id": "QASHQAI_MIS_CNT_4", "name": "Misfire counter 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7E",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_KNOCK_2", "name": "Knock value 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 16, "divide": 13107, "min": 0, "max": 80, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA15.15.22FD7F",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FD7F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_KNOCK_1", "name": "Knock value 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 16, "divide": 13107, "min": 0, "max": 80, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA15.15.22FDC2",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FDC2",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_AVG_KNOCK_SIG", "name": "Average knock signal", "group": "Engine", "bit": 0, "bits": 8, "multiply": 83, "divide": 4250, "min": 0, "max": 4.9799, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA15.15.22FDDA",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FDDA",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_ENG_CTRL_MODULE_T", "name": "Engine control module temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA15.15.22FE1D",
+      "bus": "can29",
+      "tx": "18DA15F1",
+      "rx": "18DAF115",
+      "request": "22FE1D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BOOST_P_WASTEGATE", "name": "Boost pressure wastegate control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.221105",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221105",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_EGR_T_SENS_V", "name": "Exhaust gas recirculation temperature sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221111",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221111",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.221114",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221114",
+      "interval": 30,
+      "signals": [
+        {"id": "QASHQAI_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 0, "bits": 8, "divide": 25, "min": 0, "max": 10.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221115",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221115",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_EVAP_P_SENS_V", "name": "EVAP pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22111F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22111F",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.221207",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221207",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BASE_INJ_TIM", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120C",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_FUEL_P_SENS_V", "name": "Fuel pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 4, "divide": 13107, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120D",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120D",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_ACCEL_PEDAL_POS_SENS_1", "name": "Accelerator pedal position sensor 1, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120E",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120E",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_ACCEL_PEDAL_POS_SENS_2", "name": "Accelerator pedal position sensor 2, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22120F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22120F",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_THROTTLE_POS_SENS_1", "name": "Throttle position sensor 1, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.221210",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221210",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_THROTTLE_POS_SENS_2", "name": "Throttle position sensor 2, volts", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.22121F",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22121F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_ROLL_OVER_SENS_V", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA18.18.222170",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222170",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 232, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.220100|din=03",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "220100",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "QASHQAI_STEER_ANG_DA2D", "name": "Steering angle", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.7, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B00",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B00",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B01",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B01",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B02",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B02",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B03",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B03",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA2D.2D.224B0E|din=03",
+      "bus": "can29",
+      "tx": "18DA2DF1",
+      "rx": "18DAF12D",
+      "request": "224B0E",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "QASHQAI_MAIN_BRAKE_CYL_P", "name": "Main brake cylinder pressure", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221102",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221102",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_VSS_DADA", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221104",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221104",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_WATER_PMP_1", "name": "Water pump 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221105",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221105",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_WATER_PMP_1_TGT_DUTY", "name": "Water pump 1, target duty", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221106",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221106",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_WATER_PMP_1_CURRENT", "name": "Water pump 1 current speed duty", "group": "Movement", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.22111A",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "22111A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HIGH_V_ECT", "name": "High voltage coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 8, "min": -4096, "max": 4095, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADA.DA.22111C",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "22111C",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_TRACTION_MOTOR_T", "name": "Traction motor temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221128",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221128",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_TGT_MOTOR_TQ", "name": "Target motor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DADA.DA.22112E",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "22112E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_REFRIGERANT_P_SENS", "name": "Refrigerant pressure sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 500000, "min": 0, "max": 0.0005}
+      ]
+    },
+    {
+      "id": "DADA.DA.221144",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221144",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_AVAILABLE_MOTOR_MAX", "name": "Available motor, maximum output", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221145",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221145",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MOTOR_REGENERABLE_MAX", "name": "Motor regenerative power, maximum", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221146",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221146",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MOTOR_POWER_CONS", "name": "Motor power consumption", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.22114B",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "22114B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_AVAILABLE_CHG", "name": "High voltage battery available charge display", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DA.221254",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "18DAF1DA",
+      "request": "221254",
+      "interval": 0.25,
+      "signals": [
+        {"id": "QASHQAI_MOTOR_RPM", "name": "Motor RPM", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF00",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF00",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_12V_BAT_SUP_V", "name": "12V battery supply voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF04",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF04",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HIGH_V_ST_CHG", "name": "High voltage state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF05",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF05",
+      "interval": 5,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_V", "name": "High voltage battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF06",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF06",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MAX_CELL_V", "name": "Max cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF07",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF07",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_MIN_CELL_V", "name": "Min cell voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF08",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF08",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_CURRENT", "name": "High voltage battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 20, "add": -1600, "min": -1600, "max": 1676, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF09",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF09",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_CURRENT_LOW", "name": "High voltage battery current, low", "group": "Battery", "bit": 0, "bits": 16, "divide": 20, "add": -1600, "min": -1600, "max": 1676, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF0A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF0A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_CURRENT_HIGH", "name": "High voltage battery current, high", "group": "Battery", "bit": 0, "bits": 16, "divide": 20, "add": -1600, "min": -1600, "max": 1676, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF0D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF0D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_T_SENS_1", "name": "High voltage battery temperature sensor 1", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF0E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF0E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_T_SENS_2", "name": "High voltage battery temperature sensor 2", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF0F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF0F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_T_SENS_3", "name": "High voltage battery temperature sensor 3", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF11",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF11",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_T_SENS_4", "name": "High voltage battery temperature sensor 4", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF12",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF12",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF19",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF19",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_OUTPUT_POSSIBLE", "name": "Output possible power", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_OUTPUT_POSSIBLE_POWER", "name": "Output possible power, short", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_INPUT_POSSIBLE_POWER", "name": "Input possible power", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_INPUT_POSSIBLE_POWER_SHORT", "name": "Input possible power, short", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_01", "name": "Battery cell 01", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_02", "name": "Battery cell 02", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF1F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF1F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_03", "name": "Battery cell 03", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF20",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF20",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_04", "name": "Battery cell 04", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF21",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF21",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_05", "name": "Battery cell 05", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF22",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF22",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_06", "name": "Battery cell 06", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF23",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF23",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_07", "name": "Battery cell 07", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF24",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF24",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_08", "name": "Battery cell 08", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF25",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF25",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_09", "name": "Battery cell 09", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF26",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF26",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_10", "name": "Battery cell 10", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF27",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF27",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_11", "name": "Battery cell 11", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF28",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF28",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_12", "name": "Battery cell 12", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF29",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF29",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_13", "name": "Battery cell 13", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_14", "name": "Battery cell 14", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_15", "name": "Battery cell 15", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_16", "name": "Battery cell 16", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_17", "name": "Battery cell 17", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_18", "name": "Battery cell 18", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF2F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF2F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_19", "name": "Battery cell 19", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF30",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF30",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_20", "name": "Battery cell 20", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF31",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF31",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_21", "name": "Battery cell 21", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF32",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF32",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_22", "name": "Battery cell 22", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF33",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF33",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_23", "name": "Battery cell 23", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF34",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF34",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_24", "name": "Battery cell 24", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF35",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF35",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_25", "name": "Battery cell 25", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF36",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF36",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_26", "name": "Battery cell 26", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF37",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF37",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_27", "name": "Battery cell 27", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF38",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF38",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_28", "name": "Battery cell 28", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF39",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF39",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_29", "name": "Battery cell 29", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_30", "name": "Battery cell 30", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_31", "name": "Battery cell 31", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_32", "name": "Battery cell 32", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_33", "name": "Battery cell 33", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_34", "name": "Battery cell 34", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF3F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF3F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_35", "name": "Battery cell 35", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF40",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF40",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_36", "name": "Battery cell 36", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF41",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF41",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_37", "name": "Battery cell 37", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF42",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF42",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_38", "name": "Battery cell 38", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF43",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF43",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_39", "name": "Battery cell 39", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF44",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF44",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_40", "name": "Battery cell 40", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF45",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF45",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_41", "name": "Battery cell 41", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF46",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF46",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_42", "name": "Battery cell 42", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF47",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF47",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_43", "name": "Battery cell 43", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF48",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF48",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_44", "name": "Battery cell 44", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF49",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF49",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_45", "name": "Battery cell 45", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_46", "name": "Battery cell 46", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_47", "name": "Battery cell 47", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_48", "name": "Battery cell 48", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_49", "name": "Battery cell 49", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_50", "name": "Battery cell 50", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF4F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF4F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_51", "name": "Battery cell 51", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF50",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF50",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_52", "name": "Battery cell 52", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF51",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF51",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_53", "name": "Battery cell 53", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF52",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF52",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_54", "name": "Battery cell 54", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF53",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF53",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_55", "name": "Battery cell 55", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF54",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF54",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_56", "name": "Battery cell 56", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF55",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF55",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_57", "name": "Battery cell 57", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF56",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF56",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_58", "name": "Battery cell 58", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF57",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF57",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_59", "name": "Battery cell 59", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF58",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF58",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_60", "name": "Battery cell 60", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF59",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF59",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_61", "name": "Battery cell 61", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_62", "name": "Battery cell 62", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_63", "name": "Battery cell 63", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_64", "name": "Battery cell 64", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5D",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5D",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_65", "name": "Battery cell 65", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5E",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5E",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_66", "name": "Battery cell 66", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF5F",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF5F",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_67", "name": "Battery cell 67", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF60",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF60",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_68", "name": "Battery cell 68", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF61",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF61",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_69", "name": "Battery cell 69", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF62",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF62",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_70", "name": "Battery cell 70", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF63",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF63",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_71", "name": "Battery cell 71", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF64",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF64",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_72", "name": "Battery cell 72", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF65",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF65",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_73", "name": "Battery cell 73", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF66",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF66",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_74", "name": "Battery cell 74", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF67",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF67",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_75", "name": "Battery cell 75", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF68",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF68",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_76", "name": "Battery cell 76", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF69",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF69",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_77", "name": "Battery cell 77", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF6A",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF6A",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_78", "name": "Battery cell 78", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF6B",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF6B",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_79", "name": "Battery cell 79", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DB.22CF6C",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "18DAF1DB",
+      "request": "22CF6C",
+      "interval": 1,
+      "signals": [
+        {"id": "QASHQAI_BAT_CELL_80", "name": "Battery cell 80", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    }
+  ]
+}

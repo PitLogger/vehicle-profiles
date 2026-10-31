@@ -1,0 +1,146 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mercedes/benz",
+  "kind": "vehicle",
+  "vehicle": {"make": "Mercedes", "model": "Benz", "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mercedes-Benz",
+    "file": "signalsets/v3/default.json",
+    "revision": "8dac9f5b2d20069f0e1b8a4971e679f7c9e74222",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "624.5A4.220201|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220201",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "MERCEDES_AUX_V_HD", "name": "12V system voltage, hd", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 16, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.222005",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "222005",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_AUX_V", "name": "Auxiliary battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 25.9, "divide": 255, "min": 0, "max": 25.9, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.222526",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "222526",
+      "interval": 5,
+      "signals": [
+        {"id": "MERCEDES_HV_COOLANT_T", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 1250, "divide": 10000, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.226050",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226050",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_HV_SOC", "name": "HV battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.226053",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226053",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_HV_A", "name": "HV battery amperage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": 0, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.226071",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226071",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_CNVRTR_REQ_V", "name": "DC converter requested voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 250, "divide": 10000, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.226075",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226075",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_HV_V", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 25, "divide": 1000, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.226502",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226502",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_HV_RANGE", "name": "HV battery remaining distance", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 32, "min": 0, "max": 1000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E5.226504",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226504",
+      "interval": 1,
+      "signals": [
+        {"id": "MERCEDES_SERVICE_DIST", "name": "Distance to next service", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222001",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222001",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MERCEDES_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 0.05625, "min": 0, "max": 1000, "unit": "km/h"},
+        {"id": "MERCEDES_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 1000, "unit": "km/h"},
+        {"id": "MERCEDES_TIRE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "multiply": 0.05625, "min": 0, "max": 1000, "unit": "km/h"},
+        {"id": "MERCEDES_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 100, "unit": "km/h"},
+        {"id": "MERCEDES_TIRE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 0.05625, "min": 0, "max": 1000, "unit": "km/h"},
+        {"id": "MERCEDES_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 100, "unit": "km/h"},
+        {"id": "MERCEDES_TIRE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "multiply": 0.05625, "min": 0, "max": 1000, "unit": "km/h"},
+        {"id": "MERCEDES_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 100, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222002",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222002",
+      "interval": 0.25,
+      "signals": [
+        {"id": "MERCEDES_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 8, "bits": 16, "signed": true, "divide": 192747, "min": -0.17, "max": 0.17, "unit": "g"},
+        {"id": "MERCEDES_LON_ACC", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 8, "bits": 16, "signed": true, "multiply": 0.05, "divide": 1000, "min": -1.63, "max": 1.63, "unit": "g"},
+        {"id": "MERCEDES_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 24, "bits": 16, "signed": true, "divide": 627.6, "min": -52.21, "max": 52.21, "unit": "g"},
+        {"id": "MERCEDES_LAT_ACC", "name": "Lateral acceleration", "group": "Orientation", "bit": 24, "bits": 16, "signed": true, "multiply": 15.625, "divide": 1000, "min": -512, "max": 511, "unit": "g"},
+        {"id": "MERCEDES_YAW_RATE", "name": "Yaw rate", "description": "The angular velocity of the car around its vertical axis. Indicates how quickly the car is rotating to its left or right.", "group": "Orientation", "bit": 48, "bits": 16, "signed": true, "multiply": 2, "divide": 32767, "min": -2, "max": 2, "unit": "rad"},
+        {"id": "MERCEDES_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the right, negative is rotated to the left.", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "MERCEDES_MCYL_BREAK", "name": "Master break cylinder pressure", "group": "Orientation", "bit": 96, "bits": 16, "signed": true, "divide": 65.35883831, "min": -501.34, "max": 501.34, "unit": "bar"},
+        {"id": "MERCEDES_MASTER_BREAK_CYLINDER_PRESSURE", "name": "Master break cylinder pressure", "group": "Engine", "bit": 96, "bits": 16, "signed": true, "multiply": 153, "divide": 10000, "min": -500, "max": 500, "unit": "bar"},
+        {"id": "MERCEDES_VACC_BREAK", "name": "Vaccuum cylinder pressure", "group": "Orientation", "bit": 144, "bits": 16, "signed": true, "divide": 1000, "min": -32, "max": 32, "unit": "bar"},
+        {"id": "MERCEDES_VACUUM_BREAK_PRESSURE", "name": "Vacuum break pressure", "group": "Engine", "bit": 144, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "bar"}
+      ]
+    }
+  ]
+}

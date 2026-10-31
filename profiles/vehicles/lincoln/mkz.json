@@ -1,0 +1,3053 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/lincoln/mkz",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Lincoln",
+    "model": "MKZ",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (CD3)", "from": 2006, "to": 2012},
+      {"name": "Second Generation (CD4)", "from": 2013, "to": 2020}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Lincoln-MKZ",
+    "file": "signalsets/v3/default.json",
+    "revision": "f480c087602d89616e94e9c640508f6082778299",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E4", "type": "battery"}],
+  "requests": [
+    {
+      "id": "720.728.22404C",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22404C",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_IPC_ODO", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.226180",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226180",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ODO_720", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.226185",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226185",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_FLI", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "720.728.2261A5",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261A5",
+      "interval": 15,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_TPMS_WARN", "name": "Tire pressure warning indicator", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "720.728.22DD01",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ODO_TRIP", "name": "Trip distance", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.222813",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222813",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222814",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222814",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222815",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222815",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222816",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222816",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222817",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222817",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_RRI_RAW", "name": "Rear right inner tire pressure slot", "description": "A rear inner tire position, which this car does not have. Raw count; dual-wheel trucks read it at 1/20 psi.", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "726.72E.222818",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222818",
+      "interval": 15,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_TP_RLI_RAW", "name": "Rear left inner tire pressure slot", "description": "A rear inner tire position, which this car does not have. Raw count; dual-wheel trucks read it at 1/20 psi.", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "726.72E.22401E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22401E",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_NORM_CUM_CHG_IGN_ON", "name": "Normalized cumulative charge when ignition is on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224021",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224021",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_NORM_CUM_DCHG_BAT_ON", "name": "Normalized cumulative discharge from battery with engine on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224025",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224025",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_QUIESCENT", "name": "Battery quiescent current, low range", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -1000, "min": -1000, "max": 31767.5, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "726.72E.224026",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224026",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_NORM_CUM_DCHG_BAT_OFF", "name": "Normalized cumulative discharge from battery with engine off", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224027",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224027",
+      "interval": 3600,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_12V_AGE", "name": "12V battery age", "group": "Battery", "bit": 0, "bits": 16, "multiply": 24, "min": 0, "max": 1572840, "unit": "h"}
+      ]
+    },
+    {
+      "id": "726.72E.224028",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224028",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_12V_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.72E.224029",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224029",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22402A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402A",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_12V_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 0, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22402B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402B",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_VEH_BAT_CURRENT", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -127, "min": -127, "max": 128, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.22407E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22407E",
+      "interval": 1,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_EXTERIOR_LIGHT_STATE", "name": "Exterior lighting state", "group": "Lights", "bit": 0, "bits": 1, "values": {"0": "0", "216": "1"}, "valueDescriptions": {"0": "0", "216": "1"}}
+      ]
+    },
+    {
+      "id": "726.72E.224090",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224090",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_CURRENT_726", "name": "Battery current", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -511.7, "min": -511.7, "max": 3584.2375, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.2241A9",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241A9",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_CURRENT_TOO_HIGH", "name": "Battery current too high for start/stop", "group": "Battery", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_V_TOO_LOW_START", "name": "Battery voltage too low for start/stop", "group": "Battery", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_ST_CHG_TOO_LOW", "name": "Battery state of charge too low for start/stop", "group": "Battery", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_CAP_TOO_LOW", "name": "Battery capacity too low for start/stop", "group": "Battery", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_V_TOO_LOW_COLD", "name": "Battery voltage too low for cold cranking capability", "group": "Battery", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_V_TOO_LOW_AUTO", "name": "Battery voltage too low for auto restart", "group": "Battery", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_T_TOO_LOW_AUTO", "name": "Battery temperature too low for auto stop", "group": "Battery", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MKZ_BAT_REFRESH_CYCLE", "name": "Battery refresh cycle in progress for start/stop", "group": "Battery", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.2241E8",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241E8",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_VEH_BAT_B_V", "name": "Second battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 6, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22420A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22420A",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_ST_DETECTION", "name": "Battery state detection status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22423C",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22423C",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_VEH_BAT_B_CURRENT", "name": "Second battery current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.96, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.227151",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "227151",
+      "interval": 4,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_HIGH_BEAM", "name": "High beam status", "group": "Lights", "bit": 0, "bits": 16, "min": 0, "max": 2, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C150",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C150",
+      "interval": 3,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_TRUNK_OPEN", "name": "Trunk ajar?", "group": "Doors", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MKZ_RRD_OPEN", "name": "Rear right door ajar?", "group": "Doors", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MKZ_RLD_OPEN", "name": "Rear left door ajar?", "group": "Doors", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MKZ_DRIVER_DOOR_OPEN", "name": "Driver door ajar", "group": "Doors", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MKZ_PASSENGER_DOOR_OPEN", "name": "Passenger door ajar?", "group": "Doors", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C154",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C154",
+      "interval": 3,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_HOOD_OPEN", "name": "Hood ajar?", "group": "Doors", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C259",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C259",
+      "interval": 2,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_CENTRAL_LOCK_STATUS", "name": "Lock status", "group": "Doors", "bit": 0, "bits": 8, "values": {"0": "UNLOCKED", "2": "LOCKED"}, "valueDescriptions": {"0": "Unlocked", "2": "Locked"}}
+      ]
+    },
+    {
+      "id": "726.72E.22DD01",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ODO_726", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD04",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD04",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CAR_T", "name": "In car temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 8, "min": 0, "max": 31.875, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.74E.224836",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "224836",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DCDC_LV_A", "name": "Low voltage converter output current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "746.74E.22483A",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "22483A",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DCDC_HV_A", "name": "Low voltage converter input current", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "A"}
+      ]
+    },
+    {
+      "id": "746.74E.22483D",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "22483D",
+      "interval": 10,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DCDC_ENABLED", "name": "DC-DC converter", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 3,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_PARKING_BRAKE", "name": "Parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LAT_ANG", "name": "Lateral angle, raw count", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BRK_FL_P", "name": "Brake hydraulic pressure, raw count", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "760.768.222B11",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B11",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LAT_G", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -1, "max": 1}
+      ]
+    },
+    {
+      "id": "760.768.223201",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223201",
+      "interval": 0.25,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "divide": 20, "add": -1638.4, "min": -1638, "max": 1638, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.223987",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223987",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ABS_WHL_SPD_1", "name": "Anti-lock brake wheel speed 1", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MKZ_ABS_WHL_SPD_2", "name": "Anti-lock brake wheel speed 2", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MKZ_ABS_WHL_SPD_3", "name": "Anti-lock brake wheel speed 3", "group": "Control", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MKZ_ABS_WHL_SPD_4", "name": "Anti-lock brake wheel speed 4", "group": "Control", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.223A51",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223A51",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ABS_LATERAL_ACCEL", "name": "Anti-lock brake lateral acceleration", "group": "Control", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "g"}
+      ]
+    },
+    {
+      "id": "7C7.2299AB",
+      "bus": "can11",
+      "tx": "7C7",
+      "request": "2299AB",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AC_COMP_A", "name": "A/C compressor current", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 32767, "min": -100, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7DF.7E9.221E12",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7E9",
+      "request": "221E12",
+      "interval": 30,
+      "answeredIn": [2012, 2013],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEAR_V2", "name": "Current gear, transmission module", "description": "The automatic transmission gear, as the transmission module reports it.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7DF.7E9.221E1C",
+      "bus": "can11",
+      "tx": "7DF",
+      "rx": "7E9",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2012, 2013],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TOT_V2", "name": "Transmission oil temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_MAP_V", "name": "Manifold pressure sensor voltage", "description": "Typically varies from 1 volt at idle to 5 volts during wide open throttle.", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220304",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220304",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CMD_GEN_V", "name": "Commanded generator voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000488, "min": 0, "max": 16, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_LPFP_DUTY", "name": "Fuel pump duty cycle, low pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22030F|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22030F",
+      "interval": 1,
+      "years": {"to": 2012},
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_CL", "name": "Lambda, commanded", "description": "The ratio of oxygen in the combustion chamber compared to the amount that should have been present for ideal combustion.", "group": "Engine", "bit": 0, "bits": 16, "divide": 32768, "min": 0, "max": 1.9999}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_INT_DUTY", "name": "Camshaft solenoid duty cycle, intake", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220317",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220317",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_EXH_DUTY", "name": "Camshaft solenoid duty cycle, exhaust", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_INT_ACT", "name": "Camshaft position, intake actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.93, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220319",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220319",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_EXH_ACT", "name": "Camshaft position, exhaust actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_INT_ERR", "name": "Camshaft position error, intake", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031B",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_EXH_ERR", "name": "Camshaft position error, exhaust", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220324",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220324",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_HPFP_V", "name": "Fuel rail sensor voltage, high pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ACC_POS", "name": "Accelerator position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220334",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220334",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_HEAD_T_CORR", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ETC_TRIM_LRN", "name": "Throttle control trim angle, learned", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033C",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_TIP_V", "name": "Throttle inlet pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033E",
+      "interval": 0.25,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_TIP_ABS", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 37, "divide": 33441, "min": 0, "max": 60, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220345",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220345",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_EVENTS_LATEST_CYC", "name": "Misfire events, latest cycle", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035A",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_BARO_V", "name": "Barometric pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_RO2_V", "name": "O2 sensor voltage, rear", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220370",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220370",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MAP_HIRES", "name": "Manifold absolute pressure, high resolution", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220378",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220378",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEN_CTRL", "name": "Generator control", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220382",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220382",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL1_NORM", "name": "Misfire acceleration, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220388",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220388",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL2_NORM", "name": "Misfire acceleration, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038A",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL3_NORM", "name": "Misfire acceleration, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038B",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL4_NORM", "name": "Misfire acceleration, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038C",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL5_NORM", "name": "Misfire acceleration, cylinder 5", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_EVAP_RAW", "name": "Evaporative pressure sensor, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ECT", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220393",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220393",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_AC_P", "name": "A/C compressor pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 245251, "divide": 845473, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220398",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220398",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_MISF_ACCEL_CYL6_NORM", "name": "Misfire acceleration, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203AF",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRQ_CTRL_REQ", "name": "Torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203B9|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203B9",
+      "interval": 0.25,
+      "years": {"to": 2012},
+      "signals": [
+        {"id": "MKZ_FAN_SPD_DES", "name": "Fan speed, desired", "group": "Movement", "bit": 0, "bits": 16, "multiply": 40, "divide": 13107, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 1,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_AAT_V", "name": "Ambient temperature sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BB",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_EXH_DES", "name": "Camshaft position, exhaust desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_VCT_INT_DES", "name": "Camshaft position, intake desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_CL_LC", "name": "Lambda correction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.9}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203CA",
+      "interval": 5,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_MCT", "name": "Manifold temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DC",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_HPFP_DES", "name": "Fuel rail pressure, desired", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_OAR", "name": "Octane adjustment", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F3",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_SUMP_OIL_T_MEAS", "name": "Sump oil temperature measured", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F4",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EXH_GAS_T_1", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F5",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EXH_GAS_T_2", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220403",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_KS1_RAW", "name": "Knock sensor, 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220404|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220404",
+      "interval": 1,
+      "years": {"to": 2012},
+      "signals": [
+        {"id": "MKZ_KS2_RAW", "name": "Knock sensor, 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220415",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220415",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_ENG_EOP_RAW", "name": "Oil pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22041F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22041F",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LPFP_DES", "name": "Fuel pressure, low desired", "group": "Engine", "bit": 0, "bits": 8, "multiply": 435, "divide": 1000, "min": 0, "max": 110, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220427",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220427",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BPV_OPEN", "name": "Bypass valve", "group": "Engine", "bit": 0, "bits": 8, "divide": 255, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220460",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220460",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CAT_SENS_V", "name": "Charge air temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220461",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220461",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CAT", "name": "Charge air temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "add": -40, "min": -40, "max": 189, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220462",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_WGDC", "name": "Wastegate duty cycle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220466",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220466",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TIP_DES_ABS", "name": "Throttle inlet pressure, desired", "group": "Engine", "bit": 0, "bits": 16, "multiply": 37, "divide": 33441, "min": 0, "max": 72.5, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22046F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22046F",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_INJ_MODE", "name": "Injection mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2204F7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2204F7",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEN_CURRENT", "name": "Generator current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 781, "divide": 50000, "min": -511.8361, "max": 511.8205, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22051C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22051C",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22051D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22051D",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CYL_HEAD_T", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220522",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220522",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22053F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22053F",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TIME_SINCE_OIL", "name": "Time since last oil change", "group": "Engine", "bit": 0, "bits": 16, "multiply": 200, "divide": 13107, "min": 0, "max": 1000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220542",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220542",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DIST_SINCE_OIL", "name": "Distance since last oil change", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220548",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220548",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LPFP_ACT", "name": "Fuel pressure, low actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 10000, "divide": 137892, "min": 0, "max": 200, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054B",
+      "interval": 30,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_ENG_OIL_LIFE_REM", "name": "Oil life remaining", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054D",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LPFP_SENS_V", "name": "Fuel pressure sensor voltage, low", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22057D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22057D",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AAT_ALT", "name": "Ambient temperature, alternate", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GRILL_SHUTTER_POS", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AC",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_1_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AD",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_2_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AE",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_3_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AF",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_4_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205B0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205B0",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_5_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 5", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205B1",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_6_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205BE",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TURBO_INLET_P", "name": "Turbo inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205FC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205FC",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CYL_HEAD_T_SENS_2_RAW", "name": "Cylinder head temperature, sensor 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220604",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220604",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_A_C_REFRIG_P", "name": "A/C refrigerant pressure", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GRILL_SHUT_DC", "name": "Grill shutter duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22070D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22070D",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANSFER_CASE_FLUID_T", "name": "Transfer case fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ETC_ANG_DES", "name": "Throttle angle, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22092C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22092C",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ATF_T_VAR_6", "name": "Transmission fluid temperature, variant 6", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ETC_ANG_ACT", "name": "Throttle angle, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099F",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FAN_SPD_SENS", "name": "Fan speed sensor", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2209CB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2209CB",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TQ_INTO_TQ_CONV", "name": "Torque into torque converter", "group": "Engine", "bit": 0, "bits": 16, "divide": 1.35581795, "min": 0, "max": 48336.1353, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2209D4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2209D4",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ACCEL_PEDAL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2209DB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2209DB",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221127",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22113C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22113C",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EGR_DUTY", "name": "Exhaust gas recirculation duty cycle", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221141",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221141",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_INJ_IMPULSE_WIDTH", "name": "Injector impulse width", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2.2e-05, "min": 0, "max": 0.05, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221142",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221142",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FUEL_PMP_WIDTH_BANK_2", "name": "Fuel pump pulse width, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221172",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221172",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.9375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211B3",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANS_GEAR", "name": "Transmission gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211B5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211B5",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANS_OUTPUT_SHFT", "name": "Transmission output shaft speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 40, "min": 0, "max": 1638.375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211B8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211B8",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 0, "bits": 16, "divide": 1.6385384237, "min": 0, "max": 39996.0104, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BA",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CONV_SPD_RAT", "name": "Converter speed ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 82, "min": 0, "max": 3996.0365}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211C0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211C0",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TQ_CONV_LINE_P", "name": "Torque converter line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 172369, "divide": 5000, "min": 0, "max": 8790.819, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221310",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221310",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -40, "min": -40, "max": 615, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221440",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221440",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BOOST", "name": "Boost", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22160E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22160E",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_1", "name": "Cylinder 1 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22160F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22160F",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_2", "name": "Cylinder 2 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221610",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221610",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_3", "name": "Cylinder 3 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221611",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221611",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_4", "name": "Cylinder 4 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221612",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221612",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_5", "name": "Cylinder 5 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221613",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221613",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIS_CNT_6", "name": "Cylinder 6 misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221616",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221616",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TOT_MIS_CNT", "name": "Total misfire count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221624",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221624",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CYL_HEAD_T_7E0", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221639",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221639",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FUEL_TANK_P", "name": "Fuel tank pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 6.9013112491, "min": 0, "max": 9496.0214, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22163A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22163A",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TQ_INTO_TQ_CONV_7E0", "name": "Torque into torque converter", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.2711635897, "min": 0, "max": 69.1467, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22163B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22163B",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANS_GEAR_RAT", "name": "Transmission gear ratio", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 15.7480315, "min": 0, "max": 4015.748}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221672",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221672",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FUEL_PMP_DUTY", "name": "Fuel pump duty cycle", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "min": 0, "max": 199.2187, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221674",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221674",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221685",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221685",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CYL_HEAD_T_ALT", "name": "Cylinder head temperature, alternate", "group": "Engine", "bit": 0, "bits": 16, "multiply": 281, "divide": 1000, "min": 0, "max": 18415, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22168B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22168B",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FUEL_INJ_IMPULSE", "name": "Fuel injection impulse width", "group": "Fuel", "bit": 0, "bits": 16, "divide": 125000, "min": 0, "max": 0.1, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216A8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216A8",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IAT_2", "name": "Intake air temperature 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 9, "add": -17.777778, "min": -17.77, "max": 36390, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216C1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216C1",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FLI_16C1", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "multiply": 0.0030518509, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E1",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_WASTEGATE_CTRL", "name": "Wastegate control", "group": "Engine", "bit": 0, "bits": 16, "multiply": 763, "divide": 50000, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CMD_GEN_DUTY", "name": "Commanded generator duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 0.25,
+      "answeredIn": [2013, 2017],
+      "notAnsweredIn": [2012],
+      "signals": [
+        {"id": "MKZ_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E19",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E19",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CMD_TRANS_GEAR_RATIO", "name": "Gear ratio, commanded", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1A",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_CMD_TRANS_MAIN_LINE_P", "name": "Transmission pressure, commanded", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1C",
+      "interval": 1,
+      "answeredIn": [2013],
+      "notAnsweredIn": [2012, 2017],
+      "signals": [
+        {"id": "MKZ_TOT_7E0", "name": "Transmission oil temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -500, "max": 500, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1F",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224194",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224194",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DTE", "name": "Distance to empty, calculated", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224195",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224195",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DTE_DISP", "name": "Distance to empty, displayed", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A211",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A211",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_4_WHL_DRIVE_ENGAGED", "name": "4 wheel drive engaged", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D137",
+      "interval": 3600,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DTC_CNT", "name": "DTC counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_STFT", "name": "Fuel trim, short term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B|f=-2012",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 0.25,
+      "years": {"to": 2012},
+      "signals": [
+        {"id": "MKZ_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_VSS", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 30,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42C",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_EGR", "name": "Exhaust gas recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_FLI_7E0", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 30,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AIR_FUEL_RAT", "name": "Air/fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.000446787, "min": 0, "max": 29.2801}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F45E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F45E",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ENG_FUEL_RATE", "name": "Engine fuel rate", "group": "Fuel", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F462",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_ACT_ENG_PCT_TRQ", "name": "Actual engine percent torque", "group": "Engine", "bit": 0, "bits": 8, "add": -125, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F463",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F463",
+      "interval": 3600,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_ENG_REFERENCE_TRQ", "name": "Engine reference torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F4A6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F4A6",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PCM_VEH_ODO", "name": "Vehicle odometer", "group": "Trips", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22FD18",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22FD18",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AC_P_7E0", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 12.156863, "min": 0, "max": 3100, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2211B3",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2211B3",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANS_GEAR_7E1", "name": "Transmission gear", "group": "Transmission", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22163A",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22163A",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TQ_INTO_TQ_CONV_VAR_2", "name": "Torque into torque converter, variant 2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 0.2711635897, "min": 0, "max": 69.1467, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221674",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221674",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.221E3F",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "221E3F",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_ATF_T_VAR_5", "name": "Transmission fluid temperature, variant 5", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.224972",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "224972",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEN_COIL_T", "name": "Generator coil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 180, "add": 320, "min": 0, "max": 11796620, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22DD01",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRANS_ODO", "name": "Transmission odometer", "group": "Transmission", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22000F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22000F",
+      "interval": 1,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -39.8, "min": -39.8, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220701",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220701",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FAN_SPD_DEMANDED", "name": "Fan speed demanded", "group": "Movement", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220702",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220702",
+      "interval": 0.25,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_FAN_SPD_INDICATED", "name": "Fan speed indicated", "group": "Movement", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224800|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224800",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2012, 2017],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "MKZ_HVBAT_T", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 205}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224801|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224801",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2012, 2017],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "MKZ_HVBAT_SOC", "name": "HV battery charge", "description": "High resolution state of charge.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224803",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224803",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HV_POS_LEAK_V", "name": "HV positive leakage voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224804",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224804",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HV_NEG_LEAK_V", "name": "HV negative leakage voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224805",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224805",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CONTACTOR_V_POS", "name": "Contactor voltage positive", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224806",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224806",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_CONTACTOR_V_NEG", "name": "Contactor voltage negative", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224808",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224808",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HVBAT_T_MAX", "name": "Maximum battery temperature", "group": "Trips", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 205},
+        {"id": "MKZ_HVBAT_T_MIN", "name": "Minimum battery temperature", "group": "Trips", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrAbove": 205}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480B",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HIGH_V_BAT_CURRENT", "name": "High voltage battery current", "group": "Engine", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480D|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2012, 2017],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "MKZ_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224810|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224810",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2012, 2017],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "MKZ_HVBAT_AGE", "name": "HV battery age", "group": "Battery", "bit": 0, "bits": 16, "multiply": 720, "divide": 200, "min": 0, "max": 235926, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224815",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224815",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MAX_DISCH_PWR_LIM", "name": "Maximum discharge power limit", "group": "Battery", "bit": 0, "bits": 8, "multiply": 25, "divide": 100, "min": 0, "max": 63.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224832",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224832",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MOTOR_ELECTRONICS", "name": "Motor electronics coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": 32, "min": 0, "max": 491, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22483E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22483E",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BATT_SOC", "name": "State of charge spread across battery modules", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22483F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22483F",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BAT_V_VARIATION_BAT", "name": "Voltage spread across battery modules", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224840",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224840",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BATT_MIN_BATT_V", "name": "Minimum battery module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224841",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224841",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_AVG_BAT_MODULE_V", "name": "Average battery module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224845|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224845",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2012, 2013],
+      "signals": [
+        {"id": "MKZ_HVBAT_SOC_DISP", "name": "HV battery charge, displayed", "description": "The state of charge displayed on the vehicle's dashboard.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224846",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224846",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_HVBAT_COOLANT_INLET_T", "name": "HV battery coolant inlet temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224848|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224848",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_HVBAT_KWH", "name": "HV battery energy", "group": "Battery", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 131.07, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22484F|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22484F",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_CHRG_STATE", "name": "Charging state", "group": "Battery", "metric": "isCharging", "bit": 0, "bits": 8, "values": {"0": "NOT_READY", "1": "READY", "2": "FAULT", "3": "WAIT", "4": "PRE_COND", "5": "CHARGING", "6": "DONE", "7": "EXT", "8": "INIT"}, "valueDescriptions": {"0": "Not ready", "1": "Ready", "2": "Fault", "3": "Wait Check", "4": "Pre-condition", "5": "Charging", "6": "Done", "7": "External Charger", "8": "Initializing"}}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22490B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22490B",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRACTION_BAT_V_ALT", "name": "Traction battery voltage, alternate", "group": "Battery", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 199, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22490C|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22490C",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2012, 2013, 2017],
+      "signals": [
+        {"id": "MKZ_HVBAT_SOH", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22496A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22496A",
+      "interval": 0.25,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_TRACTION_MOTOR_SPD", "name": "Traction motor speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224983",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224983",
+      "interval": 5,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MOTOR_ELECTRONIC_ECT", "name": "Motor electronic coolant temperature II", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -39.8, "min": -39.8, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.226182",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "226182",
+      "interval": 30,
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "MKZ_BECM_ODO", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 16, "multiply": 128, "divide": 15625, "min": 0, "max": 536}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22DD04",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22DD04",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_T_INSIDE_CAR", "name": "Temperature inside car", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E12",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E12",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "Fault"}}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E1C|fc=1",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E1C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017],
+      "notAnsweredIn": [2012, 2013],
+      "signals": [
+        {"id": "MKZ_TT", "name": "Transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -300, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E2C",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E2C",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PRI_MOTOR_RPM", "name": "Primary motor speed", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -6000, "max": 12000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481C",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481C",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PRI_MOTOR_TQ", "name": "Primary motor torque", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -200, "max": 200, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481D",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481D",
+      "interval": 1,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PRI_MOTOR_INV_V", "name": "Primary motor inverter voltage", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -400, "max": 400, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481F",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481F",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_MOTOR_COIL_T", "name": "Motor coil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 9, "divide": 5, "add": 32, "min": -58950, "max": 59012, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224820",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224820",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_GEN_COIL_T_7E6", "name": "Generator coil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 9, "divide": 5, "min": -58982, "max": 58980, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224824",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224824",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_PRI_MOTOR_INV_T", "name": "Primary motor inverter temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22DD05",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22DD05",
+      "interval": 5,
+      "answeredIn": [2017],
+      "signals": [
+        {"id": "MKZ_OUTSIDE_T", "name": "Outside temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -38, "min": -38, "max": 421, "unit": "°F"}
+      ]
+    }
+  ]
+}

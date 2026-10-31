@@ -1,0 +1,1398 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/hyundai/ioniq-electric",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Hyundai",
+    "model": "IONIQ Electric",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2016, "to": 2019},
+      {"name": "First Generation (2020 Facelift)", "from": 2019, "to": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Hyundai-IONIQ-Electric",
+    "file": "signalsets/v3/default.json",
+    "revision": "fb2c4c5a5e0bdfb3729df4d72068ba245fee3c60",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "730.738.22F010",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22F010",
+      "interval": 0.25,
+      "signals": [
+        {"id": "IONIQEV_WHEEL_FR_VSS_HD", "name": "Front right wheel speed, high resolution", "group": "Movement", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_FL_VSS_HD", "name": "Front left wheel speed, high resolution", "group": "Movement", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_RR_VSS_HD", "name": "Rear right wheel speed, high resolution", "group": "Movement", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_RL_VSS_HD", "name": "Rear left wheel speed, high resolution", "group": "Movement", "bit": 80, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "IONIQEV_STEERING_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 96, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "IONIQEV_LATERAL_ACCELERATION", "name": "Lateral acceleration", "group": "Orientation", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "IONIQEV_LONGITUDINAL_ACCELERATION", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "IONIQEV_YAW_RATE", "name": "Yaw rate", "group": "Orientation", "bit": 144, "bits": 8, "divide": 200, "min": 0, "max": 1.275, "unit": "°"}
+      ]
+    },
+    {
+      "id": "744.74C.22E001|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E001",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_AUX_BATTERY_VOLTAGE", "name": "Auxiliary battery voltage", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"},
+        {"id": "IONIQEV_DC_CHRG_STATE", "name": "DC charging state", "group": "Battery.Charging", "bit": 140, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_AC_CHRG_STATE", "name": "AC charging state", "group": "Battery.Charging", "bit": 141, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_OBC_CHRG_DC_VOLTAGE", "name": "On-board charger, charging DC voltage", "group": "Battery.Charging", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_OBC_CHRG_DC_CURRENT", "name": "On-board charger, charging DC current", "group": "Battery.Charging", "bit": 168, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_OBC_CHRG_AC_CURRENT", "name": "On-board charger, charging AC current", "group": "Battery.Charging", "bit": 184, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_OBC_CHRG_AC_VOLTAGE", "name": "On-board charger, charging AC voltage", "group": "Battery.Charging", "bit": 200, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "IONIQEV_OBC_DCHRG_DC_CURRENT", "name": "On-board charger, discharging DC current", "group": "Battery.Charging", "bit": 208, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "IONIQEV_OBC_DCHRG_AC_CURRENT", "name": "On-board charger, discharging AC current", "group": "Battery.Charging", "bit": 216, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "IONIQEV_ESTIMATED_CHRG_POWER", "name": "Estimated charging power", "group": "Battery.Charging", "bit": 224, "bits": 16, "multiply": 10, "add": -50, "min": -50, "max": 655300, "unit": "W"}
+      ]
+    },
+    {
+      "id": "744.74C.22E002",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E002",
+      "interval": 0.25,
+      "signals": [
+        {"id": "IONIQEV_EVSE_MAXIMUM_VOLTAGE_VALUE", "name": "Electric vehicle supply equipment, voltage, max", "group": "Battery.Charging", "bit": 72, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_EVSE_MAXIMUM_CURRENT_VALUE", "name": "Electric vehicle supply equipment, current, max", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_EVSE_MINIMUM_VOLTAGE_VALUE", "name": "Electric vehicle supply equipment, voltage, min", "group": "Battery.Charging", "bit": 104, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_EVSE_MINIMUM_CURRENT_VALUE", "name": "Electric vehicle supply equipment, current, min", "group": "Battery.Charging", "bit": 120, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_EVSE_V", "name": "Electric vehicle supply equipment, voltage", "group": "Battery.Charging", "bit": 136, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_EVSE_C", "name": "Electric vehicle supply equipment, current", "group": "Battery.Charging", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_EVSE_CURRENT_REGULATION_TOLERANCE_VALUE", "name": "Electric vehicle supply equipment, regulation tolerance", "group": "Battery.Charging", "bit": 176, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "A"},
+        {"id": "IONIQEV_EVSE_DELIVERED_POWER_VALUE", "name": "Electric vehicle supply equipment, power, delivered", "group": "Battery.Charging", "bit": 184, "bits": 16, "multiply": 10, "divide": 1000, "min": 0, "max": 655.35, "unit": "kWh"},
+        {"id": "IONIQEV_EVSE_MAXIMUM_POWER_VALUE", "name": "Electric vehicle supply equipment, power, max", "group": "Battery.Charging", "bit": 200, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "W"},
+        {"id": "IONIQEV_EVSE_MAIN_POWER", "name": "Electric vehicle supply equipment, power, main", "group": "Battery.Charging", "bit": 216, "bits": 8, "min": 0, "max": 255, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "744.74C.22E003|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E003",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CP_VOLTAGE", "name": "Control pilot voltage", "group": "Battery", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CP_DUTY_CYCLE", "name": "Control pilot duty cycle", "group": "Battery", "bit": 56, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_PD_VOLTAGE", "name": "Proximity detection voltage", "group": "Battery", "bit": 88, "bits": 16, "multiply": 10, "divide": 10000, "min": 0, "max": 65.535, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_HV_BATTERY_VOLTAGE", "name": "High voltage battery, voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 104, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_SOC_VCMS", "name": "High voltage battery, state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 120, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_TARGET_VOLT", "name": "High voltage battery, target voltage", "group": "Battery", "bit": 128, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_TARGET_CURR", "name": "Electric vehicle supply equipment, target current", "group": "Battery", "bit": 144, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_HVBAT_EV_MAX_VOLTAGE", "name": "High voltage battery, max voltage", "group": "Battery", "bit": 160, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_EV_MAX_CURRENT", "name": "High voltage battery, max current", "group": "Battery", "bit": 176, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_HVBAT_BMS_TARGET_VOLTAGE", "name": "High voltage battery, target voltage", "group": "Battery", "bit": 192, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_BMS_TARGET_CURRENT", "name": "High voltage battery, target current", "group": "Battery", "bit": 208, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_HVBAT_AC_CHARGING_COUNTER", "name": "A/C charging counter", "group": "Battery", "bit": 240, "bits": 16, "min": 0, "max": 65535},
+        {"id": "IONIQEV_HVBAT_CHRG_CNT", "name": "DC charging counter", "group": "Battery", "bit": 256, "bits": 16, "min": 0, "max": 65535},
+        {"id": "IONIQEV_VCMS__AC_CHARGING_TIME", "name": "A/C charging time", "group": "Battery", "bit": 272, "bits": 16, "min": 0, "max": 65535, "unit": "h"},
+        {"id": "IONIQEV_DC_CHRG_TIME", "name": "Cumulative DC charging time", "group": "Battery", "bit": 288, "bits": 16, "min": 0, "max": 65535, "unit": "h"},
+        {"id": "IONIQEV_AC_CHARGER_CURRENT", "name": "A/C charger current", "group": "Battery", "bit": 304, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "IONIQEV_DC_CHARGER_CURRENT_CAPABILITY", "name": "DC charger current capability", "group": "Battery", "bit": 320, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "IONIQEV_AC_CHARGING_TIME_AFTER_PLUG_IN", "name": "A/C charging time, after plug-in", "group": "Battery", "bit": 336, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "IONIQEV_DC_CHARGING_TIME_AFTER_PLUG_IN", "name": "DC charging time, after plug-in", "group": "Battery", "bit": 352, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "744.74C.22E004",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E004",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_BATTERY_MAIN_RELAY_STATUS", "name": "Battery main relay status", "group": "Battery.Charging", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_CHARGING_SOCKET_CONNECTED", "name": "Charging socket connected", "group": "Battery.Charging", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_400V_RELAY_STATUS", "name": "400V relay status", "group": "Battery.Charging", "bit": 42, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_400V_RELAY_ON_OFF_REQUEST", "name": "400V relay on/off request", "group": "Battery.Charging", "bit": 43, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_DC_INLET_T_1", "name": "DC inlet temperature 1", "group": "Battery.Charging", "bit": 64, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "IONIQEV_DC_INLET_T_2", "name": "DC inlet temperature 2", "group": "Battery.Charging", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "IONIQEV_AC_INLET_T_1", "name": "AC inlet temperature 1", "group": "Battery.Charging", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 1,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_LOW_BEAMS", "name": "Low beams", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 1,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_GEAR_R_2", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "IONIQEV_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "IONIQEV_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "IONIQEV_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "IONIQEV_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "IONIQEV_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 1,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HAZARD_SW", "name": "Hazard switch", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_HL_SW", "name": "Headlight switch", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_DEFOG_LIGHT", "name": "Defog light", "group": "Lights", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_TURN_R", "name": "Right turn signal on?", "group": "Lights", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_TURN_L", "name": "Left turn signal on?", "group": "Lights", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HL_HIGH", "name": "Headlight high beam", "group": "Lights", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_HL_LOW", "name": "Headlight low beam", "group": "Lights", "bit": 63, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B00C",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_HEATED_WHEEL", "name": "Heated steering wheel", "group": "Climate", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "signals": [
+        {"id": "IONIQPHEV_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"},
+        {"id": "IONIQPHEV_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"},
+        {"id": "IONIQPHEV_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"},
+        {"id": "IONIQPHEV_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 128, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_1_ODO_EVT_3", "name": "Sensor 1 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_2_ODO_EVT_3", "name": "Sensor 2 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_3_ODO_EVT_3", "name": "Sensor 3 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "IONIQEV_SENS_4_ODO_EVT_3", "name": "Sensor 4 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVAC_IAT", "name": "Interior temperature, front", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_AAT", "name": "Outdoor temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_EVAPORATOR_T", "name": "Evaporator temperature", "group": "Climate", "bit": 56, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_HUMIDITY_SENSOR_FOR_AUTOMATIC_DEFOGGER", "name": "Humidity sensor for automatic defogger", "group": "Climate", "bit": 200, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVAC_IAT_DRIVER_VENT", "name": "Interior temperature, driver vent", "group": "Climate", "bit": 216, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_IAT_DRIVER_LEGS_VENT", "name": "Interior temperature, driver legs vent", "group": "Climate", "bit": 224, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_VSS_7B3", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220102",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220102",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_HVAC_COOLANT_T", "name": "Coolant temperature", "group": "Engine", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "IONIQEV_HVAC_INVERTER_T", "name": "Inverter temperature", "group": "Engine", "bit": 96, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002|fc=1",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_ODO_KM", "name": "Odometer, km", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "IONIQEV_ODO_MI", "name": "Odometer, miles", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.2101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "IONIQEV_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "IONIQEV_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "IONIQEV_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.220104",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "220104",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_WHEEL_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_WHEEL_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_TIRE_FL_VSS_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_FR_VSS_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_RL_VSS_V3", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_RR_VSS_V3", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "signals": [
+        {"id": "IONIQEV_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.2101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_WHEEL_ANGLE_ABS", "name": "Wheel turn angle, absolute", "group": "Tires", "bit": 56, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "IONIQEV_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D6.7DE.2106",
+      "bus": "can11",
+      "tx": "7D6",
+      "rx": "7DE",
+      "request": "2106",
+      "interval": 15,
+      "signals": [
+        {"id": "IONIQEV_FL_TP", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "IONIQEV_FL_TT", "name": "Front left tire temperature", "group": "Engine", "metric": "frontLeftTireTemperature", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "IONIQEV_FR_TP", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "IONIQEV_FR_TT", "name": "Front right tire temperature", "group": "Engine", "metric": "frontRightTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "IONIQEV_RL_TP", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 64, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "IONIQEV_RL_TT", "name": "Rear left tire temperature", "group": "Engine", "metric": "rearLeftTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "IONIQEV_RR_TP", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "IONIQEV_RR_TT", "name": "Rear right tire temperature", "group": "Engine", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 5,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "IONIQEV_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
+        {"id": "IONIQEV_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
+        {"id": "IONIQEV_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "IONIQEV_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "s"},
+        {"id": "IONIQEV_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "s"},
+        {"id": "IONIQEV_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "s"},
+        {"id": "IONIQEV_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 5,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_AUX_SOC", "name": "Aux battery state of charge", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_AUX_SOH", "name": "Aux battery state of health", "group": "Battery", "bit": 328, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_KNOCK_RETARD_1", "name": "Knock retard, cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_RETARD_2", "name": "Knock retard, cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_RETARD_3", "name": "Knock retard, cylinder 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_RETARD_4", "name": "Knock retard, cylinder 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_LEARN_1", "name": "Knock learn, cylinder 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_LEARN_2", "name": "Knock learn, cylinder 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_LEARN_3", "name": "Knock learn, cylinder 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
+        {"id": "IONIQEV_KNOCK_LEARN_4", "name": "Knock learn, cylinder 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A0",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_VSS_7E1", "name": "Vehicle speed", "group": "Transmission", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "IONIQEV_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 152, "bits": 8, "values": {"1": "NEUTRAL", "2": "REVERSE", "3": "PARK", "4": "MANUAL"}, "valueDescriptions": {"1": "Neutral", "2": "Reverse", "3": "Park", "4": "Manual"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A4",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A4",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
+        {"id": "IONIQEV_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "IONIQEV_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "IONIQEV_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2101",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_GEAR_D", "name": "Drive selected", "group": "Transmission", "bit": 44, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "IONIQEV_GEAR_N", "name": "Neutral selected", "group": "Transmission", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "IONIQEV_GEAR_R", "name": "Reverse selected", "group": "Transmission", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "IONIQEV_GEAR_P", "name": "Park selected", "group": "Transmission", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["Yes", "No"]},
+        {"id": "IONIQEV_BRAKE_LAMP", "name": "Brake lamp on", "group": "Control", "bit": 55, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 96, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 104, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -180, "max": 180, "unit": "mph"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2102",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2102",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_AUX_AMPS_LDC", "name": "AUX amps LDC", "group": "Engine", "bit": 128, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "A"},
+        {"id": "IONIQEV_AUXILIARY_BAT", "name": "Auxiliary battery current", "group": "Battery", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "A"},
+        {"id": "IONIQEV_AUXILIARY_BAT_ST_CHG", "name": "Auxiliary battery state of charge", "group": "Battery", "bit": 184, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22E004",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E004",
+      "interval": 1,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_VPWR_7E2", "name": "12V battery charge", "group": "Battery", "bit": 152, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22E005",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22E005",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_DISCONNECTOR_STROKE_POSITION", "name": "Disconnector stroke position", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "mm"},
+        {"id": "IONIQEV_DISCONNECTOR_MEET_POINT", "name": "Disconnector meet point", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "mm"},
+        {"id": "IONIQEV_DISCONNECTOR_END_POINT", "name": "Disconnector end point", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "mm"},
+        {"id": "IONIQEV_DISCONNECTOR_DISENGAGE_LAST_TIME", "name": "Disconnector disengage last time", "group": "Engine", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "ms"},
+        {"id": "IONIQEV_DISCONNECTOR_ACTUATOR_MOTOR_CURRENT", "name": "Disconnector actuator motor current", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "A"},
+        {"id": "IONIQEV_DISCONNECTOR_INVERTER_PWM_DUTY", "name": "Disconnector inverter PWM duty", "group": "Engine", "bit": 104, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 78.125, "divide": 10000, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_DISCONNECTOR_ZERO_COUNT_OFFSET", "name": "Disconnector zero count offset", "group": "Engine", "bit": 120, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E3.7EB.2102",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "2102",
+      "interval": 0.25,
+      "signals": [
+        {"id": "IONIQEV_VMCU_MOTOR_ACT_SPD", "name": "Drive motor speed, vehicle control unit", "group": "Movement", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22E001",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22E001",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_IGN_VOLTAGE", "name": "Ignition voltage", "group": "Engine", "bit": 120, "bits": 16, "byteOrder": "little", "multiply": 10, "divide": 10000, "min": 0, "max": 65.535, "unit": "V"},
+        {"id": "IONIQEV_MOTOR_RPM", "name": "Motor RPM", "group": "Engine", "bit": 136, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "IONIQEV_NOMINAL_TORQUE_VALUE", "name": "Nominal torque value", "group": "Engine", "bit": 152, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"},
+        {"id": "IONIQEV_MOTOR_ACTUAL_TORQUE", "name": "Motor actual torque", "group": "Engine", "bit": 168, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"},
+        {"id": "IONIQEV_MOTOR_PHASE_CURRENT_RMS", "name": "Motor phase current", "group": "Engine", "bit": 184, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_MOTOR_T", "name": "Motor temperature", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"},
+        {"id": "IONIQEV_INVERTER_T", "name": "Inverter temperature", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"},
+        {"id": "IONIQEV_HEAT_SINK_T", "name": "Heat sink temperature", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22E009",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22E009",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_EWP_CURRENT_DC", "name": "Electric water pump, current DC", "group": "Battery", "bit": 56, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"},
+        {"id": "IONIQEV_EWP_VOLTAGE_DC", "name": "Electric water pump, voltage DC", "group": "Battery", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_EWP_COMMANDED_ROTATION_SPEED", "name": "Electric water pump, commanded rotation speed", "group": "Battery", "bit": 88, "bits": 8, "multiply": 24, "min": 0, "max": 6120, "unit": "rpm"},
+        {"id": "IONIQEV_EWP_ACTUAL_ROTATION_SPEED", "name": "Electric water pump, actual rotation speed", "group": "Battery", "bit": 96, "bits": 8, "multiply": 24, "min": 0, "max": 6120, "unit": "rpm"},
+        {"id": "IONIQEV_EOP_ACTUAL_SPEED", "name": "Electric oil pump, actual speed", "group": "Battery", "bit": 112, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "rpm"},
+        {"id": "IONIQEV_EOP_COMMANDED_SPEED", "name": "Electric oil pump, commanded speed", "group": "Battery", "bit": 152, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "rpm"},
+        {"id": "IONIQEV_EOP_CURRENT_DC", "name": "Electric oil pump, current DC", "group": "Battery", "bit": 176, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "IONIQEV_EOP_CURRENT_IQ", "name": "Electric oil pump, current IQ", "group": "Battery", "bit": 184, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2101",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2101",
+      "interval": 5,
+      "signals": [
+        {"id": "IONIQEV_ST_CHG_BMS", "name": "State of charge BMS", "group": "Battery", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
+        {"id": "IONIQEV_AVAILABLE_CHG_POWER", "name": "Available charge power", "group": "Battery", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kW"},
+        {"id": "IONIQEV_AVAILABLE_DCHG_POWER", "name": "Available discharge power", "group": "Battery", "bit": 56, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kW"},
+        {"id": "IONIQEV_HV_CHG", "name": "Hv_charging", "group": "Engine", "bit": 72, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_RAPID_CHG_PORT", "name": "Rapid charge port", "group": "Battery", "bit": 73, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_NORMAL_CHG_PORT", "name": "Normal charge port", "group": "Battery", "bit": 74, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_BAT_MANAGEMENT_MAIN", "name": "Battery management main relay", "group": "Engine", "bit": 79, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_BAT_CURRENT_7E4", "name": "Battery current", "group": "Battery", "bit": 80, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "IONIQEV_BAT_DC_V", "name": "Battery DC voltage", "group": "Battery", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"},
+        {"id": "IONIQEV_BAT_MAX_T", "name": "Battery max temperature", "group": "Battery", "bit": 112, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MIN_T", "name": "Battery min temperature", "group": "Battery", "bit": 120, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MODULE_01_T", "name": "Battery module 01 temperature", "group": "Battery", "bit": 128, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MODULE_02_T", "name": "Battery module 02 temperature", "group": "Battery", "bit": 136, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MODULE_03_T", "name": "Battery module 03 temperature", "group": "Battery", "bit": 144, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MODULE_04_T", "name": "Battery module 04 temperature", "group": "Battery", "bit": 152, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_MODULE_05_T", "name": "Battery module 05 temperature", "group": "Battery", "bit": 160, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_BAT_INLET_T", "name": "Battery inlet temperature", "group": "Battery", "bit": 176, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_MAX_CELL_V", "name": "Maximum cell voltage", "group": "Battery", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_MAX_CELL_V_NO", "name": "Maximum cell voltage no.", "group": "Battery", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_MIN_CELL_V", "name": "Minimum cell voltage", "group": "Battery", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_MIN_CELL_V_NO", "name": "Minimum cell voltage no.", "group": "Battery", "bit": 208, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_BAT_FAN_STAT", "name": "Battery fan status", "group": "Battery", "bit": 216, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_BAT_FAN_FEEDBACK", "name": "Battery fan feedback", "group": "Battery", "bit": 224, "bits": 8, "min": 0, "max": 255, "unit": "Hz"},
+        {"id": "IONIQEV_AUXILIARY_BAT_V", "name": "Auxiliary battery voltage", "group": "Battery", "bit": 232, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_CUM_CHG_CURRENT", "name": "Cumulative charge current", "group": "Battery", "bit": 240, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "IONIQEV_CUM_DCHG_CURRENT", "name": "Cumulative discharge current", "group": "Battery", "bit": 272, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "IONIQEV_CUM_ENERGY_CHARGED", "name": "Cumulative energy charged", "group": "Battery", "bit": 304, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "IONIQEV_CUM_ENERGY", "name": "Cumulative energy discharged", "group": "Battery", "bit": 336, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "IONIQEV_OP_TIME", "name": "Operating time", "group": "Engine", "bit": 368, "bits": 32, "divide": 3600, "min": 0, "max": 1193046},
+        {"id": "IONIQEV_BAT_MANAGEMENT_IGN", "name": "Battery management ignition", "group": "Engine", "bit": 405, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_INVERTER_CAPACITOR_V", "name": "Inverter capacitor voltage", "group": "Battery", "bit": 408, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "IONIQEV_DRIVE_MOTOR_SPD_1", "name": "Drive motor speed 1", "group": "Movement", "bit": 424, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "IONIQEV_DRIVE_MOTOR_SPD_2", "name": "Drive motor speed 2", "group": "Movement", "bit": 440, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "IONIQEV_ISOLATION_RES", "name": "Isolation resistance", "group": "Engine", "bit": 456, "bits": 16, "min": 0, "max": 65535, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2102|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2102",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2019],
+      "notAnsweredIn": [2020, 2021],
+      "signals": [
+        {"id": "IONIQPHEV_HVBAT_CMU001_VOLT", "name": "HV battery module 001 voltage", "group": "Battery.Modules.001", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU002_VOLT", "name": "HV battery module 002 voltage", "group": "Battery.Modules.002", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU003_VOLT", "name": "HV battery module 003 voltage", "group": "Battery.Modules.003", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU004_VOLT", "name": "HV battery module 004 voltage", "group": "Battery.Modules.004", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU005_VOLT", "name": "HV battery module 005 voltage", "group": "Battery.Modules.005", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU006_VOLT", "name": "HV battery module 006 voltage", "group": "Battery.Modules.006", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU007_VOLT", "name": "HV battery module 007 voltage", "group": "Battery.Modules.007", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU008_VOLT", "name": "HV battery module 008 voltage", "group": "Battery.Modules.008", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU009_VOLT", "name": "HV battery module 009 voltage", "group": "Battery.Modules.009", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU010_VOLT", "name": "HV battery module 010 voltage", "group": "Battery.Modules.010", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU011_VOLT", "name": "HV battery module 011 voltage", "group": "Battery.Modules.011", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU012_VOLT", "name": "HV battery module 012 voltage", "group": "Battery.Modules.012", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU013_VOLT", "name": "HV battery module 013 voltage", "group": "Battery.Modules.013", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU014_VOLT", "name": "HV battery module 014 voltage", "group": "Battery.Modules.014", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU015_VOLT", "name": "HV battery module 015 voltage", "group": "Battery.Modules.015", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU016_VOLT", "name": "HV battery module 016 voltage", "group": "Battery.Modules.016", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU017_VOLT", "name": "HV battery module 017 voltage", "group": "Battery.Modules.017", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU018_VOLT", "name": "HV battery module 018 voltage", "group": "Battery.Modules.018", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU019_VOLT", "name": "HV battery module 019 voltage", "group": "Battery.Modules.019", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU020_VOLT", "name": "HV battery module 020 voltage", "group": "Battery.Modules.020", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU021_VOLT", "name": "HV battery module 021 voltage", "group": "Battery.Modules.021", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU022_VOLT", "name": "HV battery module 022 voltage", "group": "Battery.Modules.022", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU023_VOLT", "name": "HV battery module 023 voltage", "group": "Battery.Modules.023", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU024_VOLT", "name": "HV battery module 024 voltage", "group": "Battery.Modules.024", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU025_VOLT", "name": "HV battery module 025 voltage", "group": "Battery.Modules.025", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU026_VOLT", "name": "HV battery module 026 voltage", "group": "Battery.Modules.026", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU027_VOLT", "name": "HV battery module 027 voltage", "group": "Battery.Modules.027", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU028_VOLT", "name": "HV battery module 028 voltage", "group": "Battery.Modules.028", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU029_VOLT", "name": "HV battery module 029 voltage", "group": "Battery.Modules.029", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU030_VOLT", "name": "HV battery module 030 voltage", "group": "Battery.Modules.030", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU031_VOLT", "name": "HV battery module 031 voltage", "group": "Battery.Modules.031", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU032_VOLT", "name": "HV battery module 032 voltage", "group": "Battery.Modules.032", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2103|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2103",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2019],
+      "notAnsweredIn": [2020, 2021],
+      "signals": [
+        {"id": "IONIQPHEV_HVBAT_CMU033_VOLT", "name": "HV battery module 033 voltage", "group": "Battery.Modules.033", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU034_VOLT", "name": "HV battery module 034 voltage", "group": "Battery.Modules.034", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU035_VOLT", "name": "HV battery module 035 voltage", "group": "Battery.Modules.035", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU036_VOLT", "name": "HV battery module 036 voltage", "group": "Battery.Modules.036", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU037_VOLT", "name": "HV battery module 037 voltage", "group": "Battery.Modules.037", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU038_VOLT", "name": "HV battery module 038 voltage", "group": "Battery.Modules.038", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU039_VOLT", "name": "HV battery module 039 voltage", "group": "Battery.Modules.039", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU040_VOLT", "name": "HV battery module 040 voltage", "group": "Battery.Modules.040", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU041_VOLT", "name": "HV battery module 041 voltage", "group": "Battery.Modules.041", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU042_VOLT", "name": "HV battery module 042 voltage", "group": "Battery.Modules.042", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU043_VOLT", "name": "HV battery module 043 voltage", "group": "Battery.Modules.043", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU044_VOLT", "name": "HV battery module 044 voltage", "group": "Battery.Modules.044", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU045_VOLT", "name": "HV battery module 045 voltage", "group": "Battery.Modules.045", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU046_VOLT", "name": "HV battery module 046 voltage", "group": "Battery.Modules.046", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU047_VOLT", "name": "HV battery module 047 voltage", "group": "Battery.Modules.047", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU048_VOLT", "name": "HV battery module 048 voltage", "group": "Battery.Modules.048", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU049_VOLT", "name": "HV battery module 049 voltage", "group": "Battery.Modules.049", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU050_VOLT", "name": "HV battery module 050 voltage", "group": "Battery.Modules.050", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU051_VOLT", "name": "HV battery module 051 voltage", "group": "Battery.Modules.051", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU052_VOLT", "name": "HV battery module 052 voltage", "group": "Battery.Modules.052", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU053_VOLT", "name": "HV battery module 053 voltage", "group": "Battery.Modules.053", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU054_VOLT", "name": "HV battery module 054 voltage", "group": "Battery.Modules.054", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU055_VOLT", "name": "HV battery module 055 voltage", "group": "Battery.Modules.055", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU056_VOLT", "name": "HV battery module 056 voltage", "group": "Battery.Modules.056", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU057_VOLT", "name": "HV battery module 057 voltage", "group": "Battery.Modules.057", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU058_VOLT", "name": "HV battery module 058 voltage", "group": "Battery.Modules.058", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU059_VOLT", "name": "HV battery module 059 voltage", "group": "Battery.Modules.059", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU060_VOLT", "name": "HV battery module 060 voltage", "group": "Battery.Modules.060", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU061_VOLT", "name": "HV battery module 061 voltage", "group": "Battery.Modules.061", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU062_VOLT", "name": "HV battery module 062 voltage", "group": "Battery.Modules.062", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU063_VOLT", "name": "HV battery module 063 voltage", "group": "Battery.Modules.063", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU064_VOLT", "name": "HV battery module 064 voltage", "group": "Battery.Modules.064", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2104|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2104",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2019],
+      "notAnsweredIn": [2020, 2021],
+      "signals": [
+        {"id": "IONIQPHEV_HVBAT_CMU065_VOLT", "name": "HV battery module 065 voltage", "group": "Battery.Modules.065", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU066_VOLT", "name": "HV battery module 066 voltage", "group": "Battery.Modules.066", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU067_VOLT", "name": "HV battery module 067 voltage", "group": "Battery.Modules.067", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU068_VOLT", "name": "HV battery module 068 voltage", "group": "Battery.Modules.068", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU069_VOLT", "name": "HV battery module 069 voltage", "group": "Battery.Modules.069", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU070_VOLT", "name": "HV battery module 070 voltage", "group": "Battery.Modules.070", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU071_VOLT", "name": "HV battery module 071 voltage", "group": "Battery.Modules.071", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU072_VOLT", "name": "HV battery module 072 voltage", "group": "Battery.Modules.072", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU073_VOLT", "name": "HV battery module 073 voltage", "group": "Battery.Modules.073", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU074_VOLT", "name": "HV battery module 074 voltage", "group": "Battery.Modules.074", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU075_VOLT", "name": "HV battery module 075 voltage", "group": "Battery.Modules.075", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU076_VOLT", "name": "HV battery module 076 voltage", "group": "Battery.Modules.076", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU077_VOLT", "name": "HV battery module 077 voltage", "group": "Battery.Modules.077", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU078_VOLT", "name": "HV battery module 078 voltage", "group": "Battery.Modules.078", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU079_VOLT", "name": "HV battery module 079 voltage", "group": "Battery.Modules.079", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU080_VOLT", "name": "HV battery module 080 voltage", "group": "Battery.Modules.080", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU081_VOLT", "name": "HV battery module 081 voltage", "group": "Battery.Modules.081", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU082_VOLT", "name": "HV battery module 082 voltage", "group": "Battery.Modules.082", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU083_VOLT", "name": "HV battery module 083 voltage", "group": "Battery.Modules.083", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU084_VOLT", "name": "HV battery module 084 voltage", "group": "Battery.Modules.084", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU085_VOLT", "name": "HV battery module 085 voltage", "group": "Battery.Modules.085", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU086_VOLT", "name": "HV battery module 086 voltage", "group": "Battery.Modules.086", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU087_VOLT", "name": "HV battery module 087 voltage", "group": "Battery.Modules.087", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU088_VOLT", "name": "HV battery module 088 voltage", "group": "Battery.Modules.088", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU089_VOLT", "name": "HV battery module 089 voltage", "group": "Battery.Modules.089", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU090_VOLT", "name": "HV battery module 090 voltage", "group": "Battery.Modules.090", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU091_VOLT", "name": "HV battery module 091 voltage", "group": "Battery.Modules.091", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU092_VOLT", "name": "HV battery module 092 voltage", "group": "Battery.Modules.092", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU093_VOLT", "name": "HV battery module 093 voltage", "group": "Battery.Modules.093", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU094_VOLT", "name": "HV battery module 094 voltage", "group": "Battery.Modules.094", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU095_VOLT", "name": "HV battery module 095 voltage", "group": "Battery.Modules.095", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQPHEV_HVBAT_CMU096_VOLT", "name": "HV battery module 096 voltage", "group": "Battery.Modules.096", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2105|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2105",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2017, 2018, 2019],
+      "notAnsweredIn": [2020, 2021],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_MOD06_T", "name": "Battery module 06 temperature", "group": "Battery", "bit": 72, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD07_T", "name": "Battery module 07 temperature", "group": "Battery", "bit": 80, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD08_T", "name": "Battery module 08 temperature", "group": "Battery", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD09_T", "name": "Battery module 09 temperature", "group": "Battery", "bit": 96, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD10_T", "name": "Battery module 10 temperature", "group": "Battery", "bit": 104, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD11_T", "name": "Battery module 11 temperature", "group": "Battery", "bit": 112, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD12_T", "name": "Battery module 12 temperature", "group": "Battery", "bit": 120, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_C_DEV_V", "name": "Battery cell voltage deviation", "group": "Battery", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_AIRBAG_DUTY", "name": "Airbag hard-wire duty", "group": "Battery", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_HVBAT_HTR1_T", "name": "Battery heater 1 temperature", "group": "Battery", "bit": 184, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_HTR2_T", "name": "Battery heater 2 temperature", "group": "Battery", "bit": 192, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQPHEV_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "metric": "stateOfHealth", "bit": 200, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_DET_MAX_CELL", "name": "Most deteriorated cell number", "group": "Battery", "bit": 216, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_HVBAT_DET_MIN", "name": "Minimum cell deterioration", "group": "Battery", "bit": 224, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_DET_MIN_CELL", "name": "Least deteriorated cell number", "group": "Battery", "bit": 240, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQPHEV_HVBAT_SOC_DISP", "name": "HV battery charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 248, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220101|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220101",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_CHARGING", "name": "HV battery charging", "group": "Battery", "metric": "isCharging", "bit": 72, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_HVBAT_PLUG_RAPD", "name": "Rapid charge port state", "group": "Battery", "metric": "pluggedIn", "bit": 73, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_HVBAT_PLUG_NORM", "name": "Normal charge port state", "group": "Battery", "metric": "pluggedIn", "bit": 74, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_HVBAT_CURR", "name": "HV battery current", "group": "Battery", "bit": 80, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"},
+        {"id": "IONIQEV_HVBAT_VDC", "name": "HV battery voltage, DC", "group": "Battery", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_T_MAX", "name": "HV battery temperature, maximum", "group": "Battery", "bit": 112, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_T_MIN", "name": "HV battery temperature, minimum", "group": "Battery", "bit": 120, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD1_T", "name": "HV battery temperature, module 1", "group": "Battery", "bit": 128, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD2_T", "name": "HV battery temperature, module 2", "group": "Battery", "bit": 136, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD3_T", "name": "HV battery temperature, module 3", "group": "Battery", "bit": 144, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_MOD4_T", "name": "HV battery temperature, module 4", "group": "Battery", "bit": 152, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_INLET_T", "name": "Battery inlet temperature", "group": "Battery", "bit": 176, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_C_V_MAX", "name": "Maximum cell voltage", "group": "Battery", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_C_V_MAX_ID", "name": "Maximum cell voltage id", "description": "The id of the cell with the highest voltage.", "group": "Battery", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_C_V_MIN", "name": "Minimum cell voltage", "group": "Battery", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_C_V_MIN_ID", "name": "Minimum cell voltage id", "description": "The id of the cell with the lowest voltage.", "group": "Battery", "bit": 208, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_HVBAT_FAN_STATUS", "name": "HV battery fan status", "group": "Battery", "bit": 216, "bits": 8, "min": 0, "max": 255},
+        {"id": "IONIQEV_HVBAT_FAN", "name": "HV battery fan", "group": "Battery", "bit": 224, "bits": 8, "min": 0, "max": 255, "unit": "Hz"},
+        {"id": "IONIQEV_VPWR", "name": "Battery auxiliary voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 232, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CHRG_TOT_C", "name": "Total charge, current", "group": "Battery", "bit": 240, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "IONIQEV_HVBAT_DSCH_TOT_C", "name": "Total discharge, current", "group": "Battery", "bit": 272, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "Ah"},
+        {"id": "IONIQEV_HVBAT_CHRG_TOT_E", "name": "Total charge, energy", "group": "Battery", "bit": 304, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "IONIQEV_HVBAT_DSCH_TOT_E", "name": "Total discharge, energy", "group": "Battery", "bit": 336, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "kWh"},
+        {"id": "IONIQEV_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 368, "bits": 32, "min": 0, "max": 4294967295, "unit": "s"},
+        {"id": "IONIQEV_IGN", "name": "Ignition", "group": "Battery", "bit": 405, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_INVRT_CV", "name": "Inverter capacitor voltage", "group": "Battery", "bit": 408, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
+        {"id": "IONIQEV_RPM", "name": "Drive motor speed", "group": "Engine", "bit": 424, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "IONIQEV_ISO_R", "name": "Isolation resistance", "group": "Battery", "bit": 456, "bits": 16, "min": 0, "max": 65535, "unit": "kΩ"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220102|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220102",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU001_VOLT_7E4", "name": "HV battery module 001 voltage", "group": "Battery.Modules.001", "bit": 32, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU002_VOLT_7E4", "name": "HV battery module 002 voltage", "group": "Battery.Modules.002", "bit": 40, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU003_VOLT_7E4", "name": "HV battery module 003 voltage", "group": "Battery.Modules.003", "bit": 48, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU004_VOLT_7E4", "name": "HV battery module 004 voltage", "group": "Battery.Modules.004", "bit": 56, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU005_VOLT_7E4", "name": "HV battery module 005 voltage", "group": "Battery.Modules.005", "bit": 64, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU006_VOLT_7E4", "name": "HV battery module 006 voltage", "group": "Battery.Modules.006", "bit": 72, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU007_VOLT_7E4", "name": "HV battery module 007 voltage", "group": "Battery.Modules.007", "bit": 80, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU008_VOLT_7E4", "name": "HV battery module 008 voltage", "group": "Battery.Modules.008", "bit": 88, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU009_VOLT_7E4", "name": "HV battery module 009 voltage", "group": "Battery.Modules.009", "bit": 96, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU010_VOLT_7E4", "name": "HV battery module 010 voltage", "group": "Battery.Modules.010", "bit": 104, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU011_VOLT_7E4", "name": "HV battery module 011 voltage", "group": "Battery.Modules.011", "bit": 112, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU012_VOLT_7E4", "name": "HV battery module 012 voltage", "group": "Battery.Modules.012", "bit": 120, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU013_VOLT_7E4", "name": "HV battery module 013 voltage", "group": "Battery.Modules.013", "bit": 128, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU014_VOLT_7E4", "name": "HV battery module 014 voltage", "group": "Battery.Modules.014", "bit": 136, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU015_VOLT_7E4", "name": "HV battery module 015 voltage", "group": "Battery.Modules.015", "bit": 144, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU016_VOLT_7E4", "name": "HV battery module 016 voltage", "group": "Battery.Modules.016", "bit": 152, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU017_VOLT_7E4", "name": "HV battery module 017 voltage", "group": "Battery.Modules.017", "bit": 160, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU018_VOLT_7E4", "name": "HV battery module 018 voltage", "group": "Battery.Modules.018", "bit": 168, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU019_VOLT_7E4", "name": "HV battery module 019 voltage", "group": "Battery.Modules.019", "bit": 176, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU020_VOLT_7E4", "name": "HV battery module 020 voltage", "group": "Battery.Modules.020", "bit": 184, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU021_VOLT_7E4", "name": "HV battery module 021 voltage", "group": "Battery.Modules.021", "bit": 192, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU022_VOLT_7E4", "name": "HV battery module 022 voltage", "group": "Battery.Modules.022", "bit": 200, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU023_VOLT_7E4", "name": "HV battery module 023 voltage", "group": "Battery.Modules.023", "bit": 208, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU024_VOLT_7E4", "name": "HV battery module 024 voltage", "group": "Battery.Modules.024", "bit": 216, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU025_VOLT_7E4", "name": "HV battery module 025 voltage", "group": "Battery.Modules.025", "bit": 224, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU026_VOLT_7E4", "name": "HV battery module 026 voltage", "group": "Battery.Modules.026", "bit": 232, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU027_VOLT_7E4", "name": "HV battery module 027 voltage", "group": "Battery.Modules.027", "bit": 240, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU028_VOLT_7E4", "name": "HV battery module 028 voltage", "group": "Battery.Modules.028", "bit": 248, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU029_VOLT_7E4", "name": "HV battery module 029 voltage", "group": "Battery.Modules.029", "bit": 256, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU030_VOLT_7E4", "name": "HV battery module 030 voltage", "group": "Battery.Modules.030", "bit": 264, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU031_VOLT_7E4", "name": "HV battery module 031 voltage", "group": "Battery.Modules.031", "bit": 272, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU032_VOLT_7E4", "name": "HV battery module 032 voltage", "group": "Battery.Modules.032", "bit": 280, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220103|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220103",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU033_VOLT_7E4", "name": "HV battery module 033 voltage", "group": "Battery.Modules.033", "bit": 32, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU034_VOLT_7E4", "name": "HV battery module 034 voltage", "group": "Battery.Modules.034", "bit": 40, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU035_VOLT_7E4", "name": "HV battery module 035 voltage", "group": "Battery.Modules.035", "bit": 48, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU036_VOLT_7E4", "name": "HV battery module 036 voltage", "group": "Battery.Modules.036", "bit": 56, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU037_VOLT_7E4", "name": "HV battery module 037 voltage", "group": "Battery.Modules.037", "bit": 64, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU038_VOLT_7E4", "name": "HV battery module 038 voltage", "group": "Battery.Modules.038", "bit": 72, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU039_VOLT_7E4", "name": "HV battery module 039 voltage", "group": "Battery.Modules.039", "bit": 80, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU040_VOLT_7E4", "name": "HV battery module 040 voltage", "group": "Battery.Modules.040", "bit": 88, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU041_VOLT_7E4", "name": "HV battery module 041 voltage", "group": "Battery.Modules.041", "bit": 96, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU042_VOLT_7E4", "name": "HV battery module 042 voltage", "group": "Battery.Modules.042", "bit": 104, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU043_VOLT_7E4", "name": "HV battery module 043 voltage", "group": "Battery.Modules.043", "bit": 112, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU044_VOLT_7E4", "name": "HV battery module 044 voltage", "group": "Battery.Modules.044", "bit": 120, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU045_VOLT_7E4", "name": "HV battery module 045 voltage", "group": "Battery.Modules.045", "bit": 128, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU046_VOLT_7E4", "name": "HV battery module 046 voltage", "group": "Battery.Modules.046", "bit": 136, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU047_VOLT_7E4", "name": "HV battery module 047 voltage", "group": "Battery.Modules.047", "bit": 144, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU048_VOLT_7E4", "name": "HV battery module 048 voltage", "group": "Battery.Modules.048", "bit": 152, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU049_VOLT_7E4", "name": "HV battery module 049 voltage", "group": "Battery.Modules.049", "bit": 160, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU050_VOLT_7E4", "name": "HV battery module 050 voltage", "group": "Battery.Modules.050", "bit": 168, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU051_VOLT_7E4", "name": "HV battery module 051 voltage", "group": "Battery.Modules.051", "bit": 176, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU052_VOLT_7E4", "name": "HV battery module 052 voltage", "group": "Battery.Modules.052", "bit": 184, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU053_VOLT_7E4", "name": "HV battery module 053 voltage", "group": "Battery.Modules.053", "bit": 192, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU054_VOLT_7E4", "name": "HV battery module 054 voltage", "group": "Battery.Modules.054", "bit": 200, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU055_VOLT_7E4", "name": "HV battery module 055 voltage", "group": "Battery.Modules.055", "bit": 208, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU056_VOLT_7E4", "name": "HV battery module 056 voltage", "group": "Battery.Modules.056", "bit": 216, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU057_VOLT_7E4", "name": "HV battery module 057 voltage", "group": "Battery.Modules.057", "bit": 224, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU058_VOLT_7E4", "name": "HV battery module 058 voltage", "group": "Battery.Modules.058", "bit": 232, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU059_VOLT_7E4", "name": "HV battery module 059 voltage", "group": "Battery.Modules.059", "bit": 240, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU060_VOLT_7E4", "name": "HV battery module 060 voltage", "group": "Battery.Modules.060", "bit": 248, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU061_VOLT_7E4", "name": "HV battery module 061 voltage", "group": "Battery.Modules.061", "bit": 256, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU062_VOLT_7E4", "name": "HV battery module 062 voltage", "group": "Battery.Modules.062", "bit": 264, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU063_VOLT_7E4", "name": "HV battery module 063 voltage", "group": "Battery.Modules.063", "bit": 272, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU064_VOLT_7E4", "name": "HV battery module 064 voltage", "group": "Battery.Modules.064", "bit": 280, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220104|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220104",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU065_VOLT_7E4", "name": "HV battery module 065 voltage", "group": "Battery.Modules.065", "bit": 32, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU066_VOLT_7E4", "name": "HV battery module 066 voltage", "group": "Battery.Modules.066", "bit": 40, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU067_VOLT_7E4", "name": "HV battery module 067 voltage", "group": "Battery.Modules.067", "bit": 48, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU068_VOLT_7E4", "name": "HV battery module 068 voltage", "group": "Battery.Modules.068", "bit": 56, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU069_VOLT_7E4", "name": "HV battery module 069 voltage", "group": "Battery.Modules.069", "bit": 64, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU070_VOLT_7E4", "name": "HV battery module 070 voltage", "group": "Battery.Modules.070", "bit": 72, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU071_VOLT_7E4", "name": "HV battery module 071 voltage", "group": "Battery.Modules.071", "bit": 80, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU072_VOLT_7E4", "name": "HV battery module 072 voltage", "group": "Battery.Modules.072", "bit": 88, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU073_VOLT_7E4", "name": "HV battery module 073 voltage", "group": "Battery.Modules.073", "bit": 96, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU074_VOLT_7E4", "name": "HV battery module 074 voltage", "group": "Battery.Modules.074", "bit": 104, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU075_VOLT_7E4", "name": "HV battery module 075 voltage", "group": "Battery.Modules.075", "bit": 112, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU076_VOLT_7E4", "name": "HV battery module 076 voltage", "group": "Battery.Modules.076", "bit": 120, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU077_VOLT_7E4", "name": "HV battery module 077 voltage", "group": "Battery.Modules.077", "bit": 128, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU078_VOLT_7E4", "name": "HV battery module 078 voltage", "group": "Battery.Modules.078", "bit": 136, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU079_VOLT_7E4", "name": "HV battery module 079 voltage", "group": "Battery.Modules.079", "bit": 144, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU080_VOLT_7E4", "name": "HV battery module 080 voltage", "group": "Battery.Modules.080", "bit": 152, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU081_VOLT_7E4", "name": "HV battery module 081 voltage", "group": "Battery.Modules.081", "bit": 160, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU082_VOLT_7E4", "name": "HV battery module 082 voltage", "group": "Battery.Modules.082", "bit": 168, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU083_VOLT_7E4", "name": "HV battery module 083 voltage", "group": "Battery.Modules.083", "bit": 176, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU084_VOLT_7E4", "name": "HV battery module 084 voltage", "group": "Battery.Modules.084", "bit": 184, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU085_VOLT_7E4", "name": "HV battery module 085 voltage", "group": "Battery.Modules.085", "bit": 192, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU086_VOLT_7E4", "name": "HV battery module 086 voltage", "group": "Battery.Modules.086", "bit": 200, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU087_VOLT_7E4", "name": "HV battery module 087 voltage", "group": "Battery.Modules.087", "bit": 208, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU088_VOLT_7E4", "name": "HV battery module 088 voltage", "group": "Battery.Modules.088", "bit": 216, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU089_VOLT_7E4", "name": "HV battery module 089 voltage", "group": "Battery.Modules.089", "bit": 224, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU090_VOLT_7E4", "name": "HV battery module 090 voltage", "group": "Battery.Modules.090", "bit": 232, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU091_VOLT_7E4", "name": "HV battery module 091 voltage", "group": "Battery.Modules.091", "bit": 240, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU092_VOLT_7E4", "name": "HV battery module 092 voltage", "group": "Battery.Modules.092", "bit": 248, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU093_VOLT_7E4", "name": "HV battery module 093 voltage", "group": "Battery.Modules.093", "bit": 256, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU094_VOLT_7E4", "name": "HV battery module 094 voltage", "group": "Battery.Modules.094", "bit": 264, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU095_VOLT_7E4", "name": "HV battery module 095 voltage", "group": "Battery.Modules.095", "bit": 272, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU096_VOLT_7E4", "name": "HV battery module 096 voltage", "group": "Battery.Modules.096", "bit": 280, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220105|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220105",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_C_DEV_V_2", "name": "HV cell deviation, voltage", "group": "Battery", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_HTR1_T_2", "name": "HV battery heater 1 temperature", "group": "Battery", "bit": 184, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_HTR2_T_2", "name": "HV battery heater 2 temperature", "group": "Battery", "bit": 192, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_SOH_7E4", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 200, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_DET_MAX_ID", "name": "HV battery max deterioration cell id", "group": "Battery", "bit": 216, "bits": 8, "min": 0, "max": 98, "invalidAtOrAbove": 200},
+        {"id": "IONIQEV_HVBAT_DET_MIN_2", "name": "HV battery min deterioration", "group": "Battery", "bit": 224, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_DET_MIN_ID", "name": "HV battery min deterioration cell id", "group": "Battery", "bit": 240, "bits": 8, "min": 0, "max": 98, "invalidAtOrAbove": 200},
+        {"id": "IONIQEV_HVBAT_SOC_DISP_7E4", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 248, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_HVBAT_CMU097_VOLT", "name": "HV battery module 097 voltage", "group": "Battery.Modules.097", "bit": 272, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU098_VOLT", "name": "HV battery module 098 voltage", "group": "Battery.Modules.098", "bit": 280, "bits": 8, "divide": 50, "min": 2.8, "max": 4.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220106|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220106",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_BMS_STATE", "name": "Battery management state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 15},
+        {"id": "IONIQEV_HVBAT_WCS_INLET_T", "name": "Battery temperature at WCS input", "group": "Battery", "bit": 32, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
+        {"id": "IONIQEV_HVBAT_FAN_DUTY", "name": "Battery fan duty feedback", "group": "Battery", "bit": 64, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 96, "bits": 8, "multiply": 20, "min": 0, "max": 5100, "unit": "rpm"},
+        {"id": "IONIQEV_HVBAT_PRA_T", "name": "Battery temperature at the power relay assembly", "group": "Battery", "bit": 160, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22010A|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22010A",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU097_VOLT_7E4", "name": "HV battery module 097 voltage", "group": "Battery.Modules.097", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU098_VOLT_7E4", "name": "HV battery module 098 voltage", "group": "Battery.Modules.098", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU099_VOLT", "name": "HV battery module 099 voltage", "group": "Battery.Modules.099", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU100_VOLT", "name": "HV battery module 100 voltage", "group": "Battery.Modules.100", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU101_VOLT", "name": "HV battery module 101 voltage", "group": "Battery.Modules.101", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU102_VOLT", "name": "HV battery module 102 voltage", "group": "Battery.Modules.102", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU103_VOLT", "name": "HV battery module 103 voltage", "group": "Battery.Modules.103", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU104_VOLT", "name": "HV battery module 104 voltage", "group": "Battery.Modules.104", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU105_VOLT", "name": "HV battery module 105 voltage", "group": "Battery.Modules.105", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU106_VOLT", "name": "HV battery module 106 voltage", "group": "Battery.Modules.106", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU107_VOLT", "name": "HV battery module 107 voltage", "group": "Battery.Modules.107", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU108_VOLT", "name": "HV battery module 108 voltage", "group": "Battery.Modules.108", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU109_VOLT", "name": "HV battery module 109 voltage", "group": "Battery.Modules.109", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU110_VOLT", "name": "HV battery module 110 voltage", "group": "Battery.Modules.110", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU111_VOLT", "name": "HV battery module 111 voltage", "group": "Battery.Modules.111", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU112_VOLT", "name": "HV battery module 112 voltage", "group": "Battery.Modules.112", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU113_VOLT", "name": "HV battery module 113 voltage", "group": "Battery.Modules.113", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU114_VOLT", "name": "HV battery module 114 voltage", "group": "Battery.Modules.114", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU115_VOLT", "name": "HV battery module 115 voltage", "group": "Battery.Modules.115", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU116_VOLT", "name": "HV battery module 116 voltage", "group": "Battery.Modules.116", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU117_VOLT", "name": "HV battery module 117 voltage", "group": "Battery.Modules.117", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU118_VOLT", "name": "HV battery module 118 voltage", "group": "Battery.Modules.118", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU119_VOLT", "name": "HV battery module 119 voltage", "group": "Battery.Modules.119", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU120_VOLT", "name": "HV battery module 120 voltage", "group": "Battery.Modules.120", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU121_VOLT", "name": "HV battery module 121 voltage", "group": "Battery.Modules.121", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU122_VOLT", "name": "HV battery module 122 voltage", "group": "Battery.Modules.122", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU123_VOLT", "name": "HV battery module 123 voltage", "group": "Battery.Modules.123", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU124_VOLT", "name": "HV battery module 124 voltage", "group": "Battery.Modules.124", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU125_VOLT", "name": "HV battery module 125 voltage", "group": "Battery.Modules.125", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU126_VOLT", "name": "HV battery module 126 voltage", "group": "Battery.Modules.126", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU127_VOLT", "name": "HV battery module 127 voltage", "group": "Battery.Modules.127", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU128_VOLT", "name": "HV battery module 128 voltage", "group": "Battery.Modules.128", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22010B|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22010B",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU129_VOLT", "name": "HV battery module 129 voltage", "group": "Battery.Modules.129", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU130_VOLT", "name": "HV battery module 130 voltage", "group": "Battery.Modules.130", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU131_VOLT", "name": "HV battery module 131 voltage", "group": "Battery.Modules.131", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU132_VOLT", "name": "HV battery module 132 voltage", "group": "Battery.Modules.132", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU133_VOLT", "name": "HV battery module 133 voltage", "group": "Battery.Modules.133", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU134_VOLT", "name": "HV battery module 134 voltage", "group": "Battery.Modules.134", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU135_VOLT", "name": "HV battery module 135 voltage", "group": "Battery.Modules.135", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU136_VOLT", "name": "HV battery module 136 voltage", "group": "Battery.Modules.136", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU137_VOLT", "name": "HV battery module 137 voltage", "group": "Battery.Modules.137", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU138_VOLT", "name": "HV battery module 138 voltage", "group": "Battery.Modules.138", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU139_VOLT", "name": "HV battery module 139 voltage", "group": "Battery.Modules.139", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU140_VOLT", "name": "HV battery module 140 voltage", "group": "Battery.Modules.140", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU141_VOLT", "name": "HV battery module 141 voltage", "group": "Battery.Modules.141", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU142_VOLT", "name": "HV battery module 142 voltage", "group": "Battery.Modules.142", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU143_VOLT", "name": "HV battery module 143 voltage", "group": "Battery.Modules.143", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU144_VOLT", "name": "HV battery module 144 voltage", "group": "Battery.Modules.144", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU145_VOLT", "name": "HV battery module 145 voltage", "group": "Battery.Modules.145", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU146_VOLT", "name": "HV battery module 146 voltage", "group": "Battery.Modules.146", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU147_VOLT", "name": "HV battery module 147 voltage", "group": "Battery.Modules.147", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU148_VOLT", "name": "HV battery module 148 voltage", "group": "Battery.Modules.148", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU149_VOLT", "name": "HV battery module 149 voltage", "group": "Battery.Modules.149", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU150_VOLT", "name": "HV battery module 150 voltage", "group": "Battery.Modules.150", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU151_VOLT", "name": "HV battery module 151 voltage", "group": "Battery.Modules.151", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU152_VOLT", "name": "HV battery module 152 voltage", "group": "Battery.Modules.152", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU153_VOLT", "name": "HV battery module 153 voltage", "group": "Battery.Modules.153", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU154_VOLT", "name": "HV battery module 154 voltage", "group": "Battery.Modules.154", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU155_VOLT", "name": "HV battery module 155 voltage", "group": "Battery.Modules.155", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU156_VOLT", "name": "HV battery module 156 voltage", "group": "Battery.Modules.156", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU157_VOLT", "name": "HV battery module 157 voltage", "group": "Battery.Modules.157", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU158_VOLT", "name": "HV battery module 158 voltage", "group": "Battery.Modules.158", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU159_VOLT", "name": "HV battery module 159 voltage", "group": "Battery.Modules.159", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU160_VOLT", "name": "HV battery module 160 voltage", "group": "Battery.Modules.160", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22010C|fc=1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22010C",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_HVBAT_CMU161_VOLT", "name": "HV battery module 161 voltage", "group": "Battery.Modules.161", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU162_VOLT", "name": "HV battery module 162 voltage", "group": "Battery.Modules.162", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU163_VOLT", "name": "HV battery module 163 voltage", "group": "Battery.Modules.163", "bit": 48, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU164_VOLT", "name": "HV battery module 164 voltage", "group": "Battery.Modules.164", "bit": 56, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU165_VOLT", "name": "HV battery module 165 voltage", "group": "Battery.Modules.165", "bit": 64, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU166_VOLT", "name": "HV battery module 166 voltage", "group": "Battery.Modules.166", "bit": 72, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU167_VOLT", "name": "HV battery module 167 voltage", "group": "Battery.Modules.167", "bit": 80, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU168_VOLT", "name": "HV battery module 168 voltage", "group": "Battery.Modules.168", "bit": 88, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU169_VOLT", "name": "HV battery module 169 voltage", "group": "Battery.Modules.169", "bit": 96, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU170_VOLT", "name": "HV battery module 170 voltage", "group": "Battery.Modules.170", "bit": 104, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU171_VOLT", "name": "HV battery module 171 voltage", "group": "Battery.Modules.171", "bit": 112, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU172_VOLT", "name": "HV battery module 172 voltage", "group": "Battery.Modules.172", "bit": 120, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU173_VOLT", "name": "HV battery module 173 voltage", "group": "Battery.Modules.173", "bit": 128, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU174_VOLT", "name": "HV battery module 174 voltage", "group": "Battery.Modules.174", "bit": 136, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU175_VOLT", "name": "HV battery module 175 voltage", "group": "Battery.Modules.175", "bit": 144, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU176_VOLT", "name": "HV battery module 176 voltage", "group": "Battery.Modules.176", "bit": 152, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU177_VOLT", "name": "HV battery module 177 voltage", "group": "Battery.Modules.177", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU178_VOLT", "name": "HV battery module 178 voltage", "group": "Battery.Modules.178", "bit": 168, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU179_VOLT", "name": "HV battery module 179 voltage", "group": "Battery.Modules.179", "bit": 176, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU180_VOLT", "name": "HV battery module 180 voltage", "group": "Battery.Modules.180", "bit": 184, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU181_VOLT", "name": "HV battery module 181 voltage", "group": "Battery.Modules.181", "bit": 192, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU182_VOLT", "name": "HV battery module 182 voltage", "group": "Battery.Modules.182", "bit": 200, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU183_VOLT", "name": "HV battery module 183 voltage", "group": "Battery.Modules.183", "bit": 208, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU184_VOLT", "name": "HV battery module 184 voltage", "group": "Battery.Modules.184", "bit": 216, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU185_VOLT", "name": "HV battery module 185 voltage", "group": "Battery.Modules.185", "bit": 224, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU186_VOLT", "name": "HV battery module 186 voltage", "group": "Battery.Modules.186", "bit": 232, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU187_VOLT", "name": "HV battery module 187 voltage", "group": "Battery.Modules.187", "bit": 240, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU188_VOLT", "name": "HV battery module 188 voltage", "group": "Battery.Modules.188", "bit": 248, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU189_VOLT", "name": "HV battery module 189 voltage", "group": "Battery.Modules.189", "bit": 256, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU190_VOLT", "name": "HV battery module 190 voltage", "group": "Battery.Modules.190", "bit": 264, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU191_VOLT", "name": "HV battery module 191 voltage", "group": "Battery.Modules.191", "bit": 272, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
+        {"id": "IONIQEV_HVBAT_CMU192_VOLT", "name": "HV battery module 192 voltage", "group": "Battery.Modules.192", "bit": 280, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220111",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220111",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_NORMAL_CHARGING_COUNT", "name": "Normal charging, count", "group": "Battery", "bit": 32, "bits": 32, "min": 0, "max": 4294967295},
+        {"id": "IONIQEV_QUICK_CHARGING_COUNT", "name": "Quick charging, count", "group": "Battery", "bit": 64, "bits": 32, "min": 0, "max": 4294967295},
+        {"id": "IONIQEV_NORMAL_CHARGING_ENERGY_TOT", "name": "Normal charging energy, total", "group": "Battery", "bit": 96, "bits": 32, "min": 0, "max": 4294967295, "unit": "kWh"},
+        {"id": "IONIQEV_QUICK_CHARGING_ENERGY_TOT", "name": "Quick charging energy, total", "group": "Battery", "bit": 128, "bits": 32, "min": 0, "max": 4294967295, "unit": "kWh"},
+        {"id": "IONIQEV_BATTERY_PACK_B17", "name": "Battery pack B17", "group": "Battery", "bit": 208, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "IONIQEV_BATTERY_PACK_B18", "name": "Battery pack B18", "group": "Battery", "bit": 216, "bits": 8, "signed": true, "min": -40, "max": 80, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220114",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220114",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_AC_COMPRESSOR_OPERATION_RPM", "name": "A/C compressor operation RPM", "group": "Climate", "bit": 208, "bits": 16, "multiply": 20, "min": 0, "max": 1310700, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E5.21C0",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "21C0",
+      "interval": 0.25,
+      "signals": [
+        {"id": "IONIQEV_RPM_7E5", "name": "Engine RPM", "group": "Engine", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "IONIQEV_VSS_AWD", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_APP_REL_AWD", "name": "Relative accelerator pedal position", "group": "Control", "bit": 56, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_SUPPLY_VOLTAGE", "name": "Supply voltage", "group": "Battery", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_SYSTEM_VOLTAGE", "name": "System voltage", "group": "Battery", "bit": 72, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "IONIQEV_COMMANDED_TORQUE", "name": "Commanded torque", "group": "Engine", "bit": 80, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "Nm"},
+        {"id": "IONIQEV_CLUTCH_SOLENOID_DUTY", "name": "Clutch solenoid duty", "group": "Engine", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "IONIQEV_HEAT", "name": "Heat", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "°C"},
+        {"id": "IONIQEV_FRONT_RIGHT_WHEEL_SPEED", "name": "Front right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_FRONT_LEFT_WHEEL_SPEED", "name": "Front left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_REAR_RIGHT_WHEEL_SPEED", "name": "Rear right wheel speed", "group": "Movement", "bit": 120, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_LOCK_SWITCH", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
+        {"id": "IONIQEV_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.2101",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "2101",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_ON_BOARD_CHARGER_V", "name": "On-board charger charger AC input voltage, RMS", "group": "Battery", "bit": 72, "bits": 8, "multiply": 64, "divide": 25, "min": 0, "max": 652, "unit": "V"},
+        {"id": "IONIQEV_ON_BOARD_CHARGER_T", "name": "On-board charger charger temperature a", "group": "Battery", "bit": 104, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
+        {"id": "IONIQEV_ON_BOARD_CHARGER", "name": "On-board charger charger AC input current, RMS", "group": "Battery", "bit": 200, "bits": 8, "multiply": 64, "divide": 25, "min": 0, "max": 652, "unit": "A"},
+        {"id": "IONIQEV_ON_BOARD_CHARGER_CHARGER_V", "name": "On-board charger charger AC input voltage, instant", "group": "Battery", "bit": 304, "bits": 8, "multiply": 64, "divide": 25, "add": -100, "min": -100, "max": 552, "unit": "V"},
+        {"id": "IONIQEV_ON_BOARD_CHARGER_T_B", "name": "On-board charger charger temperature b", "group": "Battery", "bit": 336, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22E001",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22E001",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_CHARGE_MODE_DC_TARGET_VOLTAGE", "name": "Charge mode DC target voltage", "group": "Battery", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_CHARGE_MODE_DC_MAXIMUM_CURRENT_LIMIT", "name": "Charge mode DC maximum current limit", "group": "Battery", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_CHARGE_MODE_AC_MAXIMUM_CURRENT_LIMIT", "name": "Charge mode A/C maximum current limit", "group": "Battery", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "IONIQEV_DISCHARGE_MODE_V2L_AC_TARGET_VOLTAGE", "name": "Discharge mode A/C target voltage", "group": "Battery", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "IONIQEV_DISCHARGE_MODE_DC_MAXIMUM_CURRENT_LIMIT", "name": "Discharge mode DC maximum current limit", "group": "Battery", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "IONIQEV_DISCHARGE_MODE_AC_MAXIMUM_CURRENT_LIMIT", "name": "Discharge mode A/C maximum current limit", "group": "Battery", "bit": 136, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22E002",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22E002",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_OBC_AC_VOLTAGE_A_RMS", "name": "On-board charger, AC voltage a", "group": "Battery.Charging", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_OBC_AC_VOLTAGE_B_RMS", "name": "On-board charger, AC voltage b", "group": "Battery.Charging", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_OBC_AC_FREQUENCY", "name": "On-board charger, AC frequency", "group": "Battery.Charging", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "Hz"},
+        {"id": "IONIQEV_OBC_AC_TOTAL_CURRENT_RMS", "name": "On-board charger, AC total current", "group": "Battery.Charging", "bit": 88, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_AC_CURRENT_A_RMS", "name": "On-board charger, AC current a", "group": "Battery.Charging", "bit": 104, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_AC_CURRENT_B_RMS", "name": "On-board charger, AC current b", "group": "Battery.Charging", "bit": 120, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_DC_VOLTAGE", "name": "On-board charger, DC voltage", "group": "Battery.Charging", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_OBC_DC_CURRENT_TOTAL_RMS", "name": "On-board charger, DC current total", "group": "Battery.Charging", "bit": 168, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_DC_CURRENT_A_RMS", "name": "On-board charger, DC current a", "group": "Battery.Charging", "bit": 184, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_DC_CURRENT_B_RMS", "name": "On-board charger, DC current b", "group": "Battery.Charging", "bit": 200, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "A"},
+        {"id": "IONIQEV_OBC_T_A", "name": "On-board charger, temperature a", "group": "Battery.Charging", "bit": 216, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "IONIQEV_OBC_T_B", "name": "On-board charger, temperature b", "group": "Battery.Charging", "bit": 224, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "IONIQEV_OBC_AC_INPUT_CURRENT_SENSOR_A_SIGNAL_VOLTAGE", "name": "On-board charger, AC input current sensor a signal voltage", "group": "Battery.Charging", "bit": 296, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"},
+        {"id": "IONIQEV_OBC_AC_INPUT_CURRENT_SENSOR_B_SIGNAL_VOLTAGE", "name": "On-board charger, AC input current sensor b signal voltage", "group": "Battery.Charging", "bit": 312, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22E003",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22E003",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_OBC_CHARGE_MODE_DC_TARGET_VOLTAGE", "name": "On-board charger, charge mode DC target voltage", "group": "Battery.Charging", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_OBC_CHARGE_MODE_DC_TARGET_CURRENT", "name": "On-board charger, charge mode DC target current", "group": "Battery.Charging", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22E011",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22E011",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_LDC_T", "name": "Low-voltage dc-dc converter, temperature", "group": "Battery", "bit": 72, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
+        {"id": "IONIQEV_LDC_OUTPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, output voltage", "group": "Battery", "bit": 80, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"},
+        {"id": "IONIQEV_LDC_OUTPUT_CURRENT", "name": "Low-voltage dc-dc converter, output current", "group": "Battery", "bit": 96, "bits": 16, "multiply": 10, "divide": 1000, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "IONIQEV_LDC_INPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, input voltage", "group": "Battery", "bit": 112, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_AUX_BATTERY_CURRENT", "name": "Auxiliary battery current", "group": "Battery", "bit": 144, "bits": 16, "divide": 100, "add": -327, "min": -327, "max": 328.35, "unit": "A"},
+        {"id": "IONIQEV_AUX_BATTERY_STATE_OF_CHARGE", "name": "Auxiliary battery state of charge", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_AUX_BATTERY_VOLTAGE_7E5", "name": "Auxiliary battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 168, "bits": 16, "divide": 1000, "add": 6, "min": 6, "max": 71.535, "unit": "V"},
+        {"id": "IONIQEV_AUX_BATTERY_T", "name": "Auxiliary battery temperature", "group": "Battery", "bit": 184, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22E101",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22E101",
+      "interval": 1,
+      "signals": [
+        {"id": "IONIQEV_2025_LDC_T", "name": "Low-voltage dc-dc converter, temperature", "group": "Battery", "bit": 72, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
+        {"id": "IONIQEV_2025_LDC_OUTPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, output voltage", "group": "Battery", "bit": 80, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"},
+        {"id": "IONIQEV_2025_LDC_OUTPUT_CURRENT", "name": "Low-voltage dc-dc converter, output current", "group": "Battery", "bit": 96, "bits": 16, "multiply": 10, "divide": 1000, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "IONIQEV_2025_LDC_INPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, input voltage", "group": "Battery", "bit": 112, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "IONIQEV_2025_AUX_BATTERY_CURRENT", "name": "Auxiliary battery current", "group": "Battery", "bit": 144, "bits": 16, "divide": 100, "add": -327, "min": -327, "max": 328.35, "unit": "A"},
+        {"id": "IONIQEV_2025_AUX_BATTERY_STATE_OF_CHARGE", "name": "Auxiliary battery state of charge", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "IONIQEV_2025_AUX_BATTERY_VOLTAGE", "name": "Auxiliary battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 168, "bits": 16, "divide": 1000, "add": 6, "min": 6, "max": 71.535, "unit": "V"},
+        {"id": "IONIQEV_2025_AUX_BATTERY_T", "name": "Auxiliary battery temperature", "group": "Battery", "bit": 184, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.2180|fc=1",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "2180",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "IONIQEV_AAT_VMCU", "name": "Ambient temperature, vehicle control unit", "group": "Climate", "bit": 96, "bits": 8, "signed": true, "divide": 2, "add": -40, "min": -104, "max": 23.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22C101",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2017, 2018],
+      "signals": [
+        {"id": "IONIQEV_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "IONIQEV_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    }
+  ]
+}

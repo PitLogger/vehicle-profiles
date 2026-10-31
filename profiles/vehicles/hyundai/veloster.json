@@ -1,0 +1,1549 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/hyundai/veloster",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Hyundai",
+    "model": "Veloster",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2011, "to": 2018},
+      {"name": "Second Generation", "from": 2018, "to": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Hyundai-Veloster",
+    "file": "signalsets/v3/default.json",
+    "revision": "ff00562bb75a3aa17c6b2a4a802ddf936bff1793",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "requests": [
+    {
+      "id": "730.738.22F010",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22F010",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_WHEEL_FR_VSS_HD", "name": "Front right wheel speed, high resolution", "group": "Movement", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "VELOSTER_WHEEL_FL_VSS_HD", "name": "Front left wheel speed, high resolution", "group": "Movement", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "VELOSTER_WHEEL_RR_VSS_HD", "name": "Rear right wheel speed, high resolution", "group": "Movement", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "VELOSTER_WHEEL_RL_VSS_HD", "name": "Rear left wheel speed, high resolution", "group": "Movement", "bit": 80, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
+        {"id": "VELOSTER_STEERING_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 96, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "VELOSTER_LATERAL_ACCELERATION", "name": "Lateral acceleration", "group": "Orientation", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "VELOSTER_LONGITUDINAL_ACCELERATION", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 8.354, "divide": 65535, "add": -4.177, "min": -4.1769, "max": 4.1769, "unit": "m/s²"},
+        {"id": "VELOSTER_YAW_RATE", "name": "Yaw rate", "group": "Orientation", "bit": 144, "bits": 8, "divide": 200, "min": 0, "max": 1.275, "unit": "°"}
+      ]
+    },
+    {
+      "id": "744.74C.22E001|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E001",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_AUX_BATTERY_VOLTAGE", "name": "Auxiliary battery voltage", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"},
+        {"id": "VELOSTER_DC_CHRG_STATE", "name": "DC charging state", "group": "Battery.Charging", "bit": 140, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_AC_CHRG_STATE", "name": "AC charging state", "group": "Battery.Charging", "bit": 141, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_OBC_CHRG_DC_VOLTAGE", "name": "On-board charger, charging DC voltage", "group": "Battery.Charging", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_OBC_CHRG_DC_CURRENT", "name": "On-board charger, charging DC current", "group": "Battery.Charging", "bit": 168, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_OBC_CHRG_AC_CURRENT", "name": "On-board charger, charging AC current", "group": "Battery.Charging", "bit": 184, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_OBC_CHRG_AC_VOLTAGE", "name": "On-board charger, charging AC voltage", "group": "Battery.Charging", "bit": 200, "bits": 8, "min": 0, "max": 255, "unit": "V"},
+        {"id": "VELOSTER_OBC_DCHRG_DC_CURRENT", "name": "On-board charger, discharging DC current", "group": "Battery.Charging", "bit": 208, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "VELOSTER_OBC_DCHRG_AC_CURRENT", "name": "On-board charger, discharging AC current", "group": "Battery.Charging", "bit": 216, "bits": 8, "min": 0, "max": 255, "unit": "A"},
+        {"id": "VELOSTER_ESTIMATED_CHRG_POWER", "name": "Estimated charging power", "group": "Battery.Charging", "bit": 224, "bits": 16, "multiply": 10, "add": -50, "min": -50, "max": 655300, "unit": "W"}
+      ]
+    },
+    {
+      "id": "744.74C.22E002",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E002",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_EVSE_MAXIMUM_VOLTAGE_VALUE", "name": "Electric vehicle supply equipment, voltage, max", "group": "Battery.Charging", "bit": 72, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_EVSE_MAXIMUM_CURRENT_VALUE", "name": "Electric vehicle supply equipment, current, max", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_EVSE_MINIMUM_VOLTAGE_VALUE", "name": "Electric vehicle supply equipment, voltage, min", "group": "Battery.Charging", "bit": 104, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_EVSE_MINIMUM_CURRENT_VALUE", "name": "Electric vehicle supply equipment, current, min", "group": "Battery.Charging", "bit": 120, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_EVSE_V", "name": "Electric vehicle supply equipment, voltage", "group": "Battery.Charging", "bit": 136, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_EVSE_C", "name": "Electric vehicle supply equipment, current", "group": "Battery.Charging", "bit": 152, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_EVSE_CURRENT_REGULATION_TOLERANCE_VALUE", "name": "Electric vehicle supply equipment, regulation tolerance", "group": "Battery.Charging", "bit": 176, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "A"},
+        {"id": "VELOSTER_EVSE_DELIVERED_POWER_VALUE", "name": "Electric vehicle supply equipment, power, delivered", "group": "Battery.Charging", "bit": 184, "bits": 16, "multiply": 10, "divide": 1000, "min": 0, "max": 655.35, "unit": "kWh"},
+        {"id": "VELOSTER_EVSE_MAXIMUM_POWER_VALUE", "name": "Electric vehicle supply equipment, power, max", "group": "Battery.Charging", "bit": 200, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "W"},
+        {"id": "VELOSTER_EVSE_MAIN_POWER", "name": "Electric vehicle supply equipment, power, main", "group": "Battery.Charging", "bit": 216, "bits": 8, "min": 0, "max": 255, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "744.74C.22E003|fc=1",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E003",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_HVBAT_CP_VOLTAGE", "name": "Control pilot voltage", "group": "Battery", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_CP_DUTY_CYCLE", "name": "Control pilot duty cycle", "group": "Battery", "bit": 56, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_HVBAT_PD_VOLTAGE", "name": "Proximity detection voltage", "group": "Battery", "bit": 88, "bits": 16, "multiply": 10, "divide": 10000, "min": 0, "max": 65.535, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_HV_BATTERY_VOLTAGE", "name": "High voltage battery, voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 104, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_SOC_VCMS", "name": "High voltage battery, state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 120, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_HVBAT_TARGET_VOLT", "name": "High voltage battery, target voltage", "group": "Battery", "bit": 128, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_TARGET_CURR", "name": "Electric vehicle supply equipment, target current", "group": "Battery", "bit": 144, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_HVBAT_EV_MAX_VOLTAGE", "name": "High voltage battery, max voltage", "group": "Battery", "bit": 160, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_EV_MAX_CURRENT", "name": "High voltage battery, max current", "group": "Battery", "bit": 176, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_HVBAT_BMS_TARGET_VOLTAGE", "name": "High voltage battery, target voltage", "group": "Battery", "bit": 192, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
+        {"id": "VELOSTER_HVBAT_BMS_TARGET_CURRENT", "name": "High voltage battery, target current", "group": "Battery", "bit": 208, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
+        {"id": "VELOSTER_HVBAT_AC_CHARGING_COUNTER", "name": "A/C charging counter", "group": "Battery", "bit": 240, "bits": 16, "min": 0, "max": 65535},
+        {"id": "VELOSTER_HVBAT_CHRG_CNT", "name": "DC charging counter", "group": "Battery", "bit": 256, "bits": 16, "min": 0, "max": 65535},
+        {"id": "VELOSTER_VCMS__AC_CHARGING_TIME", "name": "A/C charging time", "group": "Battery", "bit": 272, "bits": 16, "min": 0, "max": 65535, "unit": "h"},
+        {"id": "VELOSTER_DC_CHRG_TIME", "name": "Cumulative DC charging time", "group": "Battery", "bit": 288, "bits": 16, "min": 0, "max": 65535, "unit": "h"},
+        {"id": "VELOSTER_AC_CHARGER_CURRENT", "name": "A/C charger current", "group": "Battery", "bit": 304, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "VELOSTER_DC_CHARGER_CURRENT_CAPABILITY", "name": "DC charger current capability", "group": "Battery", "bit": 320, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "A"},
+        {"id": "VELOSTER_AC_CHARGING_TIME_AFTER_PLUG_IN", "name": "A/C charging time, after plug-in", "group": "Battery", "bit": 336, "bits": 16, "min": 0, "max": 65535, "unit": "min"},
+        {"id": "VELOSTER_DC_CHARGING_TIME_AFTER_PLUG_IN", "name": "DC charging time, after plug-in", "group": "Battery", "bit": 352, "bits": 16, "min": 0, "max": 65535, "unit": "min"}
+      ]
+    },
+    {
+      "id": "744.74C.22E004",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "74C",
+      "request": "22E004",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BATTERY_MAIN_RELAY_STATUS", "name": "Battery main relay status", "group": "Battery.Charging", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_CHARGING_SOCKET_CONNECTED", "name": "Charging socket connected", "group": "Battery.Charging", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_400V_RELAY_STATUS", "name": "400V relay status", "group": "Battery.Charging", "bit": 42, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_400V_RELAY_ON_OFF_REQUEST", "name": "400V relay on/off request", "group": "Battery.Charging", "bit": 43, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_DC_INLET_T_1", "name": "DC inlet temperature 1", "group": "Battery.Charging", "bit": 64, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "VELOSTER_DC_INLET_T_2", "name": "DC inlet temperature 2", "group": "Battery.Charging", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "VELOSTER_AC_INLET_T_1", "name": "AC inlet temperature 1", "group": "Battery.Charging", "bit": 80, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "770.778.22BC03",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC03",
+      "interval": 2,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_TRUNK", "name": "Trunk open?", "group": "Doors", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_DOOR_FL", "name": "Front left door open?", "group": "Doors", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_DOOR_FR", "name": "Front right door open?", "group": "Doors", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_HANDBRAKE", "name": "Handbrake engaged?", "group": "Control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_DOOR_RR", "name": "Rear right door open?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_DOOR_RL", "name": "Rear left door open?", "group": "Doors", "bit": 39, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_BELT_PASSENGER", "name": "Passenger seatbelt latched?", "group": "Seatbelts", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_BELT_DRIVER", "name": "Driver seatbelt latched?", "group": "Seatbelts", "bit": 46, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_HOOD", "name": "Hood latched?", "group": "Doors", "bit": 47, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_DEFOG_SW", "name": "Defogging?", "group": "Climate", "bit": 62, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC04",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC04",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_REVERSE_GEAR", "name": "Reverse gear selected", "group": "Transmission", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_LOCK_FL", "name": "Front left door locked?", "group": "Doors", "bit": 36, "bits": 1, "min": 0, "max": 1},
+        {"id": "VELOSTER_LOCK_FR", "name": "Front right door locked?", "group": "Doors", "bit": 37, "bits": 1, "min": 0, "max": 1},
+        {"id": "VELOSTER_BELT_RM", "name": "Rear middle seatbelt latched?", "group": "Seatbelts", "bit": 52, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_BELT_RL", "name": "Rear left seatbelt latched?", "group": "Seatbelts", "bit": 53, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_BELT_RR", "name": "Rear right seatbelt latched?", "group": "Seatbelts", "bit": 54, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC05",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC05",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_HAZARD_SW", "name": "Hazard switch (raw)", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_HL_SW", "name": "Headlight switch (raw >2)", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 2}
+      ]
+    },
+    {
+      "id": "770.778.22BC06",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC06",
+      "interval": 0.25,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "770.778.22BC07",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC07",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_DEFOG_LIGHT", "name": "Defog light on", "group": "Climate", "bit": 40, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC08",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC08",
+      "interval": 2,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TURN_L", "name": "Left turn signal on?, raw >1", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"], "invalidAtOrBelow": 0, "invalidAtOrAbove": 1}
+      ]
+    },
+    {
+      "id": "770.778.22BC09",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC09",
+      "interval": 2,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_HL_HIGH", "name": "Headlight high beam on", "group": "Lights", "bit": 48, "bits": 8, "divide": 12, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_HL_LOW", "name": "Headlight low beam on", "group": "Lights", "bit": 56, "bits": 8, "divide": 12, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "770.778.22BC10|fc=1",
+      "bus": "can11",
+      "tx": "770",
+      "rx": "778",
+      "request": "22BC10",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_LIGHTS_CODE", "name": "Exterior lights state code", "group": "Lights", "bit": 32, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B008|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B008",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BRAKE_SW", "name": "Brake switch", "group": "Control", "bit": 51, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B009",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B009",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_PARKING_SENS_REAR", "name": "Parking sensor rear center left level", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_PARKING_SENS_REAR_CENTER", "name": "Parking sensor rear center right level", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22B00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22B00C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_HEATED_WHEEL", "name": "Heated steering wheel", "group": "Climate", "bit": 34, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_HEATED_WHEEL_ALT", "name": "Heated steering wheel, alternate bit", "group": "Climate", "bit": 42, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C002|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C002",
+      "interval": 60,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TID_1", "name": "Tire sensor 1 ID", "group": "Tires", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "VELOSTER_TID_2", "name": "Tire sensor 2 ID", "group": "Tires", "bit": 64, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "VELOSTER_TID_3", "name": "Tire sensor 3 ID", "group": "Tires", "bit": 96, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
+        {"id": "VELOSTER_TID_4", "name": "Tire sensor 4 ID", "group": "Tires", "bit": 128, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00B",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00B",
+      "interval": 15,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_TPMS_PRESS_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "VELOSTER_TPMS_TEMP_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "VELOSTER_TPMS_ALERT_FL", "name": "Tire alert front left", "group": "Tires", "bit": 56, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_TPMS_PRESS_FR", "name": "Tire pressure front right", "group": "Tires", "metric": "frontRightTirePressure", "bit": 64, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "VELOSTER_TPMS_TEMP_FR", "name": "Tire temperature front right", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "VELOSTER_TPMS_ALERT_FR", "name": "Tire alert front right", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_TPMS_PRESS_RR", "name": "Tire pressure rear right", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "VELOSTER_TPMS_TEMP_RR", "name": "Tire temperature rear right", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "VELOSTER_TPMS_ALERT_RR", "name": "Tire alert rear right", "group": "Tires", "bit": 120, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_TPMS_PRESS_RL", "name": "Tire pressure rear left", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 128, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "VELOSTER_TPMS_TEMP_RL", "name": "Tire temperature rear left", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 136, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50, "invalidAtOrAbove": 205},
+        {"id": "VELOSTER_TPMS_ALERT_RL", "name": "Tire alert rear left", "group": "Tires", "bit": 152, "bits": 8, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00C|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00C",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_1_ODO_EVT_3", "name": "Sensor 1 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00D|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00D",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_2_ODO_EVT_3", "name": "Sensor 2 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00E|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00E",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_3_ODO_EVT_3", "name": "Sensor 3 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A0.7A8.22C00F|fc=1",
+      "bus": "can11",
+      "tx": "7A0",
+      "rx": "7A8",
+      "request": "22C00F",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
+        {"id": "VELOSTER_SENS_4_ODO_EVT_3", "name": "Sensor 4 odometer event 3", "group": "Trips", "bit": 320, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220100|fc=1",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220100",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TEMP_INT", "name": "Interior temperature", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "VELOSTER_TEMP_EXT", "name": "Exterior temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 80, "unit": "°C"},
+        {"id": "VELOSTER_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220101",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220101",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "VELOSTER_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.220102",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "220102",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_HVAC_COOLANT_T", "name": "Coolant temperature", "group": "Engine", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "VELOSTER_HVAC_INVERTER_T", "name": "Inverter temperature", "group": "Engine", "bit": 96, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C6.7CE.22B002",
+      "bus": "can11",
+      "tx": "7C6",
+      "rx": "7CE",
+      "request": "22B002",
+      "interval": 10,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_FLI_VOL", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
+        {"id": "VELOSTER_CLUSTER_VOLTAGE", "name": "Cluster voltage", "group": "Electrical", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
+        {"id": "VELOSTER_ODO_KM", "name": "Odometer variation 1", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "VELOSTER_ODO_MI", "name": "Odometer variation 2", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.2101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_VSS_AVG", "name": "Vehicle speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "VELOSTER_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "VELOSTER_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 104, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "VELOSTER_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 112, "bits": 8, "signed": true, "min": -127.5, "max": 127, "unit": "km/h"},
+        {"id": "VELOSTER_TC_SWITCH", "name": "Wheel traction control switch", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "VELOSTER_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.220104",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "220104",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_VSS_AVG_V2", "name": "Average wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_TIRE_FL_VSS_V2", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_TIRE_FR_VSS_V2", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_TIRE_RR_VSS_V2", "name": "Rear right wheel speed", "group": "Movement", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_TIRE_RL_VSS_V2", "name": "Rear left wheel speed", "group": "Movement", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_TC_SWITCH_V2", "name": "Traction control switch, raw", "group": "Movement", "bit": 150, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "VELOSTER_STEER_ANGLE_V2", "name": "Steering wheel angle", "group": "Control", "bit": 200, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "VELOSTER_BRAKE_P_V2", "name": "Brake pressure", "group": "Control", "bit": 256, "bits": 16, "signed": true, "divide": 86.7, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.224000",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "224000",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "HYUNDAI_TIRE_FL_VSS_V2", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HYUNDAI_TIRE_FR_VSS_V2", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HYUNDAI_TIRE_RL_VSS_V2", "name": "Rear left wheel speed", "group": "Movement", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HYUNDAI_TIRE_RR_VSS_V2", "name": "Rear right wheel speed", "group": "Movement", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D1.7D9.22C101",
+      "bus": "can11",
+      "tx": "7D1",
+      "rx": "7D9",
+      "request": "22C101",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 112, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D4.2101",
+      "bus": "can11",
+      "tx": "7D4",
+      "request": "2101",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_STEER_ANGLE_V3", "name": "Steering wheel angle", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7D4.7DC.220101",
+      "bus": "can11",
+      "tx": "7D4",
+      "rx": "7DC",
+      "request": "220101",
+      "interval": 5,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D6.7DE.2106",
+      "bus": "can11",
+      "tx": "7D6",
+      "rx": "7DE",
+      "request": "2106",
+      "interval": 15,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FL_TP", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "VELOSTER_FL_TT", "name": "Front left tire temperature", "group": "Engine", "metric": "frontLeftTireTemperature", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "VELOSTER_FR_TP", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "VELOSTER_FR_TT", "name": "Front right tire temperature", "group": "Engine", "metric": "frontRightTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "VELOSTER_RL_TP", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 64, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "VELOSTER_RL_TT", "name": "Rear left tire temperature", "group": "Engine", "metric": "rearLeftTireTemperature", "bit": 72, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "VELOSTER_RR_TP", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 96, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
+        {"id": "VELOSTER_RR_TT", "name": "Rear right tire temperature", "group": "Engine", "metric": "rearRightTireTemperature", "bit": 104, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2100",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2100",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FUEL_CUT", "name": "Fuel cut", "group": "Fuel", "bit": 88, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_IDLE_CONTROL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_COOLANT_FAN_LOW_SPEED", "name": "Coolant fan low speed", "group": "Movement", "bit": 170, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_COOLANT_FAN_HIGH_SPEED", "name": "Coolant fan high speed", "group": "Movement", "bit": 171, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_KNOCK_DETECTED", "name": "Knock detected", "group": "Engine", "bit": 200, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2101",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2101",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MIS_1", "name": "Misfire count #1", "group": "Engine", "bit": 56, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_2", "name": "Misfire count #2", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_3", "name": "Misfire count #3", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_4", "name": "Misfire count #4", "group": "Engine", "bit": 104, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2102",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2102",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "VELOSTER_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "Engine", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.12, "unit": "V"},
+        {"id": "VELOSTER_VSS_V2_7E0", "name": "Vehicle speed, v2", "group": "Movement", "metric": "speed", "bit": 96, "bits": 8, "multiply": 1.25, "min": 0, "max": 318.75, "unit": "km/h"},
+        {"id": "VELOSTER_COMMANDED_EVAPORATIVE_PURGE", "name": "Commanded evaporative purge", "group": "Engine", "bit": 160, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "VELOSTER_FUEL_INJECTION_TIMING_1", "name": "Fuel injection timing #1", "group": "Fuel", "bit": 176, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "VELOSTER_FUEL_INJECTION_TIMING_2", "name": "Fuel injection timing #2", "group": "Fuel", "bit": 192, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "VELOSTER_FUEL_INJECTION_TIMING_3", "name": "Fuel injection timing #3", "group": "Fuel", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"},
+        {"id": "VELOSTER_FUEL_INJECTION_TIMING_4", "name": "Fuel injection timing #4", "group": "Fuel", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 0.8192, "min": 0, "max": 53686.272, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2103",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2103",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_EXHAUST_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 368, "bits": 8, "multiply": 4.709803922, "add": 99, "min": 99, "max": 1300, "unit": "°C"},
+        {"id": "VELOSTER_ODO_LAST_DPF_REGEN", "name": "Odometer at last DPF regeneration", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_DISTANCE_SINCE_LAST_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 424, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 456, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2104",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2104",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_COOLANT_FAN_HIGH_SPEED_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_COOLANT_FAN_LOW_SPEED_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2105",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2105",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TQ_ACT", "name": "Torque, actual", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 61, "divide": 40000, "min": 0, "max": 99.94, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2107",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2107",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MAIN_INJECTION_QTY", "name": "Main injection volume", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.392156863, "min": 0, "max": 100, "unit": "L"},
+        {"id": "VELOSTER_PILOT_INJECTION_QTY", "name": "Pilot injection volume", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "L"},
+        {"id": "VELOSTER_POST_INJECTION_QTY", "name": "Post injection volume", "group": "Engine", "bit": 128, "bits": 16, "min": 0, "max": 65535, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2108",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2108",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_EMIS_MIS_TOT_1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 144, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_5", "name": "Emission relevant misfires total, cylinder 5", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_6", "name": "Emission relevant misfires total, cylinder 6", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_5", "name": "Catalyst damaging misfires total, cylinder 5", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_6", "name": "Catalyst damaging misfires total, cylinder 6", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMIS_MIS_TOT_ALL", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATDMG_MIS_TOT_ALL", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CURRENT_1", "name": "Misfires current, cylinder 1", "group": "Engine", "bit": 536, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_2", "name": "Misfires current, cylinder 2", "group": "Engine", "bit": 544, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_3", "name": "Misfires current, cylinder 3", "group": "Engine", "bit": 552, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_4", "name": "Misfires current, cylinder 4", "group": "Engine", "bit": 560, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_5", "name": "Misfires current, cylinder 5", "group": "Engine", "bit": 568, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_6", "name": "Misfires current, cylinder 6", "group": "Engine", "bit": 576, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_MIS_CURRENT_TOT", "name": "Misfires current total", "group": "Engine", "bit": 584, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210A",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_1_ALT", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 160, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_2_ALT", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 168, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_3_ALT", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 176, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_4_ALT", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 184, "bits": 8, "divide": 1.3333333333, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210B",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_DI_TIME_1", "name": "Direct injection time 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "VELOSTER_DI_TIME_2", "name": "Direct injection time 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "VELOSTER_DI_TIME_3", "name": "Direct injection time 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "VELOSTER_DI_TIME_4", "name": "Direct injection time 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "VELOSTER_DI_TIME_5", "name": "Direct injection time 5", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"},
+        {"id": "VELOSTER_DI_TIME_6", "name": "Direct injection time 6", "group": "Engine", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 13107, "min": 0, "max": 500, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210D",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_EMIS_3", "name": "Emission-relevant misfires, cylinder #3", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_EMIS_4", "name": "Emission-relevant misfires, cylinder #4", "group": "Engine.Misfires", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_1", "name": "Misfires total counter, cylinder #1", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_2", "name": "Misfires total counter, cylinder #2", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_3", "name": "Misfires total counter, cylinder #3", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_4", "name": "Misfires total counter, cylinder #4", "group": "Engine.Misfires", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CNT_ALL", "name": "Misfires total counter, all cylinders", "group": "Engine.Misfires", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.210E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "210E",
+      "interval": 30,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_ENG_RUN_TIME_TOT", "name": "Engine run time, total", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 6, "min": 0, "max": 393209.9999, "unit": "min"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2113",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2113",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "VELOSTER_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "VELOSTER_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "VELOSTER_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
+        {"id": "VELOSTER_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2114",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2114",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "VELOSTER_THROTTLE_POSITION__1", "name": "Throttle position #1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "VELOSTER_THROTTLE_POSITION__2", "name": "Throttle position #2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
+        {"id": "VELOSTER_THROTTLE_POSITION_SENSOR_VOLTAGE__2", "name": "Throttle position sensor voltage #2", "group": "Battery", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"},
+        {"id": "VELOSTER_COOLANT_FAN", "name": "Coolant", "group": "Engine", "bit": 96, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_RELATIVE_ACCELERATOR_PEDAL_POSITION_VOLTAGE", "name": "Relative accelerator pedal position voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "V"},
+        {"id": "VELOSTER_RELATIVE_ACCELERATOR_PEDAL_POSITION", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 128, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6, "unit": "%"},
+        {"id": "VELOSTER_REQUESTED_TORQUE", "name": "Requested torque", "group": "Engine", "bit": 176, "bits": 16, "multiply": 0.001526, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_THROTTLE_POSITION_SENSOR_VOLTAGE__1", "name": "Throttle position sensor voltage #1", "group": "Battery", "bit": 360, "bits": 16, "byteOrder": "little", "multiply": 0.0012207031, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2115",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2115",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0030517578, "add": -100, "min": 0, "max": 99.99, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2116",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2116",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "Engine", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYLINDER_3", "name": "Knock retard cylinder #3", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYLINDER_4", "name": "Knock retard cylinder #4", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2117",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2117",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
+        {"id": "VELOSTER_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "Engine", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2118",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2118",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_CVVT_T", "name": "Continuously variable valve timing temperature", "description": "Continuously variable valve timing temperature.", "group": "Engine", "bit": 272, "bits": 8, "add": -48, "min": -48, "max": 207, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2119",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2119",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TURBO_BOOST_P", "name": "Turbo boost pressure", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 829.1, "divide": 10000, "min": 0, "max": 5433},
+        {"id": "VELOSTER_IGN_RETARD_KNOCK_1", "name": "Ignition retard due to knock control 1", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_IGN_RETARD_KNOCK_2", "name": "Ignition retard due to knock control 2", "group": "Engine", "bit": 112, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_IGN_RETARD_KNOCK_3", "name": "Ignition retard due to knock control 3", "group": "Engine", "bit": 120, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_IGN_RETARD_KNOCK_4", "name": "Ignition retard due to knock control 4", "group": "Engine", "bit": 128, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_1", "name": "Knock retard cylinder 1", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_2", "name": "Knock retard cylinder 2", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_3", "name": "Knock retard cylinder 3", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_CYL_4", "name": "Knock retard cylinder 4", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_ADPT_LO_STOP", "name": "Adaptation value for lower stop of wastegate actuator", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1.53, "divide": 10000, "min": -5.01, "max": 5.01, "unit": "V"},
+        {"id": "VELOSTER_WASTEGATE_POS_V", "name": "Wastegate position voltage", "group": "Battery", "bit": 400, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 1.53, "divide": 10000, "min": -5.01, "max": 5.01, "unit": "V"},
+        {"id": "VELOSTER_WASTEGATE_CTRL_PWM", "name": "Wastegate control PWM, wastegate actuator", "group": "Engine", "bit": 416, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 100, "divide": 32767, "min": -100, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_WASTEGATE_POS", "name": "Wastegate position, wastegate actuator", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 200, "divide": 32767, "min": -200, "max": 200, "unit": "%"},
+        {"id": "VELOSTER_WASTEGATE_POS_TGT", "name": "Wastegate position target, wastegate actuator", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 200, "divide": 32767, "min": -200, "max": 200, "unit": "%"},
+        {"id": "VELOSTER_MAX_ADPT_LO_MECH_P", "name": "Max adaptation value for lower mechanical stop of the boost pressure actuator during engine stop", "group": "Engine", "bit": 464, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "VELOSTER_MAX_ADPT_LO_MECH_STOP_P", "name": "Max adaptation value for lower mechanical stop of the boost pressure actuator during engine running", "group": "Engine", "bit": 480, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "VELOSTER_MIN_ADPT_LO_MECH_P", "name": "Min adaptation value for lower mechanical stop of the boost pressure actuator during engine stop", "group": "Engine", "bit": 496, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"},
+        {"id": "VELOSTER_MIN_ADPT_LO_MECH_STOP_P", "name": "Min adaptation value for lower mechanical stop of the boost pressure actuator during engine running", "group": "Engine", "bit": 512, "bits": 16, "byteOrder": "little", "multiply": 1.53, "divide": 10000, "min": 0, "max": 10.02, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.211D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "211D",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MIS_1_7E0", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_2_7E0", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_3_7E0", "name": "Misfires, cylinder 3", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_4_7E0", "name": "Misfires, cylinder 4", "group": "Engine.Misfires", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CAT_1", "name": "Misfires harmful for catalyst cylinder 1", "group": "Engine.Misfires", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CAT_2", "name": "Misfires harmful for catalyst cylinder 2", "group": "Engine.Misfires", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CAT_3", "name": "Misfires harmful for catalyst cylinder 3", "group": "Engine.Misfires", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_CAT_4", "name": "Misfires harmful for catalyst cylinder 4", "group": "Engine.Misfires", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2120",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2120",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_CAM_INT_POS_ACT", "name": "Camshaft intake position, actual", "group": "Engine", "bit": 72, "bits": 8, "multiply": 3, "divide": 8, "add": 60, "min": 0, "max": 155, "unit": "°"},
+        {"id": "VELOSTER_CAM_EXH_POS_ACT", "name": "Camshaft exhaust position, actual", "group": "Engine", "bit": 80, "bits": 8, "multiply": -3, "divide": 8, "add": -40, "min": -135, "max": -40, "unit": "°"},
+        {"id": "VELOSTER_CAM_INT_POS_CMD", "name": "Camshaft intake position, commanded", "group": "Engine", "bit": 104, "bits": 8, "multiply": 3, "divide": 8, "add": 60, "min": 0, "max": 155, "unit": "°"},
+        {"id": "VELOSTER_CAM_EXH_POS_CMD", "name": "Camshaft exhaust position, commanded", "group": "Engine", "bit": 112, "bits": 8, "multiply": -3, "divide": 8, "add": -40, "min": -135, "max": -40, "unit": "°"},
+        {"id": "VELOSTER_OIL_CTRL_VLV_IMPULSE", "name": "Intake cam oil control valve duty", "group": "Engine", "bit": 144, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_OIL_CTRL_VLV_IMPULSE_WIDTH", "name": "Exhaust cam oil control valve duty", "group": "Engine", "bit": 160, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TURBO_BOOST_P_7E0", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543},
+        {"id": "VELOSTER_WASTE_GATE_V", "name": "Waste gate voltage", "group": "Battery", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
+        {"id": "VELOSTER_WASTE_GATE_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"},
+        {"id": "VELOSTER_WASTE_GATE_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"},
+        {"id": "VELOSTER_WASTE_GATE_TGT", "name": "Waste gate target", "group": "Engine", "bit": 440, "bits": 16, "multiply": 0.00610352, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2123",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2123",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "VELOSTER_FUEL_P_SET_POINT", "name": "Fuel pressure set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "VELOSTER_FUEL_P_DEV", "name": "Fuel pressure deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53067, "divide": 10000, "min": -173889.9456, "max": 173884.6389},
+        {"id": "VELOSTER_CYL_1_INJ_TIME_2ND", "name": "Cylinder 1 injection time, 2nd pulse", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_2_INJ_TIME_2ND", "name": "Cylinder 2 injection time, 2nd pulse", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_3_INJ_TIME_2ND", "name": "Cylinder 3 injection time, 2nd pulse", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_4_INJ_TIME_2ND", "name": "Cylinder 4 injection time, 2nd pulse", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_1_INJ_TIME_1ST", "name": "Cylinder 1 injection time, 1st pulse", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_2_INJ_TIME_1ST", "name": "Cylinder 2 injection time, 1st pulse", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_3_INJ_TIME_1ST", "name": "Cylinder 3 injection time, 1st pulse", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_CYL_4_INJ_TIME_1ST", "name": "Cylinder 4 injection time, 1st pulse", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 4, "divide": 1000, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2127",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2127",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BAT_CURRENT_BATSENS_7E0_7E0_27", "name": "Battery current, battery sensor", "group": "Battery", "bit": 48, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
+        {"id": "VELOSTER_BAT_V_BATSENS_7E0_7E0_27", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 64, "bits": 16, "divide": 1000, "add": 6, "min": 0, "max": 71.53, "unit": "V"},
+        {"id": "VELOSTER_BAT_T_BATSENS_7E0_7E0_27", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 80, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727, "unit": "°C"},
+        {"id": "VELOSTER_BAT_ST_CHG_BATSENS_7E0_7E0_27", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "%"},
+        {"id": "VELOSTER_BAT_ST_HEALTH_BATSENS", "name": "Battery state of health, battery sensor", "group": "Battery", "bit": 104, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21A0",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "VELOSTER_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 80, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "VELOSTER_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 104, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "VELOSTER_ATF_T_7E0", "name": "Transmission fluid temperature", "group": "Engine", "bit": 264, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.21B3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "21B3",
+      "interval": 30,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_VEH_TOT_DIST", "name": "Vehicle total distance", "group": "Trips", "bit": 248, "bits": 40, "min": 0, "max": 1099511627775, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2221A0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2221A0",
+      "interval": 10,
+      "notAnsweredIn": [2017, 2019, 2020, 2021],
+      "signals": [
+        {"id": "VELOSTER_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E001",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E001",
+      "interval": 10,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_INTAKE_TEMP", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"},
+        {"id": "VELOSTER_OIL_TEMP", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E002",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E002",
+      "interval": 5,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "VELOSTER_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "VELOSTER_INJ_DUR_3", "name": "Injection duration cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"},
+        {"id": "VELOSTER_INJ_DUR_4", "name": "Injection duration cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53.6864, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E003",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E003",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BOOST_P_UP", "name": "Boost pressure upstream", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111},
+        {"id": "VELOSTER_BOOST_P_UP_DES", "name": "Boost pressure upstream, desired", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "multiply": 39, "divide": 500, "min": 0, "max": 5111}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E004",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E004",
+      "interval": 10,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_AUX_SOC", "name": "Aux battery SOC", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_AUX_SOH", "name": "Aux battery SOH", "group": "Battery", "bit": 328, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E005",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_A3", "name": "Gasoline direct injection time bank a, 3", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_A4", "name": "Gasoline direct injection time bank a, 4", "group": "Engine", "bit": 272, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_B1", "name": "Gasoline direct injection time bank b, 1", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_B2", "name": "Gasoline direct injection time bank b, 2", "group": "Engine", "bit": 368, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_B3", "name": "Gasoline direct injection time bank b, 3", "group": "Engine", "bit": 384, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
+        {"id": "VELOSTER_GDI_IT_B4", "name": "Gasoline direct injection time bank b, 4", "group": "Engine", "bit": 400, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E007",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E007",
+      "interval": 30,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "bit": 112, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "L"},
+        {"id": "VELOSTER_INJ_CORR_FACTOR_1", "name": "Injector correction factor 1", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "VELOSTER_INJ_CORR_FACTOR_2", "name": "Injector correction factor 2", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "VELOSTER_INJ_CORR_FACTOR_3", "name": "Injector correction factor 3", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2},
+        {"id": "VELOSTER_INJ_CORR_FACTOR_4", "name": "Injector correction factor 4", "group": "Engine", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 2, "divide": 65535, "min": 0, "max": 2}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E009",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E009",
+      "interval": 30,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_GPF_INLET_T_SENS_RAW_V", "name": "Gasoline particulate filter inlet temperature sensor raw voltage", "group": "Battery", "bit": 256, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "VELOSTER_GPF_OUTLET_T_SENS_V", "name": "Gasoline particulate filter outlet temperature sensor raw voltage", "group": "Battery", "bit": 272, "bits": 16, "byteOrder": "little", "multiply": 21333, "divide": 4369000, "min": 0, "max": 319, "unit": "V"},
+        {"id": "VELOSTER_EXH_GAS_T_BEFORE_GPF_1", "name": "Exhaust gas temperature before gasoline particulate filter sensor 1", "group": "Engine", "bit": 288, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "VELOSTER_EXH_GAS_T_BEFORE_GPF_2", "name": "Exhaust gas temperature before gasoline particulate filter sensor 2", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "multiply": 12, "divide": 125, "min": 0, "max": 6291, "unit": "°C"},
+        {"id": "VELOSTER_GPF_CHG_ST", "name": "Gasoline particulate filter charge state", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_ODO_LAST_GPF_REGEN", "name": "Odometer at last gasoline particulate filter regeneration", "group": "Trips", "bit": 328, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_DIST_SINCE_GPF_REGEN", "name": "Distance since last gasoline particulate filter regeneration", "group": "Trips", "bit": 360, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_COVERAGE_DRIVEN", "name": "Coverage driven length", "group": "Engine", "bit": 392, "bits": 32, "byteOrder": "little", "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00A",
+      "interval": 1,
+      "answeredIn": [2019, 2020, 2021],
+      "notAnsweredIn": [2017],
+      "signals": [
+        {"id": "VELOSTER_KNOCK_RETARD_1", "name": "Knock retard cyl 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_2", "name": "Knock retard cyl 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_3", "name": "Knock retard cyl 3", "group": "Engine", "bit": 112, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_4", "name": "Knock retard cyl 4", "group": "Engine", "bit": 120, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_LEARN_1", "name": "Knock learn cyl 1", "group": "Engine", "bit": 160, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_LEARN_2", "name": "Knock learn cyl 2", "group": "Engine", "bit": 168, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_LEARN_3", "name": "Knock learn cyl 3", "group": "Engine", "bit": 176, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_LEARN_4", "name": "Knock learn cyl 4", "group": "Engine", "bit": 184, "bits": 8, "signed": true, "divide": 5, "min": -25.6, "max": 25.4, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E00D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E00D",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MISFIRES_C3_CUR", "name": "Misfires, current, cylinder 3", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MISFIRES_C4_CUR", "name": "Misfires, current, cylinder 4", "group": "Engine", "bit": 96, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMISSION_RELEVANT_MISFIRES_TOTAL_C1", "name": "Emission relevant misfires total, cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMISSION_RELEVANT_MISFIRES_TOTAL_C2", "name": "Emission relevant misfires total, cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMISSION_RELEVANT_MISFIRES_TOTAL_C3", "name": "Emission relevant misfires total, cylinder 3", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMISSION_RELEVANT_MISFIRES_TOTAL_C4", "name": "Emission relevant misfires total, cylinder 4", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATALYST_DAMAGING_MISFIRES_TOTAL_C1", "name": "Catalyst damaging misfires total, cylinder 1", "group": "Engine", "bit": 304, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATALYST_DAMAGING_MISFIRES_TOTAL_C2", "name": "Catalyst damaging misfires total, cylinder 2", "group": "Engine", "bit": 320, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATALYST_DAMAGING_MISFIRES_TOTAL_C3", "name": "Catalyst damaging misfires total, cylinder 3", "group": "Engine", "bit": 336, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATALYST_DAMAGING_MISFIRES_TOTAL_C4", "name": "Catalyst damaging misfires total, cylinder 4", "group": "Engine", "bit": 352, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_EMISSION_RELEVANT_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Emission relevant misfires total all cylinders", "group": "Engine", "bit": 432, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_CATALYST_DAMAGING_MISFIRES_TOTAL_ALL_CYLINDERS", "name": "Catalyst damaging misfires total all cylinders", "group": "Engine", "bit": 448, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E010",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E010",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MAF_RATE", "name": "Mass air flow rate", "group": "Engine", "bit": 208, "bits": 8, "byteOrder": "little", "multiply": 0.04239, "min": 0, "max": 10.8}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E011",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E011",
+      "interval": 5,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_CALC_OIL_T", "name": "Calculated oil temperature", "group": "Engine", "bit": 304, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E013",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E013",
+      "interval": 0.25,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "divide": 25, "min": -1310, "max": 1310}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E014",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E014",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_CLT_FAN_PWM", "name": "Coolant fan PWM", "group": "Engine", "bit": 88, "bits": 16, "multiply": 15.21, "divide": 10000, "min": 0, "max": 99.67, "unit": "%"},
+        {"id": "VELOSTER_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 112, "bits": 8, "multiply": 13.79, "min": 0, "max": 3516.45, "unit": "kPa"},
+        {"id": "VELOSTER_OVERHEAT_PROTECTION", "name": "Overheat protection, active", "group": "Engine", "bit": 132, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E019",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E019",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_3_E019", "name": "Knock retard cylinder 3, alternate", "group": "Engine", "bit": 184, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
+        {"id": "VELOSTER_KNOCK_RETARD_4_E019", "name": "Knock retard cylinder 4, alternate", "group": "Engine", "bit": 192, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E01D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E01D",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_MIS_1_7E0_7E0", "name": "Misfires, cylinder 1", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_2_7E0_7E0", "name": "Misfires, cylinder 2", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_3_7E0_7E0", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_4_7E0_7E0", "name": "Misfires, cylinder 4", "group": "Engine", "bit": 80, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_HARMFUL_CAT_1", "name": "Misfires harmful for catalyst, cylinder 1", "group": "Engine", "bit": 160, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_HARMFUL_CAT_2", "name": "Misfires harmful for catalyst, cylinder 2", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_HARMFUL_CAT_3", "name": "Misfires harmful for catalyst, cylinder 3", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
+        {"id": "VELOSTER_MIS_HARMFUL_CAT_4", "name": "Misfires harmful for catalyst, cylinder 4", "group": "Engine", "bit": 208, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E020",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E020",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_INT_CAM_POS", "name": "Intake camshaft position", "group": "Engine", "bit": 72, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"},
+        {"id": "VELOSTER_EXH_CAM_POS", "name": "Exhaust camshaft position", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E021",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E021",
+      "interval": 0.1,
+      "answeredIn": [2020, 2021],
+      "notAnsweredIn": [2017, 2019],
+      "signals": [
+        {"id": "VELOSTER_TURBO_BOOST", "name": "Turbo boost pressure (gauge)", "group": "Engine", "bit": 56, "bits": 16, "divide": 831.55690902, "add": -12, "min": -10, "max": 66.81, "unit": "psi"},
+        {"id": "VELOSTER_WG_VOLTAGE", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 10, "divide": 65535, "min": 0, "max": 10, "unit": "V"},
+        {"id": "VELOSTER_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E023",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E023",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_FUEL_P_ACT", "name": "Fuel pressure, actual", "group": "Fuel", "bit": 32, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "VELOSTER_FUEL_P_SET_POINT_7E0", "name": "Fuel pressure, set point", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "multiply": 53067, "divide": 10000, "min": 0, "max": 347774.5845},
+        {"id": "VELOSTER_FUEL_P_SET_POINT_DEV", "name": "Fuel pressure set point deviation", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 53066, "divide": 10000, "min": -173886.6688, "max": 173881.3622},
+        {"id": "VELOSTER_INJ_IMPULSE_1_CYL_1", "name": "Injection impulse 1, cylinder 1", "group": "Engine", "bit": 200, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_1_CYL_2", "name": "Injection impulse 1, cylinder 2", "group": "Engine", "bit": 216, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_1_CYL_3", "name": "Injection impulse 1, cylinder 3", "group": "Engine", "bit": 232, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_1_CYL_4", "name": "Injection impulse 1, cylinder 4", "group": "Engine", "bit": 248, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_2_CYL_1", "name": "Injection impulse 2, cylinder 1", "group": "Engine", "bit": 264, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_2_CYL_2", "name": "Injection impulse 2, cylinder 2", "group": "Engine", "bit": 280, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_2_CYL_3", "name": "Injection impulse 2, cylinder 3", "group": "Engine", "bit": 296, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_2_CYL_4", "name": "Injection impulse 2, cylinder 4", "group": "Engine", "bit": 312, "bits": 16, "byteOrder": "little", "divide": 250, "min": 0, "max": 262.14, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_3_CYL_1", "name": "Injection impulse 3, cylinder 1", "group": "Engine", "bit": 328, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_3_CYL_2", "name": "Injection impulse 3, cylinder 2", "group": "Engine", "bit": 344, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_3_CYL_3", "name": "Injection impulse 3, cylinder 3", "group": "Engine", "bit": 360, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "VELOSTER_INJ_IMPULSE_3_CYL_4", "name": "Injection impulse 3, cylinder 4", "group": "Engine", "bit": 376, "bits": 16, "byteOrder": "little", "divide": 25, "min": 0, "max": 2621.4, "unit": "ms"},
+        {"id": "VELOSTER_CYCLE_FUEL_CONS", "name": "Cycle fuel consumption", "group": "Fuel", "bit": 416, "bits": 8, "multiply": 8.478, "divide": 100, "min": 0, "max": 21.6189}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22E0F2",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22E0F2",
+      "interval": 1,
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_DPF_SUCCESSFUL_REGEN", "name": "Diesel particulate filter successful regeneration count", "group": "Engine", "bit": 432, "bits": 16, "min": 0, "max": 65535},
+        {"id": "VELOSTER_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 496, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED01",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_RAIL_P_CTRL_VLV", "name": "Rail pressure control valve", "group": "Engine", "bit": 55, "bits": 1, "multiply": 20, "divide": 51, "min": 0, "max": 0.3921, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_AC_RELAY", "name": "Air conditioning relay", "group": "Engine", "bit": 101, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_ENG_CLT_FAN_LOW_SPD", "name": "Engine coolant fan low speed", "group": "Movement", "bit": 176, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_ENG_CLT_FAN_HIGH_SPD_ON_OFF", "name": "Engine coolant fan high speed, on/off", "group": "Movement", "bit": 184, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 216, "bits": 8, "multiply": 7843, "divide": 10000, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"},
+        {"id": "VELOSTER_ENG_ACT_TQ", "name": "Engine, actual torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 23529, "divide": 10000, "min": 0, "max": 599.9895, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED02",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED02",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED03|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED03",
+      "interval": 3600,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_DPF_DIFF_P_7E0", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 288, "bits": 8, "multiply": 431.373, "divide": 100, "min": 0, "max": 1100},
+        {"id": "VELOSTER_EXH_T_1_UP_OXICAT", "name": "Exhaust temperature 1, upstream of oxidation catalyst", "group": "Engine", "bit": 296, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "VELOSTER_EXH_T_2_UP_DPF", "name": "Exhaust temperature 2, upstream of DPF", "group": "Engine", "bit": 304, "bits": 8, "multiply": 4.7098, "add": 99, "min": 0, "max": 1299.999, "unit": "°C"},
+        {"id": "VELOSTER_REGEN_DEMAND_CNT", "name": "Regeneration demand counter by soot load", "group": "Engine", "bit": 320, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_DPF_ODO_LAST_REGEN", "name": "Diesel particulate filter odometer at last regeneration", "group": "Trips", "bit": 328, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_DIST_SINCE_DPF_REGEN", "name": "Distance since last DPF regeneration", "group": "Trips", "bit": 360, "bits": 32, "divide": 1000, "min": 0, "max": 50000, "unit": "km"},
+        {"id": "VELOSTER_ODO_7E0", "name": "Odometer", "group": "Trips", "bit": 392, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"},
+        {"id": "VELOSTER_SUCCESSFUL_REGEN_ST", "name": "Successful regeneration state", "group": "Engine", "bit": 424, "bits": 8, "min": 0, "max": 1},
+        {"id": "VELOSTER_FUEL_CONS_SINCE_DPF", "name": "Fuel consumption since last DPF regeneration", "group": "Fuel", "bit": 432, "bits": 8, "multiply": 1.2549, "min": 0, "max": 319, "unit": "L"},
+        {"id": "VELOSTER_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration count", "group": "Engine", "bit": 440, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED04",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED04",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_ACT_ACCEL", "name": "Actual acceleration", "group": "Movement", "bit": 240, "bits": 8, "multiply": 64, "divide": 255, "min": 0, "max": 64, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED05",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED05",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED06",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED06",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_REQ_TQ_LIM_TRACTION", "name": "Requested torque limitation from traction control", "group": "Engine", "bit": 120, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED07|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED07",
+      "interval": 5,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 152, "bits": 8, "multiply": 0.7843, "add": -50, "min": -50, "max": 149.9965, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED13",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED13",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_OIL_PMP_PWM", "name": "Oil pump PWM", "group": "Engine", "bit": 71, "bits": 1, "multiply": 20, "divide": 51, "min": 0, "max": 0.392, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22ED27",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22ED27",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_BAT_CURRENT_BATSENS", "name": "Battery current, battery sensor", "group": "Battery", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"},
+        {"id": "VELOSTER_BAT_V_BATSENS", "name": "Battery voltage, battery sensor", "group": "Battery", "bit": 56, "bits": 8, "multiply": 12.75, "divide": 255, "add": 6, "min": 0, "max": 18.75, "unit": "V"},
+        {"id": "VELOSTER_BAT_T_BATSENS", "name": "Battery temperature, battery sensor", "group": "Battery", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
+        {"id": "VELOSTER_BAT_ST_CHG_BATSENS", "name": "Battery state of charge, battery sensor", "group": "Battery", "bit": 72, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_BAT_ST_HEALTH", "name": "Battery state of health, battery sensor", "group": "Battery", "bit": 80, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_BAT_ST_FUNCTION", "name": "Battery state of function, battery sensor", "group": "Battery", "bit": 88, "bits": 8, "multiply": 12.75, "divide": 255, "min": 0, "max": 12.75, "unit": "V"},
+        {"id": "VELOSTER_BAT_CAP_BATSENS", "name": "Battery capacity, battery sensor", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 255, "unit": "Ah"},
+        {"id": "VELOSTER_RESPONSE_ERROR", "name": "Response error from battery sensor flag, battery sensor", "group": "Battery", "bit": 178, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BATSENS_INVALID_COND", "name": "Battery sensor invalid condition flag, battery sensor", "group": "Battery", "bit": 179, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BAT_QUIESCENT", "name": "Battery quiescent current flag, battery sensor", "group": "Battery", "bit": 180, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BAT_CRANK_ENG_FLAG", "name": "Battery is in use to crank the engine flag, battery sensor", "group": "Battery", "bit": 181, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BAT_HEALTH_AGING", "name": "Battery health aging flag, battery sensor", "group": "Battery", "bit": 182, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BAT_CHG_FLAG_BATSENS", "name": "Battery charge flag, battery sensor", "group": "Battery", "bit": 183, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VELOSTER_BAT_CURRENT", "name": "Battery current", "group": "Battery", "bit": 256, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7, "unit": "A"},
+        {"id": "VELOSTER_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 272, "bits": 16, "multiply": 10, "divide": 10000, "add": 6, "min": 0, "max": 71.535, "unit": "V"},
+        {"id": "VELOSTER_BAT_T", "name": "Battery temperature", "group": "Battery", "bit": 288, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.21A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "21A0",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_VSS_V3", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "VELOSTER_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 152, "bits": 8, "values": {"1": "NEUTRAL", "2": "REVERSE", "3": "PARK", "4": "MANUAL"}, "valueDescriptions": {"1": "Neutral", "2": "Reverse", "3": "Park", "4": "Manual"}}
+      ]
+    },
+    {
+      "id": "7E1.2201A4",
+      "bus": "can11",
+      "tx": "7E1",
+      "request": "2201A4",
+      "interval": 1,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
+        {"id": "VELOSTER_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "VELOSTER_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "VELOSTER_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21A1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21A1",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_CURRENT_GEAR_7E1_2", "name": "Current gear", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A0",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A0",
+      "interval": 0.25,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "VELOSTER_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VELOSTER_REL_APP", "name": "Relative accelerator pedal position", "group": "Movement", "bit": 64, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "VELOSTER_TURBINE_SPEED_7E1", "name": "Turbine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "VELOSTER_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
+        {"id": "VELOSTER_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "VELOSTER_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
+        {"id": "VELOSTER_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2201A5",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2201A5",
+      "interval": 5,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_DUAL_CLU_TRANS_ODD", "name": "Dual-clutch transmission odd shaft, gear engaged", "group": "Transmission", "bit": 32, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_DUAL_CLU_TRANS_EVEN", "name": "Dual-clutch transmission even shaft, gear engaged", "group": "Transmission", "bit": 40, "bits": 8, "min": 0, "max": 255},
+        {"id": "VELOSTER_DUAL_CLU_ATF_T_1", "name": "Dual-clutch transmission fluid temperature 1", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "VELOSTER_DUAL_CLU_ATF_T_2", "name": "Dual-clutch transmission fluid temperature 2", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "VELOSTER_DUAL_CLU_TRANS_CLU_1_P", "name": "Dual-clutch transmission clutch 1, pressure sensor a", "group": "Engine", "bit": 192, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "VELOSTER_DUAL_CLU_TRANS_CLU_2_P_B", "name": "Dual-clutch transmission clutch 2, pressure sensor b", "group": "Engine", "bit": 208, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"},
+        {"id": "VELOSTER_DUAL_CLU_TRANS_LINE_P_C", "name": "Dual-clutch transmission line pressure, sensor c", "group": "Engine", "bit": 224, "bits": 16, "multiply": 19.53, "divide": 10000, "min": 0, "max": 127, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.2180|fc=1",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "2180",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "VELOSTER_AAT_VMCU", "name": "Ambient temperature, vehicle control unit", "group": "Climate", "bit": 96, "bits": 8, "signed": true, "divide": 2, "add": -40, "min": -104, "max": 23.5, "unit": "°C"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mercedes-benz/eqb",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mercedes Benz",
+    "model": "EQB",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2021, "to": 2026}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mercedes-Benz-EQB",
+    "file": "signalsets/v3/default.json",
+    "revision": "45957f1eea631eb6d751c8bbc8f864d052e563bf",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "624.5A4.220200|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220200",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_ELEC_MACHINE_2_ROTOR_T", "name": "Electric machine 2 rotor temperature", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "°C"},
+        {"id": "EQB_ELEC_MACHINE_2_ECT", "name": "Electric machine 2 coolant temperature", "group": "Engine", "bit": 32, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "°C"},
+        {"id": "EQB_ELEC_MACHINE_2_T_1", "name": "Electric machine 2 stator temperature 1", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "°C"},
+        {"id": "EQB_ELEC_MACHINE_2_T_2", "name": "Electric machine 2 stator temperature 2", "group": "Engine", "bit": 64, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "624.5A4.220201|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220201",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "EQB_AUX_V_HD", "name": "12V system voltage, hd", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 16, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "624.5A4.220202|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220202",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_AC_CURRENT", "name": "AC current", "group": "Engine", "bit": 80, "bits": 16, "divide": 10, "add": -819.2, "min": -819, "max": 5734, "unit": "A"},
+        {"id": "EQB_PHASE_U_CURRENT", "name": "Phase U current", "group": "Engine", "bit": 96, "bits": 16, "divide": 10, "add": -819.2, "min": -819, "max": 5734, "unit": "A"},
+        {"id": "EQB_PHASE_V_CURRENT", "name": "Phase V current", "group": "Engine", "bit": 112, "bits": 16, "divide": 10, "add": -819.2, "min": -819, "max": 5734, "unit": "A"},
+        {"id": "EQB_PHASE_W_CURRENT", "name": "Phase W current", "group": "Engine", "bit": 128, "bits": 16, "divide": 10, "add": -819.2, "min": -819, "max": 5734, "unit": "A"}
+      ]
+    },
+    {
+      "id": "624.5A4.220205|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220205",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_ELEC_MACHINE_2_RPM", "name": "Electric machine 2 rpm", "group": "Movement", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "EQB_ELEC_MACHINE_1_RPM", "name": "Electric machine 1 rpm", "group": "Movement", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "624.5A4.220206|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220206",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_ELEC_MACHINE_2_ST", "name": "Electric machine 2 state, diagnostic", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "624.5A4.220207|fc=1",
+      "bus": "can11",
+      "tx": "624",
+      "rx": "5A4",
+      "request": "220207",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_ELEC_MACHINE_2_ACT", "name": "Electric machine 2, actual torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -500, "min": -500, "max": 6053, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "662.5E2.22012C|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "22012C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_HIGH_V_COMPONENTS_1", "name": "High voltage components, N129/1 locked state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "662.5E2.22012F|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "22012F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_HIGH_V_SYSTEM_V_1_1", "name": "High voltage system voltage at power machine 1 unit, N129/1", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "662.5E2.220200|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "220200",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_POWER_MACHINE_1_ACT", "name": "Power machine 1, actual torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -500, "min": -500, "max": 6053, "unit": "Nm"},
+        {"id": "EQB_POWER_MACHINE_1_T", "name": "Power machine 1 stator temperature", "group": "Engine", "bit": 32, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727, "unit": "°C"},
+        {"id": "EQB_POWER_MACHINE_1_MAX", "name": "Power machine 1, maximum available torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -500, "min": -500, "max": 6053, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "662.5E2.220203|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "220203",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_KLEMME_30C_ST", "name": "Terminal 30C state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "662.5E2.220301|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "220301",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_PARKING_LOCK_ADPT_ST", "name": "Parking lock adaptation state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "662.5E2.220302|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "220302",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_PARKING_LOCK_ST", "name": "Parking lock state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "662.5E2.220306|fc=1",
+      "bus": "can11",
+      "tx": "662",
+      "rx": "5E2",
+      "request": "220306",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "EQB_ELEC_MACHINE_N129_1_0_4", "name": "Electric machine, N129/1 power level, 0-4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "EQB_ELEC_MACHINE_N129_1_REQ_0_4", "name": "Electric machine, N129/1 requested power level, 0-4", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222001",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222001",
+      "interval": 1,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "EQB_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "EQB_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "EQB_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "EQB_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222002",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222002",
+      "interval": 1,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "EQB_LON_ACC", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 8, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "g"},
+        {"id": "EQB_LAT_ACC", "name": "Lateral acceleration", "group": "Orientation", "bit": 24, "bits": 16, "signed": true, "multiply": 15.625, "divide": 1000, "min": -512, "max": 511, "unit": "g"},
+        {"id": "EQB_YAW_RATE", "name": "Yaw rate", "group": "Orientation", "bit": 48, "bits": 16, "signed": true, "multiply": 34.97, "divide": 10000, "min": -114, "max": 114, "unit": "g"},
+        {"id": "EQB_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 72, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276, "max": 3276, "unit": "°"},
+        {"id": "EQB_MASTER_BREAK_CYLINDER_PRESSURE", "name": "Master break cylinder pressure", "group": "Engine", "bit": 96, "bits": 16, "signed": true, "multiply": 153, "divide": 10000, "min": -500, "max": 500, "unit": "bar"},
+        {"id": "EQB_VACUUM_BREAK_PRESSURE", "name": "Vacuum break pressure", "group": "Engine", "bit": 144, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E5.222005",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "222005",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_AUX_V", "name": "Auxiliary battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 25.9, "divide": 255, "min": 0, "max": 25.9, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.222526",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "222526",
+      "interval": 5,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_HV_COOLANT_T", "name": "HV battery coolant temperature", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 1250, "divide": 10000, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.226050",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226050",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_HV_SOC", "name": "HV battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.226053",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226053",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_HV_A", "name": "HV battery amperage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.226071",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226071",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_CNVRTR_REQ_V", "name": "DC converter requested voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 250, "divide": 10000, "min": 0, "max": 1638.375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.226075",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226075",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_HV_V", "name": "HV battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 25, "divide": 1000, "min": 0, "max": 1638.375, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.226502",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226502",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_HV_RANGE", "name": "HV battery remaining distance", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 32, "min": 0, "max": 1000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E5.226504",
+      "bus": "can11",
+      "tx": "7E5",
+      "request": "226504",
+      "interval": 1,
+      "answeredIn": [2024],
+      "signals": [
+        {"id": "EQB_SERVICE_DIST", "name": "Distance to next service", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.222006",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "222006",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_KLEMME_87_FEEDBACK", "name": "Terminal 87 feedback", "group": "Engine", "bit": 0, "bits": 16, "multiply": 19531, "divide": 1000000, "min": 0, "max": 1279, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.222525",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "222525",
+      "interval": 5,
+      "signals": [
+        {"id": "EQB_POWER_ELEC_UNIT_T_5", "name": "Power electric unit temperature sensor, B11/5", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 8, "min": -4096, "max": 4095, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.223008",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "223008",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_KLEMME_15_STAT", "name": "Terminal 15 status", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E5.7ED.223505",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "223505",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_KLEMME_50_STAT", "name": "Terminal 50 status", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225504",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225504",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_CLT_PMP_V_M13_5", "name": "Coolant pump voltage, M13/5", "group": "Battery", "bit": 0, "bits": 8, "divide": 8, "min": 0, "max": 31.87, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225506",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225506",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_CLT_PMP_V_M43_1", "name": "Coolant pump voltage, M43/1", "group": "Battery", "bit": 0, "bits": 8, "divide": 8, "min": 0, "max": 31.87, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22550A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22550A",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_HIGH_V_PTC_HEATER_V_5", "name": "High voltage PTC heater voltage, N33/5", "group": "Battery", "bit": 0, "bits": 16, "divide": 40, "min": 0, "max": 1638, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22550C",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22550C",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_HIGH_V_PTC_HEATER_ST_5", "name": "High voltage PTC heater state, N33/5", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22550F",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22550F",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_RADIATOR_GRILL_M2_39_POS", "name": "Radiator grill, M2/39 position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.225510",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "225510",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_RADIATOR_GRILL_M2_39", "name": "Radiator grill, M2/39 status, closing", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E5.7ED.226074",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "226074",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_DC_DC_MODULE_ST", "name": "DC/DC module state, boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E5.7ED.226503",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "226503",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_REMAINING_OP_TIME", "name": "Remaining operating time", "group": "Engine", "bit": 0, "bits": 16, "add": -2048, "min": -2048, "max": 63487}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22D027",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22D027",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_KLEMME_87_STAT", "name": "Terminal 87 status", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E5.7ED.22D50A",
+      "bus": "can11",
+      "tx": "7E5",
+      "rx": "7ED",
+      "request": "22D50A",
+      "interval": 1,
+      "signals": [
+        {"id": "EQB_FAN_MOTOR_DUTY_M4_7", "name": "Fan motor duty, M4/7", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

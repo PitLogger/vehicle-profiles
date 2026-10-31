@@ -1,0 +1,1329 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/dacia/duster",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Dacia",
+    "model": "Duster",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (HS)", "from": 2010, "to": 2013},
+      {
+        "name": "First Generation (HS) 2013 Facelift",
+        "from": 2013,
+        "to": 2017
+      },
+      {"name": "Second Generation (HM)", "from": 2017, "to": 2021},
+      {
+        "name": "Second Generation (HM) 2021 Facelift",
+        "from": 2021,
+        "to": 2024
+      },
+      {"name": "Third Generation (P1310)", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Dacia-Duster",
+    "file": "signalsets/v3/default.json",
+    "revision": "494bd08b7085dd65f3d9f17a75b9cae51fbdaf1a",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "748.223001",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223001",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_12V_BAT_V", "name": "Battery voltage, 12V", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "748.223005",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223005",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_2WD_MODE_SW", "name": "2WD mode switch", "group": "Drivetrain", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_AUTO_MODE_SW", "name": "Auto mode switch", "group": "Drivetrain", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_4WD_MODE_SW", "name": "4WD mode switch", "group": "Drivetrain", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223006",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223006",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FR_VSS", "name": "FR wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
+        {"id": "DUSTER_FL_VSS", "name": "FL wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
+        {"id": "DUSTER_RR_VSS", "name": "RR wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
+        {"id": "DUSTER_RL_VSS", "name": "RL wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "748.223008",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223008",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_VSS_TC", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "748.22300A",
+      "bus": "can11",
+      "tx": "748",
+      "request": "22300A",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ACCEL_POS_TC", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.22300D",
+      "bus": "can11",
+      "tx": "748",
+      "request": "22300D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MOTOR_STS_TC", "name": "Motor status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223010",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223010",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TRACTION_CTRL", "name": "Traction control", "group": "Drivetrain", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_TRAJECTORY_CTRL", "name": "Trajectory control", "group": "Drivetrain", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_ENGINE_TORQUE_CTRL", "name": "Engine torque control", "group": "Drivetrain", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223011",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223011",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ENGINE_TORQUE_REF", "name": "Engine torque, reference", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "add": -400, "min": -16784, "max": 15983.5, "unit": "Nm"},
+        {"id": "DUSTER_TORQUE_SETPT_PROG", "name": "Torque setpoint programming", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_COUPLER", "name": "Coupler", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223020",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223020",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CLUTCH_T", "name": "Clutch temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "748.223022",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223022",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TRANS_MODE_BTN_POS", "name": "Transmission mode button position", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223023",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223023",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_OP_MODE_SEL", "name": "Operating mode, selected", "group": "Drivetrain", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223024",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223024",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_4WD_MODE_MON", "name": "4WD mode monitor", "group": "Drivetrain", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "DUSTER_WARNING_LIGHT", "name": "Warning light", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223025",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223025",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TORQUE_REQ", "name": "Torque, requested", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "748.223026",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223026",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_OP_MODE", "name": "Operating mode", "group": "Drivetrain", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.22302C",
+      "bus": "can11",
+      "tx": "748",
+      "request": "22302C",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TORQUE_APPLIED", "name": "Torque, applied", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "748.22302D",
+      "bus": "can11",
+      "tx": "748",
+      "request": "22302D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_INT_FAULT_CODE", "name": "Internal fault code", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "748.223043",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223043",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_SPEEDO_INDEX", "name": "Speedo index", "group": "Movement", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "748.223050",
+      "bus": "can11",
+      "tx": "748",
+      "request": "223050",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_GEARBOX_TYPE", "name": "Gearbox type", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222001",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222001",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ECT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.222003",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222003",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.222004",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222004",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "add": -400, "min": -400, "max": 1647.96875, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.222005",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222005",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ECU_SUPPLY_V", "name": "Supply voltage, ECU", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.222007",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222007",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_EST_OIL_T", "name": "Engine oil temperature, estimated", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.22200B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22200B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ACCEL_POT_V1", "name": "Accelerator pedal potentiometer voltage, track 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22200C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22200C",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ACCEL_POT_V2", "name": "Accelerator pedal potentiometer voltage, track 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22200D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22200D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_REFRIG_P_SNS_V", "name": "Refrigerant pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22200E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22200E",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ECU_POST_IGN", "name": "Post-ignition status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22200F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22200F",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_BRAKE_MUX_SIG", "name": "Braking detected multiplex signal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222010",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222010",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MOTOR_STS", "name": "Motor status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222014",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222014",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CAM_TDC_SYNC", "name": "Camshaft top dead center synchronization", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222016",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222016",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CRANK_SYNC", "name": "Crankshaft synchronization", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22201E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22201E",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_AC_COMP", "name": "A/C compressor", "group": "Climate", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.222021",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222021",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_SNS_FEED_V1", "name": "Sensor feed voltage 1", "group": "Electrical", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.222022",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222022",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_SNS_FEED_V2", "name": "Sensor feed voltage 2", "group": "Electrical", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.222025",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222025",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_BRAKE_PEDAL", "name": "Brake pedal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222026",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222026",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_WIRED_BRAKE_CONTACT", "name": "Brake contact, wired", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222028",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222028",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_OBD_LIGHT_REQ", "name": "Diagnostic light request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22202E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22202E",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ACCEL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 16, "divide": 800, "min": 0, "max": 81.91875, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222030",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222030",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IN_CAM_DEPHASER_SETPT", "name": "Inlet camshaft dephaser setpoint", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.222031",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222031",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IN_CAM_DEPHASING", "name": "Inlet camshaft dephasing", "group": "Engine", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.222033",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222033",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IN_CAM_DEPHASER_OCR", "name": "Inlet camshaft dephaser control OCR", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222036",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222036",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ACCEL_DETECT_BLOCKED", "name": "Accelerator pedal detection blocked", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222047",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222047",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FIRST_START", "name": "First start", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22204A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22204A",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FAN_HI_SPD", "name": "Fan high speed request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222057",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222057",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ALT_PWR", "name": "Alternator power", "group": "Electrical", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E0.222059",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222059",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CLUTCH_TRAVEL_SW", "name": "Clutch start-of-travel switch", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.22206A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22206A",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_BRAKE_CONTACT_1_DUR", "name": "Brake contact duration 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.22206B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22206B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_BRAKE_CONTACT_2_DUR", "name": "Brake contact duration 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.22206D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22206D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CLUTCH_CONTACT_WIRE", "name": "Clutch contact wire connection", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222099",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222099",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ALT_LOAD", "name": "Alternator load", "group": "Electrical", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22209A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22209A",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IDLE_ADAPT_CORR", "name": "Idle adaptive correction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "add": -1024, "min": -1024, "max": 1023.96875, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.22210E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22210E",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_ENGINE_ROT_COUNT", "name": "Engine rotation count", "group": "Engine", "bit": 0, "bits": 32, "divide": 1000000, "min": 0, "max": 4294.967295}
+      ]
+    },
+    {
+      "id": "7E0.222156",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222156",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TORQUEMETER_PROG", "name": "Torquemeter value, programmed", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22215B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22215B",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FLYWHEEL_TGT_PROG", "name": "Flywheel target programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22215D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22215D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TORQUEMETER_ADAPT_CORR", "name": "Torquemeter correction, adaptive", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.222161",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222161",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TDC_SNS_SIG", "name": "Top dead center sensor signal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222162",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222162",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CRANK_SYNC_LOSS_CNT", "name": "Crankshaft sync loss counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22218D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22218D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_HEAT_RESISTOR_CNT", "name": "Heating resistors active count", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22222A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22222A",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_REFRIG_P", "name": "Refrigerant pressure", "group": "Climate", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.22222D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22222D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CLUTCH_PEDAL_SW", "name": "Clutch pedal switch", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222241",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222241",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IN_CAM_DEPHASER_SOL_PROG", "name": "Inlet camshaft dephaser solenoid programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222246",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222246",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IDLE_REG_INT_CORR", "name": "Idle regulation integral correction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "add": -1024, "min": -1024, "max": 1023.96875, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.222401",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222401",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.22240B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22240B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.222414",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222414",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_POS_REF", "name": "Throttle position, reference", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222415",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222415",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_POS_1", "name": "Throttle position, track 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222416",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222416",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_POS_2", "name": "Throttle position, track 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222418",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222418",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_V1", "name": "Throttle voltage, track 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.222419",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222419",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_V2", "name": "Throttle voltage, track 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22242F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22242F",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_POS", "name": "Throttle position, measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22243F",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22243F",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_INLET_AIR_T", "name": "Inlet air temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.222449",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222449",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_O2_UP_V", "name": "O2 sensor voltage, upstream", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.22244A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22244A",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_O2_DN_V", "name": "O2 sensor voltage, downstream", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "7E0.22244B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22244B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_O2_UP_HEAT_R", "name": "O2 sensor heating resistance, upstream", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E0.22244C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22244C",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_O2_DN_HEAT_R", "name": "O2 sensor heating resistance, downstream", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "Ω"}
+      ]
+    },
+    {
+      "id": "7E0.222457",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222457",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_LOW_STOP_PROG", "name": "Throttle low stop, programmed", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.22245D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22245D",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_LIMITS_PROG", "name": "Throttle limits programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222493",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222493",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TEST_RESULT_1", "name": "Test result 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222494",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222494",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_TEST_RESULT_2", "name": "Test result 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.2224C4",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2224C4",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_O2_UP_HEAT_DELAY", "name": "O2 sensor heating delay, upstream", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.2224C9",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2224C9",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_THROTTLE_SAFE_MODE_PROG", "name": "Throttle safe mode value, programmed", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.2224D7",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2224D7",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MANIFOLD_P_LIN", "name": "Manifold pressure, linearised", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222807",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222807",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_IGN_TIMING_ADV", "name": "Ignition timing advance", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.22281B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22281B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_LOW_FUEL", "name": "Fuel level, low", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22281C",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22281C",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FUEL_PUMP_CTRL", "name": "Fuel pump control circuit", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222822",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222822",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CANISTER_BLEED_SOL_RCO", "name": "Canister bleed solenoid valve RCO", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222841",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222841",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL1_MISFIRE_CNT", "name": "Cylinder 1 misfire counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222842",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222842",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL2_MISFIRE_CNT", "name": "Cylinder 2 misfire counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222843",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222843",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL3_MISFIRE_CNT", "name": "Cylinder 3 misfire counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222844",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222844",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL4_MISFIRE_CNT", "name": "Cylinder 4 misfire counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222847",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222847",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL1_KNOCK", "name": "Cylinder 1 knock", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222848",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222848",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL2_KNOCK", "name": "Cylinder 2 knock", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222849",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222849",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL3_KNOCK", "name": "Cylinder 3 knock", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22284A",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22284A",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_CYL4_KNOCK", "name": "Cylinder 4 knock", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.22284D",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22284D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_KNOCK_AVG", "name": "Knock signal, average", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22284E",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22284E",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_RICHNESS_CORR", "name": "Richness correction", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222850",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222850",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_RICHNESS_CORR_OP", "name": "Richness correction, operating", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.222851",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222851",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_RICHNESS_REG_GAIN", "name": "Richness regulation gain", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222852",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222852",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_RICHNESS_REG_OFFSET", "name": "Richness regulation offset", "group": "Engine", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 255, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.222873",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222873",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_RICHNESS_ADAPT", "name": "Richness, adaptive operating", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222874",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222874",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MISFIRE_CNT", "name": "Misfire counter, total", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.222881",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222881",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_FLI_EST", "name": "Fuel tank level, estimated", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.2228B1",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "2228B1",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_GAS_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.222C03",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222C03",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_GEARBOX_RATIO_TGT", "name": "Gearbox ratio, target", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.222C04",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "222C04",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_GEARBOX_RATIO", "name": "Gearbox ratio", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.22F423",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22F423",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_LPG_P", "name": "LPG pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "7E0.22FD81",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22FD81",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_MANIFOLD_P_SNS_V", "name": "Manifold pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99975, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22FD83",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22FD83",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_AIR_INLET_T_SNS_V", "name": "Air inlet temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99975, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.22FD8B",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "22FD8B",
+      "interval": 1,
+      "answeredIn": [2019],
+      "notAnsweredIn": [2024, 2025, 2026],
+      "signals": [
+        {"id": "DUSTER_COOLANT_T_SNS_V", "name": "Coolant temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99975, "unit": "V"}
+      ]
+    }
+  ]
+}

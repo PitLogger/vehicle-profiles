@@ -1,0 +1,370 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/alfa/romeo",
+  "kind": "vehicle",
+  "vehicle": {"make": "Alfa", "model": "Romeo", "years": null},
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Alfa-Romeo",
+    "file": "signalsets/v3/default.json",
+    "revision": "e6c1f4e7cd5b1902fced4bf51f2c2ae64179b8eb",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6B4.694.22D410",
+      "bus": "can11",
+      "tx": "6B4",
+      "rx": "694",
+      "request": "22D410",
+      "interval": 1,
+      "signals": [
+        {"id": "ALFAROMEO_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0A1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A1",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FL_AC", "name": "Front left tire pressure, altitude compensated", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_FR_AC", "name": "Front right tire pressure, altitude compensated", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_RR_AC", "name": "Rear right tire pressure, altitude compensated", "group": "Tires", "metric": "rearRightTirePressure", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_RL_AC", "name": "Rear left tire pressure, altitude compensated", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0A5|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0A5",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RL_VALID", "name": "Rear left tire pressure, valid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_RR_VALID", "name": "Rear right tire pressure, valid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_FR_VALID", "name": "Front right tire pressure, valid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_FL_VALID", "name": "Front left tire pressure, valid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F1|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F1",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FL_V2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi"},
+        {"id": "ALFAROMEO_TT_FL_V2", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F2|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F2",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FR_V2", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi"},
+        {"id": "ALFAROMEO_TT_FR_V2", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F3|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F3",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RR_V2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi"},
+        {"id": "ALFAROMEO_TT_RR_V2", "name": "Rear right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "740.4C0.22A0F4|fc=1",
+      "bus": "can11",
+      "tx": "740",
+      "rx": "4C0",
+      "request": "22A0F4",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RL_V2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.398, "min": 0, "max": 101.49, "unit": "psi"},
+        {"id": "ALFAROMEO_TT_RL_V2", "name": "Rear left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "742.22A022|fc=1",
+      "bus": "can11",
+      "tx": "742",
+      "request": "22A022",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FL_V3", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_FR_V3", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_RL_V3", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_RR_V3", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "psi"},
+        {"id": "ALFAROMEO_TP_SPARE", "name": "Spare tire pressure", "group": "Tires", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "763.4E3.22032D|fc=1",
+      "bus": "can11",
+      "tx": "763",
+      "rx": "4E3",
+      "request": "22032D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_HIGHBEAMS_ON", "name": "High beams", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ALFAROMEO_HIGHBEAMS_MODE", "name": "High beam mode", "group": "Control", "bit": 4, "bits": 4, "values": {"0": "OFF", "1": "ON", "2": "HELD"}, "valueDescriptions": {"0": "Off", "1": "On", "2": "Held"}},
+        {"id": "ALFAROMEO_REAR_WIPER", "name": "Rear wiper", "group": "Control", "bit": 12, "bits": 4, "values": {"0": "OFF", "1": "SPRAY", "2": "AUTO", "4": "ON"}, "valueDescriptions": {"0": "Off", "1": "Spray", "2": "Auto", "4": "On"}}
+      ]
+    },
+    {
+      "id": "7AB.52B.222802|fc=1",
+      "bus": "can11",
+      "tx": "7AB",
+      "rx": "52B",
+      "request": "222802",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_GPS_HEADING", "name": "Heading", "group": "GPS", "bit": 152, "bits": 16, "min": 0, "max": 65535, "unit": "°"},
+        {"id": "ALFAROMEO_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 200, "bits": 4, "min": 0, "max": 15},
+        {"id": "ALFAROMEO_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 204, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2204FE",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2204FE",
+      "interval": 1,
+      "signals": [
+        {"id": "ALFAROMEO_ATF_T", "name": "Transmission temperature", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225503|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225503",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "7E1.7E9.225504|fc=1",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "225504",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "ALFAROMEO_GEAR_TARGET", "name": "Target gear", "description": "The target gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 0.5,
+      "signals": [
+        {"id": "ALFAROMEO_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
+        {"id": "ALFAROMEO_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
+        {"id": "ALFAROMEO_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "NEUTRAL", "221": "PARK", "238": "REVERSE"}, "valueDescriptions": {"0": "Neutral", "221": "Park", "238": "Reverse"}}
+      ]
+    },
+    {
+      "id": "DA18.18.222024",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA30.30.220885",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "220885",
+      "interval": 0.1,
+      "signals": [
+        {"id": "ALFAROMEO_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "add": -720, "min": -720, "max": 720, "unit": "°"}
+      ]
+    },
+    {
+      "id": "DA30.30.222962",
+      "bus": "can29",
+      "tx": "18DA30F1",
+      "rx": "18DAF130",
+      "request": "222962",
+      "interval": 0.1,
+      "signals": [
+        {"id": "ALFAROMEO_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 4, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40},
+        {"id": "ALFAROMEO_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 20, "bits": 12, "divide": 50, "add": -40.96, "min": -40.94, "max": 40.94, "unit": "m/s²", "invalidAtOrAbove": 40},
+        {"id": "ALFAROMEO_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 112, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "ALFAROMEO_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 144, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "ALFAROMEO_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 176, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"},
+        {"id": "ALFAROMEO_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 208, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220123",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220123",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220124",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220124",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220125",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220125",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220127",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220127",
+      "interval": 86400,
+      "signals": [
+        {"id": "ALFAROMEO_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22012F",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22012F",
+      "interval": 5,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RL_INVALID", "name": "Rear left tire pressure invalid?", "group": "Tires", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_RR_INVALID", "name": "Rear right tire pressure invalid?", "group": "Tires", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_FR_INVALID", "name": "Front right tire pressure invalid?", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TP_FL_INVALID", "name": "Front left tire pressure invalid?", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013C",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013C",
+      "interval": 5,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "ALFAROMEO_TT_FL", "name": "Front left tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013D",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013D",
+      "interval": 5,
+      "signals": [
+        {"id": "ALFAROMEO_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "ALFAROMEO_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013E",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013E",
+      "interval": 5,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "ALFAROMEO_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.22013F",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "22013F",
+      "interval": 5,
+      "signals": [
+        {"id": "ALFAROMEO_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar", "invalidAtOrBelow": 0},
+        {"id": "ALFAROMEO_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50}
+      ]
+    },
+    {
+      "id": "DAC7.C7.220302",
+      "bus": "can29",
+      "tx": "18DAC7F1",
+      "rx": "18DAF1C7",
+      "request": "220302",
+      "interval": 1,
+      "signals": [
+        {"id": "ALFAROMEO_RRD_OPEN", "name": "Rear right door open", "group": "Doors", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_RLD_OPEN", "name": "Rear left door open", "group": "Doors", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_PASSENGER_DOOR_OPEN", "name": "Passenger door open", "group": "Doors", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_DRIVER_DOOR_OPEN", "name": "Driver door open", "group": "Doors", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "ALFAROMEO_TRUNK_OPEN", "name": "Trunk open", "group": "Doors", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    }
+  ]
+}

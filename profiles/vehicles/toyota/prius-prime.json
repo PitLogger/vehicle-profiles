@@ -1,0 +1,3031 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/toyota/prius-prime",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Toyota",
+    "model": "Prius Prime",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2012, "to": 2016},
+      {"name": "Second Generation", "from": 2017, "to": 2022},
+      {"name": "Third Generation", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Toyota-Prius-Prime",
+    "file": "signalsets/v3/default.json",
+    "revision": "2e2e98ae7fe8cf31ccab86707291990ab629833b",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "700.708.220103",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "220103",
+      "interval": 30,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ENG_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.221002",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221002",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "multiply": 12.207, "divide": 10000, "min": 0, "max": 79, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.221017",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221017",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_VOL", "name": "Injection volume", "group": "Engine", "bit": 0, "bits": 16, "divide": 3200, "min": 0, "max": 20, "unit": "L"}
+      ]
+    },
+    {
+      "id": "700.708.221018",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221018",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJECTOR_PORT", "name": "Injector port", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "700.708.221019",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221019",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_INJECTION", "name": "Injection", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "DIRECT", "2": "BOTH"}, "valueDescriptions": {"1": "Direct", "2": "Both"}}
+      ]
+    },
+    {
+      "id": "700.708.22102A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22102A",
+      "interval": 3600,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_A_F_RATIO_LEARNED_IDLE_BANK_1", "name": "A/F ratio learned idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_A_F_RATIO_LEARNED_LOW_BANK_1", "name": "A/F ratio learned low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_A_F_RATIO_LEARNED_MID_1_BANK_1", "name": "A/F ratio learned mid 1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_A_F_RATIO_LEARNED_MID_2_BANK_1", "name": "A/F ratio learned mid 2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_A_F_RATIO_LEARNED_HIGH_BANK_1", "name": "A/F ratio learned high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221041",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221041",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ECT_IGN", "name": "Engine coolant temperature, at ignition", "group": "Engine", "bit": 0, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"},
+        {"id": "PRIUSPRIME_ECT_INIT", "name": "Engine coolant temperature, initial", "group": "Engine", "bit": 8, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221043",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221043",
+      "interval": 0.25,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_EWP_TARGET_VSS", "name": "Electric water pump target speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "PRIUSPRIME_EWP_RPM", "name": "Electric water pump RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.221046",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221046",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COOLING_FAN_DUTY_RATIO", "name": "Cooling fan duty ratio", "group": "Engine", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221059",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221059",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ACCEL_PEDAL", "name": "Accelerator pedal", "group": "Control", "bit": 0, "bits": 8, "divide": 1.42, "add": -28.873, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22105C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105C",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_KNOCK_CORRECT_LEARNED_VALUE", "name": "Knock correction, learned value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023},
+        {"id": "PRIUSPRIME_KNOCK_FEEDBACK_VALUE", "name": "Knock feedback value", "group": "Engine", "bit": 16, "bits": 16, "multiply": 312.5, "divide": 10000, "add": -1024, "min": -1024, "max": 1023}
+      ]
+    },
+    {
+      "id": "700.708.22105E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22105E",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_ECU_INTERNAL_T", "name": "Internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221062",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221062",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EXHAUST_VVT_OCV_CONTROL_DUTY", "name": "Exhaust VVT oil control valve control duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 400, "divide": 65535, "min": 0, "max": 400, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22106A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106A",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_PUMP_DUTY_RATIO", "name": "Fuel pump duty ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0609756098, "min": 0, "max": 3996, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.22106C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106C",
+      "interval": 30,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_DIST_SINCE_BAT_DISC", "name": "Distance since last battery cable disconnection", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "700.708.22106F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22106F",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INTAKE_VVT_TARGET_ANGLE_B1", "name": "Intake VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221071",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221071",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EXHAUST_VVT_TARGET_ANGLE_B1", "name": "Exhaust VVT target angle B1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221074",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221074",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "divide": 128, "min": 0, "max": 5119.92, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221075",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221075",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_IWP_SPEED", "name": "Intercooler water pump speed, raw count", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "700.708.221078",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221078",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_IDLE_SAC_CYL_1", "name": "Idle spark advance control, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "PRIUSPRIME_IDLE_SAC_CYL_2", "name": "Idle spark advance control, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "PRIUSPRIME_IDLE_SAC_CYL_3", "name": "Idle spark advance control, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"},
+        {"id": "PRIUSPRIME_IDLE_SAC_CYL_4", "name": "Idle spark advance control, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6.25, "divide": 100, "min": 0, "max": 15.9375, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22107B",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22107B",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_EOT_700", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 192, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221084",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221084",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ROUGH_IDLE_CYL_1", "name": "Rough idle, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "PRIUSPRIME_ROUGH_IDLE_CYL_2", "name": "Rough idle, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "PRIUSPRIME_ROUGH_IDLE_CYL_3", "name": "Rough idle, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "°"},
+        {"id": "PRIUSPRIME_ROUGH_IDLE_CYL_4", "name": "Rough idle, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221087",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221087",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INTAKE_VVT_CHANGE_ANGLE_BANK_1", "name": "Intake VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221088",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221088",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EXHAUST_VVT_ANGLE_B1", "name": "Exhaust VVT change angle, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.9, "divide": 65535, "min": 0, "max": 639.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.221089",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221089",
+      "interval": 3600,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EXHAUST_VVT_HOLD_LEARN_B1", "name": "Exhaust VVT hold learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 399.9, "divide": 65535, "min": 0, "max": 399.9, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22108A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108A",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_VVT_IE_DUTY_RATIO_1", "name": "VVT-ie duty ratio bank 1", "group": "ECU", "bit": 0, "bits": 15, "multiply": 25, "divide": 2048, "add": -200, "min": -200, "max": 199.98, "unit": "%"},
+        {"id": "PRIUSPRIME_VVT_IE_MOTOR_DIRECTION_FORWARD_1", "name": "VVT-ie motor direction: forward bank 1", "group": "ECU", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "700.708.22108D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108D",
+      "interval": 3600,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_INTAKE_VVT_OVER_RET_LEARN_B1", "name": "Intake VVT most over-retarded learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22108F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22108F",
+      "interval": 3600,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EXHAUST_VVT_OVER_ADV_LEARN_B1", "name": "Exhaust VVT timing most over-advanced learn value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 639.99, "divide": 65535, "min": 0, "max": 639.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "700.708.22109A",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22109A",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FFT", "name": "Fuel filter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.2210A2",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A2",
+      "interval": 3600,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_AF_LEARN_IDLE_PORT_B1", "name": "A/F ratio learn value idle, bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_AF_LEARN_LOW_PORT_B1", "name": "A/F ratio learn value low, bank 1", "group": "Engine", "bit": 8, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_AF_LEARN_MID1_PORT_B1", "name": "A/F ratio learn value mid.1, bank 1", "group": "Engine", "bit": 16, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_AF_LEARN_MID2_PORT_B1", "name": "A/F ratio learn value mid.2, bank 1", "group": "Engine", "bit": 24, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"},
+        {"id": "PRIUSPRIME_AF_LEARN_HIGH_PORT_B1", "name": "A/F ratio learn value high, bank 1", "group": "Engine", "bit": 32, "bits": 8, "multiply": 100, "divide": 255, "add": -50, "min": -50, "max": 50, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.2210A5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A5",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_MISFIRE_CNT", "name": "Misfire count, all cylinders", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210A7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210A7",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_MISFIRE_CYL1", "name": "Misfire count, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_MISFIRE_CYL2", "name": "Misfire count, cylinder 2", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_MISFIRE_CYL3", "name": "Misfire count, cylinder 3", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_MISFIRE_CYL4", "name": "Misfire count, cylinder 4", "group": "Engine", "bit": 24, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.2210AA",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210AA",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_MISFIRE_LOAD", "name": "Misfire load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 510, "divide": 255, "min": 0, "max": 510, "unit": "%"},
+        {"id": "PRIUSPRIME_MISFIRE_RPM", "name": "Misfire RPM", "group": "Engine", "bit": 24, "bits": 8, "multiply": 6375, "divide": 255, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "PRIUSPRIME_MISFIRE_MARGIN", "name": "Misfire margin", "group": "Engine", "bit": 32, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.2210CD",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2210CD",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_LFP", "name": "Low fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": 0, "max": 3276.7, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221105",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221105",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_PM_ACCUMULATION_RAT_1", "name": "PM accumulation ratio - bank 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 15, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22112B",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22112B",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_1", "name": "Injection feedback value 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 32, "add": -20, "min": -20, "max": 15},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_2", "name": "Injection feedback value 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 32, "add": -20, "min": -20, "max": 15},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_3", "name": "Injection feedback value 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 5, "divide": 32, "add": -20, "min": -20, "max": 15},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_4", "name": "Injection feedback value 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 5, "divide": 32, "add": -20, "min": -20, "max": 15}
+      ]
+    },
+    {
+      "id": "700.708.22112C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22112C",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_VOLUME_TGT", "name": "Injection volume - target", "group": "Engine", "bit": 0, "bits": 16, "multiply": 19531, "divide": 1000000, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "700.708.22112F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22112F",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_VOLUME_TOT", "name": "Injection volume total", "group": "Engine", "bit": 0, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -640, "max": 15}
+      ]
+    },
+    {
+      "id": "700.708.221131",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221131",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CYL_1_INJ_VOLUME", "name": "Cylinder 1 injection volume", "group": "Engine", "bit": 0, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -640, "max": 15},
+        {"id": "PRIUSPRIME_CYL_2_INJ_VOLUME", "name": "Cylinder 2 injection volume", "group": "Engine", "bit": 16, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -640, "max": 15},
+        {"id": "PRIUSPRIME_CYL_3_INJ_VOLUME", "name": "Cylinder 3 injection volume", "group": "Engine", "bit": 32, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -640, "max": 15},
+        {"id": "PRIUSPRIME_CYL_4_INJ_VOLUME", "name": "Cylinder 4 injection volume", "group": "Engine", "bit": 48, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -640, "max": 15}
+      ]
+    },
+    {
+      "id": "700.708.22113C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22113C",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_P_1", "name": "Fuel pressure 1", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 50000, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_2", "name": "Fuel pressure 2", "group": "Fuel", "bit": 16, "bits": 16, "multiply": 10, "min": 0, "max": 50000, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_3", "name": "Fuel pressure 3", "group": "Fuel", "bit": 32, "bits": 16, "multiply": 10, "min": 0, "max": 50000, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_4", "name": "Fuel pressure 4", "group": "Fuel", "bit": 48, "bits": 16, "multiply": 10, "min": 0, "max": 50000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.22113E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22113E",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_T_1", "name": "Fuel temperature 1", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_2", "name": "Fuel temperature 2", "group": "Fuel", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_3", "name": "Fuel temperature 3", "group": "Fuel", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_4", "name": "Fuel temperature 4", "group": "Fuel", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221141",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221141",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_RETURN_T", "name": "Fuel return temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.22118B",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22118B",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_VOLUME_1", "name": "Injection volume 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -40, "max": 300},
+        {"id": "PRIUSPRIME_INJ_VOLUME_2", "name": "Injection volume 2", "group": "Engine", "bit": 16, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -40, "max": 300},
+        {"id": "PRIUSPRIME_INJ_VOLUME_3", "name": "Injection volume 3", "group": "Engine", "bit": 32, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -40, "max": 300},
+        {"id": "PRIUSPRIME_INJ_VOLUME_5", "name": "Injection volume 5", "group": "Engine", "bit": 48, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -40, "max": 300},
+        {"id": "PRIUSPRIME_INJ_VOLUME_6", "name": "Injection volume 6", "group": "Engine", "bit": 64, "bits": 16, "multiply": 19531, "divide": 1000000, "add": -640, "min": -40, "max": 300}
+      ]
+    },
+    {
+      "id": "700.708.22119C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22119C",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INTERCOOLER_ECT", "name": "Intercooler coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.2211AF",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2211AF",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_2ND_TRUBOCHARGER_OUTLET_P", "name": "2nd turbocharger outlet pressure", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2211B8",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2211B8",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_1_700", "name": "Injection feedback value 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_2_700", "name": "Injection feedback value 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_3_700", "name": "Injection feedback value 3", "group": "Engine", "bit": 16, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_4_700", "name": "Injection feedback value 4", "group": "Engine", "bit": 24, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_5", "name": "Injection feedback value 5", "group": "Engine", "bit": 32, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418},
+        {"id": "PRIUSPRIME_INJ_FEEDBACK_6", "name": "Injection feedback value 6", "group": "Engine", "bit": 40, "bits": 8, "multiply": 332, "divide": 2125, "add": -19.9981176471, "min": -19.9981, "max": 19.8418}
+      ]
+    },
+    {
+      "id": "700.708.2211C4",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2211C4",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_P_1_700", "name": "Fuel pressure 1", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_2_700", "name": "Fuel pressure 2", "group": "Fuel", "bit": 16, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_3_700", "name": "Fuel pressure 3", "group": "Fuel", "bit": 32, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_4_700", "name": "Fuel pressure 4", "group": "Fuel", "bit": 48, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_5", "name": "Fuel pressure 5", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_FUEL_P_6", "name": "Fuel pressure 6", "group": "Fuel", "bit": 80, "bits": 16, "multiply": 10, "min": 0, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2211C5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2211C5",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FUEL_T_1_700", "name": "Fuel temperature 1", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_2_700", "name": "Fuel temperature 2", "group": "Fuel", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_3_700", "name": "Fuel temperature 3", "group": "Fuel", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_4_700", "name": "Fuel temperature 4", "group": "Fuel", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_5", "name": "Fuel temperature 5", "group": "Fuel", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_FUEL_T_6", "name": "Fuel temperature 6", "group": "Fuel", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.2211CD",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2211CD",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_1ST_TRUBOCHARGER_P", "name": "1st turbocharger outlet pressure, control valve", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "kPa"},
+        {"id": "PRIUSPRIME_2ND_TRUBOCHARGER_P", "name": "2nd turbocharger outlet pressure, control valve", "group": "Battery", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.2215E5",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215E5",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_STAT_FULL_CHG", "name": "Battery status of full charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 255, "divide": 2, "min": 0, "max": 32512.5, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "700.708.2215E7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215E7",
+      "interval": 3600,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_DARK_CURRENT_BAT", "name": "Dark current of battery", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "700.708.2215E8",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215E8",
+      "interval": 3600,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CHG_INTEGRATED", "name": "Charging integrated current of aux. battery", "group": "Battery", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "PRIUSPRIME_DISCHARGING", "name": "Discharging integrated current of aux. battery", "group": "Battery", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
+        {"id": "PRIUSPRIME_AUX_BAT_CAP_AFTER_IG_ON", "name": "Aux. battery capacity after IG ON", "group": "Battery", "bit": 64, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "Ah"},
+        {"id": "PRIUSPRIME_AUX_BAT_CAP_AFTER_IG_OFF", "name": "Aux. battery capacity after IG OFF", "group": "Battery", "bit": 72, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "Ah"},
+        {"id": "PRIUSPRIME_INTEGRATED_ENG_RUN", "name": "Integrated engine run time", "group": "Engine", "bit": 80, "bits": 16, "min": 0, "max": 65535, "unit": "h"}
+      ]
+    },
+    {
+      "id": "700.708.2215EE",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215EE",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_V_BATSENS", "name": "Voltage of battery sensor", "group": "Battery", "bit": 0, "bits": 16, "multiply": 13333, "divide": 10922500, "min": 0, "max": 79.9979, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.2215F0",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215F0",
+      "interval": 3600,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_SLEEP_TIME_BATSENS", "name": "Sleep time of battery sensor", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "h"}
+      ]
+    },
+    {
+      "id": "700.708.2215F6",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215F6",
+      "interval": 3600,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INITIAL_ENG_BAT_V_LO", "name": "Initial engine battery voltage lower limit", "group": "Battery", "bit": 16, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "700.708.2215F7",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215F7",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_CURRENT_700", "name": "Battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 49, "divide": 12850, "add": -125, "min": -125, "max": 124.9, "unit": "A"}
+      ]
+    },
+    {
+      "id": "700.708.2215F8",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215F8",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_T_700", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.2215FA",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "2215FA",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ALT_DUTY_CYCLE", "name": "Alternator output duty cycle", "group": "Engine", "bit": 0, "bits": 16, "divide": 164, "min": 0, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221620",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221620",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AT_LOCK_UP_STATE", "name": "Lock up state", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "700.708.221621",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221621",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "700.708.221622",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221622",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TRANS_SHIFT_ST_RAT", "name": "Transmission shift state ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5333, "divide": 21845000, "min": 0, "max": 15.999}
+      ]
+    },
+    {
+      "id": "700.708.221627",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221627",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ATF_T_PAN_V3", "name": "Transmission fluid temperature, pan var.3", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221628",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221628",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TRANS_FLUID_POST_T_3", "name": "Transmission fluid post-converter temperature, variant 3", "group": "Transmission", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221638",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221638",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ATF_TEMP_700", "name": "Transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F2F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F2F",
+      "interval": 30,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.221F3C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3C",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CAT_T_11", "name": "Catalyst temperature, bank 1 sensor 1", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3D",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CAT_T_BANK_2_SENS_1", "name": "Catalyst temperature bank 2 sensor 1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -40, "min": -40, "max": 11756.3, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "700.708.221F3E",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3E",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CAT_T_12", "name": "Catalyst temperature, bank 1 sensor 2", "group": "Engine.Catalyst", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F3F",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F3F",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CAT_T_BANK_2_SENS_2", "name": "Catalyst temperature bank 2 sensor 2", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -40, "min": -40, "max": 11756.3, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "700.708.221F46",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F46",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AMBIENT_T", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F5C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F5C",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EOT_V2", "name": "Engine oil temperature, variation 2", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221F6D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F6D",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_HFP_TARGET", "name": "High fuel pressure, target", "group": "Fuel", "bit": 8, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "PRIUSPRIME_HFP_ACTUAL", "name": "High fuel pressure, actual", "group": "Fuel", "bit": 24, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"},
+        {"id": "PRIUSPRIME_LOW_FUEL_PRESSURE", "name": "Low fuel pressure", "group": "Fuel", "bit": 64, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "700.708.221F77",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221F77",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_IAT_B1S1", "name": "Intake air temperature, bank 1 sensor 1", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_IAT_B1S2", "name": "Intake air temperature, bank 1 sensor 2", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "700.708.221FF8",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "221FF8",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_T_700_2", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -40, "min": -40, "max": 11756.3, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "700.708.222820",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222820",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INTERCOOLER_WATER", "name": "Intercooler water pump", "group": "Engine", "bit": 0, "bits": 16, "multiply": 80, "divide": 13107, "min": 0, "max": 300, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.222827",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222827",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ELECTRIC_WATER_PUMP", "name": "Electric water pump", "group": "Engine", "bit": 0, "bits": 8, "multiply": 40, "min": 0, "max": 10200, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "700.708.222829",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222829",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ELECTRIC_THERMOSTAT_DUTY_RATIO", "name": "Electric thermostat duty ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.22282C",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22282C",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COOLANT_VALVE_1_CLOSE", "name": "Coolant water route switching valve 1, closed?", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "700.708.222843",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222843",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_VVT_IE_OPENING_ANGLE_BANK_1", "name": "Variable valve timing opening angle bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "700.708.222847",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222847",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COOLANT_VALVE_2_CLOSE", "name": "Coolant water route switching valve 2, closed?", "group": "Engine", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "700.708.222848",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "222848",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_EOP_CONTROL_VALVE", "name": "Engine oil pressure control valve", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0762939, "min": 0, "max": 4999.9207, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "700.708.22F19D",
+      "bus": "can11",
+      "tx": "700",
+      "rx": "708",
+      "request": "22F19D",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ENG_FUEL_RATE", "name": "Engine fuel rate", "group": "Fuel", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "g/s"},
+        {"id": "PRIUSPRIME_VEH_FUEL_RATE", "name": "Vehicle fuel rate", "group": "Fuel", "bit": 16, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "701.709.220103",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "220103",
+      "interval": 30,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ODO_V5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "701.709.221614",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221614",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_NC1_SPD", "name": "NC1 speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221616",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221616",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_NSS_SPD", "name": "Secondary speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221618",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221618",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_NO_SPD", "name": "NO speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.22161A",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "22161A",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_NT_SPD", "name": "NT speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 10000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "701.709.221620",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221620",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_LOCK_UP_STATE", "name": "Lock up state", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "701.709.221622",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221622",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TRANS_SHIFT_ST_RAT_701", "name": "Transmission shift state ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5333, "divide": 21845000, "min": 0, "max": 15.999}
+      ]
+    },
+    {
+      "id": "701.709.221627",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221627",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TF1_PAN", "name": "Transmission fluid pan temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "multiply": 0.00703125, "add": -40, "min": -40, "max": 350, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "701.709.221628",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221628",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TF2_CONV", "name": "Transmission fluid post-converter temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "multiply": 0.00703125, "add": -40, "min": -40, "max": 350, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "701.709.22162B",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "22162B",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ATF_THERMAL_DEGRAD_EST", "name": "Automatic transmission fluid thermal degradation estimate", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "701.709.221634",
+      "bus": "can11",
+      "tx": "701",
+      "rx": "709",
+      "request": "221634",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_SYNCHRONIZE_STROKE", "name": "Synchronize stroke sensor position", "group": "Engine", "bit": 0, "bits": 16, "multiply": 256, "divide": 65535, "min": 0, "max": 256, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "745.74D.221739|fc=1,f=2017-",
+      "bus": "can11",
+      "tx": "745",
+      "rx": "74D",
+      "request": "221739",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2017},
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_SOC_DISPLAY", "name": "HV battery charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "747.74F.220103|fc=1,f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "747.74F.22106E|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22106E",
+      "interval": 1,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AC_POWER_CONS_747", "name": "Air conditioning power consumption", "group": "Engine", "bit": 0, "bits": 8, "divide": 2000, "add": -12500, "min": -12500, "max": -12500, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "747.74F.221802|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221802",
+      "interval": 1,
+      "years": {"from": 2017},
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_1_FAN_747", "name": "Hybrid battery 1 fan", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "747.74F.22180B|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22180B",
+      "interval": 5,
+      "years": {"from": 2017},
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_IAT_1", "name": "Hybrid battery intake air temperature 1", "group": "Battery", "bit": 0, "bits": 16, "multiply": 458, "divide": 65535, "add": -58, "min": -58, "max": 400, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_IAT_2", "name": "Hybrid battery intake air temperature 2", "group": "Battery", "bit": 16, "bits": 16, "multiply": 458, "divide": 65535, "add": -58, "min": -58, "max": 400, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "747.74F.221814|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221814",
+      "interval": 5,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_T_01", "name": "Battery temperature 01", "group": "Battery", "bit": 0, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_02", "name": "Battery temperature 02", "group": "Battery", "bit": 16, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_03", "name": "Battery temperature 03", "group": "Battery", "bit": 32, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_04", "name": "Battery temperature 04", "group": "Battery", "bit": 48, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_05", "name": "Battery temperature 05", "group": "Battery", "bit": 64, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_06", "name": "Battery temperature 06", "group": "Battery", "bit": 80, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_07", "name": "Battery temperature 07", "group": "Battery", "bit": 96, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_08", "name": "Battery temperature 08", "group": "Battery", "bit": 112, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_09", "name": "Battery temperature 09", "group": "Battery", "bit": 128, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_10", "name": "Battery temperature 10", "group": "Battery", "bit": 144, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_11", "name": "Battery temperature 11", "group": "Battery", "bit": 160, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_12", "name": "Battery temperature 12", "group": "Battery", "bit": 176, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_13", "name": "Battery temperature 13", "group": "Battery", "bit": 192, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_14", "name": "Battery temperature 14", "group": "Battery", "bit": 208, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_15", "name": "Battery temperature 15", "group": "Battery", "bit": 224, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "PRIUSPRIME_BAT_T_16", "name": "Battery temperature 16", "group": "Battery", "bit": 240, "bits": 16, "multiply": 19531, "divide": 5000000, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "747.74F.221819|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221819",
+      "interval": 1,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_BLOCK_1_V", "name": "Hybrid battery block 1 average voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_BLOCK_2_V", "name": "Hybrid battery block 2 average voltage", "group": "Battery", "bit": 16, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_BLOCK_3_V", "name": "Hybrid battery block 3 average voltage", "group": "Battery", "bit": 32, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_BLOCK_4_V", "name": "Hybrid battery block 4 average voltage", "group": "Battery", "bit": 48, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_BLOCK_5_V", "name": "Hybrid battery block 5 average voltage", "group": "Battery", "bit": 64, "bits": 16, "multiply": 5, "divide": 65536, "min": 0, "max": 4.99, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "747.74F.221824|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221824",
+      "interval": 5,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_HEATER_T", "name": "Battery heater temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "747.74F.221825|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221825",
+      "interval": 5,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_HEATER_T_2", "name": "Hybrid battery heater temperature 2", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "747.74F.22182E|fc=1,f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22182E",
+      "interval": 1,
+      "flowControl": true,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_C01_V", "name": "HV battery cell #01 voltage", "group": "Battery.Cells", "bit": 0, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C02_V", "name": "HV battery cell #02 voltage", "group": "Battery.Cells", "bit": 16, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C03_V", "name": "HV battery cell #03 voltage", "group": "Battery.Cells", "bit": 32, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C04_V", "name": "HV battery cell #04 voltage", "group": "Battery.Cells", "bit": 48, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C05_V", "name": "HV battery cell #05 voltage", "group": "Battery.Cells", "bit": 64, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C06_V", "name": "HV battery cell #06 voltage", "group": "Battery.Cells", "bit": 80, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C07_V", "name": "HV battery cell #07 voltage", "group": "Battery.Cells", "bit": 96, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C08_V", "name": "HV battery cell #08 voltage", "group": "Battery.Cells", "bit": 112, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C09_V", "name": "HV battery cell #09 voltage", "group": "Battery.Cells", "bit": 128, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C10_V", "name": "HV battery cell #10 voltage", "group": "Battery.Cells", "bit": 144, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C11_V", "name": "HV battery cell #11 voltage", "group": "Battery.Cells", "bit": 160, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C12_V", "name": "HV battery cell #12 voltage", "group": "Battery.Cells", "bit": 176, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C13_V", "name": "HV battery cell #13 voltage", "group": "Battery.Cells", "bit": 192, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C14_V", "name": "HV battery cell #14 voltage", "group": "Battery.Cells", "bit": 208, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C15_V", "name": "HV battery cell #15 voltage", "group": "Battery.Cells", "bit": 224, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C16_V", "name": "HV battery cell #16 voltage", "group": "Battery.Cells", "bit": 240, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C17_V", "name": "HV battery cell #17 voltage", "group": "Battery.Cells", "bit": 256, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C18_V", "name": "HV battery cell #18 voltage", "group": "Battery.Cells", "bit": 272, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C19_V", "name": "HV battery cell #19 voltage", "group": "Battery.Cells", "bit": 288, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C20_V", "name": "HV battery cell #20 voltage", "group": "Battery.Cells", "bit": 304, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C21_V", "name": "HV battery cell #21 voltage", "group": "Battery.Cells", "bit": 320, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C22_V", "name": "HV battery cell #22 voltage", "group": "Battery.Cells", "bit": 336, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C23_V", "name": "HV battery cell #23 voltage", "group": "Battery.Cells", "bit": 352, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C24_V", "name": "HV battery cell #24 voltage", "group": "Battery.Cells", "bit": 368, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C25_V", "name": "HV battery cell #25 voltage", "group": "Battery.Cells", "bit": 384, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C26_V", "name": "HV battery cell #26 voltage", "group": "Battery.Cells", "bit": 400, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C27_V", "name": "HV battery cell #27 voltage", "group": "Battery.Cells", "bit": 416, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C28_V", "name": "HV battery cell #28 voltage", "group": "Battery.Cells", "bit": 432, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C29_V", "name": "HV battery cell #29 voltage", "group": "Battery.Cells", "bit": 448, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C30_V", "name": "HV battery cell #30 voltage", "group": "Battery.Cells", "bit": 464, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C31_V", "name": "HV battery cell #31 voltage", "group": "Battery.Cells", "bit": 480, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C32_V", "name": "HV battery cell #32 voltage", "group": "Battery.Cells", "bit": 496, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C33_V", "name": "HV battery cell #33 voltage", "group": "Battery.Cells", "bit": 512, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C34_V", "name": "HV battery cell #34 voltage", "group": "Battery.Cells", "bit": 528, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C35_V", "name": "HV battery cell #35 voltage", "group": "Battery.Cells", "bit": 544, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C36_V", "name": "HV battery cell #36 voltage", "group": "Battery.Cells", "bit": 560, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C37_V", "name": "HV battery cell #37 voltage", "group": "Battery.Cells", "bit": 576, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C38_V", "name": "HV battery cell #38 voltage", "group": "Battery.Cells", "bit": 592, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C39_V", "name": "HV battery cell #39 voltage", "group": "Battery.Cells", "bit": 608, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C40_V", "name": "HV battery cell #40 voltage", "group": "Battery.Cells", "bit": 624, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C41_V", "name": "HV battery cell #41 voltage", "group": "Battery.Cells", "bit": 640, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C42_V", "name": "HV battery cell #42 voltage", "group": "Battery.Cells", "bit": 656, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C43_V", "name": "HV battery cell #43 voltage", "group": "Battery.Cells", "bit": 672, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C44_V", "name": "HV battery cell #44 voltage", "group": "Battery.Cells", "bit": 688, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C45_V", "name": "HV battery cell #45 voltage", "group": "Battery.Cells", "bit": 704, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C46_V", "name": "HV battery cell #46 voltage", "group": "Battery.Cells", "bit": 720, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C47_V", "name": "HV battery cell #47 voltage", "group": "Battery.Cells", "bit": 736, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C48_V", "name": "HV battery cell #48 voltage", "group": "Battery.Cells", "bit": 752, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C49_V", "name": "HV battery cell #49 voltage", "group": "Battery.Cells", "bit": 768, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C50_V", "name": "HV battery cell #50 voltage", "group": "Battery.Cells", "bit": 784, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C51_V", "name": "HV battery cell #51 voltage", "group": "Battery.Cells", "bit": 800, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C52_V", "name": "HV battery cell #52 voltage", "group": "Battery.Cells", "bit": 816, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C53_V", "name": "HV battery cell #53 voltage", "group": "Battery.Cells", "bit": 832, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C54_V", "name": "HV battery cell #54 voltage", "group": "Battery.Cells", "bit": 848, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C55_V", "name": "HV battery cell #55 voltage", "group": "Battery.Cells", "bit": 864, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C56_V", "name": "HV battery cell #56 voltage", "group": "Battery.Cells", "bit": 880, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C57_V", "name": "HV battery cell #57 voltage", "group": "Battery.Cells", "bit": 896, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C58_V", "name": "HV battery cell #58 voltage", "group": "Battery.Cells", "bit": 912, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C59_V", "name": "HV battery cell #59 voltage", "group": "Battery.Cells", "bit": 928, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C60_V", "name": "HV battery cell #60 voltage", "group": "Battery.Cells", "bit": 944, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C61_V", "name": "HV battery cell #61 voltage", "group": "Battery.Cells", "bit": 960, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C62_V", "name": "HV battery cell #62 voltage", "group": "Battery.Cells", "bit": 976, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C63_V", "name": "HV battery cell #63 voltage", "group": "Battery.Cells", "bit": 992, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C64_V", "name": "HV battery cell #64 voltage", "group": "Battery.Cells", "bit": 1008, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C65_V", "name": "HV battery cell #65 voltage", "group": "Battery.Cells", "bit": 1024, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C66_V", "name": "HV battery cell #66 voltage", "group": "Battery.Cells", "bit": 1040, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C67_V", "name": "HV battery cell #67 voltage", "group": "Battery.Cells", "bit": 1056, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C68_V", "name": "HV battery cell #68 voltage", "group": "Battery.Cells", "bit": 1072, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C69_V", "name": "HV battery cell #69 voltage", "group": "Battery.Cells", "bit": 1088, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C70_V", "name": "HV battery cell #70 voltage", "group": "Battery.Cells", "bit": 1104, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C71_V", "name": "HV battery cell #71 voltage", "group": "Battery.Cells", "bit": 1120, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C72_V", "name": "HV battery cell #72 voltage", "group": "Battery.Cells", "bit": 1136, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C73_V", "name": "HV battery cell #73 voltage", "group": "Battery.Cells", "bit": 1152, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C74_V", "name": "HV battery cell #74 voltage", "group": "Battery.Cells", "bit": 1168, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C75_V", "name": "HV battery cell #75 voltage", "group": "Battery.Cells", "bit": 1184, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C76_V", "name": "HV battery cell #76 voltage", "group": "Battery.Cells", "bit": 1200, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C77_V", "name": "HV battery cell #77 voltage", "group": "Battery.Cells", "bit": 1216, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C78_V", "name": "HV battery cell #78 voltage", "group": "Battery.Cells", "bit": 1232, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C79_V", "name": "HV battery cell #79 voltage", "group": "Battery.Cells", "bit": 1248, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C80_V", "name": "HV battery cell #80 voltage", "group": "Battery.Cells", "bit": 1264, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C81_V", "name": "HV battery cell #81 voltage", "group": "Battery.Cells", "bit": 1280, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C82_V", "name": "HV battery cell #82 voltage", "group": "Battery.Cells", "bit": 1296, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C83_V", "name": "HV battery cell #83 voltage", "group": "Battery.Cells", "bit": 1312, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C84_V", "name": "HV battery cell #84 voltage", "group": "Battery.Cells", "bit": 1328, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C85_V", "name": "HV battery cell #85 voltage", "group": "Battery.Cells", "bit": 1344, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C86_V", "name": "HV battery cell #86 voltage", "group": "Battery.Cells", "bit": 1360, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C87_V", "name": "HV battery cell #87 voltage", "group": "Battery.Cells", "bit": 1376, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C88_V", "name": "HV battery cell #88 voltage", "group": "Battery.Cells", "bit": 1392, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C89_V", "name": "HV battery cell #89 voltage", "group": "Battery.Cells", "bit": 1408, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C90_V", "name": "HV battery cell #90 voltage", "group": "Battery.Cells", "bit": 1424, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C91_V", "name": "HV battery cell #91 voltage", "group": "Battery.Cells", "bit": 1440, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C92_V", "name": "HV battery cell #92 voltage", "group": "Battery.Cells", "bit": 1456, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C93_V", "name": "HV battery cell #93 voltage", "group": "Battery.Cells", "bit": 1472, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C94_V", "name": "HV battery cell #94 voltage", "group": "Battery.Cells", "bit": 1488, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C95_V", "name": "HV battery cell #95 voltage", "group": "Battery.Cells", "bit": 1504, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C96_V", "name": "HV battery cell #96 voltage", "group": "Battery.Cells", "bit": 1520, "bits": 16, "multiply": 5, "divide": 65535, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "747.74F.221F5B|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F5B",
+      "interval": 1,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_SOC", "name": "Hybrid battery SOC", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "747.74F.221F9A|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "221F9A",
+      "interval": 1,
+      "years": {"from": 2017},
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_CURRENT", "name": "Hybrid battery current", "group": "Battery", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "A"}
+      ]
+    },
+    {
+      "id": "747.74F.22F19A|f=2017-",
+      "bus": "can11",
+      "tx": "747",
+      "rx": "74F",
+      "request": "22F19A",
+      "interval": 5,
+      "years": {"from": 2017},
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_V_747", "name": "Hybrid battery voltage", "group": "Battery", "bit": 16, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "V"}
+      ]
+    },
+    {
+      "id": "750.758.2115|e=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2115",
+      "interval": 15,
+      "flowControl": true,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TIRE_P_1_SET_2", "name": "Tire pressure 1, set 2", "group": "Tires", "bit": 0, "bits": 8, "multiply": 69, "divide": 4000, "add": -0.5, "min": -0.5, "max": 3.89, "unit": "bar"},
+        {"id": "PRIUSPRIME_TIRE_P_2_SET_2", "name": "Tire pressure 2, set 2", "group": "Tires", "bit": 8, "bits": 8, "multiply": 69, "divide": 4000, "add": -0.5, "min": -0.5, "max": 3.89, "unit": "bar"},
+        {"id": "PRIUSPRIME_TIRE_P_3_SET_2", "name": "Tire pressure 3, set 2", "group": "Tires", "bit": 16, "bits": 8, "multiply": 69, "divide": 4000, "add": -0.5, "min": -0.5, "max": 3.89, "unit": "bar"},
+        {"id": "PRIUSPRIME_TIRE_P_4_SET_2", "name": "Tire pressure 4, set 2", "group": "Tires", "bit": 24, "bits": 8, "multiply": 69, "divide": 4000, "add": -0.5, "min": -0.5, "max": 3.89, "unit": "bar"},
+        {"id": "PRIUSPRIME_TIRE_P_5_SET_2", "name": "Tire pressure 5, set 2", "group": "Tires", "bit": 32, "bits": 8, "multiply": 69, "divide": 4000, "add": -0.5, "min": -0.5, "max": 3.89, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "750.758.2116|e=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2116",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "PRIUSPRIME_TT_FR", "name": "Front right tire temperature", "group": "Tires", "metric": "frontRightTireTemperature", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "PRIUSPRIME_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "metric": "rearLeftTireTemperature", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "PRIUSPRIME_TT_RR", "name": "Rear right tire temperature", "group": "Tires", "metric": "rearRightTireTemperature", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215},
+        {"id": "PRIUSPRIME_TT_SPARE", "name": "Spare tire temperature", "group": "Tires", "bit": 32, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40, "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "750.758.2130|e=2A,ta=2A,fc=1",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "2130",
+      "interval": 2.5,
+      "flowControl": true,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "PRIUSPRIME_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "PRIUSPRIME_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 16, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "PRIUSPRIME_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 24, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896},
+        {"id": "PRIUSPRIME_TP_SPARE", "name": "Spare tire pressure", "group": "Tires", "bit": 32, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 3.896, "unit": "bar", "invalidAtOrBelow": 0, "invalidAtOrAbove": 3.896}
+      ]
+    },
+    {
+      "id": "750.758.221004|e=2A,ta=2A,fc=1,f=2023-;-2016",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221004",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"from": 2023, "to": 2016},
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "PRIUSPRIME_TT_1", "name": "Front right tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "PRIUSPRIME_TT_2", "name": "Front left tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "PRIUSPRIME_TT_3", "name": "Rear right tire temperature", "group": "Tires", "bit": 16, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30},
+        {"id": "PRIUSPRIME_TT_4", "name": "Rear left tire temperature", "group": "Tires", "bit": 24, "bits": 8, "add": -40, "min": -30, "max": 100, "unit": "°C", "invalidAtOrBelow": -30}
+      ]
+    },
+    {
+      "id": "750.758.221005|e=2A,ta=2A,fc=1,f=2023-;-2016",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "221005",
+      "interval": 5,
+      "flowControl": true,
+      "years": {"from": 2023, "to": 2016},
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "PRIUSPRIME_TP_1", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 8, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 56.1212},
+        {"id": "PRIUSPRIME_TP_2", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 56.1212},
+        {"id": "PRIUSPRIME_TP_3", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 56.1212},
+        {"id": "PRIUSPRIME_TP_4", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 56, "bits": 8, "divide": 4.125, "add": -5.6969697, "min": 0, "max": 56.1212, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 56.1212}
+      ]
+    },
+    {
+      "id": "750.758.222021|e=2A,ta=2A,fc=1,f=2023-;-2016",
+      "bus": "can11",
+      "tx": "750",
+      "rx": "758",
+      "extendedAddress": "2A",
+      "request": "222021",
+      "interval": 86400,
+      "flowControl": true,
+      "years": {"from": 2023, "to": 2016},
+      "answeredIn": [2023, 2024, 2025, 2026],
+      "signals": [
+        {"id": "PRIUSPRIME_TID_1", "name": "Tire 1 position", "group": "Tires", "bit": 0, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "PRIUSPRIME_TID_2", "name": "Tire 2 position", "group": "Tires", "bit": 8, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "PRIUSPRIME_TID_3", "name": "Tire 3 position", "group": "Tires", "bit": 16, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}},
+        {"id": "PRIUSPRIME_TID_4", "name": "Tire 4 position", "group": "Tires", "bit": 24, "bits": 8, "values": {"1": "FL", "2": "FR", "3": "RL", "4": "RR"}, "valueDescriptions": {"1": "Front left", "2": "Front right", "3": "Rear left", "4": "Rear right"}}
+      ]
+    },
+    {
+      "id": "780.788.2104",
+      "bus": "can11",
+      "tx": "780",
+      "rx": "788",
+      "request": "2104",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BUCKLE_RS", "name": "Buckle switch, right side", "group": "Seatbelts", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_BUCKLE_LS", "name": "Buckle switch, left side", "group": "Seatbelts", "bit": 32, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2103|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2103",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "PRIUSPRIME_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "PRIUSPRIME_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 16, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
+        {"id": "PRIUSPRIME_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 24, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2105|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2105",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_DECEL", "name": "Deceleration", "group": "Orientation", "bit": 0, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"},
+        {"id": "PRIUSPRIME_DECEL_2", "name": "Deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "multiply": 36.36, "divide": 255, "add": -18.18, "min": -18.18, "max": 18.18, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2106|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2106",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_YAW_1", "name": "Yaw rate, sensor 1", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127},
+        {"id": "PRIUSPRIME_YAW_2", "name": "Yaw rate, sensor 2", "group": "Orientation", "bit": 8, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2107",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2107",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_WHEEL_CYLINDER_PRESSURE", "name": "Wheel cylinder pressure", "group": "Tires", "bit": 0, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211D|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211D",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_RESERVOIR_WARNING_SW", "name": "Reservoir warning", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_MAIN_IDLE_SW", "name": "Main idle", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.211F|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "211F",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_STOP_LIGHT_SW", "name": "Stop light", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_PARKING_BRAKE_SW", "name": "Parking brake", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2121|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2121",
+      "interval": 0.2,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "multiply": 1.35, "min": 0, "max": 323.85, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213C|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213C",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_STOP_LIGHT_RELAY", "name": "Stop light relay", "group": "Lights", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.213D|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "213D",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_ABS_WARN", "name": "Anti-lock brake warning light", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_BRAKE_WARN", "name": "Brake warning light", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_SLIP_WARN", "name": "Slip indicator light", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_BUZZER", "name": "Buzzer", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_ECB_WARN", "name": "Electronically controlled brake warning light", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2142|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2142",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_WHEEL_ACCELERATION", "name": "Front right wheel acceleration", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "PRIUSPRIME_FL_WHEEL_ACCELERATION", "name": "Front left wheel acceleration", "group": "Movement", "bit": 8, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "PRIUSPRIME_RR_WHEEL_ACCELERATION", "name": "Rear right wheel acceleration", "group": "Movement", "bit": 16, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"},
+        {"id": "PRIUSPRIME_RL_WHEEL_ACCELERATION", "name": "Rear left wheel acceleration", "group": "Movement", "bit": 24, "bits": 8, "signed": true, "multiply": 1.56906, "min": -200.83, "max": 199.27, "unit": "m/s²"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2146|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2146",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_ZP_DEC", "name": "Zero point of deceleration", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "PRIUSPRIME_ZP_DEC2", "name": "Zero point of deceleration 2", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "PRIUSPRIME_ZP_YAW", "name": "Zero point of yaw rate, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2147|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2147",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "PRIUSPRIME_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "PRIUSPRIME_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
+        {"id": "PRIUSPRIME_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2148|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2148",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_REGEN_REQUEST", "name": "Regenerative request", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"},
+        {"id": "PRIUSPRIME_FR_REGEN_OPERATION", "name": "Regenerative operation", "group": "Battery", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.2158|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "2158",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_REGEN_COOPERATION", "name": "Regenerative braking cooperation", "group": "Battery", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215A|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215A",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_TRC_TRAC__CTRL", "name": "Traction control, status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_TRC_TRAC__ENGINE_CTRL", "name": "Traction control, engine status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_TRC_TRAC__BRAKE_CTRL", "name": "Traction control, brake status", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_FR_WHEEL_VSC_CTRL", "name": "Front right wheel vehicle stability control status", "group": "Tires", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_FL_WHEEL_VSC_CTRL", "name": "Front left wheel vehicle stability control status", "group": "Tires", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RR_WHEEL_VSC_CTRL", "name": "Rear right wheel vehicle stability control status", "group": "Tires", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RL_WHEEL_VSC_CTRL", "name": "Rear left wheel vehicle stability control status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.215F|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "215F",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_WHEEL_ABS_CTRL", "name": "Front right wheel ABS status", "group": "Tires", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_FL_WHEEL_ABS_CTRL", "name": "Front left wheel ABS status", "group": "Tires", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RR_WHEEL_ABS_CTRL", "name": "Rear right wheel ABS status", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RL_WHEEL_ABS_CTRL", "name": "Rear left wheel ABS status", "group": "Tires", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RR_WHEEL_EBD_CTRL", "name": "Rear right wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_RL_WHEEL_EBD_CTRL", "name": "Rear left wheel EBS status", "description": "Electronic brakeforce distribution", "group": "Tires", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_BA_CTRL_STATUS", "name": "Brake assist status", "group": "Tires", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_PBA_CTRL_STATUS", "name": "Predictive brake assist status", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A1",
+      "interval": 3600,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ZERO_POINT_OF_YAW_RATE", "name": "Zero point of yaw rate", "group": "Orientation", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A3|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A3",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_SLA_SOLENOID_CURRENT", "name": "Main relay a, solenoid current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "PRIUSPRIME_SLR_SOLENOID_CURRENT", "name": "Main relay r solenoid current", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "PRIUSPRIME_SSC_SOLENOID_CURRENT", "name": "Service contactor solenoid current", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "PRIUSPRIME_SCC_SOLENOID_CURRENT", "name": "Charge contactor current", "group": "Battery", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "PRIUSPRIME_SMC_SOLENOID_CURRENT", "name": "Main connector solenoid current", "group": "Battery", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "mA"},
+        {"id": "PRIUSPRIME_SRC_SOLENOID_CURRENT", "name": "Relay control solenoid current", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21A6|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21A6",
+      "interval": 60,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_INSPECTION_MODE", "name": "Inspection mode", "group": "Details", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BC|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BC",
+      "interval": 3600,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_HAZARD_SWITCH_HISTORY", "name": "Hazard switch history", "group": "Lights", "bit": 2, "bits": 1, "values": {"0": "INCOMPLETE", "1": "COMPLETE"}, "valueDescriptions": {"0": "Incomplete", "1": "Complete"}}
+      ]
+    },
+    {
+      "id": "7B0.7B8.21BE|f=-2022",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "21BE",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_WHEEL_SPEED_OPEN", "name": "Front right wheel speed?", "group": "Movement", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_FL_WHEEL_SPEED_OPEN", "name": "Front left wheel speed?", "group": "Movement", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_RR_WHEEL_SPEED_OPEN", "name": "Rear right wheel speed?", "group": "Movement", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_RL_WHEEL_SPEED_OPEN", "name": "Rear left wheel speed?", "group": "Movement", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_YAW_RATE_OPEN_ERROR", "name": "Yaw rate, error?", "group": "Orientation", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_DECELERATION_OPEN", "name": "Deceleration open", "group": "Orientation", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_MASTER_CYLINDER_OPEN", "name": "Master cylinder open", "group": "Engine", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_STROKE_OPEN", "name": "Stroke open", "group": "Engine", "bit": 10, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_FR_WHEEL_CYLINDER_OPEN", "name": "Front right wheel cylinder open", "group": "Tires", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_ACCUMULATOR_OPEN", "name": "Accumulator open", "group": "Engine", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "PRIUSPRIME_HV_COMM_OPEN", "name": "Hydraulic valve, communication open", "group": "Engine", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221006",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221006",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_MASTER_CYL_TEMP", "name": "Master cylinder sensor temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -80, "min": -20, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.220103",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "220103",
+      "interval": 30,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TOT_DIST", "name": "Total distance", "group": "Trips", "bit": 0, "bits": 32, "min": 0, "max": 150}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221003",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221003",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "PRIUSPRIME_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 8, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "PRIUSPRIME_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 16, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
+        {"id": "PRIUSPRIME_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 24, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221009",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221009",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_REAL_ENG_TQ", "name": "Real engine torque", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 32, "min": -20, "max": 150, "unit": "Nm"},
+        {"id": "PRIUSPRIME_STEER_ANG", "name": "Steering angle", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -3276.8, "min": -20, "max": 150, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.22100E",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "22100E",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FRONT_AXLE_COUPLING", "name": "Front axle coupling clutch current", "group": "Transmission", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "PRIUSPRIME_REAR_AXLE_COUPLING", "name": "Rear axle coupling clutch current", "group": "Transmission", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "PRIUSPRIME_LEFT_COUPLING_CLU", "name": "Left coupling clutch current", "group": "Transmission", "bit": 32, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"},
+        {"id": "PRIUSPRIME_RIGHT_COUPLING_CLU", "name": "Right coupling clutch current", "group": "Transmission", "bit": 48, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7B1.7B9.22100F",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "22100F",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FRONT_AXLE_COUPLING_CLU", "name": "Front axle coupling clutch position sensor status", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_REAR_AXLE_COUPLING_CLU_POS", "name": "Rear axle coupling clutch position sensor status", "group": "Transmission", "bit": 9, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7B1.7B9.221026",
+      "bus": "can11",
+      "tx": "7B1",
+      "rx": "7B9",
+      "request": "221026",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COUPLING_TEMP", "name": "Coupling temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7B3.7BB.221004",
+      "bus": "can11",
+      "tx": "7B3",
+      "rx": "7BB",
+      "request": "221004",
+      "interval": 0.25,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_STEERING_ANGLE", "name": "Steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 1.5, "min": -410, "max": 410, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2112|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2112",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_TAIL_CANCEL_LIGHT", "name": "Tail cancel SW", "group": "Lights", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_P_SEATBELT_BUCKLE_LIGHT", "name": "P-seatbelt buckle SW", "group": "Lights", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_CHECK_ENGINE_LIGHT", "name": "Check engine SW", "group": "Lights", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_EOP_LIGHT", "name": "Oil pressure switch", "group": "Lights", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2113|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2113",
+      "interval": 5,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2121|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2121",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_VSS_7C0", "name": "Speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2123|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2123",
+      "interval": 5,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_ECT_7C0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2129|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2129",
+      "interval": 5,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2141|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2141",
+      "interval": 30,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_OIL_CHANGE_ODO", "name": "Distance since oil change", "group": "Fluids", "bit": 0, "bits": 8, "multiply": 2514600, "divide": 15625, "min": 0, "max": 41038.272, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7C0.7C8.2168",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "2168",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_RHEOSTAT", "name": "Rheostat", "description": "Higher values are brighter", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A1",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_KEY_REMIND_SOUND", "name": "Key remind sound", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21A7|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21A7",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_SEAT_BELT_BEEP_DRIVER", "name": "Seat belt beep, driver", "group": "Seatbelts", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_SEAT_BELT_BEEP_PASSENGER", "name": "Seat belt beep, passenger", "group": "Seatbelts", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "PRIUSPRIME_SEAT_BELT_BEEP_REMINDER", "name": "Seat belt beep, reminder", "group": "Seatbelts", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.21AC|f=-2022",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "21AC",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_REVERSE_BEEP", "name": "Reverse beep", "group": "Seatbelts", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["On", "Off"]}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221021",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221021",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_BATTERY_VOLTAGE_7C0", "name": "B+ battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 20, "unit": "V", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "7C0.7C8.221022|fc=1",
+      "bus": "can11",
+      "tx": "7C0",
+      "rx": "7C8",
+      "request": "221022",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2023, 2024],
+      "notAnsweredIn": [2020, 2022],
+      "signals": [
+        {"id": "PRIUSPRIME_FLV", "name": "Fuel remaining", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L", "invalidAtOrAbove": 655}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2121",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2121",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 63.75, "divide": 255, "add": -6.5, "min": -6.5, "max": 57.25, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2122",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2122",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AAT_7C4", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -23.3, "min": -23.3, "max": 65.95, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2124",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2124",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_SOLAR_DRIVER", "name": "Solar sensor, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2126",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2126",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ECT", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": 1.3, "min": 1.3, "max": 90.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2129",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2129",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_T_DRIVER", "name": "Set temperature, driver side", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213C",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213C",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BLOWER_MOTOR_SPEED_LEVEL", "name": "Blower motor speed level", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.213D",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "213D",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ADJUSTED_AMBIENT_T", "name": "Adjusted ambient temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 81.6, "divide": 255, "add": -30.8, "min": -30.8, "max": 50.8, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2141",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2141",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AIR_MIX_SERVO_TARG_D", "name": "Air mix servo target pulse, driver", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_AIR_MIX_SERVO_ACT_D", "name": "Air mix servo, actual pulse, d", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2143",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2143",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AIR_OUTLET_SERVO_PULSE_D", "name": "Air outlet servo pulse, driver", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_AIR_OUTLET_SERVO_ACTU_PULSE_D", "name": "Air outlet servo actual pulse, driver", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2144",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2144",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AIR_INLET_DAMPER_TARGET_PULSE", "name": "Air inlet damper target pulse", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PRIUSPRIME_AIR_INLET_DAMPER_ACTUAL_PULSE", "name": "Air inlet damper actual pulse", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2149",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2149",
+      "interval": 0.25,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COMP_SPD", "name": "Compressor speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214A",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214A",
+      "interval": 0.25,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COMP_TGT_SPD", "name": "Compressor, target speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214B",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214B",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_EVAP_FIN_THERMISTOR", "name": "Evaporator fin thermistor", "group": "Climate", "bit": 0, "bits": 8, "multiply": 89.25, "divide": 255, "add": -29.7, "min": -29.7, "max": 59.55, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.214C",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "214C",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_EVAP_TARGET_T", "name": "Evaporator target temperature", "group": "Climate", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67}
+      ]
+    },
+    {
+      "id": "7C4.7CC.2153",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "2153",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_REGULATOR_P", "name": "Regulator pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 375105, "divide": 25500, "add": -456.68, "min": -456.68, "max": 3294, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.21AF",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "21AF",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_GLASS_T", "name": "Glass temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 500, "add": -557.8, "min": -557, "max": 621, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7C4.7CC.21B1",
+      "bus": "can11",
+      "tx": "7C4",
+      "rx": "7CC",
+      "request": "21B1",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_GLASS_HUMIDITY", "name": "Glass humidity", "group": "Engine", "bit": 0, "bits": 16, "multiply": 20, "divide": 13107, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D0.7D8.2162",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7D8",
+      "request": "2162",
+      "interval": 1,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220102",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220102",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_KEY_CYCLE", "name": "Key cycle", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7D2.7DA.220103|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "220103",
+      "interval": 10,
+      "flowControl": true,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ODO_V2_V2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 8, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221002",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221002",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AUX_BAT_V", "name": "Aux battery voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 61, "divide": 50000, "min": 0, "max": 79.95, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221039",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221039",
+      "interval": 0.25,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FRONT_REAR_MOTOR_TQ", "name": "Front/rear motor torque ratio", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "add": -32.768, "min": -32.76, "max": 32.76}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221040|f=-2022",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221040",
+      "interval": 1,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_TRANSAXLE_OIL_T", "name": "Transaxle oil temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221069",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221069",
+      "interval": 0.25,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_MOTOR_REGENERATIVE", "name": "Motor regenerative brake torque, requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"},
+        {"id": "PRIUSPRIME_MOTOR_REGENERATIVE_BREAK", "name": "Motor regenerative brake torque", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106A",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_REAR_MOTOR", "name": "Rear motor regenerative brake torque, requested", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"},
+        {"id": "PRIUSPRIME_REAR_MOTOR_REGENERATIVE", "name": "Rear motor regenerative brake torque", "group": "Engine", "bit": 16, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106C|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_SOC_MAX", "name": "HV battery charge, maximum", "group": "Battery", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
+        {"id": "PRIUSPRIME_HVBAT_SOC_MIN", "name": "HV battery charge, minimum", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22106E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22106E",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AC_POWER_CONS", "name": "Air conditioning power consumption", "group": "Engine", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221075",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221075",
+      "interval": 0.1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "PRIUSPRIME_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "PRIUSPRIME_RR_WHEEL_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"},
+        {"id": "PRIUSPRIME_RL_WHEEL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22107E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22107E",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_BAT_V_BEFORE_SMR", "name": "12V battery voltage before system main relay", "group": "Battery", "bit": 0, "bits": 8, "multiply": 61, "divide": 50000, "add": 11.25, "min": 0, "max": 11.56, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A1",
+      "interval": 0.25,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_RPM_7D2", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "PRIUSPRIME_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A2",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_RM_TQ_REQ", "name": "Rear motor speed", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "PRIUSPRIME_RM_TQ", "name": "Rear motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A4|f=-2022",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A4",
+      "interval": 5,
+      "years": {"to": 2022},
+      "answeredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_GEN_INVERTER_T", "name": "Generator inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A5",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A5",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_MOTOR_INVERTER_T", "name": "Motor inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_MOTOR_INVERTER_T_ON", "name": "Motor inverter temperature after ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_MAX_MOTOR_INVERTER_T", "name": "Maximum motor inverter temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A6",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A6",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A7",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_BOOSTING_CONV_T_HI", "name": "Boosting converter temperature, upper", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_BOOSTING_CONV_T_LO", "name": "Boosting converter temperature, lower", "group": "Transmission", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210A8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210A8",
+      "interval": 5,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_GEN_INVERTER_T_7D2", "name": "Generator inverter temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_GEN_INVERTER_T_AFTER_ON", "name": "Generator inverter temperature after ignition on", "group": "Engine", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_MAX_GEN_INVERTER_T", "name": "Maximum generator inverter temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B0",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B0",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_VL_V_BEFORE_BOOSTING", "name": "Vl-voltage before boosting", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"},
+        {"id": "PRIUSPRIME_VH_V_AFTER_BOOSTING", "name": "Vh-voltage after boosting", "group": "Battery", "bit": 16, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2210B2",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2210B2",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221112",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221112",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_INVERTER_WATER_PMP", "name": "Inverter water pump duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 15259, "divide": 5000000, "min": 0, "max": 199, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22111C",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22111C",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_DC_DC_CONV_OUTPUT", "name": "DC-DC converter output current", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "min": 0, "max": 199, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22111D",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22111D",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_DC_DC_CONV_LOW_SIDE_V", "name": "DC-DC converter low side voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 1953, "divide": 25000, "min": 0, "max": 19.92, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22111E",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22111E",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_DC_DC_CONV_HIGH_SIDE_V", "name": "DC-DC converter high side voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 1220703, "divide": 10000000, "min": 0, "max": 7999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22111F",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22111F",
+      "interval": 1,
+      "answeredIn": [2023, 2025],
+      "notAnsweredIn": [2020],
+      "signals": [
+        {"id": "PRIUSPRIME_DC_DC_CONV_TGT_V", "name": "DC-DC converter, target voltage before charging", "group": "Battery", "bit": 0, "bits": 16, "multiply": 1220703, "divide": 10000000, "min": 0, "max": 7999, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215EE",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215EE",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_V_V2", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 0.31448, "add": 0.0125, "min": 0, "max": 80.2, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F7",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F7",
+      "interval": 0.5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 38.147, "divide": 10000, "add": -125, "min": -125, "max": 124, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.2215F8",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "2215F8",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221609",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221609",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_CHRG_V", "name": "HV battery charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221802",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221802",
+      "interval": 1,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AUXILIARY_BAT", "name": "Auxiliary battery current", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2525, "divide": 13107, "add": -12500, "min": -12500, "max": -12451, "unit": "A"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_1_FAN", "name": "Hybrid battery 1 fan", "group": "Battery", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221814",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221814",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_T_1", "name": "Hybrid battery temperature 1", "group": "Battery", "bit": 0, "bits": 16, "multiply": 458, "divide": 65535, "add": -58, "min": -58, "max": 400, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_T_2", "name": "Hybrid battery temperature 2", "group": "Battery", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"},
+        {"id": "PRIUSPRIME_HYBRID_BAT_T_3", "name": "Hybrid battery temperature 3", "group": "Battery", "bit": 32, "bits": 16, "multiply": 458, "divide": 65535, "add": -58, "min": -58, "max": 400, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221829",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221829",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_MAX_T", "name": "HV battery maximum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22182A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22182A",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_MIN_T", "name": "HV battery minimum temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F05",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F05",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_COOL_T", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F0D|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F0D",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_VSS_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F42",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F42",
+      "interval": 5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_12V_BAT_V_SMOOTHED", "name": "12V battery voltage smoothed", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F46",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F46",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_AAT_7D2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F49",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F49",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ACC_PEDAL_POS_1", "name": "Accelerator pedal, position 1", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F4A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F4A",
+      "interval": 1,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ACC_PEDAL_POS_2", "name": "Accelerator pedal, position 2", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F5B|fc=1",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F5B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2020, 2022, 2023, 2024],
+      "signals": [
+        {"id": "PRIUSPRIME_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.221F9A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "221F9A",
+      "interval": 0.5,
+      "answeredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 16, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1023, "unit": "V"},
+        {"id": "PRIUSPRIME_HVBAT_C", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D2.7DA.22F19A",
+      "bus": "can11",
+      "tx": "7D2",
+      "rx": "7DA",
+      "request": "22F19A",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_HYBRID_BAT_V", "name": "Hybrid battery voltage", "group": "Battery", "bit": 16, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2182",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2182",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ATF_T_V_10_7E1", "name": "Transmission fluid temperature, variant 10", "group": "Transmission", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"},
+        {"id": "PRIUSPRIME_ATF_T_V_11", "name": "Transmission fluid temperature, variant 11", "group": "Transmission", "bit": 16, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21D9",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21D9",
+      "interval": 5,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_ATF_T_V_14_7E1", "name": "Transmission fluid temperature, variant 14", "group": "Transmission", "bit": 0, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"},
+        {"id": "PRIUSPRIME_ATF_T_V_21_7E1", "name": "Transmission fluid temperature, variant 21", "group": "Transmission", "bit": 24, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "PRIUSPRIME_ATF_T_V_9", "name": "Transmission fluid temperature, variant 9", "group": "Transmission", "bit": 32, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"},
+        {"id": "PRIUSPRIME_ATF_T_V_12", "name": "Transmission fluid temperature, variant 12", "group": "Transmission", "bit": 48, "bits": 16, "divide": 256, "add": -40, "min": -40, "max": 215.996, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.21DA",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "21DA",
+      "interval": 0.25,
+      "notAnsweredIn": [2020, 2023, 2025],
+      "signals": [
+        {"id": "PRIUSPRIME_TQ_CONV_TURBINE_WHL", "name": "Torque converter turbine wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 12750, "min": 0, "max": 6, "unit": "rpm"}
+      ]
+    }
+  ]
+}

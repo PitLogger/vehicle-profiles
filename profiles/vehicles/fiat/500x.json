@@ -1,0 +1,867 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/fiat/500x",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "FIAT",
+    "model": "500X",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2014, "to": 2018},
+      {"name": "First Generation (2018 Facelift)", "from": 2018, "to": 2019},
+      {"name": "First Generation (2019 Redesign)", "from": 2019, "to": 2021},
+      {"name": "First Generation (2022 Restyling)", "from": 2022, "to": 2024}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/FIAT-500X",
+    "file": "signalsets/v3/default.json",
+    "revision": "560ff164f409a65f32abfac317b2e2279d34bd8b",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "DA10.10.2118",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2118",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_TOT", "name": "Transmission oil temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -512, "max": 512, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "DA10.10.221000|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221000",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_RPM", "name": "Engine RPM", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA10.10.221002|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221002",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_ENGINE_STATUS", "name": "Engine operational status", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.221003|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221003",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_ECT_ECU", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221009|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221009",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_WATER_FUEL_DIST", "name": "Distance with water in fuel warning", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189B",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_SWIRL_CMD", "name": "Swirl actuator command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -100, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22189F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22189F",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_VGT_CMD", "name": "Variable geometry turbo position commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A0|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A0",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_VGT_ACT", "name": "Variable geometry turbo position actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A4|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A4",
+      "interval": 3600,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_REGEN_STARTED_TOT", "name": "Regenerations started total counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.2218A5|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218A5",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_REGEN_INTERRUPTED", "name": "Particulate filter regen interrupted count", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218AE|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218AE",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_REGEN_CONSEC_INTERRUPTED", "name": "Consecutive interrupted particulate filter regenerations", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218D0|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218D0",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_MPROP_CMD", "name": "M-Prop injection command", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218DE|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218DE",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_DPF_INLET_T", "name": "Particulate filter inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E2|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E2",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_DPF_DIFF_PRESS", "name": "Particulate filter differential pressure", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -50, "max": 50, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E4|fc=1,din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E4",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_DPF_SOOT_PCT", "name": "Particulate filter soot clogging level", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 1000, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.2218E8|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218E8",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_DPF_FLOW_RES", "name": "Particulate filter flow resistance", "group": "Emissions", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
+      ]
+    },
+    {
+      "id": "DA10.10.2218EC|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218EC",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_FORCED_REGEN", "name": "Forced regen state", "group": "Emissions", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.2218ED|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2218ED",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_LAMBDA_DPF_DS", "name": "Lambda downstream DPF O2 concentration", "group": "Emissions", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 25, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.221900|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221900",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 50, "add": -40, "min": -695, "max": 615, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22190B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22190B",
+      "interval": 0.25,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_VSS_ECU", "name": "Vehicle speed, engine module", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22192D|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192D",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_GEAR_ECU", "name": "Gear engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 9}
+      ]
+    },
+    {
+      "id": "DA10.10.22192F",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22192F",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350}
+      ]
+    },
+    {
+      "id": "DA10.10.221935|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221935",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_IAT_TURBO", "name": "IAT post-intercooler", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193A",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193A",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_TURBO_BOOST_ACTUATOR", "name": "Turbo boost actuator duty", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 7813, "divide": 10000, "min": -100, "max": 99.22, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.22193F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22193F",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_MAF_TEMP", "name": "Mass airflow sensor temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.221946|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221946",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_RAIL_PRESS_CMD", "name": "Fuel rail pressure commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.221947|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221947",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_RAIL_PRESS", "name": "Fuel rail pressure measured", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3000, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "DA10.10.221948",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221948",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_FUEL_RAMP_P_ADC", "name": "Fuel ramp pressure ADC", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA10.10.22194F|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22194F",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_OIL_PUMP", "name": "Variable oil pump position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.221955|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221955",
+      "interval": 30,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_BATT_V_ECU", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 20, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DA10.10.221959",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "221959",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_TURBO_BOOST_CMD", "name": "Turbo boost, commanded", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.22195A|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195A",
+      "interval": 1,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA10.10.22195B",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22195B",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_TURBO_BOOST_ADC", "name": "Turbo boost ADC", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "DA10.10.2219BD",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "2219BD",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_BAT_ST_CHG", "name": "Battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.222001",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222001",
+      "interval": 30,
+      "signals": [
+        {"id": "500X_ODO_DA10", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.222005",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222005",
+      "interval": 0.25,
+      "signals": [
+        {"id": "500X_MAX_RPM_REACHED", "name": "Max RPM reached", "group": "Movement", "bit": 0, "bits": 8, "signed": true, "multiply": 40, "min": -5120, "max": 5080, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223800|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223800",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_FUEL_CORR_CYL1", "name": "Fuel correction cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223801|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223801",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_FUEL_CORR_CYL2", "name": "Fuel correction cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223802|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223802",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_FUEL_CORR_CYL3", "name": "Fuel correction cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223803|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223803",
+      "interval": 2,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_FUEL_CORR_CYL4", "name": "Fuel correction cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -5, "max": 5, "unit": "mg/stroke"}
+      ]
+    },
+    {
+      "id": "DA10.10.223807|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223807",
+      "interval": 60,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_DIST_SINCE_REGEN", "name": "Distance since last DPF regen", "group": "Emissions", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.223808|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223808",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_AVG_REGEN_TEMP", "name": "Particulate filter regen temperature, average of the last 5", "group": "Emissions", "bit": 0, "bits": 16, "divide": 50, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223809|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223809",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_AVG_DIST_REGENS", "name": "Distance between particulate filter regenerations, average of the last 5", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 10000, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380A|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380A",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_AVG_REGEN_DUR", "name": "Particulate filter regen duration, average of the last 5", "group": "Emissions", "bit": 0, "bits": 16, "divide": 60, "min": 0, "max": 30, "unit": "min"}
+      ]
+    },
+    {
+      "id": "DA10.10.22380B|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22380B",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_REGEN_PROGRESS", "name": "Particulate filter regen progress", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223813|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223813",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_OIL_DEGRAD", "name": "Engine oil degradation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA10.10.223912|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223912",
+      "interval": 3600,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_REGEN_SUCCESSFULY", "name": "Regenerations successfuly completed total counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA10.10.223914|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223914",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_CATALYST_INLET_T", "name": "Catalyst inlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223915|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223915",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_DPF_OUTLET_T", "name": "Particulate filter outlet temperature", "group": "Emissions", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA10.10.223917|din=03",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "223917",
+      "interval": 5,
+      "session": {"enter": "03"},
+      "answeredIn": [2019, 2021],
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "500X_EGR_COOLER_T", "name": "Exhaust gas recirculation cooler downstream temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 100, "add": -40, "min": -40, "max": 900, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D07",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D07",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_AT_OUTPUT_RPM", "name": "Transmission output speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D08",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D08",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_AT_INPUT_RPM", "name": "Transmission input speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.221D09",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D09",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_ATF_T", "name": "Automatic transmission temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.221D12",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "request": "221D12",
+      "interval": 1,
+      "signals": [
+        {"id": "500X_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA18.18.2204FE",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "2204FE",
+      "interval": 5,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_ATF_T_4THGEN", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA18.18.22051A",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22051A",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15},
+        {"id": "500X_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15}
+      ]
+    },
+    {
+      "id": "DA18.18.221018",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "221018",
+      "interval": 2,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_TCM_TORQUE", "name": "Torque reported by the transmission", "group": "Transmission", "bit": 0, "bits": 16, "add": -500, "min": -500, "max": 1000, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222024|fc=1",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222024",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2019, 2021],
+      "signals": [
+        {"id": "500X_TIRE_SIZE", "name": "Tire size", "group": "Tires", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222102",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222102",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_GEARBOX_RPM", "name": "Gearbox output speed", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1B",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1B",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_WSS_RR", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1C",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1C",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_WSS_RL", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1D",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1D",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_WSS_FR", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.222B1E",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "222B1E",
+      "interval": 1,
+      "notAnsweredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_WSS_FL", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 300, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA18.18.22F158",
+      "bus": "can29",
+      "tx": "18DA18F1",
+      "rx": "18DAF118",
+      "request": "22F158",
+      "interval": 86400,
+      "answeredIn": [2022],
+      "notAnsweredIn": [2019, 2021],
+      "signals": [
+        {"id": "500X_MODEL_YEAR", "name": "Model year", "group": "Details", "bit": 0, "bits": 8, "add": 2000, "min": 0, "max": 2225}
+      ]
+    },
+    {
+      "id": "DA40.40.221004",
+      "bus": "can29",
+      "tx": "18DA40F1",
+      "rx": "18DAF140",
+      "request": "221004",
+      "interval": 30,
+      "answeredIn": [2019, 2021, 2022],
+      "signals": [
+        {"id": "500X_BATT_V_BCM", "name": "Battery voltage, BCM", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "V"}
+      ]
+    }
+  ]
+}

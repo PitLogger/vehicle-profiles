@@ -1,0 +1,2168 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ford/focus-rs",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ford",
+    "model": "Focus RS",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2002, "to": 2003},
+      {"name": "Second Generation", "from": 2009, "to": 2010},
+      {"name": "Third Generation", "from": 2016, "to": 2018}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ford-Focus-RS",
+    "file": "signalsets/v3/default.json",
+    "revision": "7f8d10d2a05190dce7d94d2f30507a8eb3cee40c",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "720.728.226180",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226180",
+      "interval": 30,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2012, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_ODO_720", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.226185",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226185",
+      "interval": 30,
+      "answeredIn": [2006, 2007, 2008, 2009, 2011],
+      "notAnsweredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_FLI", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.22407E",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22407E",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_EXTERIOR_LIGHT_STATE", "name": "Exterior lighting state", "group": "Lights", "bit": 0, "bits": 1, "values": {"0": "0", "216": "1"}, "valueDescriptions": {"0": "0", "216": "1"}}
+      ]
+    },
+    {
+      "id": "726.227151",
+      "bus": "can11",
+      "tx": "726",
+      "request": "227151",
+      "interval": 4,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_HIGHBEAM_STATUS", "name": "High beam status", "group": "Lights", "bit": 0, "bits": 16, "min": 0, "max": 2, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.22C150",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22C150",
+      "interval": 3,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_TRUNK_OPEN", "name": "Trunk ajar?", "group": "Doors", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "FRS_RRD_OPEN", "name": "Rear right door ajar?", "group": "Doors", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "FRS_RLD_OPEN", "name": "Rear left door ajar?", "group": "Doors", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "FRS_DRIVER_DOOR_OPEN", "name": "Driver door ajar", "group": "Doors", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "FRS_PASSENGER_DOOR_OPEN", "name": "Passenger door ajar?", "group": "Doors", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.22C154",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22C154",
+      "interval": 3,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_HOOD_OPEN", "name": "Hood ajar?", "group": "Doors", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.22C259",
+      "bus": "can11",
+      "tx": "726",
+      "request": "22C259",
+      "interval": 2,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_CENTRAL_LOCK_STATUS", "name": "Lock status", "group": "Doors", "bit": 0, "bits": 8, "values": {"0": "UNLOCKED", "2": "LOCKED"}, "valueDescriptions": {"0": "Unlocked", "2": "Locked"}}
+      ]
+    },
+    {
+      "id": "726.72E.222813",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222813",
+      "interval": 15,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2021],
+      "signals": [
+        {"id": "FRS_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222814",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222814",
+      "interval": 15,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2021],
+      "signals": [
+        {"id": "FRS_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222815",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222815",
+      "interval": 15,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2021],
+      "signals": [
+        {"id": "FRS_TP_RRO", "name": "Rear right outer tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222816",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222816",
+      "interval": 15,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2021],
+      "signals": [
+        {"id": "FRS_TP_RLO", "name": "Rear left outer tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "726.72E.222817",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222817",
+      "interval": 5,
+      "answeredIn": [2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2021],
+      "signals": [
+        {"id": "FRS_TP_RRI", "name": "Rear right inner tire pressure", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222818",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222818",
+      "interval": 5,
+      "answeredIn": [2014, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2021],
+      "signals": [
+        {"id": "FRS_TP_RLI", "name": "Rear left inner tire pressure", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.22401E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22401E",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_NORM_CUM_CHG_IGN_ON", "name": "Normalized cumulative charge when ignition is on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224021",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224021",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_NORM_CUM_DCHG_BAT_ON", "name": "Normalized cumulative discharge from battery with engine on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224025",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224025",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_BAT_QUIESCENT", "name": "Battery quiescent current, low range", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -1000, "min": -1000, "max": 31767.5, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "726.72E.224026",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224026",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_NORM_CUM_DCHG_BAT_OFF", "name": "Normalized cumulative discharge from battery with engine off", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224027",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224027",
+      "interval": 3600,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_12V_AGE", "name": "12V battery age", "group": "Battery", "bit": 0, "bits": 16, "multiply": 24, "min": 0, "max": 1572840, "unit": "h"}
+      ]
+    },
+    {
+      "id": "726.72E.224028",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224028",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_12V_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.72E.224029",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224029",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22402A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402A",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_12V_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 0, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22402B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402B",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2011, 2012, 2013, 2016, 2017, 2018, 2020],
+      "signals": [
+        {"id": "FRS_VEH_BAT_CURRENT", "name": "Vehicle battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -127, "min": -127, "max": 128, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.224090",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224090",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_BAT_CURRENT_726", "name": "Battery current", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -511.7, "min": -511.7, "max": 3584.2375, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.2241A9",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241A9",
+      "interval": 5,
+      "answeredIn": [2012, 2016, 2017, 2018, 2021],
+      "notAnsweredIn": [2011, 2020],
+      "signals": [
+        {"id": "FRS_BAT_CURRENT_TOO_HIGH", "name": "Battery current too high for start/stop", "group": "Battery", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_V_TOO_LOW_START", "name": "Battery voltage too low for start/stop", "group": "Battery", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_ST_CHG_TOO_LOW", "name": "Battery state of charge too low for start/stop", "group": "Battery", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_CAP_TOO_LOW", "name": "Battery capacity too low for start/stop", "group": "Battery", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_V_TOO_LOW_COLD", "name": "Battery voltage too low for cold cranking capability", "group": "Battery", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_V_TOO_LOW_AUTO", "name": "Battery voltage too low for auto restart", "group": "Battery", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_T_TOO_LOW_AUTO", "name": "Battery temperature too low for auto stop", "group": "Battery", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FRS_BAT_REFRESH_CYCLE", "name": "Battery refresh cycle in progress for start/stop", "group": "Battery", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.2241E8",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241E8",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2020],
+      "signals": [
+        {"id": "FRS_VEH_BAT_B_V", "name": "Vehicle battery b voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 6, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.224209",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224209",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2020],
+      "signals": [
+        {"id": "FRS_BAT_CURRENT", "name": "Battery current, predicted", "group": "Battery", "bit": 0, "bits": 24, "signed": true, "divide": 4, "min": -2097152, "max": 2097151.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.22420A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22420A",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2020],
+      "signals": [
+        {"id": "FRS_BAT_ST_DETECTION", "name": "Battery state detection status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22423C",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22423C",
+      "interval": 1,
+      "answeredIn": [2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2020],
+      "signals": [
+        {"id": "FRS_VEH_BAT_B_CURRENT", "name": "Vehicle battery b current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.96, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD01",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_ODO_726", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD04",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD04",
+      "interval": 5,
+      "answeredIn": [2012, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_CAR_T", "name": "In car temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 8, "min": 0, "max": 31.875, "unit": "°C", "invalidAtOrAbove": 31.875}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 3,
+      "answeredIn": [2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2020, 2021],
+      "signals": [
+        {"id": "FRS_PARKING_BRAKE", "name": "Focus parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 0.25,
+      "answeredIn": [2013, 2017, 2018],
+      "signals": [
+        {"id": "FRS_LAT_ANG", "name": "Lateral angle", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "answeredIn": [2013, 2017, 2018],
+      "signals": [
+        {"id": "FRS_BRK_FL_P", "name": "Brake hydraulic pressure", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "760.768.222B11",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B11",
+      "interval": 0.25,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2011, 2020, 2021],
+      "signals": [
+        {"id": "FRS_LAT_G", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -1, "max": 1}
+      ]
+    },
+    {
+      "id": "760.768.223201",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223201",
+      "interval": 0.25,
+      "answeredIn": [2006, 2009, 2011],
+      "notAnsweredIn": [2007, 2008, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 6.25, "min": -790, "max": 790, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.223987",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223987",
+      "interval": 0.25,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2012, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_ABS_WHL_SPD_1", "name": "Anti-lock brake wheel speed 1", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "FRS_ABS_WHL_SPD_2", "name": "Anti-lock brake wheel speed 2", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "FRS_ABS_WHL_SPD_3", "name": "Anti-lock brake wheel speed 3", "group": "Control", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "FRS_ABS_WHL_SPD_4", "name": "Anti-lock brake wheel speed 4", "group": "Control", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.22DD01",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22DD01",
+      "interval": 5,
+      "answeredIn": [2013, 2017, 2018],
+      "signals": [
+        {"id": "FRS_ABS_ODO", "name": "Odometer, brake module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7DF.221E1C",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "221E1C",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014, 2016],
+      "signals": [
+        {"id": "FRS_TOT", "name": "Transmission oil temperature", "group": "Transmission", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 255, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7DF.22F45C",
+      "bus": "can11",
+      "tx": "7DF",
+      "request": "22F45C",
+      "interval": 30,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2014, 2016, 2017],
+      "signals": [
+        {"id": "FRS_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.220393",
+      "bus": "can11",
+      "tx": "7E0",
+      "request": "220393",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_AC_P", "name": "A/C compressor pressure", "group": "Climate", "bit": 0, "bits": 16, "multiply": 245251, "divide": 845473, "min": 0, "max": 1000, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220301",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220301",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_MAP_V", "name": "Manifold pressure sensor voltage", "description": "Typically varies from 1 volt at idle to 5 volts during wide open throttle.", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220304",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220304",
+      "interval": 1,
+      "answeredIn": [2011, 2012, 2016, 2017, 2020, 2021],
+      "notAnsweredIn": [2018],
+      "signals": [
+        {"id": "FRS_CMD_GEN_V", "name": "Commanded generator voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000488, "min": 0, "max": 16, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220307",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220307",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_LPFP_DUTY", "name": "Fuel pump duty cycle, low pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220316",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220316",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_INT_DUTY", "name": "Camshaft solenoid duty cycle, intake", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220317",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220317",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_EXH_DUTY", "name": "Camshaft solenoid duty cycle, exhaust", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220318",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220318",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_INT_ACT", "name": "Camshaft position, intake actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 0, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220319",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220319",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_EXH_ACT", "name": "Camshaft position, exhaust actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031A",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_INT_ERR", "name": "Camshaft position error, intake", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -50, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22031B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22031B",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_EXH_ERR", "name": "Camshaft position error, exhaust", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 50, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220324",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220324",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_HPFP_V", "name": "Fuel rail sensor voltage, high pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_ACC_POS", "name": "Accelerator position", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220334",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220334",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2012, 2013, 2014, 2015, 2016, 2017],
+      "signals": [
+        {"id": "FRS_PCM_CYL_HEAD_T_CORR", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220338",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220338",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_ETC_TRIM_LRN", "name": "Throttle control trim angle, learned", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033C",
+      "interval": 1,
+      "answeredIn": [2013, 2014, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2015],
+      "signals": [
+        {"id": "FRS_TIP_V", "name": "Throttle inlet pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22033E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22033E",
+      "interval": 0.25,
+      "answeredIn": [2013, 2014, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2015],
+      "signals": [
+        {"id": "FRS_TIP_ABS", "name": "Throttle inlet pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 37, "divide": 33441, "min": 0, "max": 60, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220345",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220345",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_PCM_MISF_EVENTS_LATEST_CYC", "name": "Misfire events, latest cycle", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035A",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_BARO_V", "name": "Barometric pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035F",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_RO2_V", "name": "O2 sensor voltage, rear", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220370",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220370",
+      "interval": 1,
+      "answeredIn": [2020, 2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018],
+      "signals": [
+        {"id": "FRS_MAP_HIRES", "name": "Manifold absolute pressure, high resolution", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220378",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220378",
+      "interval": 1,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2012, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_GEN_CTRL", "name": "Generator control", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220382",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220382",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_PCM_MISF_ACCEL_CYL1_NORM", "name": "Misfire acceleration, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220388",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220388",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_PCM_MISF_ACCEL_CYL2_NORM", "name": "Misfire acceleration, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038A",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_PCM_MISF_ACCEL_CYL3_NORM", "name": "Misfire acceleration, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038B",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2014, 2021],
+      "signals": [
+        {"id": "FRS_PCM_MISF_ACCEL_CYL4_NORM", "name": "Misfire acceleration, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 64, "min": -2, "max": 1.98}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038E",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_EVAP_V", "name": "Evaporative pressure sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22038F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22038F",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_ECT", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203AF",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_TRQ_CTRL_REQ", "name": "Torque request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203B9",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203B9",
+      "interval": 0.25,
+      "answeredIn": [2012, 2016, 2020],
+      "notAnsweredIn": [2011, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_FAN_SPD_DES", "name": "Fan speed, desired", "group": "Movement", "bit": 0, "bits": 16, "multiply": 40, "divide": 13107, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_AAT_V", "name": "Ambient temperature sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BB",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BB",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_EXH_DES", "name": "Camshaft position, exhaust desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BC",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_VCT_INT_DES", "name": "Camshaft position, intake desired", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2047, "max": 2047, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BD",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_CL_LC", "name": "Lambda correction", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 8192, "min": -4, "max": 3.9}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203CA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203CA",
+      "interval": 5,
+      "answeredIn": [2013, 2014, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2015],
+      "signals": [
+        {"id": "FRS_MCT", "name": "Manifold temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 148.889, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203DC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203DC",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_HPFP_DES", "name": "Fuel pressure, high desired", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1.4503773969, "min": 0, "max": 3500, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203E8",
+      "interval": 5,
+      "answeredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009],
+      "signals": [
+        {"id": "FRS_OAR", "name": "Octane adjustment", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16384, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203EC",
+      "interval": 1,
+      "answeredIn": [2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2014],
+      "signals": [
+        {"id": "FRS_IGN_CORR_CYL1", "name": "Ignition correction, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 512, "min": -64, "max": 63.9, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F3",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_SUMP_OIL_T_MEAS", "name": "Sump oil temperature measured", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F4",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F4",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_EXH_GAS_T_1", "name": "Exhaust gas temperature 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203F5",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203F5",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_EXH_GAS_T_2", "name": "Exhaust gas temperature 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220403",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220403",
+      "interval": 1,
+      "answeredIn": [2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2014],
+      "signals": [
+        {"id": "FRS_KS1_RAW", "name": "Knock sensor, 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220404",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014, 2021],
+      "signals": [
+        {"id": "FRS_KS2_RAW", "name": "Knock sensor, 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220415",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220415",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016],
+      "signals": [
+        {"id": "FRS_PCM_ENG_EOP_RAW", "name": "Oil pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22041F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22041F",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_LPFP_DES", "name": "Fuel pressure, low desired", "group": "Engine", "bit": 0, "bits": 8, "multiply": 435, "divide": 1000, "min": 0, "max": 110, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220427",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220427",
+      "interval": 1,
+      "answeredIn": [2013, 2016, 2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015, 2021],
+      "signals": [
+        {"id": "FRS_BPV_OPEN", "name": "Bypass valve", "group": "Engine", "bit": 0, "bits": 8, "divide": 255, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220460",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220460",
+      "interval": 1,
+      "answeredIn": [2013, 2016, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015, 2020, 2021],
+      "signals": [
+        {"id": "FRS_CAT_SENS_V", "name": "Charge air temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220461",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220461",
+      "interval": 5,
+      "answeredIn": [2013, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015],
+      "signals": [
+        {"id": "FRS_CAT", "name": "Charge air temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "add": -40, "min": -40, "max": 189, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220462",
+      "interval": 1,
+      "answeredIn": [2013, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015],
+      "signals": [
+        {"id": "FRS_WGDC", "name": "Wastegate duty cycle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220466",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220466",
+      "interval": 0.25,
+      "answeredIn": [2013, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015],
+      "signals": [
+        {"id": "FRS_TIP_DES_ABS", "name": "Throttle inlet pressure, desired", "group": "Engine", "bit": 0, "bits": 16, "multiply": 37, "divide": 33441, "min": 0, "max": 72.5, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22046F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22046F",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_INJ_MODE", "name": "Injection mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 7}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2204F7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2204F7",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2020, 2021],
+      "notAnsweredIn": [2011, 2018],
+      "signals": [
+        {"id": "FRS_GEN_CURRENT", "name": "Generator current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 781, "divide": 50000, "min": -511.8361, "max": 511.8205, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22051C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22051C",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_CHG_AIR_T", "name": "Charge air temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220522",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220522",
+      "interval": 5,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22053F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22053F",
+      "interval": 30,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_TIME_SINCE_OIL", "name": "Time since last oil change", "group": "Engine", "bit": 0, "bits": 16, "multiply": 200, "divide": 13107, "min": 0, "max": 1000}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220542",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220542",
+      "interval": 30,
+      "answeredIn": [2020],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018, 2021],
+      "signals": [
+        {"id": "FRS_DIST_SINCE_OIL", "name": "Distance since last oil change", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220548",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220548",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_LPFP_ACT", "name": "Fuel pressure, low actual", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 10000, "divide": 137892, "min": 0, "max": 200, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054B",
+      "interval": 30,
+      "answeredIn": [2013, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2014, 2015],
+      "signals": [
+        {"id": "FRS_PCM_ENG_OIL_LIFE_REM", "name": "Oil life remaining", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22054D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22054D",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_LPFP_SENS_V", "name": "Fuel pressure sensor voltage, low", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22057D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22057D",
+      "interval": 5,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_AAT_ALT", "name": "Ambient temperature, alternate", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "FRS_GRILL_SHUTTER_POS", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AC",
+      "interval": 1,
+      "answeredIn": [2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015],
+      "signals": [
+        {"id": "FRS_PCM_CYL_1_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AD",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AD",
+      "interval": 1,
+      "answeredIn": [2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015],
+      "signals": [
+        {"id": "FRS_PCM_CYL_2_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AE",
+      "interval": 1,
+      "answeredIn": [2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015],
+      "signals": [
+        {"id": "FRS_PCM_CYL_3_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205AF",
+      "interval": 1,
+      "answeredIn": [2017, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2021],
+      "signals": [
+        {"id": "FRS_PCM_CYL_4_KNK_COMB_PERF_CNT", "name": "Knock counter, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2205FC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2205FC",
+      "interval": 5,
+      "answeredIn": [2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014],
+      "signals": [
+        {"id": "FRS_PCM_CYL_HEAD_T_SENS_2_RAW", "name": "Cylinder head temperature, sensor 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220604",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220604",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2021],
+      "signals": [
+        {"id": "FRS_PCM_A_C_REFRIG_P", "name": "A/C refrigerant pressure", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220700",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220700",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_IAT_FAULT", "name": "Intake temperature fault", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220707",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220707",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011],
+      "signals": [
+        {"id": "FRS_GRILL_SHUT_DC", "name": "Grill shutter duty cycle", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22070D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22070D",
+      "interval": 5,
+      "signals": [
+        {"id": "FRS_TRANSFER_CASE_FLUID_T", "name": "Transfer case fluid temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22091A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22091A",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_ETC_ANG_DES", "name": "Throttle angle, desired", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22093C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22093C",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_ETC_ANG_ACT", "name": "Throttle angle, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.99, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22099B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22099B",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_AC_STATE", "name": "A/C compressor, state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221126",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221126",
+      "interval": 30,
+      "answeredIn": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2011,
+        2012,
+        2013,
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2021
+      ],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "FRS_ERT", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221166",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221166",
+      "interval": 1,
+      "answeredIn": [2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2014],
+      "signals": [
+        {"id": "FRS_EVAP_PURGE_CMD", "name": "Evaporative purge", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 32768, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116B",
+      "interval": 1,
+      "answeredIn": [
+        2006,
+        2007,
+        2008,
+        2009,
+        2011,
+        2012,
+        2013,
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2021
+      ],
+      "notAnsweredIn": [2014],
+      "signals": [
+        {"id": "FRS_IGN_TIM_CYL1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -80, "max": 80, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_IAT_SENS_V", "name": "Intake temperature sensor voltage", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.25,
+      "answeredIn": [2011, 2012, 2013, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2216E8",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2216E8",
+      "interval": 1,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2012, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_CMD_GEN_DUTY", "name": "Commanded generator duty", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.003052, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E12",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E12",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014, 2016],
+      "signals": [
+        {"id": "FRS_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E16",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E16",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014, 2016],
+      "signals": [
+        {"id": "FRS_AXLE_GEAR_RATIO_MEAS", "name": "Axle gear ratio, measured", "group": "Transmission", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 10}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E19",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E19",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2017, 2018],
+      "notAnsweredIn": [2006, 2007, 2014, 2016, 2020, 2021],
+      "signals": [
+        {"id": "FRS_PCM_CMD_TRANS_GEAR_RATIO", "name": "Gear ratio, commanded", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1A",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2012, 2013, 2014, 2015, 2016, 2017],
+      "signals": [
+        {"id": "FRS_PCM_CMD_TRANS_MAIN_LINE_P", "name": "Transmission pressure, commanded", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E1F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E1F",
+      "interval": 1,
+      "answeredIn": [2014, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2015, 2016],
+      "signals": [
+        {"id": "FRS_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221E23",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221E23",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2012, 2013, 2014, 2015, 2016, 2017],
+      "signals": [
+        {"id": "FRS_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224194",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224194",
+      "interval": 30,
+      "answeredIn": [2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+      "signals": [
+        {"id": "FRS_DTE", "name": "Distance to empty, calculated", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.224195",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "224195",
+      "interval": 30,
+      "answeredIn": [2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
+      "signals": [
+        {"id": "FRS_DTE_DISP", "name": "Distance to empty, displayed", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.229800",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "229800",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_AC_P_SENS_V", "name": "A/C compressor pressure sensor voltage", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 1024, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22A211",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22A211",
+      "interval": 1,
+      "signals": [
+        {"id": "FRS_4_WHL_DRIVE_ENGAGED", "name": "4 wheel drive engaged", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22D137",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22D137",
+      "interval": 3600,
+      "signals": [
+        {"id": "FRS_DTC_CNT", "name": "DTC counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01|fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2012, 2013, 2014, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2011],
+      "signals": [
+        {"id": "FRS_ODO_7E0", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F404",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F404",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_ENG_LOAD_PCT", "name": "Engine load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F406",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F406",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_STFT", "name": "Fuel trim, short term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F407",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F407",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_LTFT", "name": "Fuel trim, long term", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 128, "add": -100, "min": -100, "max": 99.2, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40B",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2013, 2014, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2012, 2015],
+      "signals": [
+        {"id": "FRS_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40C",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_RPM", "name": "Engine speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40D",
+      "interval": 0.25,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_VSS", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F40F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F40F",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_IAT_ALT2", "name": "Intake temperature, alternate", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2013, 2017, 2018],
+      "signals": [
+        {"id": "FRS_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F421",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F421",
+      "interval": 30,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_MIL_DIST", "name": "Distance with MIL", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42C",
+      "interval": 1,
+      "answeredIn": [2011],
+      "notAnsweredIn": [2012, 2016, 2017, 2018, 2020, 2021],
+      "signals": [
+        {"id": "FRS_EGR", "name": "Exhaust gas recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F42F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F42F",
+      "interval": 30,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_FLI_7E0_7E0", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F430",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F430",
+      "interval": 3600,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_WARMUP_CLR", "name": "Warm-ups since DTC clear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F431",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F431",
+      "interval": 30,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_DIST_DTC_CLR", "name": "Distance since DTC clear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F434",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F434",
+      "interval": 1,
+      "answeredIn": [2012, 2016, 2017, 2021],
+      "notAnsweredIn": [2011, 2018, 2020],
+      "signals": [
+        {"id": "FRS_AIR_FUEL_RAT", "name": "Air/fuel ratio", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.000446787, "min": 0, "max": 29.2801}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F43C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F43C",
+      "interval": 5,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007],
+      "signals": [
+        {"id": "FRS_CAT_TEMP", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F443",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F443",
+      "interval": 1,
+      "answeredIn": [2008, 2009, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2014],
+      "signals": [
+        {"id": "FRS_ENG_LOAD_ACT", "name": "Engine load, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 255, "min": 0, "max": 25700, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F45E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F45E",
+      "interval": 1,
+      "answeredIn": [2020, 2021],
+      "notAnsweredIn": [2011, 2012, 2016, 2017, 2018],
+      "signals": [
+        {"id": "FRS_ENG_FUEL_RATE", "name": "Engine fuel rate", "group": "Fuel", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F462",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F462",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2020],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2021],
+      "signals": [
+        {"id": "FRS_PCM_ACT_ENG_PCT_TRQ", "name": "Actual engine percent torque", "group": "Engine", "bit": 0, "bits": 8, "add": -125, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F463",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F463",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016],
+      "signals": [
+        {"id": "FRS_PCM_ENG_REFERENCE_TRQ", "name": "Engine reference torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F4A6",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F4A6",
+      "interval": 30,
+      "answeredIn": [2020, 2021],
+      "notAnsweredIn": [2006, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018],
+      "signals": [
+        {"id": "FRS_PCM_VEH_ODO", "name": "Vehicle odometer", "group": "Trips", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22FD18",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22FD18",
+      "interval": 1,
+      "answeredIn": [2011, 2012, 2016, 2017, 2021],
+      "notAnsweredIn": [2018, 2020],
+      "signals": [
+        {"id": "FRS_AC_P_7E0", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 12.156863, "min": 0, "max": 3100, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.224972",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "224972",
+      "interval": 5,
+      "signals": [
+        {"id": "FRS_GEN_COIL_T", "name": "Generator coil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 180, "add": 320, "min": 0, "max": 11796620, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.22DD01",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2017, 2018],
+      "notAnsweredIn": [2011, 2012, 2016, 2020, 2021],
+      "signals": [
+        {"id": "FRS_TRANS_ODO", "name": "Transmission odometer", "group": "Transmission", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224800",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224800",
+      "interval": 5,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2014, 2016, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_T", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224801",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224801",
+      "interval": 30,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2014, 2016, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_SOC", "name": "HV battery charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224808",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224808",
+      "interval": 5,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_T_MAX", "name": "HV battery temperature, maximum", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "FRS_HVBAT_T_MIN", "name": "HV battery temperature, minimum", "group": "Battery", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "FRS_HVBAT_T_AVG", "name": "HV battery temperature, average", "group": "Battery", "bit": 24, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480B",
+      "interval": 1,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_A", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -300, "max": 300, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480D",
+      "interval": 1,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2014, 2016, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224840",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224840",
+      "interval": 5,
+      "answeredIn": [2018],
+      "notAnsweredIn": [2013, 2017],
+      "signals": [
+        {"id": "FRS_HVBAT_MIN_MOD_V", "name": "HV battery minimum module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    }
+  ]
+}

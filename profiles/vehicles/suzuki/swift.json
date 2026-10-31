@@ -1,0 +1,135 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/suzuki/swift",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Suzuki",
+    "model": "Swift",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (SA310/AA/Cultus)", "from": 1983, "to": 1988},
+      {
+        "name": "Second Generation (Cultus/SF310/EA/MA)",
+        "from": 1988,
+        "to": 1994
+      },
+      {"name": "Third Generation (Cultus/HT51/81)", "from": 1994, "to": 2000},
+      {"name": "Fourth Generation (HT)", "from": 2000, "to": 2004},
+      {
+        "name": "Fifth Generation (ZC11/21/31/71/RS series)",
+        "from": 2004,
+        "to": 2010
+      },
+      {
+        "name": "Sixth Generation (ZC72/82/32/AZG series)",
+        "from": 2010,
+        "to": 2017
+      },
+      {
+        "name": "Seventh Generation (ZC13/33/43/53/83/93/A2L series)",
+        "from": 2017,
+        "to": 2024
+      },
+      {"name": "Eighth Generation (AOL series)", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Suzuki-Swift",
+    "file": "signalsets/v3/default.json",
+    "revision": "5623f430dd81584019071df5d049aa7645b56edb",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E0.7E8.2121",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2121",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2007, 2009, 2024],
+      "signals": [
+        {"id": "SWIFT_CC_VSS", "name": "Cruise control speed", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SWIFT_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SWIFT_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
+        {"id": "SWIFT_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SWIFT_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SWIFT_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_STOP_LIGHT_SWITCH_1_ON", "name": "Cruise control stop light switch 1", "group": "Lights", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_STOP_LIGHT_SWITCH_2_ON", "name": "Cruise control stop light switch 2", "group": "Lights", "bit": 33, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_RES_ACC_SWITCH_ON", "name": "Resume/accelerate switch", "group": "Cruise control", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_LIVE_SET_COAST_SWITCH_ON", "name": "Coast switch", "group": "Cruise control", "bit": 36, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SWIFT_CC_CANCEL_SWITCH_ON", "name": "Cancel switch", "group": "Cruise control", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2125",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2125",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2009, 2024],
+      "signals": [
+        {"id": "SWIFT_POWER_STEERING_SIGNAL", "name": "Power steering", "group": "Control", "bit": 4, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_STOP_LIGHT_SWITCH", "name": "Stop light", "group": "Lights", "bit": 5, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_CRUISE_CONTROL_LIVE_BRAKE_CANCEL_SWITCH", "name": "Cruise control live brake cancel", "group": "Control", "bit": 6, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_STARTER_SIGNAL", "name": "Starter signal", "group": "Control", "bit": 11, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_STARTER_CONTROL", "name": "Starter control", "group": "Control", "bit": 12, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_ELECTRICAL_LOAD_SIGNAL_1", "name": "Electrical load signal 1", "group": "Control", "bit": 16, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_ELECTRICAL_LOAD_SIGNAL_2", "name": "Electrical load signal 2", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SHIFT_SW_STATUS_P_RANGE", "name": "Shift SW status, parking", "group": "Control", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SHIFT_SW_STATUS_R_RANGE", "name": "Shift SW status, reverse", "group": "Control", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SHIFT_SW_STATUS_N_RANGE", "name": "Shift SW status, neutral", "group": "Control", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SHIFT_SW_STATUS_D_RANGE", "name": "Shift SW status, drive", "group": "Control", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SPORTS_MODE_SELECTION_SW", "name": "Sports mode selection", "group": "Control", "bit": 32, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SPORTS_SHIFT_UP_SW", "name": "Sports shift up", "group": "Control", "bit": 33, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_SPORTS_SHIFT_DOWN_SW", "name": "Sports shift down", "group": "Control", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_PATTERN_SWITCH_PWR_M", "name": "Pattern switch", "group": "Control", "bit": 42, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_NEUTRAL_POSITION_SW_SIGNAL", "name": "Neutral position", "group": "Control", "bit": 53, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_TC_TERMINAL", "name": "TC", "group": "Control", "bit": 61, "bits": 1, "min": 0, "max": 1},
+        {"id": "SWIFT_A_C_COMPRESSOR", "name": "A/C compressor", "group": "Control", "bit": 64, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2128",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2128",
+      "interval": 5,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2009, 2024],
+      "signals": [
+        {"id": "SWIFT_2128_RAW", "name": "Engine module 2128 first value, raw", "group": "ECU", "bit": 0, "bits": 24, "min": 0, "max": 16777214, "invalidAtOrAbove": 16777214}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2145",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2145",
+      "interval": 1,
+      "answeredIn": [2019, 2020],
+      "notAnsweredIn": [2009, 2024],
+      "signals": [
+        {"id": "SWIFT_MISFIRE_RPM_V2", "name": "Misfire RPM", "group": "Engine", "bit": 8, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"},
+        {"id": "SWIFT_MISFIRE_LOAD_V2", "name": "Misfire load", "group": "Engine.Misfires", "bit": 16, "bits": 8, "multiply": 4, "divide": 256, "min": 0, "max": 3.98},
+        {"id": "SWIFT_CYL1_MISFIRE_CNT", "name": "Cylinder #1 misfire count", "group": "Engine.Misfires", "bit": 24, "bits": 8, "min": 0, "max": 254, "invalidAtOrAbove": 254},
+        {"id": "SWIFT_CYL2_MISFIRE_CNT", "name": "Cylinder #2 misfire count", "group": "Engine.Misfires", "bit": 32, "bits": 8, "min": 0, "max": 254, "invalidAtOrAbove": 254},
+        {"id": "SWIFT_CYL3_MISFIRE_CNT", "name": "Cylinder #3 misfire count", "group": "Engine.Misfires", "bit": 40, "bits": 8, "min": 0, "max": 254, "invalidAtOrAbove": 254},
+        {"id": "SWIFT_CYL4_MISFIRE_CNT", "name": "Cylinder #4 misfire count", "group": "Engine.Misfires", "bit": 48, "bits": 8, "min": 0, "max": 254, "invalidAtOrAbove": 254},
+        {"id": "SWIFT_ALL_CYLINDERS_MISFIRE_CNT", "name": "All cylinders misfire count", "group": "Engine.Misfires", "bit": 56, "bits": 8, "min": 0, "max": 254, "invalidAtOrAbove": 254},
+        {"id": "SWIFT_IGNITION_TRIG_CNT", "name": "Ignition trigger count", "group": "Control", "bit": 64, "bits": 16, "min": 0, "max": 65534, "invalidAtOrAbove": 65534},
+        {"id": "SWIFT_MISFIRE_MARGIN_V2", "name": "Misfire margin", "group": "Engine.Misfires", "bit": 80, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "%"}
+      ]
+    }
+  ]
+}

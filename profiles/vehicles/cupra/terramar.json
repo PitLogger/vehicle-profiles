@@ -1,0 +1,762 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/cupra/terramar",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Cupra",
+    "model": "Terramar",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Cupra-Terramar",
+    "file": "signalsets/v3/default.json",
+    "revision": "30465e079674e664f121efd42b5fb911aae2fcce",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "710.77A.2215D1|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "2215D1",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_EM_PWR_LIM", "name": "Electric motor power limitation", "group": "Engine", "bit": 8, "bits": 16, "multiply": 50, "min": 0, "max": 3276750, "unit": "W"},
+        {"id": "TERRAMAR_EM_NV_PWR_LIM", "name": "Electric motor non-vehicle power limitation", "group": "Engine", "bit": 24, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "W"},
+        {"id": "TERRAMAR_NV_ENERGY_REQUIREMENT", "name": "Non-vehicle energy requirement", "group": "Battery", "bit": 32, "bits": 8, "multiply": 50, "divide": 1000, "min": 0, "max": 12.75, "unit": "kWh"},
+        {"id": "TERRAMAR_EM_HVBAT_E_INFO", "name": "Electric motor battery energy", "group": "Battery", "bit": 40, "bits": 16, "multiply": 50, "divide": 1000, "min": 0, "max": 3276.75, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222A08|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A08",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_BAT_CURRENT_FILTERED", "name": "Battery current filtered", "group": "Battery", "bit": 0, "bits": 24, "divide": 1000, "add": -3000, "min": -3000, "max": 13777, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222A0D|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A0D",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_BAT_COND_DISPLAY", "name": "Battery condition for display", "group": "Battery", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "%"}
+      ]
+    },
+    {
+      "id": "710.77A.222A1D|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A1D",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_BAT_ACID", "name": "Battery acid stratification", "group": "Battery", "bit": 0, "bits": 8, "multiply": 10, "add": 9, "min": 0, "max": 2559, "unit": "%"}
+      ]
+    },
+    {
+      "id": "710.77A.222A25|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A25",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_BAT_INTERNAL_RES_RAW", "name": "Battery internal resistance, raw", "group": "Battery", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51}
+      ]
+    },
+    {
+      "id": "710.77A.222A53|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222A53",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_DCDC_V_LOW", "name": "DC-DC converter, low voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
+        {"id": "TERRAMAR_DCDC_I", "name": "DC-DC converter, current", "group": "Battery", "bit": 8, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"},
+        {"id": "TERRAMAR_DCDC_I_RSV", "name": "DC-DC converter, reserved current", "group": "Battery", "bit": 24, "bits": 16, "add": -511, "min": -511, "max": 65024, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB2|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB2",
+      "interval": 86400,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_HVBAT_CAP", "name": "HV battery capacity", "description": "Total possible energy in the high voltage battery", "group": "Battery", "bit": 0, "bits": 16, "multiply": 50, "min": 0, "max": 3276750, "unit": "W"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB4|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB4",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_RANGE_EST_INT", "name": "Estimated electric power reserve", "group": "Battery.Internal", "bit": 16, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
+        {"id": "TERRAMAR_HVBAT_CSMP_AVG_INT", "name": "Average battery consumption", "group": "Battery.Internal", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB5|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB5",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB6|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB6",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_RANGE_V2", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB7",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_AVG_CSMP_CAT0", "name": "Average consumption, category 0", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT1", "name": "Average consumption, category 1", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT2", "name": "Average consumption, category 2", "group": "Trips", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT3", "name": "Average consumption, category 3", "group": "Trips", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT4", "name": "Average consumption, category 4", "group": "Trips", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT5", "name": "Average consumption, category 5", "group": "Trips", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
+        {"id": "TERRAMAR_AVG_CSMP_CAT6", "name": "Average consumption, category 6", "group": "Trips", "bit": 96, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AB8|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AB8",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_HVBAT_E_CONTENT", "name": "HV battery energy content", "description": "Energy stored in the high voltage battery", "group": "Battery", "bit": 16, "bits": 16, "multiply": 25, "divide": 1000, "min": 0, "max": 1638.37, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "710.77A.222AF7|fc=1",
+      "bus": "can11",
+      "tx": "710",
+      "rx": "77A",
+      "request": "222AF7",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_AUX_BAT_V", "name": "12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 0, "max": 69, "unit": "V"},
+        {"id": "TERRAMAR_AUX_BAT_C", "name": "12V battery current", "group": "Battery", "bit": 16, "bits": 32, "signed": true, "divide": 1000, "min": -1000000, "max": 1000000, "unit": "A"},
+        {"id": "TERRAMAR_AUX_BAT_SOC", "name": "12V battery soc", "group": "Battery", "bit": 56, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TERRAMAR_AUX_BAT_T", "name": "12V battery temperature", "group": "Battery", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "TERRAMAR_AUX_BAT_T_S", "name": "12V battery sensor temperature", "group": "Battery", "bit": 72, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "TERRAMAR_AUX_BAT_CHRG_TOT", "name": "12V battery total charge", "group": "Battery", "bit": 96, "bits": 32, "divide": 10, "min": 0, "max": 10000000, "unit": "Ah"},
+        {"id": "TERRAMAR_AUX_BAT_DSCH_TOT", "name": "12V battery total discharge", "group": "Battery", "bit": 128, "bits": 32, "divide": 10, "min": 0, "max": 10000000, "unit": "Ah"},
+        {"id": "TERRAMAR_AUX_BAT_AGE_CAP", "name": "12V battery aging by capacity", "group": "Battery", "bit": 160, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TERRAMAR_AUX_BAT_AGE_POW", "name": "12V battery aging by power", "group": "Battery", "bit": 168, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TERRAMAR_AUX_BAT_CAP", "name": "12V battery adapted capacity", "group": "Battery", "bit": 176, "bits": 8, "min": 0, "max": 100, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "712.77C.221805|fc=1",
+      "bus": "can11",
+      "tx": "712",
+      "rx": "77C",
+      "request": "221805",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_STEER_WHL_TQ_SENS_1", "name": "Steering wheel torque sensor 1", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "multiply": 0.004395, "add": 0.06, "min": -143.9553, "max": 144.0709, "unit": "°"}
+      ]
+    },
+    {
+      "id": "712.77C.221812|fc=1",
+      "bus": "can11",
+      "tx": "712",
+      "rx": "77C",
+      "request": "221812",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_SWA", "name": "Steering wheel angle", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 8, "add": 0.06, "min": -4095.94, "max": 4095.935, "unit": "°"}
+      ]
+    },
+    {
+      "id": "713.77D.2203E8|fc=1",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "2203E8",
+      "interval": 0.25,
+      "flowControl": true,
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_FL_WHL_SPD_713", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
+        {"id": "TERRAMAR_FR_WHL_SPD_713", "name": "Front right wheel speed", "group": "Tires", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
+        {"id": "TERRAMAR_RL_WHL_SPD_713", "name": "Rear left wheel speed", "group": "Tires", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
+        {"id": "TERRAMAR_RR_WHL_SPD_713", "name": "Rear right wheel speed", "group": "Tires", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "713.77D.22180A|fc=1",
+      "bus": "can11",
+      "tx": "713",
+      "rx": "77D",
+      "request": "22180A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_HAL_CLUTCH_OPEN", "name": "All-wheel drive clutch fully open", "group": "Transmission", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "TERRAMAR_MQB_HAL_CLUTCH_BLOCK", "name": "All-wheel drive clutch blockage degree", "group": "Transmission", "bit": 15, "bits": 1, "multiply": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "714.77E.221014|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "221014",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_DASH_AMBIENT_AIR_T", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "714.77E.22220C|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "22220C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_OUTSIDE_T", "name": "Outside temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "714.77E.222211|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222211",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_PQ35_CHG_AIR_P", "name": "Charge air pressure", "group": "Battery", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "714.77E.22224B",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "22224B",
+      "interval": 300,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_DASH_OIL_THERMAL_WEAR", "name": "Oil thermal wear", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.222294|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "222294",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_DTE", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "714.77E.2222B8|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "2222B8",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_ODO_MILEAGE_HR", "name": "Odometer, mileage, HR", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
+      ]
+    },
+    {
+      "id": "715.77F.222353|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222353",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CRASH_FRONT", "name": "Crashes, front", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222354|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222354",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CRASH_DRVR", "name": "Crashes, driver side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222355|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222355",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CRASH_PASS", "name": "Crashes, passenger side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222356|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222356",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CRASH_REAR", "name": "Crashes, rear", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "715.77F.222357|fc=1",
+      "bus": "can11",
+      "tx": "715",
+      "rx": "77F",
+      "request": "222357",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_ROLLOVER", "name": "Rollovers", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
+      ]
+    },
+    {
+      "id": "746.7B0.220800|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "220800",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_AC_CMPR_PWR_ACT", "name": "A/C compressor power, actual", "group": "Climate", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "W", "invalidAtOrAbove": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222603|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222603",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_A_C_COMP_SPD", "name": "A/C compressor speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "746.7B0.222604|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222604",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_A_C_COMP_LOAD", "name": "A/C compressor load", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "746.7B0.222605|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222605",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_REFRIG_P", "name": "Refrigerant pressure", "group": "Engine", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "746.7B0.222606|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222606",
+      "interval": 2,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_RAD_FAN_ACT_DUTY", "name": "Radiator fan actual duty", "group": "Engine", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.222607|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222607",
+      "interval": 2,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_RAD_FAN_CMD_DUTY", "name": "Radiator fan commanded duty", "group": "Engine", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.222609|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222609",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_AAT", "name": "Outside temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -50, "min": -50, "max": 77.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260A|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260A",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_OUTSIDE_T_SYSTEM", "name": "Outside temperature, system calculated", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260C|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260C",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_FR_L_DEFL_T", "name": "Front left deflector temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22260D|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22260D",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_FR_R_DEFL_T", "name": "Front right deflector temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222611|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222611",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_LEG_DEFL_T", "name": "Leg deflector temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222612|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222612",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_T_AFTER_EVAP", "name": "Temperature after evaporator", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 3, "min": -42.624, "max": 42.291, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.222613|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222613",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CABIN_T", "name": "Cabin temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.22261E|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22261E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_RECIRC_FLAP_ACT", "name": "Recirculation flap actual position", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.22261F|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22261F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_RECIRC_FLAP_TRG", "name": "Recirculation flap target position", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222620|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222620",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_RECIRC_FLAP_FRESH_THR", "name": "Recirculation flap fresh air threshold", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222621|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222621",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_MQB_RECIRC_FLAP_THR", "name": "Recirculation flap threshold", "group": "Climate", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "746.7B0.222622|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222622",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_FR_L_T_FLP_ACT_VALUE", "name": "Front left temperature flap actual value", "group": "Engine", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.222626|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "222626",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_FR_R_T_FLP_ACT_VALUE", "name": "Front right temperature flap actual value", "group": "Engine", "bit": 16, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.22263D|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22263D",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_RR_DEFL_T", "name": "Rear deflector temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "min": 0, "max": 84.915, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "746.7B0.2226ED|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "2226ED",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_AIR_POLUTION_LVL", "name": "Air pollution level", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "divide": 10, "min": -12.8, "max": 12.7}
+      ]
+    },
+    {
+      "id": "746.7B0.2227C4|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "2227C4",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_WINDSHIELD_T", "name": "Windshield temperature", "group": "Climate", "bit": 0, "bits": 8, "multiply": 0.576, "add": -38.8, "min": -38.8, "max": 108.08, "unit": "°C"},
+        {"id": "TERRAMAR_CABIN_HUMIDITY", "name": "Cabin humidity", "group": "Climate", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "746.7B0.22482B|fc=1,din=03",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "22482B",
+      "interval": 2,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_CLIMATE_A_C_CLCH", "name": "A/C clutch", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "746.7B0.224EEF|fc=1",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "7B0",
+      "request": "224EEF",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_AC_REFRIG_P_SENS1", "name": "A/C refrigerant pressure, sensor 1", "group": "Climate", "bit": 0, "bits": 16, "multiply": 88, "divide": 10000, "min": 0, "max": 576.708, "unit": "bar"},
+        {"id": "TERRAMAR_AC_REFRIG_T_SENS1", "name": "A/C refrigerant temperature, sensor 1", "group": "Climate", "bit": 16, "bits": 16, "multiply": 10, "divide": 100, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"},
+        {"id": "TERRAMAR_AC_REFRIG_T_SENS1_INT", "name": "A/C refrigerant temperature, sensor 1 interior", "group": "Climate", "bit": 32, "bits": 16, "multiply": 10, "divide": 100, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "767.7D1.220838|fc=1",
+      "bus": "can11",
+      "tx": "767",
+      "rx": "7D1",
+      "request": "220838",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_ECALL_SOC", "name": "ECall battery charge level", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 100, "unit": "%"},
+        {"id": "TERRAMAR_ECALL_STATUS", "name": "ECall battery status", "group": "Battery", "bit": 0, "bits": 8, "values": {"1": "CRITICAL", "2": "NORMAL"}, "valueDescriptions": {"1": "CRITICAL", "2": "NORMAL"}}
+      ]
+    },
+    {
+      "id": "767.7D1.222431|fc=1",
+      "bus": "can11",
+      "tx": "767",
+      "rx": "7D1",
+      "request": "222431",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "TERRAMAR_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "TERRAMAR_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

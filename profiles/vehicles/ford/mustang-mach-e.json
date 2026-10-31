@@ -1,0 +1,2148 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/ford/mustang-mach-e",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Ford",
+    "model": "Mustang Mach-E",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2021}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Ford-Mustang-Mach-E",
+    "file": "signalsets/v3/default.json",
+    "revision": "3d91d3f073112ff0a20e3702cb8aaba6cbba111d",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "7E2", "type": "charger"},
+    {"tx": "7E4", "type": "battery"},
+    {"tx": "7E6", "type": "hybridControl"}
+  ],
+  "requests": [
+    {
+      "id": "6F5.6FD.224899",
+      "bus": "can11",
+      "tx": "6F5",
+      "rx": "6FD",
+      "request": "224899",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVDC_CHG_MAX_C", "name": "HV DC charger maximum current", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "A", "invalidAtOrAbove": 655.35}
+      ]
+    },
+    {
+      "id": "6F5.6FD.22489D",
+      "bus": "can11",
+      "tx": "6F5",
+      "rx": "6FD",
+      "request": "22489D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVDC_CHG_MAX_V", "name": "HV DC charger maximum voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V", "invalidAtOrAbove": 6553.5}
+      ]
+    },
+    {
+      "id": "720.728.22404C",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22404C",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_HIGH_RES", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.226180",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226180",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_720", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "720.728.226185",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "226185",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FLI", "name": "Fuel tank level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "720.728.2261A5",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "2261A5",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TPMS_WARN", "name": "Tire pressure warning indicator", "group": "Tires", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "720.728.22DD01",
+      "bus": "can11",
+      "tx": "720",
+      "rx": "728",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_TRIP", "name": "Trip distance", "group": "Trips", "bit": 0, "bits": 24, "divide": 10, "min": 0, "max": 1677721, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22280B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22280B",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TYRE_T", "name": "Tire temperature", "group": "Tires", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.222813",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222813",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222814",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222814",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222815",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222815",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_RR", "name": "Rear right outer tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222816",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222816",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_RL", "name": "Rear left outer tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222817",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222817",
+      "interval": 15,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_RRI", "name": "Tire pressure, rear right inner", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.222818",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "222818",
+      "interval": 15,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TP_RLI", "name": "Tire pressure, rear left inner", "group": "Tires", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 150, "unit": "psi", "invalidAtOrBelow": 0, "invalidAtOrAbove": 150}
+      ]
+    },
+    {
+      "id": "726.72E.22401E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22401E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_NORM_CUM_CHG_IGN_ON", "name": "Normalized cumulative charge when ignition is on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224021",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224021",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_NORM_CUM_DCHG_BAT_ON", "name": "Normalized cumulative discharge from battery with engine on", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224025",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224025",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_QUIESCENT", "name": "Battery quiescent current, low range", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -1000, "min": -1000, "max": 31767.5, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "726.72E.224026",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224026",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_NORM_CUM_DCHG_BAT_OFF", "name": "Normalized cumulative discharge from battery with engine off", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
+      ]
+    },
+    {
+      "id": "726.72E.224027",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224027",
+      "interval": 3600,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_12V_AGE", "name": "Aux 12V battery age", "group": "Battery", "bit": 0, "bits": 16, "multiply": 24, "min": 0, "max": 1572840, "unit": "h"}
+      ]
+    },
+    {
+      "id": "726.72E.224028",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224028",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_12V_SOC", "name": "Aux 12V battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "726.72E.224029",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224029",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 100, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "726.72E.22402A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_12V_V", "name": "Aux 12V battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 0, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.22402B",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22402B",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_12V_A", "name": "Aux 12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -127, "min": -127, "max": 128, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.22407E",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22407E",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_EXTERIOR_LIGHT_STATE", "name": "Exterior lighting state", "group": "Lights", "bit": 0, "bits": 1, "values": {"0": "0", "216": "1"}, "valueDescriptions": {"0": "0", "216": "1"}}
+      ]
+    },
+    {
+      "id": "726.72E.224090",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224090",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_CURRENT_726", "name": "Battery current", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -511.7, "min": -511.7, "max": 3584.2375, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.2240D1",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2240D1",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_AUX_12V_BAT_CTRL", "name": "Aux 12V battery control mode", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.2241A9",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241A9",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_CURRENT_TOO_HIGH", "name": "Battery current too high for start/stop", "group": "Battery", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_V_TOO_LOW_START", "name": "Battery voltage too low for start/stop", "group": "Battery", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_ST_CHG_TOO_LOW", "name": "Battery state of charge too low for start/stop", "group": "Battery", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_CAP_TOO_LOW", "name": "Battery capacity too low for start/stop", "group": "Battery", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_V_TOO_LOW_COLD", "name": "Battery voltage too low for cold cranking capability", "group": "Battery", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_V_TOO_LOW_AUTO", "name": "Battery voltage too low for auto restart", "group": "Battery", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_T_TOO_LOW_AUTO", "name": "Battery temperature too low for auto stop", "group": "Battery", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MACHE_BAT_REFRESH_CYCLE", "name": "Battery refresh cycle in progress for start/stop", "group": "Battery", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.2241E8",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "2241E8",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_VEH_BAT_B_V", "name": "Vehicle battery b voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 20, "add": 6, "min": 6, "max": 18.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "726.72E.224209",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "224209",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_CURRENT", "name": "Battery current, predicted", "group": "Battery", "bit": 0, "bits": 24, "signed": true, "divide": 4, "min": -2097152, "max": 2097151.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.22420A",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22420A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_ST_DETECTION", "name": "Battery state detection status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "726.72E.22423C",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22423C",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_VEH_BAT_B_CURRENT", "name": "Vehicle battery b current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.96, "unit": "A"}
+      ]
+    },
+    {
+      "id": "726.72E.227151",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "227151",
+      "interval": 4,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_HIGHBEAM_STATUS", "name": "High beam status", "group": "Lights", "bit": 0, "bits": 16, "min": 0, "max": 2, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C150",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C150",
+      "interval": 3,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TRUNK_OPEN", "name": "Trunk ajar", "group": "Doors", "bit": 11, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MACHE_RRD_OPEN", "name": "Rear right door ajar", "group": "Doors", "bit": 12, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MACHE_RLD_OPEN", "name": "Rear left door ajar", "group": "Doors", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MACHE_DRIVER_DOOR_OPEN", "name": "Driver door ajar", "group": "Doors", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "MACHE_PASSENGER_DOOR_OPEN", "name": "Passenger door ajar", "group": "Doors", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C154",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C154",
+      "interval": 3,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_HOOD_OPEN", "name": "Hood ajar", "group": "Doors", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]}
+      ]
+    },
+    {
+      "id": "726.72E.22C259",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22C259",
+      "interval": 2,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_CENTRAL_LOCK_STATUS", "name": "Lock status", "group": "Doors", "bit": 0, "bits": 8, "values": {"0": "UNLOCKED", "2": "LOCKED"}, "valueDescriptions": {"0": "Unlocked", "2": "Locked"}}
+      ]
+    },
+    {
+      "id": "726.72E.22DD01",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD01",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_726", "name": "Odometer, instrument panel", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "726.72E.22DD04",
+      "bus": "can11",
+      "tx": "726",
+      "rx": "72E",
+      "request": "22DD04",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_CAR_T", "name": "In car temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 8, "min": 0, "max": 31.875, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "730.738.22330C",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22330C",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_STEER_SHFT_TQ", "name": "Steering shaft torque", "group": "Engine", "bit": 0, "bits": 8, "divide": 10, "add": -12.7, "min": -12.7, "max": 12.8, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "730.738.22DD01",
+      "bus": "can11",
+      "tx": "730",
+      "rx": "738",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_PSCM", "name": "Odometer, power steering module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "746.74E.224836",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "224836",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DCDC_LV_A", "name": "LV DC-DC converter low voltage current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "A"}
+      ]
+    },
+    {
+      "id": "746.74E.22483A",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "22483A",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DCDC_HV_A", "name": "LV DC-DC converter high voltage current", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25, "unit": "A"}
+      ]
+    },
+    {
+      "id": "746.74E.22483D",
+      "bus": "can11",
+      "tx": "746",
+      "rx": "74E",
+      "request": "22483D",
+      "interval": 10,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DCDC_ENABLED", "name": "DC-DC converter", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B00",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B00",
+      "interval": 3,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PARKING_BRAKE", "name": "Parking brake state", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "760.768.222B06",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B06",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B07",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B07",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B08",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B08",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B09",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B09",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.222B0B",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0B",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_YAW_RATE_SIG", "name": "Yaw rate signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553}
+      ]
+    },
+    {
+      "id": "760.768.222B0C",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0C",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_LAT_ANG", "name": "Lateral angle, raw count", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "760.768.222B0D",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B0D",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BRK_FL_P", "name": "Brake hydraulic pressure, raw count", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "760.768.222B11",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "222B11",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_LAT_G", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -1, "max": 1}
+      ]
+    },
+    {
+      "id": "760.768.223201",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223201",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "divide": 20, "add": -1638.4, "min": -1638, "max": 1638, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.223302",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223302",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BCM_STEER_ANG_ACT", "name": "Steering angle, actual value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -780, "min": -780, "max": 5773, "unit": "°"}
+      ]
+    },
+    {
+      "id": "760.768.223987",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223987",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ABS_WHL_SPD_1", "name": "Anti-lock brake wheel speed 1", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MACHE_ABS_WHL_SPD_2", "name": "Anti-lock brake wheel speed 2", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MACHE_ABS_WHL_SPD_3", "name": "Anti-lock brake wheel speed 3", "group": "Control", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "MACHE_ABS_WHL_SPD_4", "name": "Anti-lock brake wheel speed 4", "group": "Control", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "760.768.223A51",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "223A51",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ABS_LATERAL_ACCEL", "name": "Anti-lock brake lateral acceleration", "group": "Control", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "g"}
+      ]
+    },
+    {
+      "id": "760.768.22DD01",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22DD01",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_BCM", "name": "Odometer, battery control module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "760.768.22DD05",
+      "bus": "can11",
+      "tx": "760",
+      "rx": "768",
+      "request": "22DD05",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_OUTDOOR_T_BCM", "name": "Outdoor temperature, BCM", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "764.76C.22A220",
+      "bus": "can11",
+      "tx": "764",
+      "rx": "76C",
+      "request": "22A220",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FSM_AUTOMATIC", "name": "Forward sensing camera alignment offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
+      ]
+    },
+    {
+      "id": "764.76C.22A224",
+      "bus": "can11",
+      "tx": "764",
+      "rx": "76C",
+      "request": "22A224",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_CC_TGT_VSS", "name": "Target vehicle speed", "description": "The speed of the vehicle ahead of you.", "group": "Cruise control", "bit": 0, "bits": 16, "signed": true, "multiply": 3.6, "divide": 10, "min": -736, "max": 736, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "764.76C.22DD01",
+      "bus": "can11",
+      "tx": "764",
+      "rx": "76C",
+      "request": "22DD01",
+      "interval": 30,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_FSM", "name": "Odometer, forward sensing module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7C7.2299AB",
+      "bus": "can11",
+      "tx": "7C7",
+      "request": "2299AB",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_AC_COMP_A", "name": "A/C compressor current", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 32767, "min": -100, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7D0.7D8.228012",
+      "bus": "can11",
+      "tx": "7D0",
+      "rx": "7D8",
+      "request": "228012",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SYNC_GPS_ALTITUDE", "name": "Navigation altitude", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
+        {"id": "MACHE_SYNC_GPS_SPD", "name": "Navigation speed", "group": "Movement", "bit": 88, "bits": 16, "multiply": 18, "divide": 5, "min": 0, "max": 235926, "unit": "km/h"},
+        {"id": "MACHE_SYNC_GPS_HEADING", "name": "Navigation heading", "group": "Engine", "bit": 104, "bits": 16, "min": 0, "max": 65535, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22032B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22032B",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ACC_POS", "name": "Accelerator pedal position", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220353",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22035A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22035A",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BARO_V", "name": "Barometric pressure sensor voltage", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2203BA",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2203BA",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_AAT_V", "name": "Ambient temperature sensor voltage", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220580",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220580",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_GRILL_SHUTTER_POSITION", "name": "Grill shutter position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221505",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221505",
+      "interval": 0.1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 200, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22DD01",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22DD01",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_ODO_ECM", "name": "Odometer, engine control module", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22F41F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22F41F",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_RUN_TIME", "name": "Engine run time", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22480B",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22480B",
+      "interval": 1,
+      "answeredIn": [2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_CURRENT", "name": "High voltage current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22480D",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22480D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVB_V_RAW_CNT", "name": "HV battery voltage, raw count", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224842",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224842",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_CHARGER", "name": "High voltage charger current, requested", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224844",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224844",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_CHARGER_V_REQ", "name": "High voltage charger voltage, requested", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22484A",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22484A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_OUT_V", "name": "HV charger output voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 600, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22484D",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22484D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_CHARGER_STAT", "name": "High voltage charger status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22484E",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22484E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_PWR_AVAIL", "name": "HV charger input power available", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327.675, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22484F",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22484F",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_CHARGER_STAT_7E2", "name": "High voltage charger status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224851",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224851",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_EVSE_TYPE", "name": "Charger type", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "LEVEL_1", "2": "LEVEL_2", "3": "DC", "4": "BASIC", "5": "HIGH_LEVEL", "6": "BASIC_AC", "7": "HIGH_LEVEL_AC", "8": "HIGH_LEVEL_DC", "10": "NO_COMM", "11": "FAULT", "12": "HANDSHAKE_END"}, "valueDescriptions": {"0": "None", "1": "Level 1", "2": "Level 2", "3": "DC", "4": "Basic", "5": "High Level", "6": "Basic AC", "7": "High Level AC", "8": "High Level DC", "10": "No communication", "11": "Fault", "12": "Handshake end"}}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22485E",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22485E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_AC_CHG_IN_V", "name": "HV AC charger input voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22485F",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22485F",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_AC_CHG_IN_A", "name": "HV AC charger input current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224860",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224860",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_AC_CHG_IN_FREQ", "name": "HV AC charger input frequency", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 30, "max": 90, "unit": "Hz"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224861",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224861",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_PILOT_DUTY", "name": "HV charger pilot duty cycle", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224862",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224862",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_PROX_STATUS", "name": "HV charger proximity status", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "OFF", "1": "ON_S3", "2": "ON", "3": "10A", "4": "13A", "5": "16A", "6": "20A", "7": "FAULT", "8": "32A", "9": "63A", "16": "DC", "17": "OPEN", "18": "SHORT", "19": "SHORT_PWR", "20": "OUT_OF_RANGE", "21": "OPEN_CIRCUIT"}, "valueDescriptions": {"0": "Off", "1": "On S3", "2": "On", "3": "10 A", "4": "13 A", "5": "16 A", "6": "20 A", "7": "Fault", "8": "32 A", "9": "63 A", "16": "DC", "17": "Open", "18": "Short", "19": "Short to power", "20": "Out of range", "21": "Open circuit"}}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224888",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224888",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_AC_CHG_COUPLER_T", "name": "HV AC charger coupler temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.224897",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "224897",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DC_CHG_COUPLER_T1", "name": "HV DC charger coupler temperature 1", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22489E",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22489E",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DC_CHG_STATUS", "name": "HV DC charger status", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NOT_READY", "1": "INIT", "2": "READY", "3": "WAIT_CHECK", "4": "PRE_CONDITION", "5": "CHARGING", "6": "DONE", "8": "WAIT", "9": "NOT_CAPABLE", "10": "FAULT", "11": "CHARGER_CHECK"}, "valueDescriptions": {"0": "Not ready", "1": "Initialize", "2": "Ready", "3": "Wait check", "4": "Pre-condition", "5": "Charging", "6": "Done", "8": "Wait", "9": "Not capable", "10": "Fault", "11": "Charger check"}}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248A0",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248A0",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_PROX_V", "name": "HV charger proximity voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248A4",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248A4",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DC_CHG_COUPLER_T3", "name": "HV DC charger coupler temperature 3", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248A5",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248A5",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_OUT_REDUCT_T", "name": "HV charger output reduction temperature", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248B6",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248B6",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_PILOT_V", "name": "HV charger pilot voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 15, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248B7",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248B7",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_EVSE_DIGITAL_MODE", "name": "Charger digital mode", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NONE", "1": "DC_E_MINUS", "2": "DC_MINUS_P", "3": "DC_EP", "4": "AC_E_MINUS", "5": "AC_MINUS_P", "6": "AC_EP", "7": "RESET", "8": "OFF", "9": "ESTABLISH", "10": "FAULT"}, "valueDescriptions": {"0": "None", "1": "DC E-", "2": "DC -P", "3": "DC EP", "4": "AC E-", "5": "AC -P", "6": "AC EP", "7": "Reset", "8": "Off", "9": "Establish", "10": "Fault"}}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248BC",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248BC",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_MAX_CHG_A", "name": "HV battery maximum charge current", "group": "Battery", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276.75, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.2248C4",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "2248C4",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_MAX_PWR", "name": "HV charger maximum power", "group": "Battery", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 500, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22D00C",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22D00C",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_DC_CHARGER_T", "name": "High voltage DC charger coupler temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22D117",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22D117",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_AC_CHARGER_T", "name": "High voltage AC charger coupler temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22DD04",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22DD04",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023],
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "MACHE_IAT", "name": "Interior temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.22DD05",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "22DD05",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_AAT", "name": "Exterior temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22000F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22000F",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -39.8, "min": -39.8, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220117",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220117",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CLT_PMP_B_CTRL_SPD_CMD", "name": "Coolant pump b control speed, commanded", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22011A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22011A",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CLT_PMP_CTRL_SPD_CMD", "name": "Coolant pump a control speed, commanded", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2205A1",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2205A1",
+      "interval": 60,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_TARGET_SOC", "name": "Target/desired state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220701",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220701",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FAN_SPD_DEMANDED", "name": "Fan speed demanded", "group": "Movement", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.220702",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "220702",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_FAN_SPD_INDICATED", "name": "Fan speed indicated", "group": "Movement", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224800",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224800",
+      "interval": 10,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_T", "name": "HV battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224801",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224801",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_SOC", "name": "HV battery charge", "description": "High resolution state of charge.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224803",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224803",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HV_POS_LEAK_V", "name": "HV positive leakage voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224804",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224804",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HV_NEG_LEAK_V", "name": "HV negative leakage voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224805",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224805",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CONTACTOR_V_POS", "name": "Contactor voltage positive", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224806",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224806",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CONTACTOR_V_NEG", "name": "Contactor voltage negative", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 300, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224808",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224808",
+      "interval": 15,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_T_RANGE_MAX", "name": "HV battery temperature range, maximum", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "MACHE_T_RANGE_MIN", "name": "HV battery temperature range, minimum", "group": "Battery", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "MACHE_T_RANGE", "name": "HV battery temperature range", "group": "Battery", "bit": 16, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
+        {"id": "MACHE_T_RANGE_AVG", "name": "HV battery temperature range, average", "group": "Battery", "bit": 24, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224809",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224809",
+      "interval": 1,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2021, 2022, 2023, 2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_CHR_A", "name": "HV battery current high range", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVB_CURRENT_LOW", "name": "HV battery current, low range", "group": "Trips", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655, "max": 655, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480B",
+      "interval": 1,
+      "answeredIn": [2021, 2024],
+      "notAnsweredIn": [2022, 2023, 2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_A_ALT", "name": "HV battery current, alternate", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -300, "max": 300, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22480D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22480D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_V", "name": "HV battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224810",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224810",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_AGE", "name": "HV battery age", "group": "Battery", "bit": 0, "bits": 16, "multiply": 720, "divide": 200, "min": 0, "max": 235926, "unit": "h"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224811",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224811",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_LEAKAGE_RES_BUS_POSITIVE", "name": "High voltage leakage resistance bus positive, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224812",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224812",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_LEAKAGE_RES", "name": "High voltage leakage resistance bus negative, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224813",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224813",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HIGH_V_LEAKAGE_RES_BUS", "name": "High voltage leakage resistance bus overall, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224815",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224815",
+      "interval": 5,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2021, 2022, 2023, 2025],
+      "signals": [
+        {"id": "MACHE_MAX_DISCH_PWR_LIM", "name": "Maximum discharge power limit", "group": "Battery", "bit": 0, "bits": 8, "multiply": 25, "divide": 100, "min": 0, "max": 63.75, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224832",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224832",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_MOTOR_ELECTRONICS", "name": "Motor electronics coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": 32, "min": 0, "max": 491, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22483E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22483E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVB_SOC_VARIATION", "name": "State of charge spread across battery modules", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22483F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22483F",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_MOD_V", "name": "HV battery modules voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224840",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224840",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_MIN_MOD_V", "name": "HV battery minimum module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224841",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224841",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_AVG_MOD_V", "name": "HV battery average module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 50, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224842",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224842",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_CCR", "name": "HV battery charge current requested", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 600, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224844",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224844",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_CVR", "name": "HV battery charge voltage requested", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 500, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224845",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224845",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_SOC_DISP", "name": "HV battery charge, displayed", "description": "The state of charge displayed on the vehicle's dashboard.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224846",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224846",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_COOLANT_INLET_T", "name": "HV battery coolant inlet temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224848",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224848",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_KWH", "name": "HV battery energy", "group": "Battery", "metric": "tractionBatteryCapacity", "bit": 0, "bits": 16, "divide": 500, "min": 0, "max": 131.07, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22484A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22484A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHARGER_OUTPUT_V", "name": "Charger output voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22484D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22484D",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_CHG_STATUS", "name": "HV battery charging status", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "NOT_READY", "1": "WAIT", "2": "READY", "3": "CHARGING", "4": "DONE", "5": "FAULT"}, "valueDescriptions": {"0": "Not ready", "1": "Wait", "2": "Ready", "3": "Charging", "4": "Done", "5": "Fault"}}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22484E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22484E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHARGER_INPUT_POWER", "name": "Charger input power available", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22484F",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22484F",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHRG_STATE", "name": "Charging state", "group": "Battery", "metric": "isCharging", "bit": 0, "bits": 8, "values": {"0": "NOT_READY", "1": "READY", "2": "FAULT", "3": "WAIT", "4": "PRE_COND", "5": "CHARGING", "6": "DONE", "7": "EXT", "8": "INIT"}, "valueDescriptions": {"0": "Not ready", "1": "Ready", "2": "Fault", "3": "Wait Check", "4": "Pre-condition", "5": "Charging", "6": "Done", "7": "External Charger", "8": "Initializing"}}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224850",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224850",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_OUT_A", "name": "HV charger output current measured", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 600, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224851",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224851",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_EV_SUP_EQUIPMENT", "name": "EV supply equipment type detected", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224852",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224852",
+      "interval": 1,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BAT_DCHG_POWER_LIM", "name": "Battery discharge power limit", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22485C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22485C",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_BAT_CAP", "name": "Battery capacity", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22485D",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22485D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_BAT_PACK_LIFETIME", "name": "Battery pack lifetime charge out, throughput", "group": "Battery", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "Ah"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224878",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224878",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_CHG_INHIBIT_REQ", "name": "Charging inhibit - requested", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22489E",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22489E",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DC_CHARGER_STAT", "name": "DC charger status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2248AF",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2248AF",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_DC_CHG_SYSTEM_V", "name": "DC charging system contactor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2248F9",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2248F9",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_A", "name": "HV battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -600, "max": 600, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.2248FB",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "2248FB",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_CHG_PWR_LIM", "name": "HV battery charge power limit", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 300, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22490B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22490B",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TRACTION_BAT_V_ALT", "name": "Traction battery voltage, alternate", "group": "Battery", "bit": 0, "bits": 16, "multiply": 25, "divide": 8192, "min": 0, "max": 199, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22490C",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22490C",
+      "interval": 3600,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_SOH", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22496A",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22496A",
+      "interval": 0.25,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TRACTION_MOTOR_SPD", "name": "Traction motor speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.224983",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "224983",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_MOTOR_ELECTRONIC_ECT", "name": "Motor electronic coolant temperature II", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -39.8, "min": -39.8, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.226182",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "226182",
+      "interval": 30,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_BECM_ODO", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 16, "multiply": 128, "divide": 15625, "min": 0, "max": 536}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22DD04",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22DD04",
+      "interval": 5,
+      "notAnsweredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_T_INSIDE_CAR", "name": "Temperature inside car", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E4.7EC.22F45B",
+      "bus": "can11",
+      "tx": "7E4",
+      "rx": "7EC",
+      "request": "22F45B",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "MACHE_HYBRID_BAT_PACK", "name": "Hybrid battery pack remaining charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E12",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E12",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "Fault"}}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E1C",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E1C",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_TT", "name": "Transmission temperature", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -300, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221E2C",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221E2C",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PRI_MOTOR_RPM", "name": "Primary motor speed", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -6000, "max": 12000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481C",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481C",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PRI_MOTOR_TQ", "name": "Primary motor torque", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -200, "max": 200, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481D",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481D",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PRI_MOTOR_INV_V", "name": "Primary motor inverter voltage", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -400, "max": 400, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22481F",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22481F",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PRI_MOTOR_COIL_T", "name": "Primary motor coil temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224820",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224820",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_GEN_COIL_T_7E6", "name": "Generator coil temperature raw", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E6.7EE.224824",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "224824",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_PRI_MOTOR_INV_T", "name": "Primary motor inverter temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.2248DE",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "2248DE",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_COOLANT_HTR_PWR", "name": "Coolant heater power", "group": "Climate", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.2248DF",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "2248DF",
+      "interval": 10,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_COOLANT_HTR_OP_MODE", "name": "Coolant heater operation mode", "group": "Climate", "bit": 0, "bits": 8, "values": {"0": "OFF", "1": "ON", "2": "DEGRADED", "3": "SHUTDOWN", "4": "SHORT", "5": "NO_RESPONSE", "6": "UNKNOWN", "7": "STOP"}, "valueDescriptions": {"0": "Off", "1": "On", "2": "Degraded", "3": "Shutdown", "4": "Short", "5": "No response", "6": "Unknown", "7": "Stop"}}
+      ]
+    },
+    {
+      "id": "7E6.7EE.2248E0",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "2248E0",
+      "interval": 10,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_HVBAT_THERMAL_OP_MODE", "name": "HV battery thermal operation mode", "group": "Battery", "bit": 0, "bits": 8, "values": {"0": "OFF", "1": "EQUALIZE", "2": "COOLANT_FLOW", "3": "COOLANT_FAN", "4": "COOLANT_MODERATE", "5": "COOLANT_MAX", "15": "HEAT"}, "valueDescriptions": {"0": "Off", "1": "Equalize", "2": "Coolant flow", "3": "Coolant fan", "4": "Coolant moderate", "5": "Coolant maximum", "15": "Heat"}}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22DD05",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22DD05",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_OUTSIDE_T", "name": "Outside temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224819",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224819",
+      "interval": 0.25,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SECONDARY_MOTOR_TQ_CMD", "name": "Secondary motor torque, commanded", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22481A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22481A",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SEC_MOTOR_TQ", "name": "Secondary motor torque", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -200, "max": 200, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22481E",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22481E",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SEC_MOTOR_INV_T", "name": "Secondary motor inverter temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224820",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224820",
+      "interval": 5,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SEC_MOTOR_COIL_T", "name": "Secondary motor coil temperature", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -40, "max": 300, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224821",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224821",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SEC_MOTOR_RPM", "name": "Secondary motor speed", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "min": -6000, "max": 12000, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.224823",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "224823",
+      "interval": 1,
+      "answeredIn": [2021, 2022, 2023, 2024, 2025],
+      "signals": [
+        {"id": "MACHE_SEC_MOTOR_INV_V", "name": "Secondary motor inverter voltage", "group": "Drivetrain", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -400, "max": 400, "unit": "V"}
+      ]
+    }
+  ]
+}

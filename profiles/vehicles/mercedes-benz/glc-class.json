@@ -1,0 +1,193 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/mercedes-benz/glc-class",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Mercedes Benz",
+    "model": "GLC Class",
+    "years": null,
+    "generations": [
+      {"name": "First generation (pre-facelift)", "from": 2015, "to": 2019},
+      {"name": "First generation (facelift)", "from": 2020, "to": 2022},
+      {"name": "Second generation", "from": 2022}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Mercedes-Benz-GLC-Class",
+    "file": "signalsets/v3/default.json",
+    "revision": "1c0fac0f97f78a00328a77b173eab7f02d2be634",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "7E0.7E8.220163",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220163",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_BOOST_AIR_T", "name": "Boost air temperature", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"},
+        {"id": "GLC_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220168",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220168",
+      "interval": 1,
+      "signals": [
+        {"id": "GLC_EXH_BACK_P", "name": "Exhaust back pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767},
+        {"id": "GLC_DPF_DIFF_P", "name": "Diesel particulate filter differential pressure", "group": "Engine", "bit": 320, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22016B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22016B",
+      "interval": 30,
+      "signals": [
+        {"id": "GLC_ODO", "name": "Odometer", "group": "Trips", "bit": 288, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22016F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22016F",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 128, "bits": 16, "divide": 10, "add": -273, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222017",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222017",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_RADIATOR_T", "name": "Radiator temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 27, "divide": 32, "add": 32, "min": 0, "max": 55327, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222030",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222030",
+      "interval": 1,
+      "signals": [
+        {"id": "GLC_FUEL_TANK_LEVEL", "name": "Fuel tank level", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.099934824, "min": 0, "max": 6549, "unit": "L"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222071",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222071",
+      "interval": 1,
+      "signals": [
+        {"id": "GLC_FUEL_RAIL_P", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.4998701, "min": 0, "max": 32758, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.222095",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "222095",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 27, "divide": 20, "add": -54, "min": -54, "max": 290, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2130",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2130",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "rpm"},
+        {"id": "GLC_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 80, "bits": 8, "min": 0, "max": 255},
+        {"id": "GLC_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2134",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2134",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_ATF_T_VAR_3", "name": "Transmission fluid temperature, variant 3", "group": "Transmission", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220230",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220230",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.220234",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "220234",
+      "interval": 5,
+      "signals": [
+        {"id": "GLC_ATF_T_VAR_4", "name": "Transmission fluid temperature, variant 4", "group": "Transmission", "bit": 24, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222001|f=-2022",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222001",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "signals": [
+        {"id": "GLC_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GLC_TIRE_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GLC_TIRE_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 32, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34},
+        {"id": "GLC_TIRE_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 48, "bits": 16, "divide": 100, "min": 0, "max": 655.34, "unit": "km/h", "invalidAtOrAbove": 655.34}
+      ]
+    },
+    {
+      "id": "7E2.7EA.222002|f=-2022",
+      "bus": "can11",
+      "tx": "7E2",
+      "rx": "7EA",
+      "request": "222002",
+      "interval": 0.25,
+      "years": {"to": 2022},
+      "signals": [
+        {"id": "GLC_LON_ACC", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 8, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "g"},
+        {"id": "GLC_LAT_ACC", "name": "Lateral acceleration", "group": "Orientation", "bit": 24, "bits": 16, "signed": true, "multiply": 15.625, "divide": 1000, "min": -512, "max": 511, "unit": "g"},
+        {"id": "GLC_YAW_RATE", "name": "Yaw rate", "description": "The angular velocity of the car around its vertical axis. Indicates how quickly the car is rotating to its left or right.", "group": "Orientation", "bit": 48, "bits": 16, "signed": true, "multiply": 2, "divide": 32767, "min": -2, "max": 2, "unit": "rad"},
+        {"id": "GLC_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the right, negative is rotated to the left.", "group": "Control", "bit": 72, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
+        {"id": "GLC_MCYL_BRAKE_P", "name": "Master brake cylinder pressure", "group": "Control", "bit": 96, "bits": 16, "signed": true, "divide": 65.35883831, "min": -501.34, "max": 501.34, "unit": "bar"},
+        {"id": "GLC_BRAKE_VACUUM_P", "name": "Brake booster vacuum pressure", "group": "Control", "bit": 144, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "bar"}
+      ]
+    }
+  ]
+}

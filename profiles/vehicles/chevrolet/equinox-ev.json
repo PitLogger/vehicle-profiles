@@ -1,0 +1,72 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/chevrolet/equinox-ev",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Chevrolet",
+    "model": "Equinox EV",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2024}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Chevrolet-Equinox-EV",
+    "file": "signalsets/v3/default.json",
+    "revision": "391a8e9bab624b1a945540ba10b7544c2f89b293",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [{"tx": "DACB", "type": "battery"}],
+  "requests": [
+    {
+      "id": "DA1D.2233E5",
+      "bus": "can29",
+      "tx": "18DA1DF1",
+      "request": "2233E5",
+      "interval": 1,
+      "answeredIn": [2025],
+      "notAnsweredIn": [2024],
+      "signals": [
+        {"id": "EQUINOXEV_HVBAT_V", "name": "DMCM battery voltage", "description": "From the Drive Motor Control Module.", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DACB.2227C6",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "2227C6",
+      "interval": 0.5,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "EQUINOXEV_SOC_HD", "name": "SoC (high res)", "description": "A high resolution measure of the battery pack's remaining state of charge.", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DACB.222AF5",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "222AF5",
+      "interval": 1,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "EQUINOXEV_HVBAT_C_V_AVG", "name": "Cell voltage (avg)", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"},
+        {"id": "EQUINOXEV_HVBAT_C_V_MIN", "name": "Cell voltage (min)", "group": "Battery", "bit": 16, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"},
+        {"id": "EQUINOXEV_HVBAT_C_V_MAX", "name": "Cell voltage (max)", "group": "Battery", "bit": 32, "bits": 16, "divide": 10000, "min": 0, "max": 6.55, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DACB.222B43",
+      "bus": "can29",
+      "tx": "18DACBF1",
+      "request": "222B43",
+      "interval": 1,
+      "answeredIn": [2024],
+      "notAnsweredIn": [2025],
+      "signals": [
+        {"id": "EQUINOXEV_SOC", "name": "SoC", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    }
+  ]
+}

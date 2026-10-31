@@ -1,0 +1,2533 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/nissan/ariya",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Nissan",
+    "model": "ARIYA",
+    "years": null,
+    "generations": [
+      {"name": "First Generation", "from": 2022, "to": 2025},
+      {"name": "First Generation (2026 Facelift)", "from": 2026}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Nissan-ARIYA",
+    "file": "signalsets/v3/default.json",
+    "revision": "1c29698c241e99e99cf1c0d96dd03d90dcdc2f9f",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "743.763.2101|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2101",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_ODO_METER", "name": "Odometer, meter group 1", "group": "Trips", "metric": "odometer", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E01|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E01",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.220E25|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E25",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E26|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E26",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E27|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E27",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "743.763.220E28|fc=1",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220E28",
+      "interval": 15,
+      "flowControl": true,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "multiply": 1.7236894, "min": 0, "max": 439.5, "unit": "kPa", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "744.764.2110",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "2110",
+      "interval": 5,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ARIYA_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ARIYA_HVAC_EVAP_T", "name": "Evaporator temperature", "group": "Climate", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "ARIYA_HVAC_SUNLOAD", "name": "Sun load", "group": "Climate", "bit": 24, "bits": 8, "min": 0, "max": 255},
+        {"id": "ARIYA_HVAC_AC_ON", "name": "Air conditioning on", "group": "Climate", "bit": 80, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ARIYA_HVAC_FAN_ON", "name": "Blower on", "group": "Climate", "bit": 88, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "ARIYA_HVAC_BLOWER_V", "name": "Blower voltage", "group": "Climate", "bit": 89, "bits": 7, "min": 0, "max": 127, "unit": "V"},
+        {"id": "ARIYA_AC_COMP_RPM", "name": "Air conditioning compressor speed", "group": "Climate", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "744.764.224007",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224007",
+      "interval": 5,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_AC_STATUS", "name": "Air conditioning status", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "744.764.224008",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "224008",
+      "interval": 5,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "744.764.22F467",
+      "bus": "can11",
+      "tx": "744",
+      "rx": "764",
+      "request": "22F467",
+      "interval": 5,
+      "answeredIn": [2023, 2024, 2025],
+      "signals": [
+        {"id": "ARIYA_ECT", "name": "Coolant temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrAbove": 215}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.222003|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "222003",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.2220FE|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "2220FE",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_DC_BAT_V", "name": "DC battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.2221CC|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "2221CC",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_DC_BAT_CURRENT", "name": "DC battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": -1, "divide": 4, "add": 500, "min": -15883, "max": 500, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.229002|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "229002",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_DC_BAT_ST_CHG", "name": "DC battery state of charge", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.229003|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "229003",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_DC_BAT_ST_HEALTH", "name": "DC battery state of health", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADA.DAF1DA.2291C8|fc=1",
+      "bus": "can29",
+      "tx": "18DADAF1",
+      "rx": "00DAF1DA",
+      "rxMask": "00FFFFFF",
+      "request": "2291C8",
+      "interval": 1,
+      "flowControl": true,
+      "notAnsweredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_DC_BAT_CAP", "name": "DC battery capacity", "group": "Battery", "bit": 0, "bits": 24, "divide": 1000, "min": 0, "max": 16777, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229001|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229001",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_SOC", "name": "Traction battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 100, "add": -3, "min": -3, "max": 652, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229005|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229005",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_OPEN_CIRCUIT_V", "name": "Open circuit voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229006|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229006",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_V", "name": "Traction battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 32, "signed": true, "divide": 1024, "min": 0, "max": 1000, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229007|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229007",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HIGHEST_CELL_V_LEVEL", "name": "Highest cell voltage level", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229008|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229008",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_CELL_HIGHEST_V", "name": "Cell with the highest voltage", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229009|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229009",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_LOWEST_CELL_V_LEVEL", "name": "Lowest cell voltage level", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22900A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22900A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_CELL_LOWEST_V", "name": "Cell with the lowest voltage", "group": "Battery", "bit": 0, "bits": 8, "add": 1, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229011|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229011",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_COMPUTER_POWER_SUP", "name": "Computer power supply", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229012|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229012",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_T", "name": "Traction battery compartment temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229013|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229013",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_MIN_T", "name": "Traction battery minimum temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229014|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229014",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_MAX_T", "name": "Traction battery maximum temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229021|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229021",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_1_V", "name": "Cell 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229022|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229022",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_2_V", "name": "Cell 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229023|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229023",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_3_V", "name": "Cell 3 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229024|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229024",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_4_V", "name": "Cell 4 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229025|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229025",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_5_V", "name": "Cell 5 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229026|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229026",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_6_V", "name": "Cell 6 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229027|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229027",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_7_V", "name": "Cell 7 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229028|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229028",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_8_V", "name": "Cell 8 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229029|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229029",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_9_V", "name": "Cell 9 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_10_V", "name": "Cell 10 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_11_V", "name": "Cell 11 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_12_V", "name": "Cell 12 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_13_V", "name": "Cell 13 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_14_V", "name": "Cell 14 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22902F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22902F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_15_V", "name": "Cell 15 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229030|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229030",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_16_V", "name": "Cell 16 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229031|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229031",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_17_V", "name": "Cell 17 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229032|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229032",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_18_V", "name": "Cell 18 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229033|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229033",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_19_V", "name": "Cell 19 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229034|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229034",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_20_V", "name": "Cell 20 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229035|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229035",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_21_V", "name": "Cell 21 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229036|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229036",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_22_V", "name": "Cell 22 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229037|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229037",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_23_V", "name": "Cell 23 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229038|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229038",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_24_V", "name": "Cell 24 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229039|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229039",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_25_V", "name": "Cell 25 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_26_V", "name": "Cell 26 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_27_V", "name": "Cell 27 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_28_V", "name": "Cell 28 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_29_V", "name": "Cell 29 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_30_V", "name": "Cell 30 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22903F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22903F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_31_V", "name": "Cell 31 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229041|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229041",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_32_V", "name": "Cell 32 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229042|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229042",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_33_V", "name": "Cell 33 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229043|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229043",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_34_V", "name": "Cell 34 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229044|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229044",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_35_V", "name": "Cell 35 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229045|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229045",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_36_V", "name": "Cell 36 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229046|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229046",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_37_V", "name": "Cell 37 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229047|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229047",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_38_V", "name": "Cell 38 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229048|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229048",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_39_V", "name": "Cell 39 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229049|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229049",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_40_V", "name": "Cell 40 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_41_V", "name": "Cell 41 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_42_V", "name": "Cell 42 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_43_V", "name": "Cell 43 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_44_V", "name": "Cell 44 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_45_V", "name": "Cell 45 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22904F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22904F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_46_V", "name": "Cell 46 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229050|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229050",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_47_V", "name": "Cell 47 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229051|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229051",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_48_V", "name": "Cell 48 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229052|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229052",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_49_V", "name": "Cell 49 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229053|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229053",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_50_V", "name": "Cell 50 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229054|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229054",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_51_V", "name": "Cell 51 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229055|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229055",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_52_V", "name": "Cell 52 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229056|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229056",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_53_V", "name": "Cell 53 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229057|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229057",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_54_V", "name": "Cell 54 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229058|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229058",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_55_V", "name": "Cell 55 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229059|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229059",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_56_V", "name": "Cell 56 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_57_V", "name": "Cell 57 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_58_V", "name": "Cell 58 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_59_V", "name": "Cell 59 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_60_V", "name": "Cell 60 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_61_V", "name": "Cell 61 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22905F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22905F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_62_V", "name": "Cell 62 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229061|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229061",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_63_V", "name": "Cell 63 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229062|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229062",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_64_V", "name": "Cell 64 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229063|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229063",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_65_V", "name": "Cell 65 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229064|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229064",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_66_V", "name": "Cell 66 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229065|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229065",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_67_V", "name": "Cell 67 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229066|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229066",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_68_V", "name": "Cell 68 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229067|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229067",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_69_V", "name": "Cell 69 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229068|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229068",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_70_V", "name": "Cell 70 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229069|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229069",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_71_V", "name": "Cell 71 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_72_V", "name": "Cell 72 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_73_V", "name": "Cell 73 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_74_V", "name": "Cell 74 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_75_V", "name": "Cell 75 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_76_V", "name": "Cell 76 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22906F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22906F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_77_V", "name": "Cell 77 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229070|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229070",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_78_V", "name": "Cell 78 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229071|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229071",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_79_V", "name": "Cell 79 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229072|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229072",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_80_V", "name": "Cell 80 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229073|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229073",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_81_V", "name": "Cell 81 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229074|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229074",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_82_V", "name": "Cell 82 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229075|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229075",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_83_V", "name": "Cell 83 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229076|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229076",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_84_V", "name": "Cell 84 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229077|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229077",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_85_V", "name": "Cell 85 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229078|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229078",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_86_V", "name": "Cell 86 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229079|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229079",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_87_V", "name": "Cell 87 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_88_V", "name": "Cell 88 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907B",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_89_V", "name": "Cell 89 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907C",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_90_V", "name": "Cell 90 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907D|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907D",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_91_V", "name": "Cell 91 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907E",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_92_V", "name": "Cell 92 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22907F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22907F",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_93_V", "name": "Cell 93 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229081|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229081",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_94_V", "name": "Cell 94 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229082|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229082",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_95_V", "name": "Cell 95 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229083|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229083",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_HVBAT_CELL_96_V", "name": "Cell 96 voltage", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.000976563, "min": 0, "max": 63.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229129|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229129",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_SECONDARY_BMS_NO_12", "name": "Secondary battery management board 12", "group": "Battery", "bit": 20, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_11", "name": "Secondary battery management board 11", "group": "Battery", "bit": 21, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_10", "name": "Secondary battery management board 10", "group": "Battery", "bit": 22, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_9", "name": "Secondary battery management board 9", "group": "Battery", "bit": 23, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_8", "name": "Secondary battery management board 8", "group": "Battery", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_7", "name": "Secondary battery management board 7", "group": "Battery", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_6", "name": "Secondary battery management board 6", "group": "Battery", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_5", "name": "Secondary battery management board 5", "group": "Battery", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_4", "name": "Secondary battery management board 4", "group": "Battery", "bit": 28, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_3", "name": "Secondary battery management board 3", "group": "Battery", "bit": 29, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_2", "name": "Secondary battery management board 2", "group": "Battery", "bit": 30, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SECONDARY_BMS_NO_1", "name": "Secondary battery management board 1", "group": "Battery", "bit": 31, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22912E|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22912E",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_FAN_SPD", "name": "Fan speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22912F|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22912F",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_T_SENS_MODULE_N_12", "name": "Module 12 temperature sensor flag", "group": "Battery", "bit": 20, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_11", "name": "Module 11 temperature sensor flag", "group": "Battery", "bit": 21, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_10", "name": "Module 10 temperature sensor flag", "group": "Battery", "bit": 22, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_9", "name": "Module 9 temperature sensor flag", "group": "Battery", "bit": 23, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_8", "name": "Module 8 temperature sensor flag", "group": "Battery", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_7", "name": "Module 7 temperature sensor flag", "group": "Battery", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_6", "name": "Module 6 temperature sensor flag", "group": "Battery", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_5", "name": "Module 5 temperature sensor flag", "group": "Battery", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_4", "name": "Module 4 temperature sensor flag", "group": "Battery", "bit": 28, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_3", "name": "Module 3 temperature sensor flag", "group": "Battery", "bit": 29, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_2", "name": "Module 2 temperature sensor flag", "group": "Battery", "bit": 30, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_T_SENS_MODULE_N_1", "name": "Module 1 temperature sensor flag", "group": "Battery", "bit": 31, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229131|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229131",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_1", "name": "Module 1 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229132|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229132",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_2", "name": "Module 2 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229133|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229133",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_3", "name": "Module 3 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229134|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229134",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_4", "name": "Module 4 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229135|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229135",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_5", "name": "Module 5 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229136|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229136",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_6", "name": "Module 6 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229137|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229137",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_7", "name": "Module 7 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229138|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229138",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_8", "name": "Module 8 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229139|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229139",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_9", "name": "Module 9 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22913A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22913A",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_10", "name": "Module 10 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22913B|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22913B",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_11", "name": "Module 11 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22913C|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22913C",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_T_NUMBER_12", "name": "Module 12 temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291C9|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291C9",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MOTOR_DRIVEN_FAN", "name": "Motor-driven fan unit request", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291CC|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291CC",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_NO_12", "name": "Bus bar 12 flag", "group": "Battery", "bit": 20, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_11", "name": "Bus bar 11 flag", "group": "Battery", "bit": 21, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_10", "name": "Bus bar 10 flag", "group": "Battery", "bit": 22, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_9", "name": "Bus bar 9 flag", "group": "Battery", "bit": 23, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_8", "name": "Bus bar 8 flag", "group": "Battery", "bit": 24, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_7", "name": "Bus bar 7 flag", "group": "Battery", "bit": 25, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_6", "name": "Bus bar 6 flag", "group": "Battery", "bit": 26, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_5", "name": "Bus bar 5 flag", "group": "Battery", "bit": 27, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_4", "name": "Bus bar 4 flag", "group": "Battery", "bit": 28, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_3", "name": "Bus bar 3 flag", "group": "Battery", "bit": 29, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_2", "name": "Bus bar 2 flag", "group": "Battery", "bit": 30, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_BUSBAR_NO_1", "name": "Bus bar 1 flag", "group": "Battery", "bit": 31, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291CD|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291CD",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_INPUT_T", "name": "Traction battery input water temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "add": -40, "min": -40, "max": 4055, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291CF|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291CF",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_TOT", "name": "Traction battery total mileage", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 32, "add": 67108864, "min": 0, "max": 134217727, "unit": "km"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291EF|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291EF",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_FAN_UNIT", "name": "Fan unit", "group": "Battery", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291F0|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291F0",
+      "interval": 0.25,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_FAN_SPD_DADB", "name": "Fan speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291F6|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291F6",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_SERVICE", "name": "Traction battery service plug interlock", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.2291F7|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "2291F7",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_INTERLOCK", "name": "Traction battery interlock", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229216|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229216",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT", "name": "Traction battery overheating", "group": "Battery", "bit": 0, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELLS_OVERVOLAGE", "name": "Cells overvoltage", "group": "Battery", "bit": 1, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_TRACTION_BAT_OVERCURRENT", "name": "Traction battery overcurrent", "group": "Battery", "bit": 2, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELLS_UNDERVOLTAGE", "name": "Cells undervoltage", "group": "Battery", "bit": 3, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229221|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229221",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_1", "name": "Bus bar 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229222|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229222",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_2", "name": "Bus bar 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229223|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229223",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_3", "name": "Bus bar 3 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229224|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229224",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_4", "name": "Bus bar 4 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229225|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229225",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_5", "name": "Bus bar 5 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229226|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229226",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_6", "name": "Bus bar 6 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229227|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229227",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_7", "name": "Bus bar 7 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229228|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229228",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_BUSBAR_V_NO_8", "name": "Bus bar 8 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "multiply": 0.000976563, "min": -32, "max": 31.99, "unit": "V"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229242|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229242",
+      "interval": 5,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_MODULE_MIN_T", "name": "Module with the minimum temperature", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229245|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229245",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_CUM_ENERGY", "name": "Cumulative energy when discharging", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 1000, "min": -2147483, "max": 2147483, "unit": "kWh"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229256|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229256",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_CELL_NUMBER_96", "name": "Cell 96 flag", "group": "Battery", "bit": 160, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_95", "name": "Cell 95 flag", "group": "Battery", "bit": 161, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_94", "name": "Cell 94 flag", "group": "Battery", "bit": 162, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_93", "name": "Cell 93 flag", "group": "Battery", "bit": 163, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_92", "name": "Cell 92 flag", "group": "Battery", "bit": 164, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_91", "name": "Cell 91 flag", "group": "Battery", "bit": 165, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_90", "name": "Cell 90 flag", "group": "Battery", "bit": 166, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_89", "name": "Cell 89 flag", "group": "Battery", "bit": 167, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_88", "name": "Cell 88 flag", "group": "Battery", "bit": 168, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_87", "name": "Cell 87 flag", "group": "Battery", "bit": 169, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_86", "name": "Cell 86 flag", "group": "Battery", "bit": 170, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_85", "name": "Cell 85 flag", "group": "Battery", "bit": 171, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_84", "name": "Cell 84 flag", "group": "Battery", "bit": 172, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_83", "name": "Cell 83 flag", "group": "Battery", "bit": 173, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_82", "name": "Cell 82 flag", "group": "Battery", "bit": 174, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_81", "name": "Cell 81 flag", "group": "Battery", "bit": 175, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_80", "name": "Cell 80 flag", "group": "Battery", "bit": 176, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_78", "name": "Cell 78 flag", "group": "Battery", "bit": 177, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_77", "name": "Cell 77 flag", "group": "Battery", "bit": 179, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_76", "name": "Cell 76 flag", "group": "Battery", "bit": 180, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_75", "name": "Cell 75 flag", "group": "Battery", "bit": 181, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_74", "name": "Cell 74 flag", "group": "Battery", "bit": 182, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_73", "name": "Cell 73 flag", "group": "Battery", "bit": 183, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_72", "name": "Cell 72 flag", "group": "Battery", "bit": 184, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_71", "name": "Cell 71 flag", "group": "Battery", "bit": 185, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_70", "name": "Cell 70 flag", "group": "Battery", "bit": 186, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_69", "name": "Cell 69 flag", "group": "Battery", "bit": 187, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_68", "name": "Cell 68 flag", "group": "Battery", "bit": 188, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_67", "name": "Cell 67 flag", "group": "Battery", "bit": 189, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_66", "name": "Cell 66 flag", "group": "Battery", "bit": 190, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_65", "name": "Cell 65 flag", "group": "Battery", "bit": 191, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_64", "name": "Cell 64 flag", "group": "Battery", "bit": 192, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_63", "name": "Cell 63 flag", "group": "Battery", "bit": 193, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_62", "name": "Cell 62 flag", "group": "Battery", "bit": 194, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_61", "name": "Cell 61 flag", "group": "Battery", "bit": 195, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_60", "name": "Cell 60 flag", "group": "Battery", "bit": 196, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_59", "name": "Cell 59 flag", "group": "Battery", "bit": 197, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_58", "name": "Cell 58 flag", "group": "Battery", "bit": 198, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_57", "name": "Cell 57 flag", "group": "Battery", "bit": 199, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_56", "name": "Cell 56 flag", "group": "Battery", "bit": 200, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_55", "name": "Cell 55 flag", "group": "Battery", "bit": 201, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_54", "name": "Cell 54 flag", "group": "Battery", "bit": 202, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_53", "name": "Cell 53 flag", "group": "Battery", "bit": 203, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_52", "name": "Cell 52 flag", "group": "Battery", "bit": 204, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_51", "name": "Cell 51 flag", "group": "Battery", "bit": 205, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_50", "name": "Cell 50 flag", "group": "Battery", "bit": 206, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_49", "name": "Cell 49 flag", "group": "Battery", "bit": 207, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_48", "name": "Cell 48 flag", "group": "Battery", "bit": 208, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_47", "name": "Cell 47 flag", "group": "Battery", "bit": 209, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_46", "name": "Cell 46 flag", "group": "Battery", "bit": 210, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_45", "name": "Cell 45 flag", "group": "Battery", "bit": 211, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_44", "name": "Cell 44 flag", "group": "Battery", "bit": 212, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_43", "name": "Cell 43 flag", "group": "Battery", "bit": 213, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_42", "name": "Cell 42 flag", "group": "Battery", "bit": 214, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_41", "name": "Cell 41 flag", "group": "Battery", "bit": 215, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_40", "name": "Cell 40 flag", "group": "Battery", "bit": 216, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_39", "name": "Cell 39 flag", "group": "Battery", "bit": 217, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_38", "name": "Cell 38 flag", "group": "Battery", "bit": 218, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_37", "name": "Cell 37 flag", "group": "Battery", "bit": 219, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_36", "name": "Cell 36 flag", "group": "Battery", "bit": 220, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_35", "name": "Cell 35 flag", "group": "Battery", "bit": 221, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_34", "name": "Cell 34 flag", "group": "Battery", "bit": 222, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_33", "name": "Cell 33 flag", "group": "Battery", "bit": 223, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_32", "name": "Cell 32 flag", "group": "Battery", "bit": 224, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_31", "name": "Cell 31 flag", "group": "Battery", "bit": 225, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_30", "name": "Cell 30 flag", "group": "Battery", "bit": 226, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_29", "name": "Cell 29 flag", "group": "Battery", "bit": 227, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_28", "name": "Cell 28 flag", "group": "Battery", "bit": 228, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_27", "name": "Cell 27 flag", "group": "Battery", "bit": 229, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_26", "name": "Cell 26 flag", "group": "Battery", "bit": 230, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_25", "name": "Cell 25 flag", "group": "Battery", "bit": 231, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_24", "name": "Cell 24 flag", "group": "Battery", "bit": 232, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_23", "name": "Cell 23 flag", "group": "Battery", "bit": 233, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_22", "name": "Cell 22 flag", "group": "Battery", "bit": 234, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_21", "name": "Cell 21 flag", "group": "Battery", "bit": 235, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_20", "name": "Cell 20 flag", "group": "Battery", "bit": 236, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_19", "name": "Cell 19 flag", "group": "Battery", "bit": 237, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_18", "name": "Cell 18 flag", "group": "Battery", "bit": 238, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_17", "name": "Cell 17 flag", "group": "Battery", "bit": 239, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_16", "name": "Cell 16 flag", "group": "Battery", "bit": 240, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_15", "name": "Cell 15 flag", "group": "Battery", "bit": 241, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_14", "name": "Cell 14 flag", "group": "Battery", "bit": 242, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_13", "name": "Cell 13 flag", "group": "Battery", "bit": 243, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_12", "name": "Cell 12 flag", "group": "Battery", "bit": 244, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_11", "name": "Cell 11 flag", "group": "Battery", "bit": 245, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_10", "name": "Cell 10 flag", "group": "Battery", "bit": 246, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_9", "name": "Cell 9 flag", "group": "Battery", "bit": 247, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_8", "name": "Cell 8 flag", "group": "Battery", "bit": 248, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_7", "name": "Cell 7 flag", "group": "Battery", "bit": 249, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_6", "name": "Cell 6 flag", "group": "Battery", "bit": 250, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_5", "name": "Cell 5 flag", "group": "Battery", "bit": 251, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_4", "name": "Cell 4 flag", "group": "Battery", "bit": 252, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_3", "name": "Cell 3 flag", "group": "Battery", "bit": 253, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_2", "name": "Cell 2 flag", "group": "Battery", "bit": 254, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_CELL_NUMBER_1", "name": "Cell 1 flag", "group": "Battery", "bit": 255, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22925A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22925A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_FAN_UNIT_FEED", "name": "Fan unit feed", "group": "Battery", "bit": 0, "bits": 8, "multiply": 4, "min": 0, "max": 1020, "unit": "Hz"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229261|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229261",
+      "interval": 30,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_ABS_TIME_SINCE_FIRST", "name": "Absolute time since first ignition", "group": "Battery", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "min"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22927A|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22927A",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_SOH_CELL_96", "name": "Cell 96 state of health flag", "group": "Battery", "bit": 160, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_95", "name": "Cell 95 state of health flag", "group": "Battery", "bit": 161, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_94", "name": "Cell 94 state of health flag", "group": "Battery", "bit": 162, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_93", "name": "Cell 93 state of health flag", "group": "Battery", "bit": 163, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_92", "name": "Cell 92 state of health flag", "group": "Battery", "bit": 164, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_91", "name": "Cell 91 state of health flag", "group": "Battery", "bit": 165, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_90", "name": "Cell 90 state of health flag", "group": "Battery", "bit": 166, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_89", "name": "Cell 89 state of health flag", "group": "Battery", "bit": 167, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_88", "name": "Cell 88 state of health flag", "group": "Battery", "bit": 168, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_87", "name": "Cell 87 state of health flag", "group": "Battery", "bit": 169, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_86", "name": "Cell 86 state of health flag", "group": "Battery", "bit": 170, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_85", "name": "Cell 85 state of health flag", "group": "Battery", "bit": 171, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_84", "name": "Cell 84 state of health flag", "group": "Battery", "bit": 172, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_83", "name": "Cell 83 state of health flag", "group": "Battery", "bit": 173, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_82", "name": "Cell 82 state of health flag", "group": "Battery", "bit": 174, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_81", "name": "Cell 81 state of health flag", "group": "Battery", "bit": 175, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_80", "name": "Cell 80 state of health flag", "group": "Battery", "bit": 176, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_79", "name": "Cell 79 state of health flag", "group": "Battery", "bit": 177, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_78", "name": "Cell 78 state of health flag", "group": "Battery", "bit": 178, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_77", "name": "Cell 77 state of health flag", "group": "Battery", "bit": 179, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_76", "name": "Cell 76 state of health flag", "group": "Battery", "bit": 180, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_75", "name": "Cell 75 state of health flag", "group": "Battery", "bit": 181, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_74", "name": "Cell 74 state of health flag", "group": "Battery", "bit": 182, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_73", "name": "Cell 73 state of health flag", "group": "Battery", "bit": 183, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_72", "name": "Cell 72 state of health flag", "group": "Battery", "bit": 184, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_71", "name": "Cell 71 state of health flag", "group": "Battery", "bit": 185, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_70", "name": "Cell 70 state of health flag", "group": "Battery", "bit": 186, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_69", "name": "Cell 69 state of health flag", "group": "Battery", "bit": 187, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_68", "name": "Cell 68 state of health flag", "group": "Battery", "bit": 188, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_67", "name": "Cell 67 state of health flag", "group": "Battery", "bit": 189, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_66", "name": "Cell 66 state of health flag", "group": "Battery", "bit": 190, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_65", "name": "Cell 65 state of health flag", "group": "Battery", "bit": 191, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_64", "name": "Cell 64 state of health flag", "group": "Battery", "bit": 192, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_63", "name": "Cell 63 state of health flag", "group": "Battery", "bit": 193, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_62", "name": "Cell 62 state of health flag", "group": "Battery", "bit": 194, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_61", "name": "Cell 61 state of health flag", "group": "Battery", "bit": 195, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_60", "name": "Cell 60 state of health flag", "group": "Battery", "bit": 196, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_59", "name": "Cell 59 state of health flag", "group": "Battery", "bit": 197, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_58", "name": "Cell 58 state of health flag", "group": "Battery", "bit": 198, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_57", "name": "Cell 57 state of health flag", "group": "Battery", "bit": 199, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_56", "name": "Cell 56 state of health flag", "group": "Battery", "bit": 200, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_55", "name": "Cell 55 state of health flag", "group": "Battery", "bit": 201, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_54", "name": "Cell 54 state of health flag", "group": "Battery", "bit": 202, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_53", "name": "Cell 53 state of health flag", "group": "Battery", "bit": 203, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_52", "name": "Cell 52 state of health flag", "group": "Battery", "bit": 204, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_51", "name": "Cell 51 state of health flag", "group": "Battery", "bit": 205, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_50", "name": "Cell 50 state of health flag", "group": "Battery", "bit": 206, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_49", "name": "Cell 49 state of health flag", "group": "Battery", "bit": 207, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_48", "name": "Cell 48 state of health flag", "group": "Battery", "bit": 208, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_47", "name": "Cell 47 state of health flag", "group": "Battery", "bit": 209, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_46", "name": "Cell 46 state of health flag", "group": "Battery", "bit": 210, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_45", "name": "Cell 45 state of health flag", "group": "Battery", "bit": 211, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_44", "name": "Cell 44 state of health flag", "group": "Battery", "bit": 212, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_43", "name": "Cell 43 state of health flag", "group": "Battery", "bit": 213, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_42", "name": "Cell 42 state of health flag", "group": "Battery", "bit": 214, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_41", "name": "Cell 41 state of health flag", "group": "Battery", "bit": 215, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_40", "name": "Cell 40 state of health flag", "group": "Battery", "bit": 216, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_39", "name": "Cell 39 state of health flag", "group": "Battery", "bit": 217, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_38", "name": "Cell 38 state of health flag", "group": "Battery", "bit": 218, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_37", "name": "Cell 37 state of health flag", "group": "Battery", "bit": 219, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_36", "name": "Cell 36 state of health flag", "group": "Battery", "bit": 220, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_35", "name": "Cell 35 state of health flag", "group": "Battery", "bit": 221, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_34", "name": "Cell 34 state of health flag", "group": "Battery", "bit": 222, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_33", "name": "Cell 33 state of health flag", "group": "Battery", "bit": 223, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_32", "name": "Cell 32 state of health flag", "group": "Battery", "bit": 224, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_31", "name": "Cell 31 state of health flag", "group": "Battery", "bit": 225, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_30", "name": "Cell 30 state of health flag", "group": "Battery", "bit": 226, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_29", "name": "Cell 29 state of health flag", "group": "Battery", "bit": 227, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_28", "name": "Cell 28 state of health flag", "group": "Battery", "bit": 228, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_27", "name": "Cell 27 state of health flag", "group": "Battery", "bit": 229, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_26", "name": "Cell 26 state of health flag", "group": "Battery", "bit": 230, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_25", "name": "Cell 25 state of health flag", "group": "Battery", "bit": 231, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_24", "name": "Cell 24 state of health flag", "group": "Battery", "bit": 232, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_23", "name": "Cell 23 state of health flag", "group": "Battery", "bit": 233, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_22", "name": "Cell 22 state of health flag", "group": "Battery", "bit": 234, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_21", "name": "Cell 21 state of health flag", "group": "Battery", "bit": 235, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_20", "name": "Cell 20 state of health flag", "group": "Battery", "bit": 236, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_19", "name": "Cell 19 state of health flag", "group": "Battery", "bit": 237, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_18", "name": "Cell 18 state of health flag", "group": "Battery", "bit": 238, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_17", "name": "Cell 17 state of health flag", "group": "Battery", "bit": 239, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_16", "name": "Cell 16 state of health flag", "group": "Battery", "bit": 240, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_15", "name": "Cell 15 state of health flag", "group": "Battery", "bit": 241, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_14", "name": "Cell 14 state of health flag", "group": "Battery", "bit": 242, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_13", "name": "Cell 13 state of health flag", "group": "Battery", "bit": 243, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_12", "name": "Cell 12 state of health flag", "group": "Battery", "bit": 244, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_11", "name": "Cell 11 state of health flag", "group": "Battery", "bit": 245, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_10", "name": "Cell 10 state of health flag", "group": "Battery", "bit": 246, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_9", "name": "Cell 9 state of health flag", "group": "Battery", "bit": 247, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_8", "name": "Cell 8 state of health flag", "group": "Battery", "bit": 248, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_7", "name": "Cell 7 state of health flag", "group": "Battery", "bit": 249, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_6", "name": "Cell 6 state of health flag", "group": "Battery", "bit": 250, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_5", "name": "Cell 5 state of health flag", "group": "Battery", "bit": 251, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_4", "name": "Cell 4 state of health flag", "group": "Battery", "bit": 252, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_3", "name": "Cell 3 state of health flag", "group": "Battery", "bit": 253, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_2", "name": "Cell 2 state of health flag", "group": "Battery", "bit": 254, "bits": 1, "min": 0, "max": 1},
+        {"id": "ARIYA_SOH_CELL_1", "name": "Cell 1 state of health flag", "group": "Battery", "bit": 255, "bits": 1, "min": 0, "max": 1}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.229284|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "229284",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_TRACTION_BAT_CURRENT", "name": "Traction battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 32, "signed": true, "multiply": -1, "divide": 1000, "min": -2147483, "max": 2147483, "unit": "A"}
+      ]
+    },
+    {
+      "id": "DADB.DAF1DB.22F1A0|fc=1",
+      "bus": "can29",
+      "tx": "18DADBF1",
+      "rx": "00DAF1DB",
+      "rxMask": "00FFFFFF",
+      "request": "22F1A0",
+      "interval": 1,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "signals": [
+        {"id": "ARIYA_FAULT_FINDING", "name": "Fault finding version", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "ARIYA_HVBAT_CELLS_V",
+      "name": "Cell voltages",
+      "group": "Battery",
+      "match": "ARIYA_HVBAT_(CELL_\\d+)_V",
+      "metric": "batteryModulesVoltage"
+    }
+  ]
+}

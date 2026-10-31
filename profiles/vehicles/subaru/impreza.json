@@ -1,0 +1,4542 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/subaru/impreza",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Subaru",
+    "model": "Impreza",
+    "years": null,
+    "generations": [
+      {"name": "First Generation (GC/GF/GM)", "from": 1992, "to": 2000},
+      {"name": "Second Generation (GD/GG)", "from": 2000, "to": 2007},
+      {"name": "Third Generation (GE/GH/GR/GV)", "from": 2007, "to": 2011},
+      {"name": "Fourth Generation (GJ/GP)", "from": 2011, "to": 2016},
+      {"name": "Fifth Generation (GK/GT)", "from": 2016, "to": 2023},
+      {"name": "Sixth Generation (G50)", "from": 2023}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Subaru-Impreza",
+    "file": "signalsets/v3/default.json",
+    "revision": "3341c1330719c74bea40f0ca4169e1f5c4182757",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "ecus": [
+    {"tx": "753", "type": "tpms"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"}
+  ],
+  "requests": [
+    {
+      "id": "746.221032",
+      "bus": "can11",
+      "tx": "746",
+      "request": "221032",
+      "interval": 0.25,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_STEER_ANGLE_746", "name": "Steering wheel angle, v2", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 5, "min": -640, "max": 635, "unit": "°"}
+      ]
+    },
+    {
+      "id": "753.75B.221022|t=64,fc=1",
+      "bus": "can11",
+      "tx": "753",
+      "rx": "75B",
+      "request": "221022",
+      "interval": 15,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "IMPREZA_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "IMPREZA_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 16, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
+        {"id": "IMPREZA_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 24, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0}
+      ]
+    },
+    {
+      "id": "753.75B.221028|t=64,fc=1",
+      "bus": "can11",
+      "tx": "753",
+      "rx": "75B",
+      "request": "221028",
+      "interval": 3600,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_TID1", "name": "Tire 1 id", "group": "Tires", "bit": 0, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "IMPREZA_TID2", "name": "Tire 2 id", "group": "Tires", "bit": 24, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "IMPREZA_TID3", "name": "Tire 3 id", "group": "Tires", "bit": 48, "bits": 24, "min": 0, "max": 16777215},
+        {"id": "IMPREZA_TID4", "name": "Tire 4 id", "group": "Tires", "bit": 72, "bits": 24, "min": 0, "max": 16777215}
+      ]
+    },
+    {
+      "id": "7A2.2210A6|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "2210A6",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [2015, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ACC_POS", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.221135|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "221135",
+      "interval": 1,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A2.221136|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "221136",
+      "interval": 5,
+      "timeout": 0.4,
+      "flowControl": true,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.2212ED|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7A2",
+      "request": "2212ED",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_MAF_AVG", "name": "Mass air flow, average", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.220005",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "220005",
+      "interval": 5,
+      "notAnsweredIn": [2002, 2008, 2010, 2011, 2015, 2017, 2018, 2019, 2020, 2021, 2023, 2024],
+      "signals": [
+        {"id": "IMPREZA_ECT", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.220023",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "220023",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22003C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22003C",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EGT_AT_CATALYST_INLET", "name": "Exhaust gas temperature, catalyst inlet", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22003E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22003E",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EGT_DPF_INLET", "name": "Exhaust gas temperature at DPF inlet", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A1",
+      "interval": 1,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MAF_VOLTAGE", "name": "Mass airflow sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A4",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FUEL_INJECTOR_2_PULSE_WIDTH", "name": "Fuel injector #2 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "divide": 3.90625, "min": 0, "max": 65.28, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A5",
+      "interval": 30,
+      "answeredIn": [2015, 2024],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_ODO_7A2_10A5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210A7",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210A7",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FUEL_T", "name": "Fuel temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AB",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AB",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_RADIATOR_FAN", "name": "Radiator fan control", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AC",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AC",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_PRIMARY_BOOST_CTRL", "name": "Primary boost control", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210AE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210AE",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_CPC_VALVE_DUTY_CYCLE", "name": "Canister purge control valve duty cycle", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B1",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_EGR_STEPS", "name": "Exhaust gas recirculation steps", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B2",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B2",
+      "interval": 1,
+      "answeredIn": [2015, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ALTERNATOR_DUTY", "name": "Alternator duty", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B3",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FUEL_PUMP_DUTY", "name": "Fuel pump duty", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B4",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_INTAKE_VVT_ADVANCE_RIGHT", "name": "Intake VVT advance angle right", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B5",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_INTAKE_VVT_ADVANCE_LEFT", "name": "Intake VVT advance angle left", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B6",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B6",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2019, 2024, 2025],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IMPREZA_OCV_DUTY_RIGHT", "name": "Oil control valve duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210B7",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210B7",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_OCV_DUTY_LEFT", "name": "Oil control valve duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210BE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210BE",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2019, 2024, 2025],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IMPREZA_A_F_SENSOR_1", "name": "A/F sensor #1", "group": "ECU", "bit": 0, "bits": 8, "multiply": 1.99, "divide": 255, "min": 0, "max": 1.99}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D2",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D2",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EWG_VALVE_POSITION_SENSOR_LEARNING_CLOSED", "name": "Electric waste gate valve position sensor learning value at fully-closed position", "group": "Engine", "bit": 0, "bits": 8, "multiply": 39.8, "divide": 255, "add": -10, "min": -10, "max": 29, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D3",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EWG_VALVE_REQUEST_POSITION", "name": "Electric waste gate valve request position value", "group": "ECU", "bit": 0, "bits": 16, "multiply": 40, "divide": 65535, "add": -10, "min": -10, "max": 30, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210D4",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210D4",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EWG_VALVE_ACTUAL_POSITION", "name": "Electric waste gate valve actual position value", "group": "ECU", "bit": 0, "bits": 16, "multiply": 40, "divide": 65535, "add": -10, "min": -10, "max": 30, "unit": "mm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210DE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210DE",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_THROTTLE_MOTOR_DUTY", "name": "Throttle motor duty", "group": "ECU", "bit": 0, "bits": 8, "multiply": 0.784, "add": -100, "min": -100, "max": 99.92, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E3",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E3",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_CRUISE_VSS_T", "name": "Cruise speed, set", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E5",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E5",
+      "interval": 30,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ODO_7A2_10E5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km", "invalidAtOrAbove": 131070}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E6",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E6",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FUEL_TANK_AIR_PRESSURE", "name": "Fuel tank air pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E8",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E8",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_OSV_DUTY_RIGHT", "name": "Oil supply value, duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210E9",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210E9",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_OSV_DUTY_LEFT", "name": "Oil supply value, duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210EE",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210EE",
+      "interval": 1,
+      "answeredIn": [2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_EXHAUST_OCV_DUTY_RIGHT", "name": "Exhaust OCV duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2210EF",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2210EF",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_EXHAUST_OCV_DUTY_LEFT", "name": "Exhaust OCV duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110B",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2019, 2024, 2025],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IMPREZA_ROUGHNESS_MONITOR_1", "name": "Roughness monitor #1", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110C",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ROUGHNESS_MONITOR_2", "name": "Roughness monitor #2", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110D",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ROUGHNESS_MONITOR_3", "name": "Roughness monitor #3", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22110E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22110E",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2019, 2024, 2025],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IMPREZA_ROUGHNESS_MONITOR_4", "name": "Roughness monitor #4", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221116",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221116",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FINAL_INJECTION_AMOUNT_MM_ST", "name": "Final injection amount", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221118",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221118",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_TARGET_INTAKE_MANIFOLD_PRESSURE", "name": "Target intake manifold pressure", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 50, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111B",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EGR_TARGET_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation target valve opening angle", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111C",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EGR_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation valve opening angle", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22111F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22111F",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_INLET_AIR_T_AFTER_AIR_FILTER", "name": "Inlet air temperature, after air filter", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221121",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221121",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2019, 2024, 2025],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2018, 2020, 2021, 2023],
+      "signals": [
+        {"id": "IMPREZA_TARGET_ENGINE_SPEED", "name": "Target engine speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112A",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MILEAGE_AFTER_INJECTOR_LEARNING", "name": "Mileage after injector learning", "group": "ECU", "bit": 0, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112B",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MILEAGE_AFTER_INJECTOR_REPLACEMENT", "name": "Mileage after injector replacement", "group": "ECU", "bit": 0, "bits": 16, "multiply": 5, "min": 0, "max": 327675, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112C",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_INTERIOR_HEATER", "name": "Interior heater", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112D",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_QUANTITY_CORRECTION_1", "name": "Quantity correction cylinder #1", "group": "ECU", "bit": 0, "bits": 8, "divide": 100, "add": -1, "min": -1, "max": 1.54, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112E",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_QUANTITY_CORRECTION_2", "name": "Quantity correction cylinder #2", "group": "ECU", "bit": 0, "bits": 8, "divide": 100, "add": -1, "min": -1, "max": 1.54, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22112F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22112F",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_QUANTITY_CORRECTION_3", "name": "Quantity correction cylinder #3", "group": "ECU", "bit": 0, "bits": 8, "divide": 100, "add": -1, "min": -1, "max": 1.54, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221130",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221130",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_QUANTITY_CORRECTION_4", "name": "Quantity correction cylinder #4", "group": "ECU", "bit": 0, "bits": 8, "divide": 100, "add": -1, "min": -1, "max": 1.54, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221149",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221149",
+      "interval": 1,
+      "notAnsweredIn": [2002, 2008, 2010, 2011, 2015, 2017, 2018, 2019, 2020, 2021, 2023, 2024],
+      "signals": [
+        {"id": "IMPREZA_CUM_ASH_RAT", "name": "Cumulative ash ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114A",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_PRESSURE_DIFFERENCE_BETWEEN_DPF_INLET_AND_OUTLET", "name": "Pressure difference between DPF inlet and outlet", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114B",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_ESTIMATED_CATALYST_T", "name": "Estimated catalyst temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -40, "min": -40, "max": 1235, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114C",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_ESTIMATED_DPF_T", "name": "Estimated DPF temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -40, "min": -40, "max": 1235, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114D",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114D",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_SOOT_ACCUMULATION_RATIO", "name": "Soot accumulation ratio", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22114E",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22114E",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_OIL_DILUTION_RATIO", "name": "Oil dilution ratio", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221155",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221155",
+      "interval": 30,
+      "notAnsweredIn": [2002, 2008, 2010, 2011, 2015, 2017, 2018, 2019, 2020, 2021, 2023, 2024],
+      "signals": [
+        {"id": "IMPREZA_ESTIMATED_DIST_OIL", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221156",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221156",
+      "interval": 30,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_RUNNING_DISTANCE_SINCE_LAST_DPF_REGENERATION", "name": "Running distance since last DPF regeneration", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221157",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221157",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_DPF_REGENERATION_COUNT", "name": "Diesel particulate filter regeneration count", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221158",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221158",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MQI_FLV_1_1", "name": "Micro-quantity-injection final learning value #1 cylinder #1", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_2_1", "name": "Micro-quantity-injection final learning value #2 cylinder #1", "group": "ECU", "bit": 8, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_3_1", "name": "Micro-quantity-injection final learning value #3 cylinder #1", "group": "ECU", "bit": 16, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_4_1", "name": "Micro-quantity-injection final learning value #4 cylinder #1", "group": "ECU", "bit": 24, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_5_1", "name": "Micro-quantity-injection final learning value #5 cylinder #1", "group": "ECU", "bit": 32, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221159",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221159",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MQI_FLV_1_2", "name": "Micro-quantity-injection final learning value #1 cylinder #2", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_2_2", "name": "Micro-quantity-injection final learning value #2 cylinder #2", "group": "ECU", "bit": 8, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_3_2", "name": "Micro-quantity-injection final learning value #3 cylinder #2", "group": "ECU", "bit": 16, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_4_2", "name": "Micro-quantity-injection final learning value #4 cylinder #2", "group": "ECU", "bit": 24, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_5_2", "name": "Micro-quantity-injection final learning value #5 cylinder #2", "group": "ECU", "bit": 32, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22115A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22115A",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MQI_FLV_1_3", "name": "Micro-quantity-injection final learning value #1 cylinder #3", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_2_3", "name": "Micro-quantity-injection final learning value #2 cylinder #3", "group": "ECU", "bit": 8, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_3_3", "name": "Micro-quantity-injection final learning value #3 cylinder #3", "group": "ECU", "bit": 16, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_4_3", "name": "Micro-quantity-injection final learning value #4 cylinder #3", "group": "ECU", "bit": 24, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_5_3", "name": "Micro-quantity-injection final learning value #5 cylinder #3", "group": "ECU", "bit": 32, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22115B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22115B",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_MQI_FLV_1_4", "name": "Micro-quantity-injection final learning value #1 cylinder #4", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_2_4", "name": "Micro-quantity-injection final learning value #2 cylinder #4", "group": "ECU", "bit": 8, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_3_4", "name": "Micro-quantity-injection final learning value #3 cylinder #4", "group": "ECU", "bit": 16, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_4_4", "name": "Micro-quantity-injection final learning value #4 cylinder #4", "group": "ECU", "bit": 24, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"},
+        {"id": "IMPREZA_MQI_FLV_5_4", "name": "Micro-quantity-injection final learning value #5 cylinder #4", "group": "ECU", "bit": 32, "bits": 8, "divide": 200, "add": -0.64, "min": -0.64, "max": 0.63, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221161",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221161",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_INDIVIDUAL_PUMP_DIFFERENCE_LEARNING_VALUE", "name": "Individual pump difference learning value", "group": "ECU", "bit": 0, "bits": 16, "add": -1000, "min": -1000, "max": 64535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221162",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221162",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FINAL_MAIN_INJECTION_PERIOD", "name": "Final main injection period", "group": "ECU", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22116A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22116A",
+      "interval": 30,
+      "notAnsweredIn": [2002, 2008, 2010, 2011, 2015, 2017, 2018, 2019, 2020, 2021, 2023, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIST_SINCE_PF_WARN", "name": "Distance since particulate filter warning", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221189",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221189",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_OIL_DILUTION_AMOUNT", "name": "Oil dilution amount", "group": "ECU", "bit": 0, "bits": 8, "divide": 200, "min": 0, "max": 1.275}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2211A1",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2211A1",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_DPF_REGEN_CNT", "name": "Diesel particulate filter regeneration attempts", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7A2.7AA.2211D0",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "2211D0",
+      "interval": 1,
+      "answeredIn": [2015, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_KNOCKING_SIGNAL", "name": "Knocking signal", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22122F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22122F",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_CLUTCH_SWITCH", "name": "Clutch switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221230",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221230",
+      "interval": 1,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_STOP_LIGHT_SWITCH", "name": "Stop light switch", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221231",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221231",
+      "interval": 1,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_CC_SET_COAST_SWITCH", "name": "Cruise control set/coast switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221232",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221232",
+      "interval": 1,
+      "answeredIn": [2017],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_CC_RESUME_ACCELERATE_SWITCH", "name": "Cruise control resume/accelerate switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221233",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221233",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221234",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221234",
+      "interval": 1,
+      "answeredIn": [2017, 2019],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_CC_MAIN_TOGGLE_SWITCH", "name": "Cruise control main toggle switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124A",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_CC_CANCEL_SWITCH", "name": "Cruise control cancel switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124C",
+      "interval": 1,
+      "answeredIn": [2015, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_OIL_LEVEL_SWITCH", "name": "Oil level switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22124F",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22124F",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_GLOW_RELAY_SWITCH", "name": "Glow relay switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221251",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221251",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_SUB_FUEL_PUMP_RELAY_SWITCH", "name": "Sub fuel pump relay switch", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221254",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221254",
+      "interval": 3600,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_INJECTOR_LEARNING_SWITCH", "name": "Injector learning switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22125B",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22125B",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_DPF_ACTIVE_REGENERATION_SWITCH", "name": "Diesel particulate filter active regeneration switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22129C",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22129C",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_ENGINE_STARTING_TIME", "name": "Engine starting time", "group": "ECU", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221314",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221314",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_MONITOR_1", "name": "Cylinder monitor #1", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221315",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221315",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_MONITOR_2", "name": "Cylinder monitor #2", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221316",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221316",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_MONITOR_3", "name": "Cylinder monitor #3", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221317",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221317",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_MONITOR_4", "name": "Cylinder monitor #4", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221321",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221321",
+      "interval": 5,
+      "answeredIn": [2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_BAT_TERMINAL_VOLTAGE", "name": "Battery terminal voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221322",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221322",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_BAT_CHARGE_DISCHARGE_CURRENT", "name": "Battery charge/discharge current", "group": "Battery", "bit": 0, "bits": 32, "multiply": 10, "divide": 10000, "add": -2000, "min": -2000, "max": 4292967, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221323",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221323",
+      "interval": 5,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ESTIMATED_BAT_T", "name": "Estimated battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.221324",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "221324",
+      "interval": 1,
+      "answeredIn": [2017, 2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_REMAINING_BAT_CAPACITY", "name": "Remaining battery capacity", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A2.7AA.22307A",
+      "bus": "can11",
+      "tx": "7A2",
+      "rx": "7AA",
+      "request": "22307A",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_INLET_AIR_T", "name": "Inlet air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210C8",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210C8",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_LOCK_UP_DUTY_RATIO", "name": "Lock up duty ratio", "group": "ECU", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210C9",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210C9",
+      "interval": 1,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_TRANSFER_DUTY_RATIO", "name": "Transfer duty ratio", "group": "ECU", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210CB",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210CB",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2210D2",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2210D2",
+      "interval": 5,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_CVT_T", "name": "Continuously variable transmission temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221138",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221138",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_SECONDARY_PULLEY_SPEED", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113A",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113A",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ACTUAL_SECONDARY_PRESSURE", "name": "Actual secondary pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113B",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113B",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_SECONDARY_SET_CURRENT", "name": "Secondary set current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113C",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113C",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_SECONDARY_ACTUAL_CURRENT", "name": "Secondary actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113D",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113D",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_TARGET_GEAR_RATIO", "name": "Target gear ratio", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 256, "divide": 65535, "min": 0, "max": 0.996}
+      ]
+    },
+    {
+      "id": "7A3.7AB.22113E",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "22113E",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ACTUAL_GEAR_RATIO", "name": "Actual gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 256, "divide": 65535, "min": 0, "max": 256}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221141",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221141",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ACTUAL_PRIMARY_PRESSURE", "name": "Actual primary pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221146",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221146",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_PRIMARY_PULLEY_SPEED", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.221147",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "221147",
+      "interval": 0.25,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_FRONT_WHEEL_SPEED", "name": "Front wheel speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B1",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B1",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_ACTUAL_LINE_PRESSURE", "name": "Actual line pressure", "group": "ECU", "bit": 0, "bits": 16, "multiply": 25.6, "divide": 65535, "min": 0, "max": 25.6}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B2",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B2",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_LIN_SOLENOID_ACTUAL_CURRENT", "name": "Lin. solenoid actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B4",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B4",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_AWD_SOLENOID_SET_CURRENT", "name": "All-wheel drive solenoid set current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7A3.7AB.2212B5",
+      "bus": "can11",
+      "tx": "7A3",
+      "rx": "7AB",
+      "request": "2212B5",
+      "interval": 1,
+      "answeredIn": [2024, 2025],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023
+      ],
+      "signals": [
+        {"id": "IMPREZA_AWD_SOLENOID_ACTUAL_CURRENT", "name": "All-wheel drive solenoid actual current", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221024|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221024",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_FR_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221025|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221025",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_FL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221026|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221026",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_RR_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221027|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221027",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_RL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "7B0.7B8.221029|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7B0",
+      "rx": "7B8",
+      "request": "221029",
+      "interval": 0.25,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [
+        2009,
+        2012,
+        2013,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "notAnsweredIn": [2002, 2008, 2010, 2011],
+      "signals": [
+        {"id": "IMPREZA_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32767, "max": 32767, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.220005",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "220005",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2010,
+        2011,
+        2012,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024
+      ],
+      "signals": [
+        {"id": "IMPREZA_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22002F|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22002F",
+      "interval": 30,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22101E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22101E",
+      "interval": 3600,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_TRIP_CNT", "name": "Trip counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210A3",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210A3",
+      "interval": 1,
+      "answeredIn": [2015, 2017],
+      "notAnsweredIn": [2010, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_FUEL_INJ_1_WIDTH", "name": "Fuel injection 1 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 32, "divide": 125, "min": 0, "max": 65.28, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210AC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210AC",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_PRIMARY_BOOST_CTRL_7E0", "name": "Primary boost control", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210AF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210AF",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_TUMBLE_GEN_VLV_POS", "name": "Tumble generator valve position sensor right", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210B0",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210B0",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_TUMBLE_GEN_VLV_POS_SENS", "name": "Tumble generator valve position sensor left", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210E5|t=64,fc=1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210E5",
+      "interval": 30,
+      "timeout": 0.4,
+      "flowControl": true,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021, 2023, 2024],
+      "notAnsweredIn": [2002, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2025],
+      "signals": [
+        {"id": "IMPREZA_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km", "invalidAtOrAbove": 131070}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210E7",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210E7",
+      "interval": 5,
+      "answeredIn": [2015],
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024,
+        2025
+      ],
+      "signals": [
+        {"id": "IMPREZA_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210EC",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210EC",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_EXH_VVT_RETARD_ANG", "name": "Exhaust VVT retard angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2210ED",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2210ED",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_EXH_VVT_RETARD_ANG_LEFT", "name": "Exhaust VVT retard angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221149",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221149",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_CUM_ASH_RAT_7E0", "name": "Cumulative ash ratio", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221155",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221155",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_ESTIMATED_DIST_OIL_CHANGE", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22116A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22116A",
+      "interval": 30,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIST_SINCE_PF_WARN_7E0", "name": "Distance since particulate filter warning", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BE",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_INT_VVT_CLEANING", "name": "Intake VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2211BF",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2211BF",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_EXH_VVT_CLEANING", "name": "Exhaust VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221275",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221275",
+      "interval": 1,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_THROTTLE_MOTOR_V", "name": "Throttle motor voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 25, "min": 0, "max": 20.4, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221276",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221276",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_SUB_THROTTLE_SENS", "name": "Sub throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221277",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221277",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_MAIN_THROTTLE_SENS", "name": "Main throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221278",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221278",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_SUB_ACCEL_SENS", "name": "Sub accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221279",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221279",
+      "interval": 0.25,
+      "answeredIn": [2015, 2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2024],
+      "signals": [
+        {"id": "IMPREZA_MAIN_ACCEL_SENS", "name": "Main accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221289",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221289",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_IDLE_MAF", "name": "Idle mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128A",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_IDLE_MAF_FEEDBACK", "name": "Idle mass air flow feedback correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128B",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128B",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_IDLE_SPD_CTRL", "name": "Idle speed control learning value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128C",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128C",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_IDLE_AC_LOAD_CORR", "name": "Idle A/C load correction", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128D",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128D",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_ELEC_LOAD_FEEDBACK", "name": "Electric load feedback value", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128E",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128E",
+      "interval": 0.25,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_IDLE_DIRTY_THROTTLE", "name": "Idle dirty throttle correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22128F",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22128F",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_INT_VVT_ADVANCE_TGT", "name": "Intake VVT advance, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221290",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221290",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_INT_VVT_ADVANCE_TGT_ANG", "name": "Intake VVT advance, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221291",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221291",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_EXH_VVT_RETARD_TGT", "name": "Exhaust VVT retard, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221292",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221292",
+      "interval": 1,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_EXH_VVT_RETARD_TGT_ANG", "name": "Exhaust VVT retard, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221295",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221295",
+      "interval": 3600,
+      "answeredIn": [2017, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2024],
+      "signals": [
+        {"id": "IMPREZA_PURGE_DENSITY_LEARN", "name": "Purge density learn value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 332, "divide": 425, "add": -100, "min": -100, "max": 99.1999, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221298",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221298",
+      "interval": 0.25,
+      "answeredIn": [2017, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2018, 2024],
+      "signals": [
+        {"id": "IMPREZA_TRANS_TURBINE_SPD", "name": "Transmission turbine speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221299",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221299",
+      "interval": 1,
+      "answeredIn": [2017, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2018, 2024],
+      "signals": [
+        {"id": "IMPREZA_TRANS_LOCK_UP", "name": "Transmission lock-up", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212CE",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212CE",
+      "interval": 5,
+      "answeredIn": [2015, 2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_AMBIENT_T_SENS_SIG", "name": "Ambient temperature for sensor signal", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.2212D1",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "2212D1",
+      "interval": 5,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_AMBIENT_T_CTRL", "name": "Ambient temperature for control", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221352",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221352",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_SPLIT_RAT_FUEL_INJ_1", "name": "Split ratio of fuel injection 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221353",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221353",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_SPLIT_RAT_FUEL_INJ_2", "name": "Split ratio of fuel injection 2", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221354",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221354",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_SPLIT_RAT_FUEL_INJ_3", "name": "Split ratio of fuel injection 3", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221355",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221355",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_SPLIT_RAT_FUEL_INJ_4", "name": "Split ratio of fuel injection 4", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221357",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221357",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIRECT_FUEL_INJ_TIME_1", "name": "Direct fuel injection time 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221358",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221358",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIRECT_FUEL_INJ_TIME_2", "name": "Direct fuel injection time 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.221359",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "221359",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIRECT_FUEL_INJ_TIME_3", "name": "Direct fuel injection time 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E0.7E8.22135A",
+      "bus": "can11",
+      "tx": "7E0",
+      "rx": "7E8",
+      "request": "22135A",
+      "interval": 1,
+      "answeredIn": [2018, 2019, 2020, 2021],
+      "notAnsweredIn": [2010, 2015, 2017, 2024],
+      "signals": [
+        {"id": "IMPREZA_DIRECT_FUEL_INJ_TIME_4", "name": "Direct fuel injection time 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
+      ]
+    },
+    {
+      "id": "7E1.7E9.2211CB",
+      "bus": "can11",
+      "tx": "7E1",
+      "rx": "7E9",
+      "request": "2211CB",
+      "interval": 0.25,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_TURBINE_REVOLUTION", "name": "Turbine revolution speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 32, "min": 0, "max": 2097120, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221021",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221021",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_ST_CHG", "name": "High voltage battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102A",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102A",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_T_1", "name": "High voltage battery temperature 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102B",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102B",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_T_2", "name": "High voltage battery temperature 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102C",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102C",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_T_3", "name": "High voltage battery temperature 3", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.22102D",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "22102D",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_IAT", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -100, "min": -100, "max": 32667.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E3.7EB.221143",
+      "bus": "can11",
+      "tx": "7E3",
+      "rx": "7EB",
+      "request": "221143",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_CELL_T", "name": "High voltage battery cell temperature estimated", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -100, "min": -100, "max": 6453.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221052|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221052",
+      "interval": 0.25,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_TORQUE_OUTPUT_ACTUAL", "name": "Drive motor torque output actual", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221055|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221055",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_OUTPUT_POWER", "name": "Drive motor output power", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "W"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221057|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221057",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_TORQUE_TARGET", "name": "Drive motor torque target", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221058|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221058",
+      "interval": 0.25,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_SPEED", "name": "Drive motor speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221059|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221059",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_SPEED_TARGET", "name": "Drive motor speed target", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22105D|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22105D",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_TORQUE_UPPER_LIMIT", "name": "Drive motor torque upper limit", "group": "ECU", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22105E|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22105E",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_TORQUE_LOWER_LIMIT", "name": "Drive motor torque lower limit", "group": "ECU", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221063|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221063",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_INVERTER_INPUT_HV_SENSOR", "name": "Drive motor inverter input HV sensor", "group": "ECU", "bit": 0, "bits": 16, "multiply": 2500, "divide": 10000, "min": 0, "max": 16383.75, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221065|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221065",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_INVERTER_T_ESTIMATED", "name": "Inverter temperature estimated", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221066|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221066",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_INVERTER_T_A", "name": "Drive motor inverter temperature a", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221067|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221067",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_INVERTER_T_B", "name": "Drive motor inverter temperature b", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221068|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221068",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_INVERTER_T_C", "name": "Drive motor inverter temperature c", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106B",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106B",
+      "interval": 5,
+      "notAnsweredIn": [
+        2002,
+        2008,
+        2010,
+        2011,
+        2012,
+        2014,
+        2015,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2023,
+        2024
+      ],
+      "signals": [
+        {"id": "IMPREZA_ATF_T", "name": "Transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106D|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106D",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_T_A", "name": "Drive motor temperature a", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.22106E|f=2020-",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "22106E",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_DRIVEMOTOR_T_B", "name": "Drive motor temperature b", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221081",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221081",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_COOLING_FAN", "name": "High voltage battery cooling fan speed", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221082",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221082",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_COOLING_FAN_TGT", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E6.7EE.221084",
+      "bus": "can11",
+      "tx": "7E6",
+      "rx": "7EE",
+      "request": "221084",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_COOLING_FAN_DUTY", "name": "High voltage battery cooling fan duty output", "group": "Battery", "bit": 0, "bits": 32, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221033",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221033",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_ST_CHG_7E7", "name": "High voltage battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221037|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221037",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_AUX_BAT_VOLTAGE", "name": "12V aux battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 8, "multiply": 25.5, "divide": 255, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221039|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221039",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_ENGINE_RESTART_BAT_VOLTAGE", "name": "12V engine restart battery voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 25.5, "divide": 255, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221077|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221077",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_ENGINE_RESTART_BAT_SOC", "name": "12V engine restart battery soc", "group": "Battery", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.221079|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "221079",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_ENGINE_RESTART_BAT_T", "name": "12V engine restart battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22107A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22107A",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_COOLING_FAN_DUTY_TGT", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222006|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222006",
+      "interval": 1,
+      "years": {"from": 2020},
+      "answeredIn": [2024],
+      "notAnsweredIn": [2020, 2021, 2023, 2025],
+      "signals": [
+        {"id": "IMPREZA_ENGINE_TORQUE_TARGET", "name": "Engine torque target", "group": "ECU", "bit": 0, "bits": 16, "divide": 10, "add": -1000, "min": -1000, "max": 5553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222009",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222009",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_TOT_V", "name": "High voltage battery total voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22200A",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22200A",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_CURRENT", "name": "High voltage battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -200, "min": -200, "max": 6353.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.22200C",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "22200C",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_COOLING_FAN_DUTY_TGT_7E7", "name": "High voltage battery cooling fan duty, target", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222012|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222012",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_CURRENT", "name": "12V engine restart battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -2000, "min": -2000, "max": 4553.5, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222014|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222014",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_SOC_CONTROL", "name": "12V engine restart battery soc control", "group": "Battery", "bit": 0, "bits": 8, "multiply": 127.5, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222021",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222021",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_ST_HEALTH", "name": "High voltage battery state of health", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222022",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222022",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_T_MAX", "name": "High voltage battery temperature max", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222023",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222023",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_T_MIN", "name": "High voltage battery temperature min", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222024",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222024",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_IAT_7E7", "name": "High voltage battery intake air temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "%"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222025",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222025",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_DCHG_POWER", "name": "High voltage battery discharge power", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222026",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222026",
+      "interval": 1,
+      "notAnsweredIn": [2010, 2015, 2017, 2018, 2019, 2020, 2021, 2024],
+      "signals": [
+        {"id": "IMPREZA_HVBAT_CHG_POWER", "name": "High voltage battery charge power", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "kW"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222034|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222034",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_ELECTRIC_OIL_PUMP_SPEED", "name": "Electric oil pump speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222035|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222035",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_ELECTRIC_OIL_PUMP_CURRENT", "name": "Electric oil pump current", "group": "ECU", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.9375, "unit": "A"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222061|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222061",
+      "interval": 1,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_ENGINE_TORQUE_UPPER_ECM", "name": "Engine torque upper", "group": "ECU", "bit": 0, "bits": 8, "multiply": 408, "divide": 255, "min": 0, "max": 408, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.222062|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "222062",
+      "interval": 0.25,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_ENGINE_TORQUE_ACTUAL", "name": "Engine torque actual", "group": "ECU", "bit": 0, "bits": 16, "divide": 10, "add": -1000, "min": -1000, "max": 5553.5, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "7E7.7EF.2220E2|f=2020-",
+      "bus": "can11",
+      "tx": "7E7",
+      "rx": "7EF",
+      "request": "2220E2",
+      "interval": 5,
+      "years": {"from": 2020},
+      "notAnsweredIn": [2020, 2021, 2023, 2024, 2025],
+      "signals": [
+        {"id": "IMPREZA_12V_AUX_BAT_T", "name": "12V aux battery temperature", "group": "Battery", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    }
+  ]
+}

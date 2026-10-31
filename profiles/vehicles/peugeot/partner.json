@@ -1,0 +1,3342 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/peugeot/partner",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Peugeot",
+    "model": "Partner",
+    "years": null,
+    "generations": [
+      {"name": "Second Generation (B9)", "from": 2008, "to": 2018},
+      {"name": "Third Generation (K9)", "from": 2018}
+    ]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Peugeot-Partner",
+    "file": "signalsets/v3/default.json",
+    "revision": "14e66588bba4f557d5f4c93a89d208e64809ae11",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "6A8.688.22D400|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D400",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "PARTNER_RPM", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D402|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D402",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VSS_6A8", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D404|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D404",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CLU_PEDAL", "name": "Clutch pedal", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D405|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D405",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_SIG_1_V", "name": "Accelerator pedal signal 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 5000.0001263106, "min": -6.55, "max": 6.55, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D406|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D406",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_SIG_2_V", "name": "Accelerator pedal signal 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 5000.0001263106, "min": -6.55, "max": 6.55, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D407|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D407",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_POS_RECALCULATED", "name": "Accelerator pedal position, recalculated", "group": "Movement", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D409|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D409",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CALC_GEAR_GEARBOX", "name": "Calculated gear in gearbox", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D40A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D40A",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ECT_CORRECTED", "name": "Coolant temperature, corrected", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D40D|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D40D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ECT_TGT", "name": "Coolant temperature target", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D411|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D411",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_BOOST_AIR_T", "name": "Boost air temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D412|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D412",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STAT_INTERNAL_IGN", "name": "Status of internal ignition motor", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D414|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D414",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AAT_6A8", "name": "Outside air temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D415|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D415",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ECT_6A8", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D416|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D416",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ADDITIONAL_HEATER_1", "name": "Additional heater control 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D417|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D417",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUXILIARY_HEATER_2", "name": "Auxiliary heater 2 control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D418|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D418",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CAM_CRANK_POS", "name": "Camshaft/crankshaft position synchronization", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D41A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D41A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_START_PERMISSION", "name": "Start permission from gearbox computer", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D41C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D41C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AC_COMP_CURRENT", "name": "Air conditioning compressor current", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375}
+      ]
+    },
+    {
+      "id": "6A8.688.22D41E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D41E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_OIL_LEVEL_SENS_V", "name": "Engine oil level sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553, "max": 6553, "unit": "mV"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D41F|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D41F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_FUEL_P", "name": "Fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 999.9999525026, "min": -32.76, "max": 32.76, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D421|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D421",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AC_P", "name": "Air conditioning pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D422|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D422",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_CTRL_COMPUTER_V", "name": "Engine control computer supply voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "signed": true, "divide": 100.0000022352, "min": -327, "max": 327, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D423|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D423",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_5V_POWER_SUP_ST_1", "name": "5V power supply state number 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D424|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D424",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_5V_POWER_SUP_ST_2", "name": "5V power supply state number 2", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D425|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D425",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_5V_POWER_SUP_ST_3", "name": "5V power supply state number 3", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D426|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D426",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_5V_POWER_SUP_ST_4", "name": "5V power supply state number 4", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D429|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D429",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_OIL_P", "name": "Oil pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D42A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D42A",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -273.14, "min": -273, "max": 6280, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D42F|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D42F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GMV_ELEC_COOLING_FAN", "name": "Electric cooling fan control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D435|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D435",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_COMPUTER_T", "name": "Computer temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D438|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D438",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NEUTRAL_POS_SENS", "name": "Neutral position sensor status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D43B|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D43B",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "PARTNER_OIL_P_REGULATION", "name": "Oil pressure regulation control", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D43C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D43C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REVERSE_GEAR", "name": "Reverse gear contactor status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D43D|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D43D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENGAGED_GEAR", "name": "Engaged gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D43E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D43E",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GEAR_PROCESS", "name": "Gear in the process of engaging", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D43F|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D43F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MILEAGE_SINCE_OIL", "name": "Mileage since last oil change", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D446|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D446",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_HIGH_FUEL_P_MEAS", "name": "High fuel pressure measured", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D462|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D462",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CRANK_SPD", "name": "Crankshaft speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D463|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D463",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_BRAKE_SYSTEM_BACKUP", "name": "Brake system backup contactor status", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D464|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D464",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "PARTNER_OIL_P_REFERENCE", "name": "Oil pressure reference value", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D465|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D465",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ATMOSPHERIC_P", "name": "Atmospheric pressure", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D467|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D467",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_BAT_CHG_STAT", "name": "Service battery charge status", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D469|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D469",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CLU_PEDAL_POS", "name": "Clutch pedal position value", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D472|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D472",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_LOW_P_FUEL_PMP", "name": "Low pressure fuel pump actuator duty cycle", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100.0000022352, "min": -327, "max": 327, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D474|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D474",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ABS_EKS_PROCESS_ADJ", "name": "Anti-lock brake or stability control regulating", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D475|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D475",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CRUISE_CTRL_SET_SPD", "name": "Cruise control set speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D476|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D476",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VSS_LIMITER_SET_SPD", "name": "Vehicle speed limiter set speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D477|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D477",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_STOP_TIME", "name": "Engine stop time", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "s"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D478|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D478",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STARTER_DUTY", "name": "Starter duty cycle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "s"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D47B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D47B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_TGT_POS", "name": "Turbocharger, target position", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100.0000022352, "min": -327, "max": 327, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D47D|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D47D",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_OIL_T", "name": "Oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D489|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D489",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AIR_FLOW", "name": "Air flow", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276}
+      ]
+    },
+    {
+      "id": "6A8.688.22D48A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D48A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_CTRL", "name": "Turbocharger control duty cycle", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 256, "min": -128, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D48C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D48C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_FIRST", "name": "Turbocharger first electronic boost", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D48E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D48E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AIR_FLOW_TGT", "name": "Air flow target", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276}
+      ]
+    },
+    {
+      "id": "6A8.688.22D491|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D491",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_POS_1", "name": "Accelerator pedal position, track 1", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 81.92000625, "min": -399, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D492|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D492",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_POS_2", "name": "Accelerator pedal position, track 2", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 81.92000625, "min": -399, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D496|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D496",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_BAT_T_6A8", "name": "Service battery temperature", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D497|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D497",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_BAT_CURRENT", "name": "Battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 1024, "min": -2097152, "max": 2097151, "unit": "A"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D498|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D498",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MAX_CLU_TRAVEL", "name": "Maximum clutch travel during gear shift", "group": "Transmission", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D499|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D499",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CRANK_SPD_DETERMINED", "name": "Crankshaft speed determined by camshaft sensor", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D49C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D49C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ODO_6A8", "name": "Total mileage", "group": "Engine", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4A5|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4A5",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ALTERNATOR_LOAD", "name": "Alternator load value", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4AA|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4AA",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SET_SPD_ELEC_COOLING", "name": "Set speed of electric cooling fan", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4AF|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4AF",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AC", "name": "Air conditioning", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4B0|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4B0",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CRUISE_CTRL_RW_STAT", "name": "Cruise control, RW status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4BA|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4BA",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_POWERTRAIN_COND", "name": "Powertrain condition", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4C0|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4C0",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VSS_LIMITER_STAT_LW", "name": "Vehicle speed limiter status, LW", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4C3|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4C3",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STARTER_ENGAGEMENT", "name": "Starter engagement status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4CA|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4CA",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_DATE", "name": "Date", "group": "Engine", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "s"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4D2|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4D2",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_INDICATED_ENG_TQ", "name": "Indicated engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4D4|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4D4",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MIN_BAT_V_STARTUP", "name": "Minimum battery voltage at startup", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 50.0000011176, "min": -655, "max": 655, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4D8|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4D8",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CNT_NUM_RE", "name": "Computer restarts since memory erase", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4D9|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4D9",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_P_MEAS", "name": "Turbocharger pressure measured", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4E2|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4E2",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ESTIMATED_TQ", "name": "Estimated torque of internal friction of the engine", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4E3|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4E3",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CORRESPONDING", "name": "Torque corresponding to driver requirement", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4E4|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4E4",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CNT_OCCURRENCE", "name": "Counter of occurrence of enhanced resonance of the twin flywheel of the engine", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4E5|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4E5",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CNT_OCCURRENCE_RESONANCE", "name": "Counter of occurrence of resonance of the twin flywheel of the engine", "group": "Tires", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4EA|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4EA",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_POS", "name": "Turbocharger position information", "group": "Battery", "bit": 0, "bits": 16, "divide": 100.0000022352, "min": 0, "max": 655, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4EC|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4EC",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_APPROXIMATE_POS", "name": "Approximate position of turbocharger actuator", "group": "Battery", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D4ED|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D4ED",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_LOW_P_FUEL_PMP_STAT", "name": "Low pressure fuel pump status", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D52E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D52E",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EXH_GAS_T_BEFORE_PRE", "name": "Exhaust gas temperature before upstream catalytic converter", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D534|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D534",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VEH_MILEAGE_SINCE", "name": "Vehicle mileage since the last oil change under severe vehicle operating conditions", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D536|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D536",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "PARTNER_DIST_NEXT_OIL_CHANGE", "name": "Distance to next oil change", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D54E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D54E",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AIR_T_AIR_FLOW_METER", "name": "Air temperature by air flow meter", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D555|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D555",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EXH_GAS_T_AFTER_PRE", "name": "Exhaust gas temperature after upstream catalytic converter", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1400146484, "min": -3549, "max": 3003, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D556|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D556",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TURBOCHARGER_P", "name": "Turbocharger pressure reference", "group": "Battery", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D557|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D557",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CAN_VEH_BE_EQUIPPED", "name": "Towing device configured", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D559|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D559",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_PRE_CATALYTIC_CONV", "name": "Upstream catalytic converter aging", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D56A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D56A",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MIN_FLI", "name": "Minimum fuel level", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D56E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D56E",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_PROPORTIONAL_CLU", "name": "Proportional clutch pedal sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D570|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D570",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_COMPOSITION_MIXTURE", "name": "The composition of the mixture is calculated by the oxygen sensor", "group": "Engine", "bit": 0, "bits": 16, "divide": 32786.8858786303, "min": 0, "max": 1.99}
+      ]
+    },
+    {
+      "id": "6A8.688.22D586|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D586",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REQ_CONTROLLED", "name": "Requested value controlled thermostat", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 81.92000625, "min": -399, "max": 399, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D700|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D700",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VACUUM_PRESENT_BRAKE", "name": "Vacuum present in the brake system", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D703|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D703",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_STOP", "name": "Automatic stop allowed by body control module", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D704|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D704",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_STOP_ALLOWED", "name": "Automatic stop allowed by gearbox computer", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D705|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D705",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_STOP_ALLOWED_POWER_STEER", "name": "Automatic stop allowed by power steering computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D706|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D706",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STOP_ALLOWED_ESP", "name": "Stop allowed by ESP computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D707|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D707",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STOP_PERMITTED", "name": "Stop permitted by suspension computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D709|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D709",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_RESTART", "name": "Automatic restart request from engine management computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D70A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D70A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_RESTART_REQ_BSI", "name": "Automatic restart request from body control module", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D70B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D70B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_RESTART_REQ", "name": "Automatic restart request from transmission computer", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D70C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D70C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RESTART_REQ_SENT", "name": "Restart request sent by power steering computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D70D|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D70D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_RESTART_REQ_SENT", "name": "Engine restart request sent by ESP computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D70E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D70E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RESTART_REQ_SENT_SUSPENSION", "name": "Restart request sent by suspension computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D712|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D712",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SET_V_REVERSIBLE_GEN", "name": "Set voltage of the reversible generator", "group": "Battery", "bit": 0, "bits": 8, "divide": 39.999999404, "add": 10.6000003815, "min": 0, "max": 16.97, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D713|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D713",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REVERSIBLE_GEN_V", "name": "Reversible generator voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D714|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D714",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GEN_MODE", "name": "Generator mode", "group": "Engine", "bit": 0, "bits": 8, "multiply": 75, "min": 0, "max": 19125, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D715|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D715",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REVERSIBLE_GEN_TQ", "name": "Reversible generator torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D716|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D716",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REVERSE_GEN_STAT", "name": "Reverse generator status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D71B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D71B",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_RESTART_CNT_STOP", "name": "Engine restart counter by stop and start function", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A8.688.22D71E|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D71E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_START_OR_RESTART", "name": "Start or restart inhibition transmitted by engine management computer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D71F|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D71F",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STARTER_ACTIVATION", "name": "Starter activation counter", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A8.688.22D720|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D720",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_V_TERMINALS_ENERGY", "name": "Voltage at the terminals of the energy accumulator", "group": "Battery", "bit": 0, "bits": 8, "divide": 32, "min": 0, "max": 7.96, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D721|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D721",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_T_ENERGY_ACCUMULATOR", "name": "Temperature of the energy accumulator", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D722|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D722",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STAT_ENERGY", "name": "Status of the energy accumulator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D723|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D723",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_DRIVER_PRESENCE", "name": "Driver presence", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D724|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D724",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ECO_MODE_OFF_ST", "name": "Economy mode off state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D725|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D725",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STOP_START_FUNCTION", "name": "Stop and start function state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D726|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D726",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STOP_START_SWITCH", "name": "Stop and start switch", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D728|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D728",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_SUPPLIED_OR_TAKEN", "name": "Torque supplied or taken by generator", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D72A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D72A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STARTER_CTRL", "name": "Starter control interface unit operating status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D72C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D72C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_V_MAINTAINER_STAT", "name": "Voltage maintainer status", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D72D|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D72D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EVALUATION_TOT_RES_V", "name": "Evaluation of the total resistance of the voltage maintaining device", "group": "Battery", "bit": 0, "bits": 16, "divide": 128040.9703220589, "min": 0, "max": 0.511}
+      ]
+    },
+    {
+      "id": "6A8.688.22D730|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D730",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_T_ELECTRONIC_POWER_V", "name": "Temperature of the electronic power unit of the voltage maintenance device", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D731|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D731",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_PRESENCE_IDENTIFIER", "name": "Presence of the identifier of the reversible generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D732|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D732",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_IDENTIFIER", "name": "Identifier of the electronic power circuit of the reversible generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D733|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D733",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_IDENTIFIER_SUPPLIER", "name": "Identifier of the supplier of the reversible generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D734|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D734",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SET_V_ENERGY_STORAGE", "name": "Set voltage of energy storage", "group": "Battery", "bit": 0, "bits": 8, "divide": 32, "min": 0, "max": 7.96, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D73B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D73B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VACUUM_CIRCUIT", "name": "Vacuum circuit vacuum", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "6A8.688.22D741|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D741",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_BAT_WEAR", "name": "Service battery wear condition", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D742|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D742",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_BAT_CHG_ST", "name": "Service battery charge state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D747|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D747",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_V_MAINTAINER", "name": "Voltage maintainer computer restart permission", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D748|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D748",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_V_MAINTAINER_COMPUTER_REQ", "name": "Voltage maintainer computer request sent", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D749|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D749",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STOP_PERMITTED_V", "name": "Stop permitted by voltage maintainer computer", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D74B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D74B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_NETWORK", "name": "Service network related engine restart request", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D74C|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D74C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_12V_NETWORK_ALLOWED", "name": "12V network allowed stop", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D74F|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D74F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENERGY_ACCUMULATOR", "name": "Energy accumulator discharge permission state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D753|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D753",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_DURING_GEN_LOAD", "name": "Value during generator load smooth increase", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D755|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D755",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENERGY_ACCUMULATOR_ST", "name": "Energy accumulator state transfer", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D758|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D758",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENERGY_ACCUMULATOR_T", "name": "Energy accumulator temperature limiter state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D759|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D759",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CENTRALIZED_V_T", "name": "Centralized voltage maintenance device temperature limiter state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D75B|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D75B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GEN_SHUTDOWN", "name": "Generator shutdown", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D761|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D761",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RETURN_STARTER_ENG", "name": "Return to starter engine restart control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D764|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D764",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RETURN_ENG_START", "name": "Return to engine start and restart control by starter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D766|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D766",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SET_V_STORAGE_BAT", "name": "Set voltage of storage battery charging", "group": "Battery", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22D767|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D767",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_START_INHIBIT_CTRL", "name": "Start inhibit control, wired", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D787|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D787",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EXPECTED_IDENTIFIER", "name": "Expected identifier of reversible generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D788|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D788",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EXPECTED_IDENTIFIER_ELECTRONIC", "name": "Expected identifier of electronic power circuit of reversible generator generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D789|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D789",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_EXPECTED_GEN", "name": "Expected generator supplier identifier of the reversible generator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22D78A|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22D78A",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SERVICE_BAT_V", "name": "Service battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A8.688.22DADC|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22DADC",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_CTRL_MODULE_STAT", "name": "Engine control module status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_IMMOBILIZER_CODE", "name": "Immobilizer code programming status", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_PROBLEMS_DETECTED", "name": "Problems detected while transmitting unlock code", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A8.688.22DADD|fc=1",
+      "bus": "can11",
+      "tx": "6A8",
+      "rx": "688",
+      "request": "22DADD",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_LOCK_STAT", "name": "Lock status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.21C3|fc=1,din=03",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "21C3",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 88, "bits": 8, "multiply": 39, "divide": 100, "min": 0, "max": 99.45, "unit": "%"},
+        {"id": "PARTNER_ENG_TQ", "name": "Engine torque", "group": "Engine", "bit": 112, "bits": 8, "multiply": 2, "add": -100, "min": -100, "max": 410, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A9.689.21C5|fc=1,din=03",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "21C5",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "PARTNER_RPM_6A9", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 40, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "PARTNER_INPUT_SHFT_SPD", "name": "Input shaft speed", "group": "Movement", "bit": 48, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "PARTNER_CMD_OIL_P", "name": "Commanded oil pressure", "group": "Engine", "bit": 128, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "bar"},
+        {"id": "PARTNER_ACT_OIL_P", "name": "Actual oil pressure", "group": "Engine", "bit": 144, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "bar"},
+        {"id": "PARTNER_ATF_T", "name": "Transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 168, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A9.689.21C8|fc=1,din=03",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "21C8",
+      "interval": 0.25,
+      "flowControl": true,
+      "session": {"enter": "03"},
+      "signals": [
+        {"id": "PARTNER_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 96, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D405|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D405",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_OIL", "name": "Automatic transmission oil aging sensor", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D406|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D406",
+      "interval": 3600,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_RESTART_CNT", "name": "Engine restart counter", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D500|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D500",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GEAR_SHIFT_LEVER_POS_ON", "name": "Gear shift lever position displayed on instrument panel", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D501|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D501",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENGAGED_GEAR_6A9", "name": "Engaged gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D502|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D502",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_WINTER_MODE_SWITCH", "name": "Winter mode switch state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D503|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D503",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SPORT_MODE_CONTACTOR", "name": "Sport mode contactor state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D504|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D504",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CONV_STAT", "name": "Torque converter status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D505|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D505",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACCEL_PEDAL_POS_6A9", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D506|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D506",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MAX_ALLOWABLE_TQ", "name": "Maximum allowable torque", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "add": -100, "min": -100, "max": 410, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D507|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D507",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_DRIVER_REQ_TQ", "name": "Driver, requested torque value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "add": -100, "min": -100, "max": 410, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D508|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D508",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_TQ", "name": "Automatic transmission torque request", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 2, "add": -100, "min": -100, "max": 410, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D509|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D509",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_DRAIN_TRANS", "name": "Automatic transmission oil drain", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D510|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D510",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS", "name": "Automatic transmission overheat indicator request", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D511|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D511",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REQ_TURN_ON_ENG", "name": "Request to turn on the engine diagnostic indicator", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D512|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D512",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ASR_OR_ESP_SYSTEM", "name": "Traction or stability control regulating", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D513|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D513",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MAIN_BRAKE_CONTACTOR", "name": "Main brake contactor status", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D514|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D514",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SECONDARY_BRAKE", "name": "Secondary brake contactor status", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D515|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D515",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_COMPUTER_WAKE_UP_ST", "name": "Computer remote wake-up state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D516|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D516",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CHANGE_REPORT", "name": "CHANGE REPORT IN PROGRESS", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D517|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D517",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_BUTTON_ST", "name": "Button state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D51B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D51B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_START_PROHIBITION", "name": "Start prohibition", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D520|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D520",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_GEAR_SHIFT_KNOB", "name": "Gear shift knob under steering wheel", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D530|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D530",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AVG_FRONT_WHL_SPD", "name": "Average front wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 25.0000005588, "min": 0, "max": 2621, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D531|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D531",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RL_WHL_SPD", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100.0000022352, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D532|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D532",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_RR_WHL_SPD", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 100.0000022352, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D533|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D533",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AVG_SPD_FRONT_WHEELS", "name": "Average speed front wheels", "group": "Tires", "bit": 0, "bits": 16, "divide": 100.0000022352, "min": 0, "max": 655, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D550|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D550",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D551|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D551",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_COMPUTER_POWER_SUP_V", "name": "Computer power supply voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D552|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D552",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AAT_6A9", "name": "Ambient air temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D553|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D553",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_OP_MODE", "name": "Engine operating mode", "group": "Engine", "bit": 0, "bits": 16, "divide": 8, "min": 0, "max": 8191, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D554|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D554",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REAL_ENG_TQ", "name": "Real engine torque", "group": "Engine", "bit": 0, "bits": 8, "multiply": 2, "add": -100, "min": -100, "max": 410, "unit": "Nm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D555|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D555",
+      "interval": 5,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ECT_6A9", "name": "Engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D604|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D604",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CONV_LOCK_UP_P", "name": "Torque converter lock-up pressure variation solenoid valve control current", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D605|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D605",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CONV_LOCK_UP_P_VARIATION", "name": "Torque converter lock-up pressure variation solenoid valve control current", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D606|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D606",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SLT_LINE_P_VARIATION", "name": "Line pressure solenoid valve control current", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D607|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D607",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_LINE_P", "name": "Measured line pressure variation solenoid valve current", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D608|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D608",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_B1", "name": "Control current of the electromagnetic valve for changing the pressure in the brake system B1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D609|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D609",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_B1", "name": "Measured current of the electromagnetic valve for changing the pressure in the brake system B1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60A|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60A",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT", "name": "Control current of the electromagnetic valve for changing the gear shift SC2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60B",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT", "name": "Measured current of the electromagnetic valve for changing the gear shift SC2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60C|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60C",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SHIFT_SOLENOID_CTRL", "name": "Shift solenoid control current SC3", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60D|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SHIFT_SOLENOID_MEAS", "name": "Shift solenoid measured current SC3", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60E|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SHIFT_SOLENOID_CTRL_CURRENT_SC4", "name": "Shift solenoid control current SC4", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D60F|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D60F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SHIFT_SOLENOID_MEAS_CURRENT_SC4", "name": "Shift solenoid measured current SC4", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D610|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D610",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_C1", "name": "Control current of the solenoid valve for changing the pressure of the clutch C1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D611|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D611",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_C1", "name": "Measured current of the solenoid valve for changing the pressure of the clutch C1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D612|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D612",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_C2", "name": "Control current of the solenoid valve for changing the pressure of the clutch C2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D613|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D613",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_C2", "name": "Measured current of the solenoid valve for changing the pressure of the clutch C2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D614|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D614",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_C3", "name": "Control current of the electromagnetic valve of change of pressure of clutch C3", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D615|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D615",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_C3", "name": "Measured current of the electromagnetic valve of change of pressure of clutch C3", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D616|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D616",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ACTIVATION", "name": "Activation of additional oil pump, ATN8 gearbox", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D617|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D617",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ADDITIONAL_OIL_PMP", "name": "Additional oil pump control status, atn8 transmission", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D618|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D618",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SC5_SHIFT_SOLENOID", "name": "SC5 shift solenoid control current", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D619|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D619",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SC5_SHIFT_SOLENOID_MEAS", "name": "SC5 shift solenoid measured current", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61A|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61A",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_LUBRICATION", "name": "Automatic transmission lubrication solenoid control current", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_CTRL", "name": "Measured current of control of electromagnetic valve of automatic transmission lubrication", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61C|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P", "name": "Control current of electromagnetic valve of change of pressure of torque converter lock-up", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61D|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_CTRL_P", "name": "Measured current of control of electromagnetic valve of change of pressure of torque converter lock-up", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61E|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61E",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_ELECTROMAGNETIC_VLV_P", "name": "Control current of electromagnetic valve of actuator of automatic transmission lock-up in position p", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D61F|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D61F",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P", "name": "Measured current of the solenoid valve for controlling the locking finger of the automatic transmission in position p", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D620|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D620",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_C4", "name": "Control current of the electromagnetic valve of change of pressure of clutch C4", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D621|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D621",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_C4", "name": "Measured current of the electromagnetic valve of change of pressure of clutch C4", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D622|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D622",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_B2", "name": "Control current of electromagnetic valve for changing the pressure in the brake system B2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D623|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D623",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_B2", "name": "Measured current of electromagnetic valve for changing the pressure in the brake system B2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "mA"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D625|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D625",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CTRL_CURRENT_P_P", "name": "Control current of electromagnetic valve for regulating the pressure in the control system of the oil pressure accumulator, AMN8 gearbox", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D626|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D626",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_MEAS_CURRENT_P_P", "name": "Measured current of the electromagnetic valve for regulating the pressure in the oil pressure accumulator control system, AMN8 gearbox", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D650|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D650",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_INPUT_SHFT", "name": "Automatic transmission input shaft mode, measured", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D651|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D651",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_INPUT_SHFT_MODE", "name": "Automatic transmission input shaft mode, calculated", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D652|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D652",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_OUTPUT", "name": "Automatic transmission output shaft mode, measured", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D653|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D653",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_OUTPUT_SHFT_MODE", "name": "Automatic transmission output shaft mode, calculated", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 64, "add": -8128, "min": -8128, "max": 4186112, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D654|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D654",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CONV_SLIP_SPD", "name": "Torque converter slip speed, measured", "group": "Movement", "bit": 0, "bits": 8, "multiply": 64, "add": -8128, "min": -8128, "max": 8192, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D655|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D655",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_TQ_CONV_SLIP_MODE", "name": "Torque converter slip mode, theoretical value", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 64, "add": -8128, "min": -8128, "max": 8192, "unit": "rpm"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D670|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D670",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_EMERGENCY", "name": "Automatic transmission in emergency mode", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D671|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D671",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_FUGITIVE_TRIP", "name": "FUGITIVE TRIP IN EMERGENCY MODE", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D672|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D672",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_CLU_RELEASE_ST_STOP", "name": "Clutch release state at stop, creep speed reduction", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D673|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D673",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_OP_MODE_USED", "name": "Operating mode used by the automatic transmission", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D700|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D700",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_POS_GEARSHIFT_LEVER", "name": "Position of the gearshift lever", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D701|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D701",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_SHIFT_LOCK_CTRL", "name": "Shift-lock control", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D703|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D703",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_START", "name": "Engine start prohibition control, start lock", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D704|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D704",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_STAT_COMMANDS", "name": "STATUS COMMANDS REGULATION OR LIMITATION SPEED", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D705|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D705",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REMOTE_WAKE_UP", "name": "Remote wake-up circuit status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D708|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D708",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_REMOTE_WAKE_UP_ST", "name": "Remote wake-up state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D709|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D709",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ICE_ST", "name": "Combustion engine state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D70B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D70B",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_AUTOMATIC_TRANS_PARK", "name": "Automatic transmission in park position", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D70E|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D70E",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_BRAKE_CIRCUIT_P", "name": "Brake circuit pressure", "group": "Control", "bit": 0, "bits": 16, "divide": 10, "add": -55, "min": -55, "max": 6498, "unit": "bar"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D711|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D711",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VSS_6A9", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D730|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D730",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ENG_STALLS", "name": "Engine stalls", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_NUM_ENG_STOP", "name": "Number of engine stop information deletion cycles", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D731|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D731",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_CLU_C1", "name": "Activation count, clutch protection C1", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_NUM_ACTIVATIONS_CLU_C2", "name": "Activation count, clutch protection C2", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22D742|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D742",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_C1", "name": "Activation count, the electromagnetic valve of the clutch C1", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D743|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D743",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_CLU_ELECTROMAGNETIC_VLV_C2", "name": "Activation count, clutch electromagnetic valve C2", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D744|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D744",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_CLU_C3", "name": "Activation count, clutch electromagnetic valve C3", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D745|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D745",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_B1", "name": "Activation count, brake electromagnetic valve B1", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D746|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D746",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_TQ", "name": "Activation count, torque converter lockup electromagnetic valve", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D747|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D747",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_1", "name": "Number of gear engagements 1", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D748|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D748",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_2", "name": "Number of gear engagements 2", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D749|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D749",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_3", "name": "Number of gear engagements 3", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D74A|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D74A",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_4", "name": "Number of gear engagements 4", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D74B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D74B",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_5", "name": "Number of gear engagements 5", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D74C|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D74C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_6", "name": "Number of gear engagements 6", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D74D|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D74D",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS", "name": "Number of gear engagements right", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D74E|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D74E",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_N", "name": "Number of gear engagements n", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D750|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D750",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ADDITIONAL_OIL", "name": "Activation count, additional oil pump, ATN8 gearbox", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D751|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D751",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_LINE_P_CTRL", "name": "Activation count, line pressure control solenoid", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D752|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D752",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID", "name": "Activation count, shift solenoid SC2", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D753|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D753",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID_ACTIVATIONS_SC3", "name": "Activation count, shift solenoid SC3", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D754|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D754",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID_OPERATED_SC4", "name": "Number of shift solenoid operated SC4", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D755|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D755",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID_OPERATED_SC5", "name": "Number of shift solenoid operated SC5", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D756|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D756",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID_OPERATED", "name": "Number of shift solenoid operated automatic transmission lubrication control valve", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D757|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D757",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_SHIFT_SOLENOID_P", "name": "Number of shift solenoid operated torque converter lock-up pressure regulating valve", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D758|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D758",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_P", "name": "Activation count, the electromagnetic valve for controlling the automatic transmission locking finger in position p", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D759|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D759",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_C4", "name": "Activation count, the electromagnetic valve of clutch C4", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D75A|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D75A",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_B2", "name": "Activation count, the electromagnetic valve of brake B2", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D75B|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D75B",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ACTIVATIONS_GEAR_7", "name": "Activation count, gear 7", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D75C|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D75C",
+      "interval": 0.25,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_GEAR_ENGAGEMENTS_8", "name": "Number of gear engagements 8", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D75D|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D75D",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_NUM_ENGAGEMENTS_P_P", "name": "Number of engagements of the electromagnetic valve for regulating the pressure in the oil pressure accumulator control system, AMN8 gearbox", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+      ]
+    },
+    {
+      "id": "6A9.689.22D801|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D801",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_VEH_HOUR_METER", "name": "Vehicle hour meter", "group": "Engine", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729, "unit": "s"}
+      ]
+    },
+    {
+      "id": "6A9.689.22D802|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22D802",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ODO_6A9", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "6A9.689.22DADC|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22DADC",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_ST_LOCK_UNLOCK_CTRL", "name": "State lock/unlock control unit", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_ANTI_START", "name": "ANTI START PROGRAMMING STATUS", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
+        {"id": "PARTNER_PROBLEMS_DETECTED_WHILE", "name": "Problems detected while transmitting unlock code", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "6A9.689.22DADD|fc=1",
+      "bus": "can11",
+      "tx": "6A9",
+      "rx": "689",
+      "request": "22DADD",
+      "interval": 1,
+      "flowControl": true,
+      "signals": [
+        {"id": "PARTNER_COMPUTER_LOCK", "name": "Computer lock", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    }
+  ]
+}

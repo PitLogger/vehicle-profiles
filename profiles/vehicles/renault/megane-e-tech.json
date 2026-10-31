@@ -1,0 +1,276 @@
+{
+  "format": "pitlogger-profile/1.0",
+  "id": "vehicles/renault/megane-e-tech",
+  "kind": "vehicle",
+  "vehicle": {
+    "make": "Renault",
+    "model": "Megane E-Tech",
+    "years": null,
+    "generations": [{"name": "First Generation", "from": 2022}]
+  },
+  "source": {
+    "name": "OBDb",
+    "url": "https://github.com/OBDb/Renault-Megane-E-Tech",
+    "file": "signalsets/v3/default.json",
+    "revision": "4fd571f690fee6152a2e8506597bfcf74cc690bf",
+    "license": "CC-BY-SA-4.0",
+    "attribution": "OBDb contributors, https://obdb.community"
+  },
+  "requests": [
+    {
+      "id": "743.220207",
+      "bus": "can11",
+      "tx": "743",
+      "request": "220207",
+      "interval": 30,
+      "answeredIn": [2025],
+      "signals": [
+        {"id": "MEGANE_E_ODO_KM", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.2110|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2110",
+      "interval": 5,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MEGANE_E_BRAKE_NIVOCODE_WARN", "name": "Brake fluid level warning", "group": "Control", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MEGANE_E_SEATBELT_WARN", "name": "Seatbelt warning", "group": "Seatbelts", "bit": 20, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MEGANE_E_12_V_AFTER_IGN", "name": "+ 12 v after ignition", "group": "Engine", "bit": 27, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MEGANE_E_DRIVER_S_SEAT_BELT", "name": "Driver's seat belt switch", "group": "Seatbelts", "bit": 32, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MEGANE_E_OIL_P_SWITCH", "name": "Oil pressure switch", "group": "Engine", "bit": 34, "bits": 1, "min": 0, "max": 1},
+        {"id": "MEGANE_E_RPM_743", "name": "Engine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "MEGANE_E_VSS_743", "name": "Vehicle speed", "group": "Movement", "bit": 72, "bits": 16, "min": 0, "max": 65535, "unit": "km/h"},
+        {"id": "MEGANE_E_WATER_T_743", "name": "Water temperature", "group": "Engine", "bit": 120, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "743.763.2111|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2111",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_INTERVAL", "name": "Oil change interval in km", "group": "Engine", "bit": 128, "bits": 8, "multiply": 1000, "min": 0, "max": 255000, "unit": "km"},
+        {"id": "MEGANE_E_OIL_CHANGE_INTERVAL_MONTHS", "name": "Oil change interval in months", "group": "Engine", "bit": 136, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "743.763.2112|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2112",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_FLI", "name": "Fuel level", "group": "Fuel", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"},
+        {"id": "MEGANE_E_FUEL_GAUGE_RESISTOR", "name": "Fuel gauge resistor", "group": "Fuel", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "Ω"},
+        {"id": "MEGANE_E_FUEL_USED_SINCE_ADAC", "name": "Fuel used since trip computer reset", "group": "Fuel", "bit": 112, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "L"},
+        {"id": "MEGANE_E_FUEL_FLOW", "name": "Fuel flow", "group": "Fuel", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "L"}
+      ]
+    },
+    {
+      "id": "743.763.2118|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2118",
+      "interval": 30,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_ODOMETERS", "name": "Odometers", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.2119|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "2119",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_RANGE", "name": "Oil change range/current value in km", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+      ]
+    },
+    {
+      "id": "743.763.211A|fc=1,din=C0",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "211A",
+      "interval": 1,
+      "flowControl": true,
+      "session": {"enter": "C0"},
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_RANGE_CURRENT", "name": "Oil change range/current value in months", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "743.763.220104",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220104",
+      "interval": 30,
+      "signals": [
+        {"id": "MEGANE_E_DIST_UNITS", "name": "Distance units", "group": "Trips", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "743.763.220105",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220105",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_CONS_MEASUREMENT", "name": "Consumption measurement units", "group": "Engine", "bit": 6, "bits": 2, "min": 0, "max": 3}
+      ]
+    },
+    {
+      "id": "743.763.220106",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220106",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_ADAC_DISPLAY_TYPE", "name": "Trip computer display type", "group": "Engine", "bit": 6, "bits": 2, "min": 0, "max": 3}
+      ]
+    },
+    {
+      "id": "743.763.220201",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220201",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_INTERVAL_KM", "name": "Oil change interval in km", "group": "Engine", "bit": 0, "bits": 16, "multiply": 64, "divide": 103, "min": 0, "max": 40720, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220202",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220202",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_FREQUENCY", "name": "Oil change frequency in days", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "743.763.220203",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220203",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_OIL_CHANGE_RANGE_CURRENT_KM", "name": "Oil change range/current value in km", "group": "Trips", "bit": 0, "bits": 16, "multiply": 64, "divide": 103, "min": 0, "max": 40720, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.220204",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "220204",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_OIL_SERVICE_INTERVAL", "name": "Oil service interval in days", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "743.763.22020B",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "22020B",
+      "interval": 3600,
+      "signals": [
+        {"id": "MEGANE_E_MAINTENANCE_AUTONOMY", "name": "Maintenance autonomy interval in km", "group": "Engine", "bit": 0, "bits": 16, "multiply": 64, "divide": 103, "min": 0, "max": 40720, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.22020C",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "22020C",
+      "interval": 3600,
+      "signals": [
+        {"id": "MEGANE_E_MAINTENANCE_AUTONOMY_INTERVAL_DAYS", "name": "Maintenance autonomy interval in days", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "743.763.22020D",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "22020D",
+      "interval": 3600,
+      "signals": [
+        {"id": "MEGANE_E_MAINTENANCE_AUTONOMY_CURRENT_KM", "name": "Maintenance autonomy/current value in km", "group": "Engine", "bit": 0, "bits": 16, "multiply": 64, "divide": 103, "min": 0, "max": 40720, "unit": "mi"}
+      ]
+    },
+    {
+      "id": "743.763.22020E",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "22020E",
+      "interval": 3600,
+      "signals": [
+        {"id": "MEGANE_E_MAINTENANCE_AUTONOMY_CURRENT_DAYS", "name": "Maintenance autonomy/current value days", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "743.763.222008",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "222008",
+      "interval": 1,
+      "signals": [
+        {"id": "MEGANE_E_OIL_P_SWITCH_743", "name": "Oil pressure switch", "group": "Engine", "bit": 6, "bits": 2, "min": 0, "max": 3}
+      ]
+    },
+    {
+      "id": "743.763.222201",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "222201",
+      "interval": 30,
+      "signals": [
+        {"id": "MEGANE_E_CURRENT_FLI", "name": "Current fuel level", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"}
+      ]
+    },
+    {
+      "id": "743.763.222203",
+      "bus": "can11",
+      "tx": "743",
+      "rx": "763",
+      "request": "222203",
+      "interval": 30,
+      "signals": [
+        {"id": "MEGANE_E_FLI_DISPLAYED", "name": "Fuel level displayed", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "L"}
+      ]
+    }
+  ]
+}
