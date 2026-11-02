@@ -20,10 +20,11 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Audi-A7",
     "file": "signalsets/v3/default.json",
-    "revision": "6d584c5d1a4c4836aab41d3d591eb4e178512652",
+    "revision": "d99762e0a2fbfc26df4f9436d59920adbaa820e6",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
+  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
   "requests": [
     {
       "id": "70E.778.222605|fc=1,f=2019-,din=03",
@@ -367,7 +368,7 @@
       "interval": 1,
       "flowControl": true,
       "answeredIn": [2011, 2012, 2021],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_SSB_VT", "name": "Start/stop battery target voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V", "invalidAtOrBelow": 0}
       ]
@@ -393,7 +394,7 @@
       "request": "222A07",
       "interval": 1,
       "answeredIn": [2011, 2012, 2016, 2021],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_SSB_V", "name": "Start/stop battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 4, "max": 69.535, "unit": "V"}
       ]
@@ -446,7 +447,7 @@
       "request": "222A0B",
       "interval": 1,
       "answeredIn": [2011, 2012, 2016, 2021],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_SSB_T", "name": "Start/stop battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -485,7 +486,7 @@
       "request": "222A0E",
       "interval": 5,
       "answeredIn": [2011, 2012, 2016, 2021],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_SSB_R", "name": "Start/stop battery resistance", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 10, "min": 0, "max": 51, "unit": "mΩ"}
       ]
@@ -618,7 +619,7 @@
       "interval": 5,
       "flowControl": true,
       "answeredIn": [2021],
-      "notAnsweredIn": [2011, 2012, 2016, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2016, 2020],
       "signals": [
         {"id": "A7_RANGE_V2", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
       ]
@@ -632,7 +633,7 @@
       "interval": 5,
       "flowControl": true,
       "answeredIn": [2021],
-      "notAnsweredIn": [2011, 2012, 2016, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2016, 2020],
       "signals": [
         {"id": "A7_AVG_CSMP_CAT0", "name": "Average consumption, category 0", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
         {"id": "A7_AVG_CSMP_CAT1", "name": "Average consumption, category 1", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
@@ -719,6 +720,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
         {"id": "A7_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
@@ -760,7 +762,7 @@
       "request": "222B29",
       "interval": 0.1,
       "answeredIn": [2021],
-      "notAnsweredIn": [2011, 2012, 2016, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2016, 2020],
       "signals": [
         {"id": "A7_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
       ]
@@ -784,7 +786,7 @@
       "tx": "714",
       "rx": "77E",
       "request": "222206",
-      "interval": 30,
+      "interval": 1,
       "flowControl": true,
       "answeredIn": [2011, 2012],
       "notAnsweredIn": [2020],
@@ -899,6 +901,7 @@
       "request": "22260D",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_CLIMATE_FR_R_DEFL_T", "name": "Front right deflector temperature", "group": "Engine", "bit": 0, "bits": 8, "divide": 3, "min": 0, "max": 84.915, "unit": "°C"}
       ]
@@ -924,6 +927,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_C7_CABIN_T", "name": "Cabin temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 256, "min": -128, "max": 127.99, "unit": "°C"}
       ]
@@ -949,6 +953,7 @@
       "request": "2226ED",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_AIR_POLUTION", "name": "Air pollution level", "description": "0 means clean air.", "group": "Climate", "bit": 0, "bits": 8, "signed": true, "divide": 10, "min": -12.7, "max": 12.7}
       ]
@@ -1123,7 +1128,7 @@
       "request": "22100D",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127}
       ]
@@ -1221,7 +1226,7 @@
       "request": "221024",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_MQB_AIR_MASS_1", "name": "Air mass meter 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7}
       ]
@@ -1234,6 +1239,7 @@
       "request": "221026",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MQB_MAF_1_B1_RAW", "name": "Mass airflow sensor 1 bank 1 raw value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7}
       ]
@@ -1270,7 +1276,7 @@
       "request": "22102E",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_ACCEL_PED_2", "name": "Accelerator pedal sensor 2", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "mV"}
       ]
@@ -1322,7 +1328,7 @@
       "request": "22104B",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_AC_COMP_TRQ", "name": "Air conditioning compressor torque", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1398,6 +1404,7 @@
       "request": "22105C",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_GEN_LOAD", "name": "Generator load", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1422,6 +1429,7 @@
       "request": "22105E",
       "interval": 5,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_BAT_V_2", "name": "Battery voltage variant", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "V", "invalidAtOrBelow": 0}
       ]
@@ -1471,7 +1479,7 @@
       "request": "221069",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_ENG_START_QTY", "name": "Engine start quantity", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -1546,7 +1554,7 @@
       "request": "2210D0",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_1_RAIL_P_1", "name": "Injector 1 rail pressure calibration point 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1559,7 +1567,7 @@
       "request": "2210D1",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_3_RAIL_P_1", "name": "Injector 3 rail pressure calibration point 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1572,7 +1580,7 @@
       "request": "2210D2",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_3_RAIL_P_2", "name": "Injector 3 rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1585,6 +1593,7 @@
       "request": "2210D3",
       "interval": 3600,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_INJ_2_RAIL_P_1", "name": "Injector 2 rail pressure calibration point 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1610,6 +1619,7 @@
       "request": "2210D5",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_5_RAIL_P_1", "name": "Injector 5, rail pressure calibration point 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -1622,6 +1632,7 @@
       "request": "2210D6",
       "interval": 3600,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_INJ_1_RAIL_P_2", "name": "Injector 1 rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1634,6 +1645,7 @@
       "request": "2210D7",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_4_RAIL_P_2", "name": "Injector 4, rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -1646,7 +1658,7 @@
       "request": "2210D8",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_4_RAIL_P_2", "name": "Injector 4 rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1685,6 +1697,7 @@
       "request": "2210DB",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_5_RAIL_P_2", "name": "Injector 5, rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -1723,6 +1736,7 @@
       "request": "2210DE",
       "interval": 3600,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_INJ_4_RAIL_P_3", "name": "Injector 4 rail pressure calibration point 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1735,7 +1749,7 @@
       "request": "2210DF",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_2_RAIL_P_3", "name": "Injector 2 rail pressure calibration point 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -1761,6 +1775,7 @@
       "request": "2210E1",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_5_RAIL_P_3", "name": "Injector 5, rail pressure calibration point 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -1786,7 +1801,7 @@
       "request": "2210E3",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_TRQ_RED_EXH_T", "name": "Torque reduction due to exhaust temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.2768, "max": 3.276}
       ]
@@ -1799,7 +1814,7 @@
       "request": "2210E4",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_REG_FACTOR", "name": "Regulation factor total", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": 0, "max": 3.276, "unit": "%"}
       ]
@@ -1812,6 +1827,7 @@
       "request": "2210E5",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_KNOCK_RETARD_6", "name": "Knock retard 6", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
       ]
@@ -1863,7 +1879,7 @@
       "request": "2210F1",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_DPF_DIFF_P_OFFSET", "name": "Diesel particulate filter differential pressure offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -1889,7 +1905,7 @@
       "request": "2210F9",
       "interval": 5,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_DPF_OUT_T", "name": "Diesel particulate filter outlet temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -1902,7 +1918,7 @@
       "request": "2210FB",
       "interval": 5,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_EXH_GAS_T_1", "name": "Exhaust gas temperature sensor 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -1915,7 +1931,7 @@
       "request": "2210FF",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_DEV_CYL_1", "name": "Injection amount deviation cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -1928,7 +1944,7 @@
       "request": "221100",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_DEV_CYL_3", "name": "Injection amount deviation cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -1941,7 +1957,7 @@
       "request": "221104",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_DEV_CYL_4", "name": "Injection amount deviation cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -1954,7 +1970,7 @@
       "request": "221105",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_INJ_DEV_CYL_2", "name": "Injection amount deviation cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -1967,6 +1983,7 @@
       "request": "221106",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_AMOUNT_DEV_CYL_2", "name": "Injection amount deviation cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -1979,6 +1996,7 @@
       "request": "221107",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INJ_AMOUNT_DEV_CYL_5", "name": "Injection amount deviation cylinder 5", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -2004,7 +2022,7 @@
       "request": "221114",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_COOL_FAN_2_DUTY", "name": "Coolant fan 2 duty cycle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2043,7 +2061,7 @@
       "request": "22111A",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_FUEL_FLOW", "name": "Fuel flow rate", "group": "Fuel", "metric": "fuelRate", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "L"}
       ]
@@ -2093,6 +2111,7 @@
       "request": "221125",
       "interval": 3600,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_CAM_ADPT_INT_BANK_1", "name": "Camshaft adaptation intake bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720, "max": 719, "unit": "°"}
       ]
@@ -2105,6 +2124,7 @@
       "request": "221128",
       "interval": 3600,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_CAM_ADPT_EXH_BANK_1", "name": "Camshaft adaptation exhaust bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720, "max": 719, "unit": "°"}
       ]
@@ -2129,7 +2149,7 @@
       "rx": "7E8",
       "request": "22112A",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_COMP_TEST_CYL_2", "name": "Compression test cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
       ]
@@ -2290,6 +2310,7 @@
       "request": "221146",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MISFIRES_TOTAL", "name": "Misfires total", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2315,6 +2336,7 @@
       "request": "221148",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_FUEL_METER", "name": "Fuel metering valve position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2352,6 +2374,7 @@
       "request": "22114B",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MIS_PER_1000_2", "name": "Misfires per 1000 revolutions 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2364,6 +2387,7 @@
       "request": "22114C",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MIS_PER_1000_4", "name": "Misfires per 1000 revolutions 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2376,6 +2400,7 @@
       "request": "22114E",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_SOOT_MASS_MEAS", "name": "Soot mass measured", "group": "Engine.DPF", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -2440,6 +2465,7 @@
       "request": "221153",
       "interval": 10.25,
       "answeredIn": [2011, 2012, 2016, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_EM_TORQ_1", "name": "Electric motor 1 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
       ]
@@ -2505,7 +2531,7 @@
       "request": "22115A",
       "interval": 30,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_DPF_FUEL_CON_REGEN", "name": "Diesel particulate filter fuel consumption since last regeneration", "group": "Engine.DPF", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "L"}
       ]
@@ -2530,6 +2556,7 @@
       "request": "22115C",
       "interval": 30,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_SRV_REGEN_STAT", "name": "Service regeneration status", "group": "Engine.DPF", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -2542,6 +2569,7 @@
       "request": "22115E",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_TIME_LAST_REGEN", "name": "Time since last regeneration", "bit": 0, "bits": 32, "divide": 10066666667, "min": 0, "max": 0.426, "unit": "min"}
       ]
@@ -2580,6 +2608,7 @@
       "interval": 30,
       "years": {"to": 2018},
       "answeredIn": [2011, 2012, 2016],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_SRV_REGEN_DUR", "name": "Service regeneration current duration", "group": "Battery", "bit": 0, "bits": 32, "multiply": 0.0001666667, "min": 0, "max": 715827, "unit": "min"}
       ]
@@ -2605,6 +2634,7 @@
       "request": "221169",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_FUEL_P_HIGH", "name": "High pressure fuel pressure actual", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "min": -3276800, "max": 3276700}
       ]
@@ -2707,7 +2737,7 @@
       "request": "22118B",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_EDGE_POS_4", "name": "Intake camshaft signal edge position adapted edge 4", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -2731,7 +2761,7 @@
       "rx": "7E8",
       "request": "22118D",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_EDGE_POS_6", "name": "Intake camshaft signal edge position adapted edge 6", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -2743,7 +2773,7 @@
       "rx": "7E8",
       "request": "22118E",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_EDGE_POS_7", "name": "Intake camshaft signal edge position adapted edge 7", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -2755,7 +2785,7 @@
       "rx": "7E8",
       "request": "22118F",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_EDGE_POS_8", "name": "Intake camshaft signal edge position adapted edge 8", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -2916,7 +2946,7 @@
       "request": "2211BC",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_OIL_LVL", "name": "Engine oil level", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 250, "min": -131.072, "max": 131.068, "unit": "mm"}
       ]
@@ -2968,6 +2998,7 @@
       "request": "2211C1",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_DPF_FIELD_REGEN_LOCK", "name": "Diesel particulate filter field regeneration lock status", "group": "Engine.DPF", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -2993,7 +3024,7 @@
       "request": "2211C4",
       "interval": 30,
       "answeredIn": [2011, 2012, 2016],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_OIL_MAX", "name": "Oil level, maximum", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
       ]
@@ -3006,7 +3037,7 @@
       "request": "2211C5",
       "interval": 30,
       "answeredIn": [2011, 2012, 2016],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_OIL_MIN", "name": "Oil level, minimum", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
       ]
@@ -3044,7 +3075,7 @@
       "request": "2211CC",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_BOOST_REGULATOR_FEEDBACK", "name": "Boost regulator feedback", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -3215,6 +3246,7 @@
       "request": "2211E6",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MQB_DPF_EXH_VOL", "name": "Diesel particulate filter exhaust gas flow volume", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7}
       ]
@@ -3289,7 +3321,7 @@
       "request": "2211F3",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_2_START", "name": "Post-injection 2 start position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -3583,6 +3615,7 @@
       "request": "22123C",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_OIL_DYN_LAST", "name": "Oil last dynamic measurement", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "mm"}
       ]
@@ -3595,6 +3628,7 @@
       "request": "22123F",
       "interval": 30,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_OIL_DYN_AVG", "name": "Oil dynamic average measurement", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "mm"}
       ]
@@ -3643,6 +3677,7 @@
       "request": "22128A",
       "interval": 5,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
@@ -3681,6 +3716,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_CAT_T_BANK_1", "name": "Cat. temperature, bank 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
       ]
@@ -3694,6 +3730,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_CAT_T_BANK_2", "name": "Cat. temperature, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
       ]
@@ -3718,6 +3755,7 @@
       "request": "2212CB",
       "interval": 30,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_SRV_LIM", "name": "Service limit value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -3730,7 +3768,7 @@
       "request": "2212FC",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_THROT_VALVE_ADAPT", "name": "Throttle valve adapter position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -3743,7 +3781,7 @@
       "request": "2212FE",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_ADAPT_PHASE_1", "name": "Intake camshaft adaptation unit 1 phase length", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -3756,7 +3794,7 @@
       "request": "221301",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_LIM_SMOKE", "name": "Smoke limit", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -3782,7 +3820,7 @@
       "request": "22133B",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CAMS_SPD", "name": "Camshaft speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 0.3, "min": -9830.4, "max": 9830.1, "unit": "rpm"}
       ]
@@ -3831,6 +3869,7 @@
       "request": "221347",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_REGEN_DUR", "name": "Regeneration duration", "group": "Engine.DPF", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "min"}
       ]
@@ -4088,6 +4127,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_KNOCK_RETARD_CYL_6", "name": "Knock retard:, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.62, "unit": "°"}
       ]
@@ -4157,6 +4197,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_KNOCK_SENS_V_CYL_2", "name": "Knock sensor voltage:, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -4170,6 +4211,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_KNOCK_SENS_V_CYL_5", "name": "Knock sensor voltage:, cylinder 5", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -4206,6 +4248,7 @@
       "request": "22145D",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_SOOT_MASS_MEAS_2", "name": "Diesel particulate filter soot mass measured, bank 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -4218,6 +4261,7 @@
       "request": "22145E",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_SOOT_MASS_CALC_2", "name": "Diesel particulate filter soot mass calculated, bank 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -4230,6 +4274,7 @@
       "request": "22145F",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_OIL_ASH_VOLUME_2", "name": "Diesel particulate filter oil ash volume, bank 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "L"}
       ]
@@ -4242,6 +4287,7 @@
       "request": "221460",
       "interval": 30,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_DIST_SINCE_REGEN_2", "name": "Diesel particulate filter distance since last regeneration, bank 2", "group": "Trips", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
       ]
@@ -4266,6 +4312,7 @@
       "request": "221464",
       "interval": 30,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_TIME_SINCE_REGEN_H_2", "name": "Diesel particulate filter time since last regeneration, h, bank 2", "group": "Engine", "bit": 0, "bits": 32, "divide": 3600, "min": 0, "max": 1193046}
       ]
@@ -4277,7 +4324,7 @@
       "rx": "7E8",
       "request": "221474",
       "interval": 300,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_INJ_2_RAIL_P_CAL_PT_2_1474", "name": "Injector 2: rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35}
       ]
@@ -4347,6 +4394,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_MIS_CNT_2", "name": "Misfires counter:, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -4388,6 +4436,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_MIS_PER_1000_RPM_4", "name": "Misfires per 1000 rpm:, cylinder 4", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -4429,6 +4478,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"to": 2018},
+      "answeredIn": [2014],
       "signals": [
         {"id": "A7_MIS_PER_1000_RPM_2", "name": "Misfires per 1000 rpm:, cylinder 2", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -4503,7 +4553,7 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2214B4",
-      "interval": 30,
+      "interval": 1,
       "years": {"from": 2015},
       "answeredIn": [2020],
       "signals": [
@@ -4518,6 +4568,7 @@
       "request": "2214B6",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_FUEL_CONS_SINCE_1", "name": "Diesel particulate filter fuel consumption since last regeneration, bank 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "L"}
       ]
@@ -4530,6 +4581,7 @@
       "request": "2214B8",
       "interval": 30,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_DIST_SINCE_REGEN_1", "name": "Diesel particulate filter distance since last regeneration, bank 1", "group": "Trips", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967, "unit": "km"}
       ]
@@ -4542,6 +4594,7 @@
       "request": "2214B9",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_OIL_ASH_VOLUME_1", "name": "Diesel particulate filter oil ash volume, bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "L"}
       ]
@@ -4567,6 +4620,7 @@
       "request": "2214BB",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_SOOT_MASS_MEAS_1", "name": "Diesel particulate filter soot mass measured, bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -4592,7 +4646,7 @@
       "request": "2214C7",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_PRE_INJ_1_START", "name": "Pilot injection 1 start position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -4605,7 +4659,7 @@
       "request": "2214C8",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_PRE_INJ_2_START", "name": "Pilot injection 2 start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -4644,7 +4698,7 @@
       "request": "2214CD",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_2_DURATION", "name": "Post-injection 2 duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -4657,6 +4711,7 @@
       "request": "2214CE",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_3_ACTIVATION_DURATION", "name": "Post-injection 3 activation duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -4669,7 +4724,7 @@
       "request": "2214CF",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_MAIN_INJ_DURATION", "name": "Main injection duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -4682,7 +4737,7 @@
       "request": "2214D0",
       "interval": 1,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_PRE_INJ_1_DURATION", "name": "Pilot injection 1 duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -4695,6 +4750,7 @@
       "request": "2214D1",
       "interval": 1,
       "answeredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_PRE_INJ_2_DURATION", "name": "Pilot injection 2 duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -4707,6 +4763,7 @@
       "request": "2214F5",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_DIFF_P", "name": "Differential pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -4719,7 +4776,7 @@
       "request": "2214F7",
       "interval": 5,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_EXHAUST_GAS_T_SENSOR_2", "name": "Exhaust gas temperature sensor 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -4806,6 +4863,7 @@
       "request": "22156F",
       "interval": 5,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_EXH_GAS_T_SENS_3_2", "name": "Exhaust gas temperature sensor 3, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -4867,6 +4925,7 @@
       "request": "2215B8",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MQB_DPF_DIFF_P_DYNAMIC_OFFSET", "name": "Diesel particulate filter differential pressure, dynamic offset", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -5047,7 +5106,7 @@
       "request": "221626",
       "interval": 5,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_RADIATOR_OUTPUT_COOLANT_T_ACTUAL", "name": "Radiator output coolant temp: actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -5060,6 +5119,7 @@
       "request": "221628",
       "interval": 5,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_INTERCOOLER_AIR_OUTPUT_T", "name": "Intercooler air output temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -5072,7 +5132,7 @@
       "request": "22162D",
       "interval": 5,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_PQ35_FUEL_T", "name": "Fuel temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -5085,6 +5145,7 @@
       "request": "22162F",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_MQB_DPF_AIR_P_SENSOR_RAW_VALUE", "name": "Diesel particulate filter air pressure sensor, raw", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -5121,6 +5182,7 @@
       "request": "22163B",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_2_QTY_SPEC", "name": "Post injection 2: quantity specified value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -5133,6 +5195,7 @@
       "request": "22163C",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_1_QTY_SPEC", "name": "Post injection 1: quantity specified value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -5157,6 +5220,7 @@
       "request": "22166B",
       "interval": 1,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_DPF_DIFF_P_RAW_BANK_1", "name": "Diesel particulate filter differential pressure raw value, bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -5182,6 +5246,7 @@
       "request": "22166F",
       "interval": 5,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_EXH_GAS_T_SENS_1", "name": "Exhaust gas temperature sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -5194,6 +5259,7 @@
       "request": "221670",
       "interval": 5,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_EXH_GAS_T_SENS_1_2", "name": "Exhaust gas temperature sensor 1, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -5206,6 +5272,7 @@
       "request": "22167D",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_POST_INJ_3_QTY_SPEC", "name": "Post injection 3: quantity specified value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -5242,6 +5309,7 @@
       "request": "2216A9",
       "interval": 30,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_ODO_2", "name": "Odometer, alternate", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
@@ -5703,6 +5771,7 @@
       "request": "22195D",
       "interval": 0.25,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
       ]
@@ -7070,6 +7139,7 @@
       "request": "22F42C",
       "interval": 1,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_PQ35_HIGH_P_EGR_CLOSING_VAR_2", "name": "High press EGR closing v2", "group": "Engine.EGR", "bit": 0, "bits": 8, "signed": true, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -7129,7 +7199,7 @@
       "rx": "7E9",
       "request": "220302",
       "interval": 900,
-      "answeredIn": [2011, 2012, 2016, 2020],
+      "answeredIn": [2011, 2012, 2014, 2016, 2020],
       "signals": [
         {"id": "A7_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "h"}
       ]
@@ -7257,7 +7327,7 @@
       "request": "221009",
       "interval": 0.25,
       "answeredIn": [2011],
-      "notAnsweredIn": [2012, 2020],
+      "notAnsweredIn": [2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_SPD_OUTPUT", "name": "Speed ​​output", "group": "Movement", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": 0, "max": 7000, "unit": "rpm"}
       ]
@@ -7269,7 +7339,7 @@
       "rx": "7E9",
       "request": "22100F",
       "interval": 0.25,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_TCM_ENGINE_TORQUE_LOSS", "name": "Engine torque loss", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -7282,7 +7352,7 @@
       "request": "221010",
       "interval": 0.25,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_MQB_TCM_CONVERTER_LOSS_TORQUE", "name": "Converter loss torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -7513,7 +7583,7 @@
       "rx": "7E9",
       "request": "22102D",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ200_P_SUPPLY_ACTUAL_P_AD_VALUE", "name": "Pressure supply actual pressure analog digital value", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
       ]
@@ -7613,7 +7683,7 @@
       "rx": "7E9",
       "request": "221058",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_ADAPT_BASIC_CHARAC_POINT_0_MOMENT", "name": "Clutch 1 adaptation basic characteristic point 0 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -7625,7 +7695,7 @@
       "rx": "7E9",
       "request": "221059",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_ADAPT_BASIC_CHAR_POINT_1_POS", "name": "Clutch 1 adaptation basic characteristic point 1 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -7673,7 +7743,7 @@
       "rx": "7E9",
       "request": "22105D",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_ADAPT_BASIC_CHAR_POINT_3_POS", "name": "Clutch 1 adaptation basic characteristic point 3 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -7782,7 +7852,7 @@
       "rx": "7E9",
       "request": "221069",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_PROT_ENGAGED_QTY", "name": "Clutch 1 protection function engaged quantity", "group": "Transmission", "bit": 0, "bits": 32, "byteOrder": "little", "min": 0, "max": 4294967295}
       ]
@@ -7831,7 +7901,7 @@
       "rx": "7E9",
       "request": "22106E",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_ADAPT_BASIC_CHAR_POINT_1_POS", "name": "Clutch 2 adaptation basic characteristic point 1 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -7843,7 +7913,7 @@
       "rx": "7E9",
       "request": "22106F",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_ADAPT_BASIC_CHARAC_POINT_1_MOMENT", "name": "Clutch 2 adaptation basic characteristic point 1 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -7868,7 +7938,7 @@
       "rx": "7E9",
       "request": "221073",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_ADAPT_BASIC_CHARAC_POINT_3_MOMENT", "name": "Clutch 2 adaptation basic characteristic point 3 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -7880,7 +7950,7 @@
       "rx": "7E9",
       "request": "221074",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_ADAPT_END_POS_OPENED", "name": "Clutch 2 adaptation end position opened", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -7892,7 +7962,7 @@
       "rx": "7E9",
       "request": "221075",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_ADAPT_END_POS_CLOSED", "name": "Clutch 2 adaptation end position closed", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -7904,7 +7974,7 @@
       "rx": "7E9",
       "request": "221077",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ200_CLUTCH_2_FRICTION_VALUE_CORRECTION_FACTOR", "name": "Clutch 2 friction value correction factor", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "multiply": 0.09766, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -7928,7 +7998,7 @@
       "rx": "7E9",
       "request": "22107E",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_2_PROT_ENGAGED_QTY", "name": "Clutch 2 protection function engaged quantity", "group": "Transmission", "bit": 0, "bits": 32, "byteOrder": "little", "min": 0, "max": 4294967295}
       ]
@@ -7979,7 +8049,7 @@
       "rx": "7E9",
       "request": "221085",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GEAR_ACTUATOR_ADAPT_SYNCHRO_POS_G3", "name": "Gear actuator adaptation synchronization position G3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -8004,7 +8074,7 @@
       "rx": "7E9",
       "request": "221090",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GEAR_ACTUATOR_ADAPT_ENGAGED_POS_G2", "name": "Gear actuator adaptation engaged position G2", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -8029,7 +8099,7 @@
       "rx": "7E9",
       "request": "221092",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GANGSTELLER_B_ADAPT_NEUTRALPOS", "name": "Gear selector b adaptation neutral position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -8170,7 +8240,7 @@
       "rx": "7E9",
       "request": "2210AF",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GEAR_ACTUATOR_ADAPT_SYNCHRO_POS_GR", "name": "Gear actuator adaptation synchronization position reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -8182,7 +8252,7 @@
       "rx": "7E9",
       "request": "2210B0",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_GEAR_ACTUATOR_ADAPT_ENGAGED_POS_GR", "name": "Gear actuator adaptation engaged position GR", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -8194,7 +8264,7 @@
       "rx": "7E9",
       "request": "2210C9",
       "interval": 3600,
-      "answeredIn": [2011, 2012],
+      "answeredIn": [2011, 2012, 2014],
       "notAnsweredIn": [2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_SUCCESSFUL_ADAPTS_COUNTER", "name": "Clutch 1 successful adaptations counter", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
@@ -8219,7 +8289,7 @@
       "rx": "7E9",
       "request": "2210CC",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_CLUTCH_1_FAILED_ADAPTS_COUNTER", "name": "Clutch 1 failed adaptations counter", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -8339,7 +8409,7 @@
       "rx": "7E9",
       "request": "221110",
       "interval": 1,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_WORKING_HOURS", "name": "Working hours", "group": "Transmission", "bit": 0, "bits": 32, "byteOrder": "little", "multiply": 2, "divide": 360000, "min": 0, "max": 23860.929}
       ]
@@ -8351,7 +8421,7 @@
       "rx": "7E9",
       "request": "221117",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_PQ35_REACHED_MAXIMUM_T", "name": "Reached maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -8602,7 +8672,7 @@
       "rx": "7E9",
       "request": "221141",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_NEUTRAL_POS_GEAR_SELECTOR_2_4", "name": "Neutral position gear selector 2-4", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8614,7 +8684,7 @@
       "rx": "7E9",
       "request": "221142",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_NEUTRAL_POS_GEAR_SELECTOR_5_N", "name": "Neutral position gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8639,7 +8709,7 @@
       "rx": "7E9",
       "request": "221144",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_1_3", "name": "Engaged position side b gear selector 1-3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8651,7 +8721,7 @@
       "rx": "7E9",
       "request": "221145",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_2_4", "name": "Engaged position side b gear selector 2-4", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8663,7 +8733,7 @@
       "rx": "7E9",
       "request": "221146",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_5_N", "name": "Engaged position side b gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8675,7 +8745,7 @@
       "rx": "7E9",
       "request": "221147",
       "interval": 3600,
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_6_R", "name": "Engaged position side b gear selector 6 and reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -8739,7 +8809,7 @@
       "rx": "7E9",
       "request": "221156",
       "interval": 3600,
-      "answeredIn": [2011, 2012],
+      "answeredIn": [2011, 2012, 2014],
       "notAnsweredIn": [2020],
       "signals": [
         {"id": "A7_MQB_DQ250_CLUTCH_ADAPT_VALUES_IKP0_K1", "name": "Clutch adaptation values initial kill point 0 for K1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
@@ -8779,7 +8849,7 @@
       "request": "221159",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_CLUTCH_ADAPT_VALUES_LOWER_I_POINT_ADAPT_K2", "name": "Clutch adaptation values lower current point adaptation K2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -8870,7 +8940,7 @@
       "request": "22117D",
       "interval": 3600,
       "answeredIn": [2011, 2012],
-      "notAnsweredIn": [2020],
+      "notAnsweredIn": [2014, 2020],
       "signals": [
         {"id": "A7_MQB_DQ250_GEAR_SELECTOR_SYNCHRONOUS_POS_G5", "name": "Gear selector synchronous position G5", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": 0, "max": 327.67, "unit": "%"}
       ]
@@ -8921,7 +8991,7 @@
       "rx": "7E9",
       "request": "221181",
       "interval": 3600,
-      "answeredIn": [2011, 2012],
+      "answeredIn": [2011, 2012, 2014],
       "notAnsweredIn": [2020],
       "signals": [
         {"id": "A7_MQB_DQ250_CORRECTION_VALUES_MAIN_P_ADAPT_HIGH_P_ON_CLUTCH_1", "name": "Correction values for main press adaptation: high press on clutch 1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
@@ -9429,7 +9499,7 @@
       "request": "222B1B",
       "interval": 30,
       "answeredIn": [2016],
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -9442,7 +9512,7 @@
       "request": "222B1C",
       "interval": 30,
       "answeredIn": [2016],
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -9455,7 +9525,7 @@
       "request": "222B1D",
       "interval": 30,
       "answeredIn": [2016],
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -9468,7 +9538,7 @@
       "request": "222B1E",
       "interval": 30,
       "answeredIn": [2016],
-      "notAnsweredIn": [2011, 2012, 2020],
+      "notAnsweredIn": [2011, 2012, 2014, 2020],
       "signals": [
         {"id": "A7_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -9838,6 +9908,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"to": 2018},
+      "notAnsweredIn": [2014],
       "signals": [
         {"id": "A7_INPUT_SHFT_SPD_2", "name": "Input shaft speed 2", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "add": -1, "min": -32769, "max": 32766, "unit": "rpm"}
       ]

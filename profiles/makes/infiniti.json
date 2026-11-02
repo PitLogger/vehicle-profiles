@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/INFINITI",
     "file": "signalsets/v3/default.json",
-    "revision": "36908bffcc22e3b82c98645653eabd0f608ba03a",
+    "revision": "ffa0882fa75093739f5bf3e216c752df3a07ba30",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -16,6 +16,7 @@
     {"tx": "743", "type": "cluster"},
     {"tx": "7E0", "type": "engine"},
     {"tx": "7E1", "type": "transmission"},
+    {"tx": "DA15", "type": "engine"},
     {"tx": "DA18", "type": "transmission"},
     {"tx": "DA2D", "type": "abs"}
   ],
@@ -192,7 +193,8 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "INFINITI_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
+        {"id": "INFINITI_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"},
+        {"id": "INFINITI_ODO_F16", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
     },
     {
@@ -301,10 +303,10 @@
       "tx": "743",
       "rx": "763",
       "request": "220E2E",
-      "interval": 30,
+      "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "INFINITI_RANGE", "name": "Range remaining", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 2047, "unit": "km", "invalidAtOrBelow": 0, "invalidAtOrAbove": 2047}
+        {"id": "INFINITI_RANGE", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 2047, "unit": "km", "invalidAtOrBelow": 0, "invalidAtOrAbove": 2047}
       ]
     },
     {
@@ -1477,7 +1479,7 @@
       "request": "221266",
       "interval": 5,
       "signals": [
-        {"id": "INFINITI_VVT_EOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
+        {"id": "INFINITI_VVT_OIL_T", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "add": -273, "min": -273, "max": 1262, "unit": "°C"}
       ]
     },
     {
@@ -1765,11 +1767,69 @@
       "interval": 5,
       "session": {"enter": "C0", "exit": "81"},
       "signals": [
+        {"id": "INFINITI_CVT_VSP_SENS", "name": "Vehicle speed sensor", "group": "Movement", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "INFINITI_CVT_ESTM_VSS", "name": "Estimated vehicle speed", "group": "Movement", "bit": 24, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "INFINITI_CVT_PRI_SPD_SENS", "name": "Primary pulley speed sensor", "group": "Transmission", "bit": 32, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
         {"id": "INFINITI_OUTPUT_SPD", "name": "Output speed", "group": "Movement", "bit": 40, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "INFINITI_CVT_RPM_SENS", "name": "Engine speed sensor", "group": "Transmission", "bit": 40, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "INFINITI_CVT_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 48, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"},
         {"id": "INFINITI_TURBINE_SPD", "name": "Turbine speed", "group": "Movement", "bit": 56, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
+        {"id": "INFINITI_CVT_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 56, "bits": 8, "divide": 51, "min": 0, "max": 5, "unit": "V"},
+        {"id": "INFINITI_CVT_FLUID_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 64, "bits": 8, "divide": 102, "min": 0, "max": 2.5, "unit": "V"},
+        {"id": "INFINITI_CVT_IGN_V", "name": "Ignition voltage", "group": "Transmission", "bit": 72, "bits": 8, "multiply": 4, "divide": 51, "min": 0, "max": 20, "unit": "V"},
+        {"id": "INFINITI_CVT_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "INFINITI_CVT_PRI_SPD", "name": "Primary pulley speed", "group": "Transmission", "bit": 96, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "INFINITI_CVT_SEC_SPD", "name": "Secondary pulley speed", "group": "Transmission", "bit": 104, "bits": 8, "multiply": 64, "min": 0, "max": 16320, "unit": "rpm"},
+        {"id": "INFINITI_CVT_RPM", "name": "Engine speed", "group": "Engine", "metric": "engineSpeed", "bit": 112, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
         {"id": "INFINITI_TQ_CONV_SLIP", "name": "Torque converter slip", "group": "Transmission", "bit": 120, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
+        {"id": "INFINITI_CVT_SLIP_SPD", "name": "Torque converter slip speed", "group": "Transmission", "bit": 120, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "rpm"},
+        {"id": "INFINITI_CVT_GEAR_RATIO", "name": "Gear ratio", "group": "Transmission", "bit": 128, "bits": 8, "divide": 100, "min": 0, "max": 2.55},
+        {"id": "INFINITI_CVT_G", "name": "Longitudinal acceleration", "group": "Movement", "bit": 136, "bits": 8, "signed": true, "multiply": 31, "divide": 1000, "min": -3.96, "max": 3.93, "unit": "g"},
+        {"id": "INFINITI_CVT_APP_1", "name": "Accelerator pedal position sensor 1", "group": "Transmission", "bit": 144, "bits": 8, "multiply": 8, "divide": 255, "min": 0, "max": 8},
         {"id": "INFINITI_ATF_T_VAR_1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 152, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
-        {"id": "INFINITI_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"}
+        {"id": "INFINITI_ATF_T_VAR_2", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 160, "bits": 8, "multiply": 9, "divide": 5, "add": -67, "min": -67, "max": 392, "unit": "°F"},
+        {"id": "INFINITI_CVT_TQ_RATIO", "name": "Torque converter torque ratio", "group": "Transmission", "bit": 208, "bits": 8, "divide": 64, "min": 0, "max": 3.98},
+        {"id": "INFINITI_CVT_SEC_P", "name": "Secondary pressure", "group": "Transmission", "bit": 216, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"},
+        {"id": "INFINITI_CVT_PRI_P", "name": "Primary pressure", "group": "Transmission", "bit": 224, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"},
+        {"id": "INFINITI_CVT_FLUID_T_RAW", "name": "Fluid temperature sensor count", "group": "Transmission", "bit": 232, "bits": 8, "min": 0, "max": 255},
+        {"id": "INFINITI_CVT_TGT_INPUT_SPD", "name": "Target input speed", "group": "Transmission", "bit": 240, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "INFINITI_CVT_TGT_GEAR_RATIO", "name": "Target gear ratio", "group": "Transmission", "bit": 248, "bits": 8, "divide": 100, "min": 0, "max": 2.55},
+        {"id": "INFINITI_CVT_TGT_STEP", "name": "Target stepper motor step", "group": "Transmission", "bit": 256, "bits": 8, "add": -30, "min": -30, "max": 225},
+        {"id": "INFINITI_CVT_STEP", "name": "Stepper motor step", "group": "Transmission", "bit": 264, "bits": 8, "add": -30, "min": -30, "max": 225},
+        {"id": "INFINITI_CVT_LU_P", "name": "Lock-up pressure", "group": "Transmission", "bit": 272, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"},
+        {"id": "INFINITI_CVT_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 280, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"},
+        {"id": "INFINITI_CVT_TGT_SEC_P", "name": "Target secondary pressure", "group": "Transmission", "bit": 288, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"},
+        {"id": "INFINITI_CVT_SOL1_CMD_I", "name": "Solenoid 1 commanded current", "group": "Transmission", "bit": 320, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_SOL2_CMD_I", "name": "Solenoid 2 commanded current", "group": "Transmission", "bit": 336, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_SOL3_CMD_I", "name": "Solenoid 3 commanded current", "group": "Transmission", "bit": 352, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_SOL1_I", "name": "Solenoid 1 monitored current", "group": "Transmission", "bit": 368, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_SOL2_I", "name": "Solenoid 2 monitored current", "group": "Transmission", "bit": 384, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_SOL3_I", "name": "Solenoid 3 monitored current", "group": "Transmission", "bit": 400, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "A"},
+        {"id": "INFINITI_CVT_D_POS", "name": "Drive position", "group": "Transmission", "bit": 424, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_N_POS", "name": "Neutral position", "group": "Transmission", "bit": 425, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_R_POS", "name": "Reverse position", "group": "Transmission", "bit": 426, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_P_POS", "name": "Park position", "group": "Transmission", "bit": 427, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_BRAKE_SW", "name": "Brake switch", "group": "Control", "bit": 428, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_L_POS", "name": "Low position switch", "group": "Transmission", "bit": 429, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_FULL_SW", "name": "Full throttle switch", "group": "Transmission", "bit": 430, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_IDLE_SW", "name": "Idle switch", "group": "Transmission", "bit": 431, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_SPORT_SW", "name": "Sport mode switch", "group": "Transmission", "bit": 432, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_STR_DN_SW", "name": "Steering wheel downshift switch", "group": "Transmission", "bit": 434, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_STR_UP_SW", "name": "Steering wheel upshift switch", "group": "Transmission", "bit": 435, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_DN_SW", "name": "Downshift switch", "group": "Transmission", "bit": 436, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_UP_SW", "name": "Upshift switch", "group": "Transmission", "bit": 437, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_NOT_MANUAL", "name": "Not in manual mode", "group": "Transmission", "bit": 438, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_MANUAL", "name": "Manual mode", "group": "Transmission", "bit": 439, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_VDC_ON", "name": "Vehicle dynamic control active", "group": "Control", "bit": 441, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_TCS_ON", "name": "Traction control active", "group": "Control", "bit": 443, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_ABS_ON", "name": "Anti-lock brakes active", "group": "Control", "bit": 447, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_RANGE", "name": "Selector range code", "group": "Transmission", "bit": 496, "bits": 8, "min": 0, "max": 255},
+        {"id": "INFINITI_CVT_M_GEAR", "name": "Manual mode gear", "group": "Transmission", "bit": 504, "bits": 8, "add": 1, "min": 0, "max": 256},
+        {"id": "INFINITI_CVT_ENG_BRAKE_LVL", "name": "Engine brake level code", "group": "Control", "bit": 520, "bits": 8, "min": 0, "max": 255},
+        {"id": "INFINITI_CVT_SLOPE", "name": "Road slope estimate", "group": "Movement", "bit": 544, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67},
+        {"id": "INFINITI_CVT_N_IDLE", "name": "Neutral idle control", "group": "Transmission", "bit": 562, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "INFINITI_CVT_INPUT_SPD", "name": "Input speed", "group": "Transmission", "bit": 568, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"},
+        {"id": "INFINITI_CVT_DRIVE_MODE", "name": "Drive mode code", "group": "Transmission", "bit": 592, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1781,7 +1841,8 @@
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
       "signals": [
-        {"id": "INFINITI_TRANS_ATF", "name": "Transmission ATF deterioration date", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
+        {"id": "INFINITI_TRANS_ATF", "name": "Transmission ATF deterioration date", "group": "Transmission", "bit": 0, "bits": 32, "min": 0, "max": 4294967295},
+        {"id": "INFINITI_CVT_DETER", "name": "Transmission fluid deterioration counter", "group": "Transmission", "metric": "cvtDeterioration", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
       ]
     },
     {
@@ -2347,7 +2408,7 @@
       "request": "221207",
       "interval": 1,
       "signals": [
-        {"id": "INFINITI_BASE_INJ_TIM", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+        {"id": "INFINITI_BASE_INJ_TIM_DA15", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
       ]
     },
     {
@@ -2358,7 +2419,7 @@
       "request": "22121F",
       "interval": 1,
       "signals": [
-        {"id": "INFINITI_ROLL_OVER_SENS_V", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+        {"id": "INFINITI_ROLL_OVER_SENS_V_DA15", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
       ]
     },
     {
@@ -2743,7 +2804,7 @@
       "request": "221207",
       "interval": 1,
       "signals": [
-        {"id": "INFINITI_BASE_INJ_TIM_V2", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
+        {"id": "INFINITI_BASE_INJ_TIM", "name": "Base injection timing", "group": "Engine", "bit": 0, "bits": 16, "divide": 2048, "min": 0, "max": 31.99, "unit": "ms"}
       ]
     },
     {
@@ -2809,7 +2870,7 @@
       "request": "22121F",
       "interval": 1,
       "signals": [
-        {"id": "INFINITI_ROLL_OVER_SENS_V_V2", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
+        {"id": "INFINITI_ROLL_OVER_SENS_V", "name": "Roll-over sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
       ]
     },
     {
