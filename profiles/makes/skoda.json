@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Skoda",
     "file": "signalsets/v3/default.json",
-    "revision": "80c128f1e4e912008a934b45c09d5f4e9e68f207",
+    "revision": "a0b9ab18cccdd8d186a3cda587f1c267704025a5",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1362,6 +1362,18 @@
       "interval": 0.1,
       "signals": [
         {"id": "SKODA_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
+      ]
+    },
+    {
+      "id": "714.77E.2202BD|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "2202BD",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "SKODA_ODO_V5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
       ]
     },
     {
@@ -21072,7 +21084,7 @@
       "interval": 5,
       "tester": "7C",
       "signals": [
-        {"id": "SKODA_ODO_V5", "name": "Odometer, electric drive", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+        {"id": "SKODA_ODO_V6", "name": "Odometer, electric drive", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
     },
     {

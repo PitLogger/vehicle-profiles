@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Porsche",
     "file": "signalsets/v3/default.json",
-    "revision": "3e76b685e5ba046dd179413d564c7bd75c2467a5",
+    "revision": "958940e8198b79a53c727a0806589eb73166c4b3",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1363,6 +1363,18 @@
       "interval": 0.1,
       "signals": [
         {"id": "PORSCHE_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
+      ]
+    },
+    {
+      "id": "714.77E.2202BD|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "2202BD",
+      "interval": 30,
+      "flowControl": true,
+      "signals": [
+        {"id": "PORSCHE_ODO_V4", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
       ]
     },
     {
@@ -21245,7 +21257,7 @@
       "interval": 5,
       "tester": "7C",
       "signals": [
-        {"id": "PORSCHE_ODO_V4", "name": "Odometer, electric drive", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
+        {"id": "PORSCHE_ODO_V5", "name": "Odometer, electric drive", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
     },
     {

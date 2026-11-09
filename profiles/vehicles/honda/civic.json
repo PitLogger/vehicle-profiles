@@ -24,7 +24,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Honda-Civic",
     "file": "signalsets/v3/default.json",
-    "revision": "6f58f860f15df9fb66371f5fae997e79add7477b",
+    "revision": "00cacffdde56382556179886602be31daae11ee9",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -173,6 +173,19 @@
         {"id": "CIVIC_ECT_2", "name": "Engine coolant temperature sensor 2", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 1624, "bits": 16, "signed": true, "divide": 10, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CIVIC_ECT_3", "name": "Engine coolant temperature sensor 3", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 1640, "bits": 16, "signed": true, "divide": 10, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CIVIC_ECT_4", "name": "Engine coolant temperature sensor 4", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 1656, "bits": 16, "signed": true, "divide": 10, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222203|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222203",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "notAnsweredIn": [2013, 2015],
+      "signals": [
+        {"id": "CIVIC_TRANS_OIL_P2_PCM", "name": "Transmission oil pressure sensor 2", "group": "Transmission", "bit": 72, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -501,6 +514,35 @@
       ]
     },
     {
+      "id": "DA0E.0E.222610|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222610",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_GENERATOR_PCM", "name": "Generator", "group": "Engine", "bit": 184, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CIVIC_AC_CLU_PCM", "name": "A/C clutch", "group": "Engine", "bit": 262, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222611|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222611",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_AIRGAS_RAT_PCM", "name": "Air/gas ratio", "group": "Engine", "bit": 64, "bits": 16, "multiply": 29.4, "divide": 65535, "min": 0, "max": 29.4, "invalidAtOrAbove": 29.4}
+      ]
+    },
+    {
       "id": "DA0E.0E.222612",
       "bus": "can29",
       "tx": "18DA0EF1",
@@ -559,6 +601,129 @@
       ],
       "signals": [
         {"id": "CIVIC_AC_P", "name": "A/C pressure", "group": "Climate", "bit": 120, "bits": 16, "min": 0, "max": 4000, "unit": "kPa"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222615|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222615",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "notAnsweredIn": [2013, 2015],
+      "signals": [
+        {"id": "CIVIC_ACTIVE_CYL_PCM", "name": "Active cylinders", "group": "Engine", "bit": 400, "bits": 8, "min": 0, "max": 6}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222660|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222660",
+      "interval": 30,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_ODO_PCM", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 344, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
+        {"id": "CIVIC_RUNTM_PCM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222661|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222661",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_FUELAIR_CAR_PCM", "name": "Fuel/air commanded equivalence ratio", "group": "Engine", "bit": 64, "bits": 16, "divide": 2229.08163265, "min": 0, "max": 29.4}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222662|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222662",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_KNOCK_CTRL_PCM", "name": "Knock control", "group": "ECU", "bit": 80, "bits": 8, "multiply": 2, "divide": 255, "min": 0, "max": 2},
+        {"id": "CIVIC_VTC_DUTY_PCM", "name": "Variable valve timing duty", "group": "Engine", "bit": 224, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222663|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222663",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_MIS_CNT_1_VAR_3_PCM", "name": "Misfire count #1, variant 3", "group": "Engine", "bit": 160, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_CNT_2_VAR_3_PCM", "name": "Misfire count #2, variant 3", "group": "Engine", "bit": 176, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_CNT_3_VAR_3_PCM", "name": "Misfire count #3, variant 3", "group": "Engine", "bit": 192, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_CNT_4_VAR_3_PCM", "name": "Misfire count #4, variant 3", "group": "Engine", "bit": 208, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_1_PCM", "name": "Misfire count, cylinder 1", "group": "ECU", "bit": 272, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_2_PCM", "name": "Misfire count, cylinder 2", "group": "ECU", "bit": 288, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_3_PCM", "name": "Misfire count, cylinder 3", "group": "ECU", "bit": 304, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_MIS_4_PCM", "name": "Misfire count, cylinder 4", "group": "ECU", "bit": 320, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA0E.0E.222666|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "222666",
+      "interval": 5,
+      "years": {"from": 2012, "to": 2015},
+      "notAnsweredIn": [2013, 2015],
+      "signals": [
+        {"id": "CIVIC_EOT_VAR_3_PCM", "name": "Engine oil temperature, variant 3", "group": "Engine", "bit": 88, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CIVIC_EOT_VAR_4_PCM", "name": "Engine oil temperature, variant 4", "group": "Engine", "bit": 112, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA0E.0E.22266C|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "22266C",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_MIS_CNT_1_VAR_1_PCM", "name": "Misfire count #1, variant 1", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255},
+        {"id": "CIVIC_MIS_CNT_2_VAR_1_PCM", "name": "Misfire count #2, variant 1", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255},
+        {"id": "CIVIC_MIS_CNT_3_VAR_1_PCM", "name": "Misfire count #3, variant 1", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255},
+        {"id": "CIVIC_MIS_CNT_4_VAR_1_PCM", "name": "Misfire count #4, variant 1", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA0E.0E.22266D|f=2012-2015",
+      "bus": "can29",
+      "tx": "18DA0EF1",
+      "rx": "18DAF10E",
+      "request": "22266D",
+      "interval": 1,
+      "years": {"from": 2012, "to": 2015},
+      "answeredIn": [2013],
+      "notAnsweredIn": [2015],
+      "signals": [
+        {"id": "CIVIC_AIR_FUEL_MIXTURE", "name": "Air-fuel mixture heater", "group": "Fuel", "bit": 72, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"}
       ]
     },
     {
@@ -913,6 +1078,19 @@
       ]
     },
     {
+      "id": "DA10.10.222516|f=2015-;-2015",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222516",
+      "interval": 1,
+      "years": {"from": 2015, "to": 2015},
+      "notAnsweredIn": [2008, 2013, 2015, 2016, 2017, 2020, 2022, 2024, 2025, 2026],
+      "signals": [
+        {"id": "CIVIC_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 232, "bits": 8, "min": 0, "max": 100, "unit": "%"}
+      ]
+    },
+    {
       "id": "DA10.10.222580",
       "bus": "can29",
       "tx": "18DA10F1",
@@ -1047,6 +1225,20 @@
       "signals": [
         {"id": "CIVIC_VTEC_PSW", "name": "VTEC pressure switch", "group": "Engine", "bit": 174, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "CIVIC_VTEC_SOL", "name": "VTEC solenoid valve", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+      ]
+    },
+    {
+      "id": "DA10.10.222614",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222614",
+      "interval": 5,
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2013, 2015, 2016, 2017, 2020, 2022, 2024],
+      "signals": [
+        {"id": "CIVIC_ST_CHG_RAW_CNT_DA10", "name": "State of charge, raw count", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_IMA_BAT_T_DA10", "name": "Motor assist battery temperature", "group": "Battery", "bit": 176, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°C"}
       ]
     },
     {
@@ -1187,8 +1379,8 @@
       "rx": "18DAF110",
       "request": "222624",
       "interval": 60,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_2624", "name": "Raw first byte of 10 22 2624", "description": "Captured to learn this reply's layout. Its listed contents: A/C Compressor Speed; A/C Compressor Speed Command; IMA Output; IMA Output Command; A/C Power Consumption; Vehicle Status; IMA Battery Temperature; Target Engine Torque; IMA Motor Torque; Regeneration Torque; Requested IMA Motor Torque; Driving Status.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1427,10 +1619,23 @@
       "rx": "18DAF110",
       "request": "222667",
       "interval": 60,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_2667", "name": "Raw first byte of 10 22 2667", "description": "Captured to learn this reply's layout. Its listed contents: Resolver Leraning-Accelerator Pedal Sensor; Resolver Leraning-O/D Clutch Condition; Resolver Leraning-Battery Charging Condition; Resolver Leraning-Vehicle Speed Condition; MOT ECU Failure; P Position; System Ready State; Soc (State of Charge) Condition; TMU Failure; Vehicle Interdiction; Resolver Zero Point Learning (TMU); Resolver Leraning Start by ECU; Generator Motor Learning Completion; ....", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.222668",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222668",
+      "interval": 1,
+      "answeredIn": [2015, 2016, 2017, 2020, 2022, 2024, 2025, 2026],
+      "notAnsweredIn": [2008, 2013],
+      "signals": [
+        {"id": "CIVIC_ELEC_MOTOR_LOAD_DA10", "name": "Electric motor load", "group": "Engine", "bit": 216, "bits": 8, "multiply": 40, "divide": 51, "add": -100, "min": -100, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -2002,8 +2207,8 @@
       "rx": "18DAF110",
       "request": "222690",
       "interval": 30,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_2690", "name": "Raw first byte of 10 22 2690", "description": "Captured to learn this reply's layout. Its listed contents: Tank Internal Pressure; Leak Detection of ELCM; Vacuum Pump Driver (Diag Signal) of ELCM; Vacuum Pump Turning on Order Value of ELCM; CCV Drive Circuit of ELCM; CCV Turning on Order Value of ELCM; Drive Circuit of FTCV; Fuel Vapor Containment Valve; Absolute Pressure of ELCM Pressure Sensor; Mode Status of ELCM Leak Detection; Lid Open Close Condition; Drive Circuit of Lid Open Solenoid Value; ....", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -2015,8 +2220,8 @@
       "rx": "18DAF110",
       "request": "222691",
       "interval": 30,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_2691", "name": "Raw first byte of 10 22 2691", "description": "Captured to learn this reply's layout. Its listed contents: HEV System Start-Up Complete; System Ready; Vehicle Operation Status; Target Speed of Electric Water Pump; Speed of Electric Water Pump; Duty Drive of Electric Water Pump; Target Engine Speed Output; 1TDC Generator Motor Pulse; Accumlation Time of Engoine Abeyance; VTEC Control Changes To Hi V/T; Fuel Cut By ECVT Mode; Engine Start By Aircon System.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -2028,8 +2233,8 @@
       "rx": "18DAF110",
       "request": "222692",
       "interval": 30,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_2692", "name": "Raw first byte of 10 22 2692", "description": "Captured to learn this reply's layout. Its listed contents: ECVT Mode Target Battery Power; O/D Mode Target Battery Power; Battery Power; Crankshaft Target Torque; Traction Motor Torque Order Value; Generator Motor Torque Order Value; Target Engine Output Value; Crankshaft Estimated Torque; Avoidance Control by P/T Vibration; Evades Continuation Operation of P/T Vibration; Engine Stall by Deterioration of Power Generation; ....", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3211,8 +3416,8 @@
       "rx": "18DAF110",
       "request": "22E823",
       "interval": 60,
-      "answeredIn": [2026],
-      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
+      "answeredIn": [2025, 2026],
+      "notAnsweredIn": [2008, 2010, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024],
       "signals": [
         {"id": "CIVIC_RAW_10_E823", "name": "Raw first byte of 10 22 E823", "description": "Captured to learn this reply's layout. Its listed contents: Pcs2 Forces Operation.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3241,6 +3446,32 @@
       ],
       "signals": [
         {"id": "CIVIC_RAW_10_E82C", "name": "Raw first byte of 10 22 E82C", "description": "Captured to learn this reply's layout. Its listed contents: AD Inhibit Status.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.22F40D|f=2015-;-2015",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22F40D",
+      "interval": 1,
+      "years": {"from": 2015, "to": 2015},
+      "notAnsweredIn": [2008, 2013, 2015, 2016, 2017, 2020, 2022, 2024, 2025, 2026],
+      "signals": [
+        {"id": "CIVIC_VSS_F4", "name": "Vehicle speed, mirrored read", "group": "Engine", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22F42F|f=2015-;-2015",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22F42F",
+      "interval": 1,
+      "years": {"from": 2015, "to": 2015},
+      "notAnsweredIn": [2008, 2013, 2015, 2016, 2017, 2020, 2022, 2024, 2025, 2026],
+      "signals": [
+        {"id": "CIVIC_FLI_F4", "name": "Fuel level, mirrored read", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -3313,6 +3544,48 @@
       ]
     },
     {
+      "id": "DA11.11.222613|f=-2014",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222613",
+      "interval": 1,
+      "years": {"to": 2014},
+      "answeredIn": [2008],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "CIVIC_EVAP_PC_LOAD", "name": "Evaporative purge control load", "group": "Engine", "bit": 48, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 99.61, "unit": "%"},
+        {"id": "CIVIC_AC_P_RAW_CNT", "name": "Air conditioning pressure, raw count", "group": "Engine", "bit": 120, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222614|f=-2014",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222614",
+      "interval": 5,
+      "years": {"to": 2014},
+      "notAnsweredIn": [2008, 2013],
+      "signals": [
+        {"id": "CIVIC_ST_CHG_RAW_CNT", "name": "State of charge, raw count", "group": "Battery", "bit": 144, "bits": 16, "min": 0, "max": 65535},
+        {"id": "CIVIC_IMA_BAT_T", "name": "Motor assist battery temperature", "group": "Battery", "bit": 176, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": -40, "max": 419, "unit": "°C"}
+      ]
+    },
+    {
+      "id": "DA11.11.222615|f=-2014",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222615",
+      "interval": 1,
+      "years": {"to": 2014},
+      "notAnsweredIn": [2008, 2013],
+      "signals": [
+        {"id": "CIVIC_SENS_FUEL_P_RAW_CNT", "name": "Fuel pressure sensor a, raw count", "group": "Fuel", "bit": 248, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
       "id": "DA11.11.222660|f=-2014",
       "bus": "can29",
       "tx": "18DA11F1",
@@ -3324,6 +3597,20 @@
       "notAnsweredIn": [1997, 1998, 2004, 2005, 2012, 2013, 2014],
       "signals": [
         {"id": "CIVIC_RUNTM_V2", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 368, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
+      ]
+    },
+    {
+      "id": "DA11.11.222661|f=-2014",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222661",
+      "interval": 1,
+      "years": {"to": 2014},
+      "answeredIn": [2008],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "CIVIC_ELD_ELEC_LOAD_DUTY", "name": "Electric load detector current", "group": "Engine", "bit": 136, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "A"}
       ]
     },
     {
@@ -3365,6 +3652,20 @@
         {"id": "CIVIC_MIS_CNT_4_VAR_2", "name": "Misfire count 4,, variant 2", "group": "Engine", "bit": 320, "bits": 16, "min": 0, "max": 65535},
         {"id": "CIVIC_MIS_CNT_5_VAR_2", "name": "Misfire count 5,, variant 2", "group": "Engine", "bit": 336, "bits": 16, "min": 0, "max": 65535},
         {"id": "CIVIC_MIS_CNT_6_VAR_2", "name": "Misfire count 6,, variant 2", "group": "Engine", "bit": 352, "bits": 16, "min": 0, "max": 65535}
+      ]
+    },
+    {
+      "id": "DA11.11.222668|f=-2014",
+      "bus": "can29",
+      "tx": "18DA11F1",
+      "rx": "18DAF111",
+      "request": "222668",
+      "interval": 1,
+      "years": {"to": 2014},
+      "answeredIn": [2008],
+      "notAnsweredIn": [2013],
+      "signals": [
+        {"id": "CIVIC_ELEC_MOTOR_LOAD", "name": "Electric motor load", "group": "Engine", "bit": 216, "bits": 8, "multiply": 40, "divide": 51, "add": -100, "min": -100, "max": 100, "unit": "%"}
       ]
     },
     {

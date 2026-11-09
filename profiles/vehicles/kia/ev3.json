@@ -12,16 +12,19 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Kia-EV3",
     "file": "signalsets/v3/default.json",
-    "revision": "59096dac32f79beb6e4a0fbf972507a510055bbb",
+    "revision": "a95cbb032b0a8ce5498e3317829b59f138de4cf0",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
   "ecus": [
+    {"tx": "730", "type": "driverAssistance"},
     {"tx": "744", "type": "charger"},
     {"tx": "7A0", "type": "bodyControl"},
     {"tx": "7C6", "type": "cluster"},
+    {"tx": "7D1", "type": "abs"},
     {"tx": "7E2", "type": "vehicleControl"},
-    {"tx": "7E4", "type": "battery"}
+    {"tx": "7E4", "type": "battery"},
+    {"tx": "7E5", "type": "charger"}
   ],
   "requests": [
     {
@@ -228,7 +231,7 @@
       "request": "22BC10",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_LIGHTS_CODE", "name": "Exterior lights state code", "group": "Lights", "bit": 32, "bits": 4, "min": 0, "max": 15}
       ]
@@ -241,7 +244,7 @@
       "request": "22B008",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_BRAKE_SW", "name": "Brake switch", "group": "Control", "bit": 51, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -253,7 +256,7 @@
       "rx": "7A8",
       "request": "22B009",
       "interval": 1,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_PARKING_SENS_REAR", "name": "Parking sensor rear center left level", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "EV3_PARKING_SENS_REAR_CENTER", "name": "Parking sensor rear center right level", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255}
@@ -267,7 +270,7 @@
       "request": "22C002",
       "interval": 60,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_TID_1", "name": "Tire sensor 1 ID", "group": "Tires", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
         {"id": "EV3_TID_2", "name": "Tire sensor 2 ID", "group": "Tires", "bit": 64, "bits": 32, "min": 0, "max": 4294967295, "display": "hex"},
@@ -303,7 +306,7 @@
       "request": "22C00C",
       "interval": 30,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_SENS_1_ODO_EVT_1", "name": "Sensor 1 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
         {"id": "EV3_SENS_1_ODO_EVT_2", "name": "Sensor 1 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
@@ -318,7 +321,7 @@
       "request": "22C00D",
       "interval": 30,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_SENS_2_ODO_EVT_1", "name": "Sensor 2 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
         {"id": "EV3_SENS_2_ODO_EVT_2", "name": "Sensor 2 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
@@ -333,7 +336,7 @@
       "request": "22C00E",
       "interval": 30,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_SENS_3_ODO_EVT_1", "name": "Sensor 3 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
         {"id": "EV3_SENS_3_ODO_EVT_2", "name": "Sensor 3 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
@@ -348,7 +351,7 @@
       "request": "22C00F",
       "interval": 30,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_SENS_4_ODO_EVT_1", "name": "Sensor 4 odometer event 1", "group": "Trips", "bit": 272, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
         {"id": "EV3_SENS_4_ODO_EVT_2", "name": "Sensor 4 odometer event 2", "group": "Trips", "bit": 296, "bits": 24, "divide": 10, "min": 0, "max": 1677721.5, "unit": "km"},
@@ -437,8 +440,7 @@
       "rx": "7D9",
       "request": "22C101",
       "interval": 0.25,
-      "answeredIn": [2025],
-      "notAnsweredIn": [2026],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "EV3_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -466,7 +468,7 @@
       "rx": "7EA",
       "request": "2102",
       "interval": 1,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_AUX_AMPS_LDC", "name": "AUX amps LDC", "group": "Engine", "bit": 128, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "A"},
         {"id": "EV3_AUXILIARY_BAT", "name": "Auxiliary battery current", "group": "Battery", "bit": 168, "bits": 16, "min": 0, "max": 65535, "unit": "A"},
@@ -512,7 +514,7 @@
       "rx": "7EC",
       "request": "2101",
       "interval": 5,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_ST_CHG_BMS", "name": "State of charge BMS", "group": "Battery", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127, "unit": "%"},
         {"id": "EV3_AVAILABLE_CHG_POWER", "name": "Available charge power", "group": "Battery", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kW"},
@@ -749,7 +751,7 @@
       "request": "220106",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2025],
+      "answeredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_BMS_STATE", "name": "Battery management state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 15},
         {"id": "EV3_HVBAT_WCS_INLET_T", "name": "Battery temperature at WCS input", "group": "Battery", "bit": 32, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
@@ -926,7 +928,7 @@
       "rx": "7EC",
       "request": "220201",
       "interval": 1,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_48_BAT_ST_CHG", "name": "48 battery state of charge", "group": "Battery", "bit": 152, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553, "unit": "%"}
       ]
@@ -938,7 +940,7 @@
       "rx": "7EC",
       "request": "220204",
       "interval": 5,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_CURRENT_SENS_NARROW", "name": "Current sensor narrow range, amps", "group": "Trips", "bit": 32, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
         {"id": "EV3_CURRENT_SENS_WIDE", "name": "Current sensor wide range, amps", "group": "Trips", "bit": 48, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "A"},
@@ -959,7 +961,7 @@
       "rx": "7EC",
       "request": "220205",
       "interval": 5,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_48_BAT_ST_CHG_2", "name": "48 battery state of charge 2", "group": "Battery", "bit": 40, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "%"},
         {"id": "EV3_48V_BAT_CHG_LIM", "name": "48V battery charge limit", "group": "Battery", "bit": 216, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "A"},
@@ -973,7 +975,7 @@
       "rx": "7ED",
       "request": "2101",
       "interval": 1,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "EV3_ON_BOARD_CHARGER_V", "name": "On-board charger charger AC input voltage, RMS", "group": "Battery", "bit": 72, "bits": 8, "multiply": 64, "divide": 25, "min": 0, "max": 652, "unit": "V"},
         {"id": "EV3_ON_BOARD_CHARGER_T", "name": "On-board charger charger temperature a", "group": "Battery", "bit": 104, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},

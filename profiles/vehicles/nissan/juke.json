@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Nissan-Juke",
     "file": "signalsets/v3/default.json",
-    "revision": "02d1c46bbed4c0e2aea4f799176c4b005edd8fdf",
+    "revision": "fd79334930e523ed399194ac043ede9080dd8cf5",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -28,6 +28,7 @@
       "request": "221102",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_ABS_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -40,6 +41,7 @@
       "request": "221103",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_ABS_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -52,6 +54,7 @@
       "request": "221104",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_ABS_RL_VSS", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -64,6 +67,7 @@
       "request": "221105",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_ABS_RR_VSS", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -75,6 +79,7 @@
       "rx": "760",
       "request": "221115",
       "interval": 0.25,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_APP", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
       ]
@@ -87,6 +92,7 @@
       "request": "221208",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_ABS_STEER_ANG", "name": "Anti-lock brake steering angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -98,6 +104,7 @@
       "rx": "760",
       "request": "221209",
       "interval": 0.25,
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_BRAKE_MC_P", "name": "Brake master cylinder pressure count", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -110,8 +117,9 @@
       "request": "2101",
       "interval": 30,
       "flowControl": true,
+      "answeredIn": [2012],
       "signals": [
-        {"id": "JUKE_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
+        {"id": "JUKE_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 56, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
       ]
     },
     {
@@ -264,6 +272,7 @@
       "rx": "764",
       "request": "2110",
       "interval": 5,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_HVAC_AAT", "name": "Ambient air temperature, climate module", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "JUKE_HVAC_CABIN_T", "name": "Cabin temperature", "group": "Climate", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
@@ -284,6 +293,7 @@
       "interval": 1,
       "flowControl": true,
       "session": {"enter": "C0"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_IH", "name": "Ih_feetventactrposition", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
         {"id": "JUKE_IH_LEFTMIXACTRPOSITION", "name": "Ih_leftmixactrposition", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "%"},
@@ -359,6 +369,7 @@
       "interval": 1,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_ELECTRONIC", "name": "All-wheel drive electronic traction support solenoid", "group": "Engine", "bit": 7, "bits": 1, "divide": 50, "min": 0, "max": 0.02, "labels": ["Off", "On"]}
       ]
@@ -372,6 +383,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_REQ_ENG_TQ", "name": "All-wheel drive request engine torque", "group": "Engine", "bit": 7, "bits": 1, "signed": true, "multiply": 5, "divide": 2, "min": -2.5, "max": 0, "labels": ["Off", "On"]}
       ]
@@ -385,6 +397,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_ESTIMATED_ENG_TQ", "name": "All-wheel drive estimated engine torque", "group": "Engine", "bit": 7, "bits": 1, "signed": true, "multiply": 5, "divide": 2, "min": -2.5, "max": 0, "labels": ["Off", "On"]}
       ]
@@ -398,6 +411,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_TGT_TRACTION", "name": "AWD, target traction control torque", "group": "Engine", "bit": 7, "bits": 1, "multiply": 2, "min": 0, "max": 2, "labels": ["Off", "On"]}
       ]
@@ -411,6 +425,7 @@
       "interval": 5,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_COUPLING_T", "name": "All-wheel drive coupling temperature", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -424,6 +439,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_FR_WHL_SPD", "name": "All-wheel drive front right wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
       ]
@@ -437,6 +453,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_FL_WHL_SPD", "name": "All-wheel drive front left wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
       ]
@@ -450,6 +467,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_RR_WHL_SPD", "name": "All-wheel drive rear right wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
       ]
@@ -463,6 +481,7 @@
       "interval": 0.25,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_RL_WHL_SPD", "name": "All-wheel drive rear left wheel speed", "group": "Tires", "bit": 7, "bits": 1, "multiply": 256, "divide": 65535, "min": 0, "max": 0.0039, "labels": ["Off", "On"]}
       ]
@@ -476,6 +495,7 @@
       "interval": 5,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_CLU_HIGH_T_SIG_1", "name": "All-wheel drive clutch high temperature signal 1", "group": "Transmission", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -489,6 +509,7 @@
       "interval": 5,
       "flowControl": true,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AWD_CLU_HIGH_T_SIG_2", "name": "All-wheel drive clutch high temperature signal 2", "group": "Transmission", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -501,6 +522,7 @@
       "request": "2110",
       "interval": 15,
       "flowControl": true,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_WHL_1_P", "name": "Wheel 1 pressure", "group": "Tires", "bit": 16, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0},
         {"id": "JUKE_WHL_2_P", "name": "Wheel 2 pressure", "group": "Tires", "bit": 24, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "psi", "invalidAtOrBelow": 0},
@@ -611,6 +633,7 @@
       "rx": "7E8",
       "request": "2169",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ALTERNATOR_SETPOINT_V", "name": "ALTERNATOR set point VOLTAGE", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "V"}
       ]
@@ -622,6 +645,7 @@
       "rx": "7E8",
       "request": "21AD",
       "interval": 3600,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_COLD_STARTING", "name": "Cold starting programming", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "JUKE_FUEL_RAIL_T_SENS_V", "name": "Fuel rail temperature sensor voltage", "group": "Battery", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
@@ -644,6 +668,7 @@
       "request": "221103",
       "interval": 5,
       "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_VPWR_ECM", "name": "Battery voltage, engine module", "group": "Battery", "bit": 0, "bits": 8, "multiply": 0.08, "min": 0, "max": 20.4, "unit": "V"}
       ]
@@ -719,6 +744,7 @@
       "request": "221124",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AF_ADJ_B2", "name": "Air/fuel ratio adjustment, bank 2", "group": "Fuel", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "%"}
       ]
@@ -730,6 +756,7 @@
       "rx": "7E8",
       "request": "22112A",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_MANIFOLD_P_SENS_V", "name": "Manifold pressure sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -753,6 +780,7 @@
       "request": "221137",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_CAM_ADV_B2", "name": "Intake camshaft advance, bank 2", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -64, "min": -64, "max": 63.5, "unit": "°"}
       ]
@@ -776,6 +804,7 @@
       "request": "221139",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_CAM_DUTY_B2", "name": "Intake valve timing solenoid duty, bank 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 25, "divide": 64, "min": 0, "max": 99.6, "unit": "%"}
       ]
@@ -787,6 +816,7 @@
       "rx": "7E8",
       "request": "22113C",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_IGN_ADVANCE", "name": "Ignition advance", "group": "Engine", "bit": 0, "bits": 8, "multiply": -1, "add": 112, "min": -143, "max": 112}
       ]
@@ -833,6 +863,7 @@
       "request": "221205",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_MAF_V_B2", "name": "Mass air flow sensor voltage, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
       ]
@@ -844,6 +875,7 @@
       "rx": "7E8",
       "request": "221206",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_INJ_PW", "name": "Injection pulse width", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "ms"}
       ]
@@ -877,6 +909,7 @@
       "rx": "7E8",
       "request": "221223",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_REFRIGERANT_FLUID_V", "name": "Refrigerant fluid sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
       ]
@@ -888,6 +921,7 @@
       "rx": "7E8",
       "request": "221225",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_UP_OXYGEN_SENS_V", "name": "Upstream oxygen sensor voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 200, "min": 0, "max": 327, "unit": "V"}
       ]
@@ -923,6 +957,7 @@
       "rx": "7E8",
       "request": "221287",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ENG_TGT_TQ", "name": "Engine target torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -947,6 +982,7 @@
       "rx": "7E8",
       "request": "221307",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_AC_COMP", "name": "Air conditioning compressor", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1},
         {"id": "JUKE_IDLE_CTRL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1}
@@ -959,6 +995,7 @@
       "rx": "7E8",
       "request": "22130D",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_BRAKE_SWITCH_NUMBER_2", "name": "BRAKE SWITCH, number 2", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "JUKE_BRAKE_SWITCH_NUMBER_1", "name": "BRAKE SWITCH, number 1", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
@@ -971,6 +1008,7 @@
       "rx": "7E8",
       "request": "221313",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_COOLING_FAN_LOW", "name": "Cooling fan low", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1},
         {"id": "JUKE_COOLING_FAN_HIGH", "name": "Cooling fan high", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1}
@@ -983,6 +1021,7 @@
       "rx": "7E8",
       "request": "221406",
       "interval": 5,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -994,6 +1033,7 @@
       "rx": "7E8",
       "request": "22140E",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1000, "min": 0, "max": 255000}
       ]
@@ -1005,6 +1045,7 @@
       "rx": "7E8",
       "request": "22140F",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_THROTTLE_OPENING", "name": "Throttle opening", "group": "Engine", "bit": 0, "bits": 8, "multiply": 7, "divide": 20, "min": 0, "max": 89.25, "unit": "°"}
       ]
@@ -1016,6 +1057,7 @@
       "rx": "7E8",
       "request": "222004",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ENG_TQ", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -400, "min": -400, "max": 32367, "unit": "Nm"}
       ]
@@ -1027,6 +1069,7 @@
       "rx": "7E8",
       "request": "22200F",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_BRAKING_DETECTED", "name": "Braking detected multiplex signal", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1038,6 +1081,7 @@
       "rx": "7E8",
       "request": "222026",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_WIRED_BRAKE_CONTACT", "name": "Wired brake contact", "group": "Control", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -1049,6 +1093,7 @@
       "rx": "7E8",
       "request": "22204B",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_CRUISE_CTRL_SPD", "name": "Cruise control/speed limiter buttons", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1060,6 +1105,7 @@
       "rx": "7E8",
       "request": "222079",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_PARKING_BRAKE", "name": "Parking brake", "group": "Control", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "JUKE_CRUISE_CTRL", "name": "Cruise control", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -1075,6 +1121,7 @@
       "rx": "7E8",
       "request": "22207A",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_DUR_RESUME_BUTTON", "name": "Duration of resume button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
       ]
@@ -1086,6 +1133,7 @@
       "rx": "7E8",
       "request": "22207B",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_DUR_BUTTON_PRESS", "name": "Duration of + button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
       ]
@@ -1097,6 +1145,7 @@
       "rx": "7E8",
       "request": "22207C",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_DUR_BUTTON_PRESS_7E0", "name": "Duration of - button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
       ]
@@ -1108,6 +1157,7 @@
       "rx": "7E8",
       "request": "22207D",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_DUR_SUSPEND_BUTTON", "name": "Duration of suspend button press", "group": "Engine", "bit": 0, "bits": 16, "divide": 20, "min": 0, "max": 3276, "unit": "s"}
       ]
@@ -1119,6 +1169,7 @@
       "rx": "7E8",
       "request": "22207E",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_NUM_ABNORMAL_CC_SL", "name": "Number of abnormal cc/sl transitions", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1130,6 +1181,7 @@
       "rx": "7E8",
       "request": "222095",
       "interval": 5,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
@@ -1141,6 +1193,7 @@
       "rx": "7E8",
       "request": "222170",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_CHANGE_VSS_UNIT", "name": "Change of vehicle speed unit", "group": "Movement", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "JUKE_AUTO_EMERGENCY", "name": "Auto emergency braking system request", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -1154,6 +1207,7 @@
       "rx": "7E8",
       "request": "222225",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_VSS_MULTIPLEXED", "name": "Vehicle speed multiplexed information", "group": "Movement", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -1165,6 +1219,7 @@
       "rx": "7E8",
       "request": "22222B",
       "interval": 0.25,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_MANUAL_OR_ASSISTED", "name": "Manual or assisted parking brake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1176,6 +1231,7 @@
       "rx": "7E8",
       "request": "2222AA",
       "interval": 3600,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_STARTER_WEAR_CNT", "name": "Starter wear counter", "group": "Engine", "bit": 40, "bits": 24, "min": 0, "max": 16777215}
       ]
@@ -1187,6 +1243,7 @@
       "rx": "7E8",
       "request": "222C04",
       "interval": 1,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_GEARBOX_RAT", "name": "Gearbox ratio", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1270,6 +1327,7 @@
       "request": "2103",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_CVT_DETER", "name": "Transmission fluid deterioration counter", "group": "Transmission", "metric": "cvtDeterioration", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
       ]
@@ -1282,6 +1340,7 @@
       "request": "2110",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "answeredIn": [2012],
       "signals": [
         {"id": "JUKE_TRANS_B", "name": "Transmission-B", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535},
         {"id": "JUKE_TRANS_WORK_HOURS", "name": "Transmission work hours", "group": "Transmission", "bit": 32, "bits": 16, "divide": 6, "min": 0, "max": 10922, "unit": "h"},
@@ -1296,6 +1355,7 @@
       "rx": "7E9",
       "request": "2130",
       "interval": 5,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ATF_T_VAR_2_7E1", "name": "Transmission fluid temperature, variant 2", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
       ]
@@ -1307,6 +1367,7 @@
       "rx": "7E9",
       "request": "220230",
       "interval": 5,
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_ATF_T_VAR_1_7E1", "name": "Transmission fluid temperature, variant 1", "group": "Transmission", "bit": 88, "bits": 8, "multiply": 9, "divide": 5, "add": -58, "min": -58, "max": 401, "unit": "°F"}
       ]
@@ -1319,6 +1380,7 @@
       "request": "221101",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_VSS_SENS", "name": "Vehicle speed sensor", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -1331,6 +1393,7 @@
       "request": "221102",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_VSS_EST", "name": "Estimated vehicle speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -1343,6 +1406,7 @@
       "request": "221103",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -1355,6 +1419,7 @@
       "request": "22110A",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_P", "name": "Secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
       ]
@@ -1367,6 +1432,7 @@
       "request": "22110B",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_P", "name": "Primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 25, "min": 0, "max": 1638375, "unit": "kPa"}
       ]
@@ -1379,6 +1445,7 @@
       "request": "22110C",
       "interval": 5,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -1391,6 +1458,7 @@
       "request": "22110D",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_LUBE_P", "name": "Lubrication pressure", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270, "unit": "kPa"}
       ]
@@ -1403,6 +1471,7 @@
       "request": "22110E",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_LINE_P", "name": "Line pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
       ]
@@ -1415,6 +1484,7 @@
       "request": "22110F",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_P_TGT", "name": "Target primary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
       ]
@@ -1427,6 +1497,7 @@
       "request": "221110",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEL_P_TGT", "name": "Target select pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
       ]
@@ -1439,6 +1510,7 @@
       "request": "221111",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_P_TGT", "name": "Target secondary pulley pressure", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 25, "min": 0, "max": 6375, "unit": "kPa"}
       ]
@@ -1451,6 +1523,7 @@
       "request": "221112",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_REQ_TQ_D", "name": "Requested torque delta", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
       ]
@@ -1463,6 +1536,7 @@
       "request": "221113",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_REQ_TQ", "name": "Requested torque", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "add": 100, "min": -156, "max": 354, "unit": "Nm"}
       ]
@@ -1475,6 +1549,7 @@
       "request": "221114",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_REQ_RPM", "name": "Requested engine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"}
       ]
@@ -1487,6 +1562,7 @@
       "request": "221201",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_INPUT_RPM", "name": "Input speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1499,6 +1575,7 @@
       "request": "221202",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_RPM", "name": "Primary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1511,6 +1588,7 @@
       "request": "221203",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_RPM", "name": "Secondary pulley speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1523,6 +1601,7 @@
       "request": "221204",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1535,6 +1614,7 @@
       "request": "221205",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_P_V", "name": "Secondary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
       ]
@@ -1547,6 +1627,7 @@
       "request": "221206",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_P_V", "name": "Primary pressure sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
       ]
@@ -1559,6 +1640,7 @@
       "request": "221207",
       "interval": 5,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ATF_T_V", "name": "Fluid temperature sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 5, "divide": 1023, "min": 0, "max": 320, "unit": "V"}
       ]
@@ -1571,6 +1653,7 @@
       "request": "221208",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_G_V", "name": "Acceleration sensor voltage", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10000, "min": -3.27, "max": 3.27, "unit": "V"}
       ]
@@ -1583,6 +1666,7 @@
       "request": "22120C",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_INPUT_RPM_2", "name": "Input speed, alternate", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1595,6 +1679,7 @@
       "request": "22120D",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_RPM_2", "name": "Primary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1607,6 +1692,7 @@
       "request": "22120E",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_RPM_2", "name": "Secondary pulley speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1619,6 +1705,7 @@
       "request": "22120F",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_RPM_2", "name": "Engine speed, alternate", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1631,6 +1718,7 @@
       "request": "221210",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PULLEY_RAT", "name": "Pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
       ]
@@ -1643,6 +1731,7 @@
       "request": "221212",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ENG_TQ_ACT", "name": "Engine torque, active", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -1655,6 +1744,7 @@
       "request": "221213",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ENG_TQ_TX", "name": "Engine torque, transmitted", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -1667,6 +1757,7 @@
       "request": "221214",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ENG_TQ", "name": "Engine torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -1679,6 +1770,7 @@
       "request": "221215",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_TQ", "name": "Primary pulley torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -1691,6 +1783,7 @@
       "request": "221216",
       "interval": 0.25,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_TQ_RAT", "name": "Torque ratio", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 577, "divide": 160000, "min": 0, "max": 236}
       ]
@@ -1703,6 +1796,7 @@
       "request": "221218",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PULLEY_RAT_TGT", "name": "Target pulley ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.55}
       ]
@@ -1715,6 +1809,7 @@
       "request": "221219",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ISO_1_C", "name": "Isolation solenoid 1 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1727,6 +1822,7 @@
       "request": "22121A",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_ISO_2_C", "name": "Isolation solenoid 2 current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1739,6 +1835,7 @@
       "request": "22121B",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_SOL_C", "name": "Primary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1751,6 +1848,7 @@
       "request": "22121C",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_SOL_C", "name": "Secondary solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1763,6 +1861,7 @@
       "request": "22121D",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEL_SOL_C", "name": "Select solenoid current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1775,6 +1874,7 @@
       "request": "22121E",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SOL_MON_1", "name": "Solenoid 1 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1787,6 +1887,7 @@
       "request": "22121F",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SOL_MON_2", "name": "Solenoid 2 monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1799,6 +1900,7 @@
       "request": "221221",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_PRI_SOL_MON", "name": "Primary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1811,6 +1913,7 @@
       "request": "221222",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEC_SOL_MON", "name": "Secondary solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]
@@ -1823,6 +1926,7 @@
       "request": "221223",
       "interval": 1,
       "session": {"enter": "C0", "exit": "81"},
+      "notAnsweredIn": [2012],
       "signals": [
         {"id": "JUKE_TCM_SEL_SOL_MON", "name": "Select solenoid monitor current", "group": "Transmission", "bit": 0, "bits": 8, "divide": 1000, "min": 0, "max": 0.255, "unit": "A"}
       ]

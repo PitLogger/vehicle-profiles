@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Porsche-Taycan",
     "file": "signalsets/v3/default.json",
-    "revision": "31df1b9b5430fc5b4e679ad5e41ca1b2647a4991",
+    "revision": "badd73d2024e475053d77af02cc00eb4240378d1",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -425,6 +425,19 @@
       "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TAYCAN_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
+      ]
+    },
+    {
+      "id": "714.77E.2202BD|fc=1",
+      "bus": "can11",
+      "tx": "714",
+      "rx": "77E",
+      "request": "2202BD",
+      "interval": 30,
+      "flowControl": true,
+      "notAnsweredIn": [2022],
+      "signals": [
+        {"id": "TAYCAN_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km", "invalidAtOrAbove": 16777215}
       ]
     },
     {

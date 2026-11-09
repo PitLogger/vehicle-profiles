@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-GR86",
     "file": "signalsets/v3/default.json",
-    "revision": "0a2824998124cbeaaf2b9dca7db3be71b20b2463",
+    "revision": "367feba16fafea5b972f204107858b49beea259c",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -26,6 +26,7 @@
       "tx": "746",
       "request": "221032",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_STEER_ANGLE_746", "name": "Steering wheel angle, v2", "group": "Control", "bit": 0, "bits": 8, "signed": true, "multiply": 5, "min": -640, "max": 635, "unit": "°"}
       ]
@@ -38,7 +39,7 @@
       "request": "2115",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022, 2024, 2025],
+      "notAnsweredIn": [2022, 2023, 2024, 2025],
       "signals": [
         {"id": "GR86_TP_2_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 4},
         {"id": "GR86_TP_2_FR", "name": "Front left tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 4},
@@ -55,7 +56,7 @@
       "request": "2130",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022, 2024, 2025],
+      "notAnsweredIn": [2022, 2023, 2024, 2025],
       "signals": [
         {"id": "GR86_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 4},
         {"id": "GR86_TP_FR", "name": "Front left tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 8, "bits": 8, "divide": 58, "add": -0.5, "min": 0, "max": 4},
@@ -75,6 +76,7 @@
       "timeout": 0.6,
       "flowControl": true,
       "tester": "2A",
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_TT_RL", "name": "Rear left tire temperature", "group": "Tires", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
         {"id": "GR86_TT_FR", "name": "Front right tire temperature", "group": "Tires", "bit": 8, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C", "invalidAtOrBelow": -40},
@@ -92,7 +94,7 @@
       "interval": 15,
       "timeout": 0.4,
       "flowControl": true,
-      "notAnsweredIn": [2013],
+      "notAnsweredIn": [2013, 2023],
       "signals": [
         {"id": "GR86_TP_RL_2", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
         {"id": "GR86_TP_RR_2", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 8, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
@@ -109,7 +111,7 @@
       "interval": 3600,
       "timeout": 0.4,
       "flowControl": true,
-      "notAnsweredIn": [2013],
+      "notAnsweredIn": [2013, 2023],
       "signals": [
         {"id": "GR86_TID1", "name": "Tire 1 id", "group": "Tires", "bit": 0, "bits": 24, "min": 0, "max": 16777215},
         {"id": "GR86_TID2", "name": "Tire 2 id", "group": "Tires", "bit": 24, "bits": 24, "min": 0, "max": 16777215},
@@ -125,7 +127,7 @@
       "interval": 1,
       "timeout": 0.4,
       "flowControl": true,
-      "notAnsweredIn": [2013],
+      "notAnsweredIn": [2013, 2023],
       "signals": [
         {"id": "GR86_12V_C", "name": "12V battery current", "group": "Battery", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "mA"}
       ]
@@ -138,7 +140,7 @@
       "interval": 5,
       "timeout": 0.4,
       "flowControl": true,
-      "notAnsweredIn": [2013],
+      "notAnsweredIn": [2013, 2023],
       "signals": [
         {"id": "GR86_12V_T", "name": "12V battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -150,6 +152,7 @@
       "rx": "7AA",
       "request": "220005",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ECT", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -161,6 +164,7 @@
       "rx": "7AA",
       "request": "220023",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "kPa"}
       ]
@@ -172,6 +176,7 @@
       "rx": "7AA",
       "request": "2210A1",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_MAF_VOLTAGE", "name": "Mass airflow sensor voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -183,6 +188,7 @@
       "rx": "7AA",
       "request": "2210A4",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_FUEL_INJECTOR_2_PULSE_WIDTH", "name": "Fuel injector #2 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "divide": 3.90625, "min": 0, "max": 65.28, "unit": "ms"}
       ]
@@ -194,6 +200,7 @@
       "rx": "7AA",
       "request": "2210A5",
       "interval": 30,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ODO_7A2_10A5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km"}
       ]
@@ -205,6 +212,7 @@
       "rx": "7AA",
       "request": "2210A6",
       "interval": 0.25,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ACC_POS", "name": "Accelerator pedal position", "group": "Control", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -216,6 +224,7 @@
       "rx": "7AA",
       "request": "2210AB",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_RADIATOR_FAN", "name": "Radiator fan control", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 200, "unit": "%"}
       ]
@@ -227,6 +236,7 @@
       "rx": "7AA",
       "request": "2210AE",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CPC_VALVE_DUTY_CYCLE", "name": "Canister purge control valve duty cycle", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -238,6 +248,7 @@
       "rx": "7AA",
       "request": "2210B1",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EGR_STEPS", "name": "Exhaust gas recirculation steps", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -249,6 +260,7 @@
       "rx": "7AA",
       "request": "2210B2",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ALTERNATOR_DUTY", "name": "Alternator duty", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
       ]
@@ -260,6 +272,7 @@
       "rx": "7AA",
       "request": "2210B3",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_FUEL_PUMP_DUTY", "name": "Fuel pump duty", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -271,6 +284,7 @@
       "rx": "7AA",
       "request": "2210B4",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_INTAKE_VVT_ADVANCE_RIGHT", "name": "Intake VVT advance angle right", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -282,6 +296,7 @@
       "rx": "7AA",
       "request": "2210B5",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_INTAKE_VVT_ADVANCE_LEFT", "name": "Intake VVT advance angle left", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -293,6 +308,7 @@
       "rx": "7AA",
       "request": "2210B6",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_OCV_DUTY_RIGHT", "name": "Oil control valve duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -304,6 +320,7 @@
       "rx": "7AA",
       "request": "2210B7",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_OCV_DUTY_LEFT", "name": "Oil control valve duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -315,6 +332,7 @@
       "rx": "7AA",
       "request": "2210BE",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_A_F_SENSOR_1", "name": "A/F sensor #1", "group": "ECU", "bit": 0, "bits": 8, "multiply": 1.99, "divide": 255, "min": 0, "max": 1.99}
       ]
@@ -326,6 +344,7 @@
       "rx": "7AA",
       "request": "2210DE",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_THROTTLE_MOTOR_DUTY", "name": "Throttle motor duty", "group": "ECU", "bit": 0, "bits": 8, "multiply": 0.784, "add": -100, "min": -100, "max": 99.92, "unit": "%"}
       ]
@@ -337,6 +356,7 @@
       "rx": "7AA",
       "request": "2210E3",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CRUISE_VSS_T", "name": "Cruise speed, set", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -348,6 +368,7 @@
       "rx": "7AA",
       "request": "2210E5",
       "interval": 30,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ODO_7A2_10E5", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km", "invalidAtOrAbove": 131070}
       ]
@@ -359,6 +380,7 @@
       "rx": "7AA",
       "request": "2210E6",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_FUEL_TANK_AIR_PRESSURE", "name": "Fuel tank air pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655}
       ]
@@ -370,6 +392,7 @@
       "rx": "7AA",
       "request": "2210E8",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_OSV_DUTY_RIGHT", "name": "Oil supply value, duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -381,6 +404,7 @@
       "rx": "7AA",
       "request": "2210E9",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_OSV_DUTY_LEFT", "name": "Oil supply value, duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -392,6 +416,7 @@
       "rx": "7AA",
       "request": "2210EE",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_EXHAUST_OCV_DUTY_RIGHT", "name": "Exhaust OCV duty right", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -403,6 +428,7 @@
       "rx": "7AA",
       "request": "2210EF",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_EXHAUST_OCV_DUTY_LEFT", "name": "Exhaust OCV duty left", "group": "ECU", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -414,6 +440,7 @@
       "rx": "7AA",
       "request": "22110B",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ROUGHNESS_MONITOR_1", "name": "Roughness monitor #1", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -425,6 +452,7 @@
       "rx": "7AA",
       "request": "22110C",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ROUGHNESS_MONITOR_2", "name": "Roughness monitor #2", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -436,6 +464,7 @@
       "rx": "7AA",
       "request": "22110D",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ROUGHNESS_MONITOR_3", "name": "Roughness monitor #3", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -447,6 +476,7 @@
       "rx": "7AA",
       "request": "22110E",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ROUGHNESS_MONITOR_4", "name": "Roughness monitor #4", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -458,6 +488,7 @@
       "rx": "7AA",
       "request": "221118",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TARGET_INTAKE_MANIFOLD_PRESSURE", "name": "Target intake manifold pressure", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 50, "unit": "kPa"}
       ]
@@ -469,6 +500,7 @@
       "rx": "7AA",
       "request": "22111B",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EGR_TARGET_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation target valve opening angle", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -480,6 +512,7 @@
       "rx": "7AA",
       "request": "22111C",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EGR_VALVE_OPENING_ANGLE", "name": "Exhaust gas recirculation valve opening angle", "group": "ECU", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -491,6 +524,7 @@
       "rx": "7AA",
       "request": "22111F",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INLET_AIR_T_AFTER_AIR_FILTER", "name": "Inlet air temperature, after air filter", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -502,6 +536,7 @@
       "rx": "7AA",
       "request": "221121",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_TARGET_ENGINE_SPEED", "name": "Target engine speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -513,6 +548,7 @@
       "rx": "7AA",
       "request": "22112C",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INTERIOR_HEATER", "name": "Interior heater", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -524,6 +560,7 @@
       "rx": "7AA",
       "request": "22114B",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ESTIMATED_CATALYST_T", "name": "Estimated catalyst temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -40, "min": -40, "max": 1235, "unit": "°C"}
       ]
@@ -535,6 +572,7 @@
       "rx": "7AA",
       "request": "221155",
       "interval": 30,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ESTIMATED_DIST_OIL", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
       ]
@@ -546,6 +584,7 @@
       "rx": "7AA",
       "request": "2211D0",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_KNOCKING_SIGNAL", "name": "Knocking signal", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°"}
       ]
@@ -557,6 +596,7 @@
       "rx": "7AA",
       "request": "22122F",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CLUTCH_SWITCH", "name": "Clutch switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -568,6 +608,7 @@
       "rx": "7AA",
       "request": "221230",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_STOP_LIGHT_SWITCH", "name": "Stop light switch", "group": "Lights", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -579,6 +620,7 @@
       "rx": "7AA",
       "request": "221231",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CC_SET_COAST_SWITCH", "name": "Cruise control set/coast switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -590,6 +632,7 @@
       "rx": "7AA",
       "request": "221232",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CC_RESUME_ACCELERATE_SWITCH", "name": "Cruise control resume/accelerate switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -601,6 +644,7 @@
       "rx": "7AA",
       "request": "221233",
       "interval": 0.25,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -612,6 +656,7 @@
       "rx": "7AA",
       "request": "221234",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CC_MAIN_TOGGLE_SWITCH", "name": "Cruise control main toggle switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -623,6 +668,7 @@
       "rx": "7AA",
       "request": "22124A",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_CC_CANCEL_SWITCH", "name": "Cruise control cancel switch", "group": "Cruise control", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -634,6 +680,7 @@
       "rx": "7AA",
       "request": "22124C",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_OIL_LEVEL_SWITCH", "name": "Oil level switch", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -645,6 +692,7 @@
       "rx": "7AA",
       "request": "221251",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SUB_FUEL_PUMP_RELAY_SWITCH", "name": "Sub fuel pump relay switch", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -656,6 +704,7 @@
       "rx": "7AA",
       "request": "22129C",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ENGINE_STARTING_TIME", "name": "Engine starting time", "group": "ECU", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"}
       ]
@@ -667,6 +716,7 @@
       "rx": "7AA",
       "request": "2212ED",
       "interval": 0.25,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_MAF_AVG", "name": "Mass air flow, average", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"}
       ]
@@ -678,6 +728,7 @@
       "rx": "7AA",
       "request": "221314",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_MONITOR_1", "name": "Cylinder monitor #1", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -689,6 +740,7 @@
       "rx": "7AA",
       "request": "221315",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_MONITOR_2", "name": "Cylinder monitor #2", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -700,6 +752,7 @@
       "rx": "7AA",
       "request": "221316",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_MONITOR_3", "name": "Cylinder monitor #3", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -711,6 +764,7 @@
       "rx": "7AA",
       "request": "221317",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_MONITOR_4", "name": "Cylinder monitor #4", "group": "ECU", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -722,6 +776,7 @@
       "rx": "7AA",
       "request": "221321",
       "interval": 5,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_BAT_TERMINAL_VOLTAGE", "name": "Battery terminal voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
       ]
@@ -733,6 +788,7 @@
       "rx": "7AA",
       "request": "221322",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_BAT_CHARGE_DISCHARGE_CURRENT", "name": "Battery charge/discharge current", "group": "Battery", "bit": 0, "bits": 32, "multiply": 10, "divide": 10000, "add": -2000, "min": -2000, "max": 4292967, "unit": "A"}
       ]
@@ -744,6 +800,7 @@
       "rx": "7AA",
       "request": "221323",
       "interval": 5,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_ESTIMATED_BAT_T", "name": "Estimated battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 2, "add": -40, "min": -40, "max": 32727.5, "unit": "°C"}
       ]
@@ -755,6 +812,7 @@
       "rx": "7AA",
       "request": "221324",
       "interval": 1,
+      "answeredIn": [2023],
       "signals": [
         {"id": "GR86_REMAINING_BAT_CAPACITY", "name": "Remaining battery capacity", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -766,6 +824,7 @@
       "rx": "7AA",
       "request": "22307A",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INLET_AIR_T", "name": "Inlet air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1.8, "add": -40, "min": -30, "max": 300, "unit": "°F"}
       ]
@@ -777,6 +836,7 @@
       "rx": "7AB",
       "request": "2210C8",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_LOCK_UP_DUTY_RATIO", "name": "Lock up duty ratio", "group": "ECU", "bit": 0, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "%"}
       ]
@@ -788,6 +848,7 @@
       "rx": "7AB",
       "request": "2210CB",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TURBINE_SPEED", "name": "Turbine speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
       ]
@@ -799,6 +860,7 @@
       "rx": "7AB",
       "request": "2210D2",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TCM_ATF_T", "name": "Transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
       ]
@@ -810,6 +872,7 @@
       "rx": "7B8",
       "request": "2103",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
         {"id": "GR86_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 8, "bits": 8, "multiply": 256, "divide": 200, "min": 0, "max": 326.4, "unit": "km/h"},
@@ -841,6 +904,7 @@
       "interval": 0.25,
       "timeout": 0.4,
       "flowControl": true,
+      "answeredIn": [2023],
       "notAnsweredIn": [2013],
       "signals": [
         {"id": "GR86_FR_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
@@ -855,6 +919,7 @@
       "interval": 0.25,
       "timeout": 0.4,
       "flowControl": true,
+      "answeredIn": [2023],
       "notAnsweredIn": [2013],
       "signals": [
         {"id": "GR86_FL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
@@ -869,6 +934,7 @@
       "interval": 0.25,
       "timeout": 0.4,
       "flowControl": true,
+      "answeredIn": [2023],
       "notAnsweredIn": [2013],
       "signals": [
         {"id": "GR86_RR_VSS", "name": "Rear right wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
@@ -883,6 +949,7 @@
       "interval": 0.25,
       "timeout": 0.4,
       "flowControl": true,
+      "answeredIn": [2023],
       "notAnsweredIn": [2013],
       "signals": [
         {"id": "GR86_RL_VSS", "name": "Rear left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "multiply": 562.5, "divide": 10000, "min": 0, "max": 3686, "unit": "km/h"}
@@ -897,6 +964,7 @@
       "interval": 0.25,
       "timeout": 0.4,
       "flowControl": true,
+      "answeredIn": [2023],
       "notAnsweredIn": [2013],
       "signals": [
         {"id": "GR86_STEER_ANGLE_7B0", "name": "Steering wheel angle", "group": "Control", "bit": 0, "bits": 16, "signed": true, "min": -32767, "max": 32767, "unit": "°"}
@@ -921,6 +989,7 @@
       "rx": "7E8",
       "request": "2101",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 224, "bits": 8, "add": -40, "min": 0, "max": 215, "unit": "°C"}
       ]
@@ -944,6 +1013,7 @@
       "rx": "7E8",
       "request": "2151",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_PREV_TRIP_DST", "name": "Previous trip distance", "group": "Trips", "bit": 40, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "km"},
         {"id": "GR86_VVTOT", "name": "Variable valve timing oil temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
@@ -957,6 +1027,7 @@
       "rx": "7E8",
       "request": "220005",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ECT_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -970,7 +1041,7 @@
       "interval": 1,
       "timeout": 0.4,
       "flowControl": true,
-      "notAnsweredIn": [2013],
+      "notAnsweredIn": [2013, 2023],
       "signals": [
         {"id": "GR86_FLI", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -982,6 +1053,7 @@
       "rx": "7E8",
       "request": "22101E",
       "interval": 3600,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TRIP_CNT", "name": "Trip counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -993,6 +1065,7 @@
       "rx": "7E8",
       "request": "2210A3",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_FUEL_INJ_1_WIDTH", "name": "Fuel injection 1 pulse width", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 32, "divide": 125, "min": 0, "max": 65.28, "unit": "ms"}
       ]
@@ -1007,6 +1080,7 @@
       "timeout": 0.4,
       "flowControl": true,
       "answeredIn": [2013],
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070, "unit": "km", "invalidAtOrAbove": 131070}
       ]
@@ -1018,6 +1092,7 @@
       "rx": "7E8",
       "request": "2210E7",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -1029,6 +1104,7 @@
       "rx": "7E8",
       "request": "2210EC",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EXH_VVT_RETARD_ANG", "name": "Exhaust VVT retard angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1040,6 +1116,7 @@
       "rx": "7E8",
       "request": "2210ED",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EXH_VVT_RETARD_ANG_LEFT", "name": "Exhaust VVT retard angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1051,6 +1128,7 @@
       "rx": "7E8",
       "request": "221155",
       "interval": 30,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ESTIMATED_DIST_OIL_CHANGE", "name": "Estimated distance to oil change", "group": "Trips", "bit": 0, "bits": 8, "multiply": 100, "min": 0, "max": 25500, "unit": "km"}
       ]
@@ -1062,6 +1140,7 @@
       "rx": "7E8",
       "request": "2211BE",
       "interval": 3600,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INT_VVT_CLEANING", "name": "Intake VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1073,6 +1152,7 @@
       "rx": "7E8",
       "request": "2211BF",
       "interval": 3600,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EXH_VVT_CLEANING", "name": "Exhaust VVT cleaning self-recovery counter", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1108,6 +1188,7 @@
       "rx": "7E8",
       "request": "221275",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_THROTTLE_MOTOR_V", "name": "Throttle motor voltage", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 25, "min": 0, "max": 20.4, "unit": "V"}
       ]
@@ -1119,6 +1200,7 @@
       "rx": "7E8",
       "request": "221276",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SUB_THROTTLE_SENS", "name": "Sub throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -1130,6 +1212,7 @@
       "rx": "7E8",
       "request": "221277",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_MAIN_THROTTLE_SENS", "name": "Main throttle sensor", "group": "Engine", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -1141,6 +1224,7 @@
       "rx": "7E8",
       "request": "221278",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SUB_ACCEL_SENS", "name": "Sub accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -1152,6 +1236,7 @@
       "rx": "7E8",
       "request": "221279",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_MAIN_ACCEL_SENS", "name": "Main accelerator sensor", "group": "Movement", "bit": 0, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"}
       ]
@@ -1163,6 +1248,7 @@
       "rx": "7E8",
       "request": "221289",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_IDLE_MAF", "name": "Idle mass air flow", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "g/s"}
       ]
@@ -1174,6 +1260,7 @@
       "rx": "7E8",
       "request": "22128A",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_IDLE_MAF_FEEDBACK", "name": "Idle mass air flow feedback correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
       ]
@@ -1185,6 +1272,7 @@
       "rx": "7E8",
       "request": "22128B",
       "interval": 3600,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_IDLE_SPD_CTRL", "name": "Idle speed control learning value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
       ]
@@ -1196,6 +1284,7 @@
       "rx": "7E8",
       "request": "22128C",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_IDLE_AC_LOAD_CORR", "name": "Idle A/C load correction", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
       ]
@@ -1207,6 +1296,7 @@
       "rx": "7E8",
       "request": "22128D",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_ELEC_LOAD_FEEDBACK", "name": "Electric load feedback value", "group": "Engine", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55, "unit": "g/s"}
       ]
@@ -1218,6 +1308,7 @@
       "rx": "7E8",
       "request": "22128E",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_IDLE_DIRTY_THROTTLE", "name": "Idle dirty throttle correction", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "add": -300, "min": -300, "max": 355, "unit": "g/s"}
       ]
@@ -1229,6 +1320,7 @@
       "rx": "7E8",
       "request": "22128F",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INT_VVT_ADVANCE_TGT", "name": "Intake VVT advance, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1240,6 +1332,7 @@
       "rx": "7E8",
       "request": "221290",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_INT_VVT_ADVANCE_TGT_ANG", "name": "Intake VVT advance, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1251,6 +1344,7 @@
       "rx": "7E8",
       "request": "221291",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EXH_VVT_RETARD_TGT", "name": "Exhaust VVT retard, target angle right", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1262,6 +1356,7 @@
       "rx": "7E8",
       "request": "221292",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_EXH_VVT_RETARD_TGT_ANG", "name": "Exhaust VVT retard, target angle left", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°"}
       ]
@@ -1273,6 +1368,7 @@
       "rx": "7E8",
       "request": "221295",
       "interval": 3600,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_PURGE_DENSITY_LEARN", "name": "Purge density learn value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 332, "divide": 425, "add": -100, "min": -100, "max": 99.1999, "unit": "%"}
       ]
@@ -1284,6 +1380,7 @@
       "rx": "7E8",
       "request": "221298",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TRANS_TURBINE_SPD", "name": "Transmission turbine speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -1295,6 +1392,7 @@
       "rx": "7E8",
       "request": "221299",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TRANS_LOCK_UP", "name": "Transmission lock-up", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1306,6 +1404,7 @@
       "rx": "7E8",
       "request": "2212CE",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_AMBIENT_T_SENS_SIG", "name": "Ambient temperature for sensor signal", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
       ]
@@ -1317,6 +1416,7 @@
       "rx": "7E8",
       "request": "2212D1",
       "interval": 5,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_AMBIENT_T_CTRL", "name": "Ambient temperature for control", "group": "Engine", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
       ]
@@ -1328,6 +1428,7 @@
       "rx": "7E8",
       "request": "221352",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SPLIT_RAT_FUEL_INJ_1", "name": "Split ratio of fuel injection 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1339,6 +1440,7 @@
       "rx": "7E8",
       "request": "221353",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SPLIT_RAT_FUEL_INJ_2", "name": "Split ratio of fuel injection 2", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1350,6 +1452,7 @@
       "rx": "7E8",
       "request": "221354",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SPLIT_RAT_FUEL_INJ_3", "name": "Split ratio of fuel injection 3", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1361,6 +1464,7 @@
       "rx": "7E8",
       "request": "221355",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_SPLIT_RAT_FUEL_INJ_4", "name": "Split ratio of fuel injection 4", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1372,6 +1476,7 @@
       "rx": "7E8",
       "request": "221357",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_DIRECT_FUEL_INJ_TIME_1", "name": "Direct fuel injection time 1", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
       ]
@@ -1383,6 +1488,7 @@
       "rx": "7E8",
       "request": "221358",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_DIRECT_FUEL_INJ_TIME_2", "name": "Direct fuel injection time 2", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
       ]
@@ -1394,6 +1500,7 @@
       "rx": "7E8",
       "request": "221359",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_DIRECT_FUEL_INJ_TIME_3", "name": "Direct fuel injection time 3", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
       ]
@@ -1405,6 +1512,7 @@
       "rx": "7E8",
       "request": "22135A",
       "interval": 1,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_DIRECT_FUEL_INJ_TIME_4", "name": "Direct fuel injection time 4", "group": "Fuel", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262.14, "unit": "ms"}
       ]
@@ -1416,6 +1524,7 @@
       "rx": "7E9",
       "request": "221067",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_CVT_TURBINE_RPM", "name": "Turbine speed", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
       ]
@@ -1427,6 +1536,7 @@
       "rx": "7E9",
       "request": "2211CB",
       "interval": 0.25,
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "GR86_TURBINE_REVOLUTION", "name": "Turbine revolution speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 32, "min": 0, "max": 2097120, "unit": "rpm"}
       ]

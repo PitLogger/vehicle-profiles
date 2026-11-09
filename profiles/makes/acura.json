@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Acura",
     "file": "signalsets/v3/default.json",
-    "revision": "6873b88196cb8486fb10c16b2ec0424e91b30585",
+    "revision": "988e457a2e6995dc4d7c48c56b4273e3ce9b3a64",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -632,6 +632,17 @@
       "interval": 60,
       "signals": [
         {"id": "ACURA_RAW_10_2514", "name": "Raw first byte of 10 22 2514", "description": "Captured to learn this reply's layout. Its listed contents: Oil Dilution Estimate Integrated Value Clear.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.222516",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "222516",
+      "interval": 1,
+      "signals": [
+        {"id": "ACURA_FLI_INPUT", "name": "Fuel level input", "group": "Fuel", "metric": "fuelTankLevel", "bit": 232, "bits": 8, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -2039,6 +2050,28 @@
       "interval": 60,
       "signals": [
         {"id": "ACURA_RAW_10_E82C", "name": "Raw first byte of 10 22 E82C", "description": "Captured to learn this reply's layout. Its listed contents: AD Inhibit Status.", "group": "ECU", "bit": 0, "bits": 8, "min": 0, "max": 255}
+      ]
+    },
+    {
+      "id": "DA10.10.22F40D",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22F40D",
+      "interval": 1,
+      "signals": [
+        {"id": "ACURA_VSS_F4", "name": "Vehicle speed, mirrored read", "group": "Engine", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
+      ]
+    },
+    {
+      "id": "DA10.10.22F42F",
+      "bus": "can29",
+      "tx": "18DA10F1",
+      "rx": "18DAF110",
+      "request": "22F42F",
+      "interval": 1,
+      "signals": [
+        {"id": "ACURA_FLI_F4", "name": "Fuel level, mirrored read", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
