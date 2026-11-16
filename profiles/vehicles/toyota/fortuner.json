@@ -26,7 +26,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Fortuner",
     "file": "signalsets/v3/default.json",
-    "revision": "dc58e660a79371b012d9981f1b016434aba8f4d5",
+    "revision": "ff6705d50f6805dd398fdb593df09e8c2568b73f",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -803,7 +803,7 @@
       "answeredIn": [2022],
       "notAnsweredIn": [2021],
       "signals": [
-        {"id": "FORTUNER_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "FORTUNER_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1250,8 +1250,8 @@
       "interval": 0.25,
       "notAnsweredIn": [2021, 2022],
       "signals": [
-        {"id": "FORTUNER_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "FORTUNER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "FORTUNER_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "FORTUNER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "FORTUNER_YAW_RATE3", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "FORTUNER_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -1428,7 +1428,7 @@
       "signals": [
         {"id": "FORTUNER_TAIL_CANCEL", "name": "Tail cancel", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "FORTUNER_P_SEATBELT_BUCKLE", "name": "P-seatbelt buckle", "group": "Seatbelts", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "FORTUNER_CHECK_ENGINE", "name": "Check engine", "group": "Control", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+        {"id": "FORTUNER_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
     {
@@ -1806,7 +1806,7 @@
         {"id": "FORTUNER_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "FORTUNER_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "min": 0, "max": 655.35, "unit": "g/s"},
         {"id": "FORTUNER_MAP", "name": "MAP", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "FORTUNER_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "FORTUNER_INTAKE_AIR", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "FORTUNER_AMBIENT_T", "name": "Ambient temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "FORTUNER_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "FORTUNER_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 215, "unit": "°C"},
@@ -1877,7 +1877,7 @@
       "interval": 1,
       "notAnsweredIn": [2022],
       "signals": [
-        {"id": "FORTUNER_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "FORTUNER_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "FORTUNER_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "FORTUNER_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "FORTUNER_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -1943,7 +1943,7 @@
       "request": "210F",
       "interval": 1,
       "signals": [
-        {"id": "FORTUNER_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "FORTUNER_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -2391,7 +2391,7 @@
       "interval": 0.5,
       "notAnsweredIn": [2022],
       "signals": [
-        {"id": "FORTUNER_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "FORTUNER_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "FORTUNER_GEAR_LOCKUP", "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2450,7 +2450,7 @@
       "request": "21D3",
       "interval": 0.25,
       "signals": [
-        {"id": "FORTUNER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "FORTUNER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "FORTUNER_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

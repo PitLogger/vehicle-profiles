@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Kia-Seltos",
     "file": "signalsets/v3/default.json",
-    "revision": "c87814a72c3bc63e52259ab0f38309b91f336137",
+    "revision": "a0dcae2dd81a7dbb5afd8af18c8919689b8df2a6",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -708,7 +708,7 @@
         {"id": "SELTOS_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "SELTOS_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "SELTOS_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "SELTOS_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "SELTOS_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -942,7 +942,7 @@
         {"id": "SELTOS_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "SELTOS_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "SELTOS_BATTERY_SOC", "name": "Battery state of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 48, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
-        {"id": "SELTOS_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "SELTOS_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "SELTOS_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"}
       ]
     },
@@ -1176,7 +1176,7 @@
       "answeredIn": [2020, 2022],
       "notAnsweredIn": [2021, 2023, 2024, 2025],
       "signals": [
-        {"id": "SELTOS_TURBO_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "divide": 831.55690902, "add": -12, "min": -10, "max": 66.81, "unit": "psi"},
+        {"id": "SELTOS_TURBO_BOOST", "name": "Turbo boost pressure", "group": "Engine", "metric": "boostPressure", "bit": 56, "bits": 16, "divide": 831.55690902, "add": -12, "min": -10, "max": 66.81, "unit": "psi"},
         {"id": "SELTOS_WG_VOLTAGE", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 10, "divide": 65535, "min": 0, "max": 10, "unit": "V"},
         {"id": "SELTOS_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 200, "divide": 65535, "min": 0, "max": 200, "unit": "%"},
         {"id": "SELTOS_WG_POSITION", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 400, "divide": 65535, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
@@ -1304,7 +1304,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2020],
       "signals": [
-        {"id": "SELTOS_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "SELTOS_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "SELTOS_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -1421,7 +1421,7 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "2201A0",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2020, 2025],
       "notAnsweredIn": [2023],
       "signals": [
@@ -1432,10 +1432,10 @@
         {"id": "SELTOS_OUTPUT_RPM", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SELTOS_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SELTOS_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "SELTOS_GEAR", "name": "Gear", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "SELTOS_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "SELTOS_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "SELTOS_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "SELTOS_BRAKE_PEDAL", "name": "Brake pedal", "group": "Engine", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "SELTOS_BRAKE_PEDAL", "name": "Brake pedal", "group": "Engine", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "SELTOS_GEAR", "name": "Gear", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1444,14 +1444,14 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "2201A4",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2021, 2024],
       "notAnsweredIn": [2020, 2022, 2023, 2025],
       "signals": [
-        {"id": "SELTOS_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "SELTOS_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "SELTOS_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "SELTOS_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "SELTOS_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "SELTOS_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {
@@ -1495,7 +1495,7 @@
         {"id": "SELTOS_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "SELTOS_LOCK_SWITCH_7E5", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SELTOS_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
-        {"id": "SELTOS_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SELTOS_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "metric": "checkEngineLightOn", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SELTOS_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
       ]
     }

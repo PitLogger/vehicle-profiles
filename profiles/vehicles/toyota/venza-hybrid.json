@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Venza-Hybrid",
     "file": "signalsets/v3/default.json",
-    "revision": "4cc56946b329740c832cfa2258ce4904af5941f0",
+    "revision": "ea9b2bd4b189087eda98ff941cc04608b266c1ce",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -732,7 +732,7 @@
       "request": "221621",
       "interval": 1,
       "signals": [
-        {"id": "VENZAHYBRID_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "VENZAHYBRID_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1542,8 +1542,8 @@
       "request": "2147",
       "interval": 0.25,
       "signals": [
-        {"id": "VENZAHYBRID_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "VENZAHYBRID_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "VENZAHYBRID_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "VENZAHYBRID_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "VENZAHYBRID_YAW_RATE", "name": "Yaw rate value (degrees/se", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "VENZAHYBRID_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276.7, "unit": "°"}
       ]
@@ -1817,7 +1817,7 @@
       "signals": [
         {"id": "VENZAHYBRID_TAIL_CANCEL", "name": "Tail cancel", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_P_SEATBELT_BUCKLE", "name": "P-seatbelt buckle", "group": "Seatbelts", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "VENZAHYBRID_CHECK_ENGINE", "name": "Check engine", "group": "Control", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+        {"id": "VENZAHYBRID_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
     {
@@ -2267,7 +2267,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "VENZAHYBRID_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+        {"id": "VENZAHYBRID_SHIFT", "name": "Shift position", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
       ]
     },
     {
@@ -2737,8 +2737,8 @@
         {"id": "VENZAHYBRID_CALCULATED_LOAD_7E0", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "VENZAHYBRID_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "VENZAHYBRID_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "VENZAHYBRID_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "VENZAHYBRID_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "VENZAHYBRID_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "VENZAHYBRID_INTAKE_AIR", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "VENZAHYBRID_AMBIENT_T", "name": "Ambient temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "VENZAHYBRID_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "VENZAHYBRID_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 215, "unit": "°C"},
@@ -2805,7 +2805,7 @@
       "request": "2106",
       "interval": 1,
       "signals": [
-        {"id": "VENZAHYBRID_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VENZAHYBRID_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "VENZAHYBRID_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2871,7 +2871,7 @@
       "request": "210F",
       "interval": 1,
       "signals": [
-        {"id": "VENZAHYBRID_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "VENZAHYBRID_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3279,7 +3279,7 @@
       "request": "2185",
       "interval": 0.5,
       "signals": [
-        {"id": "VENZAHYBRID_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "VENZAHYBRID_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "VENZAHYBRID_GEAR_LOCKUP", "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3338,7 +3338,7 @@
       "request": "21D3",
       "interval": 0.25,
       "signals": [
-        {"id": "VENZAHYBRID_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VENZAHYBRID_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "VENZAHYBRID_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -4046,10 +4046,10 @@
       "request": "21D3",
       "interval": 1,
       "signals": [
-        {"id": "VENZAHYBRID_CRUISE_SPD", "name": "Cruise control set speed", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "VENZAHYBRID_CRUISE_SPD", "name": "Cruise control set speed", "group": "Control", "metric": "cruiseSetSpeed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "VENZAHYBRID_CRUISE_THROTTLE", "name": "Cruise control throttle opening", "group": "Control", "bit": 8, "bits": 8, "multiply": 0.3922, "min": 0, "max": 100, "unit": "%"},
         {"id": "VENZAHYBRID_SHIFT_D", "name": "Shift in drive", "group": "Transmission", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "VENZAHYBRID_CRUISE", "name": "Cruise control active", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "VENZAHYBRID_CRUISE", "name": "Cruise control active", "group": "Control", "metric": "cruiseActive", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_CRUISE_IND", "name": "Cruise control indicator", "group": "Control", "bit": 18, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_CRUISE_READY", "name": "Cruise control ready", "group": "Control", "bit": 21, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "VENZAHYBRID_CRUISE_MAIN", "name": "Cruise control main switch", "group": "Control", "bit": 23, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},

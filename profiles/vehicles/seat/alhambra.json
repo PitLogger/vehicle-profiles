@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Seat-Alhambra",
     "file": "signalsets/v3/default.json",
-    "revision": "4e36e3e71d9d554331c23f3a1b9d6fbc5765a08a",
+    "revision": "5f738ac81fe4aa3127a4cc9d82695544324254c6",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -210,7 +210,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "ALHAMBRA_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "ALHAMBRA_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -2369,9 +2369,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "ALHAMBRA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "ALHAMBRA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -3632,7 +3632,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "ALHAMBRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "ALHAMBRA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -3687,7 +3687,7 @@
       "request": "2214CB",
       "interval": 1,
       "signals": [
-        {"id": "ALHAMBRA_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "ALHAMBRA_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -4163,9 +4163,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "ALHAMBRA_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "ALHAMBRA_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -4174,9 +4174,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "ALHAMBRA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "ALHAMBRA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -8325,7 +8325,7 @@
       "request": "22F433",
       "interval": 1,
       "signals": [
-        {"id": "ALHAMBRA_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "ALHAMBRA_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {

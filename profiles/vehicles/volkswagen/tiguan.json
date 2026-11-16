@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Volkswagen-Tiguan",
     "file": "signalsets/v3/default.json",
-    "revision": "08328f9a4f6db120f85ff6dd22673feaeee391db",
+    "revision": "cd6fa26bee2b18ce702f7aa170e9c1945275f853",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -198,7 +198,7 @@
       "interval": 1,
       "flowControl": true,
       "answeredIn": [2020, 2023, 2024, 2025],
-      "notAnsweredIn": [2015, 2016, 2018, 2019, 2022],
+      "notAnsweredIn": [2015, 2016, 2017, 2018, 2019, 2022],
       "signals": [
         {"id": "TIGUAN_PQ35_HAL_I", "name": "All-wheel drive current", "group": "Drivetrain", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "A"}
       ]
@@ -253,7 +253,7 @@
       "request": "222BF1",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2015, 2016, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2015, 2016, 2017, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_PQ35_HAL_T", "name": "All-wheel drive temperature", "group": "Engine", "bit": 8, "bits": 16, "divide": 100, "add": -227.67, "min": -40, "max": 200, "unit": "°C"}
       ]
@@ -518,7 +518,7 @@
       "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2016, 2018, 2019, 2020, 2023, 2024, 2025],
-      "notAnsweredIn": [2015, 2022],
+      "notAnsweredIn": [2015, 2017, 2022],
       "signals": [
         {"id": "TIGUAN_MQB_SWA", "name": "Steering wheel angle", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 8, "add": 0.06, "min": -4095.94, "max": 4095.935, "unit": "°"}
       ]
@@ -1765,7 +1765,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2018],
-      "notAnsweredIn": [2015, 2016, 2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2015, 2016, 2017, 2019, 2020, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_MQB_DPF_DIFF_P_RAW_VALUE_1", "name": "Diesel particulate filter diff pressure: raw value 1", "group": "Engine.DPF", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -1803,7 +1803,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2018, 2023],
-      "notAnsweredIn": [2015, 2016, 2019, 2020, 2022, 2024, 2025],
+      "notAnsweredIn": [2015, 2016, 2017, 2019, 2020, 2022, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_PQ35_HIGH_P_EGR_CLOSING_VAR_1", "name": "High press EGR closing v1", "group": "Engine.EGR", "bit": 8, "bits": 8, "signed": true, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2799,7 +2799,7 @@
       "request": "221129",
       "interval": 3600,
       "answeredIn": [2018],
-      "notAnsweredIn": [2015, 2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2015, 2017, 2019, 2020, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_PQ35_COMPRESSION_TEST_CYL_1", "name": "Compression test cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
       ]
@@ -3937,11 +3937,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2016, 2019, 2020, 2022, 2024],
       "notAnsweredIn": [2015, 2017, 2018, 2023, 2025],
       "signals": [
-        {"id": "TIGUAN_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "TIGUAN_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -5124,7 +5124,7 @@
       "answeredIn": [2019, 2020, 2022, 2024],
       "notAnsweredIn": [2015, 2017, 2018, 2023, 2025],
       "signals": [
-        {"id": "TIGUAN_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "TIGUAN_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -5189,7 +5189,7 @@
       "answeredIn": [2016, 2019, 2020, 2022, 2024],
       "notAnsweredIn": [2015, 2018, 2023, 2025],
       "signals": [
-        {"id": "TIGUAN_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "TIGUAN_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -5717,11 +5717,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2019, 2020, 2022, 2024],
       "notAnsweredIn": [2015, 2018, 2023, 2025],
       "signals": [
-        {"id": "TIGUAN_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "TIGUAN_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -6029,7 +6029,7 @@
       "rx": "7E8",
       "request": "22171D",
       "interval": 1,
-      "notAnsweredIn": [2015, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2015, 2017, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_BASIC_CORR_FACTOR_2", "name": "Basic correction factor:, cylinder 2, filtered", "group": "Engine", "bit": 0, "bits": 16, "multiply": 7999, "divide": 65535000, "min": 0, "max": 7.999}
       ]
@@ -7281,7 +7281,7 @@
       "rx": "7E8",
       "request": "2220A3",
       "interval": 1,
-      "notAnsweredIn": [2015, 2016, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
+      "notAnsweredIn": [2015, 2016, 2017, 2018, 2019, 2020, 2022, 2023, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_OIL_P_SWITCH_HIGH_P", "name": "Oil pressure switch for high pressure, closed", "group": "Engine", "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "TIGUAN_OIL_P_SWITCH_LOW_P", "name": "Oil pressure switch for low pressure, closed", "group": "Engine", "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
@@ -9083,7 +9083,7 @@
       "request": "224FBE",
       "interval": 1,
       "answeredIn": [2023],
-      "notAnsweredIn": [2015, 2016, 2018, 2019, 2020, 2022, 2024, 2025],
+      "notAnsweredIn": [2015, 2016, 2017, 2018, 2019, 2020, 2022, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_OIL_P_SENS_RAW", "name": "Oil pressure sensor raw value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -11349,7 +11349,7 @@
       "answeredIn": [2019, 2020, 2022, 2024],
       "notAnsweredIn": [2015, 2018, 2023, 2025],
       "signals": [
-        {"id": "TIGUAN_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253}
+        {"id": "TIGUAN_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253}
       ]
     },
     {
@@ -12139,7 +12139,7 @@
       "request": "2238EA",
       "interval": 1,
       "answeredIn": [2018, 2020, 2023],
-      "notAnsweredIn": [2015, 2019, 2022, 2024, 2025],
+      "notAnsweredIn": [2015, 2017, 2019, 2022, 2024, 2025],
       "signals": [
         {"id": "TIGUAN_PQ35_CLUTCH_2_ACTUAL_P", "name": "Clutch 2 actual pressure", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]

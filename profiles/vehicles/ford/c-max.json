@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-C-Max",
     "file": "signalsets/v3/default.json",
-    "revision": "22896862f61dfd8c3432181d38f4cdd66e8bcb3e",
+    "revision": "dca98ca9aa12beed6b23d93b23f00aac8eab9dec",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -921,7 +921,7 @@
       "interval": 5,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "CMAX_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -2158,7 +2158,7 @@
       "interval": 1,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "CMAX_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -2206,7 +2206,7 @@
       "interval": 1,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "CMAX_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -2782,10 +2782,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E12",
-      "interval": 2,
+      "interval": 0.25,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "CMAX_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2878,10 +2878,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "CMAX_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2890,10 +2890,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 2,
+      "interval": 0.25,
       "notAnsweredIn": [2013],
       "signals": [
-        {"id": "CMAX_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "CMAX_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -3098,7 +3098,7 @@
       "interval": 0.25,
       "answeredIn": [2013],
       "signals": [
-        {"id": "CMAX_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "CMAX_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

@@ -19,7 +19,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-RAV4",
     "file": "signalsets/v3/default.json",
-    "revision": "bfeb1b587367836b618e1843ae504d943ec3be80",
+    "revision": "b8b43deb88601aebb039857f75be5e76d52617ab",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -847,7 +847,7 @@
       "answeredIn": [2020, 2021, 2023, 2024],
       "notAnsweredIn": [1999, 2017],
       "signals": [
-        {"id": "RAV4_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "RAV4_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1572,8 +1572,8 @@
       "answeredIn": [2007, 2011, 2012, 2014, 2015, 2017],
       "notAnsweredIn": [1999, 2002],
       "signals": [
-        {"id": "RAV4_LAT_G", "name": "Lateral g", "group": "Control", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
-        {"id": "RAV4_LNG_G", "name": "Longitudinal g", "group": "Control", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "RAV4_LAT_G", "name": "Lateral g", "group": "Control", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "RAV4_LNG_G", "name": "Longitudinal g", "group": "Control", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "RAV4_YAW_RATE3", "name": "Yaw rate value", "group": "Control", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "RAV4_STEER_ANGLE", "name": "Steering angle value", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -1834,7 +1834,7 @@
       "signals": [
         {"id": "RAV4_TAIL_CANCEL", "name": "Tail cancel", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4_P_SEATBELT_BUCKLE", "name": "P-seatbelt buckle", "group": "Seatbelts", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "RAV4_CHECK_ENGINE", "name": "Check engine", "group": "Control", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+        {"id": "RAV4_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
     {
@@ -2288,9 +2288,9 @@
       "signals": [
         {"id": "RAV4_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RAV4_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "RAV4_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "RAV4_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RAV4_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RAV4_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RAV4_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "RAV4_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2319,8 +2319,8 @@
       "signals": [
         {"id": "RAV4_CALCULATED_LOAD_7E0_V2", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4_MAF_7E0_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RAV4_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "RAV4_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RAV4_COOLANT_TEMP_7E0_V2", "name": "Coolant temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RAV4_ENGINE_SPEED_7E0_V2", "name": "Engine speed", "group": "Engine", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "RAV4_VEHICLE_SPEED_7E0_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2347,9 +2347,9 @@
       "signals": [
         {"id": "RAV4_CALCULATED_LOAD_7E0_V3", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4_MAF_7E0_V3", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RAV4_MAP_7E0_V3", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "RAV4_INTAKE_AIR_7E0_V3", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "RAV4_ATMOSPHERE_PRESSURE_V3", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_MAP_7E0_V3", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4_INTAKE_AIR_7E0_V3", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RAV4_ATMOSPHERE_PRESSURE_V3", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RAV4_COOLANT_TEMP_7E0_V3", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RAV4_ENGINE_SPEED_7E0_V3", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "RAV4_VEHICLE_SPEED_7E0_V3", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2424,7 +2424,7 @@
       "answeredIn": [2007, 2011, 2012, 2014, 2015, 2017],
       "notAnsweredIn": [1999, 2002],
       "signals": [
-        {"id": "RAV4_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RAV4_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "RAV4_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2494,7 +2494,7 @@
       "interval": 1,
       "notAnsweredIn": [1999, 2017, 2020, 2021, 2023, 2024],
       "signals": [
-        {"id": "RAV4_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "RAV4_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -2548,7 +2548,7 @@
         {"id": "RAV4_CC_VSS_TARGET", "name": "Cruise control target speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "RAV4_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
         {"id": "RAV4_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "RAV4_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RAV4_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "metric": "cruiseActive", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "RAV4_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "RAV4_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2987,7 +2987,7 @@
       "answeredIn": [2011, 2012, 2014, 2015, 2017],
       "notAnsweredIn": [1999, 2002, 2007, 2008],
       "signals": [
-        {"id": "RAV4_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "RAV4_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "RAV4_GEAR_LOCKUP", "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3053,7 +3053,7 @@
       "interval": 0.25,
       "notAnsweredIn": [1999, 2017, 2020, 2021, 2023, 2024],
       "signals": [
-        {"id": "RAV4_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RAV4_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "RAV4_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

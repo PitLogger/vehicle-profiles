@@ -12,11 +12,13 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Genesis-GV60",
     "file": "signalsets/v3/default.json",
-    "revision": "c66c65a094894fb39cc5f25e0e71d66582ba21ae",
+    "revision": "d83f5fdcf040299d357d06b6b0c8b53d2cf34773",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
   "ecus": [
+    {"tx": "744", "type": "charger"},
+    {"tx": "7A0", "type": "bodyControl"},
     {"tx": "7E2", "type": "vehicleControl"},
     {"tx": "7E3", "type": "motor"},
     {"tx": "7E4", "type": "battery"}
@@ -29,6 +31,7 @@
       "rx": "738",
       "request": "22F010",
       "interval": 0.25,
+      "answeredIn": [2025],
       "notAnsweredIn": [2023],
       "signals": [
         {"id": "GV60_WHEEL_FR_VSS_HD", "name": "Front right wheel speed, high resolution", "group": "Movement", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 32, "min": 0, "max": 2047, "unit": "km/h"},
@@ -49,7 +52,7 @@
       "request": "22E001",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_AUX_BATTERY_VOLTAGE", "name": "Auxiliary battery voltage", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "V"},
         {"id": "GV60_DC_CHRG_STATE", "name": "DC charging state", "group": "Battery.Charging", "bit": 140, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -70,7 +73,7 @@
       "rx": "74C",
       "request": "22E002",
       "interval": 0.25,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_EVSE_MAXIMUM_VOLTAGE_VALUE", "name": "Electric vehicle supply equipment, voltage, max", "group": "Battery.Charging", "bit": 72, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
         {"id": "GV60_EVSE_MAXIMUM_CURRENT_VALUE", "name": "Electric vehicle supply equipment, current, max", "group": "Battery.Charging", "bit": 88, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
@@ -92,7 +95,7 @@
       "request": "22E003",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CP_VOLTAGE", "name": "Control pilot voltage", "group": "Battery", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
         {"id": "GV60_HVBAT_CP_DUTY_CYCLE", "name": "Control pilot duty cycle", "group": "Battery", "bit": 56, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
@@ -122,7 +125,7 @@
       "rx": "74C",
       "request": "22E004",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_BATTERY_MAIN_RELAY_STATUS", "name": "Battery main relay status", "group": "Battery.Charging", "bit": 37, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GV60_CHARGING_SOCKET_CONNECTED", "name": "Charging socket connected", "group": "Battery.Charging", "bit": 38, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -140,7 +143,7 @@
       "rx": "778",
       "request": "22BC03",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_LOW_BEAMS", "name": "Low beams", "group": "Lights", "bit": 48, "bits": 8, "min": 0, "max": 255}
       ]
@@ -152,7 +155,7 @@
       "rx": "778",
       "request": "22BC06",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
       ]
@@ -165,7 +168,7 @@
       "request": "22C00B",
       "interval": 15,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi"},
         {"id": "GV60_TT_FL", "name": "Front left tire temperature", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -40, "max": 65, "unit": "°C"},
@@ -185,7 +188,7 @@
       "request": "220100",
       "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVAC_IAT", "name": "Interior temperature, front", "group": "Climate", "bit": 40, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
         {"id": "GV60_HVAC_AAT", "name": "Outdoor temperature", "group": "Climate", "bit": 48, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
@@ -203,7 +206,7 @@
       "rx": "7BB",
       "request": "220101",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
         {"id": "GV60_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
@@ -216,7 +219,7 @@
       "rx": "7BB",
       "request": "220102",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVAC_COOLANT_T", "name": "Coolant temperature", "group": "Engine", "bit": 32, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
         {"id": "GV60_HVAC_INVERTER_T", "name": "Inverter temperature", "group": "Engine", "bit": 96, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
@@ -230,7 +233,7 @@
       "request": "22B002",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2023],
+      "notAnsweredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_ODO_KM", "name": "Odometer, metric", "group": "Trips", "metric": "odometer", "bit": 48, "bits": 24, "min": 0, "max": 16777215, "unit": "km"},
         {"id": "GV60_ODO_MI", "name": "Odometer, imperial", "group": "Trips", "metric": "odometer", "bit": 72, "bits": 24, "min": 0, "max": 16777215, "unit": "mi"}
@@ -243,7 +246,7 @@
       "rx": "7D9",
       "request": "220104",
       "interval": 0.25,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_WHEEL_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "GV60_WHEEL_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -258,7 +261,7 @@
       "rx": "7DC",
       "request": "220101",
       "interval": 0.25,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_WHEEL_ANGLE_ABS", "name": "Wheel turn angle, absolute", "group": "Tires", "bit": 56, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"},
         {"id": "GV60_MDPS_MOTOR_CURRENT", "name": "Motor-driven power steering current", "group": "Engine", "bit": 88, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "A"}
@@ -271,7 +274,7 @@
       "rx": "7EA",
       "request": "2101",
       "interval": 0.25,
-      "notAnsweredIn": [2023],
+      "notAnsweredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_GEAR_D", "name": "Gear position D", "group": "Transmission", "bit": 44, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GV60_GEAR_N", "name": "Gear position N", "group": "Transmission", "bit": 45, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -290,7 +293,7 @@
       "rx": "7EA",
       "request": "22E004",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_ACCELERATOR_PEDAL_POSITION", "name": "Accelerator pedal position", "group": "Control", "bit": 64, "bits": 16, "byteOrder": "little", "divide": 512, "min": 0, "max": 100, "unit": "%"},
         {"id": "GV60_VSS_HD", "name": "Vehicle speed, high resolution", "group": "Movement", "metric": "speed", "bit": 80, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 156.25, "divide": 10000, "min": -512, "max": 511, "unit": "km/h"},
@@ -304,7 +307,7 @@
       "rx": "7EA",
       "request": "22E005",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_DISCONNECTOR_STROKE_POSITION", "name": "Disconnector stroke position", "group": "Engine", "bit": 32, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "mm"},
         {"id": "GV60_DISCONNECTOR_MEET_POINT", "name": "Disconnector meet point", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "mm"},
@@ -322,7 +325,7 @@
       "rx": "7EB",
       "request": "22E001",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_IGN_VOLTAGE", "name": "Ignition voltage", "group": "Engine", "bit": 120, "bits": 16, "byteOrder": "little", "multiply": 10, "divide": 10000, "min": 0, "max": 65.535, "unit": "V"},
         {"id": "GV60_MOTOR_RPM", "name": "Motor RPM", "group": "Engine", "bit": 136, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
@@ -341,7 +344,7 @@
       "rx": "7EB",
       "request": "22E009",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_EWP_CURRENT_DC", "name": "Electric water pump, current DC", "group": "Battery", "bit": 56, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "A"},
         {"id": "GV60_EWP_VOLTAGE_DC", "name": "Electric water pump, voltage DC", "group": "Battery", "bit": 64, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"},
@@ -361,7 +364,7 @@
       "request": "220101",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_SOC", "name": "HV battery charge, dashboard", "group": "Battery", "metric": "stateOfCharge", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"},
         {"id": "GV60_HV_CHARGING", "name": "Charging?", "group": "Battery", "metric": "isCharging", "bit": 72, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -405,7 +408,7 @@
       "request": "220102",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU001_VOLT", "name": "HV battery module 001 voltage", "group": "Battery.Modules.001", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU002_VOLT", "name": "HV battery module 002 voltage", "group": "Battery.Modules.002", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -449,7 +452,7 @@
       "request": "220103",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU033_VOLT", "name": "HV battery module 033 voltage", "group": "Battery.Modules.033", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU034_VOLT", "name": "HV battery module 034 voltage", "group": "Battery.Modules.034", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -493,7 +496,7 @@
       "request": "220104",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU065_VOLT", "name": "HV battery module 065 voltage", "group": "Battery.Modules.065", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU066_VOLT", "name": "HV battery module 066 voltage", "group": "Battery.Modules.066", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -537,7 +540,7 @@
       "request": "220105",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_SOH", "name": "HV battery state of health", "group": "Battery", "metric": "stateOfHealth", "bit": 200, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "%"},
         {"id": "GV60_HVBAT_WH", "name": "HV battery remaining energy", "group": "Battery", "bit": 224, "bits": 16, "multiply": 2, "divide": 1000, "min": 0, "max": 100, "unit": "kWh"},
@@ -552,7 +555,7 @@
       "request": "220106",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_BMS_STATE", "name": "Battery management state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 15},
         {"id": "GV60_HVBAT_WCS_INLET_T", "name": "Battery temperature at WCS input", "group": "Battery", "bit": 32, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"},
@@ -569,7 +572,7 @@
       "request": "22010A",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU097_VOLT", "name": "HV battery module 097 voltage", "group": "Battery.Modules.097", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU098_VOLT", "name": "HV battery module 098 voltage", "group": "Battery.Modules.098", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -613,7 +616,7 @@
       "request": "22010B",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU129_VOLT", "name": "HV battery module 129 voltage", "group": "Battery.Modules.129", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU130_VOLT", "name": "HV battery module 130 voltage", "group": "Battery.Modules.130", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -657,7 +660,7 @@
       "request": "22010C",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_HVBAT_CMU161_VOLT", "name": "HV battery module 161 voltage", "group": "Battery.Modules.161", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "GV60_HVBAT_CMU162_VOLT", "name": "HV battery module 162 voltage", "group": "Battery.Modules.162", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -700,7 +703,7 @@
       "rx": "7EC",
       "request": "220111",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_NORMAL_CHARGING_COUNT", "name": "Normal charging, count", "group": "Battery", "bit": 32, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "GV60_QUICK_CHARGING_COUNT", "name": "Quick charging, count", "group": "Battery", "bit": 64, "bits": 32, "min": 0, "max": 4294967295},
@@ -717,7 +720,7 @@
       "rx": "7EC",
       "request": "220114",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_AC_COMPRESSOR_OPERATION_RPM", "name": "A/C compressor operation RPM", "group": "Climate", "bit": 208, "bits": 16, "multiply": 20, "min": 0, "max": 1310700, "unit": "rpm"}
       ]
@@ -729,7 +732,7 @@
       "rx": "7ED",
       "request": "22E001",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_CHARGE_MODE_DC_TARGET_VOLTAGE", "name": "Charge mode DC target voltage", "group": "Battery", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
         {"id": "GV60_CHARGE_MODE_DC_MAXIMUM_CURRENT_LIMIT", "name": "Charge mode DC maximum current limit", "group": "Battery", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"},
@@ -746,7 +749,7 @@
       "rx": "7ED",
       "request": "22E002",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_OBC_AC_VOLTAGE_A_RMS", "name": "On-board charger, AC voltage a", "group": "Battery.Charging", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
         {"id": "GV60_OBC_AC_VOLTAGE_B_RMS", "name": "On-board charger, AC voltage b", "group": "Battery.Charging", "bit": 48, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
@@ -771,7 +774,7 @@
       "rx": "7ED",
       "request": "22E003",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_OBC_CHARGE_MODE_DC_TARGET_VOLTAGE", "name": "On-board charger, charge mode DC target voltage", "group": "Battery.Charging", "bit": 64, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"},
         {"id": "GV60_OBC_CHARGE_MODE_DC_TARGET_CURRENT", "name": "On-board charger, charge mode DC target current", "group": "Battery.Charging", "bit": 80, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "A"}
@@ -784,7 +787,7 @@
       "rx": "7ED",
       "request": "22E011",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_LDC_T", "name": "Low-voltage dc-dc converter, temperature", "group": "Battery", "bit": 72, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
         {"id": "GV60_LDC_OUTPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, output voltage", "group": "Battery", "bit": 80, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"},
@@ -803,7 +806,7 @@
       "rx": "7ED",
       "request": "22E101",
       "interval": 1,
-      "notAnsweredIn": [2023],
+      "notAnsweredIn": [2023, 2025],
       "signals": [
         {"id": "GV60_2025_LDC_T", "name": "Low-voltage dc-dc converter, temperature", "group": "Battery", "bit": 72, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
         {"id": "GV60_2025_LDC_OUTPUT_VOLTAGE", "name": "Low-voltage dc-dc converter, output voltage", "group": "Battery", "bit": 80, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"},

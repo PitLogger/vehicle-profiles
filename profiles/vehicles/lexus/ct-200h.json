@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Lexus-CT-200h",
     "file": "signalsets/v3/default.json",
-    "revision": "5c0a3018337dbb22e329d9a28fcf04106f23eb10",
+    "revision": "d5067c8578d05b0e224df19232798caa660a11b9",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -744,7 +744,7 @@
       "interval": 1,
       "notAnsweredIn": [2011, 2012, 2016],
       "signals": [
-        {"id": "CT200H_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "CT200H_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1380,8 +1380,8 @@
       "years": {"to": 2022},
       "answeredIn": [2011, 2012, 2016],
       "signals": [
-        {"id": "CT200H_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "CT200H_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "CT200H_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "CT200H_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "CT200H_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "CT200H_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -1909,8 +1909,8 @@
         {"id": "CT200H_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "CT200H_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "CT200H_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "CT200H_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "CT200H_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CT200H_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "CT200H_INTAKE_AIR", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CT200H_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "CT200H_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CT200H_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -1978,7 +1978,7 @@
       "interval": 1,
       "answeredIn": [2011, 2012, 2016],
       "signals": [
-        {"id": "CT200H_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CT200H_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "CT200H_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "CT200H_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "CT200H_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2048,7 +2048,7 @@
       "interval": 1,
       "notAnsweredIn": [2016],
       "signals": [
-        {"id": "CT200H_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "CT200H_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -2486,7 +2486,7 @@
       "interval": 0.4,
       "notAnsweredIn": [2011, 2012, 2016],
       "signals": [
-        {"id": "CT200H_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "CT200H_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "CT200H_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2562,7 +2562,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2016],
       "signals": [
-        {"id": "CT200H_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CT200H_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "CT200H_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

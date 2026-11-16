@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Volkswagen-Arteon",
     "file": "signalsets/v3/default.json",
-    "revision": "9f0ae00867deb37901e4fb7403fdac028d92eb29",
+    "revision": "4e4556be1731b93c716f342a6e68d23c0cf3d122",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1066,7 +1066,7 @@
       "answeredIn": [2018],
       "notAnsweredIn": [2020],
       "signals": [
-        {"id": "ARTEON_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "ARTEON_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -2678,11 +2678,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2018],
       "notAnsweredIn": [2020],
       "signals": [
-        {"id": "ARTEON_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "ARTEON_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -4041,7 +4041,7 @@
       "flowControl": true,
       "notAnsweredIn": [2018, 2020],
       "signals": [
-        {"id": "ARTEON_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "ARTEON_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -4065,7 +4065,7 @@
       "interval": 1,
       "answeredIn": [2018, 2020, 2021],
       "signals": [
-        {"id": "ARTEON_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "ARTEON_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -4505,10 +4505,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "notAnsweredIn": [2018, 2020],
       "signals": [
-        {"id": "ARTEON_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "ARTEON_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -4517,10 +4517,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "notAnsweredIn": [2018, 2020],
       "signals": [
-        {"id": "ARTEON_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "ARTEON_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -8448,7 +8448,7 @@
       "interval": 1,
       "answeredIn": [2018, 2020],
       "signals": [
-        {"id": "ARTEON_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "ARTEON_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -9415,11 +9415,11 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "22210F",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2020, 2021],
       "notAnsweredIn": [2018],
       "signals": [
-        {"id": "ARTEON_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
+        {"id": "ARTEON_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {

@@ -17,7 +17,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Scion-tC",
     "file": "signalsets/v3/default.json",
-    "revision": "7ae27b34785ea95f39314677848e57b2a569cc54",
+    "revision": "d360647b2aebb88f2ffd401a39568eb5506cdfc8",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -737,7 +737,7 @@
       "request": "221621",
       "interval": 1,
       "signals": [
-        {"id": "TC_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "TC_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1371,7 +1371,7 @@
       "request": "2147",
       "interval": 0.25,
       "signals": [
-        {"id": "TC_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "TC_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "TC_LNG_G", "name": "Forward and rearward g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "TC_YAW", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127},
         {"id": "TC_STEERING_ANGLE", "name": "Steering angle value", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276.8, "max": 3276.7, "unit": "°"}
@@ -1950,9 +1950,9 @@
       "signals": [
         {"id": "TC_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "TC_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "TC_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "TC_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "TC_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "TC_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "TC_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "TC_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "TC_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "TC_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "TC_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -1979,8 +1979,8 @@
       "signals": [
         {"id": "TC_CALCULATED_LOAD_7E0_V2", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "TC_MAF_7E0_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "TC_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "TC_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "TC_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "TC_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "TC_COOLANT_TEMP_7E0_V2", "name": "Coolant temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "TC_ENGINE_SPEED_7E0_V2", "name": "Engine speed", "group": "Engine", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "TC_VEHICLE_SPEED_7E0_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2045,7 +2045,7 @@
       "request": "2106",
       "interval": 1,
       "signals": [
-        {"id": "TC_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "TC_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "TC_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "TC_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "TC_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2111,7 +2111,7 @@
       "request": "210F",
       "interval": 1,
       "signals": [
-        {"id": "TC_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "TC_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -2599,7 +2599,7 @@
       "request": "21D3",
       "interval": 0.25,
       "signals": [
-        {"id": "TC_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "TC_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "TC_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-RAV4-Hybrid",
     "file": "signalsets/v3/default.json",
-    "revision": "2914bda78315246a4ba74d2e6f1f8ce77b1f066e",
+    "revision": "1d4ab297912726b0ce97806894ce2a347529aaa6",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -830,7 +830,7 @@
       "interval": 1,
       "notAnsweredIn": [2017, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "RAV4HYBRID_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1722,8 +1722,8 @@
       "years": {"to": 2019},
       "answeredIn": [2017, 2019],
       "signals": [
-        {"id": "RAV4HYBRID_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "RAV4HYBRID_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RAV4HYBRID_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RAV4HYBRID_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "RAV4HYBRID_YAW_RATE", "name": "Yaw rate value (degrees/se", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "RAV4HYBRID_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276.7, "unit": "°"}
       ]
@@ -1994,7 +1994,7 @@
       "signals": [
         {"id": "RAV4HYBRID_TAIL_CANCEL", "name": "Tail cancel", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_P_SEATBELT_BUCKLE", "name": "P-seatbelt buckle", "group": "Seatbelts", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "RAV4HYBRID_CHECK_ENGINE", "name": "Check engine", "group": "Control", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
+        {"id": "RAV4HYBRID_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
     {
@@ -2929,8 +2929,8 @@
         {"id": "RAV4HYBRID_CALCULATED_LOAD_7E0", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4HYBRID_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4HYBRID_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RAV4HYBRID_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "RAV4HYBRID_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RAV4HYBRID_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RAV4HYBRID_INTAKE_AIR", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RAV4HYBRID_AMBIENT_T", "name": "Ambient temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RAV4HYBRID_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RAV4HYBRID_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 215, "unit": "°C"},
@@ -3005,7 +3005,7 @@
       "answeredIn": [2017],
       "notAnsweredIn": [2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RAV4HYBRID_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "RAV4HYBRID_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -3075,7 +3075,7 @@
       "interval": 1,
       "notAnsweredIn": [2017, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "RAV4HYBRID_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3526,7 +3526,7 @@
       "interval": 0.5,
       "notAnsweredIn": [2017, 2021, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "RAV4HYBRID_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "RAV4HYBRID_GEAR_LOCKUP", "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3580,7 +3580,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2017, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RAV4HYBRID_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "RAV4HYBRID_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -4344,10 +4344,10 @@
       "interval": 1,
       "notAnsweredIn": [2017, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "RAV4HYBRID_CRUISE_SPD", "name": "Cruise control set speed", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "RAV4HYBRID_CRUISE_SPD", "name": "Cruise control set speed", "group": "Control", "metric": "cruiseSetSpeed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "RAV4HYBRID_CRUISE_THROTTLE", "name": "Cruise control throttle opening", "group": "Control", "bit": 8, "bits": 8, "multiply": 0.3922, "min": 0, "max": 100, "unit": "%"},
         {"id": "RAV4HYBRID_SHIFT_D", "name": "Shift in drive", "group": "Transmission", "bit": 16, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "RAV4HYBRID_CRUISE", "name": "Cruise control active", "group": "Control", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RAV4HYBRID_CRUISE", "name": "Cruise control active", "group": "Control", "metric": "cruiseActive", "bit": 17, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_CRUISE_IND", "name": "Cruise control indicator", "group": "Control", "bit": 18, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_CRUISE_READY", "name": "Cruise control ready", "group": "Control", "bit": 21, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RAV4HYBRID_CRUISE_MAIN", "name": "Cruise control main switch", "group": "Control", "bit": 23, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},

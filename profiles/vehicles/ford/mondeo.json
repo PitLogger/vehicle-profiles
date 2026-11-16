@@ -20,7 +20,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-Mondeo",
     "file": "signalsets/v3/default.json",
-    "revision": "b349a41f73507f9116a2bd4bef6f376f0f037947",
+    "revision": "bcf261b0d0c73b6eaab3e253d385255a3a5e6e56",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -792,7 +792,7 @@
       "answeredIn": [2017, 2018],
       "notAnsweredIn": [2002, 2011, 2015, 2019],
       "signals": [
-        {"id": "MONDEO_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "MONDEO_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1648,7 +1648,7 @@
       "interval": 1,
       "notAnsweredIn": [2015, 2017, 2019],
       "signals": [
-        {"id": "MONDEO_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "MONDEO_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1673,7 +1673,7 @@
       "interval": 1,
       "notAnsweredIn": [2015, 2017, 2019],
       "signals": [
-        {"id": "MONDEO_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "MONDEO_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -2099,7 +2099,7 @@
       "answeredIn": [2015, 2017, 2018, 2019],
       "notAnsweredIn": [2002, 2009, 2011],
       "signals": [
-        {"id": "MONDEO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "MONDEO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2159,11 +2159,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2015, 2019],
       "notAnsweredIn": [2002, 2011, 2017, 2018],
       "signals": [
-        {"id": "MONDEO_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "MONDEO_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2172,11 +2172,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2017, 2018],
       "notAnsweredIn": [2002, 2011, 2015, 2019],
       "signals": [
-        {"id": "MONDEO_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "MONDEO_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -2302,7 +2302,7 @@
       "answeredIn": [2011, 2015, 2017, 2018, 2019],
       "notAnsweredIn": [2002],
       "signals": [
-        {"id": "MONDEO_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "MONDEO_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

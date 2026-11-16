@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Renault-Captur",
     "file": "signalsets/v3/default.json",
-    "revision": "cfe72bcfcc500ae59c8310e9222d53b855ea885b",
+    "revision": "a4fbdb2863e4060ed5ff6d899e3b331ed0e27e70",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1499,7 +1499,7 @@
       "signals": [
         {"id": "CAPTUR_BAT_V_12_V", "name": "Battery voltage, 12 V", "group": "Battery", "bit": 0, "bits": 8, "multiply": 4, "divide": 125, "add": 8, "min": 0, "max": 16.16, "unit": "V"},
         {"id": "CAPTUR_AIR_T", "name": "Air temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"},
-        {"id": "CAPTUR_MANIFOLD_P_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 24, "bits": 16, "multiply": 37, "divide": 6400, "add": 10.3, "min": 0, "max": 389, "unit": "kPa"},
+        {"id": "CAPTUR_MANIFOLD_P_7E0", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 24, "bits": 16, "multiply": 37, "divide": 6400, "add": 10.3, "min": 0, "max": 389, "unit": "kPa"},
         {"id": "CAPTUR_ATMOSPHERIC_P", "name": "Atmospheric pressure", "group": "Engine", "bit": 40, "bits": 8, "multiply": -37, "divide": 10, "add": 1047, "min": 0, "max": 1047},
         {"id": "CAPTUR_RPM", "name": "Engine speed", "group": "Movement", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
         {"id": "CAPTUR_IDLE_REGULATION_VLV", "name": "Idle regulation valve reference value", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
@@ -3233,7 +3233,7 @@
       "interval": 1,
       "notAnsweredIn": [2020, 2023],
       "signals": [
-        {"id": "CAPTUR_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+        {"id": "CAPTUR_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
       ]
     },
     {
@@ -3267,7 +3267,7 @@
       "interval": 1,
       "notAnsweredIn": [2020, 2023],
       "signals": [
-        {"id": "CAPTUR_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
+        {"id": "CAPTUR_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
       ]
     },
     {
@@ -7925,7 +7925,7 @@
       "request": "222035",
       "interval": 1,
       "signals": [
-        {"id": "CAPTUR_CRUISE_CTRL_SETTING", "name": "Cruise control setting", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km/h"}
+        {"id": "CAPTUR_CRUISE_CTRL_SETTING", "name": "Cruise control setting", "group": "Engine", "metric": "cruiseSetSpeed", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km/h"}
       ]
     },
     {

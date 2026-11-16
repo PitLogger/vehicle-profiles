@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-4-Series",
     "file": "signalsets/v3/default.json",
-    "revision": "f2053be15eb782c156c915b0770d721b65c9532a",
+    "revision": "6d99b628c63dc08937aa08d83c23141cd90d0ff8",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -47,7 +47,7 @@
       "answeredIn": [2017, 2018, 2019, 2022],
       "notAnsweredIn": [2014, 2016],
       "signals": [
-        {"id": "4SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "4SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -62,7 +62,7 @@
       "answeredIn": [2017, 2018, 2019, 2022],
       "notAnsweredIn": [2014, 2016],
       "signals": [
-        {"id": "4SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "4SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -122,7 +122,7 @@
       "answeredIn": [2017, 2018, 2019, 2022],
       "notAnsweredIn": [2014, 2016],
       "signals": [
-        {"id": "4SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "4SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -317,7 +317,7 @@
       "answeredIn": [2017, 2018, 2019, 2022],
       "notAnsweredIn": [2014, 2016],
       "signals": [
-        {"id": "4SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "4SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -476,11 +476,11 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 30,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2024, 2026],
       "signals": [
-        {"id": "4SERIES_GEAR", "name": "Gear", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "4SERIES_GEAR", "name": "Gear", "group": "Engine", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}}
       ]
     },
     {

@@ -12,10 +12,14 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ram-ProMaster-Window-Van",
     "file": "signalsets/v3/default.json",
-    "revision": "e613cf86b76664f8b911e4030bdad9636c8721cc",
+    "revision": "fd890bc0015faf8e81fdd2f0d6a40824b14bea0a",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
+  "ecus": [
+    {"tx": "DA10", "type": "engine"},
+    {"tx": "DA18", "type": "transmission"}
+  ],
   "requests": [
     {
       "id": "DA10.10.221002|din=03",
@@ -287,7 +291,7 @@
       "session": {"enter": "03"},
       "answeredIn": [2025],
       "signals": [
-        {"id": "PROMASTER_BOOST", "name": "Turbo boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
+        {"id": "PROMASTER_BOOST", "name": "Turbo boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 10, "add": -3276.8, "min": -100, "max": 300, "unit": "kPa"}
       ]
     },
     {
@@ -312,7 +316,7 @@
       "answeredIn": [2025],
       "signals": [
         {"id": "PROMASTER_GEAR_DESIRED", "name": "Desired gear", "group": "Transmission", "bit": 0, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13},
-        {"id": "PROMASTER_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13}
+        {"id": "PROMASTER_GEAR_CURRENT", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 4, "bits": 4, "min": 0, "max": 15, "invalidAtOrBelow": 0, "invalidAtOrAbove": 13}
       ]
     },
     {

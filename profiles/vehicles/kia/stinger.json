@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Kia-Stinger",
     "file": "signalsets/v3/default.json",
-    "revision": "019bca7a03813fddb3cdc2efc044c88b9ff3b6c3",
+    "revision": "0d457db4bfeeb4a8400ddfd70054a76ae532eadb",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -171,6 +171,7 @@
       "interval": 15,
       "flowControl": true,
       "answeredIn": [2018, 2020, 2021, 2022, 2023],
+      "notAnsweredIn": [2019],
       "signals": [
         {"id": "STINGER_TP_FL", "name": "Tire pressure front left", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 32, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "psi", "invalidAtOrBelow": 0},
         {"id": "STINGER_TT_FL", "name": "Tire temperature front left", "group": "Tires", "metric": "frontLeftTireTemperature", "bit": 40, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C", "invalidAtOrBelow": -50},
@@ -548,7 +549,7 @@
         {"id": "STINGER_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "STINGER_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "STINGER_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "STINGER_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "STINGER_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -679,7 +680,7 @@
         {"id": "STINGER_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "STINGER_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "STINGER_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
-        {"id": "STINGER_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"},
+        {"id": "STINGER_IAT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"},
         {"id": "STINGER_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143, "unit": "°C"}
       ]
     },
@@ -969,7 +970,7 @@
       "rx": "7E8",
       "request": "22ED94",
       "interval": 1,
-      "notAnsweredIn": [2020, 2021],
+      "notAnsweredIn": [2019, 2020, 2021],
       "signals": [
         {"id": "STINGER_DPF_SOOT_MASS", "name": "Diesel particulate filter soot mass", "group": "Engine", "bit": 56, "bits": 8, "multiply": 99, "divide": 255, "min": 0, "max": 99}
       ]
@@ -1004,10 +1005,10 @@
         {"id": "STINGER_OUTPUT_SPEED", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "STINGER_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "STINGER_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "STINGER_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "STINGER_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "STINGER_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "STINGER_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "STINGER_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "STINGER_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1019,10 +1020,10 @@
       "interval": 0.25,
       "notAnsweredIn": [2018, 2019, 2020, 2021, 2022, 2023],
       "signals": [
-        {"id": "STINGER_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "STINGER_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "STINGER_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "STINGER_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "STINGER_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "STINGER_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {
@@ -1072,7 +1073,7 @@
         {"id": "STINGER_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "STINGER_LOCK_SWITCH", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "STINGER_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
-        {"id": "STINGER_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "STINGER_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "metric": "checkEngineLightOn", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "STINGER_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
       ]
     },

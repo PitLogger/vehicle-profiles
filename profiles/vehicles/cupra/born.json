@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Cupra-Born",
     "file": "signalsets/v3/default.json",
-    "revision": "c63926843ca5e16fe8e7c35cf5a36898cafaa195",
+    "revision": "c91201635a7d2c181e6ad5e2614b126240f36db7",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -114,7 +114,7 @@
       "flowControl": true,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "BORN_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+        {"id": "BORN_RANGE_EST_CAN", "name": "Range remaining, estimated", "group": "Battery", "metric": "electricRange", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
       ]
     },
     {
@@ -127,7 +127,9 @@
       "flowControl": true,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "BORN_RANGE", "name": "Range remaining, displayed", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
+        {"id": "BORN_RANGE_TOTAL_RAW", "name": "Total range, in the cluster's unit", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
+        {"id": "BORN_RANGE_PRI_RAW", "name": "Battery range, in the cluster's unit", "group": "Trips", "bit": 16, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
+        {"id": "BORN_RANGE_UNIT", "name": "Range distance unit", "group": "Trips", "bit": 55, "bits": 1, "values": {"0": "KM", "1": "MI"}, "valueDescriptions": {"0": "Kilometers", "1": "Miles"}}
       ]
     },
     {
@@ -986,7 +988,7 @@
       "answeredIn": [2022, 2024],
       "notAnsweredIn": [2023, 2026],
       "signals": [
-        {"id": "BORN_SOC_FC00", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
+        {"id": "BORN_SOC_FC00", "name": "State of charge, battery management system", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -1056,7 +1058,7 @@
       "answeredIn": [2022, 2024, 2026],
       "notAnsweredIn": [2023],
       "signals": [
-        {"id": "BORN_SOC_V2", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 250, "min": 0, "max": 100, "unit": "%"}
+        {"id": "BORN_SOC_V2", "name": "State of charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -1329,7 +1331,7 @@
       "answeredIn": [2022, 2024, 2026],
       "notAnsweredIn": [2023],
       "signals": [
-        {"id": "BORN_DC_BATTERY_V", "name": "DC battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
+        {"id": "BORN_DC_BATTERY_V", "name": "Traction battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
       ]
     },
     {
@@ -1343,7 +1345,7 @@
       "answeredIn": [2022, 2024, 2026],
       "notAnsweredIn": [2023],
       "signals": [
-        {"id": "BORN_HVBAT_V_CELLS_SUM", "name": "Battery voltage, sum of all cells", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "multiply": 244140625, "divide": 1000000000, "min": -524288, "max": 524287.99, "unit": "V"}
+        {"id": "BORN_HVBAT_V_CELLS_SUM", "name": "Battery voltage, sum of all cells", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 32, "signed": true, "divide": 4096, "min": -524288, "max": 524287.99, "unit": "V"}
       ]
     },
     {
@@ -3335,6 +3337,38 @@
       "signals": [
         {"id": "BORN_DC_DC_V", "name": "DC-DC voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 512, "min": 0, "max": 127.998046875, "unit": "V"}
       ]
+    }
+  ],
+  "computed": [
+    {
+      "id": "BORN_RANGE_EV",
+      "name": "Battery range",
+      "group": "Trips",
+      "min": 0,
+      "max": 2044,
+      "unit": "km",
+      "metric": "electricRange",
+      "formula": {
+        "op": "unit",
+        "value": "BORN_RANGE_PRI_RAW",
+        "key": "BORN_RANGE_UNIT",
+        "units": {"KM": "km", "MI": "mi"}
+      }
+    },
+    {
+      "id": "BORN_RANGE_TOTAL",
+      "name": "Total range",
+      "group": "Trips",
+      "min": 0,
+      "max": 2044,
+      "unit": "km",
+      "metric": "electricRange",
+      "formula": {
+        "op": "unit",
+        "value": "BORN_RANGE_TOTAL_RAW",
+        "key": "BORN_RANGE_UNIT",
+        "units": {"KM": "km", "MI": "mi"}
+      }
     }
   ]
 }

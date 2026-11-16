@@ -17,7 +17,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Highlander",
     "file": "signalsets/v3/default.json",
-    "revision": "2b14675ea35832ce5f45d7507a332b473ac9c900",
+    "revision": "2cbaa46c199184c103628985d3a46c1f7e156acd",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -113,7 +113,7 @@
       "request": "221041",
       "interval": 5,
       "answeredIn": [2020, 2021, 2022, 2023, 2025],
-      "notAnsweredIn": [2006, 2010, 2013, 2014, 2015, 2016],
+      "notAnsweredIn": [2006, 2010, 2012, 2013, 2014, 2015, 2016],
       "signals": [
         {"id": "HIGHLANDER_ECT_IGN", "name": "Engine coolant temperature, at ignition", "group": "Engine", "bit": 0, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"},
         {"id": "HIGHLANDER_ECT_INIT", "name": "Engine coolant temperature, initial", "group": "Engine", "bit": 8, "bits": 8, "multiply": 62.5, "divide": 100, "add": -40, "min": -40, "max": 119.375, "unit": "°C"}
@@ -373,7 +373,7 @@
       "request": "22108A",
       "interval": 1,
       "answeredIn": [2021, 2023, 2025],
-      "notAnsweredIn": [2006, 2010, 2013, 2014, 2015, 2016, 2020, 2022],
+      "notAnsweredIn": [2006, 2010, 2012, 2013, 2014, 2015, 2016, 2020, 2022],
       "signals": [
         {"id": "HIGHLANDER_VVT_IE_DUTY_RATIO_1", "name": "VVT-ie duty ratio bank 1", "group": "ECU", "bit": 0, "bits": 15, "multiply": 25, "divide": 2048, "add": -200, "min": -200, "max": 199.98, "unit": "%"},
         {"id": "HIGHLANDER_VVT_IE_MOTOR_DIRECTION_FORWARD_1", "name": "VVT-ie motor direction: forward bank 1", "group": "ECU", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
@@ -649,7 +649,7 @@
       "rx": "708",
       "request": "2211AF",
       "interval": 1,
-      "notAnsweredIn": [2013, 2014, 2015, 2016, 2022, 2023, 2025],
+      "notAnsweredIn": [2012, 2013, 2014, 2015, 2016, 2022, 2023, 2025],
       "signals": [
         {"id": "HIGHLANDER_2ND_TRUBOCHARGER_OUTLET_P", "name": "2nd turbocharger outlet pressure", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 300, "unit": "kPa"}
       ]
@@ -862,7 +862,7 @@
       "answeredIn": [2020, 2022, 2025],
       "notAnsweredIn": [2006, 2010, 2013, 2014, 2015, 2016, 2021, 2023],
       "signals": [
-        {"id": "HIGHLANDER_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "HIGHLANDER_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1635,8 +1635,8 @@
       "years": {"to": 2019},
       "answeredIn": [2006, 2008, 2010, 2013, 2014, 2015, 2016, 2018, 2019],
       "signals": [
-        {"id": "HIGHLANDER_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "HIGHLANDER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "HIGHLANDER_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "HIGHLANDER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "HIGHLANDER_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "HIGHLANDER_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -2839,8 +2839,8 @@
       "signals": [
         {"id": "HIGHLANDER_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "HIGHLANDER_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "HIGHLANDER_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "HIGHLANDER_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIGHLANDER_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIGHLANDER_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "HIGHLANDER_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "HIGHLANDER_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "HIGHLANDER_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2914,7 +2914,7 @@
       "answeredIn": [2006, 2010, 2013, 2014, 2015],
       "notAnsweredIn": [2020, 2021, 2022, 2023, 2025],
       "signals": [
-        {"id": "HIGHLANDER_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIGHLANDER_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "HIGHLANDER_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "HIGHLANDER_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "HIGHLANDER_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2984,7 +2984,7 @@
       "interval": 1,
       "notAnsweredIn": [2013, 2014, 2015, 2022, 2023, 2025],
       "signals": [
-        {"id": "HIGHLANDER_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "HIGHLANDER_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3454,7 +3454,7 @@
       "answeredIn": [2013, 2015],
       "notAnsweredIn": [2006, 2008, 2010, 2014, 2016, 2018, 2019, 2020, 2021, 2022, 2023, 2025],
       "signals": [
-        {"id": "HIGHLANDER_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "HIGHLANDER_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "HIGHLANDER_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3520,7 +3520,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2013, 2014, 2015, 2022, 2023, 2025],
       "signals": [
-        {"id": "HIGHLANDER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HIGHLANDER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "HIGHLANDER_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

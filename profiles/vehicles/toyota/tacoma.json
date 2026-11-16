@@ -25,7 +25,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Tacoma",
     "file": "signalsets/v3/default.json",
-    "revision": "6019349418cc4e10a085f8ec7d85a2d2e68d4310",
+    "revision": "d746cb43f8c70e1b72e4d89345c9dd72143e0f61",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1334,7 +1334,7 @@
       "answeredIn": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2013, 2014],
       "signals": [
-        {"id": "TACOMA_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "TACOMA_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -2480,11 +2480,11 @@
       "tx": "7B0",
       "rx": "7B8",
       "request": "2147",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2010, 2012, 2013, 2014, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
       "notAnsweredIn": [2005, 2006, 2007, 2008, 2011, 2024, 2025, 2026],
       "signals": [
-        {"id": "TACOMA_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "TACOMA_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "TACOMA_LNG_G", "name": "Forward and rearward g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "TACOMA_YAW", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127},
         {"id": "TACOMA_STEERING_ANGLE", "name": "Steering angle value", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276.8, "max": 3276.7, "unit": "°"}
@@ -3555,7 +3555,7 @@
         {"id": "TACOMA_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "TACOMA_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "TACOMA_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "TACOMA_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "TACOMA_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "TACOMA_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "TACOMA_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "TACOMA_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -3653,7 +3653,7 @@
       "answeredIn": [2005, 2007, 2008, 2010, 2011, 2012, 2013, 2014, 2017],
       "notAnsweredIn": [2006, 2016, 2018],
       "signals": [
-        {"id": "TACOMA_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "TACOMA_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "TACOMA_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "TACOMA_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "TACOMA_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -3787,7 +3787,7 @@
         2026
       ],
       "signals": [
-        {"id": "TACOMA_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "TACOMA_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3797,7 +3797,7 @@
       "rx": "7E8",
       "request": "2110",
       "interval": 1,
-      "answeredIn": [2005, 2008],
+      "answeredIn": [2005, 2008, 2022],
       "notAnsweredIn": [
         2011,
         2012,
@@ -3808,7 +3808,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -3825,7 +3824,7 @@
       "rx": "7E8",
       "request": "2111",
       "interval": 1,
-      "answeredIn": [2005, 2008],
+      "answeredIn": [2005, 2008, 2022],
       "notAnsweredIn": [
         2011,
         2012,
@@ -3836,7 +3835,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -3853,6 +3851,7 @@
       "rx": "7E8",
       "request": "2114",
       "interval": 1,
+      "answeredIn": [2022],
       "notAnsweredIn": [
         2005,
         2008,
@@ -3865,7 +3864,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -3958,6 +3956,7 @@
       "request": "2128",
       "interval": 5,
       "years": {"from": 2010},
+      "answeredIn": [2022],
       "notAnsweredIn": [
         2011,
         2012,
@@ -3968,7 +3967,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -4041,8 +4039,8 @@
       "rx": "7E8",
       "request": "2137",
       "interval": 3600,
-      "answeredIn": [2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_INITIAL_ECT", "name": "Initial engine coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 531, "divide": 850, "add": -40, "min": -40, "max": 119.3},
         {"id": "TACOMA_INITIAL_IAT", "name": "Initial intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"},
@@ -4065,8 +4063,8 @@
       "rx": "7E8",
       "request": "2139",
       "interval": 0.25,
-      "answeredIn": [2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_ACIS_VSV_ON", "name": "Acoustic control induction system vacuum switching valve on", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1},
         {"id": "TACOMA_EVAP_PURGE_VSV_ON", "name": "Evaporative purge vacuum switching valve on", "group": "Engine", "bit": 11, "bits": 1, "min": 0, "max": 1},
@@ -4085,8 +4083,8 @@
       "rx": "7E8",
       "request": "213A",
       "interval": 1,
-      "answeredIn": [2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_VALVEMATIC_TGT_ANG", "name": "Valvematic, target angle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 512, "min": 0, "max": 639.9, "unit": "°"},
         {"id": "TACOMA_PURGE_CUT_VSV_DUTY", "name": "Purge cut vacuum switching valve duty", "group": "Engine", "bit": 16, "bits": 16, "multiply": 25, "divide": 4096, "min": 0, "max": 399.9, "unit": "%"},
@@ -4102,8 +4100,8 @@
       "rx": "7E8",
       "request": "213C",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_INJ_VOL_CYL_1", "name": "Injection volume per 10 injections, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 32000000, "min": 0, "max": 0.002, "unit": "L"},
         {"id": "TACOMA_INJ_DUR_CYL_1", "name": "Injection duration for cylinder 1", "group": "Engine", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "ms"},
@@ -4145,8 +4143,8 @@
       "rx": "7E8",
       "request": "2141",
       "interval": 3600,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_THROTTLE_SENS_OPEN_1", "name": "Throttle sensor open position 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
         {"id": "TACOMA_THROTTLE_SENS_OPEN_2", "name": "Throttle sensor open position 2", "group": "Engine", "bit": 8, "bits": 8, "multiply": 5, "divide": 256, "min": 0, "max": 4.98, "unit": "V"},
@@ -4178,7 +4176,7 @@
       "rx": "7E8",
       "request": "2142",
       "interval": 5,
-      "answeredIn": [2005, 2008],
+      "answeredIn": [2005, 2008, 2022],
       "notAnsweredIn": [
         2011,
         2012,
@@ -4189,7 +4187,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -4210,8 +4207,8 @@
       "rx": "7E8",
       "request": "2144",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_VARIABLE_VLV_TIM_AIM_1", "name": "Variable valve timing aim angle 1, raw count", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535},
         {"id": "TACOMA_VARIABLE_VLV_TIM_OIL_1", "name": "Variable valve timing oil control valve duty 1", "group": "Engine", "bit": 16, "bits": 16, "multiply": 0.0061020829, "min": 0, "max": 399, "unit": "%"},
@@ -4353,22 +4350,8 @@
       "rx": "7E8",
       "request": "2152",
       "interval": 0.25,
-      "answeredIn": [2012, 2013, 2014],
-      "notAnsweredIn": [
-        2005,
-        2008,
-        2011,
-        2016,
-        2017,
-        2018,
-        2019,
-        2021,
-        2022,
-        2023,
-        2024,
-        2025,
-        2026
-      ],
+      "answeredIn": [2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2011, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_IDLE_SPARK_ADVN_CTRL_1", "name": "Idle spark advance control 1", "group": "Engine", "bit": 0, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
         {"id": "TACOMA_IDLE_SPARK_ADVN_CTRL_2", "name": "Idle spark advance control 2", "group": "Engine", "bit": 8, "bits": 8, "divide": 16, "min": 0, "max": 15.93, "unit": "°"},
@@ -4386,8 +4369,8 @@
       "rx": "7E8",
       "request": "2154",
       "interval": 0.25,
-      "answeredIn": [2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_RPM_CYL_1", "name": "Engine speed of cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
         {"id": "TACOMA_RPM_CYL_2", "name": "Engine speed of cylinder 2", "group": "Movement", "bit": 16, "bits": 16, "multiply": 25, "divide": 32, "min": 0, "max": 51199, "unit": "rpm", "invalidAtOrAbove": 51199},
@@ -4403,8 +4386,8 @@
       "rx": "7E8",
       "request": "2181",
       "interval": 1,
-      "answeredIn": [2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2005, 2008, 2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_SPD_NT", "name": "Turbine speed", "group": "Engine", "bit": 0, "bits": 8, "multiply": 50, "min": 0, "max": 12750, "unit": "rpm"},
         {"id": "TACOMA_NT_SENS_V", "name": "Turbine speed sensor voltage", "group": "Battery", "bit": 8, "bits": 16, "divide": 13107, "min": 0, "max": 4.999, "unit": "V"},
@@ -4435,7 +4418,7 @@
       "rx": "7E8",
       "request": "2183",
       "interval": 3600,
-      "answeredIn": [2011, 2012],
+      "answeredIn": [2011, 2012, 2022],
       "notAnsweredIn": [
         2005,
         2008,
@@ -4446,7 +4429,6 @@
         2018,
         2019,
         2021,
-        2022,
         2023,
         2024,
         2025,
@@ -4480,8 +4462,8 @@
       "rx": "7E8",
       "request": "21B2",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_KNOCK_ADJUST", "name": "Knock adjust", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"},
         {"id": "TACOMA_KNOCK_FEEDBACK", "name": "Knock feedback", "group": "Engine", "bit": 16, "bits": 16, "multiply": 2048, "divide": 65535, "add": -64, "min": -64, "max": 1984, "unit": "°"}
@@ -4552,8 +4534,8 @@
       "rx": "7E8",
       "request": "21C1",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_CYLINDER_NUMBER", "name": "Cylinder number", "group": "Engine", "bit": 104, "bits": 8, "min": 0, "max": 255},
         {"id": "TACOMA_DESTINATION", "name": "Destination", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
@@ -4585,7 +4567,7 @@
         2026
       ],
       "signals": [
-        {"id": "TACOMA_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "TACOMA_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "TACOMA_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -4684,8 +4666,8 @@
       "rx": "7E8",
       "request": "21E1",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_CODES_INCLUDE", "name": "Codes, include history", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -4697,8 +4679,8 @@
       "rx": "7E8",
       "request": "21E3",
       "interval": 1,
-      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014],
-      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2005, 2008, 2011, 2012, 2013, 2014, 2022],
+      "notAnsweredIn": [2016, 2017, 2018, 2019, 2021, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "TACOMA_CHECK_MODE_ON", "name": "Check mode on", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1},
         {"id": "TACOMA_SPD_TEST_RESULT", "name": "Vehicle speed sensor test result, incomplete", "group": "Engine", "bit": 2, "bits": 1, "min": 0, "max": 1},

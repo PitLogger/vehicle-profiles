@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Volkswagen-Virtus",
     "file": "signalsets/v3/default.json",
-    "revision": "5ed24e55f7fe59ba2f7e4a4f118f4f37de52ff53",
+    "revision": "0ccf506c246cd7bc3370a90944db4bbb8b40f335",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -834,7 +834,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "VIRTUS_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "VIRTUS_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -3178,9 +3178,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "VIRTUS_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 2, "unit": "bar"}
+        {"id": "VIRTUS_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -4567,7 +4567,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "VIRTUS_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_7E0", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "VIRTUS_INTAKE_AIR_T_IN_INTAKE_MANIFOLD_7E0", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -4622,7 +4622,7 @@
       "request": "2214CB",
       "interval": 0.25,
       "signals": [
-        {"id": "VIRTUS_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "VIRTUS_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -5152,9 +5152,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "VIRTUS_LONGITUDINAL_ACCEL_7E0", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "VIRTUS_LONGITUDINAL_ACCEL_7E0", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -5187,9 +5187,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "VIRTUS_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "VIRTUS_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -8814,7 +8814,7 @@
       "request": "22F433",
       "interval": 1,
       "signals": [
-        {"id": "VIRTUS_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "VIRTUS_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -11107,7 +11107,7 @@
       "answeredIn": [2024, 2026],
       "notAnsweredIn": [2022],
       "signals": [
-        {"id": "VIRTUS_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
+        {"id": "VIRTUS_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {

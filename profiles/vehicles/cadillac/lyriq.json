@@ -15,10 +15,16 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Cadillac-LYRIQ",
     "file": "signalsets/v3/default.json",
-    "revision": "97130a88926427ddef3c3b69e1b80792c9f5915f",
+    "revision": "8f4f791cf03464159a8cb79cbb16c05d8ae0ab6c",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
+  "ecus": [
+    {"tx": "DA17", "type": "motor"},
+    {"tx": "DA1D", "type": "motor"},
+    {"tx": "DA40", "type": "bodyControl"},
+    {"tx": "DACB", "type": "battery"}
+  ],
   "requests": [
     {
       "id": "DA17.17.222414",
@@ -27,6 +33,7 @@
       "rx": "18DAF117",
       "request": "222414",
       "interval": 1,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_C", "name": "Traction battery current", "description": "Signed pack current from the drive-motor/power-electronics controller (negative = charging). Confirmed -22.75 A at a steady 9.22 kW AC charge and +0.9 A accessory draw in Ready. Same register family as Chevy Bolt 7E1 222414.", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1000, "max": 1000, "unit": "A"}
       ]
@@ -38,6 +45,7 @@
       "rx": "18DAF117",
       "request": "222429",
       "interval": 3600,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_NOM_V", "name": "Traction battery nominal voltage", "description": "Constant rated (nominal) pack voltage, 352.1 V on a 2025 LYRIQ - identical while charging at 70% SOC and at rest at 80% SOC, so it is not a live measurement. Duplicates at 2428/242D/2434/2489.", "group": "Battery", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023, "unit": "V"}
       ]
@@ -101,12 +109,12 @@
       "bus": "can29",
       "tx": "14DA28F1",
       "request": "224C2F",
-      "interval": 0.1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2024],
       "notAnsweredIn": [2025],
       "signals": [
-        {"id": "LYRIQ_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+        {"id": "LYRIQ_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
       ]
     },
     {
@@ -114,12 +122,12 @@
       "bus": "can29",
       "tx": "14DA28F1",
       "request": "224C30",
-      "interval": 0.1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2024],
       "notAnsweredIn": [2025],
       "signals": [
-        {"id": "LYRIQ_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+        {"id": "LYRIQ_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
       ]
     },
     {
@@ -129,6 +137,7 @@
       "rx": "18DAF140",
       "request": "2240E5",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_COOL_T1", "name": "Traction battery coolant temperature 1", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
       ]
@@ -140,6 +149,7 @@
       "rx": "18DAF140",
       "request": "2240E6",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_COOL_T2", "name": "Traction battery coolant temperature 2", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
       ]
@@ -151,6 +161,7 @@
       "rx": "18DAF140",
       "request": "224124",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_T_B", "name": "Traction battery temperature sensor B", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
       ]
@@ -162,6 +173,7 @@
       "rx": "18DAF140",
       "request": "224127",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_T_A", "name": "Traction battery temperature sensor A", "group": "Battery", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "°C"}
       ]
@@ -173,6 +185,7 @@
       "rx": "18DAF140",
       "request": "224149",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_EVSE_PILOT_C", "name": "Charge station pilot current", "description": "J1772 pilot-advertised AC current limit. Read 38.8 A on a 9.2 kW EVSE while plugged; snaps to a 10.0 A default when unplugged.", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 100, "unit": "A"}
       ]
@@ -184,6 +197,7 @@
       "rx": "18DAF140",
       "request": "22416C",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_GRP1_V", "name": "Traction battery group 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
       ]
@@ -195,6 +209,7 @@
       "rx": "18DAF140",
       "request": "22416D",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_GRP2_V", "name": "Traction battery group 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
       ]
@@ -206,6 +221,7 @@
       "rx": "18DAF140",
       "request": "22416E",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_GRP3_V", "name": "Traction battery group 3 voltage", "description": "~51 V battery groups; rise under charge, fall under load, and read 0 with the vehicle off (live measurements behind the contactors).", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 65, "unit": "V"}
       ]
@@ -217,6 +233,7 @@
       "rx": "18DAF140",
       "request": "22434F",
       "interval": 5,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_HVBAT_T", "name": "Traction battery temperature", "description": "Same encoding as Chevy Bolt 7E4 22434F.", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -228,6 +245,7 @@
       "rx": "18DAF140",
       "request": "22448F",
       "interval": 30,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_ODO", "name": "Odometer", "description": "u32/64 km. Verified against the dash to the mile (2,031,186/64 = 31,737 km = 19,720 mi). 22415B returns the same register.", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 64, "min": 0, "max": 671088, "unit": "km"}
       ]
@@ -239,6 +257,7 @@
       "rx": "18DAF140",
       "request": "225005",
       "interval": 15,
+      "notAnsweredIn": [2025],
       "signals": [
         {"id": "LYRIQ_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
       ]
@@ -250,6 +269,7 @@
       "rx": "18DAF140",
       "request": "225006",
       "interval": 15,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
       ]
@@ -261,6 +281,7 @@
       "rx": "18DAF140",
       "request": "225007",
       "interval": 15,
+      "answeredIn": [2025],
       "signals": [
         {"id": "LYRIQ_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
       ]
@@ -272,6 +293,7 @@
       "rx": "18DAF140",
       "request": "225008",
       "interval": 15,
+      "notAnsweredIn": [2025],
       "signals": [
         {"id": "LYRIQ_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 0, "bits": 16, "divide": 16, "min": 0, "max": 4095.9375, "unit": "kPa"}
       ]

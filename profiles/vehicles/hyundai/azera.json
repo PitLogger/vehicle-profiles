@@ -17,7 +17,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-Azera",
     "file": "signalsets/v3/default.json",
-    "revision": "2f0286af9e22bd8704e05c4aa028f233b621869f",
+    "revision": "7191524ee2be25b637325e0f8e7fc9e56e00eddd",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -359,7 +359,7 @@
       "signals": [
         {"id": "AZERA_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
         {"id": "AZERA_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
-        {"id": "AZERA_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "AZERA_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "AZERA_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -503,7 +503,7 @@
       "answeredIn": [2022],
       "notAnsweredIn": [2012, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "AZERA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa"},
+        {"id": "AZERA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa"},
         {"id": "AZERA_WG_V", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
         {"id": "AZERA_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"},
         {"id": "AZERA_WG_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 0.00610352, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
@@ -526,10 +526,10 @@
         {"id": "AZERA_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "AZERA_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "AZERA_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "AZERA_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "AZERA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "AZERA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "AZERA_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "AZERA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "AZERA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "AZERA_GEAR", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {

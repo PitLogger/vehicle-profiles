@@ -19,7 +19,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-4Runner",
     "file": "signalsets/v3/default.json",
-    "revision": "4a54a127e877b9eb86d66667871eaa151c15a39c",
+    "revision": "e3adab79b653a285b554a0ffb295e9901c58ac21",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -646,7 +646,7 @@
       "years": {"from": 2025},
       "answeredIn": [2025],
       "signals": [
-        {"id": "4RUNNER_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "4RUNNER_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1599,8 +1599,8 @@
       ],
       "notAnsweredIn": [2007, 2010, 2025, 2026],
       "signals": [
-        {"id": "4RUNNER_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "4RUNNER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "4RUNNER_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "4RUNNER_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "4RUNNER_YAW_RATE", "name": "Yaw rate value (degrees/sec)", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "4RUNNER_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -2185,7 +2185,7 @@
       "interval": 1,
       "years": {"to": 2009},
       "signals": [
-        {"id": "4RUNNER_N210_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "4RUNNER_N210_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "4RUNNER_N210_DTC_COUNT", "name": "Number of emission DTCs", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127}
       ]
     },
@@ -2201,8 +2201,8 @@
       "signals": [
         {"id": "4RUNNER_LOAD", "name": "Calculated load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "4RUNNER_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "4RUNNER_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "4RUNNER_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "4RUNNER_IAT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "4RUNNER_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "4RUNNER_ECT_7E0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "4RUNNER_RPM", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "4RUNNER_VSS_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
@@ -2338,7 +2338,7 @@
       "answeredIn": [2013, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023],
       "notAnsweredIn": [2025],
       "signals": [
-        {"id": "4RUNNER_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "4RUNNER_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "4RUNNER_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "4RUNNER_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "4RUNNER_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2784,7 +2784,7 @@
       ],
       "notAnsweredIn": [2007, 2010, 2025, 2026],
       "signals": [
-        {"id": "4RUNNER_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "4RUNNER_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "4RUNNER_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2827,7 +2827,7 @@
       "answeredIn": [2007],
       "notAnsweredIn": [2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2025],
       "signals": [
-        {"id": "4RUNNER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "4RUNNER_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "4RUNNER_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

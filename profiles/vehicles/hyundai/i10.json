@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-i10",
     "file": "signalsets/v3/default.json",
-    "revision": "06242defad37d44d34e733ab045d7f4c827e6be9",
+    "revision": "0b31b94616ef94cfd5249aeb54e3d55ab11ebd63",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -454,11 +454,11 @@
         {"id": "I10_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "bit": 56, "bits": 16, "byteOrder": "little", "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "I10_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
         {"id": "I10_MAP_SENSOR_VOLTAGE", "name": "Manifold absolute pressure sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
-        {"id": "I10_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "I10_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "I10_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
         {"id": "I10_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "I10_IAT_SENSOR_VOLTAGE", "name": "IAT sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319, "unit": "V"},
-        {"id": "I10_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "I10_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "I10_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
@@ -655,7 +655,7 @@
         {"id": "I10_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "I10_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "I10_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "I10_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "I10_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -932,7 +932,7 @@
         {"id": "I10_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
         {"id": "I10_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V", "invalidAtOrBelow": 0},
         {"id": "I10_BATTERY_SOC", "name": "12V battery state of charge raw", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "invalidAtOrAbove": 255},
-        {"id": "I10_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "I10_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "I10_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -1196,7 +1196,7 @@
       "interval": 1,
       "notAnsweredIn": [2024],
       "signals": [
-        {"id": "I10_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa"},
+        {"id": "I10_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543, "unit": "kPa"},
         {"id": "I10_WG_V", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99, "unit": "V"},
         {"id": "I10_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199, "unit": "%"},
         {"id": "I10_WG_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 0.00610352, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
@@ -1321,7 +1321,7 @@
       "request": "22ED05",
       "interval": 0.25,
       "signals": [
-        {"id": "I10_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "I10_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "I10_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -1424,7 +1424,7 @@
         {"id": "I10_OUTPUT_SPEED", "name": "Output speed", "group": "Engine", "bit": 88, "bits": 16, "byteOrder": "little", "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "I10_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "I10_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "I10_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "I10_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "I10_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "I10_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1477,10 +1477,10 @@
         {"id": "I10_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "I10_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "I10_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "I10_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "I10_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "I10_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "I10_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "I10_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "I10_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "I10_GEAR", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1492,10 +1492,10 @@
       "interval": 0.25,
       "answeredIn": [2024],
       "signals": [
-        {"id": "I10_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "I10_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "I10_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "I10_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "I10_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "I10_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {

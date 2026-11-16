@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Sequoia",
     "file": "signalsets/v3/default.json",
-    "revision": "d1060b1e477fa46c8e1d225a26d34ebee939e2a1",
+    "revision": "8aa5fee4abc6879f4838311e9073fb0c7058c6ab",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -829,7 +829,7 @@
       "answeredIn": [2023, 2024, 2025],
       "notAnsweredIn": [2006, 2008, 2013, 2018, 2020],
       "signals": [
-        {"id": "SEQUOIA_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "SEQUOIA_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1560,8 +1560,8 @@
       "answeredIn": [2007, 2011, 2013, 2018, 2020],
       "notAnsweredIn": [2006, 2008],
       "signals": [
-        {"id": "SEQUOIA_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "SEQUOIA_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "SEQUOIA_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "SEQUOIA_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "SEQUOIA_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "SEQUOIA_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -2719,8 +2719,8 @@
       "signals": [
         {"id": "SEQUOIA_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "SEQUOIA_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "SEQUOIA_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "SEQUOIA_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "SEQUOIA_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "SEQUOIA_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "SEQUOIA_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SEQUOIA_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SEQUOIA_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2749,9 +2749,9 @@
       "signals": [
         {"id": "SEQUOIA_CALCULATED_LOAD_7E0_V2", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "SEQUOIA_MAF_7E0_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "SEQUOIA_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "SEQUOIA_INTAKE_AIR_7E0_V2", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "SEQUOIA_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "SEQUOIA_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "SEQUOIA_INTAKE_AIR_7E0_V2", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SEQUOIA_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "SEQUOIA_COOLANT_TEMP_7E0_V2", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SEQUOIA_ENGINE_SPEED_7E0_V2", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SEQUOIA_VEHICLE_SPEED_7E0_V2", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2825,7 +2825,7 @@
       "answeredIn": [2006, 2008, 2013, 2018, 2020],
       "notAnsweredIn": [2023, 2024, 2025],
       "signals": [
-        {"id": "SEQUOIA_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SEQUOIA_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SEQUOIA_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "SEQUOIA_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "SEQUOIA_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2895,7 +2895,7 @@
       "interval": 1,
       "notAnsweredIn": [2008, 2023],
       "signals": [
-        {"id": "SEQUOIA_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "SEQUOIA_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3352,7 +3352,7 @@
       "answeredIn": [2008, 2011, 2013, 2018, 2020],
       "notAnsweredIn": [2023, 2024, 2025],
       "signals": [
-        {"id": "SEQUOIA_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "SEQUOIA_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "SEQUOIA_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3418,7 +3418,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2008, 2023],
       "signals": [
-        {"id": "SEQUOIA_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "SEQUOIA_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "SEQUOIA_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

@@ -26,7 +26,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-Sonata",
     "file": "signalsets/v3/default.json",
-    "revision": "b45dcef61326e3802261f49883f33ba6dc5b1186",
+    "revision": "c159c8995decba82728d1e7a6e2bfc0d1de623d7",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -580,7 +580,7 @@
       "answeredIn": [2015, 2016, 2017, 2019, 2021, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2010, 2011, 2013, 2014, 2020, 2023],
       "signals": [
-        {"id": "SONATA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543.3506, "unit": "kPa"},
+        {"id": "SONATA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543.3506, "unit": "kPa"},
         {"id": "SONATA_WG_V", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.9998, "unit": "V"},
         {"id": "SONATA_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199.997, "unit": "%"},
         {"id": "SONATA_WG_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 0.00610352, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
@@ -619,11 +619,11 @@
         {"id": "SONATA_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "bit": 56, "bits": 16, "byteOrder": "little", "multiply": 0.25, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SONATA_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
         {"id": "SONATA_MAP_SENSOR_VOLTAGE", "name": "MAP sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
-        {"id": "SONATA_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 0.00390625, "min": 0, "max": 255.99609375, "unit": "kPa"},
+        {"id": "SONATA_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "metric": "absoluteBoostPressure", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 0.00390625, "min": 0, "max": 255.99609375, "unit": "kPa"},
         {"id": "SONATA_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
         {"id": "SONATA_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "SONATA_IAT_SENSOR_VOLTAGE", "name": "IAT sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
-        {"id": "SONATA_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "SONATA_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "SONATA_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
@@ -814,7 +814,7 @@
         {"id": "SONATA_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "SONATA_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "SONATA_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "SONATA_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "multiply": 0.5, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "SONATA_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "multiply": 0.5, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -1100,7 +1100,7 @@
       "answeredIn": [2015, 2016, 2017, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2018],
       "signals": [
-        {"id": "SONATA_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "SONATA_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "SONATA_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -1483,7 +1483,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2015, 2021, 2022, 2025, 2026],
       "signals": [
-        {"id": "SONATA_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "SONATA_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "SONATA_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -1568,7 +1568,7 @@
         {"id": "SONATA_OUTPUT_SPEED_PRE11", "name": "Output speed", "group": "Engine", "bit": 80, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SONATA_ATF_T_PRE11", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SONATA_TORQUE_CONVERTER_SLIP_PRE11", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "SONATA_CURRENT_GEAR_PRE11", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "SONATA_CURRENT_GEAR_PRE11", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "SONATA_COMMANDED_GEAR_PRE11", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "SONATA_BRAKE_PEDAL_PRE11", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1624,10 +1624,10 @@
         {"id": "SONATA_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "SONATA_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SONATA_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "SONATA_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "SONATA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "SONATA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "SONATA_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "SONATA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "SONATA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "SONATA_GEAR", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1641,8 +1641,8 @@
       "answeredIn": [2025],
       "notAnsweredIn": [2010, 2011, 2013, 2014, 2019, 2020, 2021, 2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "SONATA_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
-        {"id": "SONATA_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15}
+        {"id": "SONATA_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "SONATA_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {

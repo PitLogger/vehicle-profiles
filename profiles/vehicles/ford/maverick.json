@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-Maverick",
     "file": "signalsets/v3/default.json",
-    "revision": "6fe2b82caf5bd94208ecb3679b99b73349267f1e",
+    "revision": "a72ffb016e0721b4652e980fce2cd118a8f28982",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -628,10 +628,10 @@
       "tx": "7DF",
       "rx": "7EE",
       "request": "221E23",
-      "interval": 30,
+      "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_GEAR_SHFT_V2", "name": "Shift gear", "description": "Selected range. Neutral, reverse and park are mapped; the code driving reports (43) is not yet.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "MAVERICK_GEAR_SHFT_V2", "name": "Shift gear", "description": "Selected range. Neutral, reverse and park are mapped; the code driving reports (43) is not yet.", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"20": "LOW", "43": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"20": "Low", "43": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
       ]
     },
     {
@@ -854,7 +854,7 @@
       "interval": 5,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "MAVERICK_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1640,7 +1640,7 @@
       "interval": 1,
       "notAnsweredIn": [2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "MAVERICK_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1652,7 +1652,7 @@
       "interval": 1,
       "notAnsweredIn": [2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "MAVERICK_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -2050,7 +2050,7 @@
       "answeredIn": [2023, 2024, 2025],
       "notAnsweredIn": [2022, 2026],
       "signals": [
-        {"id": "MAVERICK_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "MAVERICK_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2110,11 +2110,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2023, 2024, 2025],
       "notAnsweredIn": [2022, 2026],
       "signals": [
-        {"id": "MAVERICK_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "MAVERICK_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "70": "PARK"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "70": "Park"}}
       ]
     },
     {
@@ -2123,11 +2123,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2023, 2024, 2025],
       "notAnsweredIn": [2022, 2026],
       "signals": [
-        {"id": "MAVERICK_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "MAVERICK_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -2224,7 +2224,7 @@
       "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "MAVERICK_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {
@@ -2908,10 +2908,10 @@
       "tx": "7E6",
       "rx": "7EE",
       "request": "221E12",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "MAVERICK_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "Fault"}}
+        {"id": "MAVERICK_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "LOW", "40": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "Low", "40": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "255": "Fault"}}
       ]
     },
     {

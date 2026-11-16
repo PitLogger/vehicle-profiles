@@ -20,7 +20,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Audi-A7",
     "file": "signalsets/v3/default.json",
-    "revision": "8ffe933d20fca8f492d18d42ee6503aadb60962b",
+    "revision": "8c4e53a97a88242148e31e290bff50f3e37d5eb1",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1065,7 +1065,7 @@
       "years": {"to": 2018},
       "answeredIn": [2014],
       "signals": [
-        {"id": "A7_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "A7_IAT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -3281,10 +3281,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2019},
       "signals": [
-        {"id": "A7_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+        {"id": "A7_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -4532,7 +4532,7 @@
       "interval": 5,
       "years": {"from": 2019},
       "signals": [
-        {"id": "A7_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "A7_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -4674,7 +4674,7 @@
       "years": {"from": 2015},
       "answeredIn": [2020],
       "signals": [
-        {"id": "A7_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "A7_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -4815,7 +4815,7 @@
       "interval": 1,
       "years": {"from": 2019},
       "signals": [
-        {"id": "A7_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "kPa"}
+        {"id": "A7_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "kPa"}
       ]
     },
     {
@@ -5168,10 +5168,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2019},
       "signals": [
-        {"id": "A7_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
+        {"id": "A7_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
       ]
     },
     {
@@ -5206,10 +5206,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2019},
       "signals": [
-        {"id": "A7_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "m/s²"}
+        {"id": "A7_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "m/s²"}
       ]
     },
     {
@@ -9313,10 +9313,10 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "22210F",
-      "interval": 900,
+      "interval": 0.25,
       "answeredIn": [2011, 2012, 2014, 2016, 2020],
       "signals": [
-        {"id": "A7_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "A7_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {

@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Daihatsu-Hijet",
     "file": "signalsets/v3/default.json",
-    "revision": "44c92f16371ccf6258574922efdcf656ff325f6a",
+    "revision": "33c05faafd904167340baabfb39f92581349f0f3",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -447,9 +447,9 @@
       "signals": [
         {"id": "HIJET_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "HIJET_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "HIJET_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "HIJET_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "HIJET_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIJET_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "HIJET_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "HIJET_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "HIJET_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "HIJET_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "HIJET_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -515,7 +515,7 @@
       "request": "2106",
       "interval": 1,
       "signals": [
-        {"id": "HIJET_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "HIJET_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "HIJET_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "HIJET_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "HIJET_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -581,7 +581,7 @@
       "request": "210F",
       "interval": 1,
       "signals": [
-        {"id": "HIJET_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "HIJET_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -1024,7 +1024,7 @@
       "request": "21D3",
       "interval": 0.25,
       "signals": [
-        {"id": "HIJET_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "HIJET_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "HIJET_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

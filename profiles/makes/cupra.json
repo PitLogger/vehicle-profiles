@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Cupra",
     "file": "signalsets/v3/default.json",
-    "revision": "1bb345c0c39cc443d58498456070b30323effe15",
+    "revision": "9942b69ce49d81d9c94eb09442d315dc07cb8ed7",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -925,8 +925,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "CUPRA_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
-        {"id": "CUPRA_E_TRON_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "metric": "electricRange", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
+        {"id": "CUPRA_RANGE_EST_CAN", "name": "Range remaining, estimated", "group": "Battery", "metric": "electricRange", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
       ]
     },
     {
@@ -938,10 +937,10 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "CUPRA_RANGE", "name": "Range remaining, displayed", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"},
-        {"id": "CUPRA_RANGE_V2", "name": "Range remaining, unit unconfirmed", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"},
         {"id": "CUPRA_RANGE_TOTAL_RAW", "name": "Total range, in the cluster's unit", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
-        {"id": "CUPRA_RANGE_PRI_RAW", "name": "Primary drive range, in the cluster's unit", "group": "Trips", "bit": 16, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
+        {"id": "CUPRA_RANGE_V2", "name": "Range remaining", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"},
+        {"id": "CUPRA_E_TRON_RANGE_V2", "name": "Range remaining, unit unconfirmed", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"},
+        {"id": "CUPRA_RANGE_PRI_RAW", "name": "Battery range, in the cluster's unit", "group": "Trips", "bit": 16, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
         {"id": "CUPRA_RANGE_SEC_RAW", "name": "Secondary drive range, in the cluster's unit", "group": "Trips", "bit": 32, "bits": 16, "min": 0, "max": 2045, "invalidAtOrAbove": 2045},
         {"id": "CUPRA_RANGE_UNIT", "name": "Range distance unit", "group": "Trips", "bit": 55, "bits": 1, "values": {"0": "KM", "1": "MI"}, "valueDescriptions": {"0": "Kilometers", "1": "Miles"}}
       ]
@@ -1482,7 +1481,7 @@
       "flowControl": true,
       "signals": [
         {"id": "CUPRA_DTE", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"},
-        {"id": "CUPRA_RANGE_V2", "name": "Range remaining", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 255, "unit": "km"}
+        {"id": "CUPRA_RANGE", "name": "Range remaining", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 255, "unit": "km"}
       ]
     },
     {
@@ -5773,10 +5772,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "CUPRA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218},
-        {"id": "CUPRA_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 2, "unit": "bar"}
+        {"id": "CUPRA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -15168,9 +15166,9 @@
       "request": "22210F",
       "interval": 1,
       "signals": [
-        {"id": "CUPRA_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253},
+        {"id": "CUPRA_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253},
         {"id": "CUPRA_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "2": "PARK", "3": "DRIVE"}, "valueDescriptions": {"1": "Reverse", "2": "Park", "3": "Drive"}},
-        {"id": "CUPRA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
+        {"id": "CUPRA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {
@@ -20257,7 +20255,7 @@
       "request": "22028C",
       "interval": 0.25,
       "signals": [
-        {"id": "CUPRA_SOC_V2", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 250, "min": 0, "max": 100, "unit": "%"}
+        {"id": "CUPRA_SOC_V3", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 250, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {
@@ -20978,7 +20976,7 @@
       "interval": 1,
       "tester": "76",
       "signals": [
-        {"id": "CUPRA_SOC_FC00", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"},
+        {"id": "CUPRA_SOC_FC00", "name": "State of charge, battery management system", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"},
         {"id": "CUPRA_SOC", "name": "State of charge", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
     },
@@ -21183,6 +21181,7 @@
       "interval": 0.25,
       "tester": "7B",
       "signals": [
+        {"id": "CUPRA_SOC_V2", "name": "State of charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"},
         {"id": "CUPRA_SOC_V2", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 250, "min": 0, "max": 100, "unit": "%"},
         {"id": "CUPRA_SOC_DISP", "name": "Displayed state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -21570,7 +21569,7 @@
       "interval": 1,
       "tester": "7B",
       "signals": [
-        {"id": "CUPRA_DC_BATTERY_V", "name": "DC battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
+        {"id": "CUPRA_DC_BATTERY_V", "name": "Traction battery voltage", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "V"}
       ]
     },
     {
@@ -21582,7 +21581,7 @@
       "interval": 1,
       "tester": "7B",
       "signals": [
-        {"id": "CUPRA_HVBAT_V_CELLS_SUM", "name": "Battery voltage, sum of all cells", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "multiply": 244140625, "divide": 1000000000, "min": -524288, "max": 524287.99, "unit": "V"}
+        {"id": "CUPRA_HVBAT_V_CELLS_SUM", "name": "Battery voltage, sum of all cells", "group": "Battery", "metric": "tractionBatteryVoltage", "bit": 0, "bits": 32, "signed": true, "divide": 4096, "min": -524288, "max": 524287.99, "unit": "V"}
       ]
     },
     {

@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-3-Series-eDrive",
     "file": "signalsets/v3/default.json",
-    "revision": "11f192d796b4ee31839e481810b5554d6aec2690",
+    "revision": "8a58f6b92c53706796655f5435aba37440e21e68",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -299,7 +299,7 @@
       "years": {"from": 2011},
       "answeredIn": [2018, 2021],
       "signals": [
-        {"id": "EDRIVE_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "EDRIVE_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -314,7 +314,7 @@
       "years": {"from": 2011},
       "answeredIn": [2018, 2021],
       "signals": [
-        {"id": "EDRIVE_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "EDRIVE_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -463,7 +463,7 @@
       "years": {"from": 2011},
       "answeredIn": [2018, 2021],
       "signals": [
-        {"id": "EDRIVE_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "EDRIVE_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -675,7 +675,7 @@
       "years": {"from": 2011},
       "answeredIn": [2018, 2021],
       "signals": [
-        {"id": "EDRIVE_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "EDRIVE_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -1183,12 +1183,12 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024],
       "signals": [
-        {"id": "EDRIVE_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "EDRIVE_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "EDRIVE_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },

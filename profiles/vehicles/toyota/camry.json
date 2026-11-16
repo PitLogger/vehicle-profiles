@@ -21,7 +21,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Camry",
     "file": "signalsets/v3/default.json",
-    "revision": "792e09c348d9e3074da97ed817c410b5a62dcb07",
+    "revision": "cbbe46a7f6b6c75590585acfdeda55c4c50cf719",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -899,7 +899,7 @@
         2026
       ],
       "signals": [
-        {"id": "CAMRY_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "CAMRY_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1765,7 +1765,7 @@
         2026
       ],
       "signals": [
-        {"id": "CAMRY_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
+        {"id": "CAMRY_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "CAMRY_LNG_G", "name": "Forward and rearward g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.56, "max": 2.54, "unit": "g"},
         {"id": "CAMRY_YAW", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127},
         {"id": "CAMRY_STEERING_ANGLE", "name": "Steering angle value", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276.8, "max": 3276.7, "unit": "°"}
@@ -2859,8 +2859,8 @@
         {"id": "CAMRY_CALCULATED_LOAD_7E0_V2", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "CAMRY_VEHICLE_LOAD_V2", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "CAMRY_MAF_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "CAMRY_MAP_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "CAMRY_INTAKE_AIR_V2", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "CAMRY_MAP_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "CAMRY_INTAKE_AIR_V2", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CAMRY_ATMOSPHERE_PRESSURE_V2", "name": "Atmosphere pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "CAMRY_COOLANT_TEMP_V2", "name": "Coolant temp", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CAMRY_ENGINE_SPEED_V2", "name": "Engine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -2891,7 +2891,7 @@
         {"id": "CAMRY_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "CAMRY_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "CAMRY_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "CAMRY_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "CAMRY_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "CAMRY_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "CAMRY_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "CAMRY_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -2965,7 +2965,7 @@
       "answeredIn": [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015],
       "notAnsweredIn": [1999, 2001, 2006, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "CAMRY_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "CAMRY_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "CAMRY_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "CAMRY_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "CAMRY_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -3039,7 +3039,7 @@
       "answeredIn": [2007],
       "notAnsweredIn": [2012, 2020, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "CAMRY_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "CAMRY_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3675,7 +3675,7 @@
       "answeredIn": [2007],
       "notAnsweredIn": [2012, 2020, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "CAMRY_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "CAMRY_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "CAMRY_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

@@ -6,7 +6,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/SAEJ1979",
     "file": "signalsets/v3/default.json",
-    "revision": "06690177d2d5e11dbf82566297128d673b5a03a7",
+    "revision": "af749a5c2611455566374c5321b2d38cd25ac563",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -513,9 +513,9 @@
       "id": "7E0.7E8.0133",
       "bus": "obd",
       "request": "0133",
-      "interval": 0.25,
+      "interval": 5,
       "signals": [
-        {"id": "BARO", "name": "Barometric pressure", "description": "Normally obtained from one of a dedicated barometric sensor, a MAP sensor at key-on and during certain modes of driving, or inferred from a MAF sensor and other inputs during certain modes of driving. The control module reports BARO from whatever source it is derived from.", "group": "Engine.Generic", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "BARO", "name": "Barometric pressure", "description": "Normally obtained from one of a dedicated barometric sensor, a MAP sensor at key-on and during certain modes of driving, or inferred from a MAF sensor and other inputs during certain modes of driving. The control module reports BARO from whatever source it is derived from.", "group": "Engine.Generic", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1161,11 +1161,11 @@
         {"id": "BP_A_ACT_SUP", "name": "Boost pressure A supported", "group": "Engine.Generic.Internal", "hidden": true, "bit": 6, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "BP_A_CMD_SUP", "name": "Commanded boost pressure A supported", "group": "Engine.Generic.Internal", "hidden": true, "bit": 7, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "BP_A_CMD", "name": "Commanded boost pressure A", "description": "Turbocharger/supercharger A commanded boost pressure.", "group": "Engine.Generic", "bit": 8, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"},
-        {"id": "BP_A_ACT", "name": "Boost pressure sensor A", "description": "Actual turbocharger/supercharger A boost pressure.", "group": "Engine.Generic", "bit": 24, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"},
+        {"id": "BP_A_ACT", "name": "Boost pressure sensor A", "description": "Actual turbocharger/supercharger A boost pressure.", "group": "Engine.Generic", "metric": "absoluteBoostPressure", "bit": 24, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"},
         {"id": "BP_B_CMD", "name": "Commanded boost pressure B", "description": "Turbocharger/supercharger B commanded boost pressure.", "group": "Engine.Generic", "bit": 40, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"},
         {"id": "BP_B_ACT", "name": "Boost pressure sensor B", "description": "Actual turbocharger/supercharger B boost pressure.", "group": "Engine.Generic", "bit": 56, "bits": 16, "divide": 32, "min": 0, "max": 2047.96875, "unit": "kPa"},
-        {"id": "BP_B", "name": "Boost bressure A control status", "group": "Engine.Generic.Internal", "bit": 76, "bits": 2, "values": {"1": "BP_B_OL", "2": "BP_B_CL", "3": "BP_B_FAULT"}, "valueDescriptions": {"1": "Open loop", "2": "Closed loop", "3": "Fault"}},
-        {"id": "BP_A", "name": "Boost bressure A control status", "group": "Engine.Generic.Internal", "bit": 78, "bits": 2, "values": {"1": "BP_A_OL", "2": "BP_A_CL", "3": "BP_A_FAULT"}, "valueDescriptions": {"1": "Open loop", "2": "Closed loop", "3": "Fault"}}
+        {"id": "BP_B", "name": "Boost pressure B control status", "group": "Engine.Generic.Internal", "bit": 76, "bits": 2, "values": {"1": "BP_B_OL", "2": "BP_B_CL", "3": "BP_B_FAULT"}, "valueDescriptions": {"1": "Open loop", "2": "Closed loop", "3": "Fault"}},
+        {"id": "BP_A", "name": "Boost pressure A control status", "group": "Engine.Generic.Internal", "bit": 78, "bits": 2, "values": {"1": "BP_A_OL", "2": "BP_A_CL", "3": "BP_A_FAULT"}, "valueDescriptions": {"1": "Open loop", "2": "Closed loop", "3": "Fault"}}
       ]
     },
     {

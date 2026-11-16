@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Grand-Highlander",
     "file": "signalsets/v3/default.json",
-    "revision": "68de660c1f718cf126019db3692df9848e8d7604",
+    "revision": "33e54b4c34fe2217e30fc5f985161690f267ffde",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -674,7 +674,8 @@
       "rx": "708",
       "request": "2215E5",
       "interval": 1,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_BAT_STAT_FULL_CHG", "name": "Battery status of full charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 255, "divide": 2, "min": 0, "max": 32512.5, "unit": "Ah"}
       ]
@@ -698,7 +699,8 @@
       "rx": "708",
       "request": "2215E8",
       "interval": 3600,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_CHG_INTEGRATED", "name": "Charging integrated current of aux. battery", "group": "Battery", "bit": 0, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
         {"id": "GH_DISCHARGING", "name": "Discharging integrated current of aux. battery", "group": "Battery", "bit": 32, "bits": 32, "divide": 10, "min": 0, "max": 429496729.5, "unit": "Ah"},
@@ -714,7 +716,8 @@
       "rx": "708",
       "request": "2215EE",
       "interval": 5,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_V_BATSENS", "name": "Voltage of battery sensor", "group": "Battery", "bit": 0, "bits": 16, "multiply": 13333, "divide": 10922500, "min": 0, "max": 79.9979, "unit": "V"}
       ]
@@ -738,7 +741,8 @@
       "rx": "708",
       "request": "2215F6",
       "interval": 3600,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_INITIAL_ENG_BAT_V_LO", "name": "Initial engine battery voltage lower limit", "group": "Battery", "bit": 16, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
       ]
@@ -750,7 +754,8 @@
       "rx": "708",
       "request": "2215F7",
       "interval": 1,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_BAT_CURRENT_700", "name": "Battery current", "group": "Battery", "bit": 0, "bits": 16, "multiply": 49, "divide": 12850, "add": -125, "min": -125, "max": 124.9, "unit": "A"}
       ]
@@ -762,7 +767,8 @@
       "rx": "708",
       "request": "2215F8",
       "interval": 5,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_BAT_T_700", "name": "Battery temperature", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
       ]
@@ -803,7 +809,7 @@
       "answeredIn": [2024, 2025],
       "notAnsweredIn": [2026],
       "signals": [
-        {"id": "GH_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "GH_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1499,8 +1505,8 @@
       "interval": 0.25,
       "notAnsweredIn": [2024, 2025, 2026],
       "signals": [
-        {"id": "GH_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "GH_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "GH_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "GH_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "GH_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "GH_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -1687,7 +1693,8 @@
       "rx": "7B9",
       "request": "220103",
       "interval": 30,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_TOT_DIST", "name": "Total distance", "group": "Trips", "bit": 0, "bits": 32, "min": 0, "max": 150}
       ]
@@ -1699,7 +1706,8 @@
       "rx": "7B9",
       "request": "221003",
       "interval": 0.25,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_FR_WHL_SPD", "name": "Front right wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
         {"id": "GH_FL_WHL_SPD", "name": "Front left wheel speed", "group": "Tires", "bit": 8, "bits": 8, "multiply": 326, "divide": 255, "min": 0, "max": 150, "unit": "km/h"},
@@ -1714,7 +1722,8 @@
       "rx": "7B9",
       "request": "221009",
       "interval": 0.25,
-      "notAnsweredIn": [2024, 2026],
+      "answeredIn": [2024],
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "GH_REAL_ENG_TQ", "name": "Real engine torque", "group": "Engine", "bit": 32, "bits": 16, "signed": true, "divide": 32, "min": -20, "max": 150, "unit": "Nm"},
         {"id": "GH_STEER_ANG", "name": "Steering angle", "group": "Engine", "bit": 48, "bits": 16, "divide": 10, "add": -3276.8, "min": -20, "max": 150, "unit": "°"}
@@ -2278,7 +2287,7 @@
       "flowControl": true,
       "answeredIn": [2024, 2026],
       "signals": [
-        {"id": "GH_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+        {"id": "GH_SHIFT", "name": "Shift position", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
       ]
     },
     {
@@ -2764,6 +2773,7 @@
       "interval": 1,
       "flowControl": true,
       "answeredIn": [2026],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "GH_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2805,8 +2815,8 @@
       "signals": [
         {"id": "GH_LOAD", "name": "Calculated load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "GH_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "GH_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "GH_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "GH_IAT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "GH_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "GH_ECT_7E0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GH_RPM_7E0", "name": "Engine speed", "group": "Movement", "metric": "engineSpeed", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "GH_VSS_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 80, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
@@ -2866,7 +2876,7 @@
       "interval": 1,
       "notAnsweredIn": [2024, 2025, 2026],
       "signals": [
-        {"id": "GH_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "GH_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GH_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "GH_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "GH_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2936,7 +2946,7 @@
       "interval": 1,
       "notAnsweredIn": [2024, 2026],
       "signals": [
-        {"id": "GH_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "GH_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3371,7 +3381,7 @@
       "interval": 0.4,
       "notAnsweredIn": [2024, 2025, 2026],
       "signals": [
-        {"id": "GH_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "GH_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "GH_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3435,7 +3445,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2024, 2026],
       "signals": [
-        {"id": "GH_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GH_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "GH_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

@@ -18,7 +18,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Seat-Ibiza",
     "file": "signalsets/v3/default.json",
-    "revision": "23d9a88695333237d6c1bc34584468538377df61",
+    "revision": "108a0e8b131e5e4a1c8b87a89891f2bb5f7f0007",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -2890,11 +2890,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2023],
       "notAnsweredIn": [2009, 2013],
       "signals": [
-        {"id": "IBIZA_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 2, "unit": "bar"}
+        {"id": "IBIZA_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -3730,7 +3730,7 @@
       "answeredIn": [2023],
       "notAnsweredIn": [2009, 2013],
       "signals": [
-        {"id": "IBIZA_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "IBIZA_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -4171,11 +4171,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2023],
       "notAnsweredIn": [2009, 2013],
       "signals": [
-        {"id": "IBIZA_LONGITUDINAL_ACCEL_7E0", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "IBIZA_LONGITUDINAL_ACCEL_7E0", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -4210,11 +4210,11 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2023],
       "notAnsweredIn": [2009, 2013],
       "signals": [
-        {"id": "IBIZA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "IBIZA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -8495,10 +8495,10 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "22210F",
-      "interval": 1,
+      "interval": 0.25,
       "notAnsweredIn": [2009, 2013, 2023],
       "signals": [
-        {"id": "IBIZA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
+        {"id": "IBIZA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {
@@ -9922,7 +9922,7 @@
       "flowControl": true,
       "notAnsweredIn": [2009, 2013, 2023],
       "signals": [
-        {"id": "IBIZA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "IBIZA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {

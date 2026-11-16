@@ -19,7 +19,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-M3",
     "file": "signalsets/v3/default.json",
-    "revision": "f03e6d32ace6532869cf7cd9f1afde13f0d4e23a",
+    "revision": "e948aa8aac24a615d26fe2a768fb832d0cda0b31",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -162,7 +162,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "M3_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "M3_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -175,7 +175,7 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "M3_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "M3_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -302,7 +302,7 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "M3_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "M3_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -490,7 +490,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "M3_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "M3_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -815,12 +815,12 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2024],
       "notAnsweredIn": [2005, 2008, 2009, 2015, 2016, 2018, 2023],
       "signals": [
-        {"id": "M3_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "M3_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "M3_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },

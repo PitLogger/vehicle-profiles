@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Genesis",
     "file": "signalsets/v3/default.json",
-    "revision": "1773817e24218ee2153cf346035ae2ef3a5adaf5",
+    "revision": "99ec1ce8854279eadb4415a513b2e071de0b761a",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1683,7 +1683,7 @@
       "request": "22ED05",
       "interval": 0.25,
       "signals": [
-        {"id": "GENESIS_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "GENESIS_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -1821,7 +1821,7 @@
         {"id": "GENESIS_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Transmission", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GENESIS_ATF_T_PRE11", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GENESIS_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "GENESIS_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "GENESIS_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "GENESIS_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
         {"id": "GENESIS_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 152, "bits": 8, "values": {"1": "NEUTRAL", "2": "REVERSE", "3": "PARK", "4": "MANUAL"}, "valueDescriptions": {"1": "Neutral", "2": "Reverse", "3": "Park", "4": "Manual"}}
@@ -1877,10 +1877,12 @@
         {"id": "GENESIS_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GENESIS_TORQUE_CONVERTER_SLIP_V2", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
         {"id": "GENESIS_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm", "invalidAtOrBelow": -512},
-        {"id": "GENESIS_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "GENESIS_CURRENT_GEAR_V2", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_GEAR_V2", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_CURRENT_GEAR_V2", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "GENESIS_COMMANDED_GEAR_V2", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "GENESIS_BRAKE_PEDAL_V2", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "GENESIS_BRAKE_PEDAL_V2", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "GENESIS_GEAR_7E1", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1891,11 +1893,11 @@
       "request": "2201A4",
       "interval": 0.25,
       "signals": [
-        {"id": "GENESIS_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "GENESIS_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "GENESIS_GEAR_CUR_2025", "name": "Current gear", "group": "Transmission", "bit": 216, "bits": 8, "min": 0, "max": 15},
         {"id": "GENESIS_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "GENESIS_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "GENESIS_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "GENESIS_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {

@@ -20,7 +20,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-7-Series",
     "file": "signalsets/v3/default.json",
-    "revision": "67a17032721b22c0e5a744e2b6d0c97ec1e50100",
+    "revision": "f6215012201abf08a1e7bb62c366b31be060c94d",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -345,7 +345,7 @@
       "flowControl": true,
       "answeredIn": [2020],
       "signals": [
-        {"id": "7SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "7SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -359,7 +359,7 @@
       "flowControl": true,
       "answeredIn": [2020],
       "signals": [
-        {"id": "7SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "7SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -490,7 +490,7 @@
       "flowControl": true,
       "answeredIn": [2020],
       "signals": [
-        {"id": "7SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "7SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -689,7 +689,7 @@
       "flowControl": true,
       "answeredIn": [2020],
       "signals": [
-        {"id": "7SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "7SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -1163,11 +1163,11 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2011, 2012, 2013, 2017, 2020],
       "signals": [
-        {"id": "7SERIES_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "7SERIES_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "7SERIES_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },

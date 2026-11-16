@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Venza",
     "file": "signalsets/v3/default.json",
-    "revision": "e9d52c40c80321c1b204eab14a41fd8e2b4d9b05",
+    "revision": "e1c34688b42245d8b043080b519f06750def34ac",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -797,7 +797,7 @@
       "interval": 1,
       "notAnsweredIn": [2021, 2023],
       "signals": [
-        {"id": "VENZA_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "VENZA_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1508,8 +1508,8 @@
       "interval": 0.25,
       "notAnsweredIn": [2021, 2023],
       "signals": [
-        {"id": "VENZA_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "VENZA_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "VENZA_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "VENZA_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "VENZA_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "VENZA_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -2193,7 +2193,7 @@
       "flowControl": true,
       "answeredIn": [2023],
       "signals": [
-        {"id": "VENZA_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+        {"id": "VENZA_SHIFT", "name": "Shift position", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
       ]
     },
     {

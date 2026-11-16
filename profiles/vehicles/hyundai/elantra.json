@@ -25,7 +25,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-Elantra",
     "file": "signalsets/v3/default.json",
-    "revision": "c96359b73c6d2169231060ff9b691bb12c0d6d29",
+    "revision": "51fa73cd5c19aa231c03b0a933831345d37175d8",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -100,7 +100,7 @@
       "rx": "778",
       "request": "22BC06",
       "interval": 0.25,
-      "answeredIn": [2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2016, 2017],
       "signals": [
         {"id": "ELANTRA_BRAKE_LIGHT", "name": "Brake light", "group": "Lights", "bit": 32, "bits": 8, "min": 0, "max": 255}
@@ -281,7 +281,7 @@
       "rx": "7BB",
       "request": "220101",
       "interval": 5,
-      "answeredIn": [2022, 2023, 2024, 2025, 2026],
+      "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2016, 2017],
       "signals": [
         {"id": "ELANTRA_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C", "invalidAtOrAbove": 87.5},
@@ -348,7 +348,7 @@
       "rx": "7D9",
       "request": "224000",
       "interval": 0.25,
-      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_TIRE_FL_VSS_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "ELANTRA_TIRE_FR_VSS_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -428,7 +428,7 @@
       "answeredIn": [2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2015, 2016],
       "signals": [
-        {"id": "ELANTRA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543.350685, "unit": "kPa"},
+        {"id": "ELANTRA_TB_PRES", "name": "Turbo boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 56, "bits": 16, "multiply": 0.008291, "min": 0, "max": 543.350685, "unit": "kPa"},
         {"id": "ELANTRA_WG_V", "name": "Waste gate voltage", "group": "Engine", "bit": 392, "bits": 16, "multiply": 0.000152588, "min": 0, "max": 9.99985458, "unit": "V"},
         {"id": "ELANTRA_WG_DUTY", "name": "Waste gate duty", "group": "Engine", "bit": 408, "bits": 16, "multiply": 0.00305176, "min": 0, "max": 199.9970916, "unit": "%"},
         {"id": "ELANTRA_WG_POS", "name": "Waste gate position", "group": "Engine", "bit": 424, "bits": 16, "signed": true, "multiply": 0.00610352, "min": -200, "max": 199.99, "unit": "%", "invalidAtOrBelow": -200},
@@ -469,11 +469,11 @@
         {"id": "ELANTRA_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "bit": 56, "bits": 16, "byteOrder": "little", "multiply": 0.25, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ELANTRA_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
         {"id": "ELANTRA_MAP_SENSOR_VOLTAGE", "name": "MAP sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
-        {"id": "ELANTRA_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 0.00390625, "min": 0, "max": 255.99609375, "unit": "kPa"},
+        {"id": "ELANTRA_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "metric": "absoluteBoostPressure", "bit": 128, "bits": 16, "byteOrder": "little", "multiply": 0.00390625, "min": 0, "max": 255.99609375, "unit": "kPa"},
         {"id": "ELANTRA_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
         {"id": "ELANTRA_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "ELANTRA_IAT_SENSOR_VOLTAGE", "name": "IAT sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951171875, "unit": "V"},
-        {"id": "ELANTRA_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "ELANTRA_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "ELANTRA_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
@@ -634,7 +634,7 @@
         {"id": "ELANTRA_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "ELANTRA_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "ELANTRA_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "ELANTRA_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "multiply": 0.5, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "ELANTRA_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "multiply": 0.5, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -725,7 +725,7 @@
       "rx": "7E8",
       "request": "2119",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_TURBO_BOOST_P", "name": "Turbo boost pressure", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "multiply": 829.1, "divide": 10000, "min": 0, "max": 5433},
         {"id": "ELANTRA_IGN_RETARD_KNOCK_1", "name": "Ignition retard due to knock control 1", "group": "Engine", "bit": 104, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
@@ -812,7 +812,7 @@
       "rx": "7E8",
       "request": "2221A0",
       "interval": 10,
-      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
       ]
@@ -828,7 +828,7 @@
       "answeredIn": [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026],
       "notAnsweredIn": [2015],
       "signals": [
-        {"id": "ELANTRA_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "ELANTRA_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "ELANTRA_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -1070,7 +1070,7 @@
       "rx": "7E8",
       "request": "22ED02",
       "interval": 5,
-      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 251, "unit": "°C"}
       ]
@@ -1096,7 +1096,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "ELANTRA_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "ELANTRA_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "ELANTRA_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -1170,7 +1170,7 @@
         {"id": "ELANTRA_OUTPUT_SPEED", "name": "Output speed", "group": "Engine", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ELANTRA_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "ELANTRA_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "ELANTRA_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "ELANTRA_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "ELANTRA_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "ELANTRA_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1196,7 +1196,7 @@
       "rx": "7E9",
       "request": "2201A0",
       "interval": 0.25,
-      "answeredIn": [2017, 2024, 2025, 2026],
+      "answeredIn": [2017, 2021, 2024, 2025, 2026],
       "notAnsweredIn": [2016, 2022, 2023],
       "signals": [
         {"id": "ELANTRA_RPM_7E1", "name": "Engine RPM", "group": "Movement", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -1206,10 +1206,10 @@
         {"id": "ELANTRA_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ELANTRA_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "ELANTRA_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "ELANTRA_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "ELANTRA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "ELANTRA_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "ELANTRA_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "ELANTRA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "ELANTRA_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "ELANTRA_GEAR", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -1221,10 +1221,10 @@
       "interval": 0.25,
       "years": {"to": 2024},
       "answeredIn": [2016, 2022, 2023, 2024],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2021],
       "signals": [
-        {"id": "ELANTRA_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
-        {"id": "ELANTRA_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15}
+        {"id": "ELANTRA_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "ELANTRA_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {
@@ -1267,7 +1267,7 @@
       "rx": "7EA",
       "request": "2101",
       "interval": 0.25,
-      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_VSS_V2_7E2", "name": "Vehicle speed", "description": "Current vehicle speed", "group": "Movement", "metric": "speed", "bit": 104, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -180, "max": 180, "unit": "mph"}
       ]
@@ -1280,7 +1280,7 @@
       "request": "22E004",
       "interval": 1,
       "answeredIn": [2022, 2023, 2024, 2025],
-      "notAnsweredIn": [2016, 2017, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2026],
       "signals": [
         {"id": "ELANTRA_VPWR_V3", "name": "12V battery voltage", "group": "Battery", "bit": 152, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
       ]
@@ -1295,7 +1295,7 @@
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2023, 2024, 2025],
-      "notAnsweredIn": [2026],
+      "notAnsweredIn": [2021, 2026],
       "signals": [
         {"id": "ELANTRA_HVBAT_SOC", "name": "HV battery charge, dashboard", "group": "Battery", "metric": "stateOfCharge", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0},
         {"id": "ELANTRA_HVBAT_CHARGING", "name": "HV battery charging", "group": "Battery", "metric": "isCharging", "bit": 72, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -1338,7 +1338,7 @@
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2023, 2024],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2021, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_CELL_V_001", "name": "Cell voltage 001", "group": "Battery.Cells", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "ELANTRA_CELL_V_002", "name": "Cell voltage 002", "group": "Battery.Cells", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -1384,7 +1384,7 @@
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2023, 2024],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2021, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_CELL_V_033", "name": "Cell voltage 033", "group": "Battery.Cells", "bit": 32, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "ELANTRA_CELL_V_034", "name": "Cell voltage 034", "group": "Battery.Cells", "bit": 40, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
@@ -1430,7 +1430,7 @@
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2023, 2024],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2021, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_HVBAT_C_DEV_V", "name": "HV cell voltage deviation", "group": "Battery", "bit": 160, "bits": 8, "divide": 50, "min": 0, "max": 5.1, "unit": "V"},
         {"id": "ELANTRA_HVBAT_HTR1_T", "name": "HV battery heater 1 temperature", "group": "Battery", "bit": 184, "bits": 8, "signed": true, "min": -127, "max": 127, "unit": "°C"},
@@ -1471,7 +1471,7 @@
       "interval": 1,
       "years": {"from": 2021},
       "answeredIn": [2022, 2023, 2024],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2021, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_NUM_STANDARD_CHG", "name": "Number of standard charging", "group": "Engine", "bit": 32, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "ELANTRA_NUM_QUICK_CHG", "name": "Number of quick charging", "group": "Engine", "bit": 64, "bits": 32, "min": 0, "max": 4294967295},
@@ -1486,7 +1486,7 @@
       "request": "22C101",
       "interval": 0.25,
       "answeredIn": [2022, 2023, 2024],
-      "notAnsweredIn": [2016, 2017, 2025, 2026],
+      "notAnsweredIn": [2016, 2017, 2021, 2025, 2026],
       "signals": [
         {"id": "ELANTRA_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "ELANTRA_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},

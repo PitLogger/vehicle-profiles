@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-IONIQ-Electric",
     "file": "signalsets/v3/default.json",
-    "revision": "fb2c4c5a5e0bdfb3729df4d72068ba245fee3c60",
+    "revision": "cbbda56d1ae6347d8cd75eb19ce94ae5180927c6",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -474,7 +474,7 @@
         {"id": "IONIQEV_BATTERY_V", "name": "Battery voltage", "group": "Battery", "bit": 32, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "IONIQEV_BATTERY_V_AFTER_IGNITION", "name": "Battery voltage after ignition", "group": "Battery", "bit": 40, "bits": 8, "multiply": 17.37, "divide": 255, "min": 0, "max": 17.37, "unit": "V"},
         {"id": "IONIQEV_BATTERY_SOC", "name": "12V battery state of charge", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "%", "invalidAtOrAbove": 255},
-        {"id": "IONIQEV_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "IONIQEV_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "IONIQEV_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -548,10 +548,10 @@
       "interval": 0.25,
       "answeredIn": [2017, 2018],
       "signals": [
-        {"id": "IONIQEV_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "IONIQEV_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "IONIQEV_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "IONIQEV_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "IONIQEV_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "IONIQEV_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {
@@ -1260,7 +1260,7 @@
         {"id": "IONIQEV_REAR_LEFT_WHEEL_SPEED", "name": "Rear left wheel speed", "group": "Movement", "bit": 128, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "IONIQEV_LOCK_SWITCH", "name": "Lock switch", "group": "Engine", "bit": 151, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "IONIQEV_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 160, "bits": 8, "add": -88, "min": -88, "max": 167, "unit": "°"},
-        {"id": "IONIQEV_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "IONIQEV_MALFUNCTION_INDICATOR", "name": "Malfunction indicator", "group": "Engine", "metric": "checkEngineLightOn", "bit": 175, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "IONIQEV_PRESSURE_SENSOR", "name": "Pressure sensor", "group": "Engine", "bit": 176, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "bar"}
       ]
     },

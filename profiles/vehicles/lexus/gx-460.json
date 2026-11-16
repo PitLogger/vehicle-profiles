@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Lexus-GX-460",
     "file": "signalsets/v3/default.json",
-    "revision": "18ae98106d492a745ceba7125d839a2d5fdae70c",
+    "revision": "da8010ea4ed29b157c33a97260724a93d5888412",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -793,7 +793,7 @@
       "interval": 1,
       "notAnsweredIn": [2011, 2015, 2018, 2019, 2021, 2022, 2023],
       "signals": [
-        {"id": "GX460_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "GX460_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1478,8 +1478,8 @@
       "interval": 0.25,
       "answeredIn": [2011, 2015, 2018, 2019, 2021, 2022, 2023],
       "signals": [
-        {"id": "GX460_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "GX460_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "GX460_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "GX460_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "GX460_YAW_RATE", "name": "Yaw rate value (degrees/se", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "GX460_STEER_ANGLE", "name": "Steering wheel angle", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276.7, "unit": "°"}
       ]
@@ -1683,7 +1683,7 @@
       "signals": [
         {"id": "GX460_TAIL_CANCEL", "name": "Tail cancel", "group": "Control", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GX460_P_SEATBELT_BUCKLE", "name": "P-seatbelt buckle", "group": "Seatbelts", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "GX460_CHECK_ENGINE", "name": "Check engine", "group": "Control", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "GX460_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GX460_EOP_LIGHT", "name": "Oil pressure switch", "group": "Lights", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2106,8 +2106,8 @@
         {"id": "GX460_CALCULATED_LOAD_7E0", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "GX460_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "GX460_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "GX460_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "GX460_INTAKE_AIR", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "GX460_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "GX460_INTAKE_AIR", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GX460_AMBIENT_T", "name": "Ambient temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "GX460_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 64, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "GX460_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 72, "bits": 8, "min": 0, "max": 215, "unit": "°C"},
@@ -2184,7 +2184,7 @@
       "answeredIn": [2015, 2018, 2021, 2022, 2023],
       "notAnsweredIn": [2011, 2019],
       "signals": [
-        {"id": "GX460_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "GX460_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GX460_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "GX460_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GX460_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2254,7 +2254,7 @@
       "interval": 1,
       "notAnsweredIn": [2022, 2023],
       "signals": [
-        {"id": "GX460_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "GX460_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -2307,7 +2307,7 @@
         {"id": "GX460_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "GX460_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
         {"id": "GX460_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "GX460_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "GX460_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "metric": "cruiseActive", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "GX460_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "GX460_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "GX460_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -2725,7 +2725,7 @@
       "interval": 0.5,
       "answeredIn": [2011, 2015, 2018, 2019, 2021, 2022, 2023],
       "signals": [
-        {"id": "GX460_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "GX460_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "GX460_GEAR_LOCKUP", "name": "Gear lock-up", "description": "Mechanism within the automatic transmission that momentarily locks the gears during gear changes, providing a smoother and more efficient transition between different gears, especially when accelerating or decelerating; essentially helps minimize power loss and jerkiness during gear shifts.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2801,7 +2801,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2018, 2022, 2023],
       "signals": [
-        {"id": "GX460_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "GX460_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "GX460_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -2945,7 +2945,7 @@
       "interval": 3600,
       "notAnsweredIn": [2022, 2023],
       "signals": [
-        {"id": "GX460_IA_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "GX460_IA_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "metric": "storedDTCCount", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -3390,7 +3390,7 @@
       "interval": 1,
       "notAnsweredIn": [2022, 2023],
       "signals": [
-        {"id": "GX460_IA_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "GX460_IA_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

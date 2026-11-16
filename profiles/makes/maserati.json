@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Maserati",
     "file": "signalsets/v3/default.json",
-    "revision": "58846cf9fab3b0acc4fe33a47757c441496516de",
+    "revision": "23bee8043c2e7c9e7c9705579f72bd7a4ab7e397",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1491,10 +1491,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D518",
-      "interval": 1,
+      "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_DPF_DIFF_P_SENS_SIG", "name": "Diesel particulate filter differential pressure sensor signal deviation from reference value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+        {"id": "MASERATI_DPF_DP_DEV", "name": "Particulate filter differential pressure sensor deviation from reference", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
     },
     {
@@ -1542,7 +1542,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_PF_DIFF_P", "name": "Particulate filter differential pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
+        {"id": "MASERATI_DPF_DP", "name": "Particulate filter differential pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
     },
     {
@@ -1554,7 +1554,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_DPF_REGEN_STAT", "name": "Diesel particulate filter regeneration status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "MASERATI_DPF_REGEN_STAT", "name": "Particulate filter regeneration status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1599,9 +1599,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D526",
-      "interval": 1,
+      "interval": 30,
       "flowControl": true,
       "signals": [
+        {"id": "MASERATI_DPF_ADDITIVE_MASS", "name": "Additive mass in the particulate filter, grams", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511},
         {"id": "MASERATI_TOT_MASS_ADDITIVE", "name": "Total mass of additive accumulated in the diesel particulate filter", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 128, "min": 0, "max": 511, "unit": "g"}
       ]
     },
@@ -1611,9 +1612,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D527",
-      "interval": 1,
+      "interval": 30,
       "flowControl": true,
       "signals": [
+        {"id": "MASERATI_DPF_ADDITIVE_MASS_2", "name": "Additive mass in the particulate filter, grams, second reading", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047},
         {"id": "MASERATI_TOT_MASS_ADDITIVE_ACCUMULATED_DPF", "name": "Total mass of additive accumulated in the diesel particulate filter", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047, "unit": "g"}
       ]
     },
@@ -1659,10 +1661,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D52F",
-      "interval": 1,
+      "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_SOOT_CLOGGING_LEVEL", "name": "Soot clogging level of diesel particulate filter", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10.24, "min": 0, "max": 6399, "unit": "%"}
+        {"id": "MASERATI_DPF_SOOT_LOAD_V2", "name": "Particulate filter soot clogging level", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 10.24, "min": 0, "max": 6399, "unit": "%"}
       ]
     },
     {
@@ -1671,10 +1673,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D530",
-      "interval": 1,
+      "interval": 3600,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_MILEAGE_REMAINING", "name": "Mileage remaining before diesel particulate filter replacement", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 16, "min": -524288, "max": 524272, "unit": "km"}
+        {"id": "MASERATI_DPF_DIST_TO_REPLACE", "name": "Distance remaining before particulate filter replacement", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 16, "min": -524288, "max": 524272, "unit": "km"}
       ]
     },
     {
@@ -1683,10 +1685,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D531",
-      "interval": 1,
+      "interval": 3600,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_MILEAGE_SINCE_DPF", "name": "Mileage since last diesel particulate filter replacement", "group": "Engine", "bit": 0, "bits": 16, "multiply": 8, "min": 0, "max": 524280, "unit": "km"}
+        {"id": "MASERATI_DPF_DIST_SINCE_REPLACE", "name": "Distance since the last particulate filter replacement", "group": "Engine", "bit": 0, "bits": 16, "multiply": 8, "min": 0, "max": 524280, "unit": "km"}
       ]
     },
     {
@@ -1695,10 +1697,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D532",
-      "interval": 1,
+      "interval": 3600,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_ASSESSMENT_THERMAL", "name": "Assessment of thermal aging of the particulate filter", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 128, "min": 0, "max": 12799, "unit": "%"}
+        {"id": "MASERATI_DPF_THERMAL_AGING", "name": "Particulate filter thermal aging", "group": "Engine", "bit": 0, "bits": 16, "multiply": 25, "divide": 128, "min": 0, "max": 12799, "unit": "%"}
       ]
     },
     {
@@ -1710,7 +1712,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_EXH_GAS_FLOW_THROUGH", "name": "Exhaust gas flow through the particulate filter", "group": "Engine", "bit": 0, "bits": 16, "multiply": 219.7265930176, "min": 0, "max": 14399782, "unit": "L"}
+        {"id": "MASERATI_DPF_EXH_FLOW", "name": "Exhaust gas flow through the particulate filter", "group": "Engine", "bit": 0, "bits": 16, "multiply": 219.7265930176, "min": 0, "max": 14399782, "unit": "L"}
       ]
     },
     {
@@ -1867,6 +1869,7 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
+        {"id": "MASERATI_DPF_OUT_P", "name": "Exhaust gas pressure at the particulate filter outlet", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"},
         {"id": "MASERATI_EXH_GAS_P_OUTLET_PF", "name": "Exhaust gas pressure at the outlet of the particulate filter", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 999.9999525026, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
     },
@@ -1936,10 +1939,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D54A",
-      "interval": 1,
+      "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_OPEN_LOOP_SOOT_LOAD", "name": "Open loop soot load assessment of the diesel particulate filter", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1024, "min": 0, "max": 63.99, "unit": "g/L"}
+        {"id": "MASERATI_DPF_SOOT_OPEN_LOOP", "name": "Particulate filter soot load, open loop estimate", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 1024, "min": 0, "max": 63.99, "unit": "g/L"}
       ]
     },
     {
@@ -1948,10 +1951,10 @@
       "tx": "6A8",
       "rx": "688",
       "request": "22D54B",
-      "interval": 1,
+      "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "MASERATI_CLOSED_LOOP_SOOT", "name": "Closed loop soot load assessment of the diesel particulate filter", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 63.99, "unit": "g/L"}
+        {"id": "MASERATI_DPF_SOOT_CLOSED_LOOP", "name": "Particulate filter soot load, closed loop estimate", "group": "Engine", "bit": 0, "bits": 16, "divide": 1024, "min": 0, "max": 63.99, "unit": "g/L"}
       ]
     },
     {
@@ -9058,7 +9061,8 @@
       "interval": 0.25,
       "signals": [
         {"id": "MASERATI_CURRENT_GEAR_RAW_CNT", "name": "Current gear, raw count", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255},
-        {"id": "MASERATI_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+        {"id": "MASERATI_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REVERSE", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Reverse", "13": "Park"}},
+        {"id": "MASERATI_GEAR_2", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
       ]
     },
     {

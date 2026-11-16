@@ -21,7 +21,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-3-Series",
     "file": "signalsets/v3/default.json",
-    "revision": "7686953fda2a8db646d11ea6517cb31af23042bc",
+    "revision": "36fa252d2d68f202ec19d7d017a9d2dbe51ad6de",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -211,6 +211,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -338,7 +339,7 @@
         2024,
         2025
       ],
-      "notAnsweredIn": [2004, 2006, 2009, 2011, 2026],
+      "notAnsweredIn": [2004, 2006, 2009, 2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_LAMBDA", "name": "Lambda 1, excess air ratio", "group": "Engine", "bit": 40, "bits": 8, "divide": 100, "min": 0, "max": 2}
       ]
@@ -353,7 +354,7 @@
       "interval": 1,
       "flowControl": true,
       "answeredIn": [2008, 2012, 2015, 2017, 2020, 2021, 2024, 2025],
-      "notAnsweredIn": [2004, 2006, 2009, 2010, 2011, 2013, 2014, 2016, 2018, 2026],
+      "notAnsweredIn": [2004, 2006, 2009, 2010, 2011, 2013, 2014, 2016, 2018, 2022, 2026],
       "signals": [
         {"id": "3SERIES_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 150, "unit": "°C"}
       ]
@@ -369,7 +370,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020],
-      "notAnsweredIn": [2011, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_12V_T", "name": "12V battery temperature", "group": "Electrical", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"},
         {"id": "3SERIES_12V_V", "name": "12V battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 16, "bits": 16, "divide": 4000, "add": 6, "min": 6, "max": 22.3837, "unit": "V", "invalidAtOrAbove": 22.38},
@@ -387,7 +388,7 @@
       "flowControl": true,
       "years": {"from": 2018},
       "answeredIn": [2020, 2021, 2024, 2025],
-      "notAnsweredIn": [2018, 2026],
+      "notAnsweredIn": [2018, 2022, 2026],
       "signals": [
         {"id": "3SERIES_ETHANOL_CAN", "name": "Ethanol content, CAN broadcast, live", "group": "Fuel", "bit": 104, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -403,7 +404,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2017, 2018, 2020, 2021, 2024, 2025],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2022, 2026],
       "signals": [
         {"id": "3SERIES_COOLANT", "name": "Coolant temperature", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 200, "unit": "°C"}
       ]
@@ -418,10 +419,10 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2026],
       "signals": [
-        {"id": "3SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "3SERIES_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -434,10 +435,10 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2026],
       "signals": [
-        {"id": "3SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "3SERIES_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -466,7 +467,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2017},
-      "answeredIn": [2017, 2018, 2020, 2021, 2024, 2025],
+      "answeredIn": [2017, 2018, 2020, 2021, 2022, 2024, 2025],
       "notAnsweredIn": [2026],
       "signals": [
         {"id": "3SERIES_ET", "name": "Engine temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
@@ -482,7 +483,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024, 2025],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024, 2025],
       "notAnsweredIn": [2011, 2026],
       "signals": [
         {"id": "3SERIES_EOT_6F1", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
@@ -529,7 +530,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2021},
-      "answeredIn": [2021, 2024],
+      "answeredIn": [2021, 2022, 2024],
       "signals": [
         {"id": "3SERIES_EOT_DME_K", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 100, "add": -273.15, "min": -273.15, "max": 382.2, "unit": "°C", "invalidAtOrBelow": -200}
       ]
@@ -544,7 +545,7 @@
       "interval": 30,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2026],
       "signals": [
         {"id": "3SERIES_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -591,7 +592,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2022},
-      "answeredIn": [2024, 2025],
+      "answeredIn": [2022, 2024, 2025],
       "signals": [
         {"id": "3SERIES_OIL_TEMP", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C", "invalidAtOrBelow": -273.15}
       ]
@@ -607,7 +608,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_LOAD_TGT", "name": "Engine load, target", "group": "Engine", "bit": 0, "bits": 16, "divide": 64, "min": 0, "max": 1023.98, "unit": "%"}
       ]
@@ -623,9 +624,9 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013, 2026],
+      "notAnsweredIn": [2011, 2013, 2022, 2026],
       "signals": [
-        {"id": "3SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "3SERIES_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -639,7 +640,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013, 2026],
+      "notAnsweredIn": [2011, 2013, 2022, 2026],
       "signals": [
         {"id": "3SERIES_REV_LIMIT", "name": "Rev limiter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -654,7 +655,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2013, 2026],
       "signals": [
         {"id": "3SERIES_IGN_TIMING_1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
@@ -670,7 +671,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2013, 2026],
       "signals": [
         {"id": "3SERIES_IGN_TIMING_2", "name": "Ignition timing, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
@@ -686,7 +687,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2013, 2026],
       "signals": [
         {"id": "3SERIES_LOAD_2", "name": "Engine load 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
@@ -702,7 +703,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2013, 2026],
       "signals": [
         {"id": "3SERIES_IGN_TIMING_3", "name": "Ignition timing, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
@@ -718,7 +719,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2013, 2026],
       "signals": [
         {"id": "3SERIES_IGN_TIMING_4", "name": "Ignition timing, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
@@ -735,7 +736,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013, 2026],
+      "notAnsweredIn": [2011, 2013, 2022, 2026],
       "signals": [
         {"id": "3SERIES_BOOST_P_SET", "name": "Boost pressure, set point", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
@@ -782,7 +783,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2014, 2015, 2016, 2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013],
+      "notAnsweredIn": [2011, 2012, 2013, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_1", "name": "Misfire count, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -797,8 +798,8 @@
       "interval": 30,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013, 2014, 2015, 2016],
+      "answeredIn": [2016, 2017, 2020, 2021, 2024],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_4B24", "name": "Misfire counter 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -814,7 +815,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2014, 2015, 2016, 2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013],
+      "notAnsweredIn": [2011, 2012, 2013, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_4B25", "name": "Misfire counter 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -829,8 +830,8 @@
       "interval": 30,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013, 2014, 2015, 2016],
+      "answeredIn": [2016, 2017, 2020, 2021, 2024],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_4B30", "name": "Misfire counter 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -846,7 +847,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2014, 2015, 2016, 2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013],
+      "notAnsweredIn": [2011, 2012, 2013, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_4B31", "name": "Misfire counter 5", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -862,7 +863,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2014, 2015, 2016, 2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2013],
+      "notAnsweredIn": [2011, 2012, 2013, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_4B32", "name": "Misfire counter 6", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -878,7 +879,7 @@
       "flowControl": true,
       "years": {"from": 2018},
       "answeredIn": [2020, 2021, 2024, 2025, 2026],
-      "notAnsweredIn": [2018],
+      "notAnsweredIn": [2018, 2022],
       "signals": [
         {"id": "3SERIES_EGT_CALC", "name": "Exhaust gas calculated temperature", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 1200, "unit": "°C"}
       ]
@@ -894,7 +895,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2022, 2026],
       "signals": [
         {"id": "3SERIES_ODO_DME", "name": "Odometer, engine computer", "group": "Trips", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
@@ -910,7 +911,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2016, 2022, 2026],
       "signals": [
         {"id": "3SERIES_ENG_HOURS", "name": "Engine operating hours", "group": "Trips", "bit": 0, "bits": 32, "divide": 2, "min": 0, "max": 2147483647, "unit": "h"}
       ]
@@ -926,7 +927,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2022, 2026],
       "signals": [
         {"id": "3SERIES_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "bar"}
       ]
@@ -942,7 +943,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2015, 2016, 2017, 2018, 2020, 2021, 2024, 2025],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2022, 2026],
       "signals": [
         {"id": "3SERIES_OIL_TEMP_ALT", "name": "Engine oil temperature, alternate", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 200, "unit": "°C"}
       ]
@@ -958,9 +959,9 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
-        {"id": "3SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "3SERIES_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -974,7 +975,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_LOAD", "name": "Engine load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "%"}
       ]
@@ -990,7 +991,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_LAMBDA_2", "name": "Lambda 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99, "invalidAtOrAbove": 15.99}
       ]
@@ -1006,7 +1007,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2026],
+      "notAnsweredIn": [2011, 2012, 2013, 2014, 2015, 2022, 2026],
       "signals": [
         {"id": "3SERIES_CAT_T", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C", "invalidAtOrBelow": -273.15}
       ]
@@ -1053,7 +1054,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_LAMBDA_6F1", "name": "Lambda", "group": "Engine", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16, "invalidAtOrAbove": 15.99}
       ]
@@ -1069,7 +1070,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
-      "notAnsweredIn": [2011, 2026],
+      "notAnsweredIn": [2011, 2022, 2026],
       "signals": [
         {"id": "3SERIES_CRANK_TQ", "name": "Crank torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Nm"}
       ]
@@ -1085,7 +1086,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2013, 2014, 2015, 2016, 2017, 2020, 2021, 2024],
-      "notAnsweredIn": [2011],
+      "notAnsweredIn": [2011, 2012, 2022],
       "signals": [
         {"id": "3SERIES_MISFIRE_CNT_TOTAL", "name": "Emission-relevant misfires, all cylinders", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -1100,7 +1101,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2026],
       "signals": [
         {"id": "3SERIES_LOW_SIDE_FUEL_P", "name": "Low side fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
@@ -1116,7 +1117,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2015, 2016, 2017, 2018, 2020, 2021, 2024],
+      "answeredIn": [2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024],
       "notAnsweredIn": [2011, 2012, 2013, 2014, 2026],
       "signals": [
         {"id": "3SERIES_IGN_ANGLE", "name": "Ignition angle", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
@@ -1148,6 +1149,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2025,
         2026
@@ -1181,6 +1183,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1212,6 +1215,7 @@
         2017,
         2018,
         2020,
+        2022,
         2024,
         2026
       ],
@@ -1244,6 +1248,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1275,6 +1280,7 @@
         2017,
         2018,
         2020,
+        2022,
         2024,
         2026
       ],
@@ -1306,6 +1312,7 @@
         2017,
         2018,
         2020,
+        2022,
         2024,
         2026
       ],
@@ -1339,6 +1346,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1374,6 +1382,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1406,6 +1415,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1438,6 +1448,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1471,6 +1482,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1505,6 +1517,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1541,6 +1554,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1592,6 +1606,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -1825,7 +1840,7 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
       "answeredIn": [
@@ -1846,7 +1861,7 @@
         2026
       ],
       "signals": [
-        {"id": "3SERIES_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "3SERIES_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "3SERIES_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },
@@ -1985,6 +2000,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -2021,6 +2037,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -2060,6 +2077,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -2093,6 +2111,7 @@
         2018,
         2020,
         2021,
+        2022,
         2024,
         2026
       ],
@@ -2166,7 +2185,7 @@
       "interval": 15,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2020, 2021, 2024, 2026],
+      "answeredIn": [2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_TPMS_POS_FL", "name": "Front left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "3SERIES_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 40, "bits": 16, "divide": 1000, "min": 0, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -2205,7 +2224,7 @@
       "interval": 15,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2020, 2021, 2024, 2026],
+      "answeredIn": [2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_TPMS_POS_FR", "name": "Front right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "3SERIES_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 40, "bits": 16, "divide": 1000, "min": 0, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -2244,7 +2263,7 @@
       "interval": 15,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2020, 2021, 2024, 2026],
+      "answeredIn": [2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_TPMS_POS_RL", "name": "Rear left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "3SERIES_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 16, "divide": 1000, "min": 0, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -2283,7 +2302,7 @@
       "interval": 15,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2020, 2021, 2024, 2026],
+      "answeredIn": [2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_TPMS_POS_RR", "name": "Rear right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "3SERIES_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 16, "divide": 1000, "min": 0, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -2302,7 +2321,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024, 2026],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024, 2026],
       "notAnsweredIn": [2011],
       "signals": [
         {"id": "3SERIES_STEER_TQ", "name": "Steering torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "Nm"}
@@ -2351,7 +2370,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_PARK_BRAKE", "name": "Parking brake applied", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -2558,7 +2577,7 @@
       "interval": 30,
       "flowControl": true,
       "years": {"from": 2018},
-      "answeredIn": [2020, 2021],
+      "answeredIn": [2020, 2021, 2022],
       "notAnsweredIn": [2018, 2024, 2026],
       "signals": [
         {"id": "3SERIES_BC_AVG_CONS", "name": "Trip computer average consumption", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh/100km", "invalidAtOrAbove": 6553},
@@ -2576,7 +2595,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2018},
-      "answeredIn": [2020, 2021],
+      "answeredIn": [2020, 2021, 2022],
       "notAnsweredIn": [2018, 2024, 2026],
       "signals": [
         {"id": "3SERIES_CONS_KWH_100KM", "name": "Consumption, kwh/100km", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
@@ -2593,7 +2612,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2014, 2017, 2018],
-      "notAnsweredIn": [2011, 2013, 2015, 2016, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2013, 2015, 2016, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_NBT_WHL_SPD_1", "name": "Wheel sensor speed 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
         {"id": "3SERIES_NBT_WHL_SPD_2", "name": "Wheel sensor speed 2", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
@@ -2629,7 +2648,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_CABIN_T", "name": "Cabin temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
       ]
@@ -2644,7 +2663,7 @@
       "interval": 10,
       "flowControl": true,
       "years": {"from": 2011},
-      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2024, 2026],
+      "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2024, 2026],
       "notAnsweredIn": [2011],
       "signals": [
         {"id": "3SERIES_COMP_STATE", "name": "A/C compressor operating state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -2661,7 +2680,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_AIR_DIST_L", "name": "Front air distribution, left", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "3SERIES_AIR_DIST_R", "name": "Front air distribution, right", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -2678,7 +2697,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_HVAC_OFF", "name": "Climate control off", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -2694,7 +2713,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_HVAC_AUC", "name": "Automatic air recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -2710,7 +2729,7 @@
       "flowControl": true,
       "years": {"from": 2011},
       "answeredIn": [2012, 2013, 2014, 2015, 2016, 2017, 2018],
-      "notAnsweredIn": [2011, 2020, 2021, 2024, 2026],
+      "notAnsweredIn": [2011, 2020, 2021, 2022, 2024, 2026],
       "signals": [
         {"id": "3SERIES_HVAC_RECIRC", "name": "Recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]

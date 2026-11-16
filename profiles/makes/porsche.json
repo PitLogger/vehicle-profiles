@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Porsche",
     "file": "signalsets/v3/default.json",
-    "revision": "958940e8198b79a53c727a0806589eb73166c4b3",
+    "revision": "da4f37d439bc374ca2c678fef6cf0f8896110c30",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -5766,10 +5766,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "PORSCHE_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218},
-        {"id": "PORSCHE_ACT_TURBO_BOOST", "name": "Actual turbo boost", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 2, "unit": "bar"}
+        {"id": "PORSCHE_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -15177,9 +15176,9 @@
       "request": "22210F",
       "interval": 1,
       "signals": [
-        {"id": "PORSCHE_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253},
+        {"id": "PORSCHE_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253},
         {"id": "PORSCHE_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "2": "PARK", "3": "DRIVE"}, "valueDescriptions": {"1": "Reverse", "2": "Park", "3": "Drive"}},
-        {"id": "PORSCHE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
+        {"id": "PORSCHE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {
@@ -21196,7 +21195,8 @@
       "tester": "7B",
       "signals": [
         {"id": "PORSCHE_SOC", "name": "State of charge", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 100, "divide": 250, "min": 0, "max": 100, "unit": "%"},
-        {"id": "PORSCHE_SOC_DISP", "name": "Displayed state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"}
+        {"id": "PORSCHE_SOC_DISP", "name": "Displayed state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"},
+        {"id": "PORSCHE_SOC_V2", "name": "State of charge, displayed", "group": "Battery", "metric": "stateOfCharge", "bit": 0, "bits": 8, "multiply": 20.4, "divide": 46, "add": -6.4, "min": 0, "max": 100, "unit": "%"}
       ]
     },
     {

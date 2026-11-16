@@ -21,11 +21,15 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Porsche-911",
     "file": "signalsets/v3/default.json",
-    "revision": "ca569f6b73893cb0150a7dae467c5171645cf6d3",
+    "revision": "2934ec2844e7eb4f1efcd4cce597926bfe74eec4",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
-  "ecus": [{"tx": "7E0", "type": "engine"}, {"tx": "7E1", "type": "transmission"}],
+  "ecus": [
+    {"tx": "710", "type": "gateway"},
+    {"tx": "7E0", "type": "engine"},
+    {"tx": "7E1", "type": "transmission"}
+  ],
   "requests": [
     {
       "id": "70B.775.2218A0|fc=1,f=2015-",
@@ -36,7 +40,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2015},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TID_RL", "name": "Rear left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "911_TP_RL", "name": "Rear left tire current pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "bar", "invalidAtOrAbove": 25},
@@ -55,7 +59,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2015},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TID_FR", "name": "Front right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "911_TP_FR", "name": "Front right tire current pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "bar", "invalidAtOrAbove": 25},
@@ -74,7 +78,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2015},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TID_RR", "name": "Rear right tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "911_TP_RR", "name": "Rear right tire current pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "bar", "invalidAtOrAbove": 25},
@@ -93,7 +97,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2015},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TID_FL", "name": "Front left tire sensor id", "group": "Tires", "bit": 0, "bits": 32, "min": 0, "max": 4294967295},
         {"id": "911_TP_FL", "name": "Front left tire current pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 48, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "bar", "invalidAtOrAbove": 25},
@@ -112,7 +116,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_VT", "name": "Start/stop battery target voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 10.6, "min": 0, "max": 36.1, "unit": "V"}
       ]
@@ -126,7 +130,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_12V_BAT_CAP", "name": "12V battery capacity", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
@@ -140,7 +144,7 @@
       "request": "222A07",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_V", "name": "Start/stop battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "add": 4, "min": 4, "max": 69.53, "unit": "V"}
       ]
@@ -154,7 +158,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_BAT_CURRENT_FILTERED", "name": "Battery current filtered", "group": "Battery", "bit": 0, "bits": 24, "divide": 1000, "add": -3000, "min": -3000, "max": 13777, "unit": "A"}
       ]
@@ -167,7 +171,7 @@
       "request": "222A09",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_C", "name": "Start/stop battery current", "group": "Battery", "bit": 0, "bits": 32, "signed": true, "divide": 1000, "min": -2147483, "max": 2147483, "unit": "A"}
       ]
@@ -180,7 +184,7 @@
       "request": "222A0A",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_SENSOR_T", "name": "Start/stop battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -193,7 +197,7 @@
       "request": "222A0B",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_T", "name": "Start/stop battery sensor temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -206,7 +210,7 @@
       "request": "222A0C",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_SOC", "name": "Start/stop battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -220,7 +224,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_BAT_COND_DISPLAY", "name": "Battery condition for display", "group": "Battery", "bit": 0, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "%"}
       ]
@@ -233,7 +237,7 @@
       "request": "222A0E",
       "interval": 5,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_R", "name": "Start/stop battery resistance", "group": "Battery", "bit": 0, "bits": 8, "multiply": 2, "divide": 10, "min": 0, "max": 51, "unit": "mΩ"}
       ]
@@ -246,7 +250,7 @@
       "request": "222A0F",
       "interval": 5,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_AH", "name": "Start/stop battery charge", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
       ]
@@ -259,7 +263,7 @@
       "request": "222A10",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_SSB_V_REST", "name": "Start/stop battery voltage, at rest", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 9, "min": 9, "max": 34.5, "unit": "V"}
       ]
@@ -273,7 +277,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_GEN_CURRENT", "name": "Generator current", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": 9, "min": 0, "max": 6562.5, "unit": "A"}
@@ -288,7 +292,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_BAT_ACID", "name": "Battery acid stratification", "group": "Battery", "bit": 0, "bits": 8, "multiply": 10, "add": 9, "min": 0, "max": 2559, "unit": "%"}
       ]
@@ -302,7 +306,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_BAT_INTERNAL_RES_RAW", "name": "Battery internal resistance, raw", "group": "Battery", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51}
@@ -317,7 +321,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_RANGE_EST_CAN", "name": "Estimated reserve range", "group": "Battery", "bit": 32, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
       ]
@@ -331,7 +335,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_RANGE_V2", "name": "Range remaining, unit unconfirmed", "group": "Trips", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mi"}
       ]
@@ -345,7 +349,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_AVG_CSMP_CAT0", "name": "Average consumption, category 0", "group": "Trips", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
         {"id": "911_AVG_CSMP_CAT1", "name": "Average consumption, category 1", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh"},
@@ -365,7 +369,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_GEN_V_ACT", "name": "Generator voltage, actual", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "add": 10.6, "min": 0, "max": 36.1, "unit": "V"}
@@ -380,7 +384,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FL_WHL_SPD_713", "name": "Front left wheel speed", "group": "Tires", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
         {"id": "911_FR_WHL_SPD_713", "name": "Front right wheel speed", "group": "Tires", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "km/h"},
@@ -397,7 +401,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_P_BRAKE_SERVO_UNIT", "name": "Pressure in brake servo unit", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375}
@@ -411,7 +415,7 @@
       "request": "222B1B",
       "interval": 0.25,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_FL_SPD_713", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -424,7 +428,7 @@
       "request": "222B1C",
       "interval": 0.25,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_FR_SPD_713", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -437,7 +441,7 @@
       "request": "222B1D",
       "interval": 0.25,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_RL_SPD_713", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -450,7 +454,7 @@
       "request": "222B1E",
       "interval": 0.25,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_RR_SPD_713", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h", "invalidAtOrAbove": 1000}
       ]
@@ -464,7 +468,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "multiply": 152999, "divide": 10000000, "add": -42.503, "min": -543.8501, "max": 458.8288, "unit": "bar"}
@@ -478,7 +482,7 @@
       "request": "222B29",
       "interval": 0.1,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive is rotated to the left, negative is rotated to the right.", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "rad"}
       ]
@@ -492,7 +496,7 @@
       "interval": 0.5,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_TRIP_USE_SHORT", "name": "Trip consumption, short", "group": "Trips", "bit": 238, "bits": 18, "signed": true, "divide": 1000, "min": -131, "max": 131, "unit": "kWh/100mi"}
       ]
@@ -505,7 +509,7 @@
       "request": "222294",
       "interval": 30,
       "flowControl": true,
-      "notAnsweredIn": [2002, 2005, 2008, 2012, 2014, 2016, 2017, 2018, 2022, 2025, 2026],
+      "notAnsweredIn": [2002, 2005, 2008, 2012, 2014, 2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_DTE", "name": "Distance to empty", "group": "Trips", "metric": "fuelRange", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
       ]
@@ -519,7 +523,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_CRASH_CNT_FRONT", "name": "Crashes, front", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
       ]
@@ -533,7 +537,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_CRASH_CNT_DRVR", "name": "Crashes, driver side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
       ]
@@ -547,7 +551,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_CRASH_CNT_PSNGR", "name": "Crashes, passenger side", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
       ]
@@ -561,7 +565,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_CRASH_CNT_REAR", "name": "Crashes, rear", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
       ]
@@ -575,7 +579,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2019},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_CRASH_CNT_ROLLOVER", "name": "Crashes, rollover", "group": "Stats", "bit": 0, "bits": 8, "min": 0, "max": 100}
       ]
@@ -590,7 +594,7 @@
       "flowControl": true,
       "years": {"from": 2012},
       "answeredIn": [2017],
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2024, 2025],
       "signals": [
         {"id": "911_PARKING_BRAKE_AIR", "name": "Parking brake, air gap - left", "group": "Control", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "mm"},
         {"id": "911_PARKING_BRAKE_AIR_GAP", "name": "Parking brake, air gap - right", "group": "Control", "bit": 16, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "mm"}
@@ -605,7 +609,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2020},
-      "answeredIn": [2022, 2025, 2026],
+      "answeredIn": [2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_GPS_SATS_VISIBLE", "name": "Satellites, visible", "group": "GPS", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "911_GPS_SATS_TRACKED", "name": "Satellites, tracked", "group": "GPS", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -617,7 +621,7 @@
       "tx": "7E0",
       "request": "2210E0",
       "interval": 30,
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2002, 2005, 2006, 2007, 2008, 2012, 2014, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_ODO_2", "name": "Odometer, alternative", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
@@ -629,7 +633,7 @@
       "tx": "7E0",
       "request": "2211BA",
       "interval": 15,
-      "answeredIn": [2005, 2018, 2022],
+      "answeredIn": [2005, 2018, 2022, 2024],
       "notAnsweredIn": [2002, 2006, 2007, 2008, 2012, 2014, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262}
@@ -643,7 +647,7 @@
       "interval": 30,
       "years": {"from": 2019, "to": 2012},
       "answeredIn": [2005, 2022],
-      "notAnsweredIn": [2002, 2006, 2007, 2008, 2012, 2025, 2026],
+      "notAnsweredIn": [2002, 2006, 2007, 2008, 2012, 2024, 2025, 2026],
       "signals": [
         {"id": "911_OIL_MAX", "name": "Oil level, max", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
       ]
@@ -656,7 +660,7 @@
       "interval": 30,
       "years": {"from": 2019, "to": 2012},
       "answeredIn": [2022],
-      "notAnsweredIn": [2002, 2005, 2006, 2007, 2008, 2012, 2025, 2026],
+      "notAnsweredIn": [2002, 2005, 2006, 2007, 2008, 2012, 2024, 2025, 2026],
       "signals": [
         {"id": "911_OIL_MIN", "name": "Oil level, min", "group": "Fluids", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "cm"}
       ]
@@ -669,7 +673,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2022],
-      "notAnsweredIn": [2018, 2025, 2026],
+      "notAnsweredIn": [2018, 2024, 2025, 2026],
       "signals": [
         {"id": "911_FUEL_P_REG_SPEC", "name": "Fuel pressure regulator valve specified rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "min": -3276800, "max": 3276700}
       ]
@@ -695,7 +699,7 @@
       "interval": 30,
       "years": {"from": 2019, "to": 2012},
       "answeredIn": [2025, 2026],
-      "notAnsweredIn": [2002, 2005, 2006, 2007, 2008, 2012, 2022],
+      "notAnsweredIn": [2002, 2005, 2006, 2007, 2008, 2012, 2022, 2024],
       "signals": [
         {"id": "911_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
@@ -709,7 +713,7 @@
       "interval": 1,
       "years": {"from": 2020, "to": 2011},
       "answeredIn": [2005, 2025, 2026],
-      "notAnsweredIn": [2002, 2008, 2022],
+      "notAnsweredIn": [2002, 2008, 2022, 2024],
       "signals": [
         {"id": "911_ECU_TEMP", "name": "Control module temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C", "invalidAtOrBelow": -273.1}
       ]
@@ -724,7 +728,7 @@
       "flowControl": true,
       "years": {"from": 2012},
       "answeredIn": [2017],
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2024, 2025],
       "signals": [
         {"id": "911_AAT_7E0_2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
@@ -738,10 +742,10 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
-        {"id": "911_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "911_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -751,7 +755,7 @@
       "rx": "7E8",
       "request": "221002",
       "interval": 1,
-      "answeredIn": [2005, 2016, 2017, 2018, 2022],
+      "answeredIn": [2005, 2016, 2017, 2018, 2022, 2024],
       "notAnsweredIn": [2002, 2008, 2025, 2026],
       "signals": [
         {"id": "911_AC_COMP_T", "name": "A/c compressor torque, requested", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
@@ -764,7 +768,7 @@
       "rx": "7E8",
       "request": "221004",
       "interval": 5,
-      "answeredIn": [2005, 2016, 2017, 2022],
+      "answeredIn": [2005, 2016, 2017, 2022, 2024],
       "notAnsweredIn": [2002, 2008, 2012, 2018, 2025, 2026],
       "signals": [
         {"id": "911_AAT_V2", "name": "Ambient temperature", "group": "Climate", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -255, "max": 255, "unit": "°C"}
@@ -792,7 +796,7 @@
       "request": "221008",
       "interval": 30,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_FLI", "name": "Fuel level", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"}
@@ -806,7 +810,7 @@
       "request": "22100B",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_ENG_RADIATOR_FAN_REQ", "name": "Engine radiator fan request", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
@@ -835,7 +839,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -850,7 +854,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_A_C_REFRIGERANT_PRES", "name": "A/C refrigerant pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534}
@@ -864,7 +868,7 @@
       "request": "221018",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_CLT_FAN_REQ_AC", "name": "Coolant fan, requested by A/C", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 12207, "divide": 1000000, "min": -399.9989, "max": 100, "unit": "%"}
@@ -879,7 +883,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_A_C_COMPRESSOR_TORQUE", "name": "A/C compressor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -894,7 +898,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_GENERATOR_TORQUE_REQUEST", "name": "Generator torque request", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -908,7 +912,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_GENERATOR_LOAD_SIG", "name": "Generator load signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
@@ -922,7 +926,7 @@
       "request": "221028",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_DOWNSHIFT_ADAPT_V", "name": "Downshift point adaptation voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
@@ -936,7 +940,7 @@
       "request": "221029",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_APP_REDUCE_V", "name": "Accelerator pedal release detection threshold voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
       ]
@@ -949,6 +953,7 @@
       "request": "22102A",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ACCEL_PEDAL_SENS_1_V", "name": "Accelerator pedal, sensor 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
@@ -962,6 +967,7 @@
       "request": "22102B",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ACCEL_PEDAL_SENS_2_V", "name": "Accelerator pedal, sensor 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
@@ -989,6 +995,7 @@
       "request": "22104C",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_AIR_MASS_SPEC", "name": "Air mass, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276}
@@ -1002,7 +1009,7 @@
       "request": "221059",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ACCEL_PEDAL_TQ_LIM", "name": "Accelerator pedal torque limit", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1016,6 +1023,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_BATTERY_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "V"}
@@ -1043,6 +1051,7 @@
       "request": "22105D",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_BRAKE_PEDAL_POS", "name": "Brake pedal position", "group": "Control", "bit": 0, "bits": 16, "multiply": 12207, "divide": 1000000, "min": 0, "max": 100, "unit": "%"}
@@ -1056,6 +1065,7 @@
       "request": "221063",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ENG_OUTLET_ECT_CALC", "name": "Engine outlet coolant temperature calculated", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
@@ -1069,6 +1079,7 @@
       "request": "221065",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CYL_HEAD_T", "name": "Cylinder head temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -460, "min": -460, "max": 11336.3, "unit": "°F"}
@@ -1082,6 +1093,7 @@
       "request": "22107D",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_TQ_LIM", "name": "Torque limitation", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "Nm"}
@@ -1096,6 +1108,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_GENERATOR_PERFORMANCE", "name": "Generator performance", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 94248, "divide": 10000, "min": -308831.8464, "max": 308822.421, "unit": "W"}
@@ -1109,6 +1122,7 @@
       "request": "2210A4",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_INJ_SPD_INJ_0", "name": "Injection speed injector 0", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
@@ -1122,6 +1136,7 @@
       "request": "2210BE",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_REQ_TQ_AMOUNT", "name": "Requested torque, amount for auxiliary units", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -1149,6 +1164,7 @@
       "request": "2210D5",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LAMBDA_ACT", "name": "Lambda, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 12207, "divide": 50000000, "min": -7.9999, "max": 7.9997}
@@ -1190,6 +1206,7 @@
       "request": "2210E6",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_2", "name": "Knock retard 2", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
@@ -1203,6 +1220,7 @@
       "request": "2210E7",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_5", "name": "Knock retard 5", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
@@ -1216,6 +1234,7 @@
       "request": "2210EA",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_OPEN_CAM_SHFT_ANG", "name": "Open cam shaft angle at quantity control valve", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
@@ -1229,6 +1248,7 @@
       "request": "2210EB",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CRANK_ROT_ANG", "name": "Crankshaft rotation angle when closing the quantity control valve", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
@@ -1242,6 +1262,7 @@
       "request": "2210EC",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VLV_TIM_DIFF_ACT_SET", "name": "Valve timing, the difference between the, actual and the set angle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511.9843, "unit": "°"}
@@ -1256,7 +1277,7 @@
       "interval": 5,
       "years": {"from": 2012},
       "answeredIn": [2017],
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2024, 2025],
       "signals": [
         {"id": "911_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -1269,7 +1290,7 @@
       "request": "221106",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_INJ_QTY_DEV_CYL_2", "name": "Injection quantity deviation cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
@@ -1283,7 +1304,7 @@
       "request": "221107",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_INJ_QTY_DEV_CYL_5", "name": "Injection quantity deviation cylinder 5", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327}
@@ -1325,6 +1346,7 @@
       "request": "221123",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_AAT_7E0", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
@@ -1339,7 +1361,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_CAMSHAFT_VSS", "name": "Camshaft speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 2500, "divide": 10000, "min": 0, "max": 16383.75, "unit": "rpm"}
@@ -1353,6 +1375,7 @@
       "request": "221125",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADPT_INT_BANK_1", "name": "Camshaft adaptation, intake bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
@@ -1366,6 +1389,7 @@
       "request": "221128",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADPT_EXH_BANK_1", "name": "Camshaft adaptation, exhaust bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
@@ -1393,7 +1417,7 @@
       "request": "22112D",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_SPARK_EFF_DEV_PART", "name": "Spark efficiency deviation at part load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 78.1, "divide": 100, "min": 0, "max": 100, "unit": "%"}
@@ -1407,6 +1431,7 @@
       "request": "22112E",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_SEG_AD_MMV_ER_2", "name": "SEG_AD_MMV_ER, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
@@ -1421,7 +1446,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_COOLANT_FAN_1_ACTIVATION", "name": "Coolant fan 1, activation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": 0, "max": 100, "unit": "%"}
@@ -1435,7 +1460,7 @@
       "request": "221134",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_SEG_AD_MMV_ER_MID_2", "name": "SEG_AD_MMV_ER_MID, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
@@ -1449,7 +1474,7 @@
       "request": "221135",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_COOLANT_T", "name": "Coolant temperature at radiator outlet", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
@@ -1463,7 +1488,7 @@
       "request": "221136",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_HEIGHT_CORR", "name": "Height correction", "group": "Engine", "bit": 0, "bits": 16, "multiply": 6.10348e-05, "min": 0, "max": 3.9999}
@@ -1477,7 +1502,7 @@
       "request": "221137",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_FUEL_PART_EVAP", "name": "Fuel part from EVAP system", "group": "Fuel", "bit": 0, "bits": 8, "signed": true, "multiply": 781, "divide": 100000, "min": -0.9996, "max": 0.9918}
@@ -1491,6 +1516,7 @@
       "request": "22113A",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_SEG_AD_MMV_ER_H_2", "name": "SEG_AD_MMV_ER_H, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
@@ -1503,7 +1529,7 @@
       "rx": "7E8",
       "request": "22113F",
       "interval": 30,
-      "answeredIn": [2005, 2018, 2022],
+      "answeredIn": [2005, 2018, 2022, 2024],
       "notAnsweredIn": [2002, 2008, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_FUEL_CONS", "name": "Fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L"}
@@ -1517,6 +1543,7 @@
       "request": "221141",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_SEG_AD_MMV_ER_L_3", "name": "SEG_AD_MMV_ER_L, 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
@@ -1531,7 +1558,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2018, 2022],
-      "notAnsweredIn": [2016, 2017, 2025],
+      "notAnsweredIn": [2016, 2017, 2024, 2025],
       "signals": [
         {"id": "911_MISFIRES_TOTAL", "name": "Misfires total", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -1545,7 +1572,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2018, 2022],
-      "notAnsweredIn": [2016, 2017, 2025],
+      "notAnsweredIn": [2016, 2017, 2024, 2025],
       "signals": [
         {"id": "911_MISFIRES_1000REV_C1", "name": "Misfires / 1000 revolutions, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -1559,7 +1586,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2018, 2022],
-      "notAnsweredIn": [2016, 2017, 2025],
+      "notAnsweredIn": [2016, 2017, 2024, 2025],
       "signals": [
         {"id": "911_MISFIRES_1000REV_C2", "name": "Misfires / 1000 revolutions, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -1572,6 +1599,7 @@
       "request": "22114B",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MIS_1000_REVOLUTIONS_2", "name": "Misfires for 1000 revolutions, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -1585,6 +1613,7 @@
       "request": "22114C",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MIS_1000_REVOLUTIONS_5", "name": "Misfires for 1000 revolutions, cylinder 5", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -1627,7 +1656,7 @@
       "interval": 1,
       "years": {"from": 2020, "to": 2011},
       "answeredIn": [2005],
-      "notAnsweredIn": [2002, 2008, 2022, 2025, 2026],
+      "notAnsweredIn": [2002, 2008, 2022, 2024, 2025, 2026],
       "signals": [
         {"id": "911_VSS_DIR", "name": "Vehicle speed, directional", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "km/h"}
       ]
@@ -1640,7 +1669,7 @@
       "request": "221160",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2012, 2014, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_ODO_HD", "name": "Odometer, high resolution", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "divide": 1000, "min": 0, "max": 4294967.295, "unit": "km"}
@@ -1655,6 +1684,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ENGINE_RPM_AT_IDLE_REQUIRED", "name": "Engine RPM at idle required", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
@@ -1668,6 +1698,7 @@
       "request": "221175",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_INTEGRATED_MASS_AIR", "name": "Integrated mass of air since engine start", "group": "Engine", "bit": 0, "bits": 16, "multiply": 8889, "divide": 25000, "min": 0, "max": 23301.6246}
@@ -1682,7 +1713,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2022],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_ACCEL_7E0", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
       ]
@@ -1723,6 +1754,7 @@
       "request": "2211A4",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_FUEL_PMP_CMD_DUTY", "name": "Fuel pump, commanded duty", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0015258743, "min": 0, "max": 99.998, "unit": "%"}
@@ -1736,7 +1768,7 @@
       "request": "2211AB",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_INT_MODEL_AIR_MASS", "name": "Intake model air mass flow filtered value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
@@ -1750,6 +1782,7 @@
       "request": "2211AC",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MAF_THROUGH_THROTTLE", "name": "Mass air flow through throttle", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
@@ -1763,6 +1796,7 @@
       "request": "2211AD",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MAF_CMD", "name": "Mass air flow, commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
@@ -1776,6 +1810,7 @@
       "request": "2211B8",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_AIR_LEAKAGE", "name": "Air leakage", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
@@ -1789,6 +1824,7 @@
       "request": "2211B9",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_OIL_P_VLV_SWITCH", "name": "Oil pressure valve switch, control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -1816,7 +1852,7 @@
       "request": "2211BD",
       "interval": 15,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2012, 2014, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_OIL_LEVEL_WARN", "name": "Oil level warning threshold", "group": "Fluids", "bit": 0, "bits": 16, "divide": 2500, "min": 0, "max": 26.2, "unit": "cm"}
@@ -1830,7 +1866,7 @@
       "request": "2211BE",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2012, 2014, 2016, 2017, 2025, 2026],
       "signals": [
         {"id": "911_EOT", "name": "Engine oil temperature", "description": "Scaling is unknown, needs further validation.", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -1858,6 +1894,7 @@
       "request": "2211C8",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LOW_FUEL_P_ACT", "name": "Low fuel pressure, actual", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
@@ -1871,6 +1908,7 @@
       "request": "2211C9",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_FUEL_PMP_ADPT", "name": "Fuel pump adaptation", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "kPa"}
@@ -1885,7 +1923,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2022],
-      "notAnsweredIn": [2025, 2026],
+      "notAnsweredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_BOOST_REGULATOR", "name": "Boost regulator feedback", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "%"}
       ]
@@ -1898,6 +1936,7 @@
       "request": "2211CD",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_TCO_1_SYS", "name": "TCO_1_SYS", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
@@ -1911,6 +1950,7 @@
       "request": "2211CE",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LOW_FUEL_P_CMD", "name": "Low fuel pressure, commanded", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
@@ -1924,6 +1964,7 @@
       "request": "2211D1",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_BRAKE_BOOSTER_RAW_P", "name": "Brake booster raw pressure", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -1937,6 +1978,7 @@
       "request": "2211D2",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_HIGH_P_CTRL_ADPT", "name": "High pressure control, adaptation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2000, "min": -16.384, "max": 16.3835}
@@ -1950,7 +1992,7 @@
       "request": "2211D4",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TURBOCHARGER_INLET_P", "name": "Turbocharger inlet pressure corrected value", "group": "Battery", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
@@ -1964,6 +2006,7 @@
       "request": "2211D5",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_HIGH_FUEL_P", "name": "High fuel pressure, regulation error", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 2000, "min": -16.384, "max": 16.3835}
@@ -1977,6 +2020,7 @@
       "request": "2211D7",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_HIGH_FUEL_P_CMD", "name": "High fuel pressure, commanded", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 32.7675}
@@ -1990,6 +2034,7 @@
       "request": "2211DA",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_INT_MANIFOLD_P", "name": "Intake manifold pressure, corrected", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
@@ -2003,6 +2048,7 @@
       "request": "2211DC",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MAP_RAW", "name": "Manifold absolute pressure, raw value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
@@ -2016,6 +2062,7 @@
       "request": "2211DD",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_INT_MANIFOLD_P_CMD", "name": "Intake manifold pressure, commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
@@ -2029,7 +2076,7 @@
       "request": "2211DF",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_POWERTRAIN_OVERALL", "name": "Powertrain overall gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
@@ -2043,6 +2090,7 @@
       "request": "2211E0",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CMD_CRANK_TQ", "name": "Commanded crankshaft torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -2056,6 +2104,7 @@
       "request": "2211EE",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_P_BEFORE_THROTTLE_ACT", "name": "Pressure before throttle valve - actual value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
@@ -2069,6 +2118,7 @@
       "request": "2211EF",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_P_BEFORE_THROTTLE", "name": "Pressure before throttle valve - sensor measured", "group": "Engine", "bit": 0, "bits": 16, "multiply": 21333, "divide": 546125, "min": 0, "max": 2559.96}
@@ -2080,11 +2130,12 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
-        {"id": "911_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "911_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -2096,6 +2147,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_SNS_C1_V_MS", "name": "Knock sensor, cylinder 1 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
@@ -2110,6 +2162,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_SNS_C3_V_MS", "name": "Knock sensor, cylinder 3 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
@@ -2124,6 +2177,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_SNS_C4_V_MS", "name": "Knock sensor, cylinder 4 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
@@ -2138,6 +2192,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_SNS_C2_V_MS", "name": "Knock sensor, cylinder 2 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
@@ -2151,6 +2206,7 @@
       "request": "221212",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_CYL_2", "name": "Knock sensor, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "multiply": 7.62e-07, "min": 0, "max": 3272}
@@ -2177,6 +2233,7 @@
       "request": "221216",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_REL_LOAD", "name": "Relative load value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0234403081, "min": 0, "max": 1536.1605}
@@ -2190,7 +2247,7 @@
       "request": "22121C",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_AIR_FILLING", "name": "Air filling", "group": "Engine", "bit": 0, "bits": 16, "multiply": 11719, "divide": 500000, "min": 0, "max": 100, "unit": "%"}
@@ -2217,7 +2274,7 @@
       "request": "221222",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_TQ_LOSS_ADPT_AC_COMP", "name": "Torque loss adaptation, A/C compressor + gear engaged", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -2231,7 +2288,7 @@
       "request": "221223",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_TQ_LOSS_ADPT_AC_COMP_7E0", "name": "Torque loss adaptation, A/C compressor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -2245,7 +2302,7 @@
       "request": "221224",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_TQ_LOSS_ADPT_GEAR", "name": "Torque loss adaptation, gear engaged", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -2259,7 +2316,7 @@
       "request": "221225",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_TQ_LOSS_ADPT_IDLE", "name": "Torque loss adaptation at idle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
@@ -2274,6 +2331,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_REAR_CAT_CONV_T_MAIN_CAT_CONV_MODEL_VALUE", "name": "Rear cat converter temperature, main catalytic converter model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -2287,6 +2345,7 @@
       "request": "22127B",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VARIABLE_VLV_TIM_INT_1", "name": "Variable valve timing, intake, bank 1, regulation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0030517549, "min": 0, "max": 100, "unit": "%"}
@@ -2300,6 +2359,7 @@
       "request": "22127D",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VARIABLE_VLV_TIM_INT_1_ON", "name": "Variable valve timing, intake, bank 1, switch on", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0030517549, "min": 0, "max": 100, "unit": "%"}
@@ -2313,6 +2373,7 @@
       "request": "22128A",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_FUEL_T", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
@@ -2326,6 +2387,7 @@
       "request": "22128C",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_AVG_INJ_TIME", "name": "Avg. injection time", "group": "Engine", "bit": 0, "bits": 32, "divide": 2500, "min": 0, "max": 1717986, "unit": "ms"}
@@ -2340,6 +2402,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_OXYGEN_SNS_1_BANK_1_CERAMIC_T", "name": "Oxygen sensor 1 bank 1 ceramic temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 234.37, "divide": 10000, "add": -273.15, "min": -273.15, "max": 1262.793, "unit": "°C"}
@@ -2354,6 +2417,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_COOLANT_T_AT_ENGINE_START", "name": "Coolant temperature at engine start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -2368,7 +2432,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CAT_T_BANK_1", "name": "Cat. temperature, bank 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
       ]
@@ -2382,7 +2446,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CAT_T_BANK_2", "name": "Cat. temperature, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -273.15, "min": -273, "max": 3822, "unit": "°C"}
       ]
@@ -2396,6 +2460,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ACCELERATION_29BIT", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
@@ -2423,6 +2488,7 @@
       "request": "221340",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_TQ_INCREASE_REQ_ESP", "name": "Torque increase request from ESP", "group": "Engine", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
@@ -2450,6 +2516,7 @@
       "request": "22136C",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADJ_EXH_BANK_1_ACT", "name": "Camshaft adjustment, exhaust bank 1, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 125, "min": -262.144, "max": 262.136, "unit": "°"}
@@ -2463,6 +2530,7 @@
       "request": "22136D",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADJ_EXH_BANK_2_ACT", "name": "Camshaft adjustment, exhaust bank 2, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°"}
@@ -2476,6 +2544,7 @@
       "request": "221371",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADJ_EXH_BANK_1_SPEC", "name": "Camshaft adjustment, exhaust bank 1, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 125, "min": -262.144, "max": 262.136, "unit": "°"}
@@ -2489,6 +2558,7 @@
       "request": "221372",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAM_ADJ_EXH_BANK_2_SPEC", "name": "Camshaft adjustment, exhaust bank 2, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 125, "min": -262, "max": 262, "unit": "°"}
@@ -2502,7 +2572,7 @@
       "request": "221385",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CAM_POS_DEV_BASE_POS", "name": "Camshaft position, deviation from the base position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -2515,7 +2585,7 @@
       "request": "22138B",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_IGA_IGC_1", "name": "IGA_IGC, 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1499, "divide": 4000, "add": -35.625, "min": -35.625, "max": 59.9362, "unit": "°"}
       ]
@@ -2528,7 +2598,7 @@
       "request": "22138D",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_IGA_IGC_3", "name": "IGA_IGC, 3", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1499, "divide": 4000, "add": -35.625, "min": -35.625, "max": 59.9362, "unit": "°"}
       ]
@@ -2542,6 +2612,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EXHAUST_GAS_T_AT_PROBE_BEFOR_PRECAT_MODEL_VALUE", "name": "Exhaust gas temperature at probe before the front catalytic converter, model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -2556,6 +2627,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_COOLANT_T_MODELED_VALUE", "name": "Coolant temperature modeled value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -2570,7 +2642,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AIR_MASS", "name": "Air mass", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047}
       ]
@@ -2584,7 +2656,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_CYL_1", "name": "Knock retard:, cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.62, "unit": "°"}
       ]
@@ -2598,7 +2670,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_CYL_2", "name": "Knock retard:, cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.62, "unit": "°"}
       ]
@@ -2611,6 +2683,7 @@
       "request": "2213F4",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_IGA_CYL_KNK_2", "name": "IGA_CYL_KNK, 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
@@ -2625,7 +2698,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_CYL_4", "name": "Knock retard:, cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.62, "unit": "°"}
       ]
@@ -2638,6 +2711,7 @@
       "request": "2213F6",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_NL_PRE_0", "name": "NL_PRE, 0", "group": "Engine", "bit": 0, "bits": 16, "multiply": 38147, "divide": 500000000, "min": 0, "max": 4.9999, "unit": "V"}
@@ -2652,7 +2726,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_RETARD_CYL_6", "name": "Knock retard:, cylinder 6", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.62, "unit": "°"}
       ]
@@ -2666,7 +2740,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_1", "name": "Knock sensor voltage:, cylinder 1", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2680,7 +2754,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_4", "name": "Knock sensor voltage:, cylinder 4", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2694,7 +2768,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_3", "name": "Knock sensor voltage:, cylinder 3", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2708,7 +2782,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_6", "name": "Knock sensor voltage:, cylinder 6", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2722,7 +2796,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_2", "name": "Knock sensor voltage:, cylinder 2", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2736,7 +2810,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_KNOCK_SENS_V_CYL_5", "name": "Knock sensor voltage:, cylinder 5", "group": "Battery", "bit": 0, "bits": 16, "multiply": 7.6294e-05, "min": 0, "max": 4.99, "unit": "V"}
       ]
@@ -2749,6 +2823,7 @@
       "request": "221421",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EXH_T_BEFORE_CAT", "name": "Exhaust temperature before the catalyst, modeled", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
@@ -2763,7 +2838,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_CNT_1", "name": "Misfires counter:, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2776,7 +2851,7 @@
       "request": "22147F",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MOTOR_TQ", "name": "Drive motor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 3, "min": -10922.666, "max": 10922.333, "unit": "Nm"}
       ]
@@ -2790,7 +2865,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_CNT_3", "name": "Misfires counter:, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2804,7 +2879,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_CNT_6", "name": "Misfires counter:, cylinder 6", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2818,7 +2893,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_CNT_2", "name": "Misfires counter:, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2832,7 +2907,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_CNT_5", "name": "Misfires counter:, cylinder 5", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2846,7 +2921,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_1", "name": "Misfires per 1000 rpm:, cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2860,7 +2935,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_4", "name": "Misfires per 1000 rpm:, cylinder 4", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2874,7 +2949,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_3", "name": "Misfires per 1000 rpm:, cylinder 3", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2888,7 +2963,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_6", "name": "Misfires per 1000 rpm:, cylinder 6", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2902,7 +2977,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_2", "name": "Misfires per 1000 rpm:, cylinder 2", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2916,7 +2991,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_5", "name": "Misfires per 1000 rpm:, cylinder 5", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2930,7 +3005,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MIS_PER_1000_RPM_ALL", "name": "Misfires per 1000 rpm, all cylinders", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -2943,7 +3018,7 @@
       "request": "221490",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_BRAKE_BOOSTER_LOW_P_ACT", "name": "Brake booster low pressure, actual", "group": "Control", "bit": 0, "bits": 16, "multiply": 39063, "divide": 1000000, "min": 0, "max": 2559.9937}
       ]
@@ -2957,9 +3032,10 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
-        {"id": "911_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "911_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -2970,6 +3046,7 @@
       "request": "2214A1",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_RATED_DRIVE_TQ", "name": "Rated drive torque", "group": "Engine", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
@@ -2983,7 +3060,7 @@
       "request": "2214B4",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2016, 2017, 2025],
       "signals": [
         {"id": "911_FUEL_LEVEL_INPUT_V1", "name": "Fuel level input, v1", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 327.67, "unit": "L", "invalidAtOrAbove": 327.67}
@@ -2997,7 +3074,7 @@
       "request": "2214BE",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_GAS_T_SENS_3", "name": "Exhaust gas temperature sensor 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -3010,10 +3087,10 @@
       "request": "2214CB",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2016, 2017, 2025],
       "signals": [
-        {"id": "911_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "911_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -3024,7 +3101,7 @@
       "request": "2214F8",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2018, 2022],
+      "answeredIn": [2018, 2022, 2024],
       "notAnsweredIn": [2016, 2017, 2025],
       "signals": [
         {"id": "911_AAT_V1", "name": "Ambient air temperature, v1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.18, "add": -460, "min": -460, "max": 11336.3, "unit": "°F"}
@@ -3039,6 +3116,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_MAIN_CAT_OSC_AGE_CORRECTION_FACTOR", "name": "Main cat oxygen storage capacity age correction factor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 65535, "min": 0, "max": 2}
@@ -3053,7 +3131,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017],
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2024, 2025],
       "signals": [
         {"id": "911_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 416, "min": 0, "max": 157, "unit": "psi"}
       ]
@@ -3067,7 +3145,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017],
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2024, 2025],
       "signals": [
         {"id": "911_ENG_OIL_LEVEL_7E0", "name": "Engine oil level", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "mm"}
       ]
@@ -3081,6 +3159,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CAT_CONVERTER_OXYGEN_STORAGE_CAPACITY_MEASURED", "name": "Cat. converter oxygen storage capacity measured", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 6553.5}
@@ -3094,7 +3173,7 @@
       "request": "221509",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_AMBIENT_AIR_P", "name": "Ambient air pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 39, "divide": 1000, "min": 0, "max": 2555.8649}
@@ -3108,7 +3187,7 @@
       "request": "221519",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FUEL_CONS_ACT_DRIVE", "name": "Fuel consumption - actual drive cycle", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L"}
       ]
@@ -3121,7 +3200,7 @@
       "request": "22156F",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_GAS_T_SENS_3_2", "name": "Exhaust gas temperature sensor 3, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -3134,6 +3213,7 @@
       "request": "22159F",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_HIGH_FUEL_P_ACT", "name": "High fuel pressure, actual", "group": "Fuel", "bit": 0, "bits": 16, "divide": 2000, "min": 0, "max": 32.7675}
@@ -3161,6 +3241,7 @@
       "request": "2215B7",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ENG_OIL_SUMP_T", "name": "Engine oil sump temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -460, "min": -460, "max": 11336.3, "unit": "°F"}
@@ -3174,7 +3255,7 @@
       "request": "2215BD",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_OIL_P_SENS_PISTON", "name": "Oil pressure sensor-piston cooling nozzle switch, status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3187,6 +3268,7 @@
       "request": "2215C0",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_IAT_RAW", "name": "Intake air temperature raw value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
@@ -3200,6 +3282,7 @@
       "request": "2215C1",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_IAT_BEFORE_THROTTLE", "name": "Intake air temperature before throttle valve, raw value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
@@ -3213,6 +3296,7 @@
       "request": "2215C7",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_AC_COMP_P_LINEAR_RAW", "name": "Air conditioning compressor pressure, linear raw value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "min": 0, "max": 131070}
@@ -3227,7 +3311,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_GENERATOR_LOAD_NORMALIZED_VALUE", "name": "Generator load normalized value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
@@ -3241,6 +3325,7 @@
       "request": "2215CD",
       "interval": 5,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_ECT_RADIATOR_OUTLET_V_1", "name": "Coolant temperature at radiator outlet v.1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -3255,6 +3340,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LONGTITUDINAL_ACCELERATION_RAW_VALUE", "name": "Longitudinal acceleration, raw", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
@@ -3268,6 +3354,7 @@
       "request": "2215D0",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_YAW_ACCEL_RAW", "name": "Yaw acceleration, raw value", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
@@ -3282,6 +3369,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VEHICLE_LATERAL_ACCELERATION_RAW_VALUE", "name": "Vehicle lateral acceleration, raw value", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": -327.68, "max": 327.67, "unit": "g"}
@@ -3295,6 +3383,7 @@
       "request": "221610",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_REQ_BRAKE_TQ", "name": "Requested brake torque, auxiliary system", "group": "Control", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
@@ -3306,11 +3395,12 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
-        {"id": "911_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "911_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -3319,11 +3409,12 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
-        {"id": "911_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "911_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -3334,7 +3425,7 @@
       "request": "22166F",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_GAS_T_SENS_1", "name": "Exhaust gas temperature sensor 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -3347,7 +3438,7 @@
       "request": "221670",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_GAS_T_SENS_1_2", "name": "Exhaust gas temperature sensor 1, bank 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -3360,7 +3451,7 @@
       "request": "22167F",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_HEATER_CIRCULATION", "name": "Heater circulation pump, nominal value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -3373,6 +3464,7 @@
       "request": "2216BA",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VLV_LIFT_SYSTEM_VLV", "name": "Valve lift system, valve lift, intake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -3386,6 +3478,7 @@
       "request": "2216BB",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_VLV_LIFT_SYSTEM_VLV_LIFT", "name": "Valve lift system, valve lift, exhaust", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -3399,7 +3492,7 @@
       "request": "2216BE",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_VLV_LIFT_SYSTEM", "name": "Valve lift system, result of last switch, intake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3412,6 +3505,7 @@
       "request": "2216C5",
       "interval": 0.25,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_THROTTLE_REGULATOR", "name": "Throttle regulator nominal value", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 100, "unit": "%"}
@@ -3426,6 +3520,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_CRANKSHAFT_VSS", "name": "Crankshaft speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "rpm"}
@@ -3439,7 +3534,7 @@
       "request": "2216F4",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_PISTON_COOLING", "name": "Piston cooling nozzles, control", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3452,6 +3547,7 @@
       "request": "221711",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_RAT_EVAPORATED_FUEL_ACT", "name": "Ratio between evaporated fuel mass from engine oil and base fuel mass needed, actual", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 781, "divide": 100000, "min": 0, "max": 1.9915}
@@ -3465,6 +3561,7 @@
       "request": "221712",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_RAT_EVAPORATED_FUEL_MAX", "name": "Ratio between evaporated fuel mass from engine oil and base fuel mass needed, maximum", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 83, "divide": 10625, "min": 0, "max": 1.992}
@@ -3478,6 +3575,7 @@
       "request": "221713",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_TOT_MASS_GASOLINE", "name": "Total mass of gasoline and ethyl alcohol in oil", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.021333, "min": 0, "max": 1398.0581}
@@ -3491,6 +3589,7 @@
       "request": "221715",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_TOT_1", "name": "Early ignition counter, total, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3504,6 +3603,7 @@
       "request": "221716",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_TOT_3", "name": "Early ignition counter, total, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3517,6 +3617,7 @@
       "request": "221717",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_TOT_4", "name": "Early ignition counter, total, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3530,6 +3631,7 @@
       "request": "221718",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_TOT_2", "name": "Early ignition counter, total, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3543,6 +3645,7 @@
       "request": "221722",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_CYL_1", "name": "Early ignition counter, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3556,6 +3659,7 @@
       "request": "221723",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_CYL_3", "name": "Early ignition counter, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3569,6 +3673,7 @@
       "request": "221724",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_CYL_4", "name": "Early ignition counter, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3582,6 +3687,7 @@
       "request": "221725",
       "interval": 3600,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_EARLY_IGN_CNT_CYL_2", "name": "Early ignition counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3595,7 +3701,7 @@
       "request": "221740",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_INT_CAM_ADPT_SENS", "name": "Intake camshaft, adaptation sensor tolerance", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -3608,6 +3714,7 @@
       "request": "221743",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_INTEGRATED_MASS_AIR_SINCE", "name": "Integrated mass of air since the first engine start", "group": "Engine", "bit": 0, "bits": 16, "multiply": 8889, "divide": 25000, "min": 0, "max": 23301.6246}
@@ -3621,7 +3728,7 @@
       "request": "22174A",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_CAM_ADPT_BIAS", "name": "Exhaust camshaft, adaptation bias", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -3634,7 +3741,7 @@
       "request": "22174B",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_INT_CAM_ADPT_BIAS", "name": "Intake camshaft, adaptation bias", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -3647,7 +3754,7 @@
       "request": "221755",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_CAM_ADPT_SENS", "name": "Exhaust camshaft, adaptation sensor tolerance", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -3660,6 +3767,7 @@
       "request": "221779",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LONG_TERM_FUEL_TRIM", "name": "Long term fuel trim direct injection at load", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 199997, "divide": 6553500000, "min": 0, "max": 1.9999}
@@ -3673,6 +3781,7 @@
       "request": "22177B",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_LONG_TERM_FUEL_TRIM_PORT", "name": "Long term fuel trim port injection at load", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 199997, "divide": 6553500000, "min": 0, "max": 1.9999}
@@ -3686,6 +3795,7 @@
       "request": "22177D",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_OIL_P_ACT", "name": "Oil pressure, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
@@ -3699,7 +3809,7 @@
       "request": "221800",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_INT_PHASE_DEV_ACT", "name": "Intake phase deviation, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047.9375, "unit": "°"}
       ]
@@ -3712,7 +3822,7 @@
       "request": "22180A",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017],
+      "answeredIn": [2017, 2024],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "911_FUEL_RATE_DIFF_INJ", "name": "Fuel rate difference, injector/sensor", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 19531, "divide": 5000000, "min": -127.9983, "max": 127.9944, "unit": "L"}
@@ -3727,6 +3837,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_OIL_FILL_LEVEL", "name": "Oil fill level", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.06, "min": -1966.08, "max": 1966.02, "unit": "mm"}
       ]
@@ -3740,7 +3851,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2025],
-      "notAnsweredIn": [2018],
+      "notAnsweredIn": [2018, 2024],
       "signals": [
         {"id": "911_TIMING_ANGLE_RETARDATION_CYL_1", "name": "Timing angle retardation cylinder 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.375, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
       ]
@@ -3754,7 +3865,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2025],
-      "notAnsweredIn": [2018],
+      "notAnsweredIn": [2018, 2024],
       "signals": [
         {"id": "911_TIMING_ANGLE_RETARDATION_CYL_2", "name": "Timing angle retardation cylinder 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.375, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
       ]
@@ -3768,7 +3879,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2025],
-      "notAnsweredIn": [2018],
+      "notAnsweredIn": [2018, 2024],
       "signals": [
         {"id": "911_TIMING_ANGLE_RETARDATION_CYL_3", "name": "Timing angle retardation cylinder 3", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.375, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
       ]
@@ -3782,7 +3893,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2025],
-      "notAnsweredIn": [2018],
+      "notAnsweredIn": [2018, 2024],
       "signals": [
         {"id": "911_TIMING_ANGLE_RETARDATION_CYL_4", "name": "Timing angle retardation cylinder 4", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.375, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
       ]
@@ -3796,7 +3907,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_CAM_ADJ_INT_SPEC", "name": "Camshaft adjustment, intake, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -3810,7 +3921,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_CAM_ADJ_INT_ACT", "name": "Camshaft adjustment, intake, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -3824,6 +3935,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_CHARGE_AIR_P_SPECIFIED", "name": "Charge air pressure: specified", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.08, "min": 0, "max": 5242.8}
       ]
@@ -3837,6 +3949,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_CHARGE_AIR_P_ACTUAL", "name": "Charge air pressure: actual", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.08, "min": 0, "max": 5242.8}
       ]
@@ -3850,7 +3963,7 @@
       "interval": 0.25,
       "years": {"from": 2020, "to": 2011},
       "answeredIn": [2005, 2025, 2026],
-      "notAnsweredIn": [2002, 2008, 2022],
+      "notAnsweredIn": [2002, 2008, 2022, 2024],
       "signals": [
         {"id": "911_APP_POS1", "name": "Accelerator pedal position sensor 1", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V", "invalidAtOrAbove": 65}
       ]
@@ -3864,7 +3977,7 @@
       "interval": 0.25,
       "years": {"from": 2020, "to": 2011},
       "answeredIn": [2005, 2025, 2026],
-      "notAnsweredIn": [2002, 2008, 2022],
+      "notAnsweredIn": [2002, 2008, 2022, 2024],
       "signals": [
         {"id": "911_APP_POS2", "name": "Accelerator pedal position sensor 2", "group": "Control.Pedals", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V", "invalidAtOrAbove": 65}
       ]
@@ -3878,7 +3991,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2016, 2017, 2025],
-      "notAnsweredIn": [2018, 2022],
+      "notAnsweredIn": [2018, 2022, 2024],
       "signals": [
         {"id": "911_FUEL_LEVEL_7E0_2206", "name": "Fuel level", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L", "invalidAtOrAbove": 255}
       ]
@@ -3892,6 +4005,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_DPF_SOOT_MASS_CALCULATED", "name": "Particulate filter soot mass calculated", "group": "Engine.DPF", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": -327.68, "max": 327.67}
       ]
@@ -3904,7 +4018,7 @@
       "request": "222927",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TEST_CATALYTIC_CONV_STAT", "name": "Test of catalytic converter status, canceled", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -3918,7 +4032,7 @@
       "request": "22292B",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADPT_THROTTLE_VLV", "name": "Adaptation of throttle valve", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -3932,7 +4046,7 @@
       "request": "222998",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_MANUAL_ENG_STARTS", "name": "Manual engine starts counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3946,7 +4060,7 @@
       "request": "222999",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_AUTOMATIC_ENG_STARTS", "name": "Automatic engine starts counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -3960,7 +4074,7 @@
       "request": "222AE3",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EGT_AFTER_CAT_MODEL_B", "name": "EGT after catalyst, model bank b", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.023438, "add": -273.15, "min": -273, "max": 1262, "unit": "°C"}
       ]
@@ -3974,7 +4088,7 @@
       "interval": 5,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_EXH_GAS_T_CALC_AFTER", "name": "Exhaust gas temperature - calculated after catalyst", "group": "Engine", "bit": 0, "bits": 16, "multiply": 293, "divide": 12500, "add": -273.15, "min": -273.15, "max": 1262.9904, "unit": "°C"}
       ]
@@ -3988,7 +4102,7 @@
       "interval": 0.25,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_ENG_PROTECTION_TQ", "name": "Engine protection, torque limit", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -4001,7 +4115,7 @@
       "request": "22393C",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_KNOCK_SENS_1_TEST", "name": "Knock sensor 1 test", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -4021,7 +4135,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_OIL_LEVEL_STATIC", "name": "Oil level, static measurement", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -127, "min": -127, "max": 3968, "unit": "mm"}
       ]
@@ -4035,6 +4149,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_TIM_DEV_AFTER_CHAIN_1", "name": "Timing deviation after chain replacement, intake bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4048,6 +4163,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_TIM_DEV_AFTER_CHAIN_REPLACEMENT_1", "name": "Timing deviation after chain replacement, exhaust bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4061,6 +4177,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_TIM_DEV_AFTER_OTHER_1", "name": "Timing deviation after other repairs, intake bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4074,6 +4191,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_TIM_DEV_AFTER_OTHER_REPAIRS_INT_1", "name": "Timing deviation after other repairs, intake bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4087,6 +4205,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_TIM_DEV_CURRENT_INT_1", "name": "Timing deviation current value intake bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4099,7 +4218,7 @@
       "request": "224185",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TIM_DEV_CURRENT_EXH_1", "name": "Timing deviation current value exhaust bank 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "°"}
       ]
@@ -4113,6 +4232,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_CHAIN_ELONGATION_NO_1", "name": "Chain elongation, no of valid initial values, intake bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -4126,6 +4246,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2017, 2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_CHAIN_ELONGATION_NO_VALID_1", "name": "Chain elongation, no of valid initial values, exhaust bank 1", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -4138,7 +4259,7 @@
       "request": "22430E",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_NUM_INJECTIONS", "name": "Number of injections", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -4153,7 +4274,7 @@
       "interval": 5,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_MAX_ECU_T", "name": "Maximum ECU temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -4166,7 +4287,7 @@
       "request": "224FF5",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CAM_ADPT_INT_DEV", "name": "Camshaft adaptation, intake deviation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -256, "max": 255.9921, "unit": "°"}
@@ -4181,7 +4302,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_CHAIN_ELONGATION", "name": "Chain elongation outlet, mileage at last adaptation", "group": "Engine", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
@@ -4195,7 +4316,7 @@
       "interval": 1,
       "years": {"from": 2012},
       "answeredIn": [2025],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2024],
       "signals": [
         {"id": "911_CHAIN_ELONGATION_INLET", "name": "Chain elongation inlet, mileage at last adaptation", "group": "Engine", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
@@ -4208,7 +4329,7 @@
       "request": "2251D4",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CYL_BLOCK_T_SENS", "name": "Cylinder block temperature sensor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
@@ -4222,6 +4343,7 @@
       "request": "2251D8",
       "interval": 1,
       "years": {"from": 2012},
+      "answeredIn": [2024],
       "notAnsweredIn": [2017, 2025],
       "signals": [
         {"id": "911_TANK_FILL_LEVEL", "name": "Tank fill level diagnostic reference value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
@@ -4235,7 +4357,7 @@
       "request": "2258D1",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ENG_OIL_LEVEL", "name": "Engine oil level current value", "group": "Engine", "bit": 64, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 100, "unit": "%"}
       ]
@@ -4248,7 +4370,7 @@
       "request": "22F406",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_SHORT_TERM_FUEL_TRIM_1", "name": "Short term fuel trim bank 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"}
       ]
@@ -4261,7 +4383,7 @@
       "request": "22F407",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_LONG_TERM_FUEL_TRIM_1", "name": "Long term fuel trim bank 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"}
       ]
@@ -4274,7 +4396,7 @@
       "request": "22F40C",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_RPM", "name": "Engine RPM", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 7000, "unit": "rpm"}
       ]
@@ -4287,7 +4409,7 @@
       "request": "22F40D",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
@@ -4301,7 +4423,7 @@
       "request": "22F41F",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_RUNTM", "name": "Time since engine start", "description": "How long it's been since the engine started.", "group": "Clocks", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
@@ -4315,7 +4437,7 @@
       "request": "22F421",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_MIL_DIST", "name": "Distance traveled while mil was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
@@ -4329,7 +4451,7 @@
       "request": "22F42F",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FLI_INPUT", "name": "Fuel level input %", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4342,7 +4464,7 @@
       "request": "22F430",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_WARM_UPS", "name": "Number of warm-ups since dtcs cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -4356,7 +4478,7 @@
       "request": "22F431",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_CLR_DIST", "name": "Distance traveled since dtcs cleared", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
@@ -4370,9 +4492,9 @@
       "request": "22F433",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
-        {"id": "911_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "911_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -4383,7 +4505,7 @@
       "request": "22F43C",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXH_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
       ]
@@ -4396,7 +4518,7 @@
       "request": "22F442",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2016, 2017, 2018, 2022, 2025, 2026],
+      "answeredIn": [2016, 2017, 2018, 2022, 2024, 2025, 2026],
       "notAnsweredIn": [2012, 2014],
       "signals": [
         {"id": "911_VPWR", "name": "Control module voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
@@ -4410,7 +4532,7 @@
       "request": "22F446",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AAT_V4", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -4423,7 +4545,7 @@
       "request": "22F449",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ACCEL_PEDAL_POS_1", "name": "Accelerator pedal position 1", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4436,7 +4558,7 @@
       "request": "22F44A",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2017, 2025],
+      "answeredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ACCEL_PEDAL_POS_2", "name": "Accelerator pedal position 2", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4449,7 +4571,7 @@
       "request": "220301",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CTRL_MODULE_T", "name": "Control module temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -4479,7 +4601,7 @@
       "request": "221001",
       "interval": 0.25,
       "years": {"from": 2023},
-      "answeredIn": [2025, 2026],
+      "answeredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h", "invalidAtOrAbove": 255}
       ]
@@ -4492,7 +4614,7 @@
       "request": "221002",
       "interval": 0.25,
       "years": {"from": 2023},
-      "answeredIn": [2025, 2026],
+      "answeredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h", "invalidAtOrAbove": 255}
       ]
@@ -4505,7 +4627,7 @@
       "request": "221003",
       "interval": 0.25,
       "years": {"from": 2023},
-      "answeredIn": [2025, 2026],
+      "answeredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h", "invalidAtOrAbove": 255}
       ]
@@ -4518,7 +4640,7 @@
       "request": "221004",
       "interval": 0.25,
       "years": {"from": 2023},
-      "answeredIn": [2025, 2026],
+      "answeredIn": [2024, 2025, 2026],
       "signals": [
         {"id": "911_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h", "invalidAtOrAbove": 255}
       ]
@@ -4531,7 +4653,7 @@
       "request": "221005",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_VSS_ESP", "name": "Vehicle speed ESP", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
@@ -4545,7 +4667,7 @@
       "request": "221009",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_SPD_OUTPUT", "name": "Speed ​​output", "group": "Movement", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": 0, "max": 7000, "unit": "rpm"}
       ]
@@ -4558,7 +4680,7 @@
       "request": "22100A",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_VSS_TCM_RAW", "name": "Vehicle speed from transmission, raw count", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -4571,7 +4693,7 @@
       "request": "22100B",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_TCM_DRIVER_DEMAND_TORQUE", "name": "Driver demand torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4584,7 +4706,7 @@
       "request": "22100C",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_TCM_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4597,7 +4719,7 @@
       "request": "22100E",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_TCM_ENGINE_TORQUE_LIMITATION", "name": "Engine torque limitation", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4610,7 +4732,7 @@
       "request": "22100F",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_TCM_ENGINE_TORQUE_LOSS", "name": "Engine torque loss", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4623,7 +4745,7 @@
       "request": "221010",
       "interval": 0.25,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_TCM_CONVERTER_LOSS_TORQUE", "name": "Converter loss torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4636,7 +4758,7 @@
       "request": "221011",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADAPTIVE_MODE", "name": "Adaptive mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -4650,7 +4772,7 @@
       "request": "221012",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ID_CURRENT_DRIVING", "name": "ID of current driving program", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -4664,7 +4786,7 @@
       "request": "221013",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CURRENT_TYPE_DRIVER", "name": "Current type of driver counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -4678,7 +4800,7 @@
       "request": "221017",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_ROAD_RESISTANCE", "name": "Road resistance", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 24.9, "divide": 100, "add": -31.6, "min": -31, "max": 31.894, "unit": "%"}
       ]
@@ -4691,7 +4813,7 @@
       "request": "221018",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DRIVING_STRATEGY_MOUNTAIN_FACTOR", "name": "Driving strategy mountain factor", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4704,7 +4826,7 @@
       "request": "221019",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DRIVING_STRATEGY_SPORT_FACTOR", "name": "Driving strategy sport factor", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 1700, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4717,7 +4839,7 @@
       "request": "221021",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TCM_DRAG_TQ", "name": "Transmission drag torque", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
@@ -4731,7 +4853,7 @@
       "request": "221022",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TCM_TQ_LOSSES", "name": "Transmission torque losses", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
@@ -4745,7 +4867,7 @@
       "request": "221024",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CURRENT_N215_P_CTRL_1", "name": "Current N215 pressure control valve 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -4758,7 +4880,7 @@
       "request": "221025",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CURRENT_N218_P_CTRL_4", "name": "Current N218 pressure control valve 4", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -4771,7 +4893,7 @@
       "request": "221026",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CURRENT_N216_P_CTRL_2", "name": "Current N216 pressure control valve 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
@@ -4785,7 +4907,7 @@
       "request": "221027",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CURRENT_N233_P_CTRL_5", "name": "Current N233 pressure control valve 5", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
@@ -4799,7 +4921,7 @@
       "request": "22102A",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CLU_CENTER_CENTRAL_T", "name": "Clutch center central plate temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
@@ -4813,7 +4935,7 @@
       "request": "22102B",
       "interval": 5,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_T", "name": "Clutch 1 temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
       ]
@@ -4826,7 +4948,7 @@
       "request": "22102C",
       "interval": 5,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_2_T", "name": "Clutch 2 temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
       ]
@@ -4839,7 +4961,7 @@
       "request": "22102D",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ200_P_SUPPLY_ACTUAL_P_AD_VALUE", "name": "Pressure supply actual pressure analog digital value", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
       ]
@@ -4852,7 +4974,7 @@
       "request": "22102E",
       "interval": 1,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_M009_DES_SOLENOID_10", "name": "M009, desired solenoid out 10", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -4870,7 +4992,7 @@
       "request": "221033",
       "interval": 30,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TIME_SINCE_SHIFT", "name": "Time since shift", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 30, "min": 0, "max": 7650, "unit": "ms"}
@@ -4884,7 +5006,7 @@
       "request": "221037",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CURRENT_SOLENOID", "name": "Current solenoid", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -4897,7 +5019,7 @@
       "request": "22103A",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TIME_AFTERRUN", "name": "Time in run-on after shutdown", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
       ]
@@ -4910,7 +5032,7 @@
       "request": "22103B",
       "interval": 30,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_TIME_SINCE_RESET", "name": "Time since reset", "group": "Engine", "bit": 0, "bits": 8, "multiply": 30, "min": 0, "max": 7650, "unit": "ms"}
@@ -4924,7 +5046,7 @@
       "request": "22103D",
       "interval": 30,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ODO_3", "name": "Odometer", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
@@ -4937,7 +5059,7 @@
       "request": "22105A",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_ADAPT_BASIC_CHARAC_POINT_1_MOMENT", "name": "Clutch 1 adaptation basic characteristic point 1 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4950,7 +5072,7 @@
       "request": "22105C",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_ADAPT_BASIC_CHARAC_POINT_2_MOMENT", "name": "Clutch 1 adaptation basic characteristic point 2 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4963,7 +5085,7 @@
       "request": "22105D",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_ADAPT_BASIC_CHAR_POINT_3_POS", "name": "Clutch 1 adaptation basic characteristic point 3 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -4976,7 +5098,7 @@
       "request": "22105E",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_ADAPT_BASIC_CHARAC_POINT_3_MOMENT", "name": "Clutch 1 adaptation basic characteristic point 3 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -4989,7 +5111,7 @@
       "request": "221061",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_DES_TQ_RAW", "name": "Desired torque raw", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
@@ -5003,7 +5125,7 @@
       "request": "221062",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_FRICTION_VALUE_CORRECTION_FACTOR", "name": "Clutch 1 friction value correction factor", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.09766, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -5016,7 +5138,7 @@
       "request": "221063",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_1_CHAR_CURVE_SHIFT", "name": "Clutch 1 characteristic curve shift", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 9.8, "divide": 10000, "min": -32.11, "max": 32.111, "unit": "mm"}
       ]
@@ -5029,7 +5151,7 @@
       "request": "221064",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ANALYSIS_CLU_1_MAX_T", "name": "Analysis, clutch 1, maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
@@ -5043,7 +5165,7 @@
       "request": "221065",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_CLU_1_T_TIME_RANGE_0", "name": "Clutch 1 temperature time in range 0", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
@@ -5057,7 +5179,7 @@
       "request": "221066",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ANALYSIS_CLU_1_T_1", "name": "Analysis, clutch 1 temperature time in range 1", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
@@ -5071,7 +5193,7 @@
       "request": "221067",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ANALYSIS_CLU_1_T_2", "name": "Analysis, clutch 1 temperature time in range 2", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
@@ -5085,7 +5207,7 @@
       "request": "221068",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ANALYSIS_CLU_1_T_3", "name": "Analysis, clutch 1 temperature time in range 3", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
@@ -5099,7 +5221,7 @@
       "request": "22106A",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_RESERVE_TQ", "name": "Reserve torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -5112,7 +5234,7 @@
       "request": "221071",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_CLUTCH_2_ADAPT_BASIC_CHARAC_POINT_2_MOMENT", "name": "Clutch 2 adaptation basic characteristic point 2 moment", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -5125,7 +5247,7 @@
       "request": "2210F9",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DL382_CLUTCH_1_ACTUAL_P_RAW_VALUE", "name": "Clutch 1 actual pressure raw value", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "add": -1, "min": -1, "max": 24.5, "unit": "bar"}
       ]
@@ -5138,7 +5260,7 @@
       "request": "2210FA",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DL382_CLUTCH_2_ACTUAL_P_RAW_VALUE", "name": "Clutch 2 actual pressure raw value", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "add": -1, "min": -1, "max": 24.5, "unit": "bar"}
       ]
@@ -5151,7 +5273,7 @@
       "request": "221100",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADPT_INFLATION_TIME", "name": "Torque converter lockup clutch fill time adaptation", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"}
@@ -5165,7 +5287,7 @@
       "request": "221101",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADPT_CNT_TSF_LOCKUP", "name": "Torque converter lockup clutch adaptation count", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -5179,7 +5301,7 @@
       "request": "221102",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADPT_INFLATION", "name": "Adaptation inflation current PF lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "mA"}
@@ -5193,7 +5315,7 @@
       "request": "221103",
       "interval": 3600,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ADPT_CNT_PF_LOCKUP", "name": "Adaptation counter PF lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
@@ -5207,7 +5329,7 @@
       "request": "22110A",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_LOWER_ADAPTED_COUPLING_POINT_K2_FROM_MICRO_SLIP_PATH_ADAPT", "name": "Lower adapted coupling point K2 from micro-slip path adaptation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5220,7 +5342,7 @@
       "request": "22110B",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_UPPER_ADAPTED_COUPLING_POINT_K1_FROM_MACRO_SLIP_PATH_ADAPT", "name": "Upper adapted coupling point K1 from macro slip path adaptation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5233,7 +5355,7 @@
       "request": "22110C",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_UPPER_ADAPTED_COUPLING_POINT_K2_FROM_MACRO_SLIP_PATH_ADAPT", "name": "Upper adapted coupling point K2 from macro slip path adaptation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5246,7 +5368,7 @@
       "request": "221110",
       "interval": 1,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_WORKING_HOURS", "name": "Working hours", "group": "Transmission", "bit": 0, "bits": 32, "byteOrder": "little", "multiply": 2, "divide": 360000, "min": 0, "max": 23860.929}
       ]
@@ -5259,7 +5381,7 @@
       "request": "221111",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_OP_TIME_T_RANGE_1", "name": "Operating time, temperature range 1", "group": "Trips", "bit": 0, "bits": 32, "byteOrder": "little", "multiply": 238607, "divide": 42949672950, "min": 0, "max": 23860.7, "unit": "h"},
@@ -5278,7 +5400,7 @@
       "request": "221117",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_REACHED_MAXIMUM_T", "name": "Reached maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -5292,7 +5414,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_1_LO_ADPT_POINT", "name": "Clutch 1 lower adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -5306,7 +5428,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_2_LO_ADPT_POINT", "name": "Clutch 2 lower adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -5320,7 +5442,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_1_HI_ADPT_POINT", "name": "Clutch 1 upper adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -5334,7 +5456,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_2_HI_ADPT_POINT", "name": "Clutch 2 upper adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -5347,7 +5469,7 @@
       "request": "221133",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_I_UPPER_P_POINT_CLUTCH_2_FROM_I_TO_P_ADAPT", "name": "Current upper pressure point clutch 2 from current to pressure adaptation", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5360,7 +5482,7 @@
       "request": "221138",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_ENGAGED_POS_SIDE_A_GEAR_SELECTOR_1_3", "name": "Engaged position side a gear selector 1-3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5373,7 +5495,7 @@
       "request": "221142",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_NEUTRAL_POS_GEAR_SELECTOR_5_N", "name": "Neutral position gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5386,7 +5508,7 @@
       "request": "221144",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_1_3", "name": "Engaged position side b gear selector 1-3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5399,7 +5521,7 @@
       "request": "221145",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_2_4", "name": "Engaged position side b gear selector 2-4", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5412,7 +5534,7 @@
       "request": "221146",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_5_N", "name": "Engaged position side b gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5425,7 +5547,7 @@
       "request": "221147",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_ENGAGED_POS_SIDE_B_GEAR_SELECTOR_6_R", "name": "Engaged position side b gear selector 6 and reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5438,7 +5560,7 @@
       "request": "221148",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_SYNCHRONOUS_POS_SIDE_B_GEAR_SELECTOR_1_3", "name": "Synchronous position side b gear selector 1-3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5451,7 +5573,7 @@
       "request": "221149",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_SYNCHRONOUS_POS_SIDE_B_GEAR_SELECTOR_2_4", "name": "Synchronous position side b gear selector 2-4", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5464,7 +5586,7 @@
       "request": "22114A",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_SYNCHRONOUS_POS_SIDE_B_GEAR_SELECTOR_5_N", "name": "Synchronous position side b gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5477,7 +5599,7 @@
       "request": "22114B",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_SYNCHRONOUS_POS_SIDE_B_GEAR_SELECTOR_6_R", "name": "Synchronous position side b gear selector 6 and reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -5490,7 +5612,7 @@
       "request": "221154",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_NUM_TIMES_PERMITTED_T", "name": "Number of times the permitted centrifugal oil temperature has been exceeded", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -5504,7 +5626,7 @@
       "request": "221155",
       "interval": 5,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_NUM_WARN_HI_CENTRIF_T", "name": "Number of warnings due to increased centrifugal oil temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
@@ -5518,7 +5640,7 @@
       "request": "221156",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_CLUTCH_ADAPT_VALUES_IKP0_K1", "name": "Clutch adaptation values initial kill point 0 for K1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5531,7 +5653,7 @@
       "request": "221157",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_CLUTCH_ADAPT_VALUES_IKP0_K2", "name": "Clutch adaptation values initial kill point 0 for K2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5544,7 +5666,7 @@
       "request": "221158",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_CLUTCH_ADAPT_VALUES_LOWER_I_POINT_ADAPT_K1", "name": "Clutch adaptation values lower current point adaptation K1", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5557,7 +5679,7 @@
       "request": "221159",
       "interval": 3600,
       "years": {"from": 2020},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "signals": [
         {"id": "911_DQ250_CLUTCH_ADAPT_VALUES_LOWER_I_POINT_ADAPT_K2", "name": "Clutch adaptation values lower current point adaptation K2", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -5571,6 +5693,7 @@
       "interval": 3600,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_DQ250_GEAR_SELECTOR_SYNCHRONOUS_POS_G1", "name": "Gear selector synchronous position G1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": 0, "max": 327.67, "unit": "%"}
       ]
@@ -5584,6 +5707,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_DQ250_GEAR_SELECTOR_SYNCHRONOUS_POS_G6", "name": "Gear selector synchronous position G6", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": 0, "max": 327.67, "unit": "%"}
       ]
@@ -5597,6 +5721,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_DQ250_GEAR_SELECTOR_SYNCHRONOUS_POS_G_R", "name": "Gear selector synchronous position, reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": 0, "max": 327.67, "unit": "%"}
       ]
@@ -5610,6 +5735,7 @@
       "interval": 1,
       "years": {"from": 2020},
       "answeredIn": [2025],
+      "notAnsweredIn": [2024],
       "signals": [
         {"id": "911_DQ250_CORRECTION_VALUES_MAIN_P_ADAPT_LOW_P_ON_CLUTCH_1", "name": "Correction values for main press adaptation: low press on clutch 1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -5623,7 +5749,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_T", "name": "Clutch temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -5637,7 +5763,7 @@
       "interval": 1,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_1_NOMINAL_P", "name": "Clutch 1 nominal pressure", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "bar"}
       ]
@@ -5650,7 +5776,7 @@
       "request": "2217FC",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TQ_CONV_TIME_T_RANGE_1", "name": "Torque converter time in temperature range 1", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "min"},
         {"id": "911_TQ_CONV_TIME_T_RANGE_2", "name": "Torque converter time in temperature range 2", "group": "Trips", "bit": 24, "bits": 24, "min": 0, "max": 16777215, "unit": "min"},
@@ -5670,7 +5796,7 @@
       "request": "2217FD",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_CLU_OVERHEATING_CLU", "name": "Clutch overheating, clutch", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5683,7 +5809,7 @@
       "request": "222105",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TQ_TRANSMITTING", "name": "Torque transmitting function, ratio", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
       ]
@@ -5696,7 +5822,7 @@
       "request": "222106",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_VSS_HR", "name": "Vehicle speed, HR", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
       ]
@@ -5709,7 +5835,7 @@
       "request": "222108",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_DRIVING_RES_INDEX", "name": "Driving resistance index", "group": "Engine", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127}
       ]
@@ -5722,7 +5848,7 @@
       "request": "22210D",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_DRIVING_MODE_SENS", "name": "Driving mode sensor, hall sensor a", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5735,7 +5861,7 @@
       "request": "22210E",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_DRIVING_POS", "name": "Driving position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5748,7 +5874,7 @@
       "request": "222115",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_DYNAMIC_SHIFT", "name": "Dynamic shift program", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5761,7 +5887,7 @@
       "request": "222116",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ACCEL", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "m/s²"}
       ]
@@ -5774,7 +5900,7 @@
       "request": "222117",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_EXCESSIVE_T", "name": "Excessive temperature protection", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5787,7 +5913,7 @@
       "request": "222118",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ACCEL_DECCELERATION", "name": "Acceleration or deceleration mode", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5800,7 +5926,7 @@
       "request": "222119",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TQ_FACTOR", "name": "Torque factor", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5813,7 +5939,7 @@
       "request": "22211A",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_MAX_PERMISSIBLE_ENG", "name": "Max permissible engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -5826,7 +5952,7 @@
       "request": "222130",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_TQ_CONV", "name": "Torque converter amplification", "group": "Transmission", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55}
       ]
@@ -5840,7 +5966,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_SPEC_TQ_CLU_1_DATA", "name": "Specified torque clutch 1 - data", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "Nm"}
       ]
@@ -5854,7 +5980,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_SPEC_TQ_CLU_2_DATA", "name": "Specified torque clutch 2 - data", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "Nm"}
       ]
@@ -5867,7 +5993,7 @@
       "request": "22282C",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ROUTE_DATA_ACTIVE", "name": "Route data, active", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5937,7 +6063,7 @@
       "interval": 5,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ATF_T_2", "name": "Transmission fluid temperature 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -5951,7 +6077,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_LAUNCH_CTRL_CNT_CLU_1", "name": "Launch control counter, clutch 1", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -5965,7 +6091,7 @@
       "interval": 3600,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_LAUNCH_CTRL_CNT", "name": "Launch control counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -5978,7 +6104,7 @@
       "request": "224E76",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AUX_HYDRAULIC_PMP", "name": "Aux. hydraulic pump, current", "group": "Engine", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "A"}
       ]
@@ -5991,7 +6117,7 @@
       "request": "2251A6",
       "interval": 5,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AUX_HYDRAULIC_PMP_T", "name": "Aux. hydraulic pump internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -6004,7 +6130,7 @@
       "request": "2251A7",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AUX_HYDRAULIC_PMP_V", "name": "Aux. hydraulic pump voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
       ]
@@ -6017,7 +6143,7 @@
       "request": "227084",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FILL_P_CLU", "name": "Fill pressure, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -6030,7 +6156,7 @@
       "request": "227085",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_CLU", "name": "Adaptation counter, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6043,7 +6169,7 @@
       "request": "227086",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FAST_FILL_TIME_CLU", "name": "Fast fill time, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -6056,7 +6182,7 @@
       "request": "227087",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_FAST_FILL", "name": "Adaptation counter, fast fill time, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6069,7 +6195,7 @@
       "request": "227088",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FILL_P_CLU_B", "name": "Fill pressure, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -6082,7 +6208,7 @@
       "request": "227089",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_CLU_B", "name": "Adaptation counter, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6095,7 +6221,7 @@
       "request": "22708A",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FAST_FILL_TIME_CLU_B", "name": "Fast fill time, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -6108,7 +6234,7 @@
       "request": "22708B",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_FAST_FILL_B", "name": "Adaptation counter, fast fill time, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6121,7 +6247,7 @@
       "request": "22708C",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FILL_P_CLU_C", "name": "Fill pressure, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -6134,7 +6260,7 @@
       "request": "22708D",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_CLU_C", "name": "Adaptation counter, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6147,7 +6273,7 @@
       "request": "22708E",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FAST_FILL_TIME_CLU_C", "name": "Fast fill time, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -6160,7 +6286,7 @@
       "request": "22708F",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_FAST_FILL_C", "name": "Adaptation counter, fast fill time, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6173,7 +6299,7 @@
       "request": "227090",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FILL_P_CLU_D", "name": "Fill pressure, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -6186,7 +6312,7 @@
       "request": "227091",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_CLU_D", "name": "Adaptation counter, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6199,7 +6325,7 @@
       "request": "227092",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FAST_FILL_TIME_CLU_D", "name": "Fast fill time, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -6212,7 +6338,7 @@
       "request": "227093",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_FAST_FILL_D", "name": "Adaptation counter, fast fill time, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6225,7 +6351,7 @@
       "request": "227094",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FILL_P_CLU_E", "name": "Fill pressure, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -6238,7 +6364,7 @@
       "request": "227095",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_CLU_E", "name": "Adaptation counter, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6251,7 +6377,7 @@
       "request": "227096",
       "interval": 1,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_FAST_FILL_TIME_CLU_E", "name": "Fast fill time, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -6264,7 +6390,7 @@
       "request": "227097",
       "interval": 3600,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_ADPT_CNT_FAST_FILL_E", "name": "Adaptation counter, fast fill time, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6277,7 +6403,7 @@
       "request": "2270D1",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_SHIFT_PROCCESS_TGT", "name": "Shift in progress, target gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "911_SHIFT_PROCCESS", "name": "Shift in progress, selected gear", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -6291,7 +6417,7 @@
       "request": "2270D6",
       "interval": 0.25,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_AUX_HYDRAULIC_PMP_RPM", "name": "Aux. hydraulic pump RPM", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
       ]
@@ -6305,7 +6431,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_INPUT_SHFT_SPD_1", "name": "Input shaft speed 1", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "add": -1, "min": -32769, "max": 32766, "unit": "rpm"}
       ]
@@ -6319,7 +6445,7 @@
       "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2012},
-      "notAnsweredIn": [2017, 2025],
+      "notAnsweredIn": [2017, 2024, 2025],
       "signals": [
         {"id": "911_INPUT_SHFT_SPD_2", "name": "Input shaft speed 2", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "add": -1, "min": -32769, "max": 32766, "unit": "rpm"}
       ]
@@ -6332,7 +6458,7 @@
       "request": "22F40D",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
@@ -6346,7 +6472,7 @@
       "request": "22F449",
       "interval": 0.25,
       "years": {"from": 2012},
-      "answeredIn": [2025],
+      "answeredIn": [2024, 2025],
       "notAnsweredIn": [2017],
       "signals": [
         {"id": "911_ACCEL_PEDAL_POS", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}

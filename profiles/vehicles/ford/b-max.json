@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-B-Max",
     "file": "signalsets/v3/default.json",
-    "revision": "43cbecad426dfc88ce053a133f83576f410d986c",
+    "revision": "4d6a3ec8170cc3f3772032fd77af222b65775e86",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -580,7 +580,7 @@
       "request": "220353",
       "interval": 5,
       "signals": [
-        {"id": "BMAX_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "BMAX_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1306,7 +1306,7 @@
       "request": "2209DB",
       "interval": 1,
       "signals": [
-        {"id": "BMAX_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "BMAX_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1328,7 +1328,7 @@
       "request": "221127",
       "interval": 1,
       "signals": [
-        {"id": "BMAX_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "BMAX_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -1735,7 +1735,7 @@
       "request": "221E12",
       "interval": 0.25,
       "signals": [
-        {"id": "BMAX_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "BMAX_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -1788,9 +1788,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "BMAX_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "BMAX_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -1799,9 +1799,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "BMAX_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "BMAX_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -1889,7 +1889,7 @@
       "request": "22F40B",
       "interval": 0.25,
       "signals": [
-        {"id": "BMAX_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "BMAX_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

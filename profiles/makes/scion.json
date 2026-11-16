@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Scion",
     "file": "signalsets/v3/default.json",
-    "revision": "68fc01951dc77753b051b5046a604d2048863067",
+    "revision": "8840b1e806d96cc2eea24950d035b9620ac4d028",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -3987,6 +3987,7 @@
         {"id": "SCION_TAIL_CANCEL_LIGHT", "name": "Tail cancel SW", "group": "Lights", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SCION_P_SEATBELT_BUCKLE_LIGHT", "name": "P-seatbelt buckle SW", "group": "Lights", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SCION_CHECK_ENGINE_LIGHT", "name": "Check engine SW", "group": "Lights", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "SCION_CHECK_ENGINE", "name": "Check engine", "group": "Control", "metric": "checkEngineLightOn", "bit": 15, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SCION_EOP_LIGHT", "name": "Oil pressure switch", "group": "Lights", "bit": 35, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -4983,8 +4984,10 @@
         {"id": "SCION_MAF_V3", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "min": 0, "max": 655.35, "unit": "g/s"},
         {"id": "SCION_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "SCION_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 40, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "SCION_MAP_7E0_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "SCION_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SCION_ATMOSPHERE_PRESSURE_V2", "name": "Atmospheric pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "SCION_INTAKE_AIR_7E0_V3", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SCION_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "SCION_COOLANT_TEMP_7E0_V2", "name": "Coolant temperature", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SCION_ECT_7E0", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
@@ -5230,7 +5233,7 @@
         {"id": "SCION_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "SCION_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
         {"id": "SCION_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "SCION_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "SCION_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "metric": "cruiseActive", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "SCION_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SCION_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "SCION_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},

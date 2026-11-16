@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Dodge-Dakota",
     "file": "signalsets/v3/default.json",
-    "revision": "b97ec34b6dc8922be7e4db72e6ad1633b489119b",
+    "revision": "2948ae0c6f0625dc1c41caf81eb0b57475764c73",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -247,7 +247,7 @@
       "request": "220109",
       "interval": 1,
       "signals": [
-        {"id": "DAKOTA_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
+        {"id": "DAKOTA_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "kPa"}
       ]
     },
     {
@@ -369,7 +369,7 @@
       "request": "2201FF",
       "interval": 5,
       "signals": [
-        {"id": "DAKOTA_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
+        {"id": "DAKOTA_IAT_01FF", "name": "Intake manifold air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 8, "bits": 8, "add": -64, "min": -64, "max": 191, "unit": "°C"}
       ]
     },
     {
@@ -1297,11 +1297,11 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "225503",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "notAnsweredIn": [2006],
       "signals": [
-        {"id": "DAKOTA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REAR", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Rear", "13": "Park"}}
+        {"id": "DAKOTA_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 4, "bits": 4, "values": {"0": "NEUTRAL", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "11": "REVERSE", "13": "PARK"}, "valueDescriptions": {"0": "Neutral", "1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "11": "Reverse", "13": "Park"}}
       ]
     },
     {

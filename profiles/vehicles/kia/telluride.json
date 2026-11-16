@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Kia-Telluride",
     "file": "signalsets/v3/default.json",
-    "revision": "90b0e5177468d1e7ab6820b7cfb8cf4f51b7fb4f",
+    "revision": "a08c89bc31fc4b8f97db9cba2f065fbba5c35164",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -286,7 +286,7 @@
       "interval": 1,
       "answeredIn": [2020, 2021, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "TELLURIDE_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"},
+        {"id": "TELLURIDE_IAT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"},
         {"id": "TELLURIDE_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 272, "bits": 8, "divide": 1.3333, "add": -48, "min": 0, "max": 143.254781, "unit": "°C"}
       ]
     },
@@ -358,13 +358,13 @@
       "bus": "can11",
       "tx": "7E1",
       "request": "2201A4",
-      "interval": 1,
+      "interval": 0.25,
       "notAnsweredIn": [2020, 2021, 2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "TELLURIDE_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
         {"id": "TELLURIDE_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
         {"id": "TELLURIDE_CLUTCH_1_T", "name": "Clutch #1 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 232, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
-        {"id": "TELLURIDE_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"}
+        {"id": "TELLURIDE_CLUTCH_2_T", "name": "Clutch #2 temperature", "description": "Part of the dual clutch transition", "group": "Transmission", "bit": 248, "bits": 16, "multiply": 2, "add": -40, "min": -40, "max": 300, "unit": "°C"},
+        {"id": "TELLURIDE_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     },
     {

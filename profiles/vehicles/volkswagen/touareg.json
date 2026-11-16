@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Volkswagen-Touareg",
     "file": "signalsets/v3/default.json",
-    "revision": "3a3e2fbd005c062c1d9680452a04c114a54321eb",
+    "revision": "b19bc6c84656e1887f9dcd281216d4b325e95aae",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -2659,9 +2659,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "TOUAREG_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119}
+        {"id": "TOUAREG_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -3378,7 +3378,7 @@
       "request": "22149E",
       "interval": 5,
       "signals": [
-        {"id": "TOUAREG_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "TOUAREG_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -3541,7 +3541,7 @@
       "request": "221509",
       "interval": 1,
       "signals": [
-        {"id": "TOUAREG_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "kPa"}
+        {"id": "TOUAREG_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 250, "min": 0, "max": 262, "unit": "kPa"}
       ]
     },
     {
@@ -3791,9 +3791,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "TOUAREG_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
+        {"id": "TOUAREG_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "m/s²"}
       ]
     },
     {
@@ -3802,9 +3802,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "TOUAREG_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "m/s²"}
+        {"id": "TOUAREG_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "m/s²"}
       ]
     },
     {
@@ -4987,7 +4987,7 @@
       "request": "22F433",
       "interval": 1,
       "signals": [
-        {"id": "TOUAREG_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "TOUAREG_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -5818,11 +5818,11 @@
       "tx": "7E1",
       "rx": "7E9",
       "request": "22210F",
-      "interval": 2,
+      "interval": 0.25,
       "answeredIn": [2019, 2021, 2022],
       "notAnsweredIn": [2005],
       "signals": [
-        {"id": "TOUAREG_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "TOUAREG_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "3": "1", "4": "2", "5": "3", "6": "4", "7": "5", "8": "6", "9": "7", "10": "8"}, "valueDescriptions": {"1": "Reverse", "3": "First gear", "4": "Second gear", "5": "Third gear", "6": "Fourth gear", "7": "Fifth gear", "8": "Sixth gear", "9": "Seventh gear", "10": "Eighth gear"}}
       ]
     },
     {

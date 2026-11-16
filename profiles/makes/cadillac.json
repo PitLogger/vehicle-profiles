@@ -8,7 +8,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Cadillac",
     "file": "signalsets/v3/default.json",
-    "revision": "0702edf362b85b155b8c007ac304991f98ce9774",
+    "revision": "04136fb1aef1077cbbf47d403269f36e77626e83",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -21,12 +21,15 @@
     {"tx": "7E6", "type": "abs"},
     {"tx": "7E7", "type": "battery"},
     {"tx": "DA11", "rx": "2AF111", "type": "engine"},
+    {"tx": "DA17", "type": "motor"},
     {"tx": "DA18", "type": "transmission"},
     {"tx": "DA18", "rx": "2AF118", "type": "transmission"},
     {"tx": "DA1A", "type": "cluster"},
     {"tx": "DA1A", "rx": "2AF11A", "type": "cluster"},
+    {"tx": "DA1D", "type": "motor"},
     {"tx": "DA28", "type": "abs"},
     {"tx": "DA28", "rx": "2AF128", "type": "abs"},
+    {"tx": "DA40", "type": "bodyControl"},
     {"tx": "DA40", "rx": "40", "type": "bodyControl"},
     {"tx": "DACB", "type": "battery"}
   ],
@@ -1261,7 +1264,8 @@
       "interval": 1,
       "flowControl": true,
       "signals": [
-        {"id": "CADILLAC_BP_ACT_7E0", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
+        {"id": "CADILLAC_BP_ACT_7E0", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"},
+        {"id": "CADILLAC_BP_ACT_V2", "name": "Boost pressure: actual", "group": "Engine", "metric": "boostPressure", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
       ]
     },
     {
@@ -2488,7 +2492,7 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "CADILLAC_CURRENT_GEAR_V2", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
+        {"id": "CADILLAC_CURRENT_GEAR_V2", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
       ]
     },
     {
@@ -6213,6 +6217,7 @@
       "flowControl": true,
       "signals": [
         {"id": "CADILLAC_BP_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"},
+        {"id": "CADILLAC_BP_ACT_DA11", "name": "Boost pressure: actual", "group": "Engine", "metric": "boostPressure", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"},
         {"id": "CADILLAC_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "kPa"}
       ]
     },
@@ -6620,9 +6625,9 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "CADILLAC_CURRENT_GEAR_DA18", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252},
-        {"id": "CADILLAC_CURRENT_GEAR_2", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "NEUTRAL", "2": "PARK", "3": "REVERSE", "4": "D1", "5": "D2", "6": "D3", "7": "D4", "8": "D5", "9": "D6", "10": "D7", "11": "D8", "12": "D9", "13": "D10"}, "valueDescriptions": {"1": "Neutral", "2": "Park", "3": "Reverse", "4": "Drive, gear 1", "5": "Drive, gear 2", "6": "Drive, gear 3", "7": "Drive, gear 4", "8": "Drive, gear 5", "9": "Drive, gear 6", "10": "Drive, gear 7", "11": "Drive, gear 8", "12": "Drive, gear 9", "13": "Drive, gear 10"}},
-        {"id": "CADILLAC_GEAR", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "NEUTRAL", "2": "PARK", "3": "REVERSE", "4": "D1", "5": "D2", "6": "D3", "7": "D4", "8": "D5", "9": "D6", "10": "D7", "11": "D8"}, "valueDescriptions": {"1": "Neutral", "2": "Park", "3": "Reverse", "4": "Drive, gear 1", "5": "Drive, gear 2", "6": "Drive, gear 3", "7": "Drive, gear 4", "8": "Drive, gear 5", "9": "Drive, gear 6", "10": "Drive, gear 7", "11": "Drive, gear 8"}}
+        {"id": "CADILLAC_CURRENT_GEAR_DA18", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252},
+        {"id": "CADILLAC_CURRENT_GEAR_2", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"1": "NEUTRAL", "2": "PARK", "3": "REVERSE", "4": "D1", "5": "D2", "6": "D3", "7": "D4", "8": "D5", "9": "D6", "10": "D7", "11": "D8", "12": "D9", "13": "D10"}, "valueDescriptions": {"1": "Neutral", "2": "Park", "3": "Reverse", "4": "Drive, first gear", "5": "Drive, second gear", "6": "Drive, third gear", "7": "Drive, fourth gear", "8": "Drive, fifth gear", "9": "Drive, sixth gear", "10": "Drive, seventh gear", "11": "Drive, eighth gear", "12": "Drive, ninth gear", "13": "Drive, tenth gear"}},
+        {"id": "CADILLAC_GEAR", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"1": "NEUTRAL", "2": "PARK", "3": "REVERSE", "4": "D1", "5": "D2", "6": "D3", "7": "D4", "8": "D5", "9": "D6", "10": "D7", "11": "D8"}, "valueDescriptions": {"1": "Neutral", "2": "Park", "3": "Reverse", "4": "Drive, first gear", "5": "Drive, second gear", "6": "Drive, third gear", "7": "Drive, fourth gear", "8": "Drive, fifth gear", "9": "Drive, sixth gear", "10": "Drive, seventh gear", "11": "Drive, eighth gear"}}
       ]
     },
     {

@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Porsche-Panamera",
     "file": "signalsets/v3/default.json",
-    "revision": "6331177a2ca97dccad57ea99f46148ffbabc6927",
+    "revision": "f8bafc9144244a263ee9b67ed57d44a14dadd69c",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -903,7 +903,7 @@
       "flowControl": true,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "PANAMERA_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -2648,10 +2648,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "PANAMERA_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -3654,7 +3654,7 @@
       "flowControl": true,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "PANAMERA_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -3726,7 +3726,7 @@
       "interval": 0.25,
       "answeredIn": [2017, 2026],
       "signals": [
-        {"id": "PANAMERA_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "PANAMERA_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -4127,10 +4127,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "PANAMERA_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -4165,10 +4165,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "PANAMERA_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -5114,7 +5114,7 @@
       "interval": 1,
       "answeredIn": [2017],
       "signals": [
-        {"id": "PANAMERA_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "PANAMERA_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -6650,7 +6650,7 @@
       "interval": 1,
       "notAnsweredIn": [2017, 2026],
       "signals": [
-        {"id": "PANAMERA_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "2": "PARK", "3": "DRIVE"}, "valueDescriptions": {"1": "Reverse", "2": "Park", "3": "Drive"}}
+        {"id": "PANAMERA_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"1": "REVERSE", "2": "PARK", "3": "DRIVE"}, "valueDescriptions": {"1": "Reverse", "2": "Park", "3": "Drive"}}
       ]
     },
     {

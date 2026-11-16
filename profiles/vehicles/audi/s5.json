@@ -22,7 +22,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Audi-S5",
     "file": "signalsets/v3/default.json",
-    "revision": "a76cc0c6a8bfe205b9082db30bb2fed8ae3e8cc7",
+    "revision": "76af1c77ce67ccb3414e394e7df17eb37af0fc61",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -742,7 +742,7 @@
       "request": "220530",
       "interval": 0.5,
       "flowControl": true,
-      "notAnsweredIn": [2024],
+      "notAnsweredIn": [2022, 2024],
       "signals": [
         {"id": "S5_TRIP_USE_SHORT", "name": "Trip consumption, short", "group": "Trips", "bit": 238, "bits": 18, "signed": true, "divide": 1000, "min": -131, "max": 131, "unit": "kWh/100mi"}
       ]
@@ -1371,8 +1371,8 @@
       "rx": "7E8",
       "request": "22028D",
       "interval": 5,
-      "answeredIn": [2017, 2023, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2023, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_ENG_CTRL_MODULE_T", "name": "Control module temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -40, "max": 150, "unit": "°C"}
       ]
@@ -1398,9 +1398,9 @@
       "request": "221001",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
-        {"id": "S5_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
+        {"id": "S5_IAT_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
     {
@@ -1473,7 +1473,7 @@
       "request": "22100C",
       "interval": 30,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_PQ35_FUEL_LVL_2", "name": "Fuel level variant", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L"}
       ]
@@ -1498,8 +1498,7 @@
       "request": "221010",
       "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1512,7 +1511,7 @@
       "request": "221017",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_A_C_REFRIGERANT_PRES", "name": "A/C refrigerant pressure", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 2, "min": -65536, "max": 65534}
       ]
@@ -1524,7 +1523,7 @@
       "rx": "7E8",
       "request": "221018",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLT_FAN_REQ_AC", "name": "Coolant fan, requested by A/C", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 12207, "divide": 1000000, "min": -399.9989, "max": 100, "unit": "%"}
       ]
@@ -1537,7 +1536,7 @@
       "request": "22101A",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_A_C_COMPRESSOR_TORQUE", "name": "A/C compressor torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1550,7 +1549,7 @@
       "request": "22101B",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_GENERATOR_TORQUE_REQUEST", "name": "Generator torque request", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1563,7 +1562,7 @@
       "request": "22101C",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_GENERATOR_LOAD_SIG", "name": "Generator load signal", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1599,8 +1598,8 @@
       "rx": "7E8",
       "request": "221026",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MQB_MAF_1_B1_RAW", "name": "Mass airflow sensor 1 bank 1 raw value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7}
       ]
@@ -1612,7 +1611,7 @@
       "rx": "7E8",
       "request": "221028",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DOWNSHIFT_ADAPT_V", "name": "Downshift point adaptation voltage", "group": "Control", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
       ]
@@ -1636,7 +1635,7 @@
       "rx": "7E8",
       "request": "22102A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_PEDAL_SENS_1_V", "name": "Accelerator pedal, sensor 1 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
       ]
@@ -1648,7 +1647,7 @@
       "rx": "7E8",
       "request": "22102B",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_PEDAL_SENS_2_V", "name": "Accelerator pedal, sensor 2 voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 5, "min": 0, "max": 13107, "unit": "mV"}
       ]
@@ -1796,7 +1795,7 @@
       "rx": "7E8",
       "request": "221059",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_PEDAL_TQ_LIM", "name": "Accelerator pedal torque limit", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -1809,7 +1808,7 @@
       "request": "22105A",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_BATTERY_V", "name": "Battery voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "signed": true, "multiply": 20, "min": -655360, "max": 655340, "unit": "mV"}
       ]
@@ -1822,6 +1821,7 @@
       "request": "22105C",
       "interval": 1,
       "session": {"enter": "03"},
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_PQ35_GEN_LOAD", "name": "Generator load", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1833,7 +1833,7 @@
       "rx": "7E8",
       "request": "22105D",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_BRAKE_PEDAL_POS", "name": "Brake pedal position", "group": "Control", "bit": 0, "bits": 16, "multiply": 12207, "divide": 1000000, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -1846,7 +1846,7 @@
       "request": "22105E",
       "interval": 5,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_PQ35_BAT_V_2", "name": "Battery voltage variant", "group": "Battery", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310.7, "unit": "V"}
       ]
@@ -1858,7 +1858,7 @@
       "rx": "7E8",
       "request": "221063",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_OUTLET_ECT_CALC", "name": "Engine outlet coolant temperature calculated", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -1871,7 +1871,7 @@
       "request": "221064",
       "interval": 5,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ECT_ENG_OUTLET_CALC", "name": "Coolant temperature at engine outlet, calculated", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -1919,7 +1919,7 @@
       "rx": "7E8",
       "request": "22107D",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_LIM", "name": "Torque limitation", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "Nm"}
       ]
@@ -1980,7 +1980,7 @@
       "request": "221097",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_GENERATOR_PERFORMANCE", "name": "Generator performance", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 94248, "divide": 10000, "min": -308831.8464, "max": 308822.421, "unit": "W"}
       ]
@@ -1992,7 +1992,7 @@
       "rx": "7E8",
       "request": "22109B",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ECT_RAD_OUT_2", "name": "Coolant temperature at radiator outlet 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -2112,7 +2112,7 @@
       "rx": "7E8",
       "request": "2210BE",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_REQ_TQ_AMOUNT", "name": "Requested torque, amount for auxiliary units", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -2175,8 +2175,7 @@
       "rx": "7E8",
       "request": "2210D4",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_INJ_2_RAIL_P_1", "name": "Injector 2, rail pressure calibration point 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -2188,8 +2187,7 @@
       "rx": "7E8",
       "request": "2210D5",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_LAMBDA_ACT", "name": "Lambda, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 12207, "divide": 50000000, "min": -7.9999, "max": 7.9997}
       ]
@@ -2201,8 +2199,8 @@
       "rx": "7E8",
       "request": "2210D6",
       "interval": 3600,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_INJ_1_RAIL_P_2", "name": "Injector 1 rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -2214,8 +2212,7 @@
       "rx": "7E8",
       "request": "2210DB",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_INJ_5_RAIL_P_2", "name": "Injector 5, rail pressure calibration point 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.63, "max": 1.63, "unit": "ms"}
       ]
@@ -2227,8 +2224,8 @@
       "rx": "7E8",
       "request": "2210DE",
       "interval": 3600,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_INJ_4_RAIL_P_3", "name": "Injector 4 rail pressure calibration point 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 20000, "min": -1.6384, "max": 1.63, "unit": "ms"}
       ]
@@ -2240,8 +2237,8 @@
       "rx": "7E8",
       "request": "2210E0",
       "interval": 5,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
@@ -2303,8 +2300,7 @@
       "request": "2210E6",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_EOT_7E0", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 8, "add": -60, "min": -60, "max": 195, "unit": "°C"}
       ]
@@ -2316,8 +2312,7 @@
       "rx": "7E8",
       "request": "2210E7",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_KNOCK_RETARD_4", "name": "Knock retard 4", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 3, "divide": 4, "min": -96, "max": 95.25, "unit": "°"}
       ]
@@ -2341,7 +2336,7 @@
       "rx": "7E8",
       "request": "2210EA",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OPEN_CAM_SHFT_ANG", "name": "Open cam shaft angle at quantity control valve", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -2353,7 +2348,7 @@
       "rx": "7E8",
       "request": "2210EB",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CRANK_ROT_ANG", "name": "Crankshaft rotation angle when closing the quantity control valve", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -2365,7 +2360,7 @@
       "rx": "7E8",
       "request": "2210EC",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VLV_TIM_DIFF_ACT_SET", "name": "Valve timing, the difference between the, actual and the set angle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511.9843, "unit": "°"}
       ]
@@ -2546,7 +2541,7 @@
       "rx": "7E8",
       "request": "22110A",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MASS_FLOW_THROUGH", "name": "Mass flow through throttle valve", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
       ]
@@ -2594,8 +2589,8 @@
       "rx": "7E8",
       "request": "221116",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2016, 2017, 2022],
+      "answeredIn": [2022, 2024],
+      "notAnsweredIn": [2016, 2017],
       "signals": [
         {"id": "S5_PQ35_COOL_FAN_1_DUTY", "name": "Coolant fan 1 duty cycle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2657,6 +2652,7 @@
       "request": "22111C",
       "interval": 5,
       "session": {"enter": "03"},
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_T_7E0_2", "name": "Fuel temperature", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -2680,7 +2676,7 @@
       "rx": "7E8",
       "request": "221123",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AAT_7E0_2", "name": "Ambient temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -2693,7 +2689,7 @@
       "request": "221124",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAMSHAFT_VSS", "name": "Camshaft speed", "group": "Movement", "bit": 0, "bits": 16, "multiply": 2500, "divide": 10000, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -2705,8 +2701,7 @@
       "rx": "7E8",
       "request": "221125",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_CAM_ADPT_INT_BANK_1", "name": "Camshaft adaptation, intake bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -2742,8 +2737,7 @@
       "rx": "7E8",
       "request": "221128",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_CAM_ADPT_EXH_BANK_1", "name": "Camshaft adaptation, exhaust bank 1, phase position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 50, "min": -655.36, "max": 655.34, "unit": "°"}
       ]
@@ -2818,7 +2812,7 @@
       "rx": "7E8",
       "request": "22112E",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_SEG_AD_MMV_ER_2", "name": "SEG_AD_MMV_ER, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
       ]
@@ -2843,7 +2837,7 @@
       "request": "221130",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_COOLANT_FAN_1_ACTIVATION", "name": "Coolant fan 1, activation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -2892,7 +2886,7 @@
       "rx": "7E8",
       "request": "221134",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_SEG_AD_MMV_ER_MID_2", "name": "SEG_AD_MMV_ER_MID, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
       ]
@@ -2904,8 +2898,7 @@
       "rx": "7E8",
       "request": "221135",
       "interval": 5,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_COOLANT_T", "name": "Coolant temperature at radiator outlet", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -2929,7 +2922,7 @@
       "rx": "7E8",
       "request": "221137",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_PART_EVAP", "name": "Fuel part from EVAP system", "group": "Fuel", "bit": 0, "bits": 8, "signed": true, "multiply": 781, "divide": 100000, "min": -0.9996, "max": 0.9918}
       ]
@@ -2953,8 +2946,8 @@
       "rx": "7E8",
       "request": "221139",
       "interval": 1,
-      "answeredIn": [2016, 2017, 2024],
-      "notAnsweredIn": [2022, 2023],
+      "answeredIn": [2016, 2017, 2022, 2024],
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "S5_MEAN_INJ_QUANTITY", "name": "Mean injection quantity", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67}
       ]
@@ -2966,7 +2959,7 @@
       "rx": "7E8",
       "request": "22113A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_SEG_AD_MMV_ER_H_2", "name": "SEG_AD_MMV_ER_H, 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 78123, "divide": 327670000, "min": -7.8125, "max": 7.8123, "unit": "%"}
       ]
@@ -3015,8 +3008,8 @@
       "rx": "7E8",
       "request": "22113F",
       "interval": 30,
-      "answeredIn": [2016, 2017, 2024],
-      "notAnsweredIn": [2022, 2023],
+      "answeredIn": [2016, 2017, 2022, 2024],
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "S5_FUEL_CONS", "name": "Fuel consumption", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L"}
       ]
@@ -3052,8 +3045,8 @@
       "rx": "7E8",
       "request": "221146",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MISFIRES_TOTAL", "name": "Misfires total", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3065,8 +3058,8 @@
       "rx": "7E8",
       "request": "221147",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MISFIRES_1000REV_C1", "name": "Misfires / 1000 revolutions, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3078,8 +3071,8 @@
       "rx": "7E8",
       "request": "221148",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_FUEL_METER", "name": "Fuel metering valve position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -3091,8 +3084,8 @@
       "rx": "7E8",
       "request": "221149",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_BOOST_P_CMD", "name": "Boost pressure commanded", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767}
       ]
@@ -3117,8 +3110,7 @@
       "rx": "7E8",
       "request": "22114B",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_MIS_PER_1000_2_7E0_7E0", "name": "Misfires per 1000 revolutions 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3130,8 +3122,7 @@
       "rx": "7E8",
       "request": "22114C",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_MIS_PER_1000_4_7E0", "name": "Misfires per 1000 revolutions 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3144,7 +3135,7 @@
       "request": "22114F",
       "interval": 1,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_PQ35_SOOT_MASS_CALC", "name": "Soot mass calculated", "group": "Engine.DPF", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -3156,8 +3147,8 @@
       "rx": "7E8",
       "request": "221150",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MISFIRES_C3_ECM", "name": "Misfires, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3169,8 +3160,8 @@
       "rx": "7E8",
       "request": "221151",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_MISFIRES__CYL__4", "name": "Misfires, cylinder 4", "group": "ECU", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3195,8 +3186,8 @@
       "rx": "7E8",
       "request": "221153",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_EM_TORQ_1", "name": "Elector motor 1 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
       ]
@@ -3208,8 +3199,8 @@
       "rx": "7E8",
       "request": "221154",
       "interval": 1,
-      "answeredIn": [2016, 2017, 2024],
-      "notAnsweredIn": [2022, 2023],
+      "answeredIn": [2016, 2017, 2022, 2024],
+      "notAnsweredIn": [2023],
       "signals": [
         {"id": "S5_EM_TORQ_2", "name": "Electric motor 2 torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1000, "max": 1000, "unit": "Nm"}
       ]
@@ -3247,8 +3238,8 @@
       "rx": "7E8",
       "request": "221159",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_MAX_CHA_CUR_2", "name": "Maximum charge current", "group": "Battery", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3200, "max": 3200, "unit": "A"}
       ]
@@ -3260,8 +3251,8 @@
       "rx": "7E8",
       "request": "22115C",
       "interval": 30,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_SRV_REGEN_STAT", "name": "Service regeneration status", "group": "Engine.DPF", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3273,8 +3264,8 @@
       "rx": "7E8",
       "request": "221160",
       "interval": 5,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_ODO_HD", "name": "Odometer, high resolution", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "m"}
       ]
@@ -3287,7 +3278,7 @@
       "request": "221161",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENGINE_RPM_AT_IDLE_REQUIRED", "name": "Engine RPM at idle required", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
       ]
@@ -3348,7 +3339,7 @@
       "rx": "7E8",
       "request": "221175",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_INTEGRATED_MASS_AIR", "name": "Integrated mass of air since engine start", "group": "Engine", "bit": 0, "bits": 16, "multiply": 8889, "divide": 25000, "min": 0, "max": 23301.6246}
       ]
@@ -3361,7 +3352,7 @@
       "request": "221177",
       "interval": 5,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_T_AC_HEAT_EXCHANGER", "name": "Temperature at air conditioner heat exchanger output", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -3459,8 +3450,8 @@
       "rx": "7E8",
       "request": "221189",
       "interval": 1,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_CAMS_EDGE_POS_2", "name": "Intake camshaft signal edge position adapted edge 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -3472,8 +3463,8 @@
       "rx": "7E8",
       "request": "22118A",
       "interval": 1,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_CAMS_EDGE_POS_3", "name": "Intake camshaft signal edge position adapted edge 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 16, "add": -32, "min": -32, "max": 4063.937, "unit": "°"}
       ]
@@ -3581,7 +3572,7 @@
       "rx": "7E8",
       "request": "2211A4",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_PMP_CMD_DUTY", "name": "Fuel pump, commanded duty", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 0.0015258743, "min": 0, "max": 99.998, "unit": "%"}
       ]
@@ -3605,7 +3596,7 @@
       "rx": "7E8",
       "request": "2211AB",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_INT_MODEL_AIR_MASS", "name": "Intake model air mass flow filtered value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
       ]
@@ -3617,7 +3608,7 @@
       "rx": "7E8",
       "request": "2211AC",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MAF_THROUGH_THROTTLE", "name": "Mass air flow through throttle", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
       ]
@@ -3629,7 +3620,7 @@
       "rx": "7E8",
       "request": "2211AD",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MAF_CMD", "name": "Mass air flow, commanded", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
       ]
@@ -3654,7 +3645,7 @@
       "rx": "7E8",
       "request": "2211B8",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AIR_LEAKAGE", "name": "Air leakage", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
       ]
@@ -3715,8 +3706,8 @@
       "rx": "7E8",
       "request": "2211BD",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_PQ35_OIL_LVL_CRIT", "name": "Critical engine oil level", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 250, "min": -131.072, "max": 131.068, "unit": "mm"}
       ]
@@ -3728,8 +3719,8 @@
       "rx": "7E8",
       "request": "2211BE",
       "interval": 5,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022, 2023],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016, 2023],
       "signals": [
         {"id": "S5_PQ35_OIL_T_2", "name": "Oil temperature variant", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C", "invalidAtOrBelow": -60, "invalidAtOrAbove": 200}
       ]
@@ -3741,8 +3732,8 @@
       "rx": "7E8",
       "request": "2211BF",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_FUEL_P_REG", "name": "Fuel pressure regulator position", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -3754,8 +3745,8 @@
       "rx": "7E8",
       "request": "2211C1",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PARTICLE_FLT_FIELD_REGEN", "name": "Particle filter, field regeneration lock status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -3795,8 +3786,7 @@
       "rx": "7E8",
       "request": "2211C8",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_LOW_FUEL_P_ACT", "name": "Low fuel pressure, actual", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
       ]
@@ -3808,7 +3798,7 @@
       "rx": "7E8",
       "request": "2211C9",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_PMP_ADPT", "name": "Fuel pump adaptation", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "kPa"}
       ]
@@ -3832,7 +3822,7 @@
       "rx": "7E8",
       "request": "2211CD",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TCO_1_SYS", "name": "TCO_1_SYS", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -3844,8 +3834,7 @@
       "rx": "7E8",
       "request": "2211CE",
       "interval": 1,
-      "answeredIn": [2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022, 2024],
       "signals": [
         {"id": "S5_LOW_FUEL_P_CMD", "name": "Low fuel pressure, commanded", "group": "Fuel", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
       ]
@@ -3857,7 +3846,7 @@
       "rx": "7E8",
       "request": "2211CF",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_BRAKE_BOOSTER_P", "name": "Brake booster pressure", "group": "Control", "bit": 0, "bits": 16, "multiply": 19531, "divide": 500000, "min": 0, "max": 2559}
       ]
@@ -3881,7 +3870,7 @@
       "rx": "7E8",
       "request": "2211D1",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_BRAKE_BOOSTER_RAW_P", "name": "Brake booster raw pressure", "group": "Control", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -3893,7 +3882,7 @@
       "rx": "7E8",
       "request": "2211D2",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_HIGH_P_CTRL_ADPT", "name": "High pressure control, adaptation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2000, "min": -16.384, "max": 16.3835}
       ]
@@ -3905,7 +3894,7 @@
       "rx": "7E8",
       "request": "2211D4",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TURBOCHARGER_INLET_P", "name": "Turbocharger inlet pressure corrected value", "group": "Battery", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
       ]
@@ -3917,7 +3906,7 @@
       "rx": "7E8",
       "request": "2211D5",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_HIGH_FUEL_P", "name": "High fuel pressure, regulation error", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "divide": 2000, "min": -16.384, "max": 16.3835}
       ]
@@ -3941,7 +3930,7 @@
       "rx": "7E8",
       "request": "2211DA",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_INT_MANIFOLD_P", "name": "Intake manifold pressure, corrected", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
       ]
@@ -3965,7 +3954,7 @@
       "rx": "7E8",
       "request": "2211DD",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_INT_MANIFOLD_P_CMD", "name": "Intake manifold pressure, commanded", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
       ]
@@ -3977,7 +3966,7 @@
       "rx": "7E8",
       "request": "2211DF",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_POWERTRAIN_OVERALL", "name": "Powertrain overall gear ratio", "group": "Transmission", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35}
       ]
@@ -3989,7 +3978,7 @@
       "rx": "7E8",
       "request": "2211E0",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CMD_CRANK_TQ", "name": "Commanded crankshaft torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -4001,8 +3990,8 @@
       "rx": "7E8",
       "request": "2211E6",
       "interval": 1,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MQB_DPF_EXH_VOL", "name": "Diesel particulate filter exhaust gas flow volume", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 1000, "divide": 10000, "min": -3276.8, "max": 3276.7}
       ]
@@ -4014,7 +4003,7 @@
       "rx": "7E8",
       "request": "2211EE",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_P_BEFORE_THROTTLE_ACT", "name": "Pressure before throttle valve - actual value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
       ]
@@ -4037,10 +4026,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "2211F0",
-      "interval": 1,
-      "notAnsweredIn": [2022],
+      "interval": 0.25,
+      "answeredIn": [2022],
       "signals": [
-        {"id": "S5_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 5, "divide": 64, "min": 0, "max": 5119.9218}
+        {"id": "S5_BOOST_P_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511, "unit": "kPa"}
       ]
     },
     {
@@ -4050,8 +4039,8 @@
       "rx": "7E8",
       "request": "2211F1",
       "interval": 0.25,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_TRANS_IN_SPD", "name": "Transmission input shaft speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383.5, "unit": "rpm"}
       ]
@@ -4125,7 +4114,7 @@
       "request": "22120E",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_KNOCK_SNS_C1_V_MS", "name": "Knock sensor, cylinder 1 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
       ]
@@ -4138,7 +4127,7 @@
       "request": "22120F",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_KNOCK_SNS_C3_V_MS", "name": "Knock sensor, cylinder 3 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
       ]
@@ -4151,7 +4140,7 @@
       "request": "221210",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_KNOCK_SNS_C4_V_MS", "name": "Knock sensor, cylinder 4 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
       ]
@@ -4164,7 +4153,7 @@
       "request": "221211",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_KNOCK_SNS_C2_V_MS", "name": "Knock sensor, cylinder 2 ", "group": "Engine", "bit": 0, "bits": 32, "multiply": 0.0076294, "divide": 10000, "min": 0, "max": 3276}
       ]
@@ -4176,7 +4165,7 @@
       "rx": "7E8",
       "request": "221212",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_KNOCK_SENS_CYL_2_7E0", "name": "Knock sensor, cylinder 2", "group": "Engine", "bit": 0, "bits": 32, "multiply": 7.62e-07, "min": 0, "max": 3272}
       ]
@@ -4276,7 +4265,7 @@
       "rx": "7E8",
       "request": "221222",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_LOSS_ADPT_AC_COMP", "name": "Torque loss adaptation, A/C compressor + gear engaged", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -4300,7 +4289,7 @@
       "rx": "7E8",
       "request": "221224",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_LOSS_ADPT_GEAR", "name": "Torque loss adaptation, gear engaged", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -4312,7 +4301,7 @@
       "rx": "7E8",
       "request": "221225",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_LOSS_ADPT_IDLE", "name": "Torque loss adaptation at idle", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -4375,7 +4364,7 @@
       "request": "221272",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_REAR_CAT_CONV_T_MAIN_CAT_CONV_MODEL_VALUE", "name": "Rear cat converter temperature, main catalytic converter model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -4387,7 +4376,7 @@
       "rx": "7E8",
       "request": "22127B",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VARIABLE_VLV_TIM_INT_1", "name": "Variable valve timing, intake, bank 1, regulation", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.0030517549, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -4448,7 +4437,7 @@
       "request": "221290",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OXYGEN_SNS_1_BANK_1_CERAMIC_T", "name": "Oxygen sensor 1 bank 1 ceramic temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 234.37, "divide": 10000, "add": -273.15, "min": -273.15, "max": 1262.793, "unit": "°C"}
       ]
@@ -4461,7 +4450,7 @@
       "request": "221291",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_COOLANT_T_AT_ENGINE_START", "name": "Coolant temperature at engine start", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -4500,7 +4489,7 @@
       "request": "2212B0",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCELERATION_29BIT", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
@@ -4574,7 +4563,7 @@
       "request": "221314",
       "interval": 1,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_MEAN_AIR_MASS", "name": "Mean engine air mass", "group": "Engine", "bit": 0, "bits": 16, "divide": 32, "min": 0, "max": 2047.968}
       ]
@@ -4610,7 +4599,7 @@
       "rx": "7E8",
       "request": "221340",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_INCREASE_REQ_ESP", "name": "Torque increase request from ESP", "group": "Engine", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
       ]
@@ -4622,8 +4611,8 @@
       "rx": "7E8",
       "request": "221341",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_CAMS_END", "name": "Camshaft end position", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 5, "min": -6553.6, "max": 6553.4, "unit": "°"}
       ]
@@ -4659,7 +4648,7 @@
       "rx": "7E8",
       "request": "22136D",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAM_ADJ_EXH_BANK_2_ACT", "name": "Camshaft adjustment, exhaust bank 2, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°"}
       ]
@@ -4683,7 +4672,7 @@
       "rx": "7E8",
       "request": "221371",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAM_ADJ_EXH_BANK_1_SPEC", "name": "Camshaft adjustment, exhaust bank 1, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 125, "min": -262.144, "max": 262.136, "unit": "°"}
       ]
@@ -4695,7 +4684,7 @@
       "rx": "7E8",
       "request": "221372",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAM_ADJ_EXH_BANK_2_SPEC", "name": "Camshaft adjustment, exhaust bank 2, specified value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 125, "min": -262, "max": 262, "unit": "°"}
       ]
@@ -4719,8 +4708,8 @@
       "rx": "7E8",
       "request": "22137A",
       "interval": 1,
-      "answeredIn": [2016],
-      "notAnsweredIn": [2017, 2022],
+      "answeredIn": [2016, 2022],
+      "notAnsweredIn": [2017],
       "signals": [
         {"id": "S5_PQ35_IGN_ANG_CYL", "name": "Ignition angle current cylinder", "group": "Battery", "bit": 0, "bits": 8, "multiply": 0.375, "add": -35.625, "min": -35.625, "max": 60, "unit": "Nm"}
       ]
@@ -4756,7 +4745,7 @@
       "rx": "7E8",
       "request": "22138B",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_IGA_IGC_1", "name": "IGA_IGC, 1", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1499, "divide": 4000, "add": -35.625, "min": -35.625, "max": 59.9362, "unit": "°"}
       ]
@@ -4780,7 +4769,7 @@
       "rx": "7E8",
       "request": "22138D",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_IGA_IGC_3", "name": "IGA_IGC, 3", "group": "Engine", "bit": 0, "bits": 8, "multiply": 1499, "divide": 4000, "add": -35.625, "min": -35.625, "max": 59.9362, "unit": "°"}
       ]
@@ -4793,7 +4782,7 @@
       "request": "22139C",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXHAUST_GAS_T_AT_PROBE_BEFOR_PRECAT_MODEL_VALUE", "name": "Exhaust gas temperature at probe before precat, model value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -4806,7 +4795,7 @@
       "request": "2213A0",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_COOLANT_T_MODELED_VALUE", "name": "Coolant temperature modeled value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -5047,7 +5036,7 @@
       "rx": "7E8",
       "request": "2213F4",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_IGA_CYL_KNK_2", "name": "IGA_CYL_KNK, 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 8, "add": -48, "min": -48, "max": 47.625, "unit": "°"}
       ]
@@ -5071,7 +5060,7 @@
       "rx": "7E8",
       "request": "2213F6",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_NL_PRE_0", "name": "NL_PRE, 0", "group": "Engine", "bit": 0, "bits": 16, "multiply": 38147, "divide": 500000000, "min": 0, "max": 4.9999, "unit": "V"}
       ]
@@ -5107,6 +5096,7 @@
       "rx": "7E8",
       "request": "2213F9",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_NL_PRE_3", "name": "NL_PRE, 3", "group": "Engine", "bit": 0, "bits": 16, "multiply": 38147, "divide": 500000000, "min": 0, "max": 4.9999, "unit": "V"}
       ]
@@ -5170,7 +5160,7 @@
       "rx": "7E8",
       "request": "221421",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXH_T_BEFORE_CAT", "name": "Exhaust temperature before the catalyst, modeled", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -5196,7 +5186,7 @@
       "request": "22147F",
       "interval": 3600,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MIS_CNT_4", "name": "Misfires counter:, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -5261,7 +5251,7 @@
       "request": "221484",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MIS_PER_1000_RPM_1", "name": "Misfires per 1000 rpm:, cylinder 1", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -5325,7 +5315,7 @@
       "request": "221489",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MIS_PER_1000_RPM_5", "name": "Misfires per 1000 rpm:, cylinder 5", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -5386,7 +5376,7 @@
       "rx": "7E8",
       "request": "221490",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_BRAKE_BOOSTER_LOW_P_ACT", "name": "Brake booster low pressure, actual", "group": "Control", "bit": 0, "bits": 16, "multiply": 39063, "divide": 1000000, "min": 0, "max": 2559.9937}
       ]
@@ -5399,9 +5389,9 @@
       "request": "22149E",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
-        {"id": "S5_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "S5_INTAKE_AIR_T_IN_INTAKE_MANIFOLD", "name": "Intake air temperature in intake manifold", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -5411,7 +5401,7 @@
       "rx": "7E8",
       "request": "2214A1",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_RATED_DRIVE_TQ", "name": "Rated drive torque", "group": "Engine", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
       ]
@@ -5451,7 +5441,7 @@
       "answeredIn": [2017, 2022],
       "notAnsweredIn": [2016],
       "signals": [
-        {"id": "S5_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "S5_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -5461,8 +5451,8 @@
       "rx": "7E8",
       "request": "2214CE",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_POST_INJ_3_ACTIVATION_DURATION", "name": "Post-injection 3 activation duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -5474,8 +5464,8 @@
       "rx": "7E8",
       "request": "2214D1",
       "interval": 1,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_PRE_INJ_2_DURATION", "name": "Pre-injection 2 duration", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.4, "divide": 1000, "min": -13.1072, "max": 13.1068, "unit": "ms"}
       ]
@@ -5512,8 +5502,8 @@
       "rx": "7E8",
       "request": "2214F8",
       "interval": 5,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_AAT_V1", "name": "Ambient air temperature, v1", "group": "Engine", "bit": 0, "bits": 16, "multiply": 0.18, "add": -460, "min": -460, "max": 11336.3, "unit": "°F"}
       ]
@@ -5526,7 +5516,7 @@
       "request": "2214F9",
       "interval": 3600,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MAIN_CAT_OSC_AGE_CORRECTION_FACTOR", "name": "Main cat oxygen storage capacity age correction factor", "group": "Engine", "bit": 0, "bits": 16, "multiply": 2, "divide": 65535, "min": 0, "max": 2}
       ]
@@ -5563,7 +5553,7 @@
       "request": "221507",
       "interval": 3600,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAT_CONVERTER_OXYGEN_STORAGE_CAPACITY_MEASURED", "name": "Cat. converter oxygen storage capacity measured", "group": "Engine", "bit": 0, "bits": 16, "multiply": 1000, "divide": 10000, "min": 0, "max": 6553.5}
       ]
@@ -5575,7 +5565,7 @@
       "rx": "7E8",
       "request": "221509",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AMBIENT_AIR_P", "name": "Ambient air pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 39, "divide": 1000, "min": 0, "max": 2555.8649}
       ]
@@ -5623,7 +5613,7 @@
       "rx": "7E8",
       "request": "221515",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAT_T_CALC", "name": "Catalyst temperature, calculated", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "add": -50, "min": -50, "max": 1225, "unit": "°C"}
       ]
@@ -5635,7 +5625,7 @@
       "rx": "7E8",
       "request": "221519",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_CONS_ACT_DRIVE", "name": "Fuel consumption - actual drive cycle", "group": "Fuel", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "L"}
       ]
@@ -5647,8 +5637,7 @@
       "rx": "7E8",
       "request": "22155A",
       "interval": 0.25,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_ENG_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 32, "min": -1024, "max": 1023.968, "unit": "Nm"}
       ]
@@ -5720,8 +5709,7 @@
       "rx": "7E8",
       "request": "2215AA",
       "interval": 0.25,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_SELECTED_GEAR", "name": "Selected gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5733,7 +5721,7 @@
       "rx": "7E8",
       "request": "2215B7",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_OIL_SUMP_T", "name": "Engine oil sump temperature", "group": "Engine", "bit": 0, "bits": 16, "multiply": 9, "divide": 50, "add": -460, "min": -460, "max": 11336.3, "unit": "°F"}
       ]
@@ -5757,7 +5745,7 @@
       "rx": "7E8",
       "request": "2215BD",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OIL_P_SENS_PISTON", "name": "Oil pressure sensor-piston cooling nozzle switch, status", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -5769,7 +5757,7 @@
       "rx": "7E8",
       "request": "2215C0",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_IAT_RAW", "name": "Intake air temperature raw value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C"}
       ]
@@ -5781,7 +5769,7 @@
       "rx": "7E8",
       "request": "2215C1",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_IAT_BEFORE_THROTTLE", "name": "Intake air temperature before throttle valve, raw value", "group": "Engine", "bit": 0, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
@@ -5806,7 +5794,7 @@
       "request": "2215CA",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_GENERATOR_LOAD_NORMALIZED_VALUE", "name": "Generator load normalized value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -5842,7 +5830,7 @@
       "rx": "7E8",
       "request": "2215CD",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ECT_RADIATOR_OUTLET_V_1", "name": "Coolant temperature at radiator outlet v.1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -5855,7 +5843,7 @@
       "request": "2215CF",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_LONGTITUDINAL_ACCELERATION_RAW_VALUE", "name": "Longitudinal acceleration, raw", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 10, "divide": 10000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
@@ -5880,7 +5868,7 @@
       "request": "2215D1",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VEHICLE_LATERAL_ACCELERATION_RAW_VALUE", "name": "Vehicle lateral acceleration, raw value", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "multiply": 100, "divide": 10000, "min": -327.68, "max": 327.67, "unit": "g"}
       ]
@@ -5892,7 +5880,7 @@
       "rx": "7E8",
       "request": "2215D4",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_LAMBDA_OUTPUT", "name": "Lambda output value", "group": "Engine", "bit": 0, "bits": 16, "multiply": 199997, "divide": 6553500000, "min": 0, "max": 1.99}
       ]
@@ -5916,7 +5904,7 @@
       "rx": "7E8",
       "request": "221610",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_REQ_BRAKE_TQ", "name": "Requested brake torque, auxiliary system", "group": "Control", "bit": 0, "bits": 32, "signed": true, "divide": 10, "min": -214748364, "max": 214748364, "unit": "Nm"}
       ]
@@ -5966,7 +5954,7 @@
       "rx": "7E8",
       "request": "221632",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EOT_MEAS", "name": "Engine oil temperature measured value", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273, "max": 6280, "unit": "°C"}
       ]
@@ -5977,10 +5965,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221633",
-      "interval": 1,
-      "notAnsweredIn": [2022],
+      "interval": 0.25,
+      "answeredIn": [2022],
       "signals": [
-        {"id": "S5_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
+        {"id": "S5_LONGITUDINAL_ACCEL", "name": "Longitudinal acceleration", "group": "Movement", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "m/s²"}
       ]
     },
     {
@@ -5989,10 +5977,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221644",
-      "interval": 1,
-      "notAnsweredIn": [2022],
+      "interval": 0.25,
+      "answeredIn": [2022],
       "signals": [
-        {"id": "S5_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
+        {"id": "S5_LATERAL_ACCEL", "name": "Lateral acceleration", "group": "Movement", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "m/s²"}
       ]
     },
     {
@@ -6062,7 +6050,7 @@
       "rx": "7E8",
       "request": "22167F",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_HEATER_CIRCULATION", "name": "Heater circulation pump, nominal value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -6087,7 +6075,7 @@
       "rx": "7E8",
       "request": "2216BA",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VLV_LIFT_SYSTEM_VLV", "name": "Valve lift system, valve lift, intake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6099,7 +6087,7 @@
       "rx": "7E8",
       "request": "2216BB",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VLV_LIFT_SYSTEM_VLV_LIFT", "name": "Valve lift system, valve lift, exhaust", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6111,7 +6099,7 @@
       "rx": "7E8",
       "request": "2216BE",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VLV_LIFT_SYSTEM", "name": "Valve lift system, result of last switch, intake", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -6172,7 +6160,7 @@
       "request": "2216F3",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CRANKSHAFT_VSS", "name": "Crankshaft speed", "group": "Movement", "metric": "engineSpeed", "bit": 0, "bits": 16, "divide": 2, "min": 0, "max": 32767.5, "unit": "rpm"}
       ]
@@ -6220,7 +6208,7 @@
       "rx": "7E8",
       "request": "221712",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_RAT_EVAPORATED_FUEL_MAX", "name": "Ratio between evaporated fuel mass from engine oil and base fuel mass needed, maximum", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 83, "divide": 10625, "min": 0, "max": 1.992}
       ]
@@ -6256,7 +6244,7 @@
       "rx": "7E8",
       "request": "221716",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_TOT_3", "name": "Early ignition counter, total, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6280,7 +6268,7 @@
       "rx": "7E8",
       "request": "221718",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_TOT_2", "name": "Early ignition counter, total, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6340,7 +6328,7 @@
       "rx": "7E8",
       "request": "221722",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_CYL_1", "name": "Early ignition counter, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6352,7 +6340,7 @@
       "rx": "7E8",
       "request": "221723",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_CYL_3", "name": "Early ignition counter, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6364,7 +6352,7 @@
       "rx": "7E8",
       "request": "221724",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_CYL_4", "name": "Early ignition counter, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6376,7 +6364,7 @@
       "rx": "7E8",
       "request": "221725",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EARLY_IGN_CNT_CYL_2", "name": "Early ignition counter, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -6424,7 +6412,7 @@
       "rx": "7E8",
       "request": "22174A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXH_CAM_ADPT_BIAS", "name": "Exhaust camshaft, adaptation bias", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -6436,7 +6424,7 @@
       "rx": "7E8",
       "request": "22174B",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_INT_CAM_ADPT_BIAS", "name": "Intake camshaft, adaptation bias", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 0.021973, "min": -720.0112, "max": 719.9892, "unit": "°"}
       ]
@@ -6484,7 +6472,7 @@
       "rx": "7E8",
       "request": "22177D",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OIL_P_ACT_7E0", "name": "Oil pressure, actual value", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "kPa"}
       ]
@@ -6521,7 +6509,7 @@
       "request": "22178C",
       "interval": 1,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_PQ35_OIL_ASH_RESIDUE", "name": "Oil ash residue", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5}
       ]
@@ -6546,8 +6534,8 @@
       "rx": "7E8",
       "request": "22179C",
       "interval": 5,
-      "answeredIn": [2017, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_ENGINE_OIL_T_2", "name": "Oil temp 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.1, "min": -273.1, "max": 6280.4, "unit": "°C", "invalidAtOrBelow": -273.1}
       ]
@@ -6583,7 +6571,7 @@
       "rx": "7E8",
       "request": "22180A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FUEL_RATE_DIFF_INJ", "name": "Fuel rate difference, injector/sensor", "group": "Fuel", "bit": 0, "bits": 16, "signed": true, "multiply": 19531, "divide": 5000000, "min": -127.9983, "max": 127.9944, "unit": "L"}
       ]
@@ -6644,7 +6632,7 @@
       "rx": "7E8",
       "request": "22197C",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_FUEL_FILTER_WATER_LEVEL_SENSOR_1", "name": "Fuel filter: water level sensor 1", "group": "Fuel", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -7219,6 +7207,7 @@
       "rx": "7E8",
       "request": "222050",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_GEN_LOAD_SIG", "name": "Generator load signal", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -7499,7 +7488,7 @@
       "rx": "7E8",
       "request": "222206",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_FUEL_LEVEL_7E0_2206", "name": "Fuel level", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "L"}
       ]
@@ -7660,7 +7649,7 @@
       "rx": "7E8",
       "request": "222927",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TEST_CATALYTIC_CONV_STAT", "name": "Test of catalytic converter status, canceled", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -7684,7 +7673,7 @@
       "rx": "7E8",
       "request": "22292B",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_THROTTLE_VLV", "name": "Adaptation of throttle valve", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -7929,7 +7918,7 @@
       "rx": "7E8",
       "request": "222999",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AUTOMATIC_ENG_STARTS", "name": "Automatic engine starts counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -8001,6 +7990,7 @@
       "rx": "7E8",
       "request": "2229C7",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_CHG_P_SENS_V", "name": "Charge pressure sensor, unconditioned voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "V"}
       ]
@@ -8072,7 +8062,7 @@
       "rx": "7E8",
       "request": "222AE9",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXH_GAS_T_CALC_AFTER", "name": "Exhaust gas temperature - calculated after catalyst", "group": "Engine", "bit": 0, "bits": 16, "multiply": 293, "divide": 12500, "add": -273.15, "min": -273.15, "max": 1262.9904, "unit": "°C"}
       ]
@@ -8084,7 +8074,7 @@
       "rx": "7E8",
       "request": "222BC0",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_PROTECTION_TQ", "name": "Engine protection, torque limit", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "Nm"}
       ]
@@ -8096,7 +8086,7 @@
       "rx": "7E8",
       "request": "222CD8",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OIL_P_VLV_PISTON", "name": "Oil pressure valve for piston cooling nozzles, control switch button ratio", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "%"}
       ]
@@ -8161,6 +8151,7 @@
       "rx": "7E8",
       "request": "22394F",
       "interval": 0.25,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_MAF_OVER_THROTTLE", "name": "Mass air flow over throttle valve", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -8304,7 +8295,7 @@
       "rx": "7E8",
       "request": "2239A4",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CHG_P_ACTUATOR_SPEC_7E0", "name": "Charge pressure actuator, specified value", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.012207, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -8893,6 +8884,7 @@
       "rx": "7E8",
       "request": "224267",
       "interval": 3600,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_DIRECT_INJECTIONS", "name": "Direct injections counter", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295}
       ]
@@ -9024,6 +9016,7 @@
       "rx": "7E8",
       "request": "224336",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_HEATER_SUPPORT_PMP_SPEC", "name": "Heater support pump, specified value", "group": "Engine", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9071,6 +9064,7 @@
       "rx": "7E8",
       "request": "22437F",
       "interval": 3600,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_LOST_TQ_ADPT_AC", "name": "Lost torque adaptation A/C + driving mode", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "Nm"}
       ]
@@ -9416,7 +9410,7 @@
       "rx": "7E8",
       "request": "224FF5",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CAM_ADPT_INT_DEV", "name": "Camshaft adaptation, intake deviation", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -256, "max": 255.9921, "unit": "°"}
       ]
@@ -9464,7 +9458,7 @@
       "rx": "7E8",
       "request": "2251D4",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CYL_BLOCK_T_SENS", "name": "Cylinder block temperature sensor", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "add": -273.1, "min": -3549.9, "max": 3003.6, "unit": "°C"}
       ]
@@ -9488,7 +9482,7 @@
       "rx": "7E8",
       "request": "2251D8",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TANK_FILL_LEVEL", "name": "Tank fill level diagnostic reference value", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "L"}
       ]
@@ -9573,7 +9567,7 @@
       "rx": "7E8",
       "request": "2258D1",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_OIL_LEVEL", "name": "Engine oil level current value", "group": "Engine", "bit": 64, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 100, "unit": "%"}
       ]
@@ -9585,7 +9579,7 @@
       "rx": "7E8",
       "request": "22F406",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_SHORT_TERM_FUEL_TRIM_1", "name": "Short term fuel trim bank 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"}
       ]
@@ -9597,7 +9591,7 @@
       "rx": "7E8",
       "request": "22F407",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_LONG_TERM_FUEL_TRIM_1", "name": "Long term fuel trim bank 1", "group": "Fuel", "bit": 0, "bits": 8, "multiply": 25, "divide": 32, "add": -100, "min": -100, "max": 99.2187, "unit": "%"}
       ]
@@ -9609,7 +9603,7 @@
       "rx": "7E8",
       "request": "22F40C",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_RPM", "name": "Engine RPM", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 7000, "unit": "rpm"}
       ]
@@ -9621,8 +9615,7 @@
       "rx": "7E8",
       "request": "22F40D",
       "interval": 0.25,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_VSS", "name": "Vehicle speed", "description": "Current vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -9646,8 +9639,7 @@
       "rx": "7E8",
       "request": "22F421",
       "interval": 30,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_MIL_DIST", "name": "Distance traveled while mil was activated", "group": "DTCs", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "km"}
       ]
@@ -9659,7 +9651,7 @@
       "rx": "7E8",
       "request": "22F42F",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FLI_INPUT", "name": "Fuel level input %", "group": "Fuel", "metric": "fuelTankLevel", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9671,8 +9663,7 @@
       "rx": "7E8",
       "request": "22F430",
       "interval": 3600,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_WARM_UPS", "name": "Number of warm-ups since diagnostic trouble codes cleared", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -9698,7 +9689,7 @@
       "interval": 1,
       "answeredIn": [2022],
       "signals": [
-        {"id": "S5_BARO", "name": "Barometric pressure", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "S5_BARO", "name": "Barometric pressure", "group": "Climate", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -9708,7 +9699,7 @@
       "rx": "7E8",
       "request": "22F43C",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXH_GAS_T", "name": "Exhaust gas temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -40, "min": -40, "max": 6513.5, "unit": "°C"}
       ]
@@ -9720,8 +9711,7 @@
       "rx": "7E8",
       "request": "22F442",
       "interval": 5,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_VPWR", "name": "Control module voltage", "group": "Battery", "metric": "starterBatteryVoltage", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65, "unit": "V"}
       ]
@@ -9733,7 +9723,7 @@
       "rx": "7E8",
       "request": "22F446",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AAT_7E0_7E0", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -9757,7 +9747,7 @@
       "rx": "7E8",
       "request": "22F44A",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_PEDAL_POS_2", "name": "Accelerator pedal position 2", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9793,7 +9783,7 @@
       "rx": "7E9",
       "request": "220301",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CTRL_MODULE_T", "name": "Control module temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -9805,7 +9795,7 @@
       "rx": "7E9",
       "request": "220302",
       "interval": 3600,
-      "answeredIn": [2016, 2017, 2023, 2024],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_DRIVE_TIME", "name": "Total drive time", "group": "Stats", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383, "unit": "h"}
       ]
@@ -9817,8 +9807,7 @@
       "rx": "7E9",
       "request": "220303",
       "interval": 1,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_DRIVE_TIME_ECO", "name": "Driving time in eco mode", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in eco mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9830,8 +9819,7 @@
       "rx": "7E9",
       "request": "220304",
       "interval": 1,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_DRIVE_TIME_SPORT", "name": "Driving time in sport mode", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in sport mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9843,7 +9831,7 @@
       "rx": "7E9",
       "request": "220305",
       "interval": 1,
-      "answeredIn": [2016, 2017, 2023, 2024],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_DRIVE_TIME_MANUAL", "name": "Driving time in manual mode", "description": "Value may be wrong, needs more validation. Proportion of time spent driving in manual mode", "group": "Stats", "bit": 0, "bits": 8, "divide": 2.5, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -9855,6 +9843,7 @@
       "rx": "7E9",
       "request": "220327",
       "interval": 0.25,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_TRANS_GEAR_RAT", "name": "Transmission gear ratio", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "divide": 100, "min": -1.28, "max": 1.27}
       ]
@@ -9866,7 +9855,7 @@
       "rx": "7E9",
       "request": "220805",
       "interval": 0.25,
-      "answeredIn": [2016, 2017, 2023, 2024],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_BRAKE_LIGHT_ON_VALID", "name": "Brake light reading valid?", "group": "Lights", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "S5_BRAKE_PRESSED_VALID", "name": "Brake pressure reading valid?", "group": "Control", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -9921,7 +9910,7 @@
       "request": "221004",
       "interval": 0.25,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017, 2023, 2024],
+      "notAnsweredIn": [2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_TIRE_RL_SPD_V3", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -9933,7 +9922,7 @@
       "rx": "7E9",
       "request": "221005",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VSS_ESP", "name": "Vehicle speed ESP", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
       ]
@@ -9982,7 +9971,7 @@
       "rx": "7E9",
       "request": "22100C",
       "interval": 0.25,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_ENGINE_TORQUE", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -10006,7 +9995,7 @@
       "rx": "7E9",
       "request": "22100F",
       "interval": 0.25,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_ENGINE_TORQUE_LOSS", "name": "Engine torque loss", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 20, "min": -1638.4, "max": 1638.35, "unit": "Nm"}
       ]
@@ -10031,7 +10020,7 @@
       "rx": "7E9",
       "request": "221011",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADAPTIVE_MODE", "name": "Adaptive mode", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -10043,7 +10032,7 @@
       "rx": "7E9",
       "request": "221012",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ID_CURRENT_DRIVING", "name": "ID of current driving program", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -10055,7 +10044,7 @@
       "rx": "7E9",
       "request": "221013",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_TYPE_DRIVER", "name": "Current type of driver counter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -10081,7 +10070,7 @@
       "request": "221018",
       "interval": 1,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_DRIVING_STRATEGY_MOUNTAIN_FACTOR", "name": "Driving strategy mountain factor", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -10093,8 +10082,7 @@
       "rx": "7E9",
       "request": "221019",
       "interval": 1,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_DRIVING_STRATEGY_SPORT_FACTOR", "name": "Driving strategy sport factor", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 1700, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -10118,7 +10106,7 @@
       "rx": "7E9",
       "request": "221021",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TCM_DRAG_TQ", "name": "Transmission drag torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -10130,7 +10118,7 @@
       "rx": "7E9",
       "request": "221022",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TCM_TQ_LOSSES", "name": "Transmission torque losses", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -10142,7 +10130,7 @@
       "rx": "7E9",
       "request": "221024",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N215_P_CTRL_1", "name": "Current N215 pressure control valve 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10154,7 +10142,7 @@
       "rx": "7E9",
       "request": "221025",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N218_P_CTRL_4", "name": "Current N218 pressure control valve 4", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10166,7 +10154,7 @@
       "rx": "7E9",
       "request": "221026",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N216_P_CTRL_2", "name": "Current N216 pressure control valve 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10178,7 +10166,7 @@
       "rx": "7E9",
       "request": "221027",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N233_P_CTRL_5", "name": "Current N233 pressure control valve 5", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10190,7 +10178,7 @@
       "rx": "7E9",
       "request": "221028",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N217_P_CTRL_3", "name": "Current N217 pressure control valve 3", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10202,7 +10190,7 @@
       "rx": "7E9",
       "request": "221029",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_N371_P_CTRL_6", "name": "Current N371 pressure control valve 6 lock-up clutch", "group": "Transmission", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10214,7 +10202,7 @@
       "rx": "7E9",
       "request": "22102A",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_CENTER_CENTRAL_T", "name": "Clutch center central plate temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -10226,8 +10214,7 @@
       "rx": "7E9",
       "request": "22102B",
       "interval": 5,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_1_T", "name": "Clutch 1 temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
       ]
@@ -10239,7 +10226,7 @@
       "rx": "7E9",
       "request": "22102C",
       "interval": 5,
-      "answeredIn": [2016, 2017],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_2_T", "name": "Clutch 2 temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "°C"}
       ]
@@ -10263,6 +10250,7 @@
       "rx": "7E9",
       "request": "22102E",
       "interval": 1,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_M009_DES_SOLENOID_10", "name": "M009, desired solenoid out 10", "group": "Engine", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "S5_M009_DES_SOLENOID_11", "name": "M009, desired solenoid out 11", "group": "Engine", "bit": 1, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -10278,6 +10266,7 @@
       "rx": "7E9",
       "request": "221033",
       "interval": 30,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TIME_SINCE_SHIFT", "name": "Time since shift", "group": "Transmission", "bit": 0, "bits": 8, "multiply": 30, "min": 0, "max": 7650, "unit": "ms"}
       ]
@@ -10289,6 +10278,7 @@
       "rx": "7E9",
       "request": "221037",
       "interval": 1,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CURRENT_SOLENOID", "name": "Current solenoid", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "mA"}
       ]
@@ -10300,7 +10290,7 @@
       "rx": "7E9",
       "request": "22103A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TIME_AFTERRUN", "name": "Time in after-run", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "s"}
       ]
@@ -10312,7 +10302,7 @@
       "rx": "7E9",
       "request": "22103B",
       "interval": 30,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TIME_SINCE_RESET", "name": "Time since reset", "group": "Engine", "bit": 0, "bits": 8, "multiply": 30, "min": 0, "max": 7650, "unit": "ms"}
       ]
@@ -10324,6 +10314,7 @@
       "rx": "7E9",
       "request": "22103D",
       "interval": 30,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ODO_7E1_2", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "km"}
       ]
@@ -10336,7 +10327,7 @@
       "request": "221057",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_1_ADAPT_BASIC_CHAR_POINT_0_POS", "name": "Clutch 1 adaptation basic characteristic point 0 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -10386,7 +10377,7 @@
       "request": "22105B",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_1_ADAPT_BASIC_CHAR_POINT_2_POS", "name": "Clutch 1 adaptation basic characteristic point 2 position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -10436,7 +10427,7 @@
       "rx": "7E9",
       "request": "221061",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DES_TQ_RAW", "name": "Desired torque raw", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -10474,7 +10465,7 @@
       "rx": "7E9",
       "request": "221064",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ANALYSIS_CLU_1_MAX_T", "name": "Analysis, clutch 1, maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -10486,7 +10477,7 @@
       "rx": "7E9",
       "request": "221065",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_1_T_TIME_RANGE_0", "name": "Clutch 1 temperature time in range 0", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
       ]
@@ -10498,7 +10489,7 @@
       "rx": "7E9",
       "request": "221066",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ANALYSIS_CLU_1_T_1", "name": "Analysis, clutch 1 temperature time in range 1", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
       ]
@@ -10510,7 +10501,7 @@
       "rx": "7E9",
       "request": "221067",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ANALYSIS_CLU_1_T_2", "name": "Analysis, clutch 1 temperature time in range 2", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
       ]
@@ -10522,6 +10513,7 @@
       "rx": "7E9",
       "request": "221068",
       "interval": 5,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_ANALYSIS_CLU_1_T_3", "name": "Analysis, clutch 1 temperature time in range 3", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "divide": 50, "min": 0, "max": 1310.7, "unit": "s"}
       ]
@@ -10545,7 +10537,7 @@
       "rx": "7E9",
       "request": "22106A",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_RESERVE_TQ", "name": "Reserve torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -10668,7 +10660,7 @@
       "rx": "7E9",
       "request": "221075",
       "interval": 3600,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_2_ADAPT_END_POS_CLOSED", "name": "Clutch 2 adaptation end position closed", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -10692,8 +10684,7 @@
       "rx": "7E9",
       "request": "221078",
       "interval": 1,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_2_CHAR_CURVE_SHIFT", "name": "Clutch 2 characteristic curve shift", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 9.8, "divide": 10000, "min": -32.11, "max": 32.111, "unit": "mm"}
       ]
@@ -10705,7 +10696,7 @@
       "rx": "7E9",
       "request": "221079",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ANALYSIS_CLU_2_MAX_T", "name": "Analysis, clutch 2, maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -10778,7 +10769,7 @@
       "request": "221082",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_GEAR_ACTUATOR_ADAPT_ENGAGED_POS_G1", "name": "Gear actuator adaptation engaged position G1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -10918,7 +10909,7 @@
       "request": "22109F",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_GEAR_ACTUATOR_ADAPT_SYNCHRO_POS_G5", "name": "Gear actuator adaptation synchronization position G5", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -10931,7 +10922,7 @@
       "request": "2210A0",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_GANGSTELLER_C_ADAPT_NEUTRALPOS", "name": "Gear selector c adaptation neutral position", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -10970,7 +10961,7 @@
       "request": "2210AC",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_GEAR_ACTUATOR_ADAPT_ENGAGED_POS_G6", "name": "Gear actuator adaptation engaged position G6", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -10983,7 +10974,7 @@
       "request": "2210AD",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_GEAR_ACTUATOR_ADAPT_SYNCHRO_POS_G6", "name": "Gear actuator adaptation synchronization position G6", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "mm"}
       ]
@@ -11046,7 +11037,7 @@
       "request": "2210CA",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_1_ADAPT_KISS_POINT_PART_1_ODO_READING", "name": "Clutch 1 adaptation kiss point part 1 odometer reading", "group": "Trips", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 10, "min": 0, "max": 655350, "unit": "km"}
       ]
@@ -11109,8 +11100,7 @@
       "rx": "7E9",
       "request": "2210F9",
       "interval": 1,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_DL382_CLUTCH_1_ACTUAL_P_RAW_VALUE", "name": "Clutch 1 actual pressure raw value", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "add": -1, "min": -1, "max": 24.5, "unit": "bar"}
       ]
@@ -11122,8 +11112,7 @@
       "rx": "7E9",
       "request": "2210FA",
       "interval": 1,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_DL382_CLUTCH_2_ACTUAL_P_RAW_VALUE", "name": "Clutch 2 actual pressure raw value", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "add": -1, "min": -1, "max": 24.5, "unit": "bar"}
       ]
@@ -11135,7 +11124,7 @@
       "rx": "7E9",
       "request": "221100",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_INFLATION_TIME", "name": "Adaptation inflation time torque converter lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "multiply": 10, "min": 0, "max": 655350, "unit": "ms"}
       ]
@@ -11147,6 +11136,7 @@
       "rx": "7E9",
       "request": "221101",
       "interval": 3600,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_TSF_LOCKUP", "name": "Adaptation counter torque converter lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -11158,7 +11148,7 @@
       "rx": "7E9",
       "request": "221102",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_INFLATION", "name": "Adaptation inflation current PF lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "mA"}
       ]
@@ -11170,7 +11160,7 @@
       "rx": "7E9",
       "request": "221103",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_PF_LOCKUP", "name": "Adaptation counter PF lockup clutch", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -11195,8 +11185,8 @@
       "rx": "7E9",
       "request": "22110B",
       "interval": 3600,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MQB_DQ250_UPPER_ADAPTED_COUPLING_POINT_K1_FROM_MACRO_SLIP_PATH_ADAPT", "name": "Upper adapted coupling point K1 from macro slip path adaptation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -11208,8 +11198,8 @@
       "rx": "7E9",
       "request": "22110C",
       "interval": 3600,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MQB_DQ250_UPPER_ADAPTED_COUPLING_POINT_K2_FROM_MACRO_SLIP_PATH_ADAPT", "name": "Upper adapted coupling point K2 from macro slip path adaptation", "group": "Engine", "bit": 0, "bits": 8, "multiply": 5, "min": 0, "max": 1275, "unit": "mA"}
       ]
@@ -11221,8 +11211,8 @@
       "rx": "7E9",
       "request": "221110",
       "interval": 1,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_WORKING_HOURS", "name": "Working hours", "group": "Transmission", "bit": 0, "bits": 32, "byteOrder": "little", "multiply": 2, "divide": 360000, "min": 0, "max": 23860.929}
       ]
@@ -11234,7 +11224,7 @@
       "rx": "7E9",
       "request": "221111",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_OP_TIME_T_RANGE_1", "name": "Operating time, temperature range 1", "group": "Trips", "bit": 0, "bits": 32, "byteOrder": "little", "multiply": 238607, "divide": 42949672950, "min": 0, "max": 23860.7, "unit": "h"},
         {"id": "S5_OP_TIME_T_RANGE_2", "name": "Operating time, temperature range 2", "group": "Trips", "bit": 32, "bits": 32, "byteOrder": "little", "multiply": 238607, "divide": 42949672950, "min": 0, "max": 23860.7, "unit": "h"},
@@ -11251,8 +11241,8 @@
       "rx": "7E9",
       "request": "221117",
       "interval": 3600,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_PQ35_REACHED_MAXIMUM_T", "name": "Reached maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -11264,8 +11254,7 @@
       "rx": "7E9",
       "request": "221118",
       "interval": 3600,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_1_MAXIMUM_T", "name": "Clutch #1 maximum temperature", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535, "unit": "°C"},
         {"id": "S5_PQ35_CLUTCH_2_MAXIMUM_T", "name": "Clutch #2 maximum temperature", "group": "Engine", "bit": 16, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535, "unit": "°C"}
@@ -11279,6 +11268,7 @@
       "request": "221120",
       "interval": 3600,
       "flowControl": true,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_1_LO_ADPT_POINT", "name": "Clutch 1 lower adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -11291,6 +11281,7 @@
       "request": "221121",
       "interval": 3600,
       "flowControl": true,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_2_LO_ADPT_POINT", "name": "Clutch 2 lower adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -11303,6 +11294,7 @@
       "request": "221124",
       "interval": 3600,
       "flowControl": true,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_1_HI_ADPT_POINT", "name": "Clutch 1 upper adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -11315,6 +11307,7 @@
       "request": "221125",
       "interval": 3600,
       "flowControl": true,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_2_HI_ADPT_POINT", "name": "Clutch 2 upper adaptation point", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.76, "max": 32.76, "unit": "bar"}
       ]
@@ -11379,7 +11372,7 @@
       "request": "221138",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_ENGAGED_POS_SIDE_A_GEAR_SELECTOR_1_3", "name": "Engaged position side a gear selector 1-3", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -11418,7 +11411,7 @@
       "request": "22113B",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_ENGAGED_POS_SIDE_A_GEAR_SELECTOR_6_R", "name": "Engaged position side a gear selector 6 and reverse", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -11444,7 +11437,7 @@
       "request": "22113D",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_SYNCHRONOUS_POS_SIDE_A_GEAR_SELECTOR_2_4", "name": "Synchronous position side a gear selector 2-4", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -11457,7 +11450,7 @@
       "request": "22113E",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_SYNCHRONOUS_POS_SIDE_A_GEAR_SELECTOR_5_N", "name": "Synchronous position side a gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -11607,7 +11600,7 @@
       "request": "22114A",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_SYNCHRONOUS_POS_SIDE_B_GEAR_SELECTOR_5_N", "name": "Synchronous position side b gear selector 5 and neutral", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "%"}
       ]
@@ -11632,6 +11625,7 @@
       "rx": "7E9",
       "request": "221154",
       "interval": 5,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_NUM_TIMES_PERMITTED_T", "name": "Number of times the permitted centrifugal oil temperature has been exceeded", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -11643,6 +11637,7 @@
       "rx": "7E9",
       "request": "221155",
       "interval": 5,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_NUM_WARN_HI_CENTRIF_T", "name": "Number of warnings due to increased centrifugal oil temperature", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -11733,7 +11728,7 @@
       "request": "221179",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_GEAR_SELECTOR_SYNCHRONOUS_POS_G1", "name": "Gear selector synchronous position G1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": 0, "max": 327.67, "unit": "%"}
       ]
@@ -11824,7 +11819,7 @@
       "request": "221180",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_CORRECTION_VALUES_MAIN_P_ADAPT_LOW_P_ON_CLUTCH_1", "name": "Correction values for main press adaptation: low press on clutch 1", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -11863,7 +11858,7 @@
       "request": "221183",
       "interval": 3600,
       "answeredIn": [2016],
-      "notAnsweredIn": [2017],
+      "notAnsweredIn": [2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_CORRECTION_VALUES_MAIN_P_ADAPT_HIGH_P_ON_CLUTCH_2", "name": "Correction values for main pressure adaptation high pressure on clutch 2", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -11940,6 +11935,7 @@
       "request": "221259",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_CLU_T", "name": "Clutch temperature", "group": "Transmission", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -11952,6 +11948,7 @@
       "request": "22125C",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_CLU_1_NOMINAL_P", "name": "Clutch 1 nominal pressure", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "bar"}
       ]
@@ -11963,6 +11960,7 @@
       "rx": "7E9",
       "request": "22125D",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_NOMINAL_P_CLU_2", "name": "Nominal pressure clutch 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327, "max": 327, "unit": "bar"}
       ]
@@ -12034,7 +12032,7 @@
       "rx": "7E9",
       "request": "2213CD",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DL382_CLUTCH_2_ABSOLUTE_P", "name": "Clutch 2 absolute pressure", "group": "Transmission", "bit": 0, "bits": 8, "divide": 10, "add": -1, "min": -1, "max": 24.5, "unit": "bar"}
       ]
@@ -12058,7 +12056,7 @@
       "rx": "7E9",
       "request": "22141A",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DL382_STIFFNESS_POINT_P_CLUTCH_2", "name": "Stiffness point pressure clutch 2", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 1000, "min": -32.768, "max": 32.767, "unit": "bar"}
       ]
@@ -12094,7 +12092,7 @@
       "rx": "7E9",
       "request": "2217FC",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_CONV_TIME_T_RANGE_1", "name": "Torque converter time in temperature range 1", "group": "Trips", "bit": 0, "bits": 24, "min": 0, "max": 16777215, "unit": "min"},
         {"id": "S5_TQ_CONV_TIME_T_RANGE_2", "name": "Torque converter time in temperature range 2", "group": "Trips", "bit": 24, "bits": 24, "min": 0, "max": 16777215, "unit": "min"},
@@ -12113,7 +12111,7 @@
       "rx": "7E9",
       "request": "2217FD",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_CLU_OVERHEATING_CLU", "name": "Clutch overheating, clutch", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12125,7 +12123,7 @@
       "rx": "7E9",
       "request": "2218E3",
       "interval": 5,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DL382_CLUTCH_T_CALCULATED", "name": "Clutch temperature calculated", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -12137,7 +12135,7 @@
       "rx": "7E9",
       "request": "222002",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_TQ_7E1", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
       ]
@@ -12150,6 +12148,7 @@
       "request": "22203F",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_TORQUE_LIMITATION", "name": "Torque limitation", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
       ]
@@ -12161,8 +12160,7 @@
       "rx": "7E9",
       "request": "222102",
       "interval": 0.25,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_TRANSMISSION_INPUT_SPD", "name": "Transmission input speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -12174,8 +12172,7 @@
       "rx": "7E9",
       "request": "222103",
       "interval": 0.25,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_TRANSMISSION_OUTPUT_SPD", "name": "Transmission output speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"}
       ]
@@ -12187,8 +12184,7 @@
       "rx": "7E9",
       "request": "222104",
       "interval": 5,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Fluids", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -12200,7 +12196,7 @@
       "rx": "7E9",
       "request": "222105",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_TRANSMITTING", "name": "Torque transmitting function, ratio", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
       ]
@@ -12212,7 +12208,7 @@
       "rx": "7E9",
       "request": "222106",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VSS_HR", "name": "Vehicle speed, HR", "group": "Movement", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"}
       ]
@@ -12224,7 +12220,7 @@
       "rx": "7E9",
       "request": "222108",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DRIVING_RES_INDEX", "name": "Driving resistance index", "group": "Engine", "bit": 0, "bits": 8, "add": -128, "min": -128, "max": 127}
       ]
@@ -12236,7 +12232,7 @@
       "rx": "7E9",
       "request": "22210D",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DRIVING_MODE_SENS", "name": "Driving mode sensor, hall sensor a", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12248,7 +12244,7 @@
       "rx": "7E9",
       "request": "22210E",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DRIVING_POS", "name": "Driving position", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12260,10 +12256,9 @@
       "rx": "7E9",
       "request": "22210F",
       "interval": 0.25,
-      "answeredIn": [2016, 2017, 2023, 2024],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
-        {"id": "S5_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253}
+        {"id": "S5_MQB_TCM_I_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253}
       ]
     },
     {
@@ -12273,7 +12268,7 @@
       "rx": "7E9",
       "request": "222110",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ENG_SPEC_TQ_DURING", "name": "Engine specified torque during transmission intervention", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
       ]
@@ -12285,8 +12280,7 @@
       "rx": "7E9",
       "request": "222114",
       "interval": 1,
-      "answeredIn": [2016, 2017],
-      "notAnsweredIn": [2022],
+      "answeredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_KICK_DOWN", "name": "Kick down", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12298,7 +12292,7 @@
       "rx": "7E9",
       "request": "222115",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_DYNAMIC_SHIFT", "name": "Dynamic shift program", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12310,7 +12304,7 @@
       "rx": "7E9",
       "request": "222116",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL", "name": "Acceleration", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "m/s²"}
       ]
@@ -12322,7 +12316,7 @@
       "rx": "7E9",
       "request": "222117",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_EXCESSIVE_T", "name": "Excessive temperature protection", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12334,7 +12328,7 @@
       "rx": "7E9",
       "request": "222118",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_DECCELERATION", "name": "Acceleration/deceleration mode", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12346,7 +12340,7 @@
       "rx": "7E9",
       "request": "222119",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_FACTOR", "name": "Torque factor", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12358,7 +12352,7 @@
       "rx": "7E9",
       "request": "22211A",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_MAX_PERMISSIBLE_ENG", "name": "Max permissible engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -12370,7 +12364,7 @@
       "rx": "7E9",
       "request": "222130",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_TQ_CONV", "name": "Torque converter amplification", "group": "Transmission", "bit": 0, "bits": 8, "divide": 100, "min": 0, "max": 2.55}
       ]
@@ -12382,8 +12376,8 @@
       "rx": "7E9",
       "request": "222131",
       "interval": 0.25,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_TORQUE_CONVERTER_SLIP_TCM", "name": "Torque converter slip", "group": "ECU", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
       ]
@@ -12396,6 +12390,7 @@
       "request": "222142",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_SPEC_TQ_CLU_1_DATA", "name": "Specified torque clutch 1 - data", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "Nm"}
       ]
@@ -12408,6 +12403,7 @@
       "request": "222143",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_SPEC_TQ_CLU_2_DATA", "name": "Specified torque clutch 2 - data", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "divide": 20, "min": -1638, "max": 1638, "unit": "Nm"}
       ]
@@ -12445,7 +12441,7 @@
       "rx": "7E9",
       "request": "22282C",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ROUTE_DATA_ACTIVE", "name": "Route data, active", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -12457,8 +12453,8 @@
       "rx": "7E9",
       "request": "222B1B",
       "interval": 0.25,
-      "answeredIn": [2017, 2023, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2023, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_TIRE_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -12470,8 +12466,8 @@
       "rx": "7E9",
       "request": "222B1C",
       "interval": 0.25,
-      "answeredIn": [2017, 2023, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2023, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_TIRE_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -12483,8 +12479,8 @@
       "rx": "7E9",
       "request": "222B1D",
       "interval": 0.25,
-      "answeredIn": [2017, 2023, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2023, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_TIRE_RL_SPD", "name": "Rear left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -12496,8 +12492,8 @@
       "rx": "7E9",
       "request": "222B1E",
       "interval": 0.25,
-      "answeredIn": [2017, 2023, 2024],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022, 2023, 2024],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_TIRE_RR_SPD", "name": "Rear right wheel speed", "group": "Movement", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -12629,7 +12625,7 @@
       "rx": "7E9",
       "request": "22381D",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_EOP_ACTUAL", "name": "Oil pressure actual", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "bar"}
       ]
@@ -12869,7 +12865,7 @@
       "rx": "7E9",
       "request": "22383E",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_CLUTCH_2_VALVE_I_ACTUAL", "name": "Clutch 2 valve current: actual", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 10, "min": 0, "max": 3276.7, "unit": "mA"}
       ]
@@ -12917,7 +12913,7 @@
       "rx": "7E9",
       "request": "223862",
       "interval": 0.25,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_ACUTAL_POS_GEAR_POSER_C", "name": "Actual position of gear positioner c", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 100, "divide": 10000, "min": 0, "max": 327.67, "unit": "mm"}
       ]
@@ -12965,7 +12961,7 @@
       "rx": "7E9",
       "request": "223880",
       "interval": 3600,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_CLUTCH_1_T_PROTECTION_WARNING_2_QTY", "name": "Clutch 1 temperature protection warning 2 quantity", "group": "Engine", "bit": 0, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535}
       ]
@@ -13025,7 +13021,7 @@
       "rx": "7E9",
       "request": "223887",
       "interval": 30,
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_MQB_TCM_ODO_2", "name": "Odometer #2", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "byteOrder": "little", "divide": 10, "min": 0, "max": 429496729.5, "unit": "km"}
       ]
@@ -13037,7 +13033,7 @@
       "rx": "7E9",
       "request": "223888",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_TCM_DRIVING_TIME_ECOLOGICAL", "name": "Driving time ecological", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -13121,7 +13117,7 @@
       "rx": "7E9",
       "request": "22388F",
       "interval": 3600,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_MQB_DQ250_UPPER_ADAPTED_COUPLING_POINT_CLUTCH_1_FROM_MICROSLIP_ADAPT", "name": "Upper adapted coupling point clutch 1 from microslip adaptation", "group": "Transmission", "bit": 0, "bits": 8, "divide": 200, "min": 0, "max": 1.275, "unit": "A"}
       ]
@@ -13193,7 +13189,7 @@
       "rx": "7E9",
       "request": "2238B2",
       "interval": 5,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CENTRIFUGAL_OIL_T", "name": "Centrifugal oil temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127}
       ]
@@ -13206,6 +13202,7 @@
       "request": "2238BF",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_ATF_T_2", "name": "Transmission fluid temperature 2", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "°C"}
       ]
@@ -13218,6 +13215,7 @@
       "request": "2238C0",
       "interval": 3600,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_LAUNCH_CTRL_CNT_CLU_1", "name": "Launch control counter, clutch 1", "group": "Transmission", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -13265,7 +13263,7 @@
       "rx": "7E9",
       "request": "2238ED",
       "interval": 1,
-      "notAnsweredIn": [2016, 2017],
+      "notAnsweredIn": [2016, 2017, 2022],
       "signals": [
         {"id": "S5_PQ35_CLUTCH_2_CMD_P", "name": "Clutch 2 commanded pressure", "group": "Transmission", "bit": 0, "bits": 16, "byteOrder": "little", "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "bar"}
       ]
@@ -13277,7 +13275,7 @@
       "rx": "7E9",
       "request": "2238F1",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_LAUNCH_CTRL_CNT_VAR_2", "name": "Launch control counter, variant 2", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535}
       ]
@@ -13361,6 +13359,7 @@
       "rx": "7E9",
       "request": "224E76",
       "interval": 1,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AUX_HYDRAULIC_PMP", "name": "Aux. hydraulic pump, current", "group": "Engine", "bit": 0, "bits": 8, "divide": 5, "min": 0, "max": 51, "unit": "A"}
       ]
@@ -13372,7 +13371,7 @@
       "rx": "7E9",
       "request": "2251A6",
       "interval": 5,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AUX_HYDRAULIC_PMP_T", "name": "Aux. hydraulic pump internal temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
@@ -13384,7 +13383,7 @@
       "rx": "7E9",
       "request": "2251A7",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AUX_HYDRAULIC_PMP_V", "name": "Aux. hydraulic pump voltage", "group": "Battery", "bit": 0, "bits": 8, "divide": 10, "min": 0, "max": 25.5, "unit": "V"}
       ]
@@ -13421,6 +13420,7 @@
       "request": "22704E",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_ATF_T_CALCULATED", "name": "Transmission fluid temperature, calculated", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
       ]
@@ -13445,6 +13445,7 @@
       "request": "227050",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_SELECTED_GEAR", "name": "Selected gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -2, "min": -2, "max": 253, "unit": "°C"}
       ]
@@ -13457,6 +13458,7 @@
       "request": "227051",
       "interval": 3600,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_ATF_T_MODELED_MAX_REACHED", "name": "Transmission fluid temperature, modeled maximum reached", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
       ]
@@ -13469,6 +13471,7 @@
       "request": "227053",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_TORQUE_CONVERTER_TORQUE_LOSS", "name": "Torque converter: torque loss", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Nm"}
       ]
@@ -13492,8 +13495,8 @@
       "rx": "7E9",
       "request": "227078",
       "interval": 0.25,
-      "answeredIn": [2017],
-      "notAnsweredIn": [2016, 2022],
+      "answeredIn": [2017, 2022],
+      "notAnsweredIn": [2016],
       "signals": [
         {"id": "S5_MQB_TCM_TORQUE_CONVERTER_LOCKUP_CLUTCH_STATUS", "name": "Torque converter lockup clutch status", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13505,7 +13508,7 @@
       "rx": "7E9",
       "request": "227084",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FILL_P_CLU", "name": "Fill pressure, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -13517,6 +13520,7 @@
       "rx": "7E9",
       "request": "227085",
       "interval": 3600,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_CLU", "name": "Adaptation counter, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13528,7 +13532,7 @@
       "rx": "7E9",
       "request": "227086",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FAST_FILL_TIME_CLU", "name": "Fast fill time, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -13540,6 +13544,7 @@
       "rx": "7E9",
       "request": "227087",
       "interval": 3600,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_FAST_FILL", "name": "Adaptation counter, fast fill time, clutch a", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13551,7 +13556,7 @@
       "rx": "7E9",
       "request": "227088",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FILL_P_CLU_B", "name": "Fill pressure, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -13563,7 +13568,7 @@
       "rx": "7E9",
       "request": "227089",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_CLU_B", "name": "Adaptation counter, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13575,7 +13580,7 @@
       "rx": "7E9",
       "request": "22708A",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FAST_FILL_TIME_CLU_B", "name": "Fast fill time, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -13587,6 +13592,7 @@
       "rx": "7E9",
       "request": "22708B",
       "interval": 3600,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_FAST_FILL_B", "name": "Adaptation counter, fast fill time, clutch b", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13598,7 +13604,7 @@
       "rx": "7E9",
       "request": "22708C",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FILL_P_CLU_C", "name": "Fill pressure, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -13610,7 +13616,7 @@
       "rx": "7E9",
       "request": "22708D",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_CLU_C", "name": "Adaptation counter, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13622,7 +13628,7 @@
       "rx": "7E9",
       "request": "22708E",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FAST_FILL_TIME_CLU_C", "name": "Fast fill time, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -13634,7 +13640,7 @@
       "rx": "7E9",
       "request": "22708F",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_FAST_FILL_C", "name": "Adaptation counter, fast fill time, clutch c", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13646,6 +13652,7 @@
       "rx": "7E9",
       "request": "227090",
       "interval": 1,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FILL_P_CLU_D", "name": "Fill pressure, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -13657,7 +13664,7 @@
       "rx": "7E9",
       "request": "227091",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_CLU_D", "name": "Adaptation counter, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13669,6 +13676,7 @@
       "rx": "7E9",
       "request": "227092",
       "interval": 1,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FAST_FILL_TIME_CLU_D", "name": "Fast fill time, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -13680,7 +13688,7 @@
       "rx": "7E9",
       "request": "227093",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_FAST_FILL_D", "name": "Adaptation counter, fast fill time, clutch d", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13692,7 +13700,7 @@
       "rx": "7E9",
       "request": "227094",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FILL_P_CLU_E", "name": "Fill pressure, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 10, "min": -1280, "max": 1270}
       ]
@@ -13704,6 +13712,7 @@
       "rx": "7E9",
       "request": "227095",
       "interval": 3600,
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_CLU_E", "name": "Adaptation counter, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13715,7 +13724,7 @@
       "rx": "7E9",
       "request": "227096",
       "interval": 1,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_FAST_FILL_TIME_CLU_E", "name": "Fast fill time, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "signed": true, "multiply": 2, "min": -256, "max": 254, "unit": "ms"}
       ]
@@ -13727,7 +13736,7 @@
       "rx": "7E9",
       "request": "227097",
       "interval": 3600,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ADPT_CNT_FAST_FILL_E", "name": "Adaptation counter, fast fill time, clutch e", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13739,7 +13748,7 @@
       "rx": "7E9",
       "request": "2270D1",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_SHIFT_PROCCESS_TGT", "name": "Shift process, target gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "S5_SHIFT_PROCCESS", "name": "Shift process, selected gear", "group": "Transmission", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -13752,7 +13761,7 @@
       "rx": "7E9",
       "request": "2270D6",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_AUX_HYDRAULIC_PMP_RPM", "name": "Aux. hydraulic pump RPM", "group": "Movement", "bit": 0, "bits": 8, "multiply": 32, "min": 0, "max": 8160, "unit": "rpm"}
       ]
@@ -13788,7 +13797,7 @@
       "rx": "7E9",
       "request": "22F40D",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -13800,7 +13809,7 @@
       "rx": "7E9",
       "request": "22F449",
       "interval": 0.25,
-      "notAnsweredIn": [2022],
+      "answeredIn": [2022],
       "signals": [
         {"id": "S5_ACCEL_PEDAL_POS_7E1", "name": "Accelerator pedal position", "group": "Movement", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -13814,7 +13823,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_SOC", "name": "HV battery state of charge", "group": "Battery", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -13827,7 +13836,7 @@
       "request": "22180E",
       "interval": 1,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_BMS_BMCE_T3", "name": "Battery module controller temperature, 3", "group": "Engine", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"}
       ]
@@ -13841,7 +13850,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_HVBAT_MOD3_T1", "name": "Module 3, temperature 1", "group": "Battery.Modules", "bit": 0, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
         {"id": "S5_HVBAT_MOD3_T2", "name": "Module 3, temperature 2", "group": "Battery.Modules", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
@@ -13855,6 +13864,7 @@
       "rx": "7ED",
       "request": "22189D",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_HVBAT_OUTLET_T", "name": "High voltage battery outlet temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
         {"id": "S5_HVBAT_INLET_T", "name": "High voltage battery inlet temperature", "group": "Battery", "bit": 8, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
@@ -13869,7 +13879,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_PWR_REDUCE_ACT", "name": "Battery power reduction active", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -13882,7 +13892,7 @@
       "request": "221E0F",
       "interval": 1,
       "session": {"enter": "03"},
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_BMS_T_MIN", "name": "HV battery temperature, minimum", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"},
         {"id": "S5_BMS_T_MIN_CELL", "name": "HV battery temperature, minimum, cell number", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255},
@@ -13898,7 +13908,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_I_CHG_LIM_DYN", "name": "Maximum dynamic charge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
       ]
@@ -13912,7 +13922,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_I_DCHG_LIM_DYN", "name": "Maximum dynamic discharge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
       ]
@@ -13926,7 +13936,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_I_CHG_LIM_PRED", "name": "Maximum predicted charge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
       ]
@@ -13940,7 +13950,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_I_DCHG_LIM_PRED", "name": "Maximum predicted discharge current limit", "group": "Battery", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "A"}
       ]
@@ -13954,7 +13964,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_CELL_SOC_MAX", "name": "Cell state of charge max, value", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"},
         {"id": "S5_BMS_CELL_SOC_MAX_IDX", "name": "Cell state of charge max, index", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -13969,7 +13979,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_CELL_SOC_MIN", "name": "Cell state of charge min, value", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 100, "unit": "%"},
         {"id": "S5_BMS_CELL_SOC_MIN_IDX", "name": "Cell state of charge min, index", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -13982,7 +13992,7 @@
       "rx": "7ED",
       "request": "221E32",
       "interval": 5,
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_HVBAT_TOT_AH_CHRG", "name": "HV battery total ampere hours of charge", "group": "Battery", "bit": 0, "bits": 32, "divide": 549.31642, "min": 0, "max": 7818700, "unit": "Ah"},
         {"id": "S5_HVBAT_TOT_AH_DCHRG", "name": "HV battery total ampere hours of discharge", "group": "Battery", "bit": 32, "bits": 32, "signed": true, "divide": 549.31642, "min": -3909350, "max": 3909350, "unit": "Ah"},
@@ -13999,7 +14009,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_CELL_V_MAX", "name": "Cell voltage max, value", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
         {"id": "S5_BMS_CELL_V_MAX_IDX", "name": "Cell voltage max, index", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255},
@@ -14015,7 +14025,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_CELL_V_MIN", "name": "Cell voltage min, value", "group": "Battery", "bit": 0, "bits": 16, "divide": 10000, "min": 0, "max": 6.5535, "unit": "V"},
         {"id": "S5_BMS_CELL_V_MIN_IDX", "name": "Cell voltage min, index", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255},
@@ -14031,7 +14041,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_CELL_V_SUM", "name": "Cell voltage sum", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14044,7 +14054,7 @@
       "request": "221E3D",
       "interval": 5,
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_HVBAT_CURRENT", "name": "HV battery current", "group": "Battery", "bit": 0, "bits": 16, "divide": 4, "add": -511, "min": -200, "max": 200, "unit": "A"}
       ]
@@ -14056,6 +14066,7 @@
       "rx": "7ED",
       "request": "221EBB",
       "interval": 5,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_T_SENS_14", "name": "Temperature sensor 14", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 64, "min": -512, "max": 511, "unit": "°C"}
       ]
@@ -14067,6 +14078,7 @@
       "rx": "7ED",
       "request": "222A0B",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_HVBAT_T", "name": "High voltage battery temperature", "group": "Battery", "bit": 0, "bits": 8, "add": -100, "min": -100, "max": 155, "unit": "°C"}
       ]
@@ -14080,7 +14092,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_DCHG_MIN", "name": "Minimum discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14094,7 +14106,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_CHG_MAX", "name": "Maximum charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14108,7 +14120,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_CHG_PRED_MIN", "name": "Minimum predicted charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14122,7 +14134,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_DCHG_PRED_MIN", "name": "Minimum predicted discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14136,7 +14148,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_CHG_DYN_MIN", "name": "Minimum dynamic charge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14150,7 +14162,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_V_DCHG_DYN_MIN", "name": "Minimum dynamic discharge voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "V"}
       ]
@@ -14162,7 +14174,7 @@
       "rx": "7ED",
       "request": "2251E0",
       "interval": 30,
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_HVBAT_SOH", "name": "HV battery health", "group": "Battery", "bit": 0, "bits": 16, "multiply": 0.127, "add": -1798.574, "min": -1798.574, "max": 6524, "unit": "%"}
       ]
@@ -14174,7 +14186,7 @@
       "rx": "7ED",
       "request": "225200",
       "interval": 3600,
-      "notAnsweredIn": [2016, 2017, 2023, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2023, 2024],
       "signals": [
         {"id": "S5_LAUNCH", "name": "Launch control count", "description": "How many times you've initiated launch control on the car.", "group": "Stats", "bit": 0, "bits": 32, "min": 0, "max": 1000000}
       ]
@@ -14186,6 +14198,7 @@
       "rx": "7ED",
       "request": "227448",
       "interval": 1,
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "S5_HVBAT_MODE_0_STANDBY_1_2_3_4_5_6_7", "name": "High voltage battery mode", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -14199,7 +14212,7 @@
       "interval": 1,
       "session": {"enter": "03"},
       "answeredIn": [2023],
-      "notAnsweredIn": [2016, 2017, 2024],
+      "notAnsweredIn": [2016, 2017, 2022, 2024],
       "signals": [
         {"id": "S5_BMS_SOC_HIRES", "name": "HV battery state of charge, hd", "group": "Battery", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"}
       ]

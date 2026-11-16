@@ -19,7 +19,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-Bronco",
     "file": "signalsets/v3/default.json",
-    "revision": "3e98a88ca9ee36ae1ac51732339cef80ee3e4577",
+    "revision": "e3f3ee55dfb1d9b645067403f360caf36bd41738",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -682,7 +682,7 @@
       "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "BRONCO_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "multiply": 0.0362553791, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "BRONCO_BARO", "name": "Barometric pressure", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 0.0362553791, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1490,7 +1490,7 @@
       "interval": 1,
       "notAnsweredIn": [2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "BRONCO_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "BRONCO_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1514,7 +1514,7 @@
       "interval": 1,
       "notAnsweredIn": [2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "BRONCO_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "BRONCO_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -1931,10 +1931,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E12",
-      "interval": 2,
+      "interval": 0.25,
       "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "BRONCO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Engine", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "BRONCO_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Engine", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -1991,10 +1991,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "BRONCO_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "BRONCO_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2003,10 +2003,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 2,
+      "interval": 0.25,
       "answeredIn": [2021, 2022, 2023, 2024, 2025, 2026],
       "signals": [
-        {"id": "BRONCO_GEAR_SHFT", "name": "Shift gear", "group": "Engine", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "BRONCO_GEAR_SHFT", "name": "Shift gear", "group": "Engine", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -2103,7 +2103,7 @@
       "interval": 0.25,
       "answeredIn": [2022, 2023, 2024, 2026],
       "signals": [
-        {"id": "BRONCO_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "BRONCO_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

@@ -21,7 +21,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Mazda-Tribute",
     "file": "signalsets/v3/default.json",
-    "revision": "2c0b3cd713220f5d8f777c02408a5ee4b5f3d6ba",
+    "revision": "790181ea4ee1af557d327b661f325af0ca60a0f2",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -170,7 +170,7 @@
       "interval": 3600,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "TRIBUTE_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "metric": "storedDTCCount", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -302,7 +302,7 @@
       "interval": 5,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "TRIBUTE_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -695,10 +695,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E12",
-      "interval": 2,
+      "interval": 0.25,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "TRIBUTE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -791,10 +791,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 2,
+      "interval": 0.25,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "TRIBUTE_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -890,7 +890,7 @@
       "interval": 0.25,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "TRIBUTE_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {
@@ -1034,7 +1034,7 @@
       "interval": 1,
       "answeredIn": [2010],
       "signals": [
-        {"id": "TRIBUTE_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "TRIBUTE_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {

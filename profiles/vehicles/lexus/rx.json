@@ -18,7 +18,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Lexus-RX",
     "file": "signalsets/v3/default.json",
-    "revision": "07c4cb90e475c42730ccd8be3fce474d9785d5a7",
+    "revision": "f93702788da14e0f45448109ba12ec57bc615d96",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -502,7 +502,7 @@
       "answeredIn": [2017, 2020, 2022, 2023],
       "notAnsweredIn": [2025, 2026],
       "signals": [
-        {"id": "RX_GEAR_V2", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "RX_GEAR_V2", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -866,8 +866,8 @@
       "answeredIn": [2006, 2010, 2013, 2015, 2017],
       "notAnsweredIn": [2002, 2005, 2008, 2020, 2022, 2023, 2025, 2026],
       "signals": [
-        {"id": "RX_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "RX_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RX_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "RX_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "RX_YAW_RATE3", "name": "Yaw rate value", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "RX_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -1362,8 +1362,8 @@
         {"id": "RX_CALCULATED_LOAD_7E0_V2", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RX_VEHICLE_LOAD_V2", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "RX_MAF_V2", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RX_MAP_V2", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "RX_INTAKE_AIR_V2", "name": "Intake air", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "RX_MAP_V2", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_INTAKE_AIR_V2", "name": "Intake air", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RX_ATMOSPHERE_PRESSURE_V2", "name": "Atmosphere pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RX_COOLANT_TEMP_V2", "name": "Coolant temp", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RX_ENGINE_SPEED_V2", "name": "Engine speed", "group": "Movement", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -1394,7 +1394,7 @@
         {"id": "RX_CALCULATED_LOAD_7E0", "name": "Calculated load_7e0", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "RX_VEHICLE_LOAD", "name": "Vehicle load", "group": "Engine", "bit": 8, "bits": 16, "multiply": 100, "divide": 65535, "min": 0, "max": 100, "unit": "%"},
         {"id": "RX_MAF", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "RX_MAP", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "RX_MAP", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RX_ATMOSPHERE_PRESSURE", "name": "Atmosphere pressure", "group": "Engine", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "RX_COOLANT_TEMP", "name": "Coolant temp", "group": "Engine", "bit": 56, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "RX_ENGINE_SPEED", "name": "Engine speed", "group": "Movement", "bit": 64, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
@@ -1468,7 +1468,7 @@
       "answeredIn": [2006, 2008, 2010, 2013, 2015],
       "notAnsweredIn": [2002, 2005, 2017, 2020, 2022, 2023, 2025, 2026],
       "signals": [
-        {"id": "RX_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "RX_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RX_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "RX_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor_avail", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RX_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor_avail", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -1507,7 +1507,7 @@
         {"id": "RX_CC_S", "name": "Cruise control speed", "group": "Cruise control", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "RX_CC_DRIVING_FORCE", "name": "Requested driving force", "group": "Cruise control", "bit": 16, "bits": 8, "multiply": 102, "divide": 255, "add": -51.2, "min": -51.2, "max": 50.8},
         {"id": "RX_CC_ON", "name": "Cruise control, on", "group": "Cruise control", "bit": 24, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
-        {"id": "RX_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
+        {"id": "RX_CC_CC_ON", "name": "Cruise control, activated?", "group": "Cruise control", "metric": "cruiseActive", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "RX_CC_CCS_INDICATOR_M_CPU_ON", "name": "Cruise control indicator", "group": "Cruise control", "bit": 26, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "RX_CC_CCS_READY_M_CPU_ON", "name": "Cruise control ready?", "group": "Cruise control", "bit": 28, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "RX_CC_MAIN_SW_M_CPU_ON", "name": "Cruise control, main switch", "group": "Cruise control", "bit": 30, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},

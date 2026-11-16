@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Lincoln-Nautilus",
     "file": "signalsets/v3/default.json",
-    "revision": "16abd64727e8618de24973e69f5783af88b6bcca",
+    "revision": "19f1a9ed57ac7208e7dc3eb73fac619a32d5f00c",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -499,7 +499,7 @@
       "request": "220353",
       "interval": 0.25,
       "signals": [
-        {"id": "NAUTILUS_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "multiply": 0.0362553791, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "NAUTILUS_BARO", "name": "Barometric pressure", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 0.0362553791, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1046,9 +1046,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E12",
-      "interval": 2,
+      "interval": 0.25,
       "signals": [
-        {"id": "NAUTILUS_GEAR_7E0", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "NAUTILUS_GEAR_7E0", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -1101,9 +1101,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E1F",
-      "interval": 1,
+      "interval": 0.25,
       "signals": [
-        {"id": "NAUTILUS_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "NAUTILUS_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "70": "PARK"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "70": "Park"}}
       ]
     },
     {
@@ -1112,9 +1112,9 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 2,
+      "interval": 0.25,
       "signals": [
-        {"id": "NAUTILUS_GEAR_SHFT_7E0", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "NAUTILUS_GEAR_SHFT_7E0", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -1203,7 +1203,7 @@
       "request": "22F40B",
       "interval": 0.25,
       "signals": [
-        {"id": "NAUTILUS_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "NAUTILUS_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {

@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Ford-C-Max-Energi",
     "file": "signalsets/v3/default.json",
-    "revision": "8143c27557322de744b7849f4edf2d0efc1ed477",
+    "revision": "ecb944098137971eba4be19df95ca46af225e8be",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -681,7 +681,7 @@
       "interval": 5,
       "answeredIn": [2014, 2016, 2017],
       "signals": [
-        {"id": "CMAXE_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "CMAXE_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "multiply": 615, "divide": 16963, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1090,7 +1090,7 @@
       "interval": 0.25,
       "answeredIn": [2014, 2016, 2017],
       "signals": [
-        {"id": "CMAXE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "CMAXE_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -1136,10 +1136,10 @@
       "tx": "7E0",
       "rx": "7E8",
       "request": "221E23",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2014, 2016, 2017],
       "signals": [
-        {"id": "CMAXE_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "CMAXE_GEAR_SHFT", "name": "Gear, shift", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -1224,7 +1224,7 @@
       "interval": 0.25,
       "answeredIn": [2014, 2016, 2017],
       "signals": [
-        {"id": "CMAXE_MAP", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "CMAXE_MAP", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {
@@ -1879,10 +1879,10 @@
       "tx": "7E6",
       "rx": "7EE",
       "request": "221E12",
-      "interval": 1,
+      "interval": 0.25,
       "answeredIn": [2014, 2016, 2017],
       "signals": [
-        {"id": "CMAXE_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "L", "40": "D", "50": "N", "60": "R", "70": "P", "255": "Fault"}}
+        {"id": "CMAXE_GEAR_CMD", "name": "Gear commanded", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "UNKNOWN", "20": "LOW", "40": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "255": "FAULT"}, "valueDescriptions": {"0": "Unknown", "20": "Low", "40": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "255": "Fault"}}
       ]
     },
     {

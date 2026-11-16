@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Subaru-Solterra",
     "file": "signalsets/v3/default.json",
-    "revision": "f04abeb22000b7bd1eec42e19b13e2363e1754c7",
+    "revision": "1b65a89163d9503f123ed2eeea3d130f06e14d0e",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -54,7 +54,7 @@
       "request": "2210D4",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2024],
       "signals": [
         {"id": "SOLTERRA_CHG_P", "name": "Battery charging power", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "add": -327.68, "min": -327.68, "max": 327.67, "unit": "kW"}
       ]
@@ -602,7 +602,7 @@
       "answeredIn": [2024],
       "notAnsweredIn": [2023],
       "signals": [
-        {"id": "SOLTERRA_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
+        {"id": "SOLTERRA_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "metric": "driveMode", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
       ]
     },
     {
@@ -640,7 +640,7 @@
       "flowControl": true,
       "answeredIn": [2023, 2024],
       "signals": [
-        {"id": "SOLTERRA_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+        {"id": "SOLTERRA_SHIFT", "name": "Shift position", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
       ]
     },
     {
@@ -665,7 +665,7 @@
       "request": "22106E",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2024],
       "signals": [
         {"id": "SOLTERRA_HVAC_P", "name": "Climate power", "group": "Climate", "bit": 0, "bits": 8, "divide": 20, "min": 0, "max": 12.75, "unit": "kW"}
       ]
@@ -718,7 +718,7 @@
       "rx": "7DA",
       "request": "2210A1",
       "interval": 0.25,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2024],
       "signals": [
         {"id": "SOLTERRA_RPM", "name": "Motor RPM", "group": "Engine", "bit": 0, "bits": 16, "add": -32768, "min": -32768, "max": 32767, "unit": "rpm"},
         {"id": "SOLTERRA_TQ", "name": "Motor torque", "group": "Engine", "bit": 48, "bits": 16, "divide": 8, "add": -4096, "min": -4096, "max": 4095, "unit": "Nm"}
@@ -744,7 +744,7 @@
       "rx": "7DA",
       "request": "2210A6",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2024],
       "signals": [
         {"id": "SOLTERRA_RM_INVRT_COOL_T", "name": "Rear motor inverter, coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "SOLTERRA_M_INVRT_MAX_T", "name": "Motor inverter, maximum temperature", "group": "Engine", "bit": 16, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
@@ -757,7 +757,7 @@
       "rx": "7DA",
       "request": "2210B2",
       "interval": 1,
-      "answeredIn": [2023],
+      "answeredIn": [2023, 2024],
       "signals": [
         {"id": "SOLTERRA_INVRT_COOLANT_T", "name": "Inverter coolant temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": 0, "max": 100, "unit": "°C"}
       ]

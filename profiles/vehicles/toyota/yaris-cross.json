@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Toyota-Yaris-Cross",
     "file": "signalsets/v3/default.json",
-    "revision": "628718c3dd8fe0c6fca9c794347dc6691a1e4637",
+    "revision": "80757e0880a1bff71a3ef3434a0a2bd00592ee46",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -798,7 +798,7 @@
       "interval": 1,
       "notAnsweredIn": [2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "YCROSS_GEAR_700", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "YCROSS_GEAR_700", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -1537,8 +1537,8 @@
       "answeredIn": [2023, 2024, 2025],
       "notAnsweredIn": [2022],
       "signals": [
-        {"id": "YCROSS_LAT_G", "name": "Lateral g", "group": "Orientation", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
-        {"id": "YCROSS_LNG_G", "name": "Longitudinal g", "group": "Orientation", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "YCROSS_LAT_G", "name": "Lateral g", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
+        {"id": "YCROSS_LNG_G", "name": "Longitudinal g", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 8, "bits": 8, "signed": true, "divide": 50, "min": -2.5, "max": 2.5, "unit": "g"},
         {"id": "YCROSS_YAW_RATE", "name": "Yaw rate value, degrees/sec", "group": "Orientation", "bit": 16, "bits": 8, "add": -128, "min": -128, "max": 127, "unit": "°"},
         {"id": "YCROSS_STEER_ANGLE", "name": "Steering wheel angle", "description": "Positive = counter-clockwise, negative = clockwise.", "group": "Control", "bit": 24, "bits": 16, "divide": 10, "add": -3276.8, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -2212,7 +2212,7 @@
       "answeredIn": [2024, 2025],
       "notAnsweredIn": [2023],
       "signals": [
-        {"id": "YCROSS_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
+        {"id": "YCROSS_DRIVE_MODE", "name": "Drive mode", "group": "Drivetrain", "metric": "driveMode", "bit": 0, "bits": 8, "values": {"0": "NORMAL", "1": "POWER", "2": "SPORT", "3": "SPORT_S", "4": "SPORT_S_PLUS", "5": "COMFORT", "6": "ECO", "9": "RANGE", "11": "CHAUFFEUR"}, "valueDescriptions": {"0": "Normal", "1": "Power", "2": "Sport", "3": "Sport S", "4": "Sport S+", "5": "Comfort", "6": "Eco", "9": "Range", "11": "Chauffeur"}}
       ]
     },
     {
@@ -2264,7 +2264,7 @@
       "flowControl": true,
       "answeredIn": [2023, 2024, 2025],
       "signals": [
-        {"id": "YCROSS_SHIFT", "name": "Shift position", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
+        {"id": "YCROSS_SHIFT", "name": "Shift position", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "P", "2": "R", "4": "N", "6": "D"}, "valueDescriptions": {"0": "Park", "2": "Reverse", "4": "Neutral", "6": "Drive"}}
       ]
     },
     {
@@ -2825,9 +2825,9 @@
       "signals": [
         {"id": "YCROSS_CALCULATED_LOAD_7E0", "name": "Calculated load", "group": "Engine", "bit": 0, "bits": 8, "multiply": 100, "divide": 255, "min": 0, "max": 100, "unit": "%"},
         {"id": "YCROSS_MAF_7E0", "name": "Mass air flow", "group": "Engine", "metric": "massAirFlow", "bit": 24, "bits": 16, "divide": 100, "min": 0, "max": 655.35, "unit": "g/s"},
-        {"id": "YCROSS_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
-        {"id": "YCROSS_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
-        {"id": "YCROSS_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "YCROSS_MAP_7E0", "name": "Manifold absolute pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 40, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
+        {"id": "YCROSS_INTAKE_AIR_7E0", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 48, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
+        {"id": "YCROSS_ATMOSPHERE_PRESSURE", "name": "Atmospheric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 56, "bits": 8, "min": 0, "max": 255, "unit": "kPa"},
         {"id": "YCROSS_COOLANT_TEMP_7E0", "name": "Coolant temperature", "group": "Engine", "bit": 64, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "YCROSS_ENGINE_SPEED_7E0", "name": "Engine speed", "group": "Engine", "bit": 72, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "YCROSS_VEHICLE_SPEED_7E0", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -2901,7 +2901,7 @@
       "answeredIn": [2025],
       "notAnsweredIn": [2022, 2023, 2024],
       "signals": [
-        {"id": "YCROSS_MIL", "name": "MIL", "group": "DTCs", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "YCROSS_MIL", "name": "MIL", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 0, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "YCROSS_NUMBER_OF_EMISSION_DTC", "name": "Number of emission DTC", "group": "DTCs", "bit": 1, "bits": 7, "min": 0, "max": 127},
         {"id": "YCROSS_COMPLETE_PARTS_MONITOR_AVAIL", "name": "Complete parts monitor available?", "group": "DTCs", "bit": 13, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
         {"id": "YCROSS_FUEL_SYSTEM_MONITOR_AVAIL", "name": "Fuel system monitor available?", "group": "DTCs", "bit": 14, "bits": 1, "min": 0, "max": 1, "labels": ["No", "Yes"]},
@@ -2971,7 +2971,7 @@
       "interval": 1,
       "notAnsweredIn": [2023, 2024, 2025],
       "signals": [
-        {"id": "YCROSS_IAT_21", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
+        {"id": "YCROSS_IAT_21", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"}
       ]
     },
     {
@@ -3410,7 +3410,7 @@
       "interval": 0.4,
       "notAnsweredIn": [2022, 2023, 2024, 2025],
       "signals": [
-        {"id": "YCROSS_GEAR", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 20},
+        {"id": "YCROSS_GEAR", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "min": 0, "max": 20},
         {"id": "YCROSS_TQC_LOCKUP", "name": "Torque converter lock-up", "description": "Engages a clutch inside the torque converter to create a direct connection between the engine and transmission, reducing slippage and improving efficiency.", "group": "Transmission", "bit": 8, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },
@@ -3474,7 +3474,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2023, 2024, 2025],
       "signals": [
-        {"id": "YCROSS_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
+        {"id": "YCROSS_CRUISE_CTRL_SPD", "name": "Cruise control speed", "group": "Movement", "metric": "cruiseSetSpeed", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "YCROSS_CRUISE_CTRL_ON", "name": "Cruise control on", "group": "Engine", "bit": 25, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
     },

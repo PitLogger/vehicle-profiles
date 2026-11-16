@@ -15,7 +15,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-X7",
     "file": "signalsets/v3/default.json",
-    "revision": "537fb9397cbec7ef48a03b99a4b0931bea75d582",
+    "revision": "31aa4109342ca3265d995d5b78cd36f87bf8f844",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -42,7 +42,7 @@
       "request": "22D240",
       "interval": 0.25,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_VSS_INSTR", "name": "Vehicle speed, instrument cluster", "description": "Instrument cluster vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "min": 0, "max": 1000, "unit": "km/h"}
       ]
@@ -56,6 +56,7 @@
       "request": "22400B",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_LAMBDA", "name": "Lambda 1, excess air ratio", "group": "Engine", "metric": "o2Lambda", "bit": 40, "bits": 8, "divide": 100, "min": 0, "max": 2}
       ]
@@ -69,6 +70,7 @@
       "request": "224015",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_IAT", "name": "Intake air temperature", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 150, "unit": "°C"}
       ]
@@ -136,6 +138,7 @@
       "request": "2240CB",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_ETHANOL_CAN", "name": "Ethanol content, CAN broadcast, live", "group": "Fuel", "bit": 104, "bits": 8, "divide": 2, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -149,6 +152,7 @@
       "request": "22411E",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_COOLANT", "name": "Coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 16, "bits": 8, "min": 0, "max": 200, "unit": "°C"}
       ]
@@ -163,7 +167,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "X7_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "X7_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -176,7 +180,7 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "X7_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "X7_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -188,6 +192,7 @@
       "request": "224300",
       "interval": 1,
       "flowControl": true,
+      "answeredIn": [2026],
       "signals": [
         {"id": "X7_ET", "name": "Engine temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
       ]
@@ -201,6 +206,7 @@
       "request": "224402",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_EOT_6F1", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 8, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "°C"}
       ]
@@ -240,6 +246,7 @@
       "request": "224506",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_OIL_TEMP", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
       ]
@@ -267,7 +274,7 @@
       "interval": 0.25,
       "flowControl": true,
       "signals": [
-        {"id": "X7_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "X7_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -370,6 +377,7 @@
       "request": "224AB1",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2026],
       "notAnsweredIn": [2025],
       "signals": [
         {"id": "X7_VSS2", "name": "Vehicle speed", "description": "High resolution vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 255, "unit": "km/h"}
@@ -384,6 +392,7 @@
       "request": "224C5B",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_EGT_CALC", "name": "Exhaust gas calculated temperature", "group": "Engine", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 1200, "unit": "°C"}
       ]
@@ -436,6 +445,7 @@
       "request": "2257C3",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_OIL_TEMP_ALT", "name": "Engine oil temperature, alternate", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 200, "unit": "°C"}
       ]
@@ -450,7 +460,7 @@
       "interval": 5,
       "flowControl": true,
       "signals": [
-        {"id": "X7_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "X7_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -501,7 +511,7 @@
       "request": "22586F",
       "interval": 30,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_EOP", "name": "Engine oil pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
       ]
@@ -567,6 +577,7 @@
       "request": "225AC3",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_FUEL_PRES", "name": "Fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "multiply": 2.6, "min": 0, "max": 170391, "unit": "bar"}
       ]
@@ -631,6 +642,7 @@
       "request": "210A",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "bit": 0, "bits": 8, "add": -55, "min": -55, "max": 200, "unit": "°C"}
       ]
@@ -669,7 +681,7 @@
       "request": "22DA12",
       "interval": 30,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_ATF_TEMP", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 0, "bits": 16, "add": -48, "min": -48, "max": 65487, "unit": "°C", "invalidAtOrAbove": 65487}
       ]
@@ -683,7 +695,7 @@
       "request": "22DA1F",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_KICKDOWN", "name": "Kickdown", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 100}
       ]
@@ -697,7 +709,7 @@
       "request": "22DA22",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_TQ_CNVRT_LOCKUP", "name": "Torque converter lockup", "group": "Transmission", "bit": 8, "bits": 8, "values": {"0": "OPEN", "1": "CONTROL_LOW", "2": "CONTROL_HIGH", "3": "CLOSED_LOW", "4": "CLOSED_HIGH", "8": "TRANSITION_OPEN"}, "valueDescriptions": {"0": "Open", "1": "Controlled low", "2": "Controlled high", "3": "Closed low", "4": "Closed high", "8": "Transition to open"}}
       ]
@@ -711,7 +723,7 @@
       "request": "22DA23",
       "interval": 15,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_ODO_LOWRES", "name": "Odometer, low resolution", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "multiply": 8, "min": 0, "max": 1000000, "unit": "km"}
       ]
@@ -725,7 +737,7 @@
       "request": "22DA25",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_EOT", "name": "Engine oil temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "add": -48, "min": -500, "max": 500, "unit": "°C"}
       ]
@@ -739,7 +751,7 @@
       "request": "22DA28",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_BRAKE_SWITCH", "name": "Brake switch", "group": "Control", "bit": 8, "bits": 8, "min": 0, "max": 1}
       ]
@@ -753,7 +765,7 @@
       "request": "22DA2A",
       "interval": 1,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_TQ_CNVRT_RPM", "name": "Torque converter speed", "group": "Transmission", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"},
         {"id": "X7_TRANS_SHAFT_RPM", "name": "Transmission output shaft speed", "group": "Transmission", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "rpm"}
@@ -766,11 +778,11 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
-        {"id": "X7_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "X7_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "X7_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },
@@ -783,7 +795,7 @@
       "request": "22DA37",
       "interval": 30,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_TIME_D", "name": "Time in drive", "group": "Trips", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "X7_TIME_S", "name": "Time in sport", "group": "Trips", "bit": 8, "bits": 8, "min": 0, "max": 255},
@@ -799,7 +811,7 @@
       "request": "22DB32",
       "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_AXLE_FRONT_ACTUAL_TORQUE", "name": "Front axle, actual torque", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "divide": 4, "min": -8000, "max": 8000, "unit": "Nm"},
         {"id": "X7_AXLE_FRONT_SETPOINT_TORQUE", "name": "Front axle, setpoint torque", "group": "Tires", "bit": 32, "bits": 16, "signed": true, "divide": 4, "min": -8000, "max": 8000, "unit": "Nm"}
@@ -814,7 +826,7 @@
       "request": "22DFE7",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_VGT_CAL_ANGLE", "name": "Variable geometry turbocharger calibration angle", "group": "Engine", "bit": 0, "bits": 16, "multiply": 156.25, "divide": 10000, "min": 0, "max": 1000, "unit": "°"},
         {"id": "X7_OIL_CHANGE_DIST", "name": "Distance since last oil change", "group": "Fluids", "bit": 304, "bits": 32, "min": 0, "max": 1000000, "unit": "km"}
@@ -875,6 +887,7 @@
       "request": "2101",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_FL_VSS_21", "name": "Front left wheel speed, service 21", "group": "Tires", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "X7_FR_VSS_21", "name": "Front right wheel speed, service 21", "group": "Tires", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -891,6 +904,7 @@
       "request": "2104",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2026],
       "signals": [
         {"id": "X7_STEERING_WHEEL_ANGLE", "name": "Steering wheel angle", "group": "Tires", "bit": 0, "bits": 16, "signed": true, "multiply": 12.5, "divide": 100, "min": -4096, "max": 4095.875, "unit": "°"},
         {"id": "X7_LONGITUDINAL_ACCELERATION", "name": "Longitudinal acceleration", "group": "Movement", "bit": 16, "bits": 16, "signed": true, "multiply": 0.4, "divide": 100, "min": -131.072, "max": 131.068, "unit": "m/s²"},
@@ -907,7 +921,7 @@
       "request": "22DBE4",
       "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_FL_SPD", "name": "Front left wheel speed", "group": "Movement", "bit": 0, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
         {"id": "X7_FR_SPD", "name": "Front right wheel speed", "group": "Movement", "bit": 16, "bits": 16, "signed": true, "divide": 100, "min": -327.68, "max": 327.67, "unit": "km/h"},
@@ -1022,7 +1036,7 @@
       "request": "221700",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_ODO_2", "name": "Odometer variant", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 1000000, "unit": "km"}
       ]
@@ -1063,7 +1077,7 @@
       "request": "22DCDD",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_DOOR_DRIVER", "name": "Driver door open", "group": "Doors", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "X7_DOOR_PASSENGER", "name": "Passenger door open", "group": "Doors", "bit": 8, "bits": 8, "min": 0, "max": 255},
@@ -1100,7 +1114,7 @@
       "request": "22D107",
       "interval": 0.25,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_VSS", "name": "Vehicle speed", "description": "Speedometer vehicle speed.", "group": "Movement", "metric": "speed", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -1114,7 +1128,7 @@
       "request": "22D10D",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_ODO", "name": "Odometer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"},
         {"id": "X7_ODO_ALT", "name": "Odometer, alternative", "group": "Trips", "metric": "odometer", "bit": 32, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
@@ -1129,7 +1143,7 @@
       "request": "22D111",
       "interval": 5,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_RANGE_E_CUR", "name": "Current electric range", "description": "Current estimated electric range", "group": "Trips", "metric": "electricRange", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"},
         {"id": "X7_RANGE_E_MAX", "name": "Maximum electric range", "group": "Trips", "bit": 16, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "km"},
@@ -1148,7 +1162,7 @@
       "request": "22D112",
       "interval": 5,
       "flowControl": true,
-      "answeredIn": [2019, 2020, 2022, 2023, 2025],
+      "answeredIn": [2019, 2020, 2022, 2023, 2025, 2026],
       "signals": [
         {"id": "X7_AAT", "name": "Ambient air temperature", "group": "Climate", "bit": 0, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
       ]
@@ -1207,7 +1221,7 @@
       "request": "22D031",
       "interval": 1,
       "flowControl": true,
-      "notAnsweredIn": [2025],
+      "notAnsweredIn": [2025, 2026],
       "signals": [
         {"id": "X7_GEAR_V2", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]

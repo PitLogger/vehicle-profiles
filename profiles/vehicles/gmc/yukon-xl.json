@@ -18,7 +18,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/GMC-Yukon-XL",
     "file": "signalsets/v3/default.json",
-    "revision": "825ec89066a4f70c4a83d1cdbad91e305993ffa0",
+    "revision": "b765c54475512c076117eaf9bfbc79f49c5d415e",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1139,7 +1139,7 @@
       "flowControl": true,
       "years": {"to": 2020},
       "signals": [
-        {"id": "YUKONXL_BP_ACT_7E0", "name": "Boost pressure: actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
+        {"id": "YUKONXL_BP_ACT_7E0", "name": "Boost pressure: actual", "group": "Engine", "metric": "boostPressure", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
       ]
     },
     {
@@ -1351,7 +1351,7 @@
       "flowControl": true,
       "years": {"to": 2020},
       "signals": [
-        {"id": "YUKONXL_CURRENT_GEAR_7E2", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
+        {"id": "YUKONXL_CURRENT_GEAR_7E2", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
       ]
     },
     {
@@ -1805,7 +1805,7 @@
       "flowControl": true,
       "answeredIn": [2026],
       "signals": [
-        {"id": "YUKONXL_BP_ACT", "name": "Boost pressure, actual", "group": "Engine", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
+        {"id": "YUKONXL_BP_ACT", "name": "Boost pressure, actual", "group": "Engine", "metric": "boostPressure", "bit": 0, "bits": 16, "multiply": 100, "divide": 10000, "min": 0, "max": 655.35, "unit": "kPa"}
       ]
     },
     {
@@ -2165,11 +2165,11 @@
       "tx": "14DA18F1",
       "rx": "142AF118",
       "request": "221B30",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2026],
       "signals": [
-        {"id": "YUKONXL_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
+        {"id": "YUKONXL_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "add": -3, "min": -3, "max": 252}
       ]
     },
     {
@@ -2230,12 +2230,12 @@
       "bus": "can29",
       "tx": "14DA28F1",
       "request": "224C2F",
-      "interval": 0.1,
+      "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2026],
       "signals": [
-        {"id": "YUKONXL_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+        {"id": "YUKONXL_LAT_G", "name": "Lateral acceleration", "group": "Orientation", "metric": "lateralAcceleration", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
       ]
     },
     {
@@ -2243,12 +2243,12 @@
       "bus": "can29",
       "tx": "14DA28F1",
       "request": "224C30",
-      "interval": 0.1,
+      "interval": 0.25,
       "flowControl": true,
       "years": {"from": 2021},
       "answeredIn": [2022, 2026],
       "signals": [
-        {"id": "YUKONXL_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
+        {"id": "YUKONXL_LNG_G", "name": "Longitudinal acceleration", "group": "Orientation", "metric": "longitudinalAcceleration", "bit": 0, "bits": 16, "signed": true, "multiply": 15.92796725, "divide": 10000, "min": -52, "max": 52, "unit": "g"}
       ]
     },
     {

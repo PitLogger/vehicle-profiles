@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Renault-Symbioz",
     "file": "signalsets/v3/default.json",
-    "revision": "722dc4a3b67f78185cb135b1bedd079cd8c57fad",
+    "revision": "9dadd4f0cdbf97aba3730747e6545676ff132ef0",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -1432,7 +1432,7 @@
       "signals": [
         {"id": "SYMBIOZ_BAT_V_12_V", "name": "Battery voltage, 12 v", "group": "Battery", "bit": 0, "bits": 8, "multiply": 4, "divide": 125, "add": 8, "min": 0, "max": 16.16, "unit": "V"},
         {"id": "SYMBIOZ_AIR_T", "name": "Air temperature", "group": "Engine", "bit": 16, "bits": 8, "multiply": 5, "divide": 8, "add": -40, "min": -40, "max": 119, "unit": "°C"},
-        {"id": "SYMBIOZ_MANIFOLD_P_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 24, "bits": 16, "multiply": 37, "divide": 6400, "add": 10.3, "min": 0, "max": 389, "unit": "kPa"},
+        {"id": "SYMBIOZ_MANIFOLD_P_7E0", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 24, "bits": 16, "multiply": 37, "divide": 6400, "add": 10.3, "min": 0, "max": 389, "unit": "kPa"},
         {"id": "SYMBIOZ_ATMOSPHERIC_P", "name": "Atmospheric pressure", "group": "Engine", "bit": 40, "bits": 8, "multiply": -37, "divide": 10, "add": 1047, "min": 0, "max": 1047},
         {"id": "SYMBIOZ_RPM", "name": "Engine speed", "group": "Movement", "bit": 48, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
         {"id": "SYMBIOZ_IDLE_REGULATION_VLV", "name": "Idle regulation valve reference value", "group": "Engine", "bit": 64, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"},
@@ -3122,7 +3122,7 @@
       "request": "222401",
       "interval": 1,
       "signals": [
-        {"id": "SYMBIOZ_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
+        {"id": "SYMBIOZ_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.535, "unit": "bar"}
       ]
     },
     {
@@ -3155,7 +3155,7 @@
       "request": "22240B",
       "interval": 1,
       "signals": [
-        {"id": "SYMBIOZ_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
+        {"id": "SYMBIOZ_MANIFOLD_P", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "kPa"}
       ]
     },
     {
@@ -7781,7 +7781,7 @@
       "request": "222035",
       "interval": 1,
       "signals": [
-        {"id": "SYMBIOZ_CRUISE_CTRL_SETTING", "name": "Cruise control setting", "group": "Engine", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km/h"}
+        {"id": "SYMBIOZ_CRUISE_CTRL_SETTING", "name": "Cruise control setting", "group": "Engine", "metric": "cruiseSetSpeed", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km/h"}
       ]
     },
     {

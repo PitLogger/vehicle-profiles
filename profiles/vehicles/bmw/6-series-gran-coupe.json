@@ -12,7 +12,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/BMW-6-Series-Gran-Coupe",
     "file": "signalsets/v3/default.json",
-    "revision": "b56b1d1f3c2c9d19aa1de03b827595715bf98adb",
+    "revision": "3ccba983f3caa9153ca9ecda0e8ace93a47b0fd2",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -26,6 +26,7 @@
       "request": "22E54D",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BAT_V", "name": "Battery voltage", "group": "Battery", "bit": 0, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "V"}
       ]
@@ -39,6 +40,7 @@
       "request": "22E561",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_HVBAT_CURRENT", "name": "High voltage battery current", "group": "Battery", "metric": "tractionBatteryCurrent", "bit": 16, "bits": 16, "signed": true, "multiply": -1, "divide": 100, "min": -327, "max": 327, "unit": "A"}
       ]
@@ -52,6 +54,7 @@
       "request": "22402B",
       "interval": 10,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_12V_T", "name": "12V battery temperature", "group": "Electrical", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276.8, "max": 3276.7, "unit": "°C"},
         {"id": "SERIES6GC_12V_V", "name": "12V battery voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 16, "bits": 16, "divide": 4000, "add": 6, "min": 6, "max": 22.3837, "unit": "V"},
@@ -67,6 +70,7 @@
       "request": "2240A9",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BAT_CAP", "name": "Battery capacity", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "Ah"},
         {"id": "SERIES6GC_ORIGINAL_BAT_CAP", "name": "Original battery capacity", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "Ah"}
@@ -81,6 +85,7 @@
       "request": "2240AD",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BAT_ST_CHG_CURRENT", "name": "Battery state of charge current", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
         {"id": "SERIES6GC_BAT_ST_CHG_LAST_1", "name": "Battery state of charge last-1", "group": "Battery", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"},
@@ -106,8 +111,9 @@
       "request": "224201",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
-        {"id": "SERIES6GC_BARO", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
+        {"id": "SERIES6GC_BARO", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
     },
     {
@@ -119,8 +125,9 @@
       "request": "224205",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
-        {"id": "SERIES6GC_BOOST_P", "name": "Boost pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "SERIES6GC_BOOST_P", "name": "Boost pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -132,6 +139,7 @@
       "request": "224408",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_EOT_DME", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553.5, "unit": "°C"}
       ]
@@ -145,6 +153,7 @@
       "request": "22442C",
       "interval": 30,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_OIL_LEVEL", "name": "Oil level", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -158,6 +167,7 @@
       "request": "22480C",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LOAD_TGT", "name": "Engine load, target", "group": "Engine", "bit": 0, "bits": 16, "multiply": 3, "divide": 128, "min": 0, "max": 1535, "unit": "%"}
       ]
@@ -171,8 +181,9 @@
       "request": "224A2D",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
-        {"id": "SERIES6GC_MAP", "name": "Intake manifold pressure", "group": "Engine", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
+        {"id": "SERIES6GC_MAP", "name": "Intake manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 16, "divide": 128, "min": 0, "max": 511.99, "unit": "kPa"}
       ]
     },
     {
@@ -184,6 +195,7 @@
       "request": "224A2E",
       "interval": 3600,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_REV_LIMIT", "name": "Rev limiter", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -197,6 +209,7 @@
       "request": "224A49",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IGN_TIMING_1", "name": "Ignition timing, cylinder 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -210,6 +223,7 @@
       "request": "224A4A",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IGN_TIMING_2", "name": "Ignition timing, cylinder 2", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -223,6 +237,7 @@
       "request": "224A4B",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LOAD_2", "name": "Engine load 2", "group": "Engine", "bit": 0, "bits": 8, "multiply": 20, "divide": 51, "min": 0, "max": 100, "unit": "%"}
       ]
@@ -236,6 +251,7 @@
       "request": "224A4C",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IGN_TIMING_3", "name": "Ignition timing, cylinder 3", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -249,6 +265,7 @@
       "request": "224A4D",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IGN_TIMING_4", "name": "Ignition timing, cylinder 4", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "°"}
       ]
@@ -262,6 +279,7 @@
       "request": "224AB0",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BOOST_P_SET", "name": "Boost pressure, set point", "group": "Engine", "bit": 0, "bits": 16, "divide": 256, "min": 0, "max": 255.99, "unit": "kPa"}
       ]
@@ -275,6 +293,7 @@
       "request": "22558E",
       "interval": 60,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_ODO_DME", "name": "Odometer, engine computer", "group": "Trips", "metric": "odometer", "bit": 0, "bits": 32, "min": 0, "max": 4294967295, "unit": "km"}
       ]
@@ -288,6 +307,7 @@
       "request": "22558F",
       "interval": 60,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_ENG_HOURS", "name": "Engine operating hours", "group": "Trips", "bit": 0, "bits": 32, "divide": 2, "min": 0, "max": 2147483647, "unit": "h"}
       ]
@@ -301,6 +321,7 @@
       "request": "2256D7",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_FRP", "name": "Fuel rail pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 50, "min": 0, "max": 1310, "unit": "bar"}
       ]
@@ -314,8 +335,9 @@
       "request": "22580F",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
-        {"id": "SERIES6GC_IAT_DME", "name": "Intake air temperature", "group": "Engine", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
+        {"id": "SERIES6GC_IAT_DME", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 0, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
     {
@@ -327,6 +349,7 @@
       "request": "225813",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LOAD", "name": "Engine load", "group": "Engine", "metric": "engineLoad", "bit": 0, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "%"}
       ]
@@ -340,6 +363,7 @@
       "request": "22582C",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LAMBDA_2", "name": "Lambda 2", "group": "Engine", "bit": 0, "bits": 16, "divide": 4096, "min": 0, "max": 15.99, "invalidAtOrAbove": 15.99}
       ]
@@ -353,6 +377,7 @@
       "request": "22582F",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CAT_T", "name": "Catalyst temperature", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "add": -273.15, "min": -273.15, "max": 6280, "unit": "°C"}
       ]
@@ -366,6 +391,7 @@
       "request": "225889",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LAMBDA_6F1", "name": "Lambda", "group": "Engine", "bit": 0, "bits": 16, "multiply": 16, "divide": 65535, "min": 0, "max": 16, "invalidAtOrAbove": 15.99}
       ]
@@ -379,6 +405,7 @@
       "request": "2258BA",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CRANK_TQ", "name": "Crank torque", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "Nm"}
       ]
@@ -392,6 +419,7 @@
       "request": "2258F3",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_LOW_SIDE_FUEL_P", "name": "Low side fuel pressure", "group": "Fuel", "bit": 0, "bits": 16, "divide": 1000, "min": 0, "max": 65.53, "unit": "bar"}
       ]
@@ -405,6 +433,7 @@
       "request": "2259FA",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IGN_ANGLE", "name": "Ignition angle", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"}
       ]
@@ -418,6 +447,7 @@
       "request": "22DE9C",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_APP", "name": "Accelerator pedal position", "group": "Engine", "bit": 32, "bits": 16, "divide": 16, "min": 0, "max": 4095, "unit": "%"}
       ]
@@ -431,6 +461,7 @@
       "request": "22DEF1",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CHG_FLAP_CLOSED", "name": "Charge flap closed", "group": "Doors", "bit": 0, "bits": 16, "min": 0, "max": 1, "labels": ["Yes", "No"]}
       ]
@@ -444,6 +475,7 @@
       "request": "22DEF2",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CHG_READY", "name": "Charging interface ready", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Yes", "No"]}
       ]
@@ -457,6 +489,7 @@
       "request": "22DEF3",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CHG_LED", "name": "Charge port light state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -470,6 +503,7 @@
       "request": "22DEF5",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CHG_PLUG_ST", "name": "Charging plug state", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_CHG_CABLE_I", "name": "Charging cable current rating", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "A"}
@@ -484,6 +518,7 @@
       "request": "22DEF7",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_DC_CTRL_1", "name": "DC charge control 1", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "SERIES6GC_DC_CTRL_2", "name": "DC charge control 2", "group": "Battery", "bit": 8, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]},
@@ -500,6 +535,7 @@
       "request": "22DEF8",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_DC_CONTACTOR", "name": "DC charge contactor state", "group": "Battery", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -513,6 +549,7 @@
       "request": "22DEFA",
       "interval": 30,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_DC_PIN_COVER", "name": "DC charging pin cover open", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -526,6 +563,7 @@
       "request": "22DE84",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_OBC_GRID_HZ", "name": "Charger grid frequency, phase 1", "group": "Engine", "bit": 0, "bits": 8, "divide": 4, "min": 0, "max": 63.75, "unit": "Hz"},
         {"id": "SERIES6GC_OBC_DERATING", "name": "Charger power reduction", "group": "Engine", "bit": 32, "bits": 8, "min": 0, "max": 255, "unit": "%"}
@@ -540,6 +578,7 @@
       "request": "22DE85",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_OBC_EFF_CYCLE", "name": "Charge cycle efficiency", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "%"},
         {"id": "SERIES6GC_OBC_EFF_DC", "name": "Charger DC efficiency", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255, "unit": "%"},
@@ -555,6 +594,7 @@
       "request": "22DE86",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_OBC_AC_V_1", "name": "Charger AC voltage, phase 1", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "V"},
         {"id": "SERIES6GC_OBC_HV_V", "name": "Charger HV DC voltage", "group": "Engine", "bit": 32, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "V"},
@@ -572,6 +612,7 @@
       "request": "22DE87",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_OBC_AC_I_1", "name": "Charger AC current, phase 1", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "A"},
         {"id": "SERIES6GC_OBC_HV_I", "name": "Charger HV DC current", "group": "Engine", "bit": 32, "bits": 16, "divide": 10, "add": -204.7, "min": -204, "max": 6348, "unit": "A"},
@@ -588,6 +629,7 @@
       "request": "2105",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_TURBINE_SPD", "name": "AT turbine speed", "group": "Movement", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "rpm"}
       ]
@@ -600,6 +642,7 @@
       "extendedAddress": "18",
       "request": "2107",
       "interval": 0.25,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_AVG_WHEELS_SPD", "name": "Average wheel speed", "group": "Tires", "bit": 0, "bits": 8, "multiply": 2, "min": 0, "max": 510, "unit": "km/h"}
       ]
@@ -613,6 +656,7 @@
       "request": "2108",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_ENG_TQ", "name": "AT engine torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "Nm"}
       ]
@@ -625,6 +669,7 @@
       "extendedAddress": "18",
       "request": "210B",
       "interval": 1,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CLU_LOCK_UP", "name": "Clutch lock-up speed", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -638,6 +683,7 @@
       "request": "22442F",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_ENG_TQ_6F1", "name": "Engine torque", "group": "Engine", "bit": 0, "bits": 16, "min": 0, "max": 65535, "unit": "Nm"}
       ]
@@ -748,11 +794,11 @@
       "rx": "618",
       "extendedAddress": "18",
       "request": "22DA2E",
-      "interval": 1,
+      "interval": 0.25,
       "flowControl": true,
       "answeredIn": [2015],
       "signals": [
-        {"id": "SERIES6GC_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive"}},
+        {"id": "SERIES6GC_GEAR_SHIFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"0": "PARK", "1": "REVERSE", "2": "NEUTRAL", "3": "DRIVE", "4": "DRIVE", "5": "DRIVE", "6": "DRIVE", "7": "DRIVE", "8": "DRIVE", "9": "DRIVE", "16": "DRIVE"}, "valueDescriptions": {"0": "Park", "1": "Reverse", "2": "Neutral", "3": "Drive", "4": "Drive", "5": "Drive", "6": "Drive", "7": "Drive", "8": "Drive", "9": "Drive", "16": "Drive"}},
         {"id": "SERIES6GC_GEAR", "name": "Drive mode", "group": "Transmission", "bit": 8, "bits": 8, "values": {"3": "DRIVE", "5": "SPORT"}, "valueDescriptions": {"3": "Drive", "5": "Sport"}}
       ]
     },
@@ -781,6 +827,7 @@
       "request": "22DE8A",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_EM_I_W", "name": "Drive motor phase w current", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
         {"id": "SERIES6GC_EM_I_V", "name": "Drive motor phase v current", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 16, "min": -2048, "max": 2047, "unit": "A"},
@@ -798,6 +845,7 @@
       "request": "22DE8C",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_INV_T_U", "name": "Drive inverter phase u temperature", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"},
         {"id": "SERIES6GC_INV_T_V", "name": "Drive inverter phase v temperature", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"},
@@ -818,6 +866,7 @@
       "request": "22DEA6",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_EM_T_1", "name": "Drive motor temperature 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"},
         {"id": "SERIES6GC_EM_T_2", "name": "Drive motor temperature 2", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "multiply": 39, "divide": 2500, "min": -511, "max": 511, "unit": "°C"}
@@ -832,6 +881,7 @@
       "request": "22DEA7",
       "interval": 0.25,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_EM_RPM", "name": "Drive motor speed", "group": "Engine", "bit": 0, "bits": 16, "divide": 2, "add": -5000, "min": -5000, "max": 27767, "unit": "rpm"},
         {"id": "SERIES6GC_EM_TQ", "name": "Drive motor torque, actual", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "divide": 2, "min": -16384, "max": 16383, "unit": "Nm"},
@@ -864,6 +914,7 @@
       "request": "22DBE5",
       "interval": 0.25,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BRAKE_P", "name": "Brake pressure", "group": "Control", "bit": 0, "bits": 16, "signed": true, "divide": 10, "min": -3276, "max": 3276, "unit": "bar"}
       ]
@@ -877,6 +928,7 @@
       "request": "22DC98",
       "interval": 15,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_TPMS_POS_FL", "name": "Front left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_TP_FL", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -895,6 +947,7 @@
       "request": "22DC99",
       "interval": 15,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_TPMS_POS_FR", "name": "Front right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_TP_FR", "name": "Front right tire pressure", "group": "Tires", "metric": "frontRightTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -913,6 +966,7 @@
       "request": "22DC9A",
       "interval": 15,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_TPMS_POS_RL", "name": "Rear left tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_TP_RL", "name": "Rear left tire pressure", "group": "Tires", "metric": "rearLeftTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -931,6 +985,7 @@
       "request": "22DC9B",
       "interval": 15,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_TPMS_POS_RR", "name": "Rear right tire sensor position", "description": "0 front left, 1 front right, 2 rear left, 3 rear right", "group": "Tires", "bit": 32, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_TP_RR", "name": "Rear right tire pressure", "group": "Tires", "metric": "rearRightTirePressure", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 1000, "min": -32.76, "max": 6.3, "unit": "bar", "invalidAtOrAbove": 6.3},
@@ -949,6 +1004,7 @@
       "request": "22DB99",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_STEER_TQ", "name": "Steering torque", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 128, "min": -256, "max": 255, "unit": "Nm"}
       ]
@@ -976,6 +1032,7 @@
       "request": "22D130",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_PARK_BRAKE", "name": "Parking brake applied", "group": "Control", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -989,6 +1046,7 @@
       "request": "22D906",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_AC_COMP_STAT", "name": "Air conditioning compressor status", "group": "Engine", "bit": 8, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_AC_COMP_PWM", "name": "Air conditioning compressor PWM", "group": "Engine", "bit": 16, "bits": 8, "min": 0, "max": 255, "unit": "%"}
@@ -1046,6 +1104,7 @@
       "request": "22D129",
       "interval": 30,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_BC_AVG_CONS", "name": "Trip computer average consumption", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553, "unit": "kWh/100km"},
         {"id": "SERIES6GC_BC_AVG_SPD", "name": "Trip computer average speed", "group": "Engine", "bit": 16, "bits": 16, "divide": 100, "min": 0, "max": 655, "unit": "km/h"},
@@ -1061,6 +1120,7 @@
       "request": "22D12A",
       "interval": 1,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CONS_KWH_100KM", "name": "Consumption, kwh/100km", "group": "Engine", "bit": 0, "bits": 16, "divide": 10, "min": 0, "max": 6553}
       ]
@@ -1074,6 +1134,7 @@
       "request": "22D030",
       "interval": 1,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_NBT_WHL_SPD_1", "name": "Wheel sensor speed 1", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
         {"id": "SERIES6GC_NBT_WHL_SPD_2", "name": "Wheel sensor speed 2", "group": "Engine", "bit": 16, "bits": 16, "signed": true, "min": -32768, "max": 32767, "unit": "km/h"},
@@ -1105,6 +1166,7 @@
       "request": "22D85C",
       "interval": 5,
       "flowControl": true,
+      "notAnsweredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_CABIN_T", "name": "Cabin temperature", "group": "Engine", "bit": 0, "bits": 8, "signed": true, "min": -128, "max": 127, "unit": "°C"}
       ]
@@ -1118,6 +1180,7 @@
       "request": "22D8C5",
       "interval": 10,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_COMP_STATE", "name": "A/C compressor operating state", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
@@ -1131,6 +1194,7 @@
       "request": "22D91A",
       "interval": 10,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_AIR_DIST_L", "name": "Front air distribution, left", "group": "Climate", "bit": 0, "bits": 8, "min": 0, "max": 255},
         {"id": "SERIES6GC_AIR_DIST_R", "name": "Front air distribution, right", "group": "Climate", "bit": 8, "bits": 8, "min": 0, "max": 255}
@@ -1145,6 +1209,7 @@
       "request": "22D92C",
       "interval": 5,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_HVAC_OFF", "name": "Climate control off", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -1158,6 +1223,7 @@
       "request": "22D930",
       "interval": 5,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_HVAC_AUC", "name": "Automatic air recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -1171,6 +1237,7 @@
       "request": "22D931",
       "interval": 5,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_HVAC_RECIRC", "name": "Recirculation", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 1, "labels": ["Off", "On"]}
       ]
@@ -1184,6 +1251,7 @@
       "request": "22D96B",
       "interval": 5,
       "flowControl": true,
+      "answeredIn": [2015],
       "signals": [
         {"id": "SERIES6GC_IHX_AAT", "name": "Outside temperature, climate control", "group": "Engine", "bit": 0, "bits": 16, "signed": true, "divide": 2, "add": -40, "min": -16424, "max": 16343, "unit": "°C"}
       ]

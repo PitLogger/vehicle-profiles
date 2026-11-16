@@ -16,7 +16,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Mazda-6",
     "file": "signalsets/v3/default.json",
-    "revision": "568467e8155f16124472ba7a04e3d9bc3f96da15",
+    "revision": "6a373b2fe937336dcab67792a82380741179f622",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -565,7 +565,7 @@
       "interval": 3600,
       "notAnsweredIn": [2005, 2007, 2009, 2014, 2016, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_DTC_CNT", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "MAZDA6_DTC_CNT", "name": "Number of DTCs", "group": "DTCs", "metric": "storedDTCCount", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -578,7 +578,7 @@
       "answeredIn": [2007, 2009, 2014, 2016, 2017, 2018, 2019, 2020, 2025],
       "notAnsweredIn": [2005],
       "signals": [
-        {"id": "MX5_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "MX5_DTC_CNTD", "name": "Number of DTCs", "group": "DTCs", "metric": "storedDTCCount", "bit": 0, "bits": 8, "min": 0, "max": 255}
       ]
     },
     {
@@ -813,7 +813,7 @@
       "interval": 1,
       "notAnsweredIn": [2007, 2014, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_BARO", "name": "Barometric pressure", "bit": 0, "bits": 16, "divide": 27.582114, "min": 8, "max": 20, "unit": "psi"}
+        {"id": "MAZDA6_BARO", "name": "Barometric pressure", "metric": "barometricPressure", "bit": 0, "bits": 16, "divide": 27.582114, "min": 8, "max": 20, "unit": "psi"}
       ]
     },
     {
@@ -1886,7 +1886,7 @@
       "interval": 1,
       "notAnsweredIn": [2018],
       "signals": [
-        {"id": "MAZDA6_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "MAZDA6_TURBO_BOOST", "name": "Turbo boost", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -1913,7 +1913,7 @@
       "interval": 1,
       "notAnsweredIn": [2005, 2007, 2009, 2014, 2016, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_MIL_SW", "name": "Malfunction indicator lamp", "group": "DTCs", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
+        {"id": "MAZDA6_MIL_SW", "name": "Malfunction indicator lamp", "group": "DTCs", "metric": "checkEngineLightOn", "bit": 2, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "MAZDA6_IMRC_SW", "name": "Intake manifold runner control", "group": "Engine", "bit": 3, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "MAZDA6_FAN2_SW", "name": "Cooling fan relay control", "group": "Engine", "bit": 4, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "MAZDA6_FAN1_SW", "name": "Cooling fan relay control", "group": "Engine", "bit": 5, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
@@ -1964,7 +1964,7 @@
       "interval": 1,
       "notAnsweredIn": [2018],
       "signals": [
-        {"id": "MAZDA6_BAROMETRIC_P_7E0", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 338639, "divide": 80000, "min": 0, "max": 1079.4118, "unit": "kPa"}
+        {"id": "MAZDA6_BAROMETRIC_P_7E0", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "multiply": 338639, "divide": 800000, "min": 0, "max": 107.94, "unit": "kPa"}
       ]
     },
     {
@@ -2736,7 +2736,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2007, 2014, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
+        {"id": "MAZDA6_GEAR", "name": "Current gear", "description": "The automatic transmission gear.", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear"}}
       ]
     },
     {
@@ -2797,7 +2797,7 @@
       "answeredIn": [2014, 2017, 2018, 2019, 2020],
       "notAnsweredIn": [2007],
       "signals": [
-        {"id": "MAZDA6_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 6}
+        {"id": "MAZDA6_GEAR_ENG", "name": "Gear, engaged", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "70": "PARK"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "70": "Park"}}
       ]
     },
     {
@@ -2809,7 +2809,7 @@
       "interval": 0.25,
       "notAnsweredIn": [2007, 2014, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"10": "Manual", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park"}}
+        {"id": "MAZDA6_GEAR_SHFT", "name": "Shift gear", "group": "Transmission", "metric": "gearSelector", "bit": 0, "bits": 8, "values": {"10": "MANUAL", "20": "LOW", "40": "DRIVE", "46": "DRIVE", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK", "100": "PARK", "101": "REVERSE", "102": "NEUTRAL", "103": "DRIVE"}, "valueDescriptions": {"10": "Manual", "20": "Low", "40": "Drive", "46": "Drive", "50": "Neutral", "60": "Reverse", "70": "Park", "100": "Park", "101": "Reverse", "102": "Neutral", "103": "Drive"}}
       ]
     },
     {
@@ -3020,7 +3020,7 @@
       "interval": 1,
       "answeredIn": [2007, 2014, 2017, 2018, 2019, 2020],
       "signals": [
-        {"id": "MAZDA6_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
+        {"id": "MAZDA6_MAP_7E0", "name": "Manifold pressure", "group": "Engine", "metric": "absoluteBoostPressure", "bit": 0, "bits": 8, "multiply": 10000, "divide": 68947, "min": 0, "max": 36, "unit": "psi"}
       ]
     },
     {
@@ -3141,7 +3141,7 @@
       "interval": 1,
       "answeredIn": [2018],
       "signals": [
-        {"id": "MAZDA6_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
+        {"id": "MAZDA6_BAROMETRIC_P", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 0, "bits": 8, "min": 0, "max": 255, "unit": "kPa"}
       ]
     },
     {
@@ -3378,7 +3378,7 @@
       "interval": 0.25,
       "answeredIn": [2018],
       "signals": [
-        {"id": "MAZDA6_GEAR_7E1", "name": "Gear", "group": "Transmission", "bit": 0, "bits": 8, "min": 0, "max": 255}
+        {"id": "MAZDA6_GEAR_7E1", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 0, "bits": 8, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9", "10": "10", "50": "NEUTRAL", "60": "REVERSE", "70": "PARK"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear", "9": "Ninth gear", "10": "Tenth gear", "50": "Neutral", "60": "Reverse", "70": "Park"}}
       ]
     },
     {

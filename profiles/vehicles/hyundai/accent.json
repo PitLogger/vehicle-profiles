@@ -18,7 +18,7 @@
     "name": "OBDb",
     "url": "https://github.com/OBDb/Hyundai-Accent",
     "file": "signalsets/v3/default.json",
-    "revision": "f7574ed32aad6379870ede9aa9fa524eeba2804d",
+    "revision": "841e31708466547d0774fdb113cb17e633cf81bf",
     "license": "CC-BY-SA-4.0",
     "attribution": "OBDb contributors, https://obdb.community"
   },
@@ -32,7 +32,7 @@
       "interval": 0.5,
       "flowControl": true,
       "answeredIn": [2018],
-      "notAnsweredIn": [2008, 2013, 2015, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2019, 2022],
       "signals": [
         {"id": "ACCENT_VSS", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 232, "bits": 8, "min": 0, "max": 255, "unit": "km/h"}
       ]
@@ -44,7 +44,7 @@
       "rx": "7BB",
       "request": "220101",
       "interval": 5,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_HVAC_IAT_PASSENGER_VENT", "name": "Interior temperature, passenger vent", "group": "Climate", "bit": 64, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"},
         {"id": "ACCENT_HVAC_IAT_PASSENGER_LEGS_VENT", "name": "Interior temperature, passenger legs vent", "group": "Climate", "bit": 72, "bits": 8, "divide": 2, "add": -40, "min": -40, "max": 87.5, "unit": "°C"}
@@ -58,7 +58,7 @@
       "request": "22B002",
       "interval": 1,
       "answeredIn": [2018],
-      "notAnsweredIn": [2008, 2013, 2015, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2019, 2022],
       "signals": [
         {"id": "ACCENT_FLI_VOL", "name": "Fuel level, volume", "group": "Fuel", "metric": "fuelTankLevel", "bit": 32, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "L", "invalidAtOrAbove": 127.5},
         {"id": "ACCENT_CLUSTER_VOLTAGE", "name": "Cluster voltage", "group": "Electrical", "metric": "starterBatteryVoltage", "bit": 40, "bits": 8, "divide": 12.8, "min": 0, "max": 18, "unit": "V"},
@@ -74,7 +74,7 @@
       "request": "2101",
       "interval": 1,
       "answeredIn": [2015],
-      "notAnsweredIn": [2008, 2013, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "ACCENT_FR_VSS", "name": "Front right wheel speed", "group": "Movement", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -89,7 +89,7 @@
       "rx": "7D9",
       "request": "220104",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_VSS_AVG", "name": "Vehicle speed, average", "group": "Movement", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "ACCENT_TIRE_FL_VSS", "name": "Front left wheel speed", "group": "Movement", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -108,7 +108,7 @@
       "rx": "7D9",
       "request": "224000",
       "interval": 0.25,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_TIRE_FL_VSS_V3", "name": "Front left wheel speed", "group": "Movement", "bit": 48, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "km/h"},
         {"id": "ACCENT_TIRE_FR_VSS_V3", "name": "Front right wheel speed", "group": "Movement", "bit": 56, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "km/h"},
@@ -123,7 +123,7 @@
       "rx": "7D9",
       "request": "22C101",
       "interval": 0.25,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_FL_WHEEL_VSS", "name": "Front left wheel speed", "group": "Tires", "bit": 88, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
         {"id": "ACCENT_FR_WHEEL_VSS", "name": "Front right wheel speed", "group": "Tires", "bit": 96, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -138,7 +138,7 @@
       "rx": "7DC",
       "request": "2101",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_STEER_ANGLE_V2", "name": "Steering angle", "group": "Control", "bit": 24, "bits": 16, "signed": true, "multiply": 10, "divide": 100, "min": -3276.8, "max": 3276.7, "unit": "°"}
       ]
@@ -151,6 +151,7 @@
       "request": "2106",
       "interval": 15,
       "years": {"from": 2014},
+      "notAnsweredIn": [2022],
       "signals": [
         {"id": "ACCENT_FL_TP", "name": "Front left tire pressure", "group": "Tires", "metric": "frontLeftTirePressure", "bit": 0, "bits": 8, "multiply": 0.01378952, "min": 0, "max": 3.51, "unit": "bar"},
         {"id": "ACCENT_FL_TT", "name": "Front left tire temperature", "group": "Engine", "metric": "frontLeftTireTemperature", "bit": 8, "bits": 8, "add": -50, "min": -50, "max": 205, "unit": "°C"},
@@ -169,7 +170,7 @@
       "rx": "7E8",
       "request": "2100",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_FUEL_CUT", "name": "Fuel cut", "group": "Fuel", "bit": 88, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_IDLE_CONTROL_MODE", "name": "Idle control mode", "group": "Engine", "bit": 120, "bits": 8, "min": 0, "max": 255},
@@ -186,18 +187,18 @@
       "request": "2101",
       "interval": 1,
       "answeredIn": [2015, 2018],
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_CONTROL_MODULE_VOLTAGE", "name": "Control module voltage, raw count", "group": "Battery", "bit": 40, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_CONTROL_MODULE_VOLTAGE_AFTER_IGNITION", "name": "Control module voltage after ignition, raw count", "group": "Battery", "bit": 48, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_ENGINE_RPM", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 56, "bits": 16, "byteOrder": "little", "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ACCENT_COMMANDED_ENGINE_IDLE_RPM", "name": "Commanded engine idle RPM", "group": "Movement", "bit": 72, "bits": 8, "multiply": 10, "min": 0, "max": 2550, "unit": "rpm"},
         {"id": "ACCENT_MAP_SENSOR_VOLTAGE", "name": "Manifold pressure sensor voltage", "group": "Battery", "bit": 112, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951, "unit": "V"},
-        {"id": "ACCENT_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255.996, "unit": "kPa"},
+        {"id": "ACCENT_INTAKE_MANIFOLD_ABSOLUTE_PRESSURE", "name": "Intake manifold absolute pressure", "group": "ECU", "metric": "absoluteBoostPressure", "bit": 128, "bits": 16, "byteOrder": "little", "divide": 256, "min": 0, "max": 255.996, "unit": "kPa"},
         {"id": "ACCENT_COOLANT_T_SENSOR_VOLTAGE", "name": "Coolant temperature sensor voltage", "group": "Battery", "bit": 184, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951, "unit": "V"},
         {"id": "ACCENT_ENGINE_COOLANT_T", "name": "Engine coolant temperature", "group": "Engine", "metric": "engineCoolantTemperature", "bit": 200, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "ACCENT_IAT_SENSOR_VOLTAGE", "name": "Intake air temperature sensor voltage", "group": "Battery", "bit": 248, "bits": 16, "byteOrder": "little", "multiply": 0.0048828125, "min": 0, "max": 319.9951, "unit": "V"},
-        {"id": "ACCENT_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
+        {"id": "ACCENT_INTAKE_AIR_T", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"},
         {"id": "ACCENT_ENGINE_OIL_T", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "multiply": 0.75, "add": -48, "min": -48, "max": 143.25, "unit": "°C"}
       ]
     },
@@ -208,7 +209,7 @@
       "rx": "7E8",
       "request": "2102",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_OXYGEN_SENSOR_11", "name": "Oxygen sensor 1 bank 1", "group": "ECU", "bit": 32, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.1285, "unit": "V"},
         {"id": "ACCENT_OXYGEN_SENSOR_21", "name": "Oxygen sensor 2 bank 1", "group": "ECU", "bit": 48, "bits": 8, "multiply": 0.00521, "add": -0.2, "min": -0.2, "max": 1.1285, "unit": "V"},
@@ -227,7 +228,7 @@
       "rx": "7E8",
       "request": "2104",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_COOLANT_FAN_HIGH_1_8", "name": "Coolant fan high speed, 1.8", "group": "Movement", "bit": 109, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]},
         {"id": "ACCENT_COOLANT_FAN_LOW_1_8", "name": "Coolant fan low speed, 1.8", "group": "Movement", "bit": 110, "bits": 1, "min": 0, "max": 1, "labels": ["Off", "On"]}
@@ -293,7 +294,7 @@
       "rx": "7E8",
       "request": "210D",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_MIS_CNT_EMIS_1", "name": "Emission-relevant misfires, cylinder #1", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
         {"id": "ACCENT_MIS_CNT_EMIS_2", "name": "Emission-relevant misfires, cylinder #2", "group": "Engine.Misfires", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
@@ -324,13 +325,13 @@
       "rx": "7E8",
       "request": "2113",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_TIMING_ADVANCE_1", "name": "Timing advance #1", "group": "Engine", "bit": 32, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "ACCENT_TIMING_ADVANCE_2", "name": "Timing advance #2", "group": "Engine", "bit": 40, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "ACCENT_TIMING_ADVANCE_3", "name": "Timing advance #3", "group": "Engine", "bit": 48, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
         {"id": "ACCENT_TIMING_ADVANCE_4", "name": "Timing advance #4", "group": "Engine", "bit": 56, "bits": 8, "signed": true, "multiply": 0.75, "min": -96, "max": 95.25, "unit": "°"},
-        {"id": "ACCENT_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
+        {"id": "ACCENT_BAROMETRIC_PRESSURE", "name": "Barometric pressure", "group": "Engine", "metric": "barometricPressure", "bit": 312, "bits": 8, "divide": 2, "min": 0, "max": 127.5, "unit": "kPa"}
       ]
     },
     {
@@ -340,7 +341,7 @@
       "rx": "7E8",
       "request": "2114",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_COMMANDED_THROTTLE_ACTUATOR", "name": "Commanded throttle actuator", "group": "Engine", "bit": 40, "bits": 8, "multiply": 0.390625, "min": 0, "max": 99.6093, "unit": "%"},
         {"id": "ACCENT_THROTTLE_POS_1", "name": "Throttle position #1", "group": "Engine", "metric": "throttlePosition", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.0244140625, "min": -800, "max": 799, "unit": "%"},
@@ -360,7 +361,7 @@
       "rx": "7E8",
       "request": "2115",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_STFT_B1_IDLE", "name": "Short term fuel % trim, bank 1 idle", "group": "Fuel", "bit": 48, "bits": 16, "byteOrder": "little", "signed": true, "multiply": 0.046875, "min": 0, "max": 100, "unit": "%"},
         {"id": "ACCENT_STFT_B1", "name": "Short term fuel % trim, bank 1", "group": "Fuel", "bit": 80, "bits": 16, "byteOrder": "little", "multiply": 0.0030517578, "add": -100, "min": 0, "max": 99.9969, "unit": "%"}
@@ -373,7 +374,7 @@
       "rx": "7E8",
       "request": "2116",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_KNOCK_RETARD_CYLINDER_1", "name": "Knock retard cylinder #1", "group": "ECU", "bit": 96, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
         {"id": "ACCENT_KNOCK_RETARD_CYLINDER_2", "name": "Knock retard cylinder #2", "group": "ECU", "bit": 104, "bits": 8, "multiply": 0.75, "min": 0, "max": 191.25, "unit": "°"},
@@ -388,7 +389,7 @@
       "rx": "7E8",
       "request": "2117",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_INTAKE_CAMSHAFT_POSITION_COMMANDED", "name": "Intake camshaft position commanded", "group": "ECU", "bit": 32, "bits": 8, "signed": true, "divide": 2, "min": -64, "max": 63.5, "unit": "°"},
         {"id": "ACCENT_INTAKE_CAMSHAFT_POSITION_ACTUAL", "name": "Intake camshaft position actual", "group": "ECU", "bit": 40, "bits": 16, "byteOrder": "little", "signed": true, "divide": 128, "min": -256, "max": 255.9921, "unit": "°"}
@@ -430,7 +431,7 @@
       "rx": "7E8",
       "request": "211D",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_MIS_1", "name": "Misfires, cylinder 1", "group": "Engine.Misfires", "bit": 32, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
         {"id": "ACCENT_MIS_2", "name": "Misfires, cylinder 2", "group": "Engine.Misfires", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
@@ -495,7 +496,7 @@
       "rx": "7E8",
       "request": "2221A0",
       "interval": 10,
-      "notAnsweredIn": [2008, 2013, 2015, 2018],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2022],
       "signals": [
         {"id": "ACCENT_ATF_TEMP", "name": "Transmission fluid temperature", "group": "Transmission", "metric": "transmissionFluidTemperature", "bit": 16, "bits": 8, "multiply": 9, "divide": 5, "add": -40, "min": 0, "max": 255, "unit": "°F"}
       ]
@@ -507,9 +508,9 @@
       "rx": "7E8",
       "request": "22E001",
       "interval": 5,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
-        {"id": "ACCENT_EIT", "name": "Intake air temperature", "group": "Engine", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
+        {"id": "ACCENT_EIT", "name": "Intake air temperature", "group": "Engine", "metric": "intakeAirTemperature", "bit": 264, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"},
         {"id": "ACCENT_EOT", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 272, "bits": 8, "multiply": 3, "divide": 4, "add": -48, "min": -48, "max": 143, "unit": "°C"}
       ]
     },
@@ -520,7 +521,7 @@
       "rx": "7E8",
       "request": "22E002",
       "interval": 5,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_INJ_DUR_1", "name": "Injection duration cylinder 1", "group": "Engine", "bit": 176, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
         {"id": "ACCENT_INJ_DUR_2", "name": "Injection duration cylinder 2", "group": "Engine", "bit": 192, "bits": 16, "byteOrder": "little", "divide": 1220.7, "min": 0, "max": 53, "unit": "ms"},
@@ -535,7 +536,7 @@
       "rx": "7E8",
       "request": "22E004",
       "interval": 5,
-      "notAnsweredIn": [2008, 2013, 2015, 2018],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2022],
       "signals": [
         {"id": "ACCENT_AUX_SOC", "name": "Aux battery state of charge", "group": "Battery", "bit": 320, "bits": 8, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0},
         {"id": "ACCENT_AUX_SOH", "name": "Aux battery state of health", "group": "Battery", "bit": 328, "bits": 8, "min": 0, "max": 100, "unit": "%", "invalidAtOrBelow": 0}
@@ -548,7 +549,7 @@
       "rx": "7E8",
       "request": "22E005",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_GDI_IT_A1", "name": "Gasoline direct injection time bank a, 1", "group": "Engine", "bit": 224, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
         {"id": "ACCENT_GDI_IT_A2", "name": "Gasoline direct injection time bank a, 2", "group": "Engine", "bit": 240, "bits": 16, "byteOrder": "little", "divide": 10, "min": 0, "max": 6553.5, "unit": "ms"},
@@ -567,7 +568,7 @@
       "rx": "7E8",
       "request": "22E00A",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_KNOCK_RETARD_1", "name": "Knock retard, cylinder 1", "group": "Engine", "bit": 96, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
         {"id": "ACCENT_KNOCK_RETARD_2", "name": "Knock retard, cylinder 2", "group": "Engine", "bit": 104, "bits": 8, "signed": true, "divide": 5, "min": -25, "max": 25, "unit": "°"},
@@ -586,7 +587,7 @@
       "rx": "7E8",
       "request": "22E00D",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_MISFIRES_C1_CUR", "name": "Misfires, current, cylinder 1", "group": "Engine", "bit": 48, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
         {"id": "ACCENT_MISFIRES_C2_CUR", "name": "Misfires, current, cylinder 2", "group": "Engine", "bit": 64, "bits": 16, "byteOrder": "little", "min": 0, "max": 65535},
@@ -646,7 +647,7 @@
       "rx": "7E8",
       "request": "22E019",
       "interval": 1,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_KNOCK_RETARD_1_E019", "name": "Knock retard cylinder 1, alternate", "group": "Engine", "bit": 168, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
         {"id": "ACCENT_KNOCK_RETARD_2_E019", "name": "Knock retard cylinder 2, alternate", "group": "Engine", "bit": 176, "bits": 8, "multiply": 0.75, "add": -191.25, "min": -191.25, "max": 0, "unit": "°"},
@@ -717,7 +718,7 @@
       "rx": "7E8",
       "request": "22ED02",
       "interval": 5,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
         {"id": "ACCENT_EOT_V2", "name": "Engine oil temperature", "group": "Engine", "metric": "engineOilTemperature", "bit": 184, "bits": 8, "add": -4, "min": -4, "max": 251, "unit": "°C"}
       ]
@@ -741,7 +742,7 @@
       "request": "22ED05",
       "interval": 0.25,
       "signals": [
-        {"id": "ACCENT_GEAR_7E0", "name": "Gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
+        {"id": "ACCENT_GEAR_7E0", "name": "Gear", "group": "Transmission", "metric": "gear", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_CRANK_TQ", "name": "Crankshaft torque", "group": "Engine", "bit": 240, "bits": 8, "multiply": 600, "divide": 255, "min": 0, "max": 600, "unit": "Nm"}
       ]
     },
@@ -802,7 +803,7 @@
       "request": "21A0",
       "interval": 0.25,
       "answeredIn": [2008, 2015, 2019],
-      "notAnsweredIn": [2013, 2018],
+      "notAnsweredIn": [2013, 2018, 2022],
       "signals": [
         {"id": "ACCENT_ENGINE_RPM_TCM", "name": "Engine RPM", "group": "Engine", "metric": "engineSpeed", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ACCENT_VEHICLE_SPEED", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -811,7 +812,7 @@
         {"id": "ACCENT_OUTPUT_SPEED", "name": "Output speed", "group": "Engine", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ACCENT_ATF_T", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "ACCENT_TORQUE_CONVERTER_SLIP", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "ACCENT_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "ACCENT_CURRENT_GEAR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_COMMANDED_GEAR", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_BRAKE_PEDAL", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
       ]
@@ -834,7 +835,7 @@
       "rx": "7E9",
       "request": "2201A0",
       "interval": 0.25,
-      "notAnsweredIn": [2008, 2013],
+      "notAnsweredIn": [2008, 2013, 2022],
       "signals": [
         {"id": "ACCENT_RPM_7E1", "name": "Engine RPM", "group": "Movement", "metric": "engineSpeed", "bit": 32, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ACCENT_VSS_7E1", "name": "Vehicle speed", "group": "Movement", "metric": "speed", "bit": 48, "bits": 8, "min": 0, "max": 255, "unit": "km/h"},
@@ -843,10 +844,10 @@
         {"id": "ACCENT_OUTPUT_SPEED_7E1", "name": "Output speed", "group": "Movement", "bit": 88, "bits": 16, "divide": 4, "min": 0, "max": 16383.75, "unit": "rpm"},
         {"id": "ACCENT_ATF_T_7E1", "name": "Automatic transmission fluid temperature", "group": "Engine", "metric": "transmissionFluidTemperature", "bit": 104, "bits": 8, "add": -40, "min": -40, "max": 215, "unit": "°C"},
         {"id": "ACCENT_TORQUE_CONVERTER_SLIP_7E1", "name": "Torque converter slip", "group": "Engine", "bit": 128, "bits": 16, "divide": 4, "add": -512, "min": -512, "max": 15871.75, "unit": "rpm"},
-        {"id": "ACCENT_GEAR", "name": "Gear selector", "group": "Transmission", "bit": 160, "bits": 8, "min": 0, "max": 255},
-        {"id": "ACCENT_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "bit": 168, "bits": 8, "min": 0, "max": 255},
+        {"id": "ACCENT_CURRENT_GEAR_7E1", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 168, "bits": 8, "min": 0, "max": 255},
         {"id": "ACCENT_COMMANDED_GEAR_7E1", "name": "Commanded gear", "group": "Transmission", "bit": 176, "bits": 8, "min": 0, "max": 255},
-        {"id": "ACCENT_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255}
+        {"id": "ACCENT_BRAKE_PEDAL_7E1", "name": "Brake pedal", "group": "Control", "bit": 192, "bits": 8, "min": 0, "max": 255},
+        {"id": "ACCENT_GEAR", "name": "Gear selector", "group": "Transmission", "metric": "gearSelector", "bit": 160, "bits": 8, "values": {"0": "PARK", "5": "DRIVE", "6": "NEUTRAL", "7": "REVERSE", "8": "DRIVE", "9": "NEUTRAL", "10": "REVERSE", "11": "PARK", "12": "MANUAL"}, "valueDescriptions": {"0": "Park", "5": "Drive", "6": "Neutral", "7": "Reverse", "8": "Drive", "9": "Neutral", "10": "Reverse", "11": "Park", "12": "Manual"}}
       ]
     },
     {
@@ -856,10 +857,10 @@
       "rx": "7E9",
       "request": "2201A4",
       "interval": 0.25,
-      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019],
+      "notAnsweredIn": [2008, 2013, 2015, 2018, 2019, 2022],
       "signals": [
-        {"id": "ACCENT_GEAR_CUR", "name": "Current gear", "group": "Transmission", "bit": 188, "bits": 4, "min": 0, "max": 15},
-        {"id": "ACCENT_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15}
+        {"id": "ACCENT_GEAR_NXT", "name": "Next gear", "group": "Transmission", "bit": 196, "bits": 4, "min": 0, "max": 15},
+        {"id": "ACCENT_GEAR_CUR", "name": "Current gear", "group": "Transmission", "metric": "gear", "bit": 188, "bits": 4, "values": {"1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8"}, "valueDescriptions": {"1": "First gear", "2": "Second gear", "3": "Third gear", "4": "Fourth gear", "5": "Fifth gear", "6": "Sixth gear", "7": "Seventh gear", "8": "Eighth gear"}}
       ]
     }
   ]
